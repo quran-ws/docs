@@ -15,7 +15,7 @@
 | المحور | المضمون |
 | --- | --- |
 | **أدبيات التعامل مع النص القرآني** | الأدب الواجب في عرض النص وتخزينه ونقله، وحدود التطبيع (normalization)، والتعامل مع النص الناقص أو المقطوع، والاختبارات الآلية على النص. |
-| **دليل المصطلحات** | [Quranic Software Terminology Standard](content/ar/03-terminology/standard.md): اسم Canonical واحد لكل مفهوم، وتهجئة برمجية موحدة، ومصدر Machine-readable. |
+| **دليل المصطلحات** | [المعيار](content/ar/03-terminology/standard.md) و[القاموس](content/ar/03-terminology/dictionary.md): اسم واحد لكل مفهوم، وتهجئة تشتق بدالة لا تختار، ومصدر يقرأ آليًا في [`standards/`](standards/terminology/). |
 | **إدارة الإصدارات والإعلام عن التصحيحات** | الإصدار الدلالي للبيانات لا للكود فقط، وسجل التصحيحات (errata)، وكيف ومتى نُعلم المستخدمين بتغيّر النص. |
 | **المصدر المفتوح وVersion control** | الرخص، وبنية المستودعات، وقواعد الـcommits والـPRs والمراجعة، وسياسة الاعتماد على مشاريعنا. |
 | **الهندسة** | تصميم الـAPIs، ونمذجة البيانات، وعرض المصحف والخطوط، والصوت والتلاوات. |
@@ -26,7 +26,7 @@
 
 ## المساهمة
 
-الأدلة تتغير بالنقاش لا بالـcommit المباشر: افتح Issue يشرح الحالة التي دفعتك لاقتراح التغيير، ثم PR بعد الاتفاق. راجع [CONTRIBUTING.md](CONTRIBUTING.md).
+الأدلة تتغير بالنقاش لا بالـcommit المباشر: افتح Issue يشرح الحالة التي دفعتك لاقتراح التغيير، ثم PR بعد الاتفاق. راجع [CONTRIBUTING.md](CONTRIBUTING.md) و[STRUCTURE.md](STRUCTURE.md).
 
 </div>
 
@@ -47,7 +47,7 @@ We wrote it for ourselves first, so our decisions stay consistent across project
 | Area | Covers |
 | --- | --- |
 | **Handling Quranic text** | Adab of displaying, storing, and transmitting the text; the limits of normalization; partial and truncated text; automated tests over sacred text. |
-| **Terminology** | The [Quranic Software Terminology Standard](content/ar/03-terminology/standard.md): one canonical name per concept, one code spelling, a machine-readable source. |
+| **Terminology** | The [standard](content/ar/03-terminology/standard.md) and [dictionary](content/ar/03-terminology/dictionary.md): one name per concept, spellings derived by a function rather than chosen, and a machine-readable source in [`standards/`](standards/terminology/). |
 | **Versioning & corrections** | Versioning data, not just code; errata logs; how and when users are told the text changed. |
 | **Open source & version control** | Licensing, repository layout, commit/PR/review conventions, and what downstream users can rely on. |
 | **Engineering** | API design, data modeling, Mushaf rendering and fonts, audio and recitation. |

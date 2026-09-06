@@ -1,0 +1,58 @@
+# المساهمة — Contributing
+
+<div dir="rtl">
+
+الأدلة تتغير بالنقاش لا بالـcommit المباشر.
+
+## كيف يقترح تغيير
+
+1. **افتح Issue** يشرح **الحالة الواقعية** التي دفعت إليه: أي مشروع، وأي موضع، وما الذي التبس أو تعذر. القاعدة التي لا حالة وراءها لا تعتمد.
+2. **انتظر الاتفاق.** القواعد أثرها ممتد، وتغييرها بعد اعتمادها أغلى من مناقشتها قبله.
+3. **أرسل PR** بعد الاتفاق، وأجب فيه عن قائمة المراجعة.
+
+لاقتراح مصطلح استعمل قالب [`term.yml`](.github/ISSUE_TEMPLATE/term.yml)، ولاقتراح قاعدة [`proposal.yml`](.github/ISSUE_TEMPLATE/proposal.yml).
+
+## ما لا يعدل باليد
+
+المصدر لهذه الأشياء مولد، فتعديله في المخرج يضيع:
+
+| لا تعدل | عدل | ثم |
+| --- | --- | --- |
+| `standards/terminology/aliases.json` | `alternative_spellings` في المدخل | `python3 tools/build_aliases.py` |
+| مداخل علامات الضبط | `standards/terminology/data/dabt_marks.tsv` | `python3 tools/generate_dabt.py` |
+| كتلة `unicode` في أي مدخل | لا شيء، تقرأ من قاعدة يونيكود | `python3 tools/generate_dabt.py` |
+| تهجئة `code` | `names.arabic.vocalized` | تشتق تلقائيًا |
+
+## قبل الإرسال
+
+```bash
+python3 tools/test_translit.py    # قواعد التهجئة كما هي
+python3 tools/validate.py         # كل مدخل موافق للـschema
+python3 tools/build_aliases.py    # لا تصادم في المرادفات
+```
+
+## حال الصفحة
+
+كل صفحة تحمل `status` في الـfrontmatter:
+
+- `draft` — تكتب، ولا يبنى عليها.
+- `proposed` — نوقشت وتنتظر الاعتماد.
+- `adopted` — ملزمة لمشاريعنا. ولا يوسم بها مدخل بلا مصدر يثبت تعريفه.
+
+## العربية والإنجليزية
+
+`content/ar` و`content/en` متقابلان ملفًا بملف. والصفحة الموجودة في لغة دون
+أخرى نقص معلوم، لا بنية مختلفة. العربية أصل لصفحات النص والمصطلحات،
+والإنجليزية أصل لصفحات الهندسة.
+
+</div>
+
+---
+
+Guidelines change through discussion, not direct commits.
+
+1. **Open an issue** describing the **real case** that prompted the change — which project, which place, what was ambiguous or impossible. A rule with no case behind it doesn't get adopted.
+2. **Wait for agreement.** Rules have long reach; changing one after adoption costs more than discussing it before.
+3. **Send a PR** once there's agreement, answering the checklist.
+
+Run `tools/test_translit.py`, `tools/validate.py` and `tools/build_aliases.py` before sending. Never hand-edit generated output — the table above says what regenerates what.

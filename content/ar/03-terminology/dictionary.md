@@ -1,4 +1,10 @@
-# Quranic Software Terminology Dictionary
+---
+title: قاموس المصطلحات
+description: المفاهيم المستخدمة في البرمجيات القرآنية، بتعريفاتها وأسمائها المعتمدة.
+status: draft
+sidebar:
+  order: 2
+---
 
 معجم معياري للمفاهيم المستخدمة في البرمجيات والتطبيقات القرآنية، مبني على **Quranic Software Terminology Standard**.
 

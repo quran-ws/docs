@@ -9,7 +9,6 @@ guidelines/
 ├── README.md                      # ما هذا المستودع (عربي + إنجليزي)
 ├── STRUCTURE.md                   # هذا الملف
 ├── CONTRIBUTING.md                # كيف تُقترح التغييرات وتُناقش
-├── GLOSSARY.md                    # اختصار سريع للمصطلحات، يشير إلى المعيار الكامل
 ├── LICENSE                        # CC BY 4.0 للنصوص، MIT للكود
 │
 ├── content/
@@ -33,13 +32,20 @@ guidelines/
 ├── standards/                     # المصادر Machine-readable
 │   └── terminology/
 │       ├── schema.json            # بنية الـEntry حسب القسم 27
+│       ├── sources.yml            # سجل المصادر وصيغة الإحالة لكل مصدر
+│       ├── aliases.json           # مولد: كل تهجئة معروفة تحل إلى مفهومها
+│       ├── data/                  # السجلات كما وردت من المشاريع
+│       │   ├── dabt_marks.tsv     # 35 علامة بأسمائها الخمسة
+│       │   ├── hafs_svg_*.tsv     # مسرد المشروع وبنيته ونموذج الكلمة
+│       │   └── tajweed_engine_rules.json
 │       └── concepts/              # ملف YAML لكل مفهوم
-│           ├── ayah.yml        # entity
-│           ├── makki.yml       # classification_value مع parent
-│           └── tajwid.yml      # discipline
+│           ├── ayah.yml
+│           ├── waqf_lazim.yml     # مولد من dabt_marks.tsv
+│           └── ...
 │
+├── tools/                         # ما يشتق الأسماء ويقيسها ويتحقق منها
 ├── examples/                      # أمثلة كود قصيرة يشير إليها المحتوى
-├── site/                          # موقع Astro Starlight (لاحقًا)
+├── site/                          # موقع Astro Starlight
 └── .github/
     ├── ISSUE_TEMPLATE/
     │   ├── proposal.yml           # اقتراح قاعدة جديدة أو تعديل قاعدة

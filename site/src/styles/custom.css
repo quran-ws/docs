@@ -1,0 +1,21 @@
+/* Arabic prose needs more line height and a face that renders vocalization. */
+:root {
+  --sl-font-arabic: 'Noto Naskh Arabic', 'Amiri', 'Scheherazade New', serif;
+}
+[dir='rtl'] .sl-markdown-content {
+  font-family: var(--sl-font-arabic);
+  line-height: 2;
+}
+[dir='rtl'] .sl-markdown-content code,
+[dir='rtl'] .sl-markdown-content pre {
+  direction: ltr;
+  text-align: left;
+}
+/* Status badge, so a reader never mistakes a draft for a binding rule. */
+.status-draft::before { content: 'draft'; background: #b45309; }
+.status-proposed::before { content: 'proposed'; background: #1d4ed8; }
+.status-adopted::before { content: 'adopted'; background: #15803d; }
+[class^='status-']::before {
+  color: #fff; border-radius: 4px; padding: 0.1rem 0.5rem;
+  font-size: 0.75rem; letter-spacing: 0.04em;
+}
