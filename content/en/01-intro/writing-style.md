@@ -124,7 +124,21 @@ Requirement:  The system must display the ayah.
 
 The same goes for "should be capable of" and "is required to". Name the action.
 
-## 7. Arabic-specific rules
+## 7. Don't translate field names or their values
+
+Field names and their values are written in English in the files, so write them
+in the page exactly as they appear there, in code font. Translating them cuts
+the link between what a reader reads and what they type:
+
+```text
+Avoid: | Kind | entity as an independent thing |
+Use:   | `kind` | `entity` |
+```
+
+Explain what the values mean once, where the standard defines them, rather than
+with every entry. The prose around them is written in the page's language.
+
+## 8. Arabic-specific rules
 
 The Arabic page carries rules that have no English equivalent: joining list
 items with و rather than commas, not attaching several coordinated nouns to one
@@ -132,7 +146,7 @@ possessive, and a table of errors common in Arabic technical prose (حيث إن 
 حيث أن، أثر في not أثر على، دون not بدون). Note also that Arabic **letter
 names** are written as they are said — `noon_sakinah`, not `nun_sakinah` —
 which the terminology standard covers in section 6. See
-[أسلوب الكتابة العربية](/guidelines/ar/01-intro/writing-style/), sections 7 and 8.
+[أسلوب الكتابة العربية](/guidelines/ar/01-intro/writing-style/), sections 7, 8 and 9.
 
 Reference: [دليل التحرير والصياغة العربية](https://github.com/kamalyaser31/arabic-guide),
 drawn from the Saudi Aramco Arabic style guide.
@@ -145,3 +159,4 @@ drawn from the Saudi Aramco Arabic style guide.
 - [ ] No parallel constructions or slogan-shaped headings.
 - [ ] States the standard, not how it was reached.
 - [ ] No "must be able to" — say what is required or what is possible.
+- [ ] Field names and values in English code font, not translated.

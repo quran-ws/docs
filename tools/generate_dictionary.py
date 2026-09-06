@@ -24,12 +24,9 @@ CATEGORY_AR = [
     ("waqf", "الوقف"), ("linguistics", "اللغة"),
     ("translation", "الترجمة"), ("tafsir", "التفسير"),
 ]
-KIND_AR = {
-    "entity": "كيان", "concept": "مفهوم", "classification": "تصنيف",
-    "classification_value": "قيمة تصنيف", "property": "خاصية", "role": "دور",
-    "process": "عملية", "content": "محتوى", "analysis": "تحليل",
-    "mark": "علامة", "unit": "وحدة",
-}
+# Field values are written exactly as they appear in the concept file, so a
+# reader can copy them into YAML. Their Arabic meaning belongs in the standard
+# (sections 12 and 13), not repeated on every entry.
 
 
 def load():
@@ -45,10 +42,10 @@ def render_entry(e):
     lines.append("")
     rows = [("`code`", f"`{n.get('code', e['concept'])}`")]
     if e.get("plural"):
-        rows.append(("الجمع", f"`{e['plural']}`"))
-    rows.append(("النوع", KIND_AR.get(e["kind"], e["kind"])))
+        rows.append(("`plural`", f"`{e['plural']}`"))
+    rows.append(("`kind`", f"`{e['kind']}`"))
     if e.get("parent"):
-        rows.append(("يتبع", f"`{e['parent']}`"))
+        rows.append(("`parent`", f"`{e['parent']}`"))
     if n.get("arabic", {}).get("vocalized"):
         rows.append(("بالحركات", n["arabic"]["vocalized"]))
     if e.get("symbol"):
@@ -108,7 +105,7 @@ sidebar:
         group = sorted(by_cat.get(key, []), key=lambda x: x["concept"])
         if not group:
             continue
-        parts.append(f"\n## {label}\n")
+        parts.append(f"\n## {label} — `{key}`\n")
         for e in group:
             parts.append(render_entry(e))
             total += 1
