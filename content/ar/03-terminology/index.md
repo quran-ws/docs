@@ -8,7 +8,7 @@ sidebar:
 
 - [معيار المصطلحات](/guidelines/ar/03-terminology/standard/) — كيف يسمى المفهوم: اسم Canonical واحد، وتهجئة تشتق بدالة موثقة لا تختار، والحقول التي يسكنها كل اسم.
 - [سجل القرارات](/guidelines/ar/03-terminology/decisions/) — القرارات التي كان فيها خلاف، بقرارها وسببها ودليلها.
-- [قاموس المصطلحات](/guidelines/ar/03-terminology/dictionary/) — 117 مفهومًا، مولدة من `standards/terminology/concepts/`.
+- [قاموس المصطلحات](/guidelines/ar/03-terminology/dictionary/) — المفاهيم بتعريفاتها وأسمائها، مولدة من `standards/terminology/concepts/`.
 
 والمصدر المقروء آليًا مستقل عن اللغة، ويستعمل الآن:
 

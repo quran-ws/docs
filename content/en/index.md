@@ -4,7 +4,7 @@ description: Internal guidelines and open standards for the Quran.ws infrastruct
 status: draft
 template: splash
 hero:
-  tagline: How we write code, handle Quranic text, name concepts, and manage releases.
+  tagline: How we write code, handle Quranic text, name concepts, and manage releases and corrections.
   actions:
     - text: Writing guides
       link: /guidelines/en/01-intro/writing-guides/
@@ -15,17 +15,90 @@ hero:
       variant: minimal
 ---
 
+<dl class="qw-meta">
+  <div>
+    <dt>STATUS</dt>
+    <dd>Draft — nothing adopted yet</dd>
+  </div>
+  <div>
+    <dt>LICENSE</dt>
+    <dd class="mono">CC BY 4.0</dd>
+  </div>
+  <div>
+    <dt>SOURCE</dt>
+    <dd class="mono">quran-ws/guidelines</dd>
+  </div>
+  <div>
+    <dt>LANG</dt>
+    <dd>العربية · English</dd>
+  </div>
+</dl>
+
 ## Areas
 
-| Area | Status |
-| --- | --- |
-| [Introduction](/guidelines/en/01-intro/) — writing style, and how guides are written | written |
-| [Handling Quranic text](/guidelines/en/02-quranic-text/) — display, storage, transmission, limits of normalization | not written |
-| [Terminology](/guidelines/en/03-terminology/) — the [standard](/guidelines/en/03-terminology/standard/), the [decision record](/guidelines/en/03-terminology/decisions/), and the [dictionary](/guidelines/ar/03-terminology/dictionary/) in Arabic | draft |
-| [Versioning and corrections](/guidelines/en/04-versioning/) — versioning data, errata logs | not written |
-| [Open source](/guidelines/en/05-open-source/) — licensing, repository layout, review | not written |
-| [Engineering](/guidelines/en/06-engineering/) — APIs, data, Mushaf rendering, audio | not written |
+<div class="qw-index">
+
+  <div class="qw-index-row">
+    <span class="qw-index-num">§01</span>
+    <div class="qw-index-body">
+      <a href="/guidelines/en/01-intro/">Introduction</a>
+      <p>Writing style, and how the guides themselves are written.</p>
+    </div>
+    <span class="qw-index-state state-written"></span>
+  </div>
+
+  <div class="qw-index-row">
+    <span class="qw-index-num">§02</span>
+    <div class="qw-index-body">
+      <a href="/guidelines/en/02-quranic-text/">Handling Quranic text</a>
+      <p>Immutable source text, encoding and normalization, tokenization and offsets, display, and the tests that guard them.</p>
+    </div>
+    <span class="qw-index-state status-draft"></span>
+  </div>
+
+  <div class="qw-index-row is-current">
+    <span class="qw-index-num">§03</span>
+    <div class="qw-index-body">
+      <a href="/guidelines/en/03-terminology/">Terminology</a>
+      <p>One canonical name per concept, and a spelling derived by a documented function rather than chosen.</p>
+      <span class="qw-index-links">
+        <a href="/guidelines/en/03-terminology/standard/">standard</a>
+        <a href="/guidelines/en/03-terminology/decisions/">decisions</a>
+        <a href="/guidelines/ar/03-terminology/dictionary/">dictionary · ar</a>
+      </span>
+    </div>
+    <span class="qw-index-state status-draft"></span>
+  </div>
+
+  <div class="qw-index-row">
+    <span class="qw-index-num">§04</span>
+    <div class="qw-index-body">
+      <a href="/guidelines/en/04-versioning/">Versioning and corrections</a>
+      <p>Semantic versioning for data and not only code, errata logs, and how users are told the text changed.</p>
+    </div>
+    <span class="qw-index-state state-planned"></span>
+  </div>
+
+  <div class="qw-index-row">
+    <span class="qw-index-num">§05</span>
+    <div class="qw-index-body">
+      <a href="/guidelines/en/05-open-source/">Open source and version control</a>
+      <p>Licensing, repository layout, and the rules for commits, PRs and review.</p>
+    </div>
+    <span class="qw-index-state state-planned"></span>
+  </div>
+
+  <div class="qw-index-row">
+    <span class="qw-index-num">§06</span>
+    <div class="qw-index-body">
+      <a href="/guidelines/en/06-engineering/">Engineering</a>
+      <p>API design, data modelling, Mushaf rendering and fonts, and audio.</p>
+    </div>
+    <span class="qw-index-state state-planned"></span>
+  </div>
+
+</div>
 
 :::caution[These are drafts]
-Nothing here is adopted yet. Don't build against a page until it's marked `adopted`.
+Nothing here is adopted yet. Don't build against a page until it's marked `adopted`. These are opinions and judgement calls, not rulings or formal standards.
 :::
