@@ -56,8 +56,14 @@ def _shadda(text, i):
     return False
 
 
-def transliterate_word(word):
+def transliterate_word(word, construct=False):
+    """`construct` marks a word bound to the next one, where a final ta
+    marbutah is pronounced t: hamzat al-wasl, not hamzah al-wasl."""
     text = _strip(word)
+    if construct:
+        stripped = text.rstrip("".join(HARAKAT))
+        if stripped.endswith("ة"):
+            text = stripped[:-1] + "ت" + text[len(stripped):]
     out = []
     i = 0
     n = len(text)
@@ -65,10 +71,16 @@ def transliterate_word(word):
     # A word-initial alif carries no consonant of its own; its vowel opens the
     # word. Alif al-wasl is ambiguous unvocalized (istiadhah, not astiadhah),
     # so an unmarked initial alif is refused rather than guessed.
-    if n and text[0] in ALIFS:
+    if n and text[0] in ALIFS | {"أ", "إ"}:
         v = _harakah(text, 0)
         if text[0] == "آ":
             out.append("a")
+        elif text[0] == "إ" and not v:
+            out.append("i")  # hamzah below an alif is always kasrah
+        elif text[0] == "أ" and not v:
+            raise ValueError(
+                f"unvocalized initial hamzah in {word!r}: it may be fathah or dammah"
+            )
         elif v and v != SUKUN:
             out.append(VOWEL_OF[v])
         else:
@@ -138,40 +150,59 @@ def transliterate_word(word):
     return "".join(out)
 
 
-def code_spelling(phrase):
+def _drop_article(word):
+    """Strip a leading alif-lam, and the shadda by which a sun letter absorbs it.
+
+    Only that one shadda goes: any later shadda is real gemination
+    (al-dammah keeps the doubled mim, al-tilawah loses the doubled ta).
+    """
+    chars = list(word)
+    i = 0
+    seen = 0
+    while i < len(chars) and seen < 2:
+        if chars[i] in ("ا", "ل"):
+            seen += 1
+        i += 1
+    rest = chars[i:]
+    # Marks attached to the sun letter follow it directly; drop one shadda there.
+    j = 1
+    while j < len(rest) and rest[j] in HARAKAT:
+        if rest[j] == SHADDA:
+            del rest[j]
+            break
+        j += 1
+    return "".join(rest)
+
+
+def code_spelling(phrase, keep_leading_article=False):
     """Canonical Code Spelling of a full term, joined with underscores.
 
-    The definite article is always rendered `al`, never assimilated to a sun
-    letter, so that one convention holds across every term (section 8).
+    A medial article is always rendered `al`, never assimilated to a sun letter,
+    so that one convention holds across every term (section 8). A *leading*
+    article is dropped: the term is `fathah`, not `al_fathah`.
     """
     words = [w for w in _strip(phrase).split() if w]
-    parts = []
-    for w in words:
+
+    def has_article(w):
         bare = "".join(c for c in w if c not in HARAKAT and c != DAGGER_ALIF)
-        if bare.startswith("ال") and len(bare) > 2:
-            rest = w
-            # Drop the article's alif-lam and any shadda on the sun letter.
-            seen = 0
-            out_chars = []
-            for ch in w:
-                if seen < 2 and ch in ("ا", "ل"):
-                    seen += 1
-                    continue
-                if seen == 2 and ch in (SHADDA, SUKUN):
-                    continue
-                if seen == 2:
-                    out_chars.append(ch)
-                elif seen < 2:
-                    continue
-            rest = "".join(out_chars)
-            if parts:
+        return bare.startswith("ال") and len(bare) > 2
+
+    parts = []
+    for idx, w in enumerate(words):
+        # A definite first word makes a following definite word its adjective,
+        # and an adjective's article is not part of the name: waqf_lazim.
+        # An indefinite first word makes the pair a construct, whose article
+        # is kept: rub_al_hizb.
+        adjective = idx > 0 and has_article(w) and has_article(words[0])
+        construct = idx < len(words) - 1 and not adjective
+        bare = "".join(c for c in w if c not in HARAKAT and c != DAGGER_ALIF)
+        if has_article(w):
+            rest = _drop_article(w)
+            if (parts and not adjective) or (not parts and keep_leading_article):
                 parts.append("al")
-                parts.append(transliterate_word(rest))
-            else:
-                parts.append("al")
-                parts.append(transliterate_word(rest))
+            parts.append(transliterate_word(rest, construct))
         else:
-            parts.append(transliterate_word(w))
+            parts.append(transliterate_word(w, construct))
     return "_".join(p for p in parts if p)
 
 

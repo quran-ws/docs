@@ -199,6 +199,18 @@ Riwayah   وليس Riwaya
 
 وتسجل الصور الأخرى كتهجئات بديلة.
 
+## التاء المربوطة في الإضافة
+
+التاء المربوطة تنطق تاءً إذا كانت الكلمة مضافة إلى ما بعدها، فتكتب `t` لا `h`:
+
+```text
+همزة الوصل    → hamzat_al_wasl     لا hamzah_al_wasl
+علامة التحزيب → alamat_al_tahzib   لا alamah_al_tahzib
+سجدة التلاوة  → sajdat_al_tilawah  لا sajdah_al_tilawah
+```
+
+والقاعدة آلية: التاء المربوطة في آخر الاسم تعطي `h`، وفي غير آخره تعطي `t`.
+
 ---
 
 # 6. حروف المد
@@ -244,6 +256,16 @@ Tadweer
 ```
 
 هذه الصور ليست بالضرورة خاطئة في الاستخدام العام، لكنها ليست الـCanonical spelling في هذا المعيار.
+
+## ياء النسب
+
+الياء المشددة في آخر الاسم المنسوب تعطي `i` واحدة:
+
+```text
+مكي     → Makki      لا Makkiyy
+مدني    → Madani     لا Madaniyy
+عثماني  → Uthmani    لا Uthmaniyy
+```
 
 ---
 
@@ -293,6 +315,34 @@ asbab_al_nuzul
 sujud_al_tilawah
 ```
 
+## متى تحذف `al`؟
+
+`al` جزء من الاسم في الإضافة فقط، وتحذف في حالتين:
+
+**أداة التعريف في أول الاسم** لا تدخل في الاسم البرمجي:
+
+```text
+الفتحة   → fathah      لا al_fathah
+السكون   → sukun       لا al_sukun
+```
+
+**أداة التعريف في الصفة** لا تدخل كذلك؛ فإذا كان الموصوف معرفًا والصفة معرفة
+فهما اسم واحد لا إضافة:
+
+```text
+الوقف اللازم     → waqf_lazim      لا waqf_al_lazim
+الصفر المستدير   → sifr_mustadir   لا sifr_al_mustadir
+الواو الصغيرة    → waw_saghirah    لا waw_al_saghirah
+```
+
+والفرق آلي: إذا كان الاسم الأول معرفًا بـ`ال` فما بعده صفة تحذف أداتها،
+وإذا كان نكرة فما بعده مضاف إليه تثبت فيه `al`:
+
+```text
+رُبْع الحِزْب      → rub_al_hizb   (الأول نكرة، فهي إضافة)
+الوَقْف اللَّازِم   → waqf_lazim    (الأول معرفة، فهي صفة)
+```
+
 ---
 
 # 9. Code Name وDisplay Name
@@ -308,6 +358,44 @@ Arabic:   قراءة
 ```
 
 الـCanonical Code Spelling يجب أن يبقى مستقرًا، بينما يمكن أن تختلف طريقة العرض بحسب اللغة والجمهور والسياق.
+
+## الاسم ومن يسميه
+
+للمفهوم الواحد أكثر من اسم، ولكل اسم جهة تسميه، والاسم بلا جهته ناقص.
+فتسجل الأسماء منسوبة إلى جهاتها لا في قائمة واحدة:
+
+```yaml
+names:
+  code:                waqf_lazim
+  display:             Waqf Lazim
+  arabic:              الوَقْف اللَّازِم
+  dabt:                المِيم — عَلَامَة الوَقْف اللَّازِم
+  by_shape:            مِيم
+  mushaf_introduction: عَلَامَة الوَقْف اللَّازِم
+  unicode:             ARABIC SMALL HIGH MEEM INITIAL FORM
+```
+
+- `dabt` الاسم الاصطلاحي في علم الضبط.
+- `by_shape` الاسم بحسب صورة الرسم.
+- `mushaf_introduction` الاسم كما ورد في مقدمة المصحف نفسه؛ وخلوه يعني أن
+  المقدمة لم تفرده باسم، وهذا خبر عن المصدر لا نقص في المدخل.
+- `unicode` اسم المحرف في يونيكود.
+
+## لماذا لا نأخذ اسم يونيكود اسمًا برمجيًا؟
+
+اسم يونيكود يصف **الصورة** لا **الوظيفة**، والوظيفة هي ما يتفرع عليه البرنامج:
+
+```text
+U+06D8  ARABIC SMALL HIGH MEEM INITIAL FORM   ولا ذكر فيه للوقف اللازم
+U+06D6  ...LIGATURE SAD WITH LAM WITH ALEF     ولا ذكر فيه لأولوية الوصل
+```
+
+ولأن المحرف الواحد قد يخدم علامتين، فاسم يونيكود لا يستطيع أصلًا التمييز
+بينهما. وأسماء يونيكود ثابتة لا تصحح ولو ثبت خطؤها، وفيها من اضطراب النقل
+ما يعتمده المعيار قاعدةً واحدة (`FATHA` بلا هاء و`MADDAH` بها).
+
+فيسجل اسم يونيكود جهةً من جهات التسمية، ويبقى الاسم البرمجي مشتقًا من
+الاسم الاصطلاحي بقواعد الأقسام 4 إلى 8.
 
 ---
 
@@ -387,35 +475,41 @@ ahzab
 
 ليست كل المصطلحات من النوع نفسه.
 
-يجب تحديد طبيعة كل Entry، مثل:
+يحدد لكل Entry دوره البنيوي، من قائمة **مغلقة** لا يزاد عليها:
 
 ```text
-entity
-concept
-property
-classification
-classification_value
-role
-discipline
-process
-content
-analysis
-mark
-text_unit
-layout_unit
+entity                 كيان له هوية مستقلة
+concept                مفهوم يمثل ولا يخزن ككيان
+classification         تصنيف له قيم
+classification_value   قيمة من قيم تصنيف
+property               خاصية لكيان
+role                   دور يقوم به شخص
+process                عملية تجرى على النص
+content                محتوى مرتبط بالنص
+analysis               تحليل مشتق من النص
+mark                   علامة مرسومة في المصحف
+unit                   وحدة نصية أو كتابية أو طباعية
 ```
+
+الـ`kind` يصف **شكل** الـEntry لا مجاله؛ فالمجال يحمله `category` وحده.
+ولذلك لا تنشأ أنواع مثل `textual_concept` أو `recitation_concept` أو
+`typographic_unit`: هذه كلها `concept` أو `unit` تختلف في `category` لا في `kind`.
+
+ولكل Entry `kind` واحد فقط.
 
 مثلًا:
 
 ```text
 Ayah                       → entity
-Tajwid                     → discipline
+Tajwid                     → concept
 Translation                → content
 Reciter                    → role
 Revelation Order           → property
 Revelation Classification  → classification
 Makki                      → classification_value
 Waqf Mark                  → mark
+Glyph                      → unit
+Irab                       → analysis
 ```
 
 لا تعامل كل هذه الأشياء كقائمة مسطحة من "مصطلحات".
@@ -494,6 +588,20 @@ parent: recitation_style
 الهدف أن يعرف المطور ليس فقط معنى `Makki`، بل أيضًا:
 
 > Makki هو نوع من ماذا؟
+
+## اسم القيمة يشتق من اسم الأب
+
+اسم القيمة = اسم الأب + الكلمات المميزة لها، وتحذف حروف الربط والتوكيد
+(`مع`، `كون`، `جوازًا`، `بحيث`) لأنها لا تميز شيئًا:
+
+```text
+علامة الوقف الجائز مع كون الوصل أولى  → waqf_jaiz_wasl_awla
+علامة الوقف الجائز مع كون الوقف أولى  → waqf_jaiz_waqf_awla
+علامة الوقف اللازم                    → waqf_lazim
+```
+
+ولا يكرر اسم الأب حيث لا يضيف تمييزًا؛ فقيم `revelation_classification`
+تبقى `makki` و`madani`، لا `revelation_classification_makki`.
 
 ---
 
@@ -596,6 +704,39 @@ Sujud al-Tilawah ≠ Sajdah Mark
 # 18. المفاهيم المتشابهة تبقى منفصلة
 
 لا ندمج مفهومين لأن ترجمتهما متشابهة.
+
+## العلامة وما تدل عليه
+
+العلامة المرسومة في المصحف مفهوم مستقل عما تدل عليه:
+
+```text
+alamat_al_sakt     العلامة المرسومة       mark
+saktah             السكتة نفسها           concept
+
+sajdah_mark        علامة موضع السجدة      mark
+sujud_al_tilawah   السجود نفسه            concept
+```
+
+## هوية العلامة ليست هي المحرف
+
+لا يصلح الـcodepoint معرفًا للعلامة، لسببين ثابتين في يونيكود:
+
+**محرف واحد يخدم علامتين**، فتتحدد العلامة بالمحرف مع موضعه:
+
+```text
+U+06DC   ARABIC SMALL HIGH SEEN   →  alamat_al_sakt  أو  sin_al_qiraah
+U+06EC   ROUNDED HIGH STOP        →  al_ishmam       أو  al_tashil
+```
+
+**وعلامة واحدة لها أكثر من محرف**:
+
+```text
+السكون        U+0652   و U+06E1
+تنوين الفتح   U+064B   و U+08F0
+المدة         U+0653   و U+06E4
+```
+
+فالـcodepoint خاصية من خصائص العلامة، لا مفتاحها.
 
 ## النص
 
@@ -903,27 +1044,31 @@ is_included
 
 ينظم القاموس حسب domains واضحة، وليس في قائمة واحدة مسطحة.
 
-النسخة الأولية المقترحة:
+المجالات المعتمدة، وهي نفسها أقسام القاموس، فلا تكون قائمتان مختلفتان:
 
 ```text
-Core
-Structure
-Text
-Mushaf
-Qiraat
-Recitation
-Tajwid
-Waqf
-Revelation
-Linguistics
-Translation
-Tafsir
-Typography
-Audio
-Metadata
+core                  القرآن والمصحف
+structure             السورة والآية والكلمة
+text                  وحدات النص وتمثيله الرقمي
+divisions             الجزء والحزب والربع
+surah_classification  الطوال والمئون والمثاني والمفصل
+mushaf                الطبعة والتخطيط والصفحة والرسم
+dabt                  الضبط: الحركات والتنوين والعلامات
+mushaf_marks          علامات المصحف
+ayah_numbering        أنظمة عد الآي
+revelation            النزول وترتيبه وتصنيفه
+qiraat                القراءات والروايات والطرق
+recitation            التلاوة والقراء
+recitation_pace       التحقيق والتدوير والحدر
+recitation_style      المرتل والمجود والمعلم
+tajwid                أحكام التجويد
+waqf                  الوقف وأحكامه
+linguistics           الجذر واللمة والصرف والإعراب
+translation           الترجمة
+tafsir                التفسير
 ```
 
-يمكن إضافة أو تقسيم المجالات عندما تظهر حاجة حقيقية لذلك.
+ولا يضاف مجال قبل أن توجد مفاهيم تسكنه؛ فالمجال الفارغ يوهم بتغطية لا وجود لها.
 
 ---
 
@@ -978,7 +1123,7 @@ Package: quran_section
 
 # 27. بنية Entry في القاموس
 
-القاموس الناتج عن هذا المعيار يستخدم بنية موحدة.
+القاموس الناتج عن هذا المعيار يستخدم بنية موحدة، ملفًا لكل مفهوم.
 
 الحد الأدنى:
 
@@ -986,9 +1131,13 @@ Package: quran_section
 concept:
 kind:
 category:
+origin:
+tier:
+status:
 
-canonical:
-arabic:
+names:
+  code:
+  display:
 
 definition:
 purpose:
@@ -997,54 +1146,82 @@ purpose:
 وتضاف عند الحاجة:
 
 ```yaml
-parent:
-
+parent:          # لازم إذا كان kind قيمة تصنيف
 plural:
-code:
 symbol:
 
+names:
+  arabic:
+  dabt:
+  by_shape:
+  mushaf_introduction:
+  unicode:
+
+unicode:         # مولد من قاعدة يونيكود، لا يكتب باليد
 alternative_spellings:
 english_glosses:
 deprecated:
-
+boundaries:
 related:
 sources:
 ```
 
+- `origin` مصدر الاسم: `quranic` مصطلح قرآني أو شرعي متخصص، و`borrowed`
+  مصطلح عام تعريفه مستقر عند غيرنا، و`standard` مفهوم يحدده هذا المعيار
+  للنمذجة ولا نظير تراثي له.
+- `tier` مرتبته: `core` لما تخزنه التطبيقات فعلًا، و`extended` لما هو ثابت
+  لكنه نادر النمذجة أو مختلف في حدوده.
+- `status` حاله: `draft` ثم `proposed` ثم `adopted`. ولا يوسم بـ`adopted`
+  مدخل بلا مصدر.
+- `arabic` لازم لكل مدخل `origin: quranic`؛ ولا يلزم في المصطلح المستعار
+  إلا أن يكون له اسم عربي مستقر، فلا يولد المعيار مصطلحات عربية جديدة عرضًا.
+
 مثال:
 
 ```yaml
-concept: ayah
-kind: entity
-category: structure
+concept: waqf_lazim
+kind: classification_value
+category: waqf
+parent: waqf_mark_type
+origin: quranic
+tier: core
+status: draft
 
-canonical: ayah
-plural: ayahs
+names:
+  code: waqf_lazim
+  display: Waqf Lazim
+  arabic: الوَقْف اللَّازِم
+  dabt: المِيم — عَلَامَة الوَقْف اللَّازِم
+  by_shape: مِيم
+  mushaf_introduction: عَلَامَة الوَقْف اللَّازِم
+  unicode: ARABIC SMALL HIGH MEEM INITIAL FORM
 
-arabic:
-  singular: آية
-  plural: آيات
+symbol: ۘ
+
+unicode:
+  - cp: "U+06D8"
+    name: ARABIC SMALL HIGH MEEM INITIAL FORM
+    category: Mn
+    combining_class: 230
+    block: Arabic
+  chart: https://unicode.org/charts/PDF/U0600.pdf
 
 definition: >
-  وحدة من النص القرآني تقع ضمن سورة ولها حدود محددة،
-  وقد يختلف رقمها أو بعض حدودها باختلاف نظام عد الآي.
+  علامة تدل على لزوم الوقف في موضعها، لأن وصل ما بعدها بما قبلها
+  يوهم خلاف المعنى المراد.
 
 purpose: >
-  تستخدم كوحدة أساسية للإشارة إلى النص القرآني وربط
-  الترجمات والتفاسير والتلاوات والتحليلات والبيانات
-  الأخرى بموضع محدد من القرآن.
-
-alternative_spellings:
-  - aya
-
-english_glosses:
-  - verse
+  تستخدم قيمةً من قيم نوع علامة الوقف، ليتفرع عليها العرض والتلقين
+  والتنبيه في التطبيقات بدل قراءة صورة الرمز.
 
 related:
-  - surah
-  - ayah_numbering_system
+  - waqf
+  - waqf_mark
 
-sources: []
+sources:
+  - id: quranpedia_tajweed
+    ref: "122"
+    url: https://tajweed.quranpedia.net/term/show/122
 ```
 
 ---
@@ -1072,14 +1249,22 @@ Verse
 يجب الفصل بين:
 
 ```text
-Domain fact
+Domain fact          ما يثبته المصدر
+Standard convention  ما يقرره هذا المعيار
 ```
 
-و:
+## المصادر المعتمدة
 
 ```text
-Standard convention
+qattan_mabahith      مباحث في علوم القرآن — مناع القطان
+quranpedia_tajweed   معجم مصطلحات التجويد — 136 مصطلحًا
+jamharah_dictionary  معجم المصطلحات الشرعية — الجمهرة
 ```
+
+وتسجل في `standards/terminology/sources.yml` بصيغة الإحالة الخاصة بكل مصدر:
+الصفحة في الكتاب، ورقم المصطلح في المعجم.
+
+ولا يوسم مدخل بـ`adopted` وهو بلا مصدر يثبت تعريفه.
 
 ---
 
