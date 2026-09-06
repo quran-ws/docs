@@ -244,16 +244,16 @@ sidebar:
 
 **الغرض:** يستخدم في التطبيقات التي تدعم نظام المنازل وخطط القراءة المبنية عليه.
 
-### Rub al-Hizb — ربع الحزب
+### Rubu al-Hizb — ربع الحزب
 
 | | |
 | --- | --- |
-| `code` | `rub_al_hizb` |
-| `plural` | `rub_al_hizbs` |
+| `code` | `rubu_al_hizb` |
+| `plural` | `rubu_al_hizbs` |
 | `kind` | `entity` |
 | `parent` | `hizb` |
 | بالحركات | رُبْع الحِزْب |
-| تهجئات أخرى | `rub'_al-hizb`، `rub_el_hizb` |
+| تهجئات أخرى | `rub_al_hizb`، `rub'_al-hizb`، `rub_el_hizb` |
 
 **التعريف:** ربع الحزب في التقسيم المشهور للمصحف.
 
@@ -331,14 +331,15 @@ sidebar:
 
 **الغرض:** تستخدم لتصنيف سور المفصل وربط البيانات والخطط المتعلقة بها.
 
-### Sabe al-Tiwal — السبع الطوال
+### Saba Tiwal — السبع الطوال
 
 | | |
 | --- | --- |
-| `code` | `sab_tiwal` |
+| `code` | `saba_tiwal` |
 | `kind` | `classification_value` |
 | `parent` | `surah_group` |
 | بالحركات | السَّبْع الطِّوَال |
+| تهجئات أخرى | `sab_tiwal` |
 | مقابل إنجليزي | `Seven Long Surahs` |
 
 **التعريف:** مجموعة من أطول سور القرآن في أوله، مع خلاف معروف في تعيين السورة السابعة.
@@ -835,11 +836,11 @@ sidebar:
 
 **الغرض:** Marks the an tanwin. Stacked marks signal izhar; staggered marks with a shadda on the next letter signal complete idgham, and without one, incomplete idgham or ikhfa.
 
-### Tanwin al-Raf — تَنْوِين الرَّفْع
+### Tanwin al-Rafa — تَنْوِين الرَّفْع
 
 | | |
 | --- | --- |
-| `code` | `tanwin_al_raf` |
+| `code` | `tanwin_al_rafa` |
 | `kind` | `mark` |
 | `parent` | `mushaf_mark` |
 | بالحركات | تَنْوِين الرَّفْع |

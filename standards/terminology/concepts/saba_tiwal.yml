@@ -1,7 +1,7 @@
-concept: sab_tiwal
+concept: saba_tiwal
 names:
-  code: sab_tiwal
-  display: Sabe al-Tiwal
+  code: saba_tiwal
+  display: Saba Tiwal
   arabic:
     vocalized: السَّبْع الطِّوَال
     singular: السبع الطوال
@@ -16,3 +16,5 @@ purpose: تستخدم لتصنيف السور وفق التقسيم التراث
 english_glosses:
 - Seven Long Surahs
 sources: []
+alternative_spellings:
+- sab_tiwal

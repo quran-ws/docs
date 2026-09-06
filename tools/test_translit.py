@@ -19,6 +19,15 @@ CASES = [
     ("تَدْوِير", "tadwir"), ("مِيزَان", "mizan"),
     # section 7 — hamza and ayn carry no letter, but keep their vowel
     ("إِعْرَاب", "irab"), ("رُكُوع", "ruku"), ("جُزْء", "juz"),
+    # A word-final ayn or hamzah echoes the vowel before it, so the word does
+    # not end short. After a vowel there is nothing to echo and it stays.
+    ("رُبْع", "rubu"), ("جَمْع", "jama"), ("قَطْع", "qata"), ("الشَّفْع", "shafa"),
+    ("الرَّفْع", "rafa"), ("البَدْء", "bada"), ("السَّبْع", "saba"),
+    ("المَمْنُوع", "mamnu"), ("المُقَطَّع", "muqatta"), ("مَوْضِع", "mawdi"),
+    ("الدُّعَاء", "dua"), ("الإِمْلَاء", "imla"),
+    ("مَقْطَع", "maqta"),
+    # Medial ayn and hamzah are unaffected.
+    ("مُعَلِّم", "muallim"), ("قِرَاءَة", "qiraah"),
     ("مُقْرِئ", "muqri"), ("مُعَلِّم", "muallim"), ("عُثْمَانِيّ", "uthmani"),
     # shadda doubles the consonant, in either mark order
     ("مُجَوَّد", "mujawwad"), ("مُرَتَّل", "murattal"), ("مُفَصَّل", "mufassal"),
@@ -44,14 +53,14 @@ CASES = [
     ("مَكِّيّ", "makki"),
     ("الحَرْف المُقَطَّع", "harf_muqatta"),
     # section 8 — the article is always al, never assimilated to a sun letter
-    ("رُبْع الحِزْب", "rub_al_hizb"),
+    ("رُبْع الحِزْب", "rubu_al_hizb"),
     ("سُجُود التِّلَاوَة", "sujud_al_tilawah"),
     ("أَسْبَاب النُّزُول", "asbab_al_nuzul"),
     ("وَقْف المُعَانَقَة", "waqf_al_muanaqah"),
 ]
 
 DISPLAY_CASES = [
-    ("رُبْع الحِزْب", "Rub al-Hizb"),
+    ("رُبْع الحِزْب", "Rubu al-Hizb"),
     ("سُجُود التِّلَاوَة", "Sujud al-Tilawah"),
     ("أَسْبَاب النُّزُول", "Asbab al-Nuzul"),
     ("تَجْوِيد", "Tajwid"),

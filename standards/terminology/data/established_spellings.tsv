@@ -1,0 +1,9 @@
+# Terms whose code spelling is established by use, not derived.
+#
+# The derivation in tools/translit.py decides every other term. A row here
+# overrides it, and is only accepted with a measurement showing the established
+# form dominates. Taste is not evidence. Measure with tools/measure_display.py.
+#
+# arabic	code	evidence
+الجزء	juz	GitHub phrase search: "juz number" 1384 vs "juzu number" 1
+جزء	juz	same term without the article

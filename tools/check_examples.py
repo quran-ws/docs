@@ -29,6 +29,8 @@ COUNTER_EXAMPLES = {
 }
 # Vocabulary of the standard itself: field names, kinds, categories, source ids.
 SCHEMA_WORDS = {
+    # data files referred to by name in the prose
+    "established_spellings", "letter_names", "dabt_marks",
     "display_evidence", "alternative_spellings", "english_glosses", "by_shape",
     "mushaf_introduction", "combining_class", "do_not_confuse_with", "arabic_status",
     "classification_value", "text_unit", "layout_unit", "word_root",

@@ -30,6 +30,12 @@ CONSONANTS = {
 SILENT = set("ءأإؤئع")
 ALIFS = set("اآى")
 VOWEL_OF = {FATHA: "a", KASRA: "i", DAMMA: "u", FATHATAN: "a", KASRATAN: "i", DAMMATAN: "u"}
+VOWELS = set("aiu")
+
+
+def _is_word_final(text, i):
+    """True when nothing but vowel marks follows the letter at i."""
+    return all(c in HARAKAT or c == DAGGER_ALIF for c in text[i + 1:])
 
 
 def _load_letter_names():
@@ -54,7 +60,28 @@ def _load_letter_names():
     return names
 
 
+def _load_established():
+    """Terms whose spelling is fixed by overwhelming use, not by derivation.
+
+    `juz` is written that way in effectively every Quranic codebase, so
+    deriving `juzu` would be correct and useless. Each row carries the
+    measurement that justifies it, so the table cannot grow by taste.
+    """
+    path = _os.path.join(_os.path.dirname(_os.path.dirname(_os.path.abspath(__file__))),
+                         "standards/terminology/data/established_spellings.tsv")
+    names = {}
+    if not _os.path.exists(path):
+        return names
+    with open(path, encoding="utf-8") as fh:
+        for row in _csv.reader(fh, delimiter="\t"):
+            if not row or row[0].startswith("#") or len(row) < 2:
+                continue
+            names["".join(c for c in row[0] if c not in HARAKAT and c != DAGGER_ALIF)] = row[1]
+    return names
+
+
 LETTER_NAMES = None
+ESTABLISHED = None
 
 
 def letter_name(word):
@@ -64,6 +91,15 @@ def letter_name(word):
         LETTER_NAMES = _load_letter_names()
     bare = "".join(c for c in _strip(word) if c not in HARAKAT and c != DAGGER_ALIF)
     return LETTER_NAMES.get(bare)
+
+
+def established_name(word):
+    """The established code spelling of a whole word, or None."""
+    global ESTABLISHED
+    if ESTABLISHED is None:
+        ESTABLISHED = _load_established()
+    bare = "".join(c for c in _strip(word) if c not in HARAKAT and c != DAGGER_ALIF)
+    return ESTABLISHED.get(bare)
 
 
 def _strip(text):
@@ -147,6 +183,14 @@ def transliterate_word(word, construct=False):
             v = _harakah(text, i)
             if v and v != SUKUN and v not in TANWIN:
                 out.append(VOWEL_OF[v])
+            elif _is_word_final(text, i) and out and out[-1] not in VOWELS:
+                # At the end of a word the letter would otherwise vanish and cut
+                # the word short: rub, saba. Echo the vowel before it so the
+                # word still ends where Arabic ends it (section 7).
+                for prev in reversed(out):
+                    if prev in VOWELS:
+                        out.append(prev)
+                        break
             i += 1
             continue
 
@@ -229,11 +273,13 @@ def code_spelling(phrase, keep_leading_article=False):
         # A definite first word makes a following definite word its adjective,
         # and an adjective's article is not part of the name: waqf_lazim.
         # An indefinite first word makes the pair a construct, whose article
-        # is kept: rub_al_hizb.
+        # is kept: rubu_al_hizb.
         adjective = idx > 0 and has_article(w) and has_article(words[0])
         construct = idx < len(words) - 1 and not adjective
         bare = "".join(c for c in w if c not in HARAKAT and c != DAGGER_ALIF)
-        established = letter_name(w) or (letter_name(_drop_article(w)) if has_article(w) else None)
+        established = (established_name(w) or letter_name(w)
+                       or ((established_name(_drop_article(w)) or letter_name(_drop_article(w)))
+                           if has_article(w) else None))
         if established:
             if has_article(w) and (parts or keep_leading_article) and not adjective:
                 parts.append("al")
