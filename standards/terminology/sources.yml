@@ -1,0 +1,34 @@
+# Sources cited by dictionary entries (§28).
+#
+# A source documents the concept and its definition — it does not endorse the
+# choice of code name. That choice is this standard's own convention.
+
+qattan_mabahith:
+  title: مباحث في علوم القرآن
+  author: مناع القطان
+  kind: book
+  url: https://files.turath.io/books-v3/11368.json
+  note: >
+    Reference for ulum al-Quran concepts: nuzul, Makki and Madani, asbab
+    al-nuzul, rasm, the qiraat, and ayah numbering. Cite with `ref` as a page.
+
+quranpedia_tajweed:
+  title: معجم مصطلحات التجويد
+  publisher: موسوعة التجويد — quranpedia
+  kind: dictionary
+  url: https://tajweed.quranpedia.net/terms
+  entries: 136
+  note: >
+    Definitions of tajwid, waqf and recitation-pace terms, documented from
+    primary works. Cite with `ref` as the term id, and `url` as its page,
+    e.g. https://tajweed.quranpedia.net/term/show/122
+
+jamharah_dictionary:
+  title: معجم المصطلحات الشرعية — الجمهرة
+  publisher: islamic-content.com
+  kind: dictionary
+  url: https://islamic-content.com/dictionary
+  note: >
+    1,238 entries under Quranic sciences, plus hadith, aqidah and fiqh.
+    Cite with `url` as the term page, e.g.
+    https://islamic-content.com/dictionary/term/1063

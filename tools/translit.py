@@ -1,0 +1,201 @@
+"""Canonical Code Spelling — deterministic Arabic to ASCII.
+
+Implements sections 4 to 8 of the Quranic Software Terminology Standard as a
+function, so that the code spelling of a term is derived rather than chosen.
+
+Input must be vocalized: short vowels cannot be recovered from unvocalized
+Arabic, and guessing them is exactly the opinion this is meant to remove.
+"""
+
+FATHA, KASRA, DAMMA, SUKUN, SHADDA = "َ", "ِ", "ُ", "ْ", "ّ"
+FATHATAN, KASRATAN, DAMMATAN = "ً", "ٍ", "ٌ"
+TANWIN = {FATHATAN, KASRATAN, DAMMATAN}
+HARAKAT = {FATHA, KASRA, DAMMA, SUKUN, SHADDA} | TANWIN
+DAGGER_ALIF, MADDA, SUPERSCRIPTS = "ٰ", "ٓ", "ۖۗۘۙۚۛۜ"
+
+# Consonants. Emphatic and non-emphatic pairs collapse: the target is an
+# ASCII-friendly identifier, not a reversible academic transliteration (section 4).
+CONSONANTS = {
+    "ب": "b", "ت": "t", "ث": "th", "ج": "j", "ح": "h",
+    "خ": "kh", "د": "d", "ذ": "dh", "ر": "r", "ز": "z",
+    "س": "s", "ش": "sh", "ص": "s", "ض": "d", "ط": "t",
+    "ظ": "z", "غ": "gh", "ف": "f", "ق": "q", "ك": "k",
+    "ل": "l", "م": "m", "ن": "n", "ه": "h", "و": "w",
+    "ي": "y", "ة": "h",
+}
+# Hamza in every seat, and ayn, carry no letter of their own (section 7).
+SILENT = set("ءأإؤئع")
+ALIFS = set("اآى")
+VOWEL_OF = {FATHA: "a", KASRA: "i", DAMMA: "u", FATHATAN: "a", KASRATAN: "i", DAMMATAN: "u"}
+
+
+def _strip(text):
+    out = []
+    for ch in text:
+        if ch in SUPERSCRIPTS or ch == MADDA:
+            continue
+        out.append(ch)
+    return "".join(out)
+
+
+def _harakah(text, i):
+    """The vowel mark attached to the letter at i, skipping shadda."""
+    j = i + 1
+    while j < len(text) and text[j] == SHADDA:
+        j += 1
+    return text[j] if j < len(text) and text[j] in HARAKAT else None
+
+
+def _shadda(text, i):
+    """Shadda may be written before or after the vowel mark; accept either."""
+    j = i + 1
+    while j < len(text) and text[j] in HARAKAT:
+        if text[j] == SHADDA:
+            return True
+        j += 1
+    return False
+
+
+def transliterate_word(word):
+    text = _strip(word)
+    out = []
+    i = 0
+    n = len(text)
+
+    # A word-initial alif carries no consonant of its own; its vowel opens the
+    # word. Alif al-wasl is ambiguous unvocalized (istiadhah, not astiadhah),
+    # so an unmarked initial alif is refused rather than guessed.
+    if n and text[0] in ALIFS:
+        v = _harakah(text, 0)
+        if text[0] == "آ":
+            out.append("a")
+        elif v and v != SUKUN:
+            out.append(VOWEL_OF[v])
+        else:
+            raise ValueError(
+                f"unvocalized initial alif in {word!r}: mark it (\u0627\u0650 / \u0627\u064e / \u0627\u064f)"
+            )
+        i = 1
+
+    while i < n:
+        ch = text[i]
+
+        if ch in HARAKAT or ch == DAGGER_ALIF:
+            i += 1
+            continue
+
+        # Nisba ending: a final doubled ya reduces to i (makki, not makkiyy).
+        if ch == "ي" and _shadda(text, i) and i + 2 >= n - 1:
+            rest = text[i + 2:].replace(SUKUN, "").replace(FATHA, "")
+            if all(c in HARAKAT for c in rest):
+                if not (out and out[-1] == "i"):
+                    out.append("i")
+                break
+
+        if ch in SILENT:
+            # Hamza and ayn carry no letter, but the vowel they carry survives:
+            # muallim, not mullim.
+            v = _harakah(text, i)
+            if v and v != SUKUN and v not in TANWIN:
+                out.append(VOWEL_OF[v])
+            i += 1
+            continue
+
+        if ch in ALIFS:
+            # An alif after a fatha is that fatha lengthened, not a second a.
+            if not (out and out[-1] == "a"):
+                out.append("a")
+            i += 1
+            continue
+
+        if ch in ("و", "ي"):
+            prev = out[-1] if out else ""
+            v = _harakah(text, i)
+            long_vowel = {"و": ("u", "u"), "ي": ("i", "i")}[ch]
+            # A waw or ya with no vowel of its own, after its matching short
+            # vowel, is a long vowel and is never doubled in ASCII (section 6).
+            if (v is None or v == SUKUN) and prev == long_vowel[0]:
+                i += 1
+                continue
+            letter = CONSONANTS[ch]
+            out.append(letter * (2 if _shadda(text, i) else 1))
+            if v and v != SUKUN:
+                out.append(VOWEL_OF[v])
+            i += 1
+            continue
+
+        if ch in CONSONANTS:
+            letter = CONSONANTS[ch]
+            out.append(letter * (2 if _shadda(text, i) else 1))
+            v = _harakah(text, i)
+            if v and v != SUKUN and v not in TANWIN:
+                out.append(VOWEL_OF[v])
+            i += 1
+            continue
+
+        i += 1
+
+    return "".join(out)
+
+
+def code_spelling(phrase):
+    """Canonical Code Spelling of a full term, joined with underscores.
+
+    The definite article is always rendered `al`, never assimilated to a sun
+    letter, so that one convention holds across every term (section 8).
+    """
+    words = [w for w in _strip(phrase).split() if w]
+    parts = []
+    for w in words:
+        bare = "".join(c for c in w if c not in HARAKAT and c != DAGGER_ALIF)
+        if bare.startswith("ال") and len(bare) > 2:
+            rest = w
+            # Drop the article's alif-lam and any shadda on the sun letter.
+            seen = 0
+            out_chars = []
+            for ch in w:
+                if seen < 2 and ch in ("ا", "ل"):
+                    seen += 1
+                    continue
+                if seen == 2 and ch in (SHADDA, SUKUN):
+                    continue
+                if seen == 2:
+                    out_chars.append(ch)
+                elif seen < 2:
+                    continue
+            rest = "".join(out_chars)
+            if parts:
+                parts.append("al")
+                parts.append(transliterate_word(rest))
+            else:
+                parts.append("al")
+                parts.append(transliterate_word(rest))
+        else:
+            parts.append(transliterate_word(w))
+    return "_".join(p for p in parts if p)
+
+
+def display_spelling(phrase):
+    """Display form: title case, with the article hyphenated as `al-`."""
+    parts = code_spelling(phrase).split("_")
+    out = []
+    for p in parts:
+        if p == "al" and out:
+            out.append("al-")
+        else:
+            out.append(p.capitalize() if not (out and out[-1] == "al-") else p)
+    joined = ""
+    for p in out:
+        if p == "al-":
+            joined += " al-"
+        elif joined.endswith("al-"):
+            joined += p.capitalize()
+        else:
+            joined += (" " if joined else "") + p
+    return joined.strip()
+
+
+if __name__ == "__main__":
+    import sys
+    for arg in sys.argv[1:]:
+        print(f"{arg}\t{code_spelling(arg)}\t{display_spelling(arg)}")

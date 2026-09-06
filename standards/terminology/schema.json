@@ -2,63 +2,101 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://quran.ws/standards/terminology/schema.json",
   "title": "Quranic Software Terminology Standard — dictionary entry",
-  "description": "Entry shape defined in section 27 of the standard. Required fields are the minimum an entry must answer before it is accepted (section 30).",
   "type": "object",
-  "required": ["concept", "kind", "category", "canonical", "arabic", "definition", "purpose"],
+  "required": ["concept", "code", "display", "kind", "category", "origin", "tier", "status", "definition", "purpose"],
   "additionalProperties": false,
   "properties": {
-    "concept": { "type": "string", "pattern": "^[a-z][a-z0-9_]*$" },
+    "concept": {
+      "type": "string", "pattern": "^[a-z][a-z0-9_]*$",
+      "description": "Unique key for the entry. Identical to `code`."
+    },
+    "code": {
+      "type": "string", "pattern": "^[a-z][a-z0-9_]*$",
+      "description": "The name used in code, APIs, databases and datasets. Singular. Authoritative."
+    },
+    "display": {
+      "type": "string",
+      "description": "Human-readable English form used in prose and UI. Never an identifier."
+    },
+    "plural": {
+      "type": "string", "pattern": "^[a-z][a-z0-9_]*$",
+      "description": "Code plural. English +s, never an Arabic plural (§11)."
+    },
     "kind": {
-      "enum": ["entity", "concept", "property", "classification",
-               "classification_value", "role", "discipline", "process",
-               "content", "analysis", "mark", "text_unit", "layout_unit"]
+      "description": "Structural role of the entry. Closed list — never a domain (§12).",
+      "enum": ["entity", "concept", "classification", "classification_value",
+               "property", "role", "process", "content", "analysis", "mark", "unit"]
     },
     "category": {
-      "enum": ["core", "structure", "text", "mushaf", "qiraat", "recitation",
-               "tajwid", "waqf", "revelation", "linguistics", "translation",
-               "tafsir", "typography", "audio", "metadata"]
+      "description": "Domain the entry belongs to (§25). One list, shared with the dictionary's sections.",
+      "enum": ["core", "structure", "text", "divisions", "surah_classification",
+               "mushaf", "mushaf_marks", "ayah_numbering", "revelation", "qiraat",
+               "recitation", "recitation_pace", "recitation_style", "tajwid",
+               "waqf", "linguistics", "translation", "tafsir"]
     },
     "parent": {
-      "type": "string",
-      "pattern": "^[a-z][a-z0-9_]*$",
-      "description": "Required in practice when kind is classification_value."
+      "type": "string", "pattern": "^[a-z][a-z0-9_]*$",
+      "description": "Required when kind is classification_value (§14)."
     },
-    "canonical": { "type": "string", "pattern": "^[a-z][a-z0-9_]*$" },
-    "plural": { "type": "string", "pattern": "^[a-z][a-z0-9_]*$" },
-    "code": { "type": "string" },
-    "symbol": { "type": "string" },
+    "origin": {
+      "description": "quranic: a specialized Quranic concept keeping its Arabic name. borrowed: a general technical or linguistic term with a settled definition elsewhere. standard: a concept this standard defines for software modeling with no traditional counterpart.",
+      "enum": ["quranic", "borrowed", "standard"]
+    },
+    "tier": {
+      "description": "core: concepts applications actually store. extended: real but rarely modeled, or with disputed boundaries.",
+      "enum": ["core", "extended"]
+    },
+    "status": {
+      "enum": ["draft", "proposed", "adopted", "deprecated"]
+    },
     "arabic": {
       "type": "object",
       "required": ["singular"],
       "additionalProperties": false,
       "properties": {
         "singular": { "type": "string" },
-        "plural": { "type": "string" }
+        "plural": { "type": "string", "description": "Arabic plural, for display only. Never a code plural." }
       }
     },
-    "definition": { "type": "string" },
-    "purpose": { "type": "string" },
-    "boundaries": {
-      "type": "array",
-      "items": { "type": "string" },
-      "description": "What the concept does not include (section 17)."
-    },
+    "symbol": { "type": "string", "description": "The character a mark is rendered with." },
+    "definition": { "type": "string", "description": "What is it? No implementation detail, no circularity (§15)." },
+    "purpose": { "type": "string", "description": "Why do we model it? Never a restatement of the definition (§16)." },
+    "boundaries": { "type": "array", "items": { "type": "string" }, "description": "What the concept does not include (§17)." },
     "alternative_spellings": { "type": "array", "items": { "type": "string" } },
     "english_glosses": { "type": "array", "items": { "type": "string" } },
     "deprecated": { "type": "array", "items": { "type": "string" } },
-    "incorrect": {
-      "type": "array",
-      "items": { "type": "string" },
-      "description": "Names that denote a different concept entirely (section 20)."
-    },
     "related": { "type": "array", "items": { "type": "string", "pattern": "^[a-z][a-z0-9_]*$" } },
-    "sources": { "type": "array", "items": { "type": "string" } },
+    "sources": {
+      "type": "array",
+      "description": "Citations for the concept's definition, not for the choice of code name (§28).",
+      "items": {
+        "type": "object",
+        "required": ["id"],
+        "additionalProperties": false,
+        "properties": {
+          "id": { "type": "string", "description": "Key into sources.yml." },
+          "ref": { "type": "string", "description": "Term id, page, or volume within that source." },
+          "url": { "type": "string", "format": "uri" }
+        }
+      }
+    },
     "note": { "type": "string" }
   },
   "allOf": [
     {
       "if": { "properties": { "kind": { "const": "classification_value" } }, "required": ["kind"] },
       "then": { "required": ["parent"] }
+    },
+    {
+      "if": { "properties": { "origin": { "const": "quranic" } }, "required": ["origin"] },
+      "then": { "required": ["arabic"] }
+    },
+    {
+      "if": { "properties": { "status": { "const": "adopted" } }, "required": ["status"] },
+      "then": {
+        "properties": { "sources": { "minItems": 1 } },
+        "required": ["sources"]
+      }
     }
   ]
 }
