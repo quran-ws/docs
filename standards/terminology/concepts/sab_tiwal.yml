@@ -1,0 +1,18 @@
+concept: sab_tiwal
+names:
+  code: sab_tiwal
+  display: Sabe al-Tiwal
+  arabic:
+    vocalized: السَّبْع الطِّوَال
+    singular: السبع الطوال
+kind: classification_value
+category: surah_classification
+parent: surah_group
+origin: quranic
+tier: extended
+status: draft
+definition: مجموعة من أطول سور القرآن في أوله، مع خلاف معروف في تعيين السورة السابعة.
+purpose: تستخدم لتصنيف السور وفق التقسيم التراثي.
+english_glosses:
+- Seven Long Surahs
+sources: []

@@ -1,0 +1,23 @@
+concept: mushaf
+names:
+  code: mushaf
+  display: Mushaf
+  arabic:
+    vocalized: المُصْحَف
+    singular: المصحف
+kind: entity
+category: core
+origin: quranic
+tier: core
+status: draft
+plural: mushafs
+definition: الصحف التي جمع فيها القرآن مكتوبًا ومرتبًا؛ فالمصحف وعاء مكتوب للقرآن وليس مرادفًا
+  مطلقًا للقرآن نفسه.
+purpose: يستخدم عندما تكون خصائص التمثيل المكتوب للقرآن مهمة، مثل الرسم والتخطيط والصفحات
+  والأسطر والعلامات.
+alternative_spellings:
+- mus'haf
+- muṣḥaf
+english_glosses:
+- Quran Codex
+sources: []

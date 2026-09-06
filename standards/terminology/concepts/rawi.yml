@@ -1,0 +1,19 @@
+concept: rawi
+names:
+  code: rawi
+  display: Rawi
+  arabic:
+    vocalized: الرَّاوِي
+    singular: الراوي
+kind: role
+category: qiraat
+origin: quranic
+tier: core
+status: draft
+plural: rawis
+definition: من نسبت إليه الرواية عن إمام القراءة.
+purpose: يستخدم لتمثيل الشخص المرتبط بـ`Riwayah`، ولا يستخدم للدلالة على مؤدي تسجيل صوتي لمجرد
+  أنه يقرأ القرآن.
+english_glosses:
+- Transmitter
+sources: []

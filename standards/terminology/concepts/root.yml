@@ -1,0 +1,16 @@
+concept: root
+names:
+  code: root
+  display: Root
+  arabic:
+    vocalized: الجَذْر
+    singular: الجذر
+kind: unit
+category: linguistics
+origin: borrowed
+tier: core
+status: draft
+plural: roots
+definition: الأصل الصرفي الذي ترد إليه الكلمة لبيان اشتقاقها وصلتها بالكلمات الأخرى.
+purpose: يستخدم للبحث الصرفي والتحليل اللغوي وتجميع الكلمات ذات الأصل المشترك.
+sources: []

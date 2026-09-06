@@ -47,6 +47,11 @@ DISPLAY = {
     "sin": ("Seen", "letter name; unmeasurable directly, both forms are English words"),
 }
 
+# Registry ids that name a different concept in the dictionary. These are wrong
+# names, not alternative spellings, so they are recorded as deprecated and kept
+# out of the alias index: `hizb` is the division, `saktah` is the pause itself.
+DEPRECATED_IDS = {"hizb", "saktah"}
+
 FAMILY = {"حركة": "harakah", "تنوين": "tanwin", "نقط": "ijam", "إملائية": "imlaiyyah",
           "ضبط": "dabt", "وقف": "waqf", "علامة قراءة": "alamat_qiraah", "مستقل": "mustaqill"}
 
@@ -101,7 +106,9 @@ def build():
             "symbol": r[8].strip() or None,
             "definition": r[9].strip(),
             "purpose": r[14].strip(),
-            "alternative_spellings": sorted({old, old.replace("-", "_"), disp_alias} - {code}),
+            "alternative_spellings": sorted(
+                {old, old.replace("-", "_"), disp_alias} - {code} - DEPRECATED_IDS),
+            **({"deprecated": [old]} if old in DEPRECATED_IDS else {}),
             "unicode": [],
             "mark_family": FAMILY.get(r[3].strip(), r[3].strip()),
             "sources": [{"id": "hafs_svg_registry", "ref": f"standard!{old}"}],

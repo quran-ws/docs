@@ -1,0 +1,16 @@
+concept: waqf_tamm
+names:
+  code: waqf_tamm
+  display: Waqf Tamm
+  arabic:
+    vocalized: الوَقْف التَّامّ
+    singular: الوقف التام
+kind: classification_value
+category: waqf
+parent: waqf_ruling
+origin: quranic
+tier: core
+status: draft
+definition: ما تم معناه ولم يتعلق بما بعده لفظًا ولا معنى.
+purpose: يستخدم قيمةً في تصنيف مواضع الوقف تعليميًا وتحليليًا.
+sources: []

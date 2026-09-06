@@ -1,0 +1,18 @@
+concept: tartil
+names:
+  code: tartil
+  display: Tartil
+  arabic:
+    vocalized: التَّرْتِيل
+    singular: الترتيل
+kind: concept
+category: recitation
+origin: quranic
+tier: core
+status: draft
+definition: قراءة القرآن بتؤدة وبيان للحروف والكلمات ومراعاة الوقف والمعنى.
+purpose: يستخدم عندما يكون المقصود مفهوم الترتيل نفسه، ولا يستخدم مرادفًا تلقائيًا لتصنيف
+  تسجيل `Murattal`.
+alternative_spellings:
+- tarteel
+sources: []

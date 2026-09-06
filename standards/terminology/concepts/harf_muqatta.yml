@@ -1,0 +1,18 @@
+concept: harf_muqatta
+names:
+  code: harf_muqatta
+  display: Disjointed Letter
+  arabic:
+    vocalized: الحَرْف المُقَطَّع
+    singular: الحرف المقطع
+kind: concept
+category: structure
+origin: quranic
+tier: core
+status: draft
+plural: disjointed_letters
+definition: 'حروف هجائية افتتحت بها بعض السور، مثل: الم، والر، وحم، وكهيعص.'
+purpose: تستخدم لتعريف هذه الفواتح وتمييزها وربطها بالسور ومواضعها النصية.
+english_glosses:
+- Separated Letters
+sources: []

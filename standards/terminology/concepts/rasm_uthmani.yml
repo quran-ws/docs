@@ -1,0 +1,18 @@
+concept: rasm_uthmani
+names:
+  code: rasm_uthmani
+  display: Uthmani Rasm
+  arabic:
+    vocalized: الرَّسْم العُثْمَانِيّ
+    singular: الرسم العثماني
+kind: classification_value
+category: mushaf
+parent: rasm
+origin: quranic
+tier: core
+status: draft
+definition: طريقة كتابة كلمات المصاحف العثمانية وما يتعلق بها من حذف وزيادة وبدل وفصل ووصل.
+purpose: تستخدم لتحديد أن النص يتبع قواعد الرسم العثماني بدل نظم إملائية أخرى.
+english_glosses:
+- Uthmanic Orthography
+sources: []

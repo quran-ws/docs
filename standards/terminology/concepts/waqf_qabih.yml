@@ -1,0 +1,16 @@
+concept: waqf_qabih
+names:
+  code: waqf_qabih
+  display: Waqf Qabih
+  arabic:
+    vocalized: الوَقْف القَبِيح
+    singular: الوقف القبيح
+kind: classification_value
+category: waqf
+parent: waqf_ruling
+origin: quranic
+tier: core
+status: draft
+definition: ما لم يفد معنًى، أو أفاد معنًى غير مراد.
+purpose: يستخدم قيمةً في تصنيف مواضع الوقف، وفي التنبيه في تطبيقات التعليم.
+sources: []

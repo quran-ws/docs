@@ -1,0 +1,19 @@
+concept: irab
+names:
+  code: irab
+  display: Irab
+  arabic:
+    vocalized: الإِعْرَاب
+    singular: الإعراب
+kind: analysis
+category: linguistics
+origin: quranic
+tier: core
+status: draft
+definition: بيان الوظائف النحوية للكلمات وعلاماتها وعلاقاتها في التركيب.
+purpose: يستخدم لربط كلمات الآيات بالتحليل النحوي والوظائف الإعرابية.
+alternative_spellings:
+- i'rab
+english_glosses:
+- Grammatical Analysis
+sources: []

@@ -1,0 +1,16 @@
+concept: muallim
+names:
+  code: muallim
+  display: Muallim
+  arabic:
+    vocalized: مُعَلِّم
+    singular: معلم
+kind: classification_value
+category: recitation_style
+parent: recitation_style
+origin: quranic
+tier: core
+status: draft
+definition: نمط تلاوة معد للتعليم وقد يتضمن تكرار الآيات أو إتاحة وقت للمتعلم للترديد.
+purpose: يستخدم لتصنيف التسجيلات التعليمية وتمييزها عن التسجيلات العادية.
+sources: []

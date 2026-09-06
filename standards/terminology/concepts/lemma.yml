@@ -1,0 +1,13 @@
+concept: lemma
+names:
+  code: lemma
+  display: Lemma
+kind: unit
+category: linguistics
+origin: borrowed
+tier: core
+status: draft
+plural: lemmas
+definition: الصيغة المعجمية الأساسية التي ترد إليها صورة الكلمة المصرفة.
+purpose: تستخدم لتجميع الصور التصريفية المختلفة تحت مدخل معجمي واحد.
+sources: []

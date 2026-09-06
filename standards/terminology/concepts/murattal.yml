@@ -1,0 +1,16 @@
+concept: murattal
+names:
+  code: murattal
+  display: Murattal
+  arabic:
+    vocalized: مُرَتَّل
+    singular: مرتل
+kind: classification_value
+category: recitation_style
+parent: recitation_style
+origin: quranic
+tier: core
+status: draft
+definition: وصف لتلاوة أو تسجيل ينشر بوصفه مرتلًا.
+purpose: يستخدم لتصنيف التسجيل، ولا يستخدم مرادفًا عامًا لمفهوم `Tartil`.
+sources: []

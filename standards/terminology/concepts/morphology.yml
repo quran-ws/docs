@@ -1,0 +1,15 @@
+concept: morphology
+names:
+  code: morphology
+  display: Morphology
+  arabic:
+    vocalized: الصَّرْف
+    singular: الصرف
+kind: analysis
+category: linguistics
+origin: borrowed
+tier: core
+status: draft
+definition: تحليل بنية الكلمة وصيغتها وما تحمله من خصائص صرفية.
+purpose: يستخدم لتمثيل السمات الصرفية للكلمات أو الـtokens.
+sources: []

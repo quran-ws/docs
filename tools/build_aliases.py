@@ -22,6 +22,8 @@ def build():
         display = names.get("display")
         if display:
             forms.add(display.lower().replace("-", "_").replace(" ", "_"))
+        # `deprecated` names are deliberately not resolved: they belong to
+        # another concept, which is why they were deprecated.
         for a in e.get("alternative_spellings", []) or []:
             forms |= {a, a.replace("-", "_"), a.replace("_", "-")}
         for f in forms:

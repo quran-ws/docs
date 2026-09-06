@@ -1,0 +1,19 @@
+concept: basmalah
+names:
+  code: basmalah
+  display: Basmalah
+  arabic:
+    vocalized: البَسْمَلَة
+    singular: البسملة
+kind: concept
+category: structure
+origin: quranic
+tier: core
+status: draft
+plural: basmalahs
+definition: صيغة «بسم الله الرحمن الرحيم» التي تفتتح بها السور عدا سورة التوبة، ولها أحكام
+  واختلافات مرتبطة بعد الآي.
+purpose: تستخدم لتمييز البسملة وتمثيل موضعها وعلاقتها بالسورة ونظام عد الآي.
+alternative_spellings:
+- basmala
+sources: []

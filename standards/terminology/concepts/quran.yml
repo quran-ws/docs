@@ -1,0 +1,20 @@
+concept: quran
+names:
+  code: quran
+  display: Quran
+  arabic:
+    vocalized: القُرْآن
+    singular: القرآن
+kind: concept
+category: core
+origin: quranic
+tier: core
+status: draft
+definition: كلام الله المنزل على محمد ﷺ والمتعبد بتلاوته، ويطلق على مجموعه وعلى بعضه بحسب
+  السياق.
+purpose: يمثل المحتوى القرآني نفسه بصورة مستقلة عن مصحف أو تخطيط أو تنسيق أو تمثيل رقمي معين.
+alternative_spellings:
+- koran
+- qur'an
+- qur’an
+sources: []

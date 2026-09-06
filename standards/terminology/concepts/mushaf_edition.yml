@@ -1,0 +1,17 @@
+concept: mushaf_edition
+names:
+  code: mushaf_edition
+  display: Mushaf Edition
+  arabic:
+    vocalized: طَبْعَة المُصْحَف
+    singular: طبعة المصحف
+kind: entity
+category: mushaf
+parent: mushaf
+origin: standard
+tier: core
+status: draft
+plural: mushaf_editions
+definition: إصدار منشور محدد من المصحف له خصائص محددة من الناشر والرسم والضبط والتخطيط وغيرها.
+purpose: يستخدم لتمييز الإصدارات التي قد تختلف في الصفحات والأسطر والعلامات أو الخصائص الطباعية.
+sources: []

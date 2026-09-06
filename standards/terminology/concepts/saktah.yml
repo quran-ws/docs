@@ -1,0 +1,18 @@
+concept: saktah
+names:
+  code: saktah
+  display: Saktah
+  arabic:
+    vocalized: السَّكْتَة
+    singular: السكتة
+kind: concept
+category: tajwid
+origin: quranic
+tier: core
+status: draft
+plural: saktahs
+definition: قطع الصوت زمنًا يسيرًا من غير تنفس ثم متابعة القراءة.
+purpose: يستخدم لتمثيل مواضع السكت وخصائصها في النص أو التلاوة.
+alternative_spellings:
+- sakta
+sources: []

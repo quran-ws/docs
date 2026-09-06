@@ -1,0 +1,16 @@
+concept: layout
+names:
+  code: layout
+  display: Layout
+  arabic:
+    vocalized: التَّخْطِيط
+    singular: التخطيط
+kind: concept
+category: mushaf
+origin: borrowed
+tier: core
+status: draft
+plural: layouts
+definition: تنظيم النص والعناصر بصريًا إلى صفحات وأسطر ومواضع ضمن مصحف أو عرض معين.
+purpose: يفصل البيانات البصرية عن بنية القرآن النصية الثابتة.
+sources: []

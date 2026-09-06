@@ -1,0 +1,15 @@
+concept: revelation_order
+names:
+  code: revelation_order
+  display: Revelation Order
+  arabic:
+    vocalized: تَرْتِيب النُّزُول
+    singular: ترتيب النزول
+kind: property
+category: revelation
+origin: standard
+tier: core
+status: draft
+definition: ترتيب السور أو الآيات بحسب زمن نزولها، وقد يختلف بحسب المصدر المعتمد.
+purpose: يستخدم لتخزين ترتيب النزول بصورة مستقلة عن ترتيب المصحف.
+sources: []

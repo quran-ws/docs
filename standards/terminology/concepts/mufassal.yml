@@ -1,0 +1,16 @@
+concept: mufassal
+names:
+  code: mufassal
+  display: Mufassal
+  arabic:
+    vocalized: المُفَصَّل
+    singular: المفصل
+kind: classification_value
+category: surah_classification
+parent: surah_group
+origin: quranic
+tier: extended
+status: draft
+definition: مجموعة من قصار السور التي تلي المثاني، مع اختلاف العلماء في أولها.
+purpose: تستخدم لتصنيف سور المفصل وربط البيانات والخطط المتعلقة بها.
+sources: []

@@ -1,0 +1,17 @@
+concept: waqf_mark
+names:
+  code: waqf_mark
+  display: Waqf Mark
+  arabic:
+    vocalized: عَلَامَة الوَقْف
+    singular: علامة الوقف
+kind: mark
+category: waqf
+parent: mushaf_mark
+origin: standard
+tier: core
+status: draft
+plural: waqf_marks
+definition: علامة في المصحف ترشد القارئ إلى حكم الوقف أو الوصل في موضع معين.
+purpose: تستخدم لتمثيل الرمز وموضعه ونوعه بصورة منظمة.
+sources: []

@@ -1,0 +1,18 @@
+concept: sujud_al_tilawah
+names:
+  code: sujud_al_tilawah
+  display: Sujud al-Tilawah
+  arabic:
+    vocalized: سُجُود التِّلَاوَة
+    singular: سجود التلاوة
+kind: concept
+category: waqf
+origin: quranic
+tier: core
+status: draft
+definition: سجدة تؤدى عند قراءة أو سماع موضع من مواضع سجود التلاوة.
+purpose: يمثل العبادة أو الحكم نفسه، ويظل مستقلًا عن العلامة المطبوعة في المصحف.
+alternative_spellings:
+- sajdah_al-tilawah
+- sajdat_al-tilawah
+sources: []

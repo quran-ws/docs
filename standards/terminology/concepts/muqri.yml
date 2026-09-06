@@ -1,0 +1,18 @@
+concept: muqri
+names:
+  code: muqri
+  display: Muqri
+  arabic:
+    vocalized: المُقْرِئ
+    singular: المقرئ
+kind: role
+category: qiraat
+origin: quranic
+tier: core
+status: draft
+plural: muqris
+definition: من تلقى القراءة وأتقنها وينقلها للمتعلمين.
+purpose: يستخدم لتمثيل دور التعليم والتلقي والإقراء، ويتميز عن مجرد `Reciter`.
+alternative_spellings:
+- muqree
+sources: []

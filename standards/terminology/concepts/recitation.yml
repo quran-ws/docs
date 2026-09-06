@@ -1,0 +1,19 @@
+concept: recitation
+names:
+  code: recitation
+  display: Recitation
+  arabic:
+    vocalized: التِّلَاوَة
+    singular: التلاوة
+kind: entity
+category: recitation
+origin: borrowed
+tier: core
+status: draft
+plural: recitations
+definition: قراءة القرآن وأداؤه صوتيًا.
+purpose: يستخدم لتمثيل فعل التلاوة، وبرمجيًا يمكن أن يمثل تسجيلًا مرتبطًا بمؤدٍ وقراءة ورواية
+  ونمط أداء.
+alternative_spellings:
+- tilawah
+sources: []

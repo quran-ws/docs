@@ -1,0 +1,19 @@
+concept: istiadhah
+names:
+  code: istiadhah
+  display: Istiadhah
+  arabic:
+    vocalized: الاِسْتِعَاذَة
+    singular: الاستعاذة
+kind: concept
+category: tajwid
+origin: quranic
+tier: core
+status: draft
+definition: طلب العوذ بالله من الشيطان عند إرادة تلاوة القرآن.
+purpose: يستخدم لتمثيل الاستعاذة وصيغها وموضعها بالنسبة إلى بداية التلاوة.
+alternative_spellings:
+- isti'adhah
+- istiʿādhah
+- ta'awwudh
+sources: []

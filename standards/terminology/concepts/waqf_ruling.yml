@@ -1,0 +1,16 @@
+concept: waqf_ruling
+names:
+  code: waqf_ruling
+  display: Waqf Ruling
+  arabic:
+    vocalized: حُكْم الوَقْف
+    singular: حكم الوقف
+kind: classification
+category: waqf
+origin: standard
+tier: core
+status: draft
+definition: تصنيف الموضع نفسه من جهة تمام المعنى عنده، لا من جهة العلامة المرسومة عليه.
+purpose: 'يستخدم في التعليم والتحليل النحوي والدلالي للوقف، ويبقى مستقلًا عن `waqf_mark_type`
+  لأنهما تصنيفان لشيئين مختلفين: هذا للموضع وذاك للعلامة.'
+sources: []

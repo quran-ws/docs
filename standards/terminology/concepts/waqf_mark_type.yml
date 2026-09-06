@@ -1,0 +1,15 @@
+concept: waqf_mark_type
+names:
+  code: waqf_mark_type
+  display: Waqf Mark Type
+  arabic:
+    vocalized: نَوْع عَلَامَة الوَقْف
+    singular: نوع علامة الوقف
+kind: classification
+category: waqf
+origin: standard
+tier: core
+status: draft
+definition: تصنيف لما ترشد إليه علامة الوقف المرسومة في المصحف من لزوم أو منع أو جواز.
+purpose: يوفر مجموعة قيم موحدة تتفرع عليها التطبيقات، بدل قراءة صورة الرمز نفسه.
+sources: []

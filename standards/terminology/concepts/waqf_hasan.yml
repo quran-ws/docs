@@ -1,0 +1,16 @@
+concept: waqf_hasan
+names:
+  code: waqf_hasan
+  display: Waqf Hasan
+  arabic:
+    vocalized: الوَقْف الحَسَن
+    singular: الوقف الحسن
+kind: classification_value
+category: waqf
+parent: waqf_ruling
+origin: quranic
+tier: core
+status: draft
+definition: ما أفاد معنًى وتعلق بما بعده لفظًا ومعنًى.
+purpose: يستخدم قيمةً في تصنيف مواضع الوقف.
+sources: []

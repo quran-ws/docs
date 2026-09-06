@@ -1,0 +1,16 @@
+concept: mathani
+names:
+  code: mathani
+  display: Mathani
+  arabic:
+    vocalized: المَثَانِي
+    singular: المثاني
+kind: classification_value
+category: surah_classification
+parent: surah_group
+origin: quranic
+tier: extended
+status: draft
+definition: مجموعة السور التي تلي المئين في التقسيم التقليدي.
+purpose: تستخدم ضمن تصنيف السور التراثي.
+sources: []

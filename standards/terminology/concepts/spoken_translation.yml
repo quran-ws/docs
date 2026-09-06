@@ -1,0 +1,19 @@
+concept: spoken_translation
+names:
+  code: spoken_translation
+  display: Spoken Translation
+  arabic:
+    vocalized: التَّرْجَمَة المَنْطُوقَة
+    singular: الترجمة المنطوقة
+kind: content
+category: translation
+parent: translation
+origin: standard
+tier: core
+status: draft
+plural: spoken_translations
+definition: نقل معاني القرآن إلى لغة أخرى في مادة صوتية أو منطوقة.
+purpose: يستخدم لتمييز المحتوى الصوتي لترجمة المعاني عن الترجمة النصية وعن التلاوة القرآنية.
+alternative_spellings:
+- audio_translation
+sources: []

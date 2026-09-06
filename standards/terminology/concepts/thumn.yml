@@ -1,0 +1,19 @@
+concept: thumn
+names:
+  code: thumn
+  display: Thumn
+  arabic:
+    vocalized: الثُّمْن
+    singular: الثمن
+kind: entity
+category: divisions
+parent: hizb
+origin: quranic
+tier: core
+status: draft
+plural: thumns
+definition: ثمن الحزب، وهو تقسيم مستخدم في بعض المصاحف والمدارس.
+purpose: يستخدم عند دعم مصادر أو مصاحف تعتمد تقسيم الحزب إلى أثمان.
+alternative_spellings:
+- thumun
+sources: []

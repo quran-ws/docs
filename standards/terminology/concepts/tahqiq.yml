@@ -1,0 +1,18 @@
+concept: tahqiq
+names:
+  code: tahqiq
+  display: Tahqiq
+  arabic:
+    vocalized: التَّحْقِيق
+    singular: التحقيق
+kind: classification_value
+category: recitation_pace
+parent: recitation_pace
+origin: quranic
+tier: core
+status: draft
+definition: القراءة ببطء وتؤدة مع استيفاء الحروف وأحكامها، وتستخدم كثيرًا في مقام التعليم.
+purpose: تستخدم لوصف مرتبة القراءة البطيئة الدقيقة.
+alternative_spellings:
+- tahqeeq
+sources: []

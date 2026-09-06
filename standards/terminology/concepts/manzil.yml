@@ -1,0 +1,16 @@
+concept: manzil
+names:
+  code: manzil
+  display: Manzil
+  arabic:
+    vocalized: المَنْزِل
+    singular: المنزل
+kind: entity
+category: divisions
+origin: quranic
+tier: core
+status: draft
+plural: manzils
+definition: واحد من سبعة أقسام تقليدية للقرآن لتيسير ختمه في أسبوع.
+purpose: يستخدم في التطبيقات التي تدعم نظام المنازل وخطط القراءة المبنية عليه.
+sources: []

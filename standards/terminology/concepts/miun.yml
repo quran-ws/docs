@@ -1,0 +1,18 @@
+concept: miun
+names:
+  code: miun
+  display: Miun
+  arabic:
+    vocalized: المِئُون
+    singular: المئون
+kind: classification_value
+category: surah_classification
+parent: surah_group
+origin: quranic
+tier: extended
+status: draft
+definition: السور التي تقارب آياتها المئة أو تزيد عليها أو تنقص عنها قليلًا.
+purpose: تستخدم لتصنيف السور وفق تقسيمها التراثي.
+english_glosses:
+- Hundred-Verse Surahs
+sources: []

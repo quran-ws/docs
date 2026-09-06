@@ -1,0 +1,21 @@
+concept: tafsir
+names:
+  code: tafsir
+  display: Tafsir
+  arabic:
+    vocalized: التَّفْسِير
+    singular: التفسير
+kind: content
+category: tafsir
+origin: quranic
+tier: core
+status: draft
+plural: tafsirs
+definition: بيان معاني القرآن وشرح ألفاظه وما يرشد إليه من أحكام وهدايات بحسب أصول التفسير.
+purpose: يستخدم لتمثيل كتب ومحتوى التفسير وربط مقاطعه بالآيات والسور والمصادر.
+alternative_spellings:
+- tafseer
+english_glosses:
+- Exegesis
+- Commentary
+sources: []

@@ -1,0 +1,15 @@
+concept: recitation_pace
+names:
+  code: recitation_pace
+  display: Recitation Pace
+  arabic:
+    vocalized: مَرَاتِب القِرَاءَة
+    singular: مرتبة القراءة من حيث السرعة
+kind: classification
+category: recitation_pace
+origin: standard
+tier: core
+status: draft
+definition: تصنيف لسرعة أداء القراءة مع المحافظة على أحكامها.
+purpose: يفصل مراتب السرعة التقليدية عن أنماط التسجيل مثل `Murattal` و`Mujawwad`.
+sources: []

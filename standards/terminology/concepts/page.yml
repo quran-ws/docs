@@ -1,0 +1,18 @@
+concept: page
+names:
+  code: page
+  display: Page
+  arabic:
+    vocalized: الصَّفْحَة
+    singular: الصفحة
+kind: unit
+category: mushaf
+origin: borrowed
+tier: core
+status: draft
+plural: pages
+definition: وحدة طباعية من تخطيط مصحف معين، وقد يختلف محتواها وحدودها باختلاف المصحف أو الطبعة.
+purpose: تستخدم في العرض والتنقل والمحاذاة البصرية بحسب صفحات مصحف معين.
+alternative_spellings:
+- safhah
+sources: []

@@ -1,0 +1,16 @@
+concept: surah_group
+names:
+  code: surah_group
+  display: Surah Group
+  arabic:
+    vocalized: تَصْنِيف السُّوَر
+    singular: تصنيف السور
+kind: classification
+category: surah_classification
+origin: standard
+tier: extended
+status: draft
+definition: تصنيف يجمع سورًا وفق تقسيمات اصطلاحية موروثة تعتمد الطول أو موضعها ضمن مجموعات
+  السور.
+purpose: يوفر parent موحدًا لتصنيفات مثل الطوال والمئين والمثاني والمفصل.
+sources: []

@@ -1,0 +1,19 @@
+concept: madani
+names:
+  code: madani
+  display: Madani
+  arabic:
+    vocalized: مَدَنِيّ
+    singular: المدني
+kind: classification_value
+category: revelation
+parent: revelation_classification
+origin: quranic
+tier: core
+status: draft
+definition: ما نزل من القرآن بعد الهجرة، ولو نزل خارج المدينة.
+purpose: يستخدم كقيمة لتصنيف سورة أو آية ضمن `Revelation Classification`.
+alternative_spellings:
+- madaniyy
+- madinan
+sources: []

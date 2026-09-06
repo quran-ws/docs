@@ -1,0 +1,19 @@
+concept: tariq
+names:
+  code: tariq
+  display: Tariq
+  arabic:
+    vocalized: الطَّرِيق
+    singular: الطريق
+kind: concept
+category: qiraat
+parent: riwayah
+origin: quranic
+tier: core
+status: draft
+plural: tariqs
+definition: وجه النقل المأخوذ عن الراوي بواسطة من دونه في سلسلة نقل القراءة.
+purpose: يستخدم عندما تحتاج البيانات إلى مستوى أدق من الرواية لتمييز طرق الأداء والنقل.
+alternative_spellings:
+- tareeq
+sources: []

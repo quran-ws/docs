@@ -1,0 +1,19 @@
+concept: ayah_numbering_system
+names:
+  code: ayah_numbering_system
+  display: Ayah Numbering System
+  arabic:
+    vocalized: نِظَام عَدّ الآي
+    singular: نظام عد الآي
+kind: classification
+category: ayah_numbering
+origin: standard
+tier: core
+status: draft
+plural: ayah_numbering_systems
+definition: نظام يحدد حدود الآيات وأعدادها وأرقامها وبعض المسائل المتعلقة بالبسملة وفق مدارس
+  عد الآي.
+purpose: يستخدم لتحديد النظام الذي تستند إليه أرقام الآيات وحدودها في dataset أو Mushaf معين.
+alternative_spellings:
+- ayah_counting_system
+sources: []

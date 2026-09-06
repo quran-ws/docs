@@ -1,0 +1,21 @@
+concept: surah
+names:
+  code: surah
+  display: Surah
+  arabic:
+    vocalized: السُّورَة
+    singular: السورة
+kind: entity
+category: structure
+origin: quranic
+tier: core
+status: draft
+plural: surahs
+definition: وحدة رئيسية من بنية القرآن، تتكون من آيات مرتبة ولها اسم وموضع معروف في ترتيب
+  المصحف.
+purpose: تستخدم كوحدة رئيسية لتنظيم النص وربط الآيات والبيانات المتعلقة بالسورة.
+alternative_spellings:
+- sura
+english_glosses:
+- Chapter
+sources: []

@@ -1,0 +1,16 @@
+concept: revelation_classification
+names:
+  code: revelation_classification
+  display: Revelation Classification
+  arabic:
+    vocalized: تَصْنِيف النُّزُول
+    singular: المكي والمدني
+kind: classification
+category: revelation
+origin: standard
+tier: core
+status: draft
+definition: تصنيف للنص القرآني بحسب وقوع نزوله قبل الهجرة أو بعدها وفق الاصطلاح المعتمد.
+purpose: يستخدم لتصنيف السور أو الآيات بحسب علاقتها بالهجرة دون الإيحاء بأن التصنيف جغرافي
+  فقط.
+sources: []

@@ -1,0 +1,17 @@
+concept: sajdah_mark
+names:
+  code: sajdah_mark
+  display: Sajdah Mark
+  arabic:
+    vocalized: عَلَامَة السَّجْدَة
+    singular: علامة السجدة
+kind: mark
+category: mushaf_marks
+parent: mushaf_mark
+origin: standard
+tier: core
+status: draft
+plural: sajdah_marks
+definition: علامة توضع في المصحف للدلالة على موضع متعلق بسجود التلاوة.
+purpose: تستخدم لتمثيل العلامة البصرية بصورة مستقلة عن مفهوم `Sujud al-Tilawah` نفسه.
+sources: []

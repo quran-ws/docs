@@ -1,0 +1,16 @@
+concept: line
+names:
+  code: line
+  display: Line
+  arabic:
+    vocalized: السَّطْر
+    singular: السطر
+kind: unit
+category: mushaf
+origin: borrowed
+tier: core
+status: draft
+plural: lines
+definition: سطر طباعي داخل صفحة مصحف أو تخطيط معين.
+purpose: يستخدم لتمثيل مواقع النص والأشكال داخل التخطيط الطباعي.
+sources: []

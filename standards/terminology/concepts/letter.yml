@@ -1,0 +1,19 @@
+concept: letter
+names:
+  code: letter
+  display: Letter
+  arabic:
+    vocalized: الحَرْف
+    singular: الحرف
+kind: unit
+category: text
+origin: borrowed
+tier: core
+status: draft
+plural: letters
+definition: حرف هجائي بوصفه وحدة لغوية من وحدات الكتابة.
+purpose: يستخدم للبيانات التي تتعامل مع الحروف اللغوية، دون الخلط بينها وبين التمثيلات الرقمية
+  أو البصرية.
+alternative_spellings:
+- harf
+sources: []

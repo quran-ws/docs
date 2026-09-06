@@ -1,0 +1,18 @@
+concept: khatmah
+names:
+  code: khatmah
+  display: Khatmah
+  arabic:
+    vocalized: الخَتْمَة
+    singular: الختمة
+kind: concept
+category: tajwid
+origin: quranic
+tier: core
+status: draft
+plural: khatmahs
+definition: قراءة القرآن كاملًا من أوله إلى آخره.
+purpose: تستخدم لتتبع خطط الختم وإتمام القراءة وربط الجلسات بمسار ختمة.
+alternative_spellings:
+- khatma
+sources: []

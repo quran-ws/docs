@@ -1,0 +1,16 @@
+concept: disputed
+names:
+  code: disputed
+  display: Disputed
+  arabic:
+    vocalized: مُخْتَلَف فِيه
+    singular: مختلف فيه
+kind: classification_value
+category: revelation
+parent: revelation_classification
+origin: standard
+tier: core
+status: draft
+definition: ما اختلفت المصادر المعتمدة في تصنيفه بين المكي والمدني.
+purpose: يمنع إجبار البيانات المختلف فيها على قيمة `Makki` أو `Madani` دون توثيق الخلاف.
+sources: []

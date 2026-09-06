@@ -1,0 +1,18 @@
+concept: asbab_al_nuzul
+names:
+  code: asbab_al_nuzul
+  display: Asbab al-Nuzul
+  arabic:
+    vocalized: أَسْبَاب النُّزُول
+    singular: أسباب النزول
+kind: content
+category: revelation
+origin: quranic
+tier: core
+status: draft
+definition: الحوادث أو الأسئلة التي نزلت آية أو آيات متحدثة عنها أو مبينة لحكم يتعلق بها.
+purpose: تستخدم لربط الآيات بالمرويات والمعلومات المتعلقة بسبب نزولها.
+alternative_spellings:
+- asbab_al-nozool
+- asbab_un-nuzul
+sources: []

@@ -1,0 +1,15 @@
+concept: instructional_ayah_repetition
+names:
+  code: instructional_ayah_repetition
+  display: Instructional Ayah Repetition
+  arabic:
+    vocalized: تَكْرَار الآيَات
+    singular: تكرار الآيات للتعليم
+kind: concept
+category: recitation_style
+origin: standard
+tier: core
+status: draft
+definition: إعادة آية أو جزء منها مرة أو مرات وفق نمط تعليمي يساعد على التلقي والحفظ.
+purpose: يستخدم لوصف ميزة مستقلة في التسجيل التعليمي بدل جعلها جزءًا ضمنيًا من `Muallim`.
+sources: []

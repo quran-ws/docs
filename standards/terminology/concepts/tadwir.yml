@@ -1,0 +1,18 @@
+concept: tadwir
+names:
+  code: tadwir
+  display: Tadwir
+  arabic:
+    vocalized: التَّدْوِير
+    singular: التدوير
+kind: classification_value
+category: recitation_pace
+parent: recitation_pace
+origin: quranic
+tier: core
+status: draft
+definition: القراءة بسرعة متوسطة بين التحقيق والحدر مع المحافظة على الأحكام.
+purpose: تستخدم لتمثيل المرتبة المتوسطة لسرعة القراءة.
+alternative_spellings:
+- tadweer
+sources: []

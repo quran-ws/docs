@@ -18,7 +18,8 @@ symbol: س
 definition: 'الدَّلَالَة على السَّكْت: وَقْفَة يَسِيرَة من غَيْر تَنَفُّس ثمَّ الوَصْل بما
   بعده'
 purpose: 'Marks a saktah: a brief pause without taking a breath, then continuing.'
-alternative_spellings:
+alternative_spellings: []
+deprecated:
 - saktah
 unicode:
 - cp: U+06DC

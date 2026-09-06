@@ -1,0 +1,22 @@
+concept: fasilah
+names:
+  code: fasilah
+  display: Fasilah
+  arabic:
+    vocalized: الفَاصِلَة
+    singular: الفاصلة
+kind: concept
+category: structure
+origin: quranic
+tier: core
+status: draft
+plural: fasilahs
+definition: خاتمة الآية أو المقطع من جهة النظم، ويعرفها بعض العلماء بأنها الكلمة الأخيرة من
+  الآية.
+purpose: تستخدم في الدراسات والبيانات التي تتناول فواصل الآيات والنظم القرآني، ولا تستخدم
+  مرادفًا لـ`Ayah`.
+alternative_spellings:
+- fasila
+english_glosses:
+- Verse Ending
+sources: []

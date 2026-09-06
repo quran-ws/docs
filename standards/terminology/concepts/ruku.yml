@@ -1,0 +1,19 @@
+concept: ruku
+names:
+  code: ruku
+  display: Ruku
+  arabic:
+    vocalized: الرُّكُوع
+    singular: الركوع
+kind: entity
+category: divisions
+origin: quranic
+tier: core
+status: draft
+plural: rukus
+definition: قسم اصطلاحي من القرآن يستخدم لتنظيم القراءة ويظهر في بعض المصاحف.
+purpose: يستخدم في التطبيقات والمصاحف التي تعتمد تقسيم الركوع.
+alternative_spellings:
+- ruku'
+- rukūʿ
+sources: []

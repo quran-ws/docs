@@ -1,0 +1,16 @@
+concept: mushaf_mark
+names:
+  code: mushaf_mark
+  display: Mushaf Mark
+  arabic:
+    vocalized: عَلَامَة المُصْحَف
+    singular: علامة المصحف
+kind: classification
+category: mushaf_marks
+origin: standard
+tier: core
+status: draft
+definition: رمز أو علامة غير داخلة في الحروف الأصلية للكلمة، تستخدم في المصحف لأغراض القراءة
+  أو التنظيم أو الإرشاد.
+purpose: يوفر parent موحدًا للعلامات المختلفة بدل معاملتها كأنواع غير مرتبطة.
+sources: []

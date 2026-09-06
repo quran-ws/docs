@@ -1,0 +1,18 @@
+concept: juz
+names:
+  code: juz
+  display: Juz
+  arabic:
+    vocalized: الجُزْء
+    singular: الجزء
+kind: entity
+category: divisions
+origin: quranic
+tier: core
+status: draft
+plural: juzs
+definition: واحد من ثلاثين قسمًا في التقسيم المشهور للمصحف لتيسير القراءة والختم.
+purpose: يستخدم للتنقل وتنظيم القراءة والجداول والخطط المرتبطة بأجزاء القرآن.
+alternative_spellings:
+- juzu
+sources: []

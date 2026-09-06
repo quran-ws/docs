@@ -1,0 +1,18 @@
+concept: hizb
+names:
+  code: hizb
+  display: Hizb
+  arabic:
+    vocalized: الحِزْب
+    singular: الحزب
+kind: entity
+category: divisions
+origin: quranic
+tier: core
+status: draft
+plural: hizbs
+definition: في التقسيم المعاصر نصف جزء، فيكون القرآن ستين حزبًا.
+purpose: يستخدم لتمثيل التقسيمات الاصطلاحية والتنقل وخطط القراءة.
+alternative_spellings:
+- hezb
+sources: []

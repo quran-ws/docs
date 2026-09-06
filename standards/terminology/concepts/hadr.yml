@@ -1,0 +1,18 @@
+concept: hadr
+names:
+  code: hadr
+  display: Hadr
+  arabic:
+    vocalized: الحَدْر
+    singular: الحدر
+kind: classification_value
+category: recitation_pace
+parent: recitation_pace
+origin: quranic
+tier: core
+status: draft
+definition: الإسراع في القراءة مع المحافظة على الحروف والحركات وأحكام الأداء دون إخلال.
+purpose: تستخدم لتمثيل مرتبة القراءة الأسرع ضمن مراتب الأداء.
+alternative_spellings:
+- hadar
+sources: []

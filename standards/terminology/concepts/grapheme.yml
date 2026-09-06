@@ -1,0 +1,13 @@
+concept: grapheme
+names:
+  code: grapheme
+  display: Grapheme
+kind: unit
+category: text
+origin: borrowed
+tier: core
+status: draft
+plural: graphemes
+definition: وحدة كتابية يدركها المستخدم كوحدة واحدة، وقد تتكون من أكثر من Unicode codepoint.
+purpose: تستخدم في التقسيم البصري والتحرير واختيار النص عندما لا يكون الـcodepoint وحدة مناسبة.
+sources: []

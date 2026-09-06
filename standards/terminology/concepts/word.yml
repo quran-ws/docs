@@ -1,0 +1,19 @@
+concept: word
+names:
+  code: word
+  display: Word
+  arabic:
+    vocalized: الكَلِمَة
+    singular: الكلمة
+kind: unit
+category: text
+origin: borrowed
+tier: core
+status: draft
+plural: words
+definition: وحدة من النص تعامل بوصفها كلمة مستقلة وفق منهج التقسيم النصي المعتمد.
+purpose: تستخدم لربط البيانات على مستوى الكلمة مثل الجذر والصرف والإعراب والتجويد والمحاذاة
+  الصوتية والموضع البصري.
+alternative_spellings:
+- kalimah
+sources: []

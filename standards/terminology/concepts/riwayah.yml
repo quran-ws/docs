@@ -1,0 +1,19 @@
+concept: riwayah
+names:
+  code: riwayah
+  display: Riwayah
+  arabic:
+    vocalized: الرِّوَايَة
+    singular: الرواية
+kind: concept
+category: qiraat
+parent: qiraah
+origin: quranic
+tier: core
+status: draft
+plural: riwayahs
+definition: ما ينسب إلى راو عن إمام القراءة؛ مثل رواية حفص عن عاصم.
+purpose: تستخدم لتحديد الرواية التي يتبعها نص أو مصحف أو تسجيل أو dataset.
+alternative_spellings:
+- riwaya
+sources: []

@@ -1,0 +1,16 @@
+concept: rasm
+names:
+  code: rasm
+  display: Rasm
+  arabic:
+    vocalized: الرَّسْم
+    singular: الرسم
+kind: concept
+category: mushaf
+origin: quranic
+tier: core
+status: draft
+definition: طريقة كتابة ألفاظ القرآن من حيث إثبات الحروف وحذفها وزيادتها وفصلها ووصلها ونحو
+  ذلك.
+purpose: يستخدم لتمييز الطبقة الإملائية/الرسمية للنص عن الخط والتخطيط والـglyphs.
+sources: []

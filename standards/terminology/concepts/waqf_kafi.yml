@@ -1,0 +1,16 @@
+concept: waqf_kafi
+names:
+  code: waqf_kafi
+  display: Waqf Kafi
+  arabic:
+    vocalized: الوَقْف الكَافِي
+    singular: الوقف الكافي
+kind: classification_value
+category: waqf
+parent: waqf_ruling
+origin: quranic
+tier: core
+status: draft
+definition: ما تم معناه وتعلق بما بعده معنًى لا لفظًا.
+purpose: يستخدم قيمةً في تصنيف مواضع الوقف.
+sources: []

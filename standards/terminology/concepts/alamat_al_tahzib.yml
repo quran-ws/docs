@@ -17,7 +17,8 @@ status: draft
 symbol: نَجْمَة
 definition: الدَّلَالَة على بِدَايَة الأَجْزَاء والأَحْزَاب وأَنْصَافِها وأَرْبَاعِها
 purpose: Marks the start of a juz, a hizb, or a half or quarter of one.
-alternative_spellings:
+alternative_spellings: []
+deprecated:
 - hizb
 unicode:
 - cp: U+06DE

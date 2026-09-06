@@ -1,0 +1,18 @@
+concept: reciter
+names:
+  code: reciter
+  display: Reciter
+  arabic:
+    vocalized: القَارِئ
+    singular: القارئ
+kind: role
+category: recitation
+origin: borrowed
+tier: core
+status: draft
+plural: reciters
+definition: الشخص الذي يؤدي تلاوة القرآن.
+purpose: يستخدم لربط التسجيلات الصوتية بمؤديها، دون افتراض أنه إمام `Qiraah` أو `Rawi`.
+alternative_spellings:
+- qari
+sources: []

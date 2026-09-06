@@ -1,0 +1,84 @@
+# The vocalized form of each term, from which its code spelling is derived.
+# This is the one input no tool can supply: short vowels cannot be recovered
+# from unvocalized Arabic, and guessing them is the judgement the derivation
+# exists to remove. Each row is reviewable on its own.
+#
+# canonical	vocalized	origin
+Quran	القُرْآن	quranic
+Mushaf	المُصْحَف	quranic
+Surah	السُّورَة	quranic
+Ayah	الآيَة	quranic
+Basmalah	البَسْمَلَة	quranic
+Fasilah	الفَاصِلَة	quranic
+Disjointed Letter	الحَرْف المُقَطَّع	quranic
+Word	الكَلِمَة	borrowed
+Letter	الحَرْف	borrowed
+Character		borrowed
+Codepoint		borrowed
+Grapheme		borrowed
+Glyph		borrowed
+Juz	الجُزْء	quranic
+Hizb	الحِزْب	quranic
+Rub al-Hizb	رُبْع الحِزْب	quranic
+Thumn	الثُّمْن	quranic
+Manzil	المَنْزِل	quranic
+Ruku	الرُّكُوع	quranic
+surah_group	تَصْنِيف السُّوَر	standard
+Sabe al-Tiwal	السَّبْع الطِّوَال	quranic
+Miun	المِئُون	quranic
+Mathani	المَثَانِي	quranic
+Mufassal	المُفَصَّل	quranic
+Mushaf Edition	طَبْعَة المُصْحَف	standard
+Page	الصَّفْحَة	borrowed
+Line	السَّطْر	borrowed
+Layout	التَّخْطِيط	borrowed
+Rasm	الرَّسْم	quranic
+Uthmani Rasm	الرَّسْم العُثْمَانِيّ	quranic
+Mushaf Mark	عَلَامَة المُصْحَف	standard
+Division Mark	عَلَامَة التَّقْسِيم	standard
+Sajdah Mark	عَلَامَة السَّجْدَة	standard
+Ayah Numbering System	نِظَام عَدّ الآي	standard
+Asbab al-Nuzul	أَسْبَاب النُّزُول	quranic
+Revelation Order	تَرْتِيب النُّزُول	standard
+Revelation Classification	تَصْنِيف النُّزُول	standard
+Makki	مَكِّيّ	quranic
+Madani	مَدَنِيّ	quranic
+Disputed	مُخْتَلَف فِيه	standard
+Qiraah	القِرَاءَة	quranic
+Riwayah	الرِّوَايَة	quranic
+Tariq	الطَّرِيق	quranic
+Rawi	الرَّاوِي	quranic
+Muqri	المُقْرِئ	quranic
+Recitation	التِّلَاوَة	borrowed
+Reciter	القَارِئ	borrowed
+Tartil	التَّرْتِيل	quranic
+Recitation Pace	مَرَاتِب القِرَاءَة	standard
+Tahqiq	التَّحْقِيق	quranic
+Tadwir	التَّدْوِير	quranic
+Hadr	الحَدْر	quranic
+Recitation Style	نَمَط الأَدَاء	standard
+Murattal	مُرَتَّل	quranic
+Mujawwad	مُجَوَّد	quranic
+Muallim	مُعَلِّم	quranic
+Instructional Ayah Repetition	تَكْرَار الآيَات	standard
+Tajwid	التَّجْوِيد	quranic
+Saktah	السَّكْتَة	quranic
+Istiadhah	الاِسْتِعَاذَة	quranic
+Khatmah	الخَتْمَة	quranic
+Waqf	الوَقْف	quranic
+Waqf Mark	عَلَامَة الوَقْف	standard
+Sujud al-Tilawah	سُجُود التِّلَاوَة	quranic
+Root	الجَذْر	borrowed
+Lemma		borrowed
+Morphology	الصَّرْف	borrowed
+Irab	الإِعْرَاب	quranic
+Translation	التَّرْجَمَة	borrowed
+Spoken Translation	التَّرْجَمَة المَنْطُوقَة	standard
+Transliteration	النَّقْل الحَرْفِيّ	borrowed
+Tafsir	التَّفْسِير	quranic
+waqf_mark_type	نَوْع عَلَامَة الوَقْف	standard
+waqf_ruling	حُكْم الوَقْف	standard
+waqf_tam	الوَقْف التَّامّ	quranic
+waqf_kafi	الوَقْف الكَافِي	quranic
+waqf_hasan	الوَقْف الحَسَن	quranic
+waqf_qabih	الوَقْف القَبِيح	quranic

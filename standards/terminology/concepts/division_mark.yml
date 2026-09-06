@@ -1,0 +1,17 @@
+concept: division_mark
+names:
+  code: division_mark
+  display: Division Mark
+  arabic:
+    vocalized: عَلَامَة التَّقْسِيم
+    singular: علامة التقسيم
+kind: mark
+category: mushaf_marks
+parent: mushaf_mark
+origin: standard
+tier: core
+status: draft
+plural: division_marks
+definition: علامة تنظيمية تبين بداية جزء أو حزب أو ربع أو تقسيم مشابه.
+purpose: تستخدم لتمثيل علامات التقسيم في بيانات المصحف وتخطيطه.
+sources: []

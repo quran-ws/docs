@@ -1,0 +1,15 @@
+concept: waqf
+names:
+  code: waqf
+  display: Waqf
+  arabic:
+    vocalized: الوَقْف
+    singular: الوقف
+kind: concept
+category: waqf
+origin: quranic
+tier: core
+status: draft
+definition: قطع القراءة عند موضع من النص وفق أحكام الوقف والابتداء.
+purpose: يمثل المفهوم العام للوقف، بينما تمثل `Waqf Mark` العلامات المطبوعة التي ترشد إليه.
+sources: []

@@ -1,0 +1,21 @@
+concept: qiraah
+names:
+  code: qiraah
+  display: Qiraah
+  arabic:
+    vocalized: القِرَاءَة
+    singular: القراءة
+kind: concept
+category: qiraat
+origin: quranic
+tier: core
+status: draft
+plural: qiraahs
+definition: وجه من وجوه قراءة القرآن ينسب إلى إمام من أئمة القراءات وتتفرع عنه الروايات والطرق.
+purpose: يمثل المستوى الأعلى في model القراءات ويربط الروايات والطرق والنصوص المرتبطة بها.
+alternative_spellings:
+- qira'ah
+- qiraa
+english_glosses:
+- Reading
+sources: []

@@ -1,0 +1,13 @@
+concept: character
+names:
+  code: character
+  display: Character
+kind: unit
+category: text
+origin: borrowed
+tier: core
+status: draft
+plural: characters
+definition: وحدة نصية مجردة في نظام تمثيل رقمي، ولا يلزم أن تطابق حرفًا لغويًا واحدًا.
+purpose: تستخدم عند معالجة النص برمجيًا على مستوى المحارف.
+sources: []

@@ -1,0 +1,13 @@
+concept: codepoint
+names:
+  code: codepoint
+  display: Codepoint
+kind: unit
+category: text
+origin: borrowed
+tier: core
+status: draft
+plural: codepoints
+definition: قيمة رقمية معرفة في معيار ترميز مثل Unicode.
+purpose: تستخدم عندما يتعلق العمل بالتمثيل الرقمي الدقيق للمحارف والرموز القرآنية.
+sources: []

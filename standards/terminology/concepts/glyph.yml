@@ -1,0 +1,14 @@
+concept: glyph
+names:
+  code: glyph
+  display: Glyph
+kind: unit
+category: text
+origin: borrowed
+tier: core
+status: draft
+plural: glyphs
+definition: الشكل البصري الذي ينتجه الخط لتمثيل حرف أو محرف أو مجموعة منها.
+purpose: يستخدم في الخطوط والرسم والعرض ومواضع الأشكال البصرية، ولا يستخدم مرادفًا لـ`Letter`
+  أو `Character`.
+sources: []

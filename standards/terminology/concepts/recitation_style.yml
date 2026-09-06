@@ -1,0 +1,16 @@
+concept: recitation_style
+names:
+  code: recitation_style
+  display: Recitation Style
+  arabic:
+    vocalized: نَمَط الأَدَاء
+    singular: نمط أداء التلاوة
+kind: classification
+category: recitation_style
+origin: standard
+tier: core
+status: draft
+plural: recitation_styles
+definition: تصنيف يصف نمط أداء تلاوة أو تسجيل معين بصورة مستقلة عن القراءة والرواية.
+purpose: يستخدم لتصنيف التسجيلات الصوتية بحسب طريقة الأداء أو الغرض منها.
+sources: []

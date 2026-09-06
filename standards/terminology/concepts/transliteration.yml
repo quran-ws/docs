@@ -1,0 +1,16 @@
+concept: transliteration
+names:
+  code: transliteration
+  display: Transliteration
+  arabic:
+    vocalized: النَّقْل الحَرْفِيّ
+    singular: النقل الحرفي
+kind: content
+category: translation
+origin: borrowed
+tier: core
+status: draft
+plural: transliterations
+definition: تمثيل حروف نظام كتابي بحروف نظام آخر وفق قواعد محددة، دون ترجمة المعنى.
+purpose: يستخدم لتوفير تمثيل قابل للقراءة بنظام كتابي آخر أو للتحويل المنهجي بين أنظمة الكتابة.
+sources: []

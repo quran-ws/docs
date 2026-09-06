@@ -1,0 +1,20 @@
+concept: rub_al_hizb
+names:
+  code: rub_al_hizb
+  display: Rub al-Hizb
+  arabic:
+    vocalized: رُبْع الحِزْب
+    singular: ربع الحزب
+kind: entity
+category: divisions
+parent: hizb
+origin: quranic
+tier: core
+status: draft
+plural: rub_al_hizbs
+definition: ربع الحزب في التقسيم المشهور للمصحف.
+purpose: يستخدم لتمثيل التقسيم الأدق للحزب ومواضع علاماته في المصحف.
+alternative_spellings:
+- rub'_al-hizb
+- rub_el_hizb
+sources: []
