@@ -1,0 +1,46 @@
+			"<g class=""word"" data-wid=""2:6:2"" data-uthmani=""ٱلَّذِينَ"" data-rasm=""ٱلذين""
+   data-imlaei=""الَّذِينَ"" data-search=""الذين"" data-qpc=""ٱلَّذِينَ"">"			
+attribute	count	what it is	example (2:6:2)	the use	Unicode	comment
+data-wid	77432.0	"surah:ayah:word
+the only word key"	2:6:2		"ASCII only
+[0-9] + :"	Never derive it from geometry; document order is reading order.
+data-uthmani	77432.0	"the print's own text, full diacritics
+To display text matching the ink."	ٱلَّذِينَ		"Full Quranic set
+U+0671 ٱ
+U+0670 ٰ
+U+06E5/06E6 ۥۦ
+U+06DF ۟
+U+06E2/06ED ۭۢ 
+open tanween U+08F0–08F2
+sukun U+0652
+U+06DE ۞"	"Composite source
+quran.com text_uthmani + KFGQPC waqf + DigitalKhatt at iqlab sites"
+data-rasm	77432.0	skeleton of data-uthmani — the ink	ٱلذين		"36 distinct chars, letters only.
+13,483 × U+0671 ٱ 25
+184 × U+0627 ا
+zero U+0622 آ"	
+data-imlaei	77432.0	Readable/quotable text, with diacritics	الَّذِينَ		"Core Arabic block only
+U+0621–U+064A letters
+U+064B–U+0652 marks
+No U+0670, U+0671, U+06E5/06E6, U+08F0–08F2"	
+data-search	77432.0	skeleton of data-imlaei — the search key	الذين		"37 distinct chars letters only.
+
+zero U+0671 ٱ, 1,511 × U+0622 آ, 43,542 × U+0627 ا"	
+data-qpc	77432.0	the same text in KFGQPC codepoints	ٱلَّذِينَ		"QPC substitutions:
+U+0652→U+06E1 ۡ
+U+06DF→U+0652
+U+08F0→U+0657 ٗ
+U+08F1→U+065E ٞ
+U+06E3→U+06DC (52:37)"	Identical to data-uthmani for most words; differs only where the font demands another codepoint.
+data-wid	uthmani	rasm	imlaei	search	qpc	
+2:6:2	ٱلَّذِينَ	ٱلذين	الَّذِينَ	الذين	ٱلَّذِينَ	
+16:48:10	ظِلَٰلُهُۥ	ظلله	ظِلَالُهُ	ظلاله	ظِلَٰلُهُۥ	
+21:88:7	نُـۨجِى	نجى	نُنجِي	ننجي	نُـۨجِي	
+21:28:4	أَيْدِيهِمْ	أيديهم	أَيْدِيهِمْ	أيديهم	أَيۡدِيهِمۡ	
+2:70:1	قَالُوا۟	قالوا	قَالُوا	قالوا	قَالُواْ	
+24:2:12	رَأْفَةࣱ	رأفة	رَأْفَةٌ	رأفة	رَأۡفَةٞ	
+4:165:9	حُجَّةُۢ	حجة	حُجَّةٌ	حجة	حُجَّةُۢ	
+4:41:6	أُمَّةِۭ	أمة	أُمَّةٍ	أمة	أُمَّةِۭ	
+2:26:1	۞إِنَّ	إن	۞ إِنَّ	إن	۞ إِنَّ	
+37:130:3	إِلْ يَاسِينَ	إل ياسين	إِلْ يَاسِينَ	إل ياسين	إِلۡ يَاسِينَ	
+2:94:6	ٱلْـَٔاخِرَةُ	ٱلاخرة	الْآخِرَةُ	الآخرة	ٱلۡأٓخِرَةُ	

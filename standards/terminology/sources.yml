@@ -32,3 +32,24 @@ jamharah_dictionary:
     1,238 entries under Quranic sciences, plus hadith, aqidah and fiqh.
     Cite with `url` as the term page, e.g.
     https://islamic-content.com/dictionary/term/1063
+
+tajweed_engine:
+  title: Rule-driven tajweed engine — rule corpus
+  publisher: quranpedia
+  kind: corpus
+  url: https://github.com/quranpedia/tajweed-engine
+  version: 0.4.2
+  riwayah: hafs-an-asim
+  note: >
+    7 topics, 27 categories, 58 hukums and 182 rules, each hukum attributed
+    to a school (ابن الجزري، ابن الطحان الأندلسي). Cite with `ref` as the
+    hukum or rule id, e.g. "tafkheem-rank-1-jazari".
+
+hafs_svg_registry:
+  title: مصحف حفص — كلمة كلمة
+  kind: registry
+  edition: مصحف مجمع الملك فهد 1441، إصدار الإلستريتور
+  note: >
+    The project's own naming registry: 35 mark names, the SVG structure
+    glossary, and the word-attribute model. Exported to
+    standards/terminology/data/. Cite with `ref` as the sheet and row.
