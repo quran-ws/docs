@@ -13,7 +13,12 @@ tier: core
 status: draft
 plural: rubu_al_hizbs
 definition: ربع الحزب في التقسيم المشهور للمصحف.
+definition_en: >
+  A quarter of a hizb in the well-known division of the Mushaf.
 purpose: يستخدم لتمثيل التقسيم الأدق للحزب ومواضع علاماته في المصحف.
+purpose_en: >
+  Used to represent the finer division of the hizb and where its marks fall in the
+  Mushaf.
 alternative_spellings:
 - rub_al_hizb
 - rub'_al-hizb

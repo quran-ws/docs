@@ -13,11 +13,21 @@ status: draft
 plural: stems
 definition: >
   ما يبقى من الكلمة بعد نزع السوابق واللواحق، وتلحق به الزوائد الصرفية.
+definition_en: >
+  What remains of a word once its prefixes and suffixes are removed, and what the
+  morphological additions attach to.
 purpose: >
   يستخدم في التحليل الصرفي مستوى وسطًا بين صورة الكلمة وجذرها، فبعض المدونات
   تسجل الجذع ولا تسجل الجذر، وبعضها تسجلهما معًا.
+purpose_en: >
+  Used in morphological analysis as a level between the word form and its root: some
+  corpora record the stem and not the root, and some record both.
 boundaries:
   - الجذر أصل اشتقاقي مجرد، والجذع صورة قائمة في الكلمة بعد نزع الزوائد.
+boundaries_en:
+  - >-
+    A root is an abstract derivational origin; a stem is a form that stands in the word
+    once the additions are removed.
 related:
   - root
   - lemma

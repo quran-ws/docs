@@ -18,9 +18,15 @@ status: draft
 definition: >
   علم أداء حروف القرآن من مخارجها وإعطائها حقوقها ومستحقاتها من الصفات
   والأحكام.
+definition_en: >
+  The discipline of delivering the letters of the Quran from their points of
+  articulation and giving them their due properties and rulings.
 purpose: >
   يمثل المجال الجامع لقواعد التجويد وأحكامه وannotations التطبيقات، وتنسب
   إليه الأحكام والقواعد في القواميس والمحركات.
+purpose_en: >
+  Represents the field that gathers the rules of tajwid, its rulings and application
+  annotations; rulings and rules in dictionaries and engines are attributed to it.
 alternative_spellings:
   - tajweed
 related:

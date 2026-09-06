@@ -15,7 +15,10 @@ tier: core
 status: draft
 symbol: نُقْطَة وَاحِدَة
 definition: إعْجَام الحَرْف وتَمْيِيزُه عمَّا يُشَارِكُه في الرَّسْم
-purpose: Distinguishes a letter from others that share the same skeleton (i'jam).
+definition_en: Distinguishes a letter from others that share the same skeleton (i'jam).
+purpose: تستخدم قيمةً من قيم النقط، ليتميز بها الحرف عما يشاركه في الرسم في التحليل والبحث.
+purpose_en: Used as a value of ijam, so that a letter is told apart from those sharing its
+  skeleton in analysis and in search.
 alternative_spellings:
 - nuqtah
 unicode: []

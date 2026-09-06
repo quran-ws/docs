@@ -13,12 +13,24 @@ status: draft
 definition: >
   ما سميت به السورة من أسماء، وأكثر السور لها أكثر من اسم، منها ما ثبت بالأثر
   ومنها ما جرى به الاصطلاح.
+definition_en: >
+  The names a surah is known by. Most surahs carry more than one: some established by
+  narration, others settled by usage.
 purpose: >
   يستخدم لأن اسم السورة ليس حقلًا واحدًا: فالمصاحف تختلف في الاسم المثبت،
   والبحث يحتاج أن يجد السورة بأي أسمائها.
+purpose_en: >
+  Used because a surah's name is not one field: Mushafs differ over the name they print,
+  and search has to find a surah by any of its names.
 boundaries:
   - الاسم غير سبب التسمية؛ الأول ما تسمى به، والثاني علة التسمية.
   - أسماء السورة غير أسماء القرآن نفسه.
+boundaries_en:
+  - >-
+    A name is not the reason for the name: the first is what the surah is called, the
+    second is why.
+  - >-
+    The names of a surah are not the names of the Quran itself.
 alternative_spellings:
   - asmaa_al_surah
 english_glosses:

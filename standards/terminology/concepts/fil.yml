@@ -13,9 +13,15 @@ tier: core
 status: draft
 definition: >
   ما دل على معنى في نفسه مقترن بزمان، ويتصرف بالماضي والمضارع والأمر.
+definition_en: >
+  A word carrying a meaning in itself bound to a time, inflecting for past, present and
+  imperative.
 purpose: >
   يستخدم قيمةً من قيم قسم الكلمة، وعليه تعلق السمات الصرفية الخاصة بالفعل من
   الزمن والبناء للمعلوم أو المجهول والوزن.
+purpose_en: >
+  Used as a value of part of speech, and the morphological features specific to verbs —
+  tense, voice and pattern — hang off it.
 english_glosses:
   - Verb
 related:

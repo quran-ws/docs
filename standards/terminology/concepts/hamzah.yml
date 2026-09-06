@@ -16,7 +16,10 @@ tier: core
 status: draft
 symbol: ء
 definition: الدَّلَالَة على هَمْزَة القَطْع المُحَقَّقَة
-purpose: Marks a fully realised glottal stop (hamzat al-qat').
+definition_en: Marks a fully realised glottal stop (hamzat al-qat').
+purpose: تستخدم قيمةً من علامات الرسم، ليعرف بها ما خالف فيه الرسم اللفظ في الكلمة.
+purpose_en: Used as a value of the orthographic marks, so that where the rasm departs from
+  the pronunciation of a word is known.
 alternative_spellings:
 - hamza
 unicode:

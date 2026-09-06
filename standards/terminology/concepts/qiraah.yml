@@ -13,7 +13,13 @@ tier: core
 status: draft
 plural: qiraahs
 definition: وجه من وجوه قراءة القرآن ينسب إلى إمام من أئمة القراءات وتتفرع عنه الروايات والطرق.
+definition_en: >
+  One of the ways of reciting the Quran, attributed to one of the imams of the qiraat,
+  from which the riwayahs and turuq branch.
 purpose: يمثل المستوى الأعلى في model القراءات ويربط الروايات والطرق والنصوص المرتبطة بها.
+purpose_en: >
+  Represents the top level of the qiraat model and ties together the riwayahs, the
+  turuq, and the texts bound to them.
 alternative_spellings:
 - qira'ah
 - qiraa

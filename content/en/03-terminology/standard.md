@@ -1497,6 +1497,11 @@ deprecated:
 boundaries:
 related:
 sources:
+
+definition_en:   # the translation of definition; the English dictionary is generated from it
+purpose_en:      # the translation of purpose
+boundaries_en:   # the translation of boundaries, line for line
+note_en:         # the translation of note
 ```
 
 **`origin`** says where the concept's name came from. We write `quranic` for a
@@ -1515,6 +1520,33 @@ source is not marked `adopted`.
 **`arabic`** is required on every `origin: quranic` entry. A borrowed term is
 given its Arabic name when it has a settled one, so that we do not coin new
 Arabic terms by accident.
+
+### The entry in two languages
+
+There is one entry, and its prose is in two languages. Every prose field has an
+English twin: `definition_en`, `purpose_en`, `boundaries_en` and `note_en`. The
+English dictionary page is generated from them, as the Arabic page is generated
+from the Arabic fields, so the two pages cannot say different things.
+
+A twin is **a translation, not a second definition**. What one states, the other
+states: the English adds no condition and drops none. Boundaries translate line
+for line, one English line for each Arabic line, in its place.
+
+Four rules hold in the translation:
+
+- **A term is called by its adopted name**, the `display` in its own entry: Ayah,
+  not verse; Mushaf, not codex. The English in `english_glosses` is a search key,
+  not a name to write with.
+- **A code name is written as it is**, inside backticks, never translated.
+- **A repeated formula is translated by a repeated formula**: the six ayah
+  numbering entries share one purpose sentence in Arabic, so they share one in
+  English, word for word.
+- **No Arabic is left in an English field**, except an Arabic name the entry is
+  itself talking about, which is written inside «…». `tools/check_conformance.py`
+  checks this.
+
+None of this is offered as an approved translation of a religious text. It states
+a concept in a second language for whoever builds with it.
 
 Example:
 
@@ -1553,6 +1585,14 @@ definition: >
 purpose: >
   تستخدم قيمةً من قيم نوع علامة الوقف، ليتفرع عليها العرض والتلقين
   والتنبيه في التطبيقات بدل قراءة صورة الرمز.
+
+definition_en: >
+  A compulsory stop: continuing across it would suggest a meaning other
+  than the one intended.
+
+purpose_en: >
+  Used as a value of the waqf mark type, so that rendering, instruction and
+  warnings in applications branch on it rather than on the shape of the sign.
 
 related:
   - waqf

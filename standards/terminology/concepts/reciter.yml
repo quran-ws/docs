@@ -12,7 +12,12 @@ tier: core
 status: draft
 plural: reciters
 definition: الشخص الذي يؤدي تلاوة القرآن.
+definition_en: >
+  The person who performs a recitation of the Quran.
 purpose: يستخدم لربط التسجيلات الصوتية بمؤديها، دون افتراض أنه إمام `Qiraah` أو `Rawi`.
+purpose_en: >
+  Used to tie audio recordings to their performer, without assuming they are an imam of
+  a `Qiraah` or a `Rawi`.
 alternative_spellings:
 - qari
 sources: []

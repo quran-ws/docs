@@ -13,9 +13,17 @@ tier: core
 status: draft
 definition: >
   عد أهل الكوفة، المروي عن حمزة الزيات عن ابن أبي ليلى عن أبي عبد الرحمن السلمي عن علي بن أبي طالب، وهو العد الذي يجري عليه أكثر المصاحف المطبوعة اليوم.
+definition_en: >
+  The counting of the people of Kufa, transmitted from Hamzah al-Zayyat from Ibn Abi
+  Layla from Abu Abd al-Rahman al-Sulami from Ali ibn Abi Talib. It is the counting most
+  printed Mushafs follow today.
 purpose: >
   يستخدم قيمةً من قيم نظام عد الآي، فيعرف به ما تستند إليه أرقام الآيات وحدودها
   في مصحف أو dataset، وتقابل به مواضع الآي بين الأنظمة.
+purpose_en: >
+  Used as a value of the ayah numbering system, so that what a Mushaf's or a dataset's
+  ayah numbers and boundaries rest on is known, and ayah positions can be mapped between
+  systems.
 alternative_spellings:
   - kufi_numbering
   - kufan_numbering
@@ -27,4 +35,9 @@ note: >
   الاسم البرمجي هنا اسم الأصل وما يميز القيمة، لا اشتقاق من الاسم العربي؛
   فاشتقاق «العَدّ» يعطي `add` وهو فعل إنجليزي، و`makki` مأخوذ قيمةً من قيم
   `revelation_classification`. والوجه في ذلك مسجل في سجل القرارات.
+note_en: >
+  The code name here is the name of the school and what distinguishes the value, not a
+  derivation of the Arabic name: deriving from «العَدّ» gives `add`, an English verb,
+  and `makki` is already a value of `revelation_classification`. The reasoning is in the
+  decision record.
 sources: []

@@ -12,5 +12,10 @@ tier: core
 status: draft
 plural: translations
 definition: نقل معاني القرآن إلى لغة أخرى، وليست الترجمة قرآنًا بلفظه.
+definition_en: >
+  Rendering the meanings of the Quran into another language. A translation is not the
+  Quran in its wording.
 purpose: تستخدم لربط نصوص ترجمة المعاني بالآيات واللغات والمترجمين والمصادر.
+purpose_en: >
+  Used to tie translated-meaning texts to ayahs, languages, translators and sources.
 sources: []

@@ -11,5 +11,11 @@ origin: quranic
 tier: core
 status: draft
 definition: علامة ترشد إلى وجه من وجوه الأداء في موضعها، كالسكت والإشمام والتسهيل.
+definition_en: >
+  A mark pointing to a particular manner of delivery at its place, such as saktah,
+  ishmam and tashil.
 purpose: تستخدم أبًا للعلامات التي تنبه القارئ إلى أداء خاص، لا إلى ضبط الحرف.
+purpose_en: >
+  Used as the parent of the marks that alert the reader to a particular delivery rather
+  than to the pointing of a letter.
 sources: []

@@ -11,5 +11,11 @@ origin: quranic
 tier: core
 status: draft
 definition: علامة تضبط رسم الكلمة، كالهمزة والمدة والحروف الصغيرة.
+definition_en: >
+  A mark fixing how a word is written, such as the hamzah, the maddah and the small
+  letters.
 purpose: تستخدم أبًا للعلامات التي تتعلق برسم الكلمة لا بحركتها ولا بالوقف عليها.
+purpose_en: >
+  Used as the parent of the marks that concern how a word is written, rather than its
+  vowel or how it is stopped on.
 sources: []

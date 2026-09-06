@@ -12,7 +12,12 @@ origin: quranic
 tier: core
 status: draft
 definition: القراءة ببطء وتؤدة مع استيفاء الحروف وأحكامها، وتستخدم كثيرًا في مقام التعليم.
+definition_en: >
+  Reciting slowly and deliberately, giving the letters and their rules their full due;
+  much used in teaching.
 purpose: تستخدم لوصف مرتبة القراءة البطيئة الدقيقة.
+purpose_en: >
+  Used to describe the slow, exacting pace of recitation.
 alternative_spellings:
 - tahqeeq
 sources: []

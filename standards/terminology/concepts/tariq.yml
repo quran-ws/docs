@@ -13,7 +13,13 @@ tier: core
 status: draft
 plural: tariqs
 definition: وجه النقل المأخوذ عن الراوي بواسطة من دونه في سلسلة نقل القراءة.
+definition_en: >
+  A path of transmission taken from a rawi through those below him in the chain of
+  transmission of a qiraah.
 purpose: يستخدم عندما تحتاج البيانات إلى مستوى أدق من الرواية لتمييز طرق الأداء والنقل.
+purpose_en: >
+  Used when data needs a finer level than the riwayah to tell paths of delivery and
+  transmission apart.
 alternative_spellings:
 - tareeq
 sources: []
@@ -21,3 +27,8 @@ note: >
   لا سجل لطرق العشر بعد. النشر يسمي طرق كل رواية، وهي عند حد الطريق قريب من
   تسعمئة وثمانين طريقًا؛ والمجموعة مغلقة ومعروفة، لكنها لم تُفرغ في سجل، فالنقص
   مسجَّل لا مسكوت عنه.
+note_en: >
+  There is no registry of the turuq of the ten yet. Al-Nashr names the turuq of each
+  riwayah, coming to some nine hundred and eighty at the level of the tariq. The set is
+  closed and known, but it has not been written into a registry, so the gap is recorded
+  rather than passed over.

@@ -12,7 +12,11 @@ tier: core
 status: draft
 plural: hizbs
 definition: في التقسيم المعاصر نصف جزء، فيكون القرآن ستين حزبًا.
+definition_en: >
+  In the current division, half a juz, so that the Quran is sixty hizbs.
 purpose: يستخدم لتمثيل التقسيمات الاصطلاحية والتنقل وخطط القراءة.
+purpose_en: >
+  Used to represent the conventional divisions, navigation, and reading plans.
 alternative_spellings:
 - hezb
 sources: []

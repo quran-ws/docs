@@ -12,7 +12,11 @@ origin: quranic
 tier: core
 status: draft
 definition: القراءة بسرعة متوسطة بين التحقيق والحدر مع المحافظة على الأحكام.
+definition_en: >
+  Reciting at a middle speed between tahqiq and hadr, while keeping the rules.
 purpose: تستخدم لتمثيل المرتبة المتوسطة لسرعة القراءة.
+purpose_en: >
+  Used to represent the middle pace of recitation.
 alternative_spellings:
 - tadweer
 sources: []

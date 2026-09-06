@@ -15,7 +15,10 @@ tier: core
 status: draft
 symbol: خَطّ أُفُقِيّ
 definition: الدَّلَالَة على الكَلِمَة المُوجِبَة للسَّجْدَة
-purpose: Marks the word that makes prostration due.
+definition_en: Marks the word that makes prostration due.
+purpose: تستخدم علامةً من علامات المصحف، ليعرف بها موضعها ودلالتها في العرض والتحليل.
+purpose_en: Used as a mark of the Mushaf, so that its place and what it points to are known
+  in rendering and in analysis.
 alternative_spellings:
 - khatt_mujib_al_sajdah
 - sajdah-line

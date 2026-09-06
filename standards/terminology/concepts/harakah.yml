@@ -11,5 +11,10 @@ origin: quranic
 tier: core
 status: draft
 definition: علامة تضبط حركة الحرف من فتح أو ضم أو كسر أو سكون.
+definition_en: >
+  A mark fixing a letter's vowel: fathah, dammah, kasrah or sukun.
 purpose: تستخدم أبًا لعلامات الضبط التي تحدد نطق الحرف نفسه.
+purpose_en: >
+  Used as the parent of the dabt marks that determine how the letter itself is
+  pronounced.
 sources: []

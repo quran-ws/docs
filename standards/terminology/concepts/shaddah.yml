@@ -16,7 +16,11 @@ tier: core
 status: draft
 symbol: ـّ
 definition: الدَّلَالَة على إدْغَام الحَرْف الأَوَّل في الثَّانِي
-purpose: Marks assimilation of a first letter into the second (doubling).
+definition_en: Marks assimilation of a first letter into the second (doubling).
+purpose: تستخدم قيمةً من قيم الحركة، ليقرأ منها نطق الحرف في التحليل والعرض والتعليم بدل قراءة
+  صورة الشكل.
+purpose_en: Used as a value of harakah, so that a letter's pronunciation is read from it in
+  analysis, rendering and teaching rather than from the shape of the mark.
 alternative_spellings:
 - shadda
 unicode:

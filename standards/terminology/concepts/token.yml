@@ -11,12 +11,24 @@ plural: tokens
 definition: >
   وحدة ينتجها تقسيم النص وفق منهج معلن، وقد تطابق الكلمة، وقد تكون جزءًا منها،
   وقد تجمع أكثر من كلمة.
+definition_en: >
+  A unit produced by segmenting the text according to a declared method. It may equal a
+  word, be part of one, or span more than one.
 purpose: >
   يستخدم لربط التحليل الآلي بالنص حين لا يكون حد الكلمة هو حد التقسيم، وليبقى
   ما ينتجه المقسم متميزًا عما يعده القارئ كلمة.
+purpose_en: >
+  Used to tie automated analysis to the text where the word boundary is not the
+  segmentation boundary, and to keep what a segmenter produces distinct from what a
+  reader counts as a word.
 boundaries:
   - الكلمة وحدة يعرفها القارئ، والـtoken وحدة ينتجها منهج تقسيم؛ فاختلاف المنهج
     يغير عدد الـtokens ولا يغير عدد الكلمات.
+boundaries_en:
+  - >-
+    A word is a unit the reader recognises; a token is a unit a segmentation method
+    produces, so changing the method changes the number of tokens and not the number of
+    words.
 english_glosses:
   - Token
 related:

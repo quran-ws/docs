@@ -12,8 +12,14 @@ tier: core
 status: draft
 plural: words
 definition: وحدة من النص تعامل بوصفها كلمة مستقلة وفق منهج التقسيم النصي المعتمد.
+definition_en: >
+  A unit of the text treated as a word in its own right according to the adopted method
+  of textual segmentation.
 purpose: تستخدم لربط البيانات على مستوى الكلمة مثل الجذر والصرف والإعراب والتجويد والمحاذاة
   الصوتية والموضع البصري.
+purpose_en: >
+  Used to attach word-level data: root, morphology, irab, tajwid, audio alignment and
+  visual position.
 alternative_spellings:
 - kalimah
 sources: []

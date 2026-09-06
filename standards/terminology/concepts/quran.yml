@@ -12,7 +12,13 @@ tier: core
 status: draft
 definition: كلام الله المنزل على محمد ﷺ والمتعبد بتلاوته، ويطلق على مجموعه وعلى بعضه بحسب
   السياق.
+definition_en: >
+  The speech of Allah sent down upon Muhammad, peace be upon him, whose recitation is an
+  act of worship. The name is used of the whole and, by context, of a part of it.
 purpose: يمثل المحتوى القرآني نفسه بصورة مستقلة عن مصحف أو تخطيط أو تنسيق أو تمثيل رقمي معين.
+purpose_en: >
+  Represents the Quranic content itself, independent of any particular Mushaf, layout,
+  formatting or digital representation.
 alternative_spellings:
 - koran
 - qur'an

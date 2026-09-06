@@ -11,6 +11,12 @@ origin: standard
 tier: core
 status: draft
 definition: تصنيف للنص القرآني بحسب وقوع نزوله قبل الهجرة أو بعدها وفق الاصطلاح المعتمد.
+definition_en: >
+  A classification of the Quranic text by whether its revelation fell before or after
+  the Hijrah, in the accepted usage.
 purpose: يستخدم لتصنيف السور أو الآيات بحسب علاقتها بالهجرة دون الإيحاء بأن التصنيف جغرافي
   فقط.
+purpose_en: >
+  Used to classify surahs or ayahs by their relation to the Hijrah, without implying
+  that the classification is only geographical.
 sources: []

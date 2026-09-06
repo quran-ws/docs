@@ -13,11 +13,21 @@ status: draft
 definition: >
   المعاني الكلية التي تدور عليها السورة ويجمع بينها موضوعها، وما تنتظم به آياتها
   من غرض واحد.
+definition_en: >
+  The overarching meanings a surah turns on, held together by its subject, and the
+  single aim its ayahs are ordered around.
 purpose: >
   يستخدم محتوى يربط بالسورة كلها لا بآية منها، فيتميز عن التفسير الذي يمضي على
   الآيات، وعن الموضوعات التي تعدد ما ورد فيها.
+purpose_en: >
+  Used as content attached to a whole surah rather than to one of its ayahs, which sets
+  it apart from tafsir, that proceeds ayah by ayah, and from the topics, that enumerate
+  what the surah contains.
 boundaries:
   - المقصد غرض جامع للسورة، والموضوع واحد مما ورد فيها.
+boundaries_en:
+  - >-
+    A maqsad is an aim that gathers the surah; a topic is one of the things it contains.
 alternative_spellings:
   - maqasid
 english_glosses:

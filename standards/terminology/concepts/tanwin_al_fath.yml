@@ -18,8 +18,11 @@ symbol: ـً
 definition: الدَّلَالَة على التَّنْوِين المَنْصُوب. وتَرْكِيب الحَرَكَتَيْن يدلّ على إظْهَار
   التَّنْوِين، وتَتَابُعُهما مع تَشْدِيد التَّالِي على الإدْغَام الكَامِل، وبدونه على الإدْغَام
   النَّاقِص أو الإخْفَاء
-purpose: Marks the an tanwin. Stacked marks signal izhar; staggered marks with a shadda on
-  the next letter signal complete idgham, and without one, incomplete idgham or ikhfa.
+definition_en: Marks the an tanwin. Stacked marks signal izhar; staggered marks with a shadda
+  on the next letter signal complete idgham, and without one, incomplete idgham or ikhfa.
+purpose: تستخدم قيمةً من قيم التنوين، ليقرأ منها نطق آخر الاسم وحكمه بدل قراءة صورة الشكل.
+purpose_en: Used as a value of tanwin, so that the pronunciation of the noun's ending and
+  its ruling are read from it rather than from the shape of the mark.
 alternative_spellings:
 - fathatan
 - tanwin_al_nasb

@@ -12,7 +12,12 @@ tier: core
 status: draft
 plural: khatmahs
 definition: قراءة القرآن كاملًا من أوله إلى آخره.
+definition_en: >
+  Reading the Quran in full, from its beginning to its end.
 purpose: تستخدم لتتبع خطط الختم وإتمام القراءة وربط الجلسات بمسار ختمة.
+purpose_en: >
+  Used to track completion plans, to record that a reading was finished, and to tie
+  sessions to the course of one khatmah.
 alternative_spellings:
 - khatma
 sources: []

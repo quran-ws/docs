@@ -16,7 +16,11 @@ tier: core
 status: draft
 symbol: ـَ
 definition: الدَّلَالَة على حَرَكَة الحَرْف بالفَتْح
-purpose: Marks the letter as carrying the vowel a (fathah).
+definition_en: Marks the letter as carrying the vowel a (fathah).
+purpose: تستخدم قيمةً من قيم الحركة، ليقرأ منها نطق الحرف في التحليل والعرض والتعليم بدل قراءة
+  صورة الشكل.
+purpose_en: Used as a value of harakah, so that a letter's pronunciation is read from it in
+  analysis, rendering and teaching rather than from the shape of the mark.
 alternative_spellings:
 - fatha
 unicode:

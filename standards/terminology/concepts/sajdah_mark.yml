@@ -15,7 +15,10 @@ tier: core
 status: draft
 symbol: مِحْرَاب
 definition: الدَّلَالَة على مَوْضِع السُّجُود
-purpose: Marks the point at which the reader prostrates.
+definition_en: Marks the point at which the reader prostrates.
+purpose: تستخدم علامةً من علامات المصحف، ليعرف بها موضعها ودلالتها في العرض والتحليل.
+purpose_en: Used as a mark of the Mushaf, so that its place and what it points to are known
+  in rendering and in analysis.
 alternative_spellings:
 - alamat_mawdi_al_sajdah
 - sajdah-sign

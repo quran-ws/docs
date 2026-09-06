@@ -12,5 +12,10 @@ tier: core
 status: draft
 definition: رمز أو علامة غير داخلة في الحروف الأصلية للكلمة، تستخدم في المصحف لأغراض القراءة
   أو التنظيم أو الإرشاد.
+definition_en: >
+  A sign or mark that is not one of a word's original letters, used in the Mushaf for
+  reading, organisation or guidance.
 purpose: يوفر parent موحدًا للعلامات المختلفة بدل معاملتها كأنواع غير مرتبطة.
+purpose_en: >
+  Gives the different marks one parent, instead of treating them as unrelated kinds.
 sources: []

@@ -106,6 +106,48 @@ FAMILY_KIND = {"waqf": "classification_value"}
 FAMILY = {"حركة": "harakah", "تنوين": "tanwin", "نقط": "ijam", "إملائية": "imlaiyyah",
           "ضبط": "dabt", "وقف": "waqf", "علامة قراءة": "alamat_qiraah", "مستقل": "mustaqill"}
 
+# The registry answers "what does this mark do", which is the definition. Why we
+# model it is a property of the family, not of the individual mark: every waqf
+# mark is modelled for the same reason, and section 16 forbids a purpose that
+# only restates the definition. So the purpose is written once per family, in
+# both languages, exactly as section 27's own waqf_lazim example words it.
+PURPOSE = {
+    "harakah": (
+        "تستخدم قيمةً من قيم الحركة، ليقرأ منها نطق الحرف في التحليل والعرض والتعليم "
+        "بدل قراءة صورة الشكل.",
+        "Used as a value of harakah, so that a letter's pronunciation is read from it in "
+        "analysis, rendering and teaching rather than from the shape of the mark."),
+    "tanwin": (
+        "تستخدم قيمةً من قيم التنوين، ليقرأ منها نطق آخر الاسم وحكمه بدل قراءة صورة الشكل.",
+        "Used as a value of tanwin, so that the pronunciation of the noun's ending and its "
+        "ruling are read from it rather than from the shape of the mark."),
+    "ijam": (
+        "تستخدم قيمةً من قيم النقط، ليتميز بها الحرف عما يشاركه في الرسم في التحليل والبحث.",
+        "Used as a value of ijam, so that a letter is told apart from those sharing its "
+        "skeleton in analysis and in search."),
+    "imlaiyyah": (
+        "تستخدم قيمةً من علامات الرسم، ليعرف بها ما خالف فيه الرسم اللفظ في الكلمة.",
+        "Used as a value of the orthographic marks, so that where the rasm departs from the "
+        "pronunciation of a word is known."),
+    "waqf": (
+        "تستخدم قيمةً من قيم نوع علامة الوقف، ليتفرع عليها العرض والتلقين والتنبيه في "
+        "التطبيقات بدل قراءة صورة الرمز.",
+        "Used as a value of the waqf mark type, so that rendering, instruction and warnings in "
+        "applications branch on it rather than on the shape of the sign."),
+    "alamat_qiraah": (
+        "تستخدم قيمةً من علامات القراءة، لينبه بها القارئ إلى أداء خاص في موضعه.",
+        "Used as a value of the qiraah marks, so that the reader is alerted to a particular "
+        "delivery at its place."),
+    "dabt": (
+        "تستخدم علامةً من علامات المصحف، ليعرف بها موضعها ودلالتها في العرض والتحليل.",
+        "Used as a mark of the Mushaf, so that its place and what it points to are known in "
+        "rendering and in analysis."),
+    "mustaqill": (
+        "تستخدم علامةً من علامات المصحف، ليعرف بها موضعها ودلالتها في العرض والتحليل.",
+        "Used as a mark of the Mushaf, so that its place and what it points to are known in "
+        "rendering and in analysis."),
+}
+
 
 def parse_codepoints(cell):
     return [f"U+{m}" for m in re.findall(r"U\+([0-9A-Fa-f]{4,6})", cell or "")]
@@ -156,8 +198,12 @@ def build():
             "tier": "core",
             "status": "draft",
             "symbol": r[8].strip() or None,
+            # Column 10 defines the mark; column 15 is that same definition in
+            # English, not a second fact about the mark.
             "definition": r[9].strip(),
-            "purpose": r[14].strip(),
+            "definition_en": r[14].strip(),
+            "purpose": PURPOSE[family][0],
+            "purpose_en": PURPOSE[family][1],
             "alternative_spellings": sorted(
                 ({old, old.replace("-", "_"), disp_alias}
                  | PREVIOUS_NAMES.get(code, set())

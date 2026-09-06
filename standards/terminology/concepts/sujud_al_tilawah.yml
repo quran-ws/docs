@@ -11,7 +11,12 @@ origin: quranic
 tier: core
 status: draft
 definition: سجدة تؤدى عند قراءة أو سماع موضع من مواضع سجود التلاوة.
+definition_en: >
+  A prostration performed on reciting or hearing one of the places of sujud al-tilawah.
 purpose: يمثل العبادة أو الحكم نفسه، ويظل مستقلًا عن العلامة المطبوعة في المصحف.
+purpose_en: >
+  Represents the act of worship, or its ruling, and stays independent of the mark
+  printed in the Mushaf.
 alternative_spellings:
 - sajdah_al-tilawah
 - sajdat_al-tilawah

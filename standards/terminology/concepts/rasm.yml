@@ -12,5 +12,11 @@ tier: core
 status: draft
 definition: طريقة كتابة ألفاظ القرآن من حيث إثبات الحروف وحذفها وزيادتها وفصلها ووصلها ونحو
   ذلك.
+definition_en: >
+  The way the words of the Quran are written: which letters are written and which
+  omitted or added, and where words are joined or kept apart.
 purpose: يستخدم لتمييز الطبقة الإملائية/الرسمية للنص عن الخط والتخطيط والـglyphs.
+purpose_en: >
+  Used to keep the orthographic layer of the text distinct from the font, the layout and
+  the glyphs.
 sources: []

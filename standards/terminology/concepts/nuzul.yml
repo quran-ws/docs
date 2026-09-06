@@ -13,11 +13,22 @@ status: draft
 definition: >
   إنزال القرآن على النبي صلى الله عليه وسلم منجمًا في مدة الرسالة، على حسب
   الوقائع والحاجة.
+definition_en: >
+  The sending down of the Quran upon the Prophet, peace be upon him, in stages over the
+  period of the message, according to events and need.
 purpose: >
   يستخدم أصلًا تتفرع عنه ترتيب النزول وتصنيفه وأسبابه، فهذه الثلاثة كلها صفات
   لواقعة النزول، ولا تعرف إلا به.
+purpose_en: >
+  Used as the root that the order of revelation, its classification and its occasions
+  branch from: all three are properties of the event of revelation and are known only
+  through it.
 boundaries:
   - النزول واقعة، وترتيب النزول وتصنيفه وسببه صفات لها لا مرادفات لها.
+boundaries_en:
+  - >-
+    Revelation is an event; its order, its classification and its occasion are
+    properties of it, not synonyms for it.
 english_glosses:
   - Revelation
 related:

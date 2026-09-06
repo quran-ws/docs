@@ -108,9 +108,17 @@
       "type": "string",
       "description": "What is it? No implementation detail, no circularity (§15)."
     },
+    "definition_en": {
+      "type": "string",
+      "description": "The definition in English. A translation of `definition`, never a second definition: both say the same thing."
+    },
     "purpose": {
       "type": "string",
       "description": "Why do we model it? Never a restatement of the definition (§16)."
+    },
+    "purpose_en": {
+      "type": "string",
+      "description": "The purpose in English. A translation of `purpose`."
     },
     "boundaries": {
       "type": "array",
@@ -118,6 +126,13 @@
         "type": "string"
       },
       "description": "What the concept does not include (§17)."
+    },
+    "boundaries_en": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "The boundaries in English, line for line with `boundaries`."
     },
     "alternative_spellings": {
       "type": "array",
@@ -172,6 +187,10 @@
     },
     "note": {
       "type": "string"
+    },
+    "note_en": {
+      "type": "string",
+      "description": "The note in English."
     },
     "names": {
       "type": "object",

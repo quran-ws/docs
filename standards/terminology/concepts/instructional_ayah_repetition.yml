@@ -11,5 +11,11 @@ origin: standard
 tier: core
 status: draft
 definition: إعادة آية أو جزء منها مرة أو مرات وفق نمط تعليمي يساعد على التلقي والحفظ.
+definition_en: >
+  Repeating an ayah, or part of one, once or several times in a teaching pattern that
+  helps the learner take it in and memorise it.
 purpose: يستخدم لوصف ميزة مستقلة في التسجيل التعليمي بدل جعلها جزءًا ضمنيًا من `Muallim`.
+purpose_en: >
+  Used to describe a feature of a teaching recording in its own right, rather than
+  leaving it implied inside `Muallim`.
 sources: []

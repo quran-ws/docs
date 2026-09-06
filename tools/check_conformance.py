@@ -10,13 +10,15 @@ A departure that the decision record argues for is listed in DOCUMENTED below,
 so the check stays useful: an undocumented mismatch is a finding, and a
 documented one is a fact about the entry.
 """
-import glob, os, sys, collections
+import glob, os, re, sys, collections
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import yaml
 from translit import code_spelling
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CONCEPTS = os.path.join(ROOT, "standards/terminology/concepts")
+
+ARABIC = re.compile(r"[\u0600-\u06FF]")
 
 # Codes that deliberately are not the derivation of their Arabic name. Each one
 # is argued in content/*/03-terminology/decisions.md; the reason is repeated
@@ -98,6 +100,25 @@ def check(entries):
         if glosses & alts:
             problems.append(f"{code}: {sorted(glosses & alts)} listed as both a gloss "
                             f"and an alternative spelling (section 19)")
+
+        # section 27 — the entry is bilingual: every Arabic field has its English
+        # twin, and a twin is a translation, so a list translates line for line
+        for ar, en in (("definition", "definition_en"), ("purpose", "purpose_en"),
+                       ("boundaries", "boundaries_en"), ("note", "note_en")):
+            if e.get(ar) and not e.get(en):
+                problems.append(f"{code}: has {ar} and no {en} (section 27)")
+            if e.get(en) and not e.get(ar):
+                problems.append(f"{code}: has {en} and no {ar} (section 27)")
+            if ar == "boundaries" and e.get(en) and len(e[en]) != len(e.get(ar) or []):
+                problems.append(f"{code}: {len(e.get(ar) or [])} boundaries and "
+                                f"{len(e[en])} in {en} — they translate line for line")
+
+        # an English field written in Arabic is an untranslated field. A name
+        # quoted as «…» is the Arabic being talked about, not text left behind.
+        for en in ("definition_en", "purpose_en", "note_en"):
+            value = e.get(en)
+            if value and ARABIC.search(re.sub(r"«[^»]*»", "", value)):
+                problems.append(f"{code}: {en} still has Arabic in it outside «…»")
 
         # section 28 — an entry with no source is not adopted
         if e.get("status") == "adopted" and not e.get("sources"):

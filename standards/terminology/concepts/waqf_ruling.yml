@@ -11,6 +11,13 @@ origin: standard
 tier: core
 status: draft
 definition: تصنيف الموضع نفسه من جهة تمام المعنى عنده، لا من جهة العلامة المرسومة عليه.
+definition_en: >
+  A classification of the place itself by whether the meaning is complete there, not of
+  the mark drawn at it.
 purpose: 'يستخدم في التعليم والتحليل النحوي والدلالي للوقف، ويبقى مستقلًا عن `waqf_mark_type`
   لأنهما تصنيفان لشيئين مختلفين: هذا للموضع وذاك للعلامة.'
+purpose_en: >
+  Used in teaching and in the syntactic and semantic analysis of stopping. It stays
+  independent of `waqf_mark_type` because the two classify different things: this one
+  the place, that one the mark.
 sources: []

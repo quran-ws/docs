@@ -14,9 +14,15 @@ status: draft
 definition: >
   ما دل على معنى في نفسه غير مقترن بزمان، وتدخل فيه الأسماء والصفات والضمائر
   وأسماء الإشارة والموصولات.
+definition_en: >
+  A word carrying a meaning in itself not bound to a time: nouns, adjectives, pronouns,
+  demonstratives and relatives all fall under it.
 purpose: >
   يستخدم قيمةً من قيم قسم الكلمة، وتحته تندرج الوسوم التفصيلية التي تستعملها
   مدونات الصرف القرآني.
+purpose_en: >
+  Used as a value of part of speech, and the detailed tags that Quranic morphology
+  corpora use fall under it.
 english_glosses:
   - Noun
 related:

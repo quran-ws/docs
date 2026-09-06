@@ -14,7 +14,13 @@ status: draft
 plural: surahs
 definition: وحدة رئيسية من بنية القرآن، تتكون من آيات مرتبة ولها اسم وموضع معروف في ترتيب
   المصحف.
+definition_en: >
+  A principal unit of the structure of the Quran, made up of ordered ayahs, with a name
+  and a known place in the order of the Mushaf.
 purpose: تستخدم كوحدة رئيسية لتنظيم النص وربط الآيات والبيانات المتعلقة بالسورة.
+purpose_en: >
+  Used as the principal unit for organising the text and for attaching ayahs and
+  surah-level data.
 alternative_spellings:
 - sura
 english_glosses:

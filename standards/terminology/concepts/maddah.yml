@@ -16,8 +16,11 @@ tier: core
 status: draft
 symbol: خَطّ المَدّ
 definition: الدَّلَالَة على لُزُوم مَدّ الحَرْف مَدّاً زَائِداً على المَدّ الطَّبِيعِيّ الأَصْلِيّ
-purpose: Marks a lengthening beyond the natural two counts; the exact duration is a tajwid
-  matter.
+definition_en: Marks a lengthening beyond the natural two counts; the exact duration is a
+  tajwid matter.
+purpose: تستخدم قيمةً من علامات الرسم، ليعرف بها ما خالف فيه الرسم اللفظ في الكلمة.
+purpose_en: Used as a value of the orthographic marks, so that where the rasm departs from
+  the pronunciation of a word is known.
 alternative_spellings: []
 unicode:
 - cp: U+0653

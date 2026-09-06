@@ -16,7 +16,10 @@ tier: core
 status: draft
 symbol: ي صَغِيرَة
 definition: الدَّلَالَة على صِلَة هَاء الضَّمِير المَكْسُورَة بياء لَفْظِيَّة في حال الوَصْل
-purpose: Marks the silah of the pronoun ha with kasrah — pronounced as a ya in continuation.
+definition_en: Marks the silah of the pronoun ha with kasrah — pronounced as a ya in continuation.
+purpose: تستخدم قيمةً من علامات الرسم، ليعرف بها ما خالف فيه الرسم اللفظ في الكلمة.
+purpose_en: Used as a value of the orthographic marks, so that where the rasm departs from
+  the pronunciation of a word is known.
 alternative_spellings:
 - small-ya
 - small_ya

@@ -11,5 +11,11 @@ origin: quranic
 tier: core
 status: draft
 definition: قطع القراءة عند موضع من النص وفق أحكام الوقف والابتداء.
+definition_en: >
+  Stopping the recitation at a place in the text according to the rules of stopping and
+  starting.
 purpose: يمثل المفهوم العام للوقف، بينما تمثل `Waqf Mark` العلامات المطبوعة التي ترشد إليه.
+purpose_en: >
+  Represents the general concept of stopping, while `Waqf Mark` represents the printed
+  signs that point to it.
 sources: []

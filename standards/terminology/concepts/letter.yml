@@ -12,8 +12,13 @@ tier: core
 status: draft
 plural: letters
 definition: حرف هجائي بوصفه وحدة لغوية من وحدات الكتابة.
+definition_en: >
+  A letter of the alphabet as a linguistic unit of writing.
 purpose: يستخدم للبيانات التي تتعامل مع الحروف اللغوية، دون الخلط بينها وبين التمثيلات الرقمية
   أو البصرية.
+purpose_en: >
+  Used for data that deals with linguistic letters, without confusing them with their
+  digital or visual representations.
 alternative_spellings:
 - harf
 sources: []

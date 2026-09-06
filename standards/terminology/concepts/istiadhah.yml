@@ -11,7 +11,12 @@ origin: quranic
 tier: core
 status: draft
 definition: طلب العوذ بالله من الشيطان عند إرادة تلاوة القرآن.
+definition_en: >
+  Seeking refuge with Allah from the Shaytan before reciting the Quran.
 purpose: يستخدم لتمثيل الاستعاذة وصيغها وموضعها بالنسبة إلى بداية التلاوة.
+purpose_en: >
+  Used to represent the istiadhah, its wordings, and its position relative to the start
+  of a recitation.
 alternative_spellings:
 - isti'adhah
 - istiʿādhah

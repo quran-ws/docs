@@ -16,7 +16,12 @@ tier: core
 status: draft
 symbol: ثَلَاث نُقَط في مَوْضِعَيْن
 definition: مَوْضِعَان للوَقْف، إذا وُقِفَ على أَحَدِهما لم يَصِحَّ الوَقْف على الآخَر
-purpose: 'Two candidate stopping points: stopping at one makes stopping at the other invalid.'
+definition_en: 'Two candidate stopping points: stopping at one makes stopping at the other
+  invalid.'
+purpose: تستخدم قيمةً من قيم نوع علامة الوقف، ليتفرع عليها العرض والتلقين والتنبيه في التطبيقات
+  بدل قراءة صورة الرمز.
+purpose_en: Used as a value of the waqf mark type, so that rendering, instruction and warnings
+  in applications branch on it rather than on the shape of the sign.
 alternative_spellings:
 - muanaqah
 - muraqabah

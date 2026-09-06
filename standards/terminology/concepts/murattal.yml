@@ -12,5 +12,10 @@ origin: quranic
 tier: core
 status: draft
 definition: وصف لتلاوة أو تسجيل ينشر بوصفه مرتلًا.
+definition_en: >
+  A description of a recitation or a recording published as murattal.
 purpose: يستخدم لتصنيف التسجيل، ولا يستخدم مرادفًا عامًا لمفهوم `Tartil`.
+purpose_en: >
+  Used to classify a recording. It is never used as a general synonym for the concept of
+  `Tartil`.
 sources: []

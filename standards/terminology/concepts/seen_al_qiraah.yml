@@ -17,8 +17,11 @@ status: draft
 symbol: س
 definition: السِّين فوق الصَّاد تدلّ على القِرَاءَة بالسِّين، والسِّين تحت الصَّاد تدلّ على
   القِرَاءَة بالصَّاد
-purpose: A sin above the sad signals reading with sin; a sin below it signals reading with
-  sad.
+definition_en: A sin above the sad signals reading with sin; a sin below it signals reading
+  with sad.
+purpose: تستخدم قيمةً من علامات القراءة، لينبه بها القارئ إلى أداء خاص في موضعه.
+purpose_en: Used as a value of the qiraah marks, so that the reader is alerted to a particular
+  delivery at its place.
 alternative_spellings:
 - seen-reading
 - seen_reading

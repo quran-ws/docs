@@ -12,8 +12,13 @@ tier: core
 status: draft
 plural: recitations
 definition: قراءة القرآن وأداؤه صوتيًا.
+definition_en: >
+  Reading the Quran and delivering it aloud.
 purpose: يستخدم لتمثيل فعل التلاوة، وبرمجيًا يمكن أن يمثل تسجيلًا مرتبطًا بمؤدٍ وقراءة ورواية
   ونمط أداء.
+purpose_en: >
+  Used to represent the act of reciting; in software it may represent a recording bound
+  to a performer, a qiraah, a riwayah and a style of delivery.
 alternative_spellings:
 - tilawah
 sources: []

@@ -13,8 +13,13 @@ tier: core
 status: draft
 plural: rawis
 definition: من نسبت إليه الرواية عن إمام القراءة.
+definition_en: >
+  One to whom a transmission from an imam of a qiraah is attributed.
 purpose: يستخدم لتمثيل الشخص المرتبط بـ`Riwayah`، ولا يستخدم للدلالة على مؤدي تسجيل صوتي لمجرد
   أنه يقرأ القرآن.
+purpose_en: >
+  Used to represent the person a `Riwayah` is bound to. It is never used for the
+  performer of a recording merely because they recite the Quran.
 english_glosses:
 - Transmitter
 sources: []

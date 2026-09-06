@@ -12,7 +12,11 @@ origin: quranic
 tier: extended
 status: draft
 definition: السور التي تقارب آياتها المئة أو تزيد عليها أو تنقص عنها قليلًا.
+definition_en: >
+  The surahs whose ayahs come to about a hundred, a little more or a little less.
 purpose: تستخدم لتصنيف السور وفق تقسيمها التراثي.
+purpose_en: >
+  Used to classify the surahs according to their traditional division.
 english_glosses:
 - Hundred-Verse Surahs
 sources: []

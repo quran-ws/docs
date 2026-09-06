@@ -12,5 +12,10 @@ origin: quranic
 tier: core
 status: draft
 definition: ما لم يفد معنًى، أو أفاد معنًى غير مراد.
+definition_en: >
+  A stop that yields no meaning, or yields a meaning that is not the one intended.
 purpose: يستخدم قيمةً في تصنيف مواضع الوقف، وفي التنبيه في تطبيقات التعليم.
+purpose_en: >
+  Used as a value in classifying the places of stopping, and to warn the learner in
+  teaching applications.
 sources: []

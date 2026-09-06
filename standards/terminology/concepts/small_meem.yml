@@ -16,7 +16,10 @@ tier: core
 status: draft
 symbol: م صَغِيرَة
 definition: الدَّلَالَة على قَلْب النُّون السَّاكِنَة أو التَّنْوِين مِيماً عند البَاء
-purpose: Marks iqlab — a silent nun or tanwin turning into a mim before ba.
+definition_en: Marks iqlab — a silent nun or tanwin turning into a mim before ba.
+purpose: تستخدم علامةً من علامات المصحف، ليعرف بها موضعها ودلالتها في العرض والتحليل.
+purpose_en: Used as a mark of the Mushaf, so that its place and what it points to are known
+  in rendering and in analysis.
 alternative_spellings:
 - meem-iqlab
 - meem_iqlab

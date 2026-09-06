@@ -12,7 +12,12 @@ origin: quranic
 tier: core
 status: draft
 definition: الإسراع في القراءة مع المحافظة على الحروف والحركات وأحكام الأداء دون إخلال.
+definition_en: >
+  Reciting quickly while keeping the letters, the vowels and the rules of delivery
+  intact.
 purpose: تستخدم لتمثيل مرتبة القراءة الأسرع ضمن مراتب الأداء.
+purpose_en: >
+  Used to represent the fastest of the recitation paces.
 alternative_spellings:
 - hadar
 sources: []

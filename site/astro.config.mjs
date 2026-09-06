@@ -29,13 +29,11 @@ function sidebarOrder(path) {
  * exists in English becomes a `slug` entry, which Starlight resolves per locale
  * and labels from that locale's own frontmatter.
  *
- * A page with no English counterpart — currently only the dictionary — is left
- * out. One sidebar is shared by both locales, and neither way of expressing
- * such an entry works: a `slug` throws during the English build, and a `link`
- * has the current locale injected into it, pointing English readers at a page
- * that does not exist. Both index pages link to the dictionary in prose, so it
- * stays reachable. To put it in the sidebar, give it an English page and it is
- * picked up automatically.
+ * A page with no English counterpart is left out. One sidebar is shared by both
+ * locales, and neither way of expressing such an entry works: a `slug` throws
+ * during the English build, and a `link` has the current locale injected into
+ * it, pointing English readers at a page that does not exist. Give the page an
+ * English counterpart and it is picked up automatically.
  */
 function sectionItems(dir) {
   const arDir = `${contentDir}ar/${dir}`;

@@ -12,7 +12,12 @@ tier: core
 status: draft
 plural: muqris
 definition: من تلقى القراءة وأتقنها وينقلها للمتعلمين.
+definition_en: >
+  One who has received the recitation, mastered it, and transmits it to learners.
 purpose: يستخدم لتمثيل دور التعليم والتلقي والإقراء، ويتميز عن مجرد `Reciter`.
+purpose_en: >
+  Used to represent the role of teaching, receiving and granting the recitation, which
+  is distinct from being a `Reciter`.
 alternative_spellings:
 - muqree
 sources: []

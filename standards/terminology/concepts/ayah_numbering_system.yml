@@ -14,7 +14,13 @@ status: draft
 plural: ayah_numbering_systems
 definition: نظام يحدد حدود الآيات وأعدادها وأرقامها وبعض المسائل المتعلقة بالبسملة وفق مدارس
   عد الآي.
+definition_en: >
+  A system that fixes the boundaries of the ayahs, their totals, their numbers, and
+  certain questions about the basmalah, according to the schools of ayah counting.
 purpose: يستخدم لتحديد النظام الذي تستند إليه أرقام الآيات وحدودها في dataset أو Mushaf معين.
+purpose_en: >
+  Used to state which system a given dataset's or Mushaf's ayah numbers and boundaries
+  rest on.
 alternative_spellings:
 - ayah_counting_system
 sources: []

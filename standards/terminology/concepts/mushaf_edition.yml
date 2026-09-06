@@ -13,5 +13,11 @@ tier: core
 status: draft
 plural: mushaf_editions
 definition: إصدار منشور محدد من المصحف له خصائص محددة من الناشر والرسم والضبط والتخطيط وغيرها.
+definition_en: >
+  A specific published edition of the Mushaf with its own publisher, rasm, dabt, layout
+  and other properties.
 purpose: يستخدم لتمييز الإصدارات التي قد تختلف في الصفحات والأسطر والعلامات أو الخصائص الطباعية.
+purpose_en: >
+  Used to tell apart editions that may differ in pages, lines, marks or typographic
+  properties.
 sources: []

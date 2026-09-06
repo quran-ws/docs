@@ -11,5 +11,11 @@ origin: standard
 tier: core
 status: draft
 definition: تصنيف لما ترشد إليه علامة الوقف المرسومة في المصحف من لزوم أو منع أو جواز.
+definition_en: >
+  A classification of what a waqf mark drawn in the Mushaf points to: that stopping is
+  compulsory, forbidden or permitted.
 purpose: يوفر مجموعة قيم موحدة تتفرع عليها التطبيقات، بدل قراءة صورة الرمز نفسه.
+purpose_en: >
+  Gives applications one set of values to branch on, instead of reading the shape of the
+  sign itself.
 sources: []

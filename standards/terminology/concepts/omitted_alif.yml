@@ -16,7 +16,10 @@ tier: core
 status: draft
 symbol: ا صَغِيرَة قَائِمَة
 definition: الدَّلَالَة على أَلِف مَحْذُوفَة من الرَّسْم واجِبَة النُّطْق
-purpose: Restores an alif omitted from the Uthmani skeleton but obligatory in pronunciation.
+definition_en: Restores an alif omitted from the Uthmani skeleton but obligatory in pronunciation.
+purpose: تستخدم قيمةً من علامات الرسم، ليعرف بها ما خالف فيه الرسم اللفظ في الكلمة.
+purpose_en: Used as a value of the orthographic marks, so that where the rasm departs from
+  the pronunciation of a word is known.
 alternative_spellings:
 - alif_mahdhufah
 - small-alef

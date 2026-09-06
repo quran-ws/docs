@@ -12,5 +12,10 @@ origin: quranic
 tier: core
 status: draft
 definition: ما تم معناه ولم يتعلق بما بعده لفظًا ولا معنى.
+definition_en: >
+  A stop whose meaning is complete and which is connected to what follows it neither in
+  wording nor in meaning.
 purpose: يستخدم قيمةً في تصنيف مواضع الوقف تعليميًا وتحليليًا.
+purpose_en: >
+  Used as a value in classifying the places of stopping, for teaching and for analysis.
 sources: []

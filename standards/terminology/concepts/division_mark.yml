@@ -16,7 +16,10 @@ tier: core
 status: draft
 symbol: نَجْمَة
 definition: الدَّلَالَة على بِدَايَة الأَجْزَاء والأَحْزَاب وأَنْصَافِها وأَرْبَاعِها
-purpose: Marks the start of a juz, a hizb, or a half or quarter of one.
+definition_en: Marks the start of a juz, a hizb, or a half or quarter of one.
+purpose: تستخدم علامةً من علامات المصحف، ليعرف بها موضعها ودلالتها في العرض والتحليل.
+purpose_en: Used as a mark of the Mushaf, so that its place and what it points to are known
+  in rendering and in analysis.
 alternative_spellings:
 - alamat_al_tahzib
 deprecated:

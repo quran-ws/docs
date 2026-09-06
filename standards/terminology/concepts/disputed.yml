@@ -12,5 +12,10 @@ origin: standard
 tier: core
 status: draft
 definition: ما اختلفت المصادر المعتمدة في تصنيفه بين المكي والمدني.
+definition_en: >
+  What the accepted sources disagree about classifying as Makki or Madani.
 purpose: يمنع إجبار البيانات المختلف فيها على قيمة `Makki` أو `Madani` دون توثيق الخلاف.
+purpose_en: >
+  Keeps disputed data from being forced into `Makki` or `Madani` without recording the
+  disagreement.
 sources: []

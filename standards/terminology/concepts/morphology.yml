@@ -11,5 +11,10 @@ origin: borrowed
 tier: core
 status: draft
 definition: تحليل بنية الكلمة وصيغتها وما تحمله من خصائص صرفية.
+definition_en: >
+  The analysis of a word's structure and form and the morphological properties it
+  carries.
 purpose: يستخدم لتمثيل السمات الصرفية للكلمات أو الـtokens.
+purpose_en: >
+  Used to represent the morphological features of words or tokens.
 sources: []

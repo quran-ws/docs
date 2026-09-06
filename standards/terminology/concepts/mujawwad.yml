@@ -12,5 +12,10 @@ origin: quranic
 tier: core
 status: draft
 definition: وصف لتلاوة أو تسجيل ينشر بوصفه مجودًا.
+definition_en: >
+  A description of a recitation or a recording published as mujawwad.
 purpose: يستخدم لتصنيف نمط التسجيل، ولا يستخدم مرادفًا لعلم `Tajwid`.
+purpose_en: >
+  Used to classify the style of a recording. It is never used as a synonym for the
+  discipline of `Tajwid`.
 sources: []

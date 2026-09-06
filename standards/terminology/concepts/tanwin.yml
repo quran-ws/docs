@@ -11,5 +11,11 @@ origin: quranic
 tier: core
 status: draft
 definition: نون ساكنة زائدة تلحق آخر الاسم، وترسم بتكرار صورة الحركة.
+definition_en: >
+  An added vowelless noon at the end of a noun, written by doubling the shape of the
+  vowel.
 purpose: تستخدم أبًا لعلامات التنوين الثلاث، فتجمعها بدل تفريقها في قائمة واحدة.
+purpose_en: >
+  Used as the parent of the three tanwin marks, gathering them instead of scattering
+  them through one list.
 sources: []

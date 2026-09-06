@@ -12,5 +12,9 @@ tier: core
 status: draft
 plural: manzils
 definition: واحد من سبعة أقسام تقليدية للقرآن لتيسير ختمه في أسبوع.
+definition_en: >
+  One of seven traditional parts of the Quran, made to ease completing it in a week.
 purpose: يستخدم في التطبيقات التي تدعم نظام المنازل وخطط القراءة المبنية عليه.
+purpose_en: >
+  Used in applications that support the manzil system and the reading plans built on it.
 sources: []

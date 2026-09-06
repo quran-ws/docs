@@ -12,7 +12,13 @@ origin: quranic
 tier: core
 status: draft
 definition: طريقة كتابة كلمات المصاحف العثمانية وما يتعلق بها من حذف وزيادة وبدل وفصل ووصل.
+definition_en: >
+  The way the words of the Uthmani Mushafs are written, with the omission, addition,
+  substitution, separation and joining that go with it.
 purpose: تستخدم لتحديد أن النص يتبع قواعد الرسم العثماني بدل نظم إملائية أخرى.
+purpose_en: >
+  Used to state that a text follows the rules of the Uthmani rasm rather than another
+  orthography.
 english_glosses:
 - Uthmanic Orthography
 sources: []

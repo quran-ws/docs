@@ -11,5 +11,10 @@ origin: standard
 tier: core
 status: draft
 definition: تصنيف لسرعة أداء القراءة مع المحافظة على أحكامها.
+definition_en: >
+  A classification of how fast a recitation is delivered while its rules are kept.
 purpose: يفصل مراتب السرعة التقليدية عن أنماط التسجيل مثل `Murattal` و`Mujawwad`.
+purpose_en: >
+  Keeps the traditional paces apart from recording styles such as `Murattal` and
+  `Mujawwad`.
 sources: []

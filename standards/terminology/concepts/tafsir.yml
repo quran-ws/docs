@@ -12,7 +12,13 @@ tier: core
 status: draft
 plural: tafsirs
 definition: بيان معاني القرآن وشرح ألفاظه وما يرشد إليه من أحكام وهدايات بحسب أصول التفسير.
+definition_en: >
+  Stating the meanings of the Quran, explaining its wording, and the rulings and
+  guidance it points to, according to the principles of tafsir.
 purpose: يستخدم لتمثيل كتب ومحتوى التفسير وربط مقاطعه بالآيات والسور والمصادر.
+purpose_en: >
+  Used to represent tafsir works and content and to tie their passages to ayahs, surahs
+  and sources.
 alternative_spellings:
 - tafseer
 english_glosses:

@@ -11,8 +11,14 @@ origin: quranic
 tier: core
 status: draft
 definition: قراءة القرآن بتؤدة وبيان للحروف والكلمات ومراعاة الوقف والمعنى.
+definition_en: >
+  Reciting the Quran deliberately, making the letters and words distinct, observing the
+  stops and the meaning.
 purpose: يستخدم عندما يكون المقصود مفهوم الترتيل نفسه، ولا يستخدم مرادفًا تلقائيًا لتصنيف
   تسجيل `Murattal`.
+purpose_en: >
+  Used when the concept of tartil itself is meant. It is never used as an automatic
+  synonym for the `Murattal` recording style.
 alternative_spellings:
 - tarteel
 sources: []

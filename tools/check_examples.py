@@ -34,6 +34,7 @@ SCHEMA_WORDS = {
     # data files referred to by name in the prose
     "established_spellings", "letter_names", "dabt_marks", "general_words",
     "display_evidence", "alternative_spellings", "english_glosses", "by_shape",
+    "definition_en", "purpose_en", "boundaries_en", "note_en",
     "mushaf_introduction", "combining_class", "do_not_confuse_with", "arabic_status",
     "classification_value", "text_unit", "layout_unit", "word_root",
     "textual_concept", "recitation_concept", "typographic_unit", "linguistic_unit",
@@ -59,6 +60,7 @@ SCHEMA_WORDS = {
     "generate_concepts", "unicode_props", "measure_display", "check_examples",
     "check_registries", "build_registry_aliases", "registry_aliases",
     "extract_ayah_counts", "ayah_counts", "turath_cache",
+    "generate_skill", "skill_template", "audit_terminology", "update_check",
     # registry file names, and the sources their rows cite
     "qiraat_ayah_map", "ghayat_al_nihayah", "bayan_dani", "nasser_transmission",
 }

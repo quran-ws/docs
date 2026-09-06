@@ -16,7 +16,10 @@ tier: core
 status: draft
 symbol: ص صَغِيرَة فَوْق الأَلِف
 definition: الدَّلَالَة على سُقُوط الهَمْزَة وَصْلاً
-purpose: Marks a connecting hamzah, dropped whenever the word is reached in continuation.
+definition_en: Marks a connecting hamzah, dropped whenever the word is reached in continuation.
+purpose: تستخدم قيمةً من علامات الرسم، ليعرف بها ما خالف فيه الرسم اللفظ في الكلمة.
+purpose_en: Used as a value of the orthographic marks, so that where the rasm departs from
+  the pronunciation of a word is known.
 alternative_spellings:
 - wasla
 unicode:

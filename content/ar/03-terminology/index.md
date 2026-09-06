@@ -10,6 +10,11 @@ sidebar:
 - [سجل القرارات](/guidelines/ar/03-terminology/decisions/) — القرارات التي كان فيها خلاف، بقرارها وسببها ودليلها.
 - [قاموس المصطلحات](/guidelines/ar/03-terminology/dictionary/) — المفاهيم بتعريفاتها وأسمائها، مولدة من `standards/terminology/concepts/`.
 
+والمصدر نفسه مغلف مهارةً للوكلاء في
+[`skills/quranic-terminology/`](https://github.com/quran-ws/guidelines/tree/main/skills/quranic-terminology):
+المعيار والقاموس وسكربتات تحل التهجئة إلى مفهومها، وتشتق الاسم، وتفحص كودًا
+قائمًا على المعيار. وهي مولدة في كل بناء، فلا تفارق المداخل.
+
 والمصدر المقروء آليًا مستقل عن اللغة، ويستعمل الآن:
 
 | الملف | ما فيه |

@@ -16,7 +16,10 @@ tier: core
 status: draft
 symbol: مُسْتَطِيل قَائِم صَغِير
 definition: الدَّلَالَة على زِيَادَة الأَلِف وَصْلاً لا وَقْفاً؛ فتُنْطَق عند الوَقْف عليها
-purpose: Marks an alif dropped in continuation but pronounced when stopping on it.
+definition_en: Marks an alif dropped in continuation but pronounced when stopping on it.
+purpose: تستخدم علامةً من علامات المصحف، ليعرف بها موضعها ودلالتها في العرض والتحليل.
+purpose_en: Used as a mark of the Mushaf, so that its place and what it points to are known
+  in rendering and in analysis.
 alternative_spellings:
 - sifr-mustatil
 - sifr_mustatil

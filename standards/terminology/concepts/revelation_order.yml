@@ -11,5 +11,10 @@ origin: standard
 tier: core
 status: draft
 definition: ترتيب السور أو الآيات بحسب زمن نزولها، وقد يختلف بحسب المصدر المعتمد.
+definition_en: >
+  The order of the surahs or the ayahs by the time of their revelation, which may differ
+  from one accepted source to another.
 purpose: يستخدم لتخزين ترتيب النزول بصورة مستقلة عن ترتيب المصحف.
+purpose_en: >
+  Used to store the order of revelation independently of the order of the Mushaf.
 sources: []

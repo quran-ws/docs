@@ -15,9 +15,15 @@ status: draft
 plural: makkis
 definition: >
   ما نزل من القرآن قبل الهجرة، ولو نزل خارج مكة.
+definition_en: >
+  What was revealed of the Quran before the Hijrah, even if it was revealed outside
+  Makkah.
 purpose: >
   يستخدم قيمةً لتصنيف السور أو الآيات ضمن revelation_classification، ولا
   يستخدم للدلالة على المكان الجغرافي وحده.
+purpose_en: >
+  Used as a value classifying surahs or ayahs under revelation_classification. It is
+  never used for the geographical place alone.
 alternative_spellings:
   - makkiyy
 english_glosses:

@@ -13,5 +13,10 @@ tier: core
 status: draft
 plural: waqf_marks
 definition: علامة في المصحف ترشد القارئ إلى حكم الوقف أو الوصل في موضع معين.
+definition_en: >
+  A mark in the Mushaf pointing the reader to the ruling on stopping or continuing at a
+  given place.
 purpose: تستخدم لتمثيل الرمز وموضعه ونوعه بصورة منظمة.
+purpose_en: >
+  Used to represent the sign, its position and its type in an orderly way.
 sources: []

@@ -13,9 +13,15 @@ status: draft
 definition: >
   تصنيف الكلمة أو الوحدة الصرفية بحسب بابها النحوي، كالاسم والفعل والحرف وما
   يتفرع عنها.
+definition_en: >
+  The classification of a word or a morpheme by its grammatical class: ism, fil, harf
+  and what branches from them.
 purpose: >
   يستخدم وسمًا أساسيًا في التحليل الصرفي والنحوي، وعليه يقوم البحث بالوسم
   والتصفية وبناء التحليل الإعرابي.
+purpose_en: >
+  Used as the basic tag in morphological and syntactic analysis; searching by tag,
+  filtering, and building the syntactic analysis all rest on it.
 alternative_spellings:
   - pos
 english_glosses:
@@ -28,4 +34,8 @@ note: >
   القسمة الثلاثية هي المستوى الذي يثبته المعيار. أما الوسوم التفصيلية التي
   تستعملها مدونات الصرف القرآني — وهي عشرات — فبيانات تندرج تحت هذه القيم
   الثلاث، ولا تفرد مداخل في القاموس.
+note_en: >
+  The threefold division is the level this standard fixes. The detailed tags used by
+  Quranic morphology corpora — dozens of them — are data falling under these three
+  values, and are not given entries of their own in the dictionary.
 sources: []

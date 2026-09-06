@@ -15,11 +15,21 @@ plural: mawdi_al_sajdahs
 definition: >
   الموضع من النص الذي يسجد عنده القارئ، وينتهي بآية بعينها، ومواضعه معدودة
   مختلف في عد بعضها.
+definition_en: >
+  The place in the text at which the reader prostrates, ending at a particular ayah. The
+  places are countable, and some of them are disputed.
 purpose: >
   يستخدم لربط السجدة بموضعها من السورة والآية والصفحة، ولتمييز الموضع عن
   العلامة التي ترسم عنده وعن السجود نفسه.
+purpose_en: >
+  Used to tie a sajdah to its place in the surah, the ayah and the page, and to keep the
+  place apart from the mark drawn at it and from the prostration itself.
 boundaries:
   - الموضع مكان من النص، وعلامة السجدة رسم يدل عليه، وسجود التلاوة هو الفعل.
+boundaries_en:
+  - >-
+    The place is a location in the text, the sajdah mark is a sign drawn for it, and
+    sujud al-tilawah is the act.
 english_glosses:
   - Sajdah Place
 related:

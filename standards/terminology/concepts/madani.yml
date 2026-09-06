@@ -12,7 +12,12 @@ origin: quranic
 tier: core
 status: draft
 definition: ما نزل من القرآن بعد الهجرة، ولو نزل خارج المدينة.
+definition_en: >
+  What was revealed of the Quran after the Hijrah, even if it was revealed outside
+  Madinah.
 purpose: يستخدم كقيمة لتصنيف سورة أو آية ضمن `Revelation Classification`.
+purpose_en: >
+  Used as a value classifying a surah or an ayah under `Revelation Classification`.
 alternative_spellings:
 - madaniyy
 - madinan

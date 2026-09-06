@@ -13,12 +13,22 @@ tier: core
 status: draft
 definition: >
   ما دل على معنى في غيره، كحروف الجر والعطف والنفي والاستفهام.
+definition_en: >
+  A word carrying a meaning in something other than itself, such as the prepositions and
+  the particles of conjunction, negation and interrogation.
 purpose: >
   يستخدم قيمةً من قيم قسم الكلمة، ويسمى بالاسم الكامل لأن `harf` وحده اسم
   الحرف المبنى، وهو وحدة من وحدات الكتابة لا قسم من أقسام الكلمة.
+purpose_en: >
+  Used as a value of part of speech. It takes the full name because `harf` alone is the
+  name of the written letter, which is a unit of writing and not a part of speech.
 boundaries:
   - حرف المعنى قسم من أقسام الكلمة، وحرف المبنى — وهو `letter` — وحدة من النص
     المكتوب.
+boundaries_en:
+  - >-
+    Harf al-mana is a part of speech; the written letter — `letter` — is a unit of the
+    written text.
 english_glosses:
   - Particle
 related:

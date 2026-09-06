@@ -16,8 +16,11 @@ tier: core
 status: draft
 symbol: دَائِرَة صَغِيرَة
 definition: الدَّلَالَة على زِيَادَة الحَرْف رَسْماً؛ فلا يُنْطَق وَصْلاً ولا وَقْفاً
-purpose: Marks a letter present in the skeleton but never pronounced — neither in continuation
+definition_en: Marks a letter present in the skeleton but never pronounced — neither in continuation
   nor when stopping.
+purpose: تستخدم علامةً من علامات المصحف، ليعرف بها موضعها ودلالتها في العرض والتحليل.
+purpose_en: Used as a mark of the Mushaf, so that its place and what it points to are known
+  in rendering and in analysis.
 alternative_spellings:
 - sifr-mustadir
 - sifr_mustadir

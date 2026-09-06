@@ -13,13 +13,26 @@ status: draft
 definition: >
   رفع حكم شرعي بدليل شرعي متأخر عنه، ويبحث في القرآن بنسبة الآية الناسخة إلى
   الآية المنسوخة.
+definition_en: >
+  The lifting of a legal ruling by a later legal proof. In the Quran it is studied by
+  relating an abrogating ayah to an abrogated one.
 purpose: >
   يستخدم لتمثيل العلاقة بين آيتين إحداهما ناسخة والأخرى منسوخة، وهي علاقة بين
   موضعين من النص لا صفة في آية واحدة.
+purpose_en: >
+  Used to represent the relation between two ayahs, one abrogating and one abrogated: a
+  relation between two places in the text, not a property of a single ayah.
 boundaries:
   - النسخ حكم على الحكم لا على النص، فالآية المنسوخ حكمها ثابتة في المصحف.
   - النسبة مختلف فيها في كثير من المواضع، فتقيد بمصدرها ولا تعرض حكمًا مجمعًا
     عليه.
+boundaries_en:
+  - >-
+    Abrogation bears on the ruling, not on the text: an ayah whose ruling is abrogated
+    stands in the Mushaf as it is.
+  - >-
+    The relation is disputed in many places, so it is bound to its source and never
+    presented as agreed upon.
 alternative_spellings:
   - nasikh_mansukh
   - nasikh_wa_mansukh
