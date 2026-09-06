@@ -8,17 +8,298 @@
    That is 15 of the 24 characters this repository documents. Noto Naskh
    Arabic sits behind it purely to catch those; the browser falls back per
    glyph, so only the marks change face. Do not remove it — the mark tables
-   render as tofu without it. */
+   render as tofu without it.
+
+   IBM Plex Mono carries everything that is data rather than prose: section
+   numbers, status, file paths, canonical names, codepoints, code. The split
+   is the whole point of the design — if it is a value the build produced or
+   a string a program reads, it is mono. */
 :root {
   --sl-font: 'Rubik', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --sl-font-mono: 'IBM Plex Mono', ui-monospace, 'SF Mono', 'Menlo', monospace;
   --sl-font-arabic: 'Rubik', 'Noto Naskh Arabic', 'Amiri', serif;
   /* A mark shown on its own has no Rubik glyph at all, so it leads with naskh. */
   --sl-font-quranic: 'Noto Naskh Arabic', 'Amiri', 'Scheherazade New', serif;
 }
 
+/* ---------------------------------------------------------------------------
+   Tokens. Starlight ships dark on :root and overrides it under
+   [data-theme='light'], so this file follows that order.
+   One accent hue; the three status hues sit at the same lightness and chroma
+   as each other so no state shouts louder than another.
+   --------------------------------------------------------------------------- */
+:root {
+  --qw-ink: #e6e8ea;
+  --qw-ink-2: #b6bcc4;
+  --qw-muted: #8b929c;
+  --qw-faint: #6b7280;
+  --qw-bg: #0f1214;
+  --qw-surface: #16191c;
+  --qw-rule: #262b30;
+  --qw-rule-soft: #1d2126;
+  --qw-rule-strong: #4a525b;
+
+  --qw-accent: #7ba7e0;
+  --qw-accent-hover: #a3c3ec;
+
+  --qw-draft: #d9a441;
+  --qw-draft-bg: #2a2113;
+  --qw-adopted: #5cb98a;
+  --qw-adopted-bg: #12251b;
+  --qw-proposed: #7ba7e0;
+  --qw-proposed-bg: #13202e;
+
+  --sl-color-accent-low: #16263a;
+  --sl-color-accent: #3f6ca8;
+  --sl-color-accent-high: #a3c3ec;
+  --sl-color-white: #f4f5f6;
+  --sl-color-gray-1: var(--qw-ink);
+  --sl-color-gray-2: var(--qw-ink-2);
+  --sl-color-gray-3: var(--qw-muted);
+  --sl-color-gray-4: var(--qw-faint);
+  --sl-color-gray-5: var(--qw-rule);
+  --sl-color-gray-6: var(--qw-surface);
+  --sl-color-black: var(--qw-bg);
+  --sl-color-bg: var(--qw-bg);
+  --sl-color-bg-nav: var(--qw-bg);
+  --sl-color-bg-sidebar: var(--qw-bg);
+  --sl-color-bg-inline-code: var(--qw-surface);
+  --sl-color-hairline: var(--qw-rule);
+  --sl-color-hairline-light: var(--qw-rule-soft);
+  --sl-color-hairline-shade: var(--qw-rule);
+  --sl-color-text: var(--qw-ink-2);
+  --sl-color-text-accent: var(--qw-accent);
+
+  --sl-content-width: 50rem;
+  --sl-nav-height: 3.5rem;
+  --sl-line-height: 2;
+}
+
+:root[data-theme='light'] {
+  --qw-ink: #0f1419;
+  --qw-ink-2: #1f2733;
+  --qw-muted: #6b7484;
+  --qw-faint: #9aa2b0;
+  --qw-bg: #ffffff;
+  --qw-surface: #f7f8f9;
+  --qw-rule: #e4e6ea;
+  --qw-rule-soft: #eef0f3;
+  --qw-rule-strong: #cdd2da;
+
+  --qw-accent: #2f5ea3;
+  --qw-accent-hover: #1f4478;
+
+  --qw-draft: #9a6a10;
+  --qw-draft-bg: #fdf6e7;
+  --qw-adopted: #1c7a52;
+  --qw-adopted-bg: #eaf5ef;
+  --qw-proposed: #2f5ea3;
+  --qw-proposed-bg: #eaf0f8;
+
+  --sl-color-accent-low: #eaf0f8;
+  --sl-color-accent: #2f5ea3;
+  --sl-color-accent-high: #1f4478;
+  --sl-color-white: #0f1419;
+  --sl-color-gray-1: var(--qw-ink);
+  --sl-color-gray-2: var(--qw-ink-2);
+  --sl-color-gray-3: var(--qw-muted);
+  --sl-color-gray-4: var(--qw-faint);
+  --sl-color-gray-5: var(--qw-rule-strong);
+  --sl-color-gray-6: var(--qw-surface);
+  --sl-color-gray-7: var(--qw-rule-soft);
+  --sl-color-black: #ffffff;
+  --sl-color-bg: var(--qw-bg);
+  --sl-color-bg-nav: var(--qw-bg);
+  --sl-color-bg-sidebar: #fbfbfc;
+  --sl-color-bg-inline-code: var(--qw-surface);
+  --sl-color-hairline: var(--qw-rule);
+  --sl-color-hairline-light: var(--qw-rule-soft);
+  --sl-color-hairline-shade: var(--qw-rule);
+  --sl-color-text: var(--qw-ink-2);
+  --sl-color-text-accent: var(--qw-accent);
+}
+
+/* ---------------------------------------------------------------------------
+   Chrome: square edges, hairline rules, no shadows. A spec, not a card deck.
+   --------------------------------------------------------------------------- */
+header.header {
+  border-bottom: 1px solid var(--qw-rule);
+  box-shadow: none;
+}
+
+.site-title {
+  font-family: var(--sl-font-mono);
+  font-size: var(--sl-text-sm);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--qw-ink);
+}
+
+site-search button,
+.sl-flex > button[aria-label],
+starlight-theme-select select,
+starlight-lang-select select {
+  border-radius: 0;
+}
+
+site-search button {
+  border: 1px solid var(--qw-rule);
+  background: var(--qw-surface);
+}
+
+#starlight__sidebar {
+  border-inline-end: 1px solid var(--qw-rule);
+}
+
+/* Sidebar groups read as the numbered sections they are. */
+.sidebar-content > ul > li > details > summary,
+.sidebar-content .top-level > li > span.large {
+  font-weight: 600;
+  font-size: var(--sl-text-sm);
+  color: var(--qw-ink);
+}
+
+.sidebar-content a {
+  border-radius: 0;
+  border-inline-start: 2px solid transparent;
+  padding-block: 0.3rem;
+}
+
+.sidebar-content a[aria-current='page'],
+.sidebar-content a[aria-current='page']:hover {
+  background: transparent;
+  border-inline-start-color: var(--qw-accent);
+  color: var(--qw-accent);
+  font-weight: 600;
+}
+
+/* ---------------------------------------------------------------------------
+   Table of contents. The default is an undifferentiated grey wall; this
+   numbers the top level and demotes nested headings under it.
+   --------------------------------------------------------------------------- */
+starlight-toc nav > h2 {
+  font-size: var(--sl-text-xs);
+  font-weight: 600;
+  color: var(--qw-faint);
+}
+
+starlight-toc nav ul {
+  counter-reset: qw-toc;
+}
+
+starlight-toc nav a {
+  border-radius: 0;
+  border-inline-start: 2px solid transparent;
+  padding-block: 0.25rem;
+  line-height: 1.6;
+}
+
+starlight-toc nav > ul > li > a[href]::before {
+  counter-increment: qw-toc;
+  content: counter(qw-toc);
+  font-family: var(--sl-font-mono);
+  font-size: 0.6875rem;
+  color: var(--qw-faint);
+  margin-inline-end: 0.625rem;
+}
+
+/* The overview entry is not a section, so it is not numbered — and it must
+   not consume a number either, or every heading is off by one against the
+   counter in the page body. */
+starlight-toc nav > ul > li > a[href='#_top']::before {
+  content: none;
+  counter-increment: none;
+}
+
+starlight-toc nav a[aria-current='true'] {
+  border-inline-start-color: var(--qw-ink);
+  color: var(--qw-ink);
+  font-weight: 600;
+}
+
+starlight-toc nav a[aria-current='true']::before {
+  color: var(--qw-ink);
+}
+
+/* Nested entries are secondary, and say so. */
+starlight-toc nav ul ul a[href] {
+  font-size: var(--sl-text-xs);
+  color: var(--qw-muted);
+  padding-inline-start: 1.75rem;
+}
+
+/* ---------------------------------------------------------------------------
+   Prose
+   --------------------------------------------------------------------------- */
 [dir='rtl'] .sl-markdown-content {
   font-family: var(--sl-font-arabic);
   line-height: 2.05; /* vocalized Arabic needs room above and below the baseline */
+}
+
+.sl-markdown-content {
+  font-weight: 300;
+  text-wrap: pretty;
+}
+
+.sl-markdown-content strong {
+  font-weight: 600;
+  color: var(--qw-ink);
+}
+
+.content-panel h1 {
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+/* Numbered h2s. The source writes `# 1. Title`; the numeral fights the RTL
+   run when it sits inside the heading text, so it goes in the margin instead.
+   Pages that don't number their sections get the rule and nothing else. */
+.sl-markdown-content {
+  counter-reset: qw-section;
+}
+
+.sl-markdown-content h2 {
+  display: flex;
+  align-items: baseline;
+  gap: 0.875rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--qw-ink);
+}
+
+/* The splash page's one heading is a label, not a numbered section. */
+.content-panel:has(.hero) .sl-markdown-content h2::before,
+main:has(> .content-panel .hero) .sl-markdown-content h2::before {
+  content: none;
+}
+
+.sl-markdown-content h2::before {
+  counter-increment: qw-section;
+  content: counter(qw-section);
+  flex-shrink: 0;
+  font-family: var(--sl-font-mono);
+  font-size: 0.6em;
+  font-weight: 500;
+  color: var(--qw-faint);
+  direction: ltr;
+  unicode-bidi: isolate;
+}
+
+/* The anchor-link icon Starlight injects must not be counted as content. */
+.sl-markdown-content h2 > a.sl-anchor-link { align-self: center; }
+
+.sl-markdown-content h3 {
+  font-weight: 600;
+  color: var(--qw-ink);
+}
+
+.sl-markdown-content blockquote {
+  border-inline-start: 2px solid var(--qw-ink);
+  padding-inline-start: 1rem;
+  font-weight: 400;
+  font-style: normal;
+  color: var(--qw-ink-2);
 }
 
 /* Code keeps its own direction inside RTL prose, or identifiers read backwards. */
@@ -29,8 +310,277 @@
   font-family: var(--sl-font-mono);
 }
 
-/* Quranic text and isolated marks: naskh first, and larger, since the marks
-   are small by design and unreadable at body size. */
+.sl-markdown-content code:not(:where(pre *)) {
+  border-radius: 0;
+  border: 1px solid var(--qw-rule);
+  font-size: 0.85em;
+  padding: 0.1rem 0.35rem;
+}
+
+.expressive-code .frame,
+.expressive-code pre {
+  border-radius: 0 !important;
+}
+
+/* Tables read as data, with a mono header. */
+.sl-markdown-content table {
+  border: 1px solid var(--qw-rule);
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.sl-markdown-content th {
+  font-size: var(--sl-text-xs);
+  font-weight: 600;
+  color: var(--qw-muted);
+  background: var(--qw-surface);
+  border-bottom: 1px solid var(--qw-rule);
+  padding: 0.625rem 0.875rem;
+}
+
+.sl-markdown-content td {
+  border-bottom: 1px solid var(--qw-rule-soft);
+  padding: 0.6875rem 0.875rem;
+  font-size: var(--sl-text-sm);
+}
+
+.sl-markdown-content tr:last-child td {
+  border-bottom: none;
+}
+
+/* Asides: a hairline box with a mono label, not a tinted rounded card. */
+.sl-markdown-content .starlight-aside {
+  border-radius: 0;
+  border: 1px solid var(--qw-rule);
+  border-inline-start-width: 1px;
+  background: var(--qw-surface);
+  padding: 1rem 1.125rem;
+}
+
+.sl-markdown-content .starlight-aside__title {
+  font-size: var(--sl-text-sm);
+  font-weight: 600;
+  color: var(--qw-ink);
+}
+
+.sl-markdown-content .starlight-aside--caution {
+  border-color: color-mix(in srgb, var(--qw-draft) 35%, transparent);
+  background: var(--qw-draft-bg);
+}
+
+.sl-markdown-content .starlight-aside--note,
+.sl-markdown-content .starlight-aside--tip {
+  border-color: color-mix(in srgb, var(--qw-proposed) 30%, transparent);
+  background: var(--qw-proposed-bg);
+}
+
+/* ---------------------------------------------------------------------------
+   Status. Two axes, deliberately distinguished:
+   `status-*` is the page's adoption state, from its frontmatter.
+   `state-*` is how far a section has been written, on the home index.
+   --------------------------------------------------------------------------- */
+[class^='status-']::before,
+[class^='state-']::before {
+  display: inline-block;
+  font-family: var(--sl-font-mono);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0;
+}
+
+.status-draft::before { content: 'DRAFT'; color: var(--qw-draft); background: var(--qw-draft-bg); }
+.status-proposed::before { content: 'PROPOSED'; color: var(--qw-proposed); background: var(--qw-proposed-bg); }
+.status-adopted::before { content: 'ADOPTED'; color: var(--qw-adopted); background: var(--qw-adopted-bg); }
+.state-written::before { content: 'WRITTEN'; color: var(--qw-adopted); background: var(--qw-adopted-bg); }
+.state-planned::before {
+  content: 'PLANNED';
+  color: var(--qw-faint);
+  background: transparent;
+  border: 1px solid var(--qw-rule);
+  padding: 0.1875rem 0.5rem;
+}
+
+/* ---------------------------------------------------------------------------
+   Home: the spec cover, and the numbered section index.
+   --------------------------------------------------------------------------- */
+.hero {
+  padding-block: 3.5rem 0;
+}
+
+.hero > img,
+.hero > .hero-html { display: none; }
+
+.hero h1 {
+  font-size: clamp(2.25rem, 5vw, 3.25rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+  color: var(--qw-ink);
+}
+
+.hero .tagline {
+  font-size: var(--sl-text-lg);
+  font-weight: 300;
+  color: var(--qw-muted);
+  max-width: 45ch;
+}
+
+.hero .actions .sl-link-button,
+.sl-markdown-content .sl-link-button {
+  border-radius: 0;
+  font-weight: 500;
+  border-width: 1px;
+}
+
+.hero .actions .sl-link-button.primary {
+  background: var(--qw-accent);
+  border-color: var(--qw-accent);
+  color: var(--qw-bg);
+}
+
+.hero .actions .sl-link-button.minimal {
+  border: 1px solid var(--qw-rule-strong);
+  padding-inline: 1.25rem;
+  color: var(--qw-ink);
+}
+
+/* Facts strip under the hero: status, licence, source, languages.
+   Cells carry their own hairline rather than showing a grid gap through a
+   tinted parent — a gap needs every cell to stretch, and one tall cell then
+   leaks the parent colour along the row. */
+.qw-meta {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0;
+  border: 1px solid var(--qw-rule);
+  margin-block: 2.5rem 4rem;
+}
+
+.qw-meta > div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+  padding: 1rem 1.125rem;
+  background: var(--qw-bg);
+  border-inline-start: 1px solid var(--qw-rule);
+}
+
+.qw-meta > div:first-child { border-inline-start: none; }
+
+.qw-meta dt {
+  font-family: var(--sl-font-mono);
+  font-size: 0.625rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: var(--qw-faint);
+}
+
+.qw-meta dd {
+  margin: 0;
+  font-size: var(--sl-text-sm);
+  font-weight: 500;
+  color: var(--qw-ink);
+}
+
+.qw-meta dd.mono { font-family: var(--sl-font-mono); }
+
+/* The section index. Each row: § number, title and blurb, state. */
+.qw-index {
+  border-top: 1px solid var(--qw-rule);
+}
+
+.qw-index-row {
+  display: grid;
+  grid-template-columns: 3.5rem minmax(0, 1fr) 8rem;
+  column-gap: 2rem;
+  align-items: start;
+  padding-block: 1.375rem;
+  border-bottom: 1px solid var(--qw-rule);
+}
+
+.qw-index-row.is-current { background: var(--qw-surface); }
+
+.qw-index-num {
+  direction: ltr;
+  unicode-bidi: isolate;
+  text-align: start;
+  font-family: var(--sl-font-mono);
+  font-size: var(--sl-text-sm);
+  font-weight: 500;
+  color: var(--qw-faint);
+  padding-top: 0.1875rem;
+}
+
+.qw-index-row.is-current .qw-index-num { color: var(--qw-ink); }
+
+.qw-index-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+}
+
+.qw-index-body > a:first-child {
+  font-size: 1.0625rem;
+  font-weight: 600;
+  color: var(--qw-ink);
+  text-decoration: none;
+}
+
+.qw-index-body > a:first-child:hover {
+  color: var(--qw-accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.qw-index-body p {
+  margin: 0;
+  font-size: var(--sl-text-sm);
+  font-weight: 300;
+  line-height: 1.7;
+  color: var(--qw-muted);
+}
+
+.qw-index-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.125rem;
+  margin-top: 0.125rem;
+}
+
+.qw-index-links a {
+  font-family: var(--sl-font-mono);
+  font-size: var(--sl-text-xs);
+  color: var(--qw-accent);
+}
+
+.qw-index-state { justify-self: start; }
+
+@media (max-width: 50rem) {
+  .qw-meta { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .qw-index-row {
+    grid-template-columns: 2.5rem minmax(0, 1fr);
+    column-gap: 0.75rem;
+    row-gap: 0.625rem;
+  }
+  .qw-index-state { grid-column: 2; }
+  /* 44px minimum target on a phone. */
+  .qw-index-body > a:first-child,
+  .qw-index-links a {
+    display: flex;
+    align-items: center;
+    min-height: 44px;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Quranic text and specimen blocks.
+   The dabt marks are non-spacing combining characters (Mn, class 230): set
+   with no base they render as a dotted circle or vanish. Every standalone
+   mark in the content is written on a tatweel (U+0640) — which is also how
+   mushaf introductions set them. Do not strip the tatweel.
+   --------------------------------------------------------------------------- */
 .quran,
 [lang='ar-x-quran'] {
   font-family: var(--sl-font-quranic);
@@ -38,14 +588,199 @@
   line-height: 2.4;
 }
 
-/* Status badge, so a draft is never mistaken for a binding rule. */
-[class^='status-']::before {
-  color: #fff;
-  border-radius: 4px;
-  padding: 0.1rem 0.5rem;
-  font-size: 0.75rem;
-  letter-spacing: 0.04em;
+.qw-specimen {
+  border: 1px solid var(--qw-rule);
+  margin-block: 1.5rem;
 }
-.status-draft::before { content: 'draft'; background: #b45309; }
-.status-proposed::before { content: 'proposed'; background: #1d4ed8; }
-.status-adopted::before { content: 'adopted'; background: #15803d; }
+
+.qw-specimen-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.875rem;
+  padding: 0.5625rem 0.875rem;
+  border-bottom: 1px solid var(--qw-rule);
+  background: var(--qw-surface);
+  font-family: var(--sl-font-mono);
+  font-size: var(--sl-text-xs);
+  color: var(--qw-muted);
+}
+
+.qw-specimen-head .code {
+  font-weight: 500;
+  color: var(--qw-ink);
+  direction: ltr;
+}
+
+.qw-specimen-head .ref {
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+}
+
+/* The glyph, set large on its own ground with a baseline rule behind it. */
+.qw-specimen-glyph {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 9.25rem;
+  background: var(--qw-surface);
+  border-bottom: 1px solid var(--qw-rule);
+  font-family: var(--sl-font-quranic);
+  font-size: 4.75rem;
+  line-height: 1;
+  color: var(--qw-ink);
+}
+
+.qw-specimen-ayah {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2.125rem 1.75rem;
+  font-family: var(--sl-font-quranic);
+  font-size: 1.875rem;
+  line-height: 2.5;
+  text-align: center;
+  color: var(--qw-ink);
+}
+
+.qw-specimen-foot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem 1rem;
+  border-top: 1px solid var(--qw-rule);
+  background: var(--qw-surface);
+  font-size: var(--sl-text-sm);
+  font-weight: 300;
+  color: var(--qw-muted);
+}
+
+.qw-specimen-foot .mark {
+  font-family: var(--sl-font-quranic);
+  font-size: 1.375rem;
+  line-height: 1;
+  color: var(--qw-ink);
+}
+
+.qw-specimen-foot .code {
+  font-family: var(--sl-font-mono);
+  font-size: var(--sl-text-xs);
+  color: var(--qw-accent);
+  direction: ltr;
+}
+
+/* Field rows under a glyph: name, shape, codepoint, family. */
+.qw-specimen-fields {
+  display: grid;
+  grid-template-columns: 5.75rem minmax(0, 1fr);
+}
+
+.qw-specimen-fields dt,
+.qw-specimen-fields dd {
+  margin: 0;
+  padding: 0.5625rem 0.875rem;
+  border-bottom: 1px solid var(--qw-rule-soft);
+}
+
+.qw-specimen-fields dt {
+  font-family: var(--sl-font-mono);
+  font-size: 0.625rem;
+  letter-spacing: 0.06em;
+  color: var(--qw-faint);
+}
+
+.qw-specimen-fields dd { font-size: var(--sl-text-sm); }
+.qw-specimen-fields dd.mono { font-family: var(--sl-font-mono); direction: ltr; }
+
+/* A mark inside running prose. */
+.qw-mark {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4375rem;
+  border: 1px solid var(--qw-rule);
+  background: var(--qw-surface);
+  padding: 0.125rem 0.5rem;
+  vertical-align: middle;
+}
+
+.qw-mark .glyph {
+  font-family: var(--sl-font-quranic);
+  font-size: 1.25rem;
+  line-height: 1.4;
+  color: var(--qw-ink);
+}
+
+.qw-mark .cp {
+  font-family: var(--sl-font-mono);
+  font-size: var(--sl-text-xs);
+  color: var(--qw-muted);
+  direction: ltr;
+}
+
+/* A markdown table whose first column holds marks. */
+.sl-markdown-content .qw-marks td:first-child {
+  font-family: var(--sl-font-quranic);
+  font-size: 1.625rem;
+  line-height: 1.8;
+  color: var(--qw-ink);
+  width: 4.5rem;
+}
+
+/* Latin runs inside Arabic prose, isolated so the bidi algorithm can't
+   reorder them against the surrounding text. */
+.ltr {
+  direction: ltr;
+  unicode-bidi: isolate;
+}
+
+/* ---------------------------------------------------------------------------
+   Suggest an edit. Every block of prose is wrapped in .qw-block by the rehype
+   plugin, with a pencil sitting in the margin beside it. The pencil is quiet
+   until the block is hovered, so a page at rest reads as prose and not as a
+   form. On narrow screens there is no margin to sit in, so it rides the top
+   corner of the block instead.
+   --------------------------------------------------------------------------- */
+.sl-markdown-content .qw-block {
+  position: relative;
+}
+
+.qw-suggest {
+  position: absolute;
+  top: 0.1em;
+  inset-inline-end: -1.9rem;
+  width: 1.4rem;
+  height: 1.4rem;
+  display: grid;
+  place-items: center;
+  border-radius: 4px;
+  color: var(--qw-faint);
+  font-family: var(--sl-font-quranic);
+  font-size: 0.95rem;
+  line-height: 1;
+  text-decoration: none;
+  opacity: 0;
+  transition: opacity 0.12s ease, color 0.12s ease, background-color 0.12s ease;
+}
+
+.qw-block:hover .qw-suggest,
+.qw-suggest:focus-visible {
+  opacity: 1;
+}
+
+.qw-suggest:hover,
+.qw-suggest:focus-visible {
+  color: var(--qw-accent);
+  background: var(--qw-surface);
+  opacity: 1;
+}
+
+/* No margin to spare: sit inside the block's own corner, and stay visible,
+   since there is no hover on touch. */
+@media (max-width: 72rem) {
+  .qw-suggest {
+    inset-inline-end: 0;
+    opacity: 0.35;
+  }
+}

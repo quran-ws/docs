@@ -1,0 +1,34 @@
+name: تصحيح فقرة — Suggest an edit
+description: اقتراح تعديل على فقرة بعينها في الأدلة.
+title: "edit: "
+labels: ["edit"]
+body:
+  - type: textarea
+    id: location
+    attributes:
+      label: الموضع
+      description: يملؤه الرابط تلقائيًّا — القسم وروابطه. اتركه كما هو.
+    validations:
+      required: true
+  - type: textarea
+    id: quote
+    attributes:
+      label: النص الحالي
+      description: يملؤه الرابط تلقائيًّا.
+      render: markdown
+    validations:
+      required: true
+  - type: textarea
+    id: suggestion
+    attributes:
+      label: التعديل المقترح
+      description: اكتب الفقرة كما تراها صحيحة، لا وصفًا للتعديل.
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: لماذا
+      description: الحالة الواقعية أو المصدر الذي يوجب التعديل.
+    validations:
+      required: true
