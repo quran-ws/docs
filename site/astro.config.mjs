@@ -4,6 +4,11 @@ import starlight from '@astrojs/starlight';
 export default defineConfig({
   site: 'https://quran-ws.github.io',
   base: '/guidelines',
+  // Neither language is the root: /ar/ and /en/ mirror each other, as the
+  // content directories do. The bare base redirects to the default locale.
+  redirects: {
+    '/': '/guidelines/ar/',
+  },
   integrations: [
     starlight({
       title: 'Quran.ws Guidelines',
