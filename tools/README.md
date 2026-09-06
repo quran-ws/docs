@@ -11,20 +11,28 @@ Every name in the dictionary is derived or measured. Nothing here is chosen by h
 | `generate_dabt.py` | Generates the 35 mark entries from the registry TSV |
 | `build_aliases.py` | Builds `aliases.json`, so every attested spelling resolves to one concept |
 | `validate.py` | Validates every concept file against `schema.json` |
+| `check_examples.py` | Checks that every name used in the prose still resolves, and that counter-examples are still wrong |
+| `generate_dictionary.py` | Renders the dictionary page from the concept files |
 
 ```bash
 python3 tools/test_translit.py     # spelling rules still hold
 python3 tools/generate_dabt.py     # regenerate mark entries
 python3 tools/build_aliases.py     # rebuild the alias index
 python3 tools/validate.py          # every entry conforms
+python3 tools/check_examples.py    # no stale name in the prose
+python3 tools/generate_dictionary.py
 ```
 
 ## Why `code` and `display` differ
 
-`code` is derived and never negotiated: `nun_saghirah`, `mim_saghirah`, `tajwid`.
+`code` is derived and never negotiated: `noon_saghirah`, `waqf_lazim`, `tajwid`.
 `display` is whatever English writing actually uses, measured: `Noon Saghirah`,
-`Meem Saghirah`, `Tajweed`. Both are recorded, the evidence for the second is
+`Waqf Lazim`, `Tajweed`. Both are recorded, the evidence for the second is
 recorded with it, and `aliases.json` resolves either to the same concept.
+
+Letter names are the exception to derivation: they are written as they are
+said, so `noon` and `meem` rather than `nun` and `mim`. See
+`standards/terminology/data/letter_names.tsv`.
 
 This exists because one string cannot be a stable identifier, a familiar label,
 a faithful rendering of the sound, and a search target at once. Four fields can.

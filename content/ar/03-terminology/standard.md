@@ -778,7 +778,7 @@ sujud_al_tilawah   السجود نفسه            concept
 **محرف واحد يخدم علامتين**، فتتحدد العلامة بالمحرف مع موضعه:
 
 ```text
-U+06DC   ARABIC SMALL HIGH SEEN   →  alamat_al_sakt  أو  sin_al_qiraah
+U+06DC   ARABIC SMALL HIGH SEEN   →  alamat_al_sakt  أو  seen_al_qiraah
 U+06EC   ROUNDED HIGH STOP        →  al_ishmam       أو  al_tashil
 ```
 

@@ -22,6 +22,7 @@
 | مداخل علامات الضبط | `standards/terminology/data/dabt_marks.tsv` | `python3 tools/generate_dabt.py` |
 | كتلة `unicode` في أي مدخل | لا شيء، تقرأ من قاعدة يونيكود | `python3 tools/generate_dabt.py` |
 | تهجئة `code` | `names.arabic.vocalized` | تشتق تلقائيًا |
+| `content/ar/03-terminology/dictionary.md` | المدخل نفسه | `python3 tools/generate_dictionary.py` |
 
 ## قبل الإرسال
 
@@ -29,6 +30,7 @@
 python3 tools/test_translit.py    # قواعد التهجئة كما هي
 python3 tools/validate.py         # كل مدخل موافق للـschema
 python3 tools/build_aliases.py    # لا تصادم في المرادفات
+python3 tools/check_examples.py   # لا اسم قديم في النصوص
 ```
 
 ## حال الصفحة

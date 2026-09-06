@@ -1,0 +1,31 @@
+concept: noon_sakinah
+names:
+  code: noon_sakinah
+  display: Noon Sakinah
+  display_evidence: >
+    GitHub phrase search: noon sakinah 478 vs nun sakinah 118. Letter names are
+    written as they are said, so the derivation gives noon rather than nun.
+  transliteration: nūn sākinah
+  arabic:
+    vocalized: النُّون السَّاكِنَة
+    singular: النون الساكنة
+kind: concept
+category: tajwid
+origin: quranic
+tier: core
+status: draft
+definition: >
+  نون خالية من الحركة، تثبت لفظًا وخطًا ووصلًا ووقفًا.
+purpose: >
+  نستخدمها موضعًا تتفرع عليه أحكام الإظهار والإدغام والإقلاب والإخفاء في
+  محركات التجويد.
+alternative_spellings:
+  - nun_sakinah
+  - noon_saakinah
+related:
+  - tajwid
+  - tanwin_al_nasb
+sources:
+  - id: tajweed_engine
+    ref: noon-tanween
+    url: https://github.com/quranpedia/tajweed-engine
