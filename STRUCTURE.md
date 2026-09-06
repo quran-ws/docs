@@ -50,6 +50,10 @@ guidelines/
 │           └── ...
 │
 ├── tools/                         # ما يشتق الأسماء ويقيسها ويتحقق منها
+│   ├── build.py                   # البناء: كل خطوة بترتيبها
+│   └── skill_template/            # نص المهارة وسكربتاتها، تملأ عند البناء
+├── skills/
+│   └── quranic-terminology/       # مهارة الوكيل، مولدة كاملة في كل بناء
 ├── examples/                      # أمثلة كود قصيرة يشير إليها المحتوى
 ├── site/                          # موقع Astro Starlight
 └── .github/
@@ -65,4 +69,5 @@ guidelines/
 - **`ar` and `en` mirror each other file-for-file.** A page that exists in one locale and not the other is a known gap, not a different structure. Arabic is the authoring source for text-adab and terminology; English is the source for engineering pages.
 - **Every page states its status in frontmatter**: `draft`, `proposed`, or `adopted`. Only `adopted` pages are binding on our projects.
 - **A concept gets an entry, a member gets a row.** `concepts/` holds what needs a definition; `registries/` holds closed sets whose members have nothing to say beyond their name and their place in the set — the ten qiraat, the 114 surahs. The concept entry names its registry, and `tools/check_registries.py` checks the rows.
+- **`skills/` is generated, never edited.** `tools/generate_skill.py` writes it whole on every build, from `standards/` and `content/en`, so the skill an agent runs cannot state a rule the standard does not.
 - **`standards/` is the source of truth, `content/` explains it.** The terminology tables in prose are generated from `standards/terminology/concepts/*.yml`, never hand-maintained in two places.

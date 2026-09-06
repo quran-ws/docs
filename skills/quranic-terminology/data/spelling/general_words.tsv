@@ -1,0 +1,35 @@
+# General Arabic words that are written in English, per section 3.
+#
+# Section 3 decides whether a CONCEPT keeps its Arabic name. This table applies
+# the same rule inside a compound name: the Quranic word is transliterated and
+# the ordinary word beside it is translated. So المِيم الصَّغِيرَة is small_meem,
+# not meem_saghirah — `saghirah` carries nothing that `small` does not, and a
+# reader of either language loses by it.
+#
+# A word belongs here only when it is an ordinary Arabic word with a plain
+# English equivalent. A technical term does not, however familiar it looks.
+#
+# The third column is the word's place in the English name:
+#   word   stays where it stands       ثَلَاث نُقَط     → three_dots
+#   head   moves to the end            عَلَامَة الوَقْف  → waqf_mark
+# A head is a noun that governs what follows it, so English puts it last. A
+# chain of heads reverses: نَوْع عَلَامَة الوَقْف → waqf_mark_type.
+#
+# arabic	english	role
+صغير	small	word
+صغيرة	small	word
+مستدير	rounded	word
+مستطيل	rectangular	word
+محذوف	omitted	word
+محذوفة	omitted	word
+صفر	zero	word
+نقطة	dot	word
+نقطتان	two_dots	word
+ثلاث	three	word
+نقط	dots	word
+علامة	mark	head
+خط	line	head
+نوع	type	head
+تقسيم	division	word
+إملائي	orthographic	word
+إملائية	orthographic	word

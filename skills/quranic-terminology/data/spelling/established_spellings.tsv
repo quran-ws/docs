@@ -1,0 +1,14 @@
+# Terms whose code spelling is established by use, not derived.
+#
+# The derivation in tools/translit.py decides every other term. A row here
+# overrides it, and is only accepted with a measurement showing the established
+# form dominates. Taste is not evidence. Measure with tools/measure_display.py.
+#
+# arabic	code	evidence
+الجزء	juz	GitHub phrase search: "juz number" 1384 vs "juzu number" 1
+جزء	juz	same term without the article
+آل	aal	the derivation gives `al`, which section 8 reserves for the definite article; a name may not open with it
+طه	taha	a surah named by the letters it opens with; the derivation reads them as a consonant cluster and gives `th`
+يس	yasin	as above; the derivation gives `ys`
+ص	saad	as above; the derivation gives `s`, which collides with the letter seen
+ق	qaaf	as above; the derivation gives `q`

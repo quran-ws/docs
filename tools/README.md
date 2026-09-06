@@ -16,9 +16,13 @@ Every name in the dictionary is derived or measured. Nothing here is chosen by h
 | `check_registries.py` | Checks the registries: derived codes still derive, references resolve, every row cites a source |
 | `build_registry_aliases.py` | Builds `registry_aliases.json`, the member index, namespaced by kind |
 | `extract_ayah_counts.py` | Reads the per-surah counts of the six numbering schools out of al-Bayan, and proves the reading by reconciling it |
-| `generate_dictionary.py` | Renders the dictionary page from the concept files |
+| `generate_dictionary.py` | Renders the dictionary pages, Arabic and English, from the concept files |
+| `generate_skill.py` | Builds `skills/quranic-terminology/`: the standard, the dictionary and the scripts an agent audits a codebase with |
+| `build.py` | Runs every step above in order. This is the build |
 
 ```bash
+python3 tools/build.py             # all of it, in order
+
 python3 tools/test_translit.py     # spelling rules still hold
 python3 tools/generate_dabt.py     # regenerate mark entries
 python3 tools/build_aliases.py     # rebuild the alias index
@@ -29,7 +33,19 @@ python3 tools/check_registries.py  # every member of every closed set holds up
 python3 tools/build_registry_aliases.py
 python3 tools/extract_ayah_counts.py --check  # the counts still reconcile
 python3 tools/generate_dictionary.py
+python3 tools/generate_skill.py    # package it for an agent
 ```
+
+## The skill
+
+`generate_skill.py` writes `skills/quranic-terminology/`, which is generated in
+full on every build and never edited by hand. It carries the English standard,
+the dictionary, the decision record, the registries, and three scripts: one that
+resolves any spelling to its concept, one that audits a codebase against the
+standard and exits non-zero for CI, and one that derives a code spelling from
+vocalized Arabic. The build stamps the commit it came from, so
+`scripts/update_check.py` can tell a copy of the skill that it has fallen behind
+this repository.
 
 ## Why `code` and `display` differ
 

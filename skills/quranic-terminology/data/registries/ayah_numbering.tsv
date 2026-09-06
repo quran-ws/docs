@@ -1,0 +1,38 @@
+# The six schools of ayah numbering, with the count each one reports.
+#
+# The six systems already have dictionary entries — they are the values of the
+# `ayah_numbering_system` classification, and those entries say what each one
+# is. This registry carries what an entry should not: the numbers.
+#
+# A total is a fact with a chain behind it, not a constant. Al-Dani reports each
+# school's total on the authority of a named transmitter, and reports the rival
+# figures beside it — the Basrans are given as 6204, and also as 6210 and 6216
+# from other transmitters on the same page. `total` is the figure al-Dani gives
+# as that school's own count; `also_reported` is what else he reports for it.
+# Software that prints one number without the other is printing an opinion.
+#
+# `qiraat` lists the readings conventionally paired with the school. The pairing
+# is conventional: a numbering school and a reading are different things that
+# travelled together, and neither one derives the other.
+#
+# NOT HERE YET: the per-surah counts. Al-Dani gives every surah its own section
+# naming its count in each school and every disputed boundary — that is the
+# dataset an application actually needs, and 114 sections of spelled-out Arabic
+# numerals is an extraction job, not a transcription. Until it is done and
+# checked, this file carries the totals only, and the gap is stated rather than
+# filled with a table from somewhere else.
+#
+# The codes are the ones the dictionary already uses for these six systems.
+# The keys used by quranpedia/qiraat-ayah-map (madani-first, madani-last, kufi,
+# makki, basri, dimashqi) are carried as alternative spellings, so a dataset
+# keyed either way resolves to the same system.
+#
+# `ref` cites al-Bayan fi Add Ay al-Quran, volume/page.
+#
+# code	arabic	display	total	also_reported	qiraat	alternative_spellings	ref
+ayah_numbering_madani_awwal	العَدّ المَدَنِي الأَوَّل	Madani Awwal Numbering	6217		abu_jafar	madani_awwal,madani_first,first_madinan	bayan_dani 1/79
+ayah_numbering_madani_akhir	العَدّ المَدَنِي الأَخِير	Madani Akhir Numbering	6214	6210	nafi	madani_akhir,madani_last,last_madinan	bayan_dani 1/79
+ayah_numbering_makki	العَدّ المَكِّي	Makki Numbering	6219	6210	ibn_kathir	makki_numbering,makkan	bayan_dani 1/79
+ayah_numbering_kufi	العَدّ الكُوفِي	Kufi Numbering	6236		asim,hamzah,kisai,khalaf_al_ashir	kufi_numbering,kufan	bayan_dani 1/80
+ayah_numbering_basri	العَدّ البَصْرِي	Basri Numbering	6204	6210,6216	abu_amr,yaqub	basri_numbering,basran	bayan_dani 1/80
+ayah_numbering_dimashqi	العَدّ الشَّامِي	Shami Numbering	6226	6225	ibn_amir	shami,damascene,ayah_numbering_shami	bayan_dani 1/82

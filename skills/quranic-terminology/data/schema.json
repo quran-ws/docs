@@ -1,0 +1,377 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://quran.ws/standards/terminology/schema.json",
+  "title": "Quranic Software Terminology Standard — dictionary entry",
+  "type": "object",
+  "required": [
+    "concept",
+    "names",
+    "kind",
+    "category",
+    "origin",
+    "tier",
+    "status",
+    "definition",
+    "purpose"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "concept": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9_]*$",
+      "description": "Unique key for the entry. Identical to `code`."
+    },
+    "plural": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9_]*$",
+      "description": "Code plural. English +s, never an Arabic plural (§11)."
+    },
+    "kind": {
+      "description": "Structural role of the entry. Closed list — never a domain (§12).",
+      "enum": [
+        "entity",
+        "concept",
+        "classification",
+        "classification_value",
+        "property",
+        "role",
+        "process",
+        "content",
+        "analysis",
+        "mark",
+        "unit"
+      ]
+    },
+    "category": {
+      "description": "Domain the entry belongs to (§25). One list, shared with the dictionary's sections.",
+      "enum": [
+        "core",
+        "structure",
+        "text",
+        "divisions",
+        "surah_classification",
+        "mushaf",
+        "dabt",
+        "mushaf_marks",
+        "ayah_numbering",
+        "revelation",
+        "qiraat",
+        "recitation",
+        "recitation_pace",
+        "recitation_style",
+        "tajwid",
+        "waqf",
+        "linguistics",
+        "translation",
+        "tafsir",
+        "quranic_sciences"
+      ]
+    },
+    "parent": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9_]*$",
+      "description": "Required when kind is classification_value (§14)."
+    },
+    "registry": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9_]*$",
+      "description": "The registry in standards/terminology/registries/ that enumerates this concept's members (§13). A concept with a closed set of members names it here instead of giving each member an entry."
+    },
+    "origin": {
+      "description": "quranic: a specialized Quranic concept keeping its Arabic name. borrowed: a general technical or linguistic term with a settled definition elsewhere. standard: a concept this standard defines for software modeling with no traditional counterpart.",
+      "enum": [
+        "quranic",
+        "borrowed",
+        "standard"
+      ]
+    },
+    "tier": {
+      "description": "core: concepts applications actually store. extended: real but rarely modeled, or with disputed boundaries.",
+      "enum": [
+        "core",
+        "extended"
+      ]
+    },
+    "status": {
+      "enum": [
+        "draft",
+        "proposed",
+        "adopted",
+        "deprecated"
+      ]
+    },
+    "symbol": {
+      "type": "string",
+      "description": "The character a mark is rendered with."
+    },
+    "definition": {
+      "type": "string",
+      "description": "What is it? No implementation detail, no circularity (§15)."
+    },
+    "definition_en": {
+      "type": "string",
+      "description": "The definition in English. A translation of `definition`, never a second definition: both say the same thing."
+    },
+    "purpose": {
+      "type": "string",
+      "description": "Why do we model it? Never a restatement of the definition (§16)."
+    },
+    "purpose_en": {
+      "type": "string",
+      "description": "The purpose in English. A translation of `purpose`."
+    },
+    "boundaries": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "What the concept does not include (§17)."
+    },
+    "boundaries_en": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "The boundaries in English, line for line with `boundaries`."
+    },
+    "alternative_spellings": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Every attested spelling. Generated into the alias index so any of them resolves to this concept."
+    },
+    "english_glosses": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "deprecated": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "related": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z][a-z0-9_]*$"
+      }
+    },
+    "sources": {
+      "type": "array",
+      "description": "Citations for the concept's definition, not for the choice of code name (§28).",
+      "items": {
+        "type": "object",
+        "required": [
+          "id"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Key into sources.yml."
+          },
+          "ref": {
+            "type": "string",
+            "description": "Term id, page, or volume within that source."
+          },
+          "url": {
+            "type": "string",
+            "format": "uri"
+          }
+        }
+      }
+    },
+    "note": {
+      "type": "string"
+    },
+    "note_en": {
+      "type": "string",
+      "description": "The note in English."
+    },
+    "names": {
+      "type": "object",
+      "description": "One concept, several names. Each field does one job; they are allowed to disagree.",
+      "required": [
+        "code",
+        "display"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "code": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_]*$",
+          "description": "Identifier: code, APIs, databases, datasets. Derived by sections 4-8 with no exceptions."
+        },
+        "display": {
+          "type": "string",
+          "description": "Human-facing English for docs and UI. The dominant established form, measured, not chosen."
+        },
+        "display_evidence": {
+          "type": "string",
+          "description": "Why this display form: the measurement that settled it, e.g. 'GitHub phrase search 478 vs 118'."
+        },
+        "transliteration": {
+          "type": "string",
+          "description": "Precise scholarly rendering (ALA-LC / DIN 31635), with diacritics. Optional."
+        },
+        "arabic": {
+          "type": "object",
+          "required": [
+            "vocalized"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "singular": {
+              "type": "string"
+            },
+            "plural": {
+              "type": "string"
+            },
+            "vocalized": {
+              "type": "string",
+              "description": "Fully vocalized. The input the code spelling is derived from, so it is the one field no tool can supply."
+            }
+          }
+        },
+        "dabt": {
+          "type": "string",
+          "description": "The technical name in علم الضبط."
+        },
+        "by_shape": {
+          "type": "string",
+          "description": "The name describing how the mark is drawn."
+        },
+        "mushaf_introduction": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The name in the Mushaf's own introduction. Null means the introduction does not name it, which is a fact about the source."
+        },
+        "unicode": {
+          "type": "string",
+          "description": "The character's Unicode name. Recorded, never used as the code name."
+        }
+      }
+    },
+    "mark_family": {
+      "enum": [
+        "harakah",
+        "tanwin",
+        "ijam",
+        "imlaiyyah",
+        "dabt",
+        "waqf",
+        "alamat_qiraah",
+        "mustaqill"
+      ],
+      "description": "The registry's own grouping of marks. Applies to kind: mark."
+    },
+    "unicode": {
+      "type": "array",
+      "description": "Generated from the Unicode database; never hand-written.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "cp"
+        ],
+        "properties": {
+          "cp": {
+            "type": "string",
+            "pattern": "^U\\+[0-9A-F]{4,6}$"
+          },
+          "name": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "category": {
+            "type": "string"
+          },
+          "combining_class": {
+            "type": "integer"
+          },
+          "block": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "chart": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "kind": {
+            "const": "classification_value"
+          }
+        },
+        "required": [
+          "kind"
+        ]
+      },
+      "then": {
+        "required": [
+          "parent"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "origin": {
+            "const": "quranic"
+          }
+        },
+        "required": [
+          "origin"
+        ]
+      },
+      "then": {
+        "properties": {
+          "names": {
+            "required": [
+              "code",
+              "display",
+              "arabic"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "status": {
+            "const": "adopted"
+          }
+        },
+        "required": [
+          "status"
+        ]
+      },
+      "then": {
+        "required": [
+          "sources"
+        ],
+        "properties": {
+          "sources": {
+            "minItems": 1
+          }
+        }
+      }
+    }
+  ]
+}

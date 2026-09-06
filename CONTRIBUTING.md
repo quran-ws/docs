@@ -22,16 +22,17 @@
 | مداخل علامات الضبط | `standards/terminology/data/dabt_marks.tsv` | `python3 tools/generate_dabt.py` |
 | كتلة `unicode` في أي مدخل | لا شيء، تقرأ من قاعدة يونيكود | `python3 tools/generate_dabt.py` |
 | تهجئة `code` | `names.arabic.vocalized` | تشتق تلقائيًا |
-| `content/ar/03-terminology/dictionary.md` | المدخل نفسه | `python3 tools/generate_dictionary.py` |
+| `content/ar/03-terminology/dictionary.md` و`content/en/…/dictionary.md` | المدخل نفسه، بحقوله العربية والإنجليزية | `python3 tools/generate_dictionary.py` |
+| `skills/quranic-terminology/` كله | المصدر الذي بنيت منه | `python3 tools/generate_skill.py` |
 
 ## قبل الإرسال
 
 ```bash
-python3 tools/test_translit.py    # قواعد التهجئة كما هي
-python3 tools/validate.py         # كل مدخل موافق للـschema
-python3 tools/build_aliases.py    # لا تصادم في المرادفات
-python3 tools/check_examples.py   # لا اسم قديم في النصوص
+python3 tools/build.py            # يولّد كل شيء ويفحصه بترتيبه
 ```
+
+وهو يشمل `test_translit.py` و`validate.py` و`build_aliases.py`
+و`check_conformance.py` و`check_examples.py`، وينتهي بتوليد المهارة.
 
 ## حال الصفحة
 
@@ -57,4 +58,4 @@ Guidelines change through discussion, not direct commits.
 2. **Wait for agreement.** Rules have long reach; changing one after adoption costs more than discussing it before.
 3. **Send a PR** once there's agreement, answering the checklist.
 
-Run `tools/test_translit.py`, `tools/validate.py` and `tools/build_aliases.py` before sending. Never hand-edit generated output — the table above says what regenerates what.
+Run `python3 tools/build.py` before sending: it generates and checks everything, in order, and ends by rebuilding the agent skill. Never hand-edit generated output — the table above says what regenerates what.

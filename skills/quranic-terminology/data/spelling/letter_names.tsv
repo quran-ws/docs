@@ -1,0 +1,46 @@
+# The name of an Arabic letter is a spoken thing: نُون is /nuːn/, and the name
+# carries no meaning apart from that sound. So a letter name is written the way
+# it is said, not letter by letter — noon, not nun.
+#
+# This also keeps letter names out of collision with ordinary English words.
+# `nun` and `sin` are English words, and `sin_al_qiraah` is not an identifier
+# to ship.
+#
+# The rule applies ONLY to the name of a letter. Every other term follows the
+# derivation in sections 4 to 8: tajwid, not tajweed; haqiqi, not haqeeqi.
+#
+# letter	vocalized name	code	note
+ا	أَلِف	alif	same in both systems
+ب	بَاء	baa
+ت	تَاء	taa	collides with ط — see note below
+ث	ثَاء	thaa
+ج	جِيم	jeem
+ح	حَاء	haa	collides with ه — see note below
+خ	خَاء	khaa
+د	دَال	daal
+ذ	ذَال	dhaal
+ر	رَاء	raa
+ز	زَاي	zaay
+س	سِين	seen	sin is an English word
+ش	شِين	sheen
+ص	صَاد	saad
+ض	ضَاد	daad
+ط	طَاء	taa	collides with ت
+ظ	ظَاء	dhaa
+ع	عَيْن	ayn
+غ	غَيْن	ghayn
+ف	فَاء	faa
+ق	قَاف	qaaf
+ك	كَاف	kaaf
+ل	لَام	laam
+م	مِيم	meem
+ن	نُون	noon	nun is an English word
+ه	هَاء	haa	collides with ح
+و	وَاو	waw	same in both systems
+ي	يَاء	yaa
+#
+# UNRESOLVED: ت and ط both give taa, ح and ه both give haa, because section 4
+# collapses emphatic and plain consonants on purpose. Neither pair is used as a
+# name in any current entry, so the collision is recorded rather than patched.
+# Decide it when a term needs one of them, and note that build_aliases.py will
+# fail loudly if two concepts ever claim one of these names.
