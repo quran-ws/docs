@@ -33,7 +33,44 @@ No:   A duplicated table silently falls into desuetude.
 
 Plain in style, not in accuracy. The content stays exact.
 
-## 2. State a requirement or a capability, never both at once
+## 2. Short, direct sentences
+
+Don't pack several abstract ideas into one sentence. Name the idea, list its
+parts, then state the conclusion.
+
+```text
+Avoid:  Naming has four requirements that conflict: a stable identifier, a
+        familiar label, a faithful rendering of the sound, and a search
+        target; no single name serves them, so each is given its own field.
+
+Use:    Naming needs four different things: a stable identifier in code, a
+        clear label for the reader, an accurate way to write the
+        pronunciation, and a value suited to search. One name cannot serve
+        all of these, so we give each one its own field.
+```
+
+Also avoid heavy noun phrases, inverted word order where plain order is
+clearer, and formal verbs where an ordinary one works.
+
+## 3. Write the standard, not the road to it
+
+Readers want the rule, not how we arrived at it. State what is settled and
+leave the arguments, the measurements and the rejected alternatives in the
+commit log and the issues.
+
+```text
+Avoid:  The difference is deliberate. Measurement shows the first form is
+        used four times as often... and had we put the familiar form in
+        code, the derivation rule would collapse...
+
+Use:    `code` and `display` may differ, and that is deliberate. `code` is
+        derived; `display` is measured.
+```
+
+Where a rule needs a reason, give it one line, and put the evidence in the
+field made for it, such as `display_evidence`.
+
+## 4. State a requirement or a capability, never both at once
 
 This is the commonest fault in standards writing. "must be able to" mixes
 describing what something can do with requiring that it do it, and the reader
@@ -47,20 +84,20 @@ Requirement:  The system must display the ayah.
 
 The same goes for "should be capable of" and "is required to". Name the action.
 
-## 3. Arabic-specific rules
+## 5. Arabic-specific rules
 
 The Arabic page carries rules that have no English equivalent: joining list
 items with و rather than commas, not attaching several coordinated nouns to one
 possessive, and a table of errors common in Arabic technical prose (حيث إن not
 حيث أن، أثر في not أثر على، دون not بدون). Note also that Arabic **letter
-names** are written as they are said — `noon_saghirah`, not `nun_saghirah` —
+names** are written as they are said — `noon_sakinah`, not `nun_sakinah` —
 which the terminology standard covers in section 6. See
 [كيف تكتب دليلًا](/guidelines/ar/01-intro/writing-guides/), section 3 and 4.
 
 Reference: [دليل التحرير والصياغة العربية](https://github.com/kamalyaser31/arabic-guide),
 drawn from the Saudi Aramco Arabic style guide.
 
-## 4. Lead with the rule
+## 6. Lead with the rule
 
 Put the rule in the first line under the heading, not in the last paragraph.
 Never make the reader infer it.
@@ -73,7 +110,7 @@ No:   Considering the transliteration of ta marbutah, we find that...
       and therefore it is preferable to write h in one case and t in another.
 ```
 
-## 5. Explain why only when the reason changes what someone does
+## 7. Explain why only when the reason changes what someone does
 
 Don't justify every rule. Give the reason when it:
 
@@ -83,7 +120,7 @@ Don't justify every rule. Give the reason when it:
 
 A clear rule stands on its own. Explaining what needs no explanation buries what does.
 
-## 6. State the page's status
+## 8. State the page's status
 
 Every page carries `status` in its frontmatter, so nobody has to guess what binds:
 
@@ -106,7 +143,7 @@ Inside a page, mark the difference where it matters:
 **Recommended:** cite the page or term number alongside the source.
 ```
 
-## 7. Never copy a source of truth
+## 9. Never copy a source of truth
 
 `standards/` is the source; `content/` explains it. Anything generated is never
 written by hand:
@@ -121,7 +158,7 @@ written by hand:
 A copied table goes stale and nobody notices, and the reader can't tell which
 copy is right.
 
-## 8. A rule that can't be checked can't be enforced
+## 10. A rule that can't be checked can't be enforced
 
 This is the most important rule here. If you write a rule, write the thing that
 catches its violation:
@@ -141,7 +178,7 @@ Write:       Don't abbreviate unless the abbreviation is standard:
              surah not srh, ayah not ay.
 ```
 
-## 9. One term per concept
+## 11. One term per concept
 
 Use the name in the [dictionary](../03-terminology/dictionary.md), and don't
 vary it for variety. If you need a term that isn't there, add it to the
@@ -154,7 +191,7 @@ Yes:  الوَقْف اللَّازِم    (when discussing how the name is deri
 No:   الوقف اللازم
 ```
 
-## 10. Arabic and English
+## 12. Arabic and English
 
 `content/ar` and `content/en` mirror each other file for file.
 
@@ -164,7 +201,7 @@ No:   الوقف اللازم
 - A translation carries the same rule. If the two versions state different
   rules, that's an error to fix, not a difference of translation.
 
-## 11. Quranic text in a page
+## 13. Quranic text in a page
 
 - Quote only as much as the example needs.
 - Write it in full Uthmani rasm; never strip the ḍabṭ to save space.
@@ -176,7 +213,7 @@ Yes:  The compulsory-stop mark: ۘ
 No:   The compulsory-stop mark is a small mim.
 ```
 
-## 12. Show what is better seen
+## 14. Show what is better seen
 
 Pick the form from the information:
 
@@ -188,7 +225,7 @@ Pick the form from the information:
 | Right versus wrong | one block showing both |
 | Steps to perform | numbered list |
 
-## 13. One page, one purpose
+## 15. One page, one purpose
 
 - The title says what the reader will find: "Writing a guide", not "Writing".
 - If a page grew long because it covers two subjects, split it.
@@ -197,6 +234,8 @@ Pick the form from the information:
 ## Before you publish
 
 - [ ] Plain language; no scholarly term left undefined or unlinked.
+- [ ] Short sentences; no heavy noun phrases.
+- [ ] States the standard, not how it was reached.
 - [ ] No "must be able to" — say what is required or what is possible.
 - [ ] The rule is in the first line, not the last paragraph.
 - [ ] `status` is right, and nothing is `adopted` without a source.

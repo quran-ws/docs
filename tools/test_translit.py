@@ -36,6 +36,8 @@ CASES = [
     ("الوَاو الصَّغِيرَة", "waw_saghirah"),
     ("الأَلِف المَحْذُوفَة", "alif_mahdhufah"),
     ("الجِيم", "jeem"),
+    ("النُّون السَّاكِنَة", "noon_sakinah"),
+    ("المِيم السَّاكِنَة", "meem_sakinah"),
     ("الصَّاد", "saad"),
     # but only letter NAMES: every other term still derives
     ("تَجْوِيد", "tajwid"),
