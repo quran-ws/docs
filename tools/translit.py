@@ -167,10 +167,30 @@ def _shadda(text, i):
     return False
 
 
+def _drop_case_ending(text):
+    """Drop a final short vowel: names are written in pausal form.
+
+    Fully vocalized Arabic marks the case ending — الْقُرْآنُ, السُّورَةُ — and it
+    is not part of the name. Without this, well-marked input gives `quranu` and
+    `surahu`. Arabic itself drops it when stopping on the word.
+    """
+    i = len(text) - 1
+    while i >= 0 and (text[i] in SUPERSCRIPTS or text[i] == MADDA):
+        i -= 1
+    if i >= 0 and text[i] in {FATHA, KASRA, DAMMA} | TANWIN:
+        # Only when a consonant carries it; a bare vowel on an alif is the word.
+        j = i - 1
+        while j >= 0 and text[j] == SHADDA:
+            j -= 1
+        if j >= 0 and text[j] not in HARAKAT:
+            return text[:i] + text[i + 1:]
+    return text
+
+
 def transliterate_word(word, construct=False):
     """`construct` marks a word bound to the next one, where a final ta
     marbutah is pronounced t: hamzat al-wasl, not hamzah al-wasl."""
-    text = _strip(word)
+    text = _drop_case_ending(_strip(word))
     if construct:
         stripped = text.rstrip("".join(HARAKAT))
         if stripped.endswith("ة"):
