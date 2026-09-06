@@ -57,8 +57,8 @@ clearer, and formal verbs where an ordinary one works.
 ## 3. Write the standard, not the road to it
 
 Readers want the rule, not how we arrived at it. State what is settled and
-leave the arguments, the measurements and the rejected alternatives in the
-commit log and the issues.
+leave the arguments, the measurements and the rejected alternatives to the
+decision record.
 
 ```text
 Avoid:  The difference is deliberate. Measurement shows the first form is
@@ -71,6 +71,12 @@ Use:    `code` and `display` may differ, and that is deliberate. `code` is
 
 Where a rule needs a reason, give it one line, and put the evidence in the
 field made for it, such as `display_evidence`.
+
+A decision that was genuinely contested is recorded in the
+[decision record](/guidelines/en/03-terminology/decisions/) with its reason and
+its evidence, because a rule with no written reason gets reopened every year.
+The difference is that the record states the decision and why; it does not
+narrate how we went back and forth.
 
 ## 4. Define a field in full sentences
 

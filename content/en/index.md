@@ -21,7 +21,7 @@ hero:
 | --- | --- |
 | [Introduction](/guidelines/en/01-intro/) — writing style, and how guides are written | written |
 | [Handling Quranic text](/guidelines/en/02-quranic-text/) — display, storage, transmission, limits of normalization | not written |
-| [Terminology](/guidelines/en/03-terminology/) — the [standard](/guidelines/en/03-terminology/standard/), and the [dictionary](/guidelines/ar/03-terminology/dictionary/) in Arabic | draft |
+| [Terminology](/guidelines/en/03-terminology/) — the [standard](/guidelines/en/03-terminology/standard/), the [decision record](/guidelines/en/03-terminology/decisions/), and the [dictionary](/guidelines/ar/03-terminology/dictionary/) in Arabic | draft |
 | [Versioning and corrections](/guidelines/en/04-versioning/) — versioning data, errata logs | not written |
 | [Open source](/guidelines/en/05-open-source/) — licensing, repository layout, review | not written |
 | [Engineering](/guidelines/en/06-engineering/) — APIs, data, Mushaf rendering, audio | not written |

@@ -7,7 +7,8 @@ sidebar:
 ---
 
 - [Terminology Standard](/guidelines/en/03-terminology/standard/) — how a concept is named: one canonical name, spellings derived by a documented function rather than chosen, and the fields each name lives in.
-- [Terminology dictionary](/guidelines/ar/03-terminology/dictionary/) — 114 concepts, generated from `standards/terminology/concepts/`. The entries are written in Arabic and have no English translation yet.
+- [Decision record](/guidelines/en/03-terminology/decisions/) — the contested decisions, each with its reason and the measurement behind it.
+- [Terminology dictionary](/guidelines/ar/03-terminology/dictionary/) — 117 concepts, generated from `standards/terminology/concepts/`. The entries are written in Arabic and have no English translation yet.
 
 The machine-readable source is language-neutral and usable now:
 

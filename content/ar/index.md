@@ -21,7 +21,7 @@ hero:
 | --- | --- |
 | [المدخل](/guidelines/ar/01-intro/) — أسلوب الكتابة، وكيف تُكتب الأدلة | مكتوب |
 | [أدبيات التعامل مع النص القرآني](/guidelines/ar/02-quranic-text/) — العرض والتخزين والنقل وحدود التطبيع | لم يُكتب |
-| [المصطلحات](/guidelines/ar/03-terminology/standard/) — [المعيار](/guidelines/ar/03-terminology/standard/) و[القاموس](/guidelines/ar/03-terminology/dictionary/) | مسودة |
+| [المصطلحات](/guidelines/ar/03-terminology/) — [المعيار](/guidelines/ar/03-terminology/standard/) و[سجل القرارات](/guidelines/ar/03-terminology/decisions/) و[القاموس](/guidelines/ar/03-terminology/dictionary/) | مسودة |
 | [الإصدارات والتصحيحات](/guidelines/ar/04-versioning/) — إصدار البيانات، وسجل التصحيحات | لم يُكتب |
 | [المصدر المفتوح](/guidelines/ar/05-open-source/) — الرخص، وبنية المستودعات، والمراجعة | لم يُكتب |
 | [الهندسة](/guidelines/ar/06-engineering/) — الـAPIs، والبيانات، وعرض المصحف، والصوت | لم يُكتب |
