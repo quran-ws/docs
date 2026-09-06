@@ -1,0 +1,26 @@
+concept: alamat_mawdi_al_sajdah
+names:
+  code: alamat_mawdi_al_sajdah
+  display: Alamat Mawdi al-Sajdah
+  arabic:
+    vocalized: عَلَامَة مَوْضِع السَّجْدَة
+  dabt: عَلَامَة مَوْضِع السَّجْدَة — المِحْرَاب
+  by_shape: مِحْرَاب صَغِير
+  mushaf_introduction: عَلَامَة مَوْضِع السَّجْدَة
+kind: mark
+category: dabt
+parent: mushaf_mark
+origin: quranic
+tier: core
+status: draft
+symbol: مِحْرَاب
+definition: الدَّلَالَة على مَوْضِع السُّجُود
+purpose: Marks the point at which the reader prostrates.
+alternative_spellings:
+- sajdah-sign
+- sajdah_sign
+unicode: []
+mark_family: mustaqill
+sources:
+- id: hafs_svg_registry
+  ref: standard!sajdah-sign

@@ -1,0 +1,32 @@
+concept: waqf_jaiz_wasl_awla
+names:
+  code: waqf_jaiz_wasl_awla
+  display: Waqf Jaiz Wasl Awla
+  arabic:
+    vocalized: الوَقْف الجَائِز الوَصْل أَوْلَى
+  dabt: صلى — عَلَامَة الوَصْل أَوْلَى
+  by_shape: صلى
+  mushaf_introduction: عَلَامَة الوَقْف الجَائِز مَع كَوْن الوَصْل أَوْلَى
+  unicode: ARABIC SMALL HIGH LIGATURE SAD WITH LAM WITH ALEF MAKSURA
+kind: mark
+category: dabt
+parent: mushaf_mark
+origin: quranic
+tier: core
+status: draft
+symbol: صلى
+definition: الوَقْف جَائِز مع كَوْن الوَصْل أَوْلَى
+purpose: A permissible stop, but continuing is the better choice.
+alternative_spellings:
+- wasl-awla
+- wasl_awla
+unicode:
+- cp: U+06D6
+  name: ARABIC SMALL HIGH LIGATURE SAD WITH LAM WITH ALEF MAKSURA
+  category: Mn
+  combining_class: 230
+  block: Arabic
+mark_family: waqf
+sources:
+- id: hafs_svg_registry
+  ref: standard!wasl-awla

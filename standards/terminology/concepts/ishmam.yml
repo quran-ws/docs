@@ -1,0 +1,31 @@
+concept: ishmam
+names:
+  code: ishmam
+  display: Ishmam
+  arabic:
+    vocalized: الإشْمَام
+  dabt: الإشْمَام
+  by_shape: نُقْطَة كَبِيرَة مَطْمُوسَة فَوْق الحَرْف
+  mushaf_introduction: النُّقْطَة المَذْكُورَة فَوْق آخِر المِيم
+  unicode: ARABIC ROUNDED HIGH STOP WITH FILLED CENTRE
+kind: mark
+category: dabt
+parent: mushaf_mark
+origin: quranic
+tier: core
+status: draft
+symbol: نُقْطَة فَوْق الحَرْف
+definition: 'الدَّلَالَة على الإشْمَام: ضَمّ الشَّفَتَيْن إشَارَةً إلى الحَرَكَة المَحْذُوفَة
+  من غَيْر صَوْت'
+purpose: 'Marks ishmam: the lips round to point at the elided vowel, with no audible sound.'
+alternative_spellings: []
+unicode:
+- cp: U+06EC
+  name: ARABIC ROUNDED HIGH STOP WITH FILLED CENTRE
+  category: Mn
+  combining_class: 230
+  block: Arabic
+mark_family: alamat_qiraah
+sources:
+- id: hafs_svg_registry
+  ref: standard!ishmam

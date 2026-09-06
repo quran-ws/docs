@@ -1,0 +1,35 @@
+concept: sukun
+names:
+  code: sukun
+  display: Sukun
+  arabic:
+    vocalized: السُّكُون
+  dabt: السُّكُون — رَأْس الخَاء المُهْمَلَة
+  by_shape: رَأْس خَاء بِلَا نُقْطَة
+  mushaf_introduction: رَأْس خَاء صَغِيرَة بِدُون نُقْطَة
+  unicode: ARABIC SUKUN
+kind: mark
+category: dabt
+parent: mushaf_mark
+origin: quranic
+tier: core
+status: draft
+symbol: ـْ
+definition: الدَّلَالَة على سُكُون الحَرْف وإظْهَارِه، بحيث يَقْرَعُه اللِّسَان
+purpose: Marks the letter as vowelless and clearly articulated — the tongue strikes it.
+alternative_spellings: []
+unicode:
+- cp: U+0652
+  name: ARABIC SUKUN
+  category: Mn
+  combining_class: 34
+  block: Arabic
+- cp: U+06E1
+  name: ARABIC SMALL HIGH DOTLESS HEAD OF KHAH
+  category: Mn
+  combining_class: 230
+  block: Arabic
+mark_family: harakah
+sources:
+- id: hafs_svg_registry
+  ref: standard!sukun

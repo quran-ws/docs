@@ -1,0 +1,25 @@
+concept: nuqtah
+names:
+  code: nuqtah
+  display: Nuqtah
+  arabic:
+    vocalized: النُّقْطَة
+  dabt: نَقْط الإعْجَام — النُّقْطَة
+  by_shape: نُقْطَة وَاحِدَة
+  mushaf_introduction: null
+kind: mark
+category: dabt
+parent: mushaf_mark
+origin: quranic
+tier: core
+status: draft
+symbol: نُقْطَة وَاحِدَة
+definition: إعْجَام الحَرْف وتَمْيِيزُه عمَّا يُشَارِكُه في الرَّسْم
+purpose: Distinguishes a letter from others that share the same skeleton (i'jam).
+alternative_spellings:
+- dot
+unicode: []
+mark_family: ijam
+sources:
+- id: hafs_svg_registry
+  ref: standard!dot

@@ -1,0 +1,31 @@
+concept: waqf_mamnu
+names:
+  code: waqf_mamnu
+  display: Waqf Mamnu
+  arabic:
+    vocalized: الوَقْف المَمْنُوع
+  dabt: لا — عَلَامَة الوَقْف المَمْنُوع
+  by_shape: لا
+  mushaf_introduction: null
+  unicode: ARABIC SMALL HIGH LAM ALEF
+kind: mark
+category: dabt
+parent: mushaf_mark
+origin: quranic
+tier: core
+status: draft
+symbol: لا
+definition: مُثْبَتَة في السِّجِلّ ولم تَرِد في هذه الطَّبْعَة البَتَّة
+purpose: Registered in the schema but never used in this edition — zero occurrences.
+alternative_spellings:
+- waqf-mamnu
+unicode:
+- cp: U+06D9
+  name: ARABIC SMALL HIGH LAM ALEF
+  category: Mn
+  combining_class: 230
+  block: Arabic
+mark_family: waqf
+sources:
+- id: hafs_svg_registry
+  ref: standard!waqf-mamnu

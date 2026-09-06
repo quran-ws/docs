@@ -1,0 +1,31 @@
+concept: dammah
+names:
+  code: dammah
+  display: Dammah
+  arabic:
+    vocalized: الضَّمَّة
+  dabt: الضَّمَّة (وتُسمَّى قديماً الرَّفْعَة)
+  by_shape: وَاو صَغِيرَة فَوْق الحَرْف
+  mushaf_introduction: null
+  unicode: ARABIC DAMMA
+kind: mark
+category: dabt
+parent: mushaf_mark
+origin: quranic
+tier: core
+status: draft
+symbol: ـُ
+definition: الدَّلَالَة على حَرَكَة الحَرْف بالضَّمّ
+purpose: Marks the letter as carrying the vowel u (dammah).
+alternative_spellings:
+- damma
+unicode:
+- cp: U+064F
+  name: ARABIC DAMMA
+  category: Mn
+  combining_class: 31
+  block: Arabic
+mark_family: harakah
+sources:
+- id: hafs_svg_registry
+  ref: standard!damma

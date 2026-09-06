@@ -1,0 +1,31 @@
+concept: waqf_jaiz
+names:
+  code: waqf_jaiz
+  display: Waqf Jaiz
+  arabic:
+    vocalized: الوَقْف الجَائِز
+  dabt: الجِيم — عَلَامَة الوَقْف الجَائِز
+  by_shape: جِيم
+  mushaf_introduction: عَلَامَة الوَقْف الجَائِز جَوَازاً مُسْتَوِيَ الطَّرَفَيْن
+  unicode: ARABIC SMALL HIGH JEEM
+kind: mark
+category: dabt
+parent: mushaf_mark
+origin: quranic
+tier: core
+status: draft
+symbol: ج
+definition: الوَقْف جَائِز جَوَازاً مُسْتَوِيَ الطَّرَفَيْن، فالوَقْف والوَصْل سَوَاء
+purpose: A permissible stop, with stopping and continuing equally sound.
+alternative_spellings:
+- waqf-jaiz
+unicode:
+- cp: U+06DA
+  name: ARABIC SMALL HIGH JEEM
+  category: Mn
+  combining_class: 230
+  block: Arabic
+mark_family: waqf
+sources:
+- id: hafs_svg_registry
+  ref: standard!waqf-jaiz

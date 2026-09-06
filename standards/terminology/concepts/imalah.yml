@@ -1,0 +1,30 @@
+concept: imalah
+names:
+  code: imalah
+  display: Imalah
+  arabic:
+    vocalized: الإمَالَة
+  dabt: الإمَالَة — النُّقْطَة تَحْت الحَرْف
+  by_shape: نُقْطَة كَبِيرَة مَطْمُوسَة تَحْت الحَرْف
+  mushaf_introduction: نُقْطَة كَبِيرَة مَطْمُوسَة الوَسَط تَحْت الحَرْف
+  unicode: ARABIC EMPTY CENTRE LOW STOP
+kind: mark
+category: dabt
+parent: mushaf_mark
+origin: quranic
+tier: core
+status: draft
+symbol: نُقْطَة تَحْت الحَرْف
+definition: الدَّلَالَة على الإمَالَة الكُبْرَى، في مَوْضِع واحِد (11:41) وحده
+purpose: Marks the major imalah — one place only (11:41).
+alternative_spellings: []
+unicode:
+- cp: U+06EA
+  name: ARABIC EMPTY CENTRE LOW STOP
+  category: Mn
+  combining_class: 220
+  block: Arabic
+mark_family: alamat_qiraah
+sources:
+- id: hafs_svg_registry
+  ref: standard!imalah

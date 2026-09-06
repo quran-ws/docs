@@ -1,0 +1,31 @@
+concept: kasrah
+names:
+  code: kasrah
+  display: Kasrah
+  arabic:
+    vocalized: الكَسْرَة
+  dabt: الكَسْرَة (وتُسمَّى قديماً الخَفْضَة)
+  by_shape: أَلِف مُضْجَعَة تَحْت الحَرْف
+  mushaf_introduction: null
+  unicode: ARABIC KASRA
+kind: mark
+category: dabt
+parent: mushaf_mark
+origin: quranic
+tier: core
+status: draft
+symbol: ـِ
+definition: الدَّلَالَة على حَرَكَة الحَرْف بالكَسْر
+purpose: Marks the letter as carrying the vowel i (kasrah).
+alternative_spellings:
+- kasra
+unicode:
+- cp: U+0650
+  name: ARABIC KASRA
+  category: Mn
+  combining_class: 32
+  block: Arabic
+mark_family: harakah
+sources:
+- id: hafs_svg_registry
+  ref: standard!kasra

@@ -1,0 +1,31 @@
+concept: sifr_mustatil
+names:
+  code: sifr_mustatil
+  display: Sifr Mustatil
+  arabic:
+    vocalized: الصِّفْر المُسْتَطِيل
+  dabt: الصِّفْر المُسْتَطِيل القَائِم
+  by_shape: مُسْتَطِيل صَغِير قَائِم خَالِي الوَسَط
+  mushaf_introduction: دَائِرَة قَائِمَة مُسْتَطِيلَة خَالِيَة الوَسَط
+  unicode: ARABIC SMALL HIGH UPRIGHT RECTANGULAR ZERO
+kind: mark
+category: dabt
+parent: mushaf_mark
+origin: quranic
+tier: core
+status: draft
+symbol: مُسْتَطِيل قَائِم صَغِير
+definition: الدَّلَالَة على زِيَادَة الأَلِف وَصْلاً لا وَقْفاً؛ فتُنْطَق عند الوَقْف عليها
+purpose: Marks an alif dropped in continuation but pronounced when stopping on it.
+alternative_spellings:
+- sifr-mustatil
+unicode:
+- cp: U+06E0
+  name: ARABIC SMALL HIGH UPRIGHT RECTANGULAR ZERO
+  category: Mn
+  combining_class: 230
+  block: Arabic
+mark_family: dabt
+sources:
+- id: hafs_svg_registry
+  ref: standard!sifr-mustatil

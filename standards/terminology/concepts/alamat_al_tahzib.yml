@@ -1,0 +1,31 @@
+concept: alamat_al_tahzib
+names:
+  code: alamat_al_tahzib
+  display: Alamat al-Tahzib
+  arabic:
+    vocalized: عَلَامَة التَّحْزِيب
+  dabt: عَلَامَة التَّحْزِيب
+  by_shape: نَجْمَة مُثَمَّنَة
+  mushaf_introduction: عَلَامَة بِدَايَة الأَجْزَاء والأَحْزَاب وأَنْصَافِها وأَرْبَاعِها
+  unicode: ARABIC START OF RUB EL HIZB
+kind: mark
+category: dabt
+parent: mushaf_mark
+origin: quranic
+tier: core
+status: draft
+symbol: نَجْمَة
+definition: الدَّلَالَة على بِدَايَة الأَجْزَاء والأَحْزَاب وأَنْصَافِها وأَرْبَاعِها
+purpose: Marks the start of a juz, a hizb, or a half or quarter of one.
+alternative_spellings:
+- hizb
+unicode:
+- cp: U+06DE
+  name: ARABIC START OF RUB EL HIZB
+  category: So
+  combining_class: 0
+  block: Arabic
+mark_family: mustaqill
+sources:
+- id: hafs_svg_registry
+  ref: standard!hizb

@@ -1,0 +1,31 @@
+concept: fathah
+names:
+  code: fathah
+  display: Fathah
+  arabic:
+    vocalized: الفَتْحَة
+  dabt: الفَتْحَة (وتُسمَّى قديماً النَّصْبَة)
+  by_shape: أَلِف مُضْجَعَة فَوْق الحَرْف
+  mushaf_introduction: null
+  unicode: ARABIC FATHA
+kind: mark
+category: dabt
+parent: mushaf_mark
+origin: quranic
+tier: core
+status: draft
+symbol: ـَ
+definition: الدَّلَالَة على حَرَكَة الحَرْف بالفَتْح
+purpose: Marks the letter as carrying the vowel a (fathah).
+alternative_spellings:
+- fatha
+unicode:
+- cp: U+064E
+  name: ARABIC FATHA
+  category: Mn
+  combining_class: 30
+  block: Arabic
+mark_family: harakah
+sources:
+- id: hafs_svg_registry
+  ref: standard!fatha

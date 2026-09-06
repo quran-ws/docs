@@ -1,0 +1,41 @@
+concept: sin_qiraah
+names:
+  code: sin_qiraah
+  display: Seen Qiraah
+  display_evidence: letter name; unmeasurable directly, both forms are English words
+  arabic:
+    vocalized: السِّين القِرَاءَة
+  dabt: السِّين الدَّالَّة على وَجْه القِرَاءَة
+  by_shape: سِين فَوْق الصَّاد أو تَحْتَهَا
+  mushaf_introduction: السِّين فَوْق الصَّاد أو تَحْتَهَا
+  unicode: ARABIC SMALL HIGH SEEN
+kind: mark
+category: dabt
+parent: mushaf_mark
+origin: quranic
+tier: core
+status: draft
+symbol: س
+definition: السِّين فوق الصَّاد تدلّ على القِرَاءَة بالسِّين، والسِّين تحت الصَّاد تدلّ على
+  القِرَاءَة بالصَّاد
+purpose: A sin above the sad signals reading with sin; a sin below it signals reading with
+  sad.
+alternative_spellings:
+- seen-reading
+- seen_qiraah
+- seen_reading
+unicode:
+- cp: U+06DC
+  name: ARABIC SMALL HIGH SEEN
+  category: Mn
+  combining_class: 230
+  block: Arabic
+- cp: U+06E3
+  name: ARABIC SMALL LOW SEEN
+  category: Mn
+  combining_class: 220
+  block: Arabic
+mark_family: alamat_qiraah
+sources:
+- id: hafs_svg_registry
+  ref: standard!seen-reading

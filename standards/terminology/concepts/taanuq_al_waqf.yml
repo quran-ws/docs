@@ -1,0 +1,31 @@
+concept: taanuq_al_waqf
+names:
+  code: taanuq_al_waqf
+  display: Taanuq al-Waqf
+  arabic:
+    vocalized: تَعَانُق الوَقْف
+  dabt: وَقْف المُعَانَقَة (ويُسمَّى وَقْف المُرَاقَبَة)
+  by_shape: ثَلَاث نُقَط تَتَكَرَّر عَلَى كَلِمَتَيْن
+  mushaf_introduction: عَلَامَة تَعَانُق الوَقْف
+  unicode: ARABIC SMALL HIGH THREE DOTS
+kind: mark
+category: dabt
+parent: mushaf_mark
+origin: quranic
+tier: core
+status: draft
+symbol: ثَلَاث نُقَط في مَوْضِعَيْن
+definition: مَوْضِعَان للوَقْف، إذا وُقِفَ على أَحَدِهما لم يَصِحَّ الوَقْف على الآخَر
+purpose: 'Two candidate stopping points: stopping at one makes stopping at the other invalid.'
+alternative_spellings:
+- muanaqah
+unicode:
+- cp: U+06DB
+  name: ARABIC SMALL HIGH THREE DOTS
+  category: Mn
+  combining_class: 230
+  block: Arabic
+mark_family: waqf
+sources:
+- id: hafs_svg_registry
+  ref: standard!muanaqah

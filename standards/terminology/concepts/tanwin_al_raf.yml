@@ -1,0 +1,39 @@
+concept: tanwin_al_raf
+names:
+  code: tanwin_al_raf
+  display: Tanwin al-Raf
+  arabic:
+    vocalized: تَنْوِين الرَّفْع
+  dabt: تَنْوِين الرَّفْع — الضَّمَّتَان
+  by_shape: وَاوَان صَغِيرَتَان فَوْق الحَرْف
+  mushaf_introduction: 'الحَرَكَتَان: تَرْكِيباً أو تَتَابُعاً'
+  unicode: ARABIC DAMMATAN
+kind: mark
+category: dabt
+parent: mushaf_mark
+origin: quranic
+tier: core
+status: draft
+symbol: ـٌ
+definition: الدَّلَالَة على التَّنْوِين المَرْفُوع. وتَرْكِيب الحَرَكَتَيْن يدلّ على إظْهَار
+  التَّنْوِين، وتَتَابُعُهما مع تَشْدِيد التَّالِي على الإدْغَام الكَامِل، وبدونه على الإدْغَام
+  النَّاقِص أو الإخْفَاء
+purpose: Marks the un tanwin. Stacked marks signal izhar; staggered marks with a shadda on
+  the next letter signal complete idgham, and without one, incomplete idgham or ikhfa.
+alternative_spellings:
+- dammatan
+unicode:
+- cp: U+064C
+  name: ARABIC DAMMATAN
+  category: Mn
+  combining_class: 28
+  block: Arabic
+- cp: U+08F1
+  name: ARABIC OPEN DAMMATAN
+  category: Mn
+  combining_class: 28
+  block: Arabic Extended-A
+mark_family: tanwin
+sources:
+- id: hafs_svg_registry
+  ref: standard!dammatan

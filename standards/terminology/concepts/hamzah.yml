@@ -1,0 +1,41 @@
+concept: hamzah
+names:
+  code: hamzah
+  display: Hamzah
+  arabic:
+    vocalized: الهَمْزَة
+  dabt: الهَمْزَة — رَأْس العَيْن
+  by_shape: رَأْس عَيْن
+  mushaf_introduction: null
+  unicode: ARABIC LETTER HAMZA
+kind: mark
+category: dabt
+parent: mushaf_mark
+origin: quranic
+tier: core
+status: draft
+symbol: ء
+definition: الدَّلَالَة على هَمْزَة القَطْع المُحَقَّقَة
+purpose: Marks a fully realised glottal stop (hamzat al-qat').
+alternative_spellings:
+- hamza
+unicode:
+- cp: U+0621
+  name: ARABIC LETTER HAMZA
+  category: Lo
+  combining_class: 0
+  block: Arabic
+- cp: U+0654
+  name: ARABIC HAMZA ABOVE
+  category: Mn
+  combining_class: 230
+  block: Arabic
+- cp: U+0655
+  name: ARABIC HAMZA BELOW
+  category: Mn
+  combining_class: 220
+  block: Arabic
+mark_family: imlaiyyah
+sources:
+- id: hafs_svg_registry
+  ref: standard!hamza

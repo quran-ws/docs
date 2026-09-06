@@ -1,0 +1,31 @@
+concept: hamzat_al_wasl
+names:
+  code: hamzat_al_wasl
+  display: Hamzat al-Wasl
+  arabic:
+    vocalized: هَمْزَة الوَصْل
+  dabt: رَأْس الصَّاد (من «صِلَة») — عَلَامَة هَمْزَة الوَصْل
+  by_shape: رَأْس صَاد فَوْق الأَلِف
+  mushaf_introduction: رَأْس صَاد صَغِيرَة فَوْق أَلِف الوَصْل
+  unicode: ARABIC LETTER ALEF WASLA
+kind: mark
+category: dabt
+parent: mushaf_mark
+origin: quranic
+tier: core
+status: draft
+symbol: ص صَغِيرَة فَوْق الأَلِف
+definition: الدَّلَالَة على سُقُوط الهَمْزَة وَصْلاً
+purpose: Marks a connecting hamzah, dropped whenever the word is reached in continuation.
+alternative_spellings:
+- wasla
+unicode:
+- cp: U+0671
+  name: ARABIC LETTER ALEF WASLA
+  category: Lo
+  combining_class: 0
+  block: Arabic
+mark_family: imlaiyyah
+sources:
+- id: hafs_svg_registry
+  ref: standard!wasla

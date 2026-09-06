@@ -1,0 +1,32 @@
+concept: waqf_lazim
+names:
+  code: waqf_lazim
+  display: Waqf Lazim
+  arabic:
+    vocalized: الوَقْف اللَّازِم
+  dabt: المِيم — عَلَامَة الوَقْف اللَّازِم
+  by_shape: مِيم
+  mushaf_introduction: عَلَامَة الوَقْف اللَّازِم
+  unicode: ARABIC SMALL HIGH MEEM INITIAL FORM
+kind: mark
+category: dabt
+parent: mushaf_mark
+origin: quranic
+tier: core
+status: draft
+symbol: م
+definition: الوَقْف لَازِم، لأنَّ وَصْلَ ما بعده بما قبله يُوهِم خِلَاف المَعْنَى المُرَاد
+purpose: 'A compulsory stop: continuing across it would suggest a meaning other than the one
+  intended.'
+alternative_spellings:
+- waqf-lazim
+unicode:
+- cp: U+06D8
+  name: ARABIC SMALL HIGH MEEM INITIAL FORM
+  category: Mn
+  combining_class: 230
+  block: Arabic
+mark_family: waqf
+sources:
+- id: hafs_svg_registry
+  ref: standard!waqf-lazim

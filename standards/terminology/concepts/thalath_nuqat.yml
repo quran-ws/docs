@@ -1,0 +1,26 @@
+concept: thalath_nuqat
+names:
+  code: thalath_nuqat
+  display: Thalath Nuqat
+  arabic:
+    vocalized: الثَّلَاث نُقَط
+  dabt: نَقْط الإعْجَام — الثَّلَاث نُقَط
+  by_shape: ثَلَاث نُقَط مُثَلَّثَة
+  mushaf_introduction: null
+kind: mark
+category: dabt
+parent: mushaf_mark
+origin: quranic
+tier: core
+status: draft
+symbol: ثَلَاث نُقَط
+definition: إعْجَام الحَرْف وتَمْيِيزُه عمَّا يُشَارِكُه في الرَّسْم
+purpose: Distinguishes a letter from others that share the same skeleton (i'jam).
+alternative_spellings:
+- three-dots
+- three_dots
+unicode: []
+mark_family: ijam
+sources:
+- id: hafs_svg_registry
+  ref: standard!three-dots

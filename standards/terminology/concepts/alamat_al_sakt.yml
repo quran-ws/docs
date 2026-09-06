@@ -1,0 +1,32 @@
+concept: alamat_al_sakt
+names:
+  code: alamat_al_sakt
+  display: Alamat al-Sakt
+  arabic:
+    vocalized: عَلَامَة السَّكْت
+  dabt: السِّين — عَلَامَة السَّكْت
+  by_shape: سِين
+  mushaf_introduction: السِّين فَوْق الحَرْف الأَخِير الدَّالَّة على السَّكْت
+  unicode: ARABIC SMALL HIGH SEEN
+kind: mark
+category: dabt
+parent: mushaf_mark
+origin: quranic
+tier: core
+status: draft
+symbol: س
+definition: 'الدَّلَالَة على السَّكْت: وَقْفَة يَسِيرَة من غَيْر تَنَفُّس ثمَّ الوَصْل بما
+  بعده'
+purpose: 'Marks a saktah: a brief pause without taking a breath, then continuing.'
+alternative_spellings:
+- saktah
+unicode:
+- cp: U+06DC
+  name: ARABIC SMALL HIGH SEEN
+  category: Mn
+  combining_class: 230
+  block: Arabic
+mark_family: alamat_qiraah
+sources:
+- id: hafs_svg_registry
+  ref: standard!saktah

@@ -1,0 +1,30 @@
+concept: tashil
+names:
+  code: tashil
+  display: Tashil
+  arabic:
+    vocalized: التَّسْهِيل
+  dabt: التَّسْهِيل — الهَمْزَة بَيْنَ بَيْنَ
+  by_shape: نُقْطَة كَبِيرَة مَطْمُوسَة مَكَان الهَمْزَة
+  mushaf_introduction: النُّقْطَة بِدُون الحَرَكَة مَكَان الهَمْزَة
+  unicode: ARABIC ROUNDED HIGH STOP WITH FILLED CENTRE
+kind: mark
+category: dabt
+parent: mushaf_mark
+origin: quranic
+tier: core
+status: draft
+symbol: نُقْطَة مَكَان الهَمْزَة
+definition: الدَّلَالَة على تَسْهِيل الهَمْزَة بَيْنَ بَيْنَ، أي بَيْنَها وبَيْنَ الأَلِف
+purpose: 'Marks tashil: the hamzah softened to a sound between a hamzah and an alif.'
+alternative_spellings: []
+unicode:
+- cp: U+06EC
+  name: ARABIC ROUNDED HIGH STOP WITH FILLED CENTRE
+  category: Mn
+  combining_class: 230
+  block: Arabic
+mark_family: alamat_qiraah
+sources:
+- id: hafs_svg_registry
+  ref: standard!tashil

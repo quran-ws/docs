@@ -1,0 +1,32 @@
+concept: waqf_jaiz_waqf_awla
+names:
+  code: waqf_jaiz_waqf_awla
+  display: Waqf Jaiz Waqf Awla
+  arabic:
+    vocalized: الوَقْف الجَائِز الوَقْف أَوْلَى
+  dabt: قلى — عَلَامَة الوَقْف أَوْلَى
+  by_shape: قلى
+  mushaf_introduction: عَلَامَة الوَقْف الجَائِز مَع كَوْن الوَقْف أَوْلَى
+  unicode: ARABIC SMALL HIGH LIGATURE QAF WITH LAM WITH ALEF MAKSURA
+kind: mark
+category: dabt
+parent: mushaf_mark
+origin: quranic
+tier: core
+status: draft
+symbol: قلى
+definition: الوَقْف جَائِز مع كَوْن الوَقْف أَوْلَى
+purpose: A permissible stop, and stopping is the better choice.
+alternative_spellings:
+- waqf-awla
+- waqf_awla
+unicode:
+- cp: U+06D7
+  name: ARABIC SMALL HIGH LIGATURE QAF WITH LAM WITH ALEF MAKSURA
+  category: Mn
+  combining_class: 230
+  block: Arabic
+mark_family: waqf
+sources:
+- id: hafs_svg_registry
+  ref: standard!waqf-awla

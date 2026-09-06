@@ -1,0 +1,31 @@
+concept: shaddah
+names:
+  code: shaddah
+  display: Shaddah
+  arabic:
+    vocalized: الشَّدَّة
+  dabt: الشَّدَّة — رَأْس الشِّين (من «شَدِيد»)
+  by_shape: رَأْس شِين بِلَا نُقَط
+  mushaf_introduction: الشَّدَّة الدَّالَّة على الإدْغَام
+  unicode: ARABIC SHADDA
+kind: mark
+category: dabt
+parent: mushaf_mark
+origin: quranic
+tier: core
+status: draft
+symbol: ـّ
+definition: الدَّلَالَة على إدْغَام الحَرْف الأَوَّل في الثَّانِي
+purpose: Marks assimilation of a first letter into the second (doubling).
+alternative_spellings:
+- shadda
+unicode:
+- cp: U+0651
+  name: ARABIC SHADDA
+  category: Mn
+  combining_class: 33
+  block: Arabic
+mark_family: harakah
+sources:
+- id: hafs_svg_registry
+  ref: standard!shadda

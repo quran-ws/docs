@@ -1,0 +1,39 @@
+concept: tanwin_al_nasb
+names:
+  code: tanwin_al_nasb
+  display: Tanwin al-Nasb
+  arabic:
+    vocalized: تَنْوِين النَّصْب
+  dabt: تَنْوِين النَّصْب — الفَتْحَتَان
+  by_shape: أَلِفَان مُضْجَعَتَان فَوْق الحَرْف
+  mushaf_introduction: 'الحَرَكَتَان: تَرْكِيباً أو تَتَابُعاً'
+  unicode: ARABIC FATHATAN
+kind: mark
+category: dabt
+parent: mushaf_mark
+origin: quranic
+tier: core
+status: draft
+symbol: ـً
+definition: الدَّلَالَة على التَّنْوِين المَنْصُوب. وتَرْكِيب الحَرَكَتَيْن يدلّ على إظْهَار
+  التَّنْوِين، وتَتَابُعُهما مع تَشْدِيد التَّالِي على الإدْغَام الكَامِل، وبدونه على الإدْغَام
+  النَّاقِص أو الإخْفَاء
+purpose: Marks the an tanwin. Stacked marks signal izhar; staggered marks with a shadda on
+  the next letter signal complete idgham, and without one, incomplete idgham or ikhfa.
+alternative_spellings:
+- fathatan
+unicode:
+- cp: U+064B
+  name: ARABIC FATHATAN
+  category: Mn
+  combining_class: 27
+  block: Arabic
+- cp: U+08F0
+  name: ARABIC OPEN FATHATAN
+  category: Mn
+  combining_class: 27
+  block: Arabic Extended-A
+mark_family: tanwin
+sources:
+- id: hafs_svg_registry
+  ref: standard!fathatan

@@ -1,29 +1,31 @@
 concept: tajwid
-kind: discipline
+names:
+  code: tajwid
+  display: Tajweed
+  display_evidence: >
+    GitHub phrase search: tajweed 45,440 vs tajwid 25,280. The doubled form is
+    dominant in English writing, so it is what readers see; the code name stays
+    derived, because the doubling in general use is lexical and not a rule.
+  transliteration: tajwīd
+  arabic:
+    vocalized: تَجْوِيد
+    singular: تجويد
+kind: concept
 category: tajwid
-
-canonical: tajwid
-
-arabic:
-  singular: تجويد
-
+origin: quranic
+tier: core
+status: draft
 definition: >
-  علم يبين أحكام النطق بالنص القرآني في التلاوة، ومخارج
-  الحروف وصفاتها وأحكامها عند التركيب.
-
+  علم أداء حروف القرآن من مخارجها وإعطائها حقوقها ومستحقاتها من الصفات
+  والأحكام.
 purpose: >
-  يستخدم للإشارة إلى طبقة الأحكام التي توسم على النص أو
-  تحسب منه، مثل تلوين أحكام التجويد أو التحقق من التلاوة.
-
+  يمثل المجال الجامع لقواعد التجويد وأحكامه وannotations التطبيقات، وتنسب
+  إليه الأحكام والقواعد في القواميس والمحركات.
 alternative_spellings:
   - tajweed
-
 related:
   - tilawah
   - waqf
-
-sources: []
-
-note: >
-  «Tajweed» ليست خطأ في الاستخدام العام؛ المعيار يثبت «tajwid»
-  صيغةً برمجية واحدة، اتباعًا لقاعدة عدم مضاعفة حروف المد.
+sources:
+  - id: tajweed_engine
+    url: https://github.com/quranpedia/tajweed-engine

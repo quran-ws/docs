@@ -1,0 +1,32 @@
+concept: alif_mahdhufah
+names:
+  code: alif_mahdhufah
+  display: Alif Mahdhufah
+  arabic:
+    vocalized: الأَلِف المَحْذُوفَة
+  dabt: الأَلِف المَحْذُوفَة — أَلِف صَغِيرَة قَائِمَة
+  by_shape: أَلِف صَغِيرَة قَائِمَة فَوْق الحَرْف
+  mushaf_introduction: مِنَ الحُرُوف الصَّغِيرَة الدَّالَّة على المَتْرُوك مِنَ الرَّسْم
+  unicode: ARABIC LETTER SUPERSCRIPT ALEF
+kind: mark
+category: dabt
+parent: mushaf_mark
+origin: quranic
+tier: core
+status: draft
+symbol: ا صَغِيرَة قَائِمَة
+definition: الدَّلَالَة على أَلِف مَحْذُوفَة من الرَّسْم واجِبَة النُّطْق
+purpose: Restores an alif omitted from the Uthmani skeleton but obligatory in pronunciation.
+alternative_spellings:
+- small-alef
+- small_alef
+unicode:
+- cp: U+0670
+  name: ARABIC LETTER SUPERSCRIPT ALEF
+  category: Mn
+  combining_class: 35
+  block: Arabic
+mark_family: imlaiyyah
+sources:
+- id: hafs_svg_registry
+  ref: standard!small-alef

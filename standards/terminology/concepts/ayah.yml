@@ -1,36 +1,33 @@
 concept: ayah
+names:
+  code: ayah
+  display: Ayah
+  transliteration: āyah
+  arabic:
+    vocalized: آيَة
+    singular: آية
+    plural: آيات
 kind: entity
 category: structure
-
-canonical: ayah
+origin: quranic
+tier: core
+status: draft
 plural: ayahs
-
-arabic:
-  singular: آية
-  plural: آيات
-
 definition: >
-  وحدة من النص القرآني تقع ضمن سورة ولها حدود محددة،
-  وقد يختلف رقمها أو بعض حدودها باختلاف نظام عد الآي.
-
+  وحدة من النص القرآني تقع ضمن سورة ولها حدود محددة، وقد يختلف رقمها أو بعض
+  حدودها باختلاف نظام عد الآي.
 purpose: >
-  تستخدم كوحدة أساسية للإشارة إلى النص القرآني وربط
-  الترجمات والتفاسير والتلاوات والتحليلات والبيانات
-  الأخرى بموضع محدد من القرآن.
-
+  تستخدم كوحدة أساسية للإشارة إلى النص القرآني وربط الترجمات والتفاسير
+  والتلاوات والتحليلات والبيانات الأخرى بموضع محدد من القرآن.
 boundaries:
   - موقعها في صفحة أو سطر يخص المصحف أو الـlayout، لا هوية الآية نفسها.
   - الفاصلة نهاية الآية، وليست الآية.
-
 alternative_spellings:
   - aya
-
 english_glosses:
   - verse
-
 related:
   - surah
   - ayah_numbering_system
   - fasilah
-
 sources: []

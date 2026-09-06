@@ -1,0 +1,39 @@
+concept: tanwin_al_khafd
+names:
+  code: tanwin_al_khafd
+  display: Tanwin al-Khafd
+  arabic:
+    vocalized: تَنْوِين الخَفْض
+  dabt: تَنْوِين الخَفْض — الكَسْرَتَان
+  by_shape: أَلِفَان مُضْجَعَتَان تَحْت الحَرْف
+  mushaf_introduction: 'الحَرَكَتَان: تَرْكِيباً أو تَتَابُعاً'
+  unicode: ARABIC KASRATAN
+kind: mark
+category: dabt
+parent: mushaf_mark
+origin: quranic
+tier: core
+status: draft
+symbol: ـٍ
+definition: الدَّلَالَة على التَّنْوِين المَخْفُوض. وتَرْكِيب الحَرَكَتَيْن يدلّ على إظْهَار
+  التَّنْوِين، وتَتَابُعُهما مع تَشْدِيد التَّالِي على الإدْغَام الكَامِل، وبدونه على الإدْغَام
+  النَّاقِص أو الإخْفَاء
+purpose: Marks the in tanwin. Stacked marks signal izhar; staggered marks with a shadda on
+  the next letter signal complete idgham, and without one, incomplete idgham or ikhfa.
+alternative_spellings:
+- kasratan
+unicode:
+- cp: U+064D
+  name: ARABIC KASRATAN
+  category: Mn
+  combining_class: 29
+  block: Arabic
+- cp: U+08F2
+  name: ARABIC OPEN KASRATAN
+  category: Mn
+  combining_class: 29
+  block: Arabic Extended-A
+mark_family: tanwin
+sources:
+- id: hafs_svg_registry
+  ref: standard!kasratan

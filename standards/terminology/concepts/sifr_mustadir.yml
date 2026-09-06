@@ -1,0 +1,32 @@
+concept: sifr_mustadir
+names:
+  code: sifr_mustadir
+  display: Sifr Mustadir
+  arabic:
+    vocalized: الصِّفْر المُسْتَدِير
+  dabt: الصِّفْر المُسْتَدِير
+  by_shape: دَائِرَة صَغِيرَة خَالِيَة الوَسَط
+  mushaf_introduction: دَائِرَة صَغِيرَة خَالِيَة الوَسَط
+  unicode: ARABIC SMALL HIGH ROUNDED ZERO
+kind: mark
+category: dabt
+parent: mushaf_mark
+origin: quranic
+tier: core
+status: draft
+symbol: دَائِرَة صَغِيرَة
+definition: الدَّلَالَة على زِيَادَة الحَرْف رَسْماً؛ فلا يُنْطَق وَصْلاً ولا وَقْفاً
+purpose: Marks a letter present in the skeleton but never pronounced — neither in continuation
+  nor when stopping.
+alternative_spellings:
+- sifr-mustadir
+unicode:
+- cp: U+06DF
+  name: ARABIC SMALL HIGH ROUNDED ZERO
+  category: Mn
+  combining_class: 230
+  block: Arabic
+mark_family: dabt
+sources:
+- id: hafs_svg_registry
+  ref: standard!sifr-mustadir
