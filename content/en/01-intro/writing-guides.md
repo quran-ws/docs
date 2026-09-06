@@ -23,7 +23,11 @@ Yes:  A copied table goes stale and nobody notices.
 No:   A duplicated table silently falls into desuetude.
 ```
 
-- Short sentences beat long coordinated ones.
+- Keep a connected thought in one sentence; don't chop it up for emphasis.
+- Say it plainly instead of turning it into a slogan or a neat contrast.
+- Prefer the familiar word when two are equally correct.
+- Use the direct verb: "the file is generated", not "generation of the file takes place".
+- Write numbers as digits in technical prose: 4, not four. Ranges use an en dash: 4–8.
 - Define a scholarly or Quranic-sciences term the first time, or link it to the dictionary.
 - Don't assume the reader knows a riwayah from a qira'ah, or rasm from ḍabṭ.
 
