@@ -30,3 +30,5 @@ mark_family: imlaiyyah
 sources:
 - id: hafs_svg_registry
   ref: standard!small-waw
+english_glosses:
+- Small Waw

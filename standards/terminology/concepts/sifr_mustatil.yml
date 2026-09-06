@@ -29,3 +29,5 @@ mark_family: dabt
 sources:
 - id: hafs_svg_registry
   ref: standard!sifr-mustatil
+english_glosses:
+- Rectangular Zero

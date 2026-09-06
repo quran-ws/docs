@@ -36,3 +36,5 @@ mark_family: imlaiyyah
 sources:
 - id: hafs_svg_registry
   ref: standard!small-ya
+english_glosses:
+- Small Yaa

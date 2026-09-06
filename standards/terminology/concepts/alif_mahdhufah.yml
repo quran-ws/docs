@@ -30,3 +30,5 @@ mark_family: imlaiyyah
 sources:
 - id: hafs_svg_registry
   ref: standard!small-alef
+english_glosses:
+- Omitted Alif

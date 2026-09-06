@@ -36,3 +36,5 @@ mark_family: dabt
 sources:
 - id: hafs_svg_registry
   ref: standard!meem-iqlab
+english_glosses:
+- Small Meem

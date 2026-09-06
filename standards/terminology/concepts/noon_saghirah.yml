@@ -15,10 +15,8 @@ origin: quranic
 tier: core
 status: draft
 symbol: ن صَغِيرَة
-definition: الدَّلَالَة على نُون مَحْذُوفَة من الرَّسْم واجِبَة النُّطْق، في مَوْضِع واحِد
-  (21:88) وحده
-purpose: Restores a nun omitted from the skeleton but obligatory in pronunciation — one place
-  only (21:88).
+definition: الدَّلَالَة على نُون مَحْذُوفَة من الرَّسْم واجِبَة النُّطْق، في مَوْضِع واحِد (21:88) وحده
+purpose: Restores a nun omitted from the skeleton but obligatory in pronunciation — one place only (21:88).
 alternative_spellings:
 - nun_saghirah
 - small-noon
@@ -33,3 +31,5 @@ mark_family: imlaiyyah
 sources:
 - id: hafs_svg_registry
   ref: standard!small-noon
+english_glosses:
+- Small Noon
