@@ -1,0 +1,29 @@
+concept: tajwid
+kind: discipline
+category: tajwid
+
+canonical: tajwid
+
+arabic:
+  singular: تجويد
+
+definition: >
+  علم يبين أحكام النطق بالنص القرآني في التلاوة، ومخارج
+  الحروف وصفاتها وأحكامها عند التركيب.
+
+purpose: >
+  يستخدم للإشارة إلى طبقة الأحكام التي توسم على النص أو
+  تحسب منه، مثل تلوين أحكام التجويد أو التحقق من التلاوة.
+
+alternative_spellings:
+  - tajweed
+
+related:
+  - tilawah
+  - waqf
+
+sources: []
+
+note: >
+  «Tajweed» ليست خطأ في الاستخدام العام؛ المعيار يثبت «tajwid»
+  صيغةً برمجية واحدة، اتباعًا لقاعدة عدم مضاعفة حروف المد.

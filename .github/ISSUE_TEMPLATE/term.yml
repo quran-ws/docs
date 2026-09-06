@@ -1,0 +1,85 @@
+name: اقتراح مصطلح — Propose a term
+description: إضافة مفهوم إلى قاموس المصطلحات، أو تعديل اسمه أو تعريفه.
+title: "term: "
+labels: ["terminology"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        القسم 30 من المعيار يشترط الإجابة عن هذه الأسئلة قبل قبول أي Entry.
+        إن لم يتضح المفهوم أو الغرض البرمجي منه، لا يعتمد حتى تظهر الحاجة إليه.
+  - type: textarea
+    id: concept
+    attributes:
+      label: المفهوم وتعريفه
+      description: ما الذي يمثله؟ وما تعريفه الدقيق؟
+    validations:
+      required: true
+  - type: textarea
+    id: purpose
+    attributes:
+      label: الغرض البرمجي
+      description: لماذا نحتاج تمثيله في الكود أو الـAPI أو البيانات؟
+    validations:
+      required: true
+  - type: textarea
+    id: boundaries
+    attributes:
+      label: الحدود والمفاهيم المتشابهة
+      description: ما الذي لا يشمله؟ وبأي مفهوم قد يختلط؟
+    validations:
+      required: true
+  - type: input
+    id: kind
+    attributes:
+      label: kind
+      description: entity، concept، property، classification، classification_value، role، discipline، process، content، analysis، mark، text_unit، layout_unit
+    validations:
+      required: true
+  - type: input
+    id: category
+    attributes:
+      label: category
+      description: core، structure، text، mushaf، qiraat، recitation، tajwid، waqf، revelation، linguistics، translation، tafsir، typography، audio، metadata
+    validations:
+      required: true
+  - type: input
+    id: parent
+    attributes:
+      label: parent
+      description: مطلوب إذا كان kind هو classification_value.
+  - type: dropdown
+    id: nature
+    attributes:
+      label: طبيعة المفهوم
+      options:
+        - مفهوم قرآني متخصص — يحتفظ بالمصطلح العربي
+        - مفهوم تقني عام — يستخدم الإنجليزية الطبيعية
+    validations:
+      required: true
+  - type: input
+    id: canonical
+    attributes:
+      label: Canonical Name والمفرد والجمع
+      description: 'مثال: ayah / ayahs — وإن كان عربي الأصل فيجب أن يتبع Canonical Code Spelling.'
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: التهجئات البديلة وEnglish glosses وDeprecated
+      description: ميّز بينها؛ فالبديل ليس ترجمة، والـDeprecated ليس خطأ.
+  - type: textarea
+    id: layers
+    attributes:
+      label: الاسم عبر الطبقات
+      description: كيف يظهر في Model وDatabase وForeign key وAPI؟ هل يعمل بصورة طبيعية في الثلاثة؟
+    validations:
+      required: true
+  - type: textarea
+    id: sources
+    attributes:
+      label: مصدر التعريف
+      description: المصدر يوثق المفهوم وتعريفه، لا اختيار الاسم البرمجي.
+    validations:
+      required: true

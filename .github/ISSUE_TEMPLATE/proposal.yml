@@ -1,0 +1,31 @@
+name: اقتراح قاعدة — Propose a guideline
+description: إضافة قاعدة إلى الأدلة أو تعديل قاعدة قائمة.
+title: "guideline: "
+labels: ["guideline"]
+body:
+  - type: textarea
+    id: case
+    attributes:
+      label: الحالة التي دفعت للاقتراح
+      description: الأدلة تتغير بحالات واقعية واجهناها، لا بتفضيلات عامة. اذكر المشروع والموضع.
+    validations:
+      required: true
+  - type: textarea
+    id: rule
+    attributes:
+      label: القاعدة المقترحة
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: البدائل ولماذا رُفضت
+    validations:
+      required: true
+  - type: textarea
+    id: impact
+    attributes:
+      label: الأثر على المشاريع القائمة
+      description: هل تخالف مشاريعنا الحالية القاعدة؟ وهل يلزم migration أو تحذير Deprecated؟
+    validations:
+      required: true

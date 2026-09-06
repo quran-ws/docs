@@ -1,0 +1,28 @@
+concept: makki
+kind: classification_value
+category: revelation
+parent: revelation_classification
+
+canonical: makki
+plural: makkis
+
+arabic:
+  singular: مكي
+
+definition: >
+  تصنيف للسورة بحسب زمن النزول، على المشهور من أنه ما نزل
+  قبل الهجرة وإن كان نزوله بغير مكة.
+
+purpose: >
+  يستخدم لتصنيف السور وترشيحها وعرض معلومات النزول،
+  ولا يستخدم للدلالة على المكان الجغرافي وحده.
+
+english_glosses:
+  - meccan
+
+related:
+  - madani
+  - revelation_classification
+  - nuzul
+
+sources: []

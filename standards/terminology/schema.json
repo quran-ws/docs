@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://quran.ws/standards/terminology/schema.json",
+  "title": "Quranic Software Terminology Standard — dictionary entry",
+  "description": "Entry shape defined in section 27 of the standard. Required fields are the minimum an entry must answer before it is accepted (section 30).",
+  "type": "object",
+  "required": ["concept", "kind", "category", "canonical", "arabic", "definition", "purpose"],
+  "additionalProperties": false,
+  "properties": {
+    "concept": { "type": "string", "pattern": "^[a-z][a-z0-9_]*$" },
+    "kind": {
+      "enum": ["entity", "concept", "property", "classification",
+               "classification_value", "role", "discipline", "process",
+               "content", "analysis", "mark", "text_unit", "layout_unit"]
+    },
+    "category": {
+      "enum": ["core", "structure", "text", "mushaf", "qiraat", "recitation",
+               "tajwid", "waqf", "revelation", "linguistics", "translation",
+               "tafsir", "typography", "audio", "metadata"]
+    },
+    "parent": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9_]*$",
+      "description": "Required in practice when kind is classification_value."
+    },
+    "canonical": { "type": "string", "pattern": "^[a-z][a-z0-9_]*$" },
+    "plural": { "type": "string", "pattern": "^[a-z][a-z0-9_]*$" },
+    "code": { "type": "string" },
+    "symbol": { "type": "string" },
+    "arabic": {
+      "type": "object",
+      "required": ["singular"],
+      "additionalProperties": false,
+      "properties": {
+        "singular": { "type": "string" },
+        "plural": { "type": "string" }
+      }
+    },
+    "definition": { "type": "string" },
+    "purpose": { "type": "string" },
+    "boundaries": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "What the concept does not include (section 17)."
+    },
+    "alternative_spellings": { "type": "array", "items": { "type": "string" } },
+    "english_glosses": { "type": "array", "items": { "type": "string" } },
+    "deprecated": { "type": "array", "items": { "type": "string" } },
+    "incorrect": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Names that denote a different concept entirely (section 20)."
+    },
+    "related": { "type": "array", "items": { "type": "string", "pattern": "^[a-z][a-z0-9_]*$" } },
+    "sources": { "type": "array", "items": { "type": "string" } },
+    "note": { "type": "string" }
+  },
+  "allOf": [
+    {
+      "if": { "properties": { "kind": { "const": "classification_value" } }, "required": ["kind"] },
+      "then": { "required": ["parent"] }
+    }
+  ]
+}
