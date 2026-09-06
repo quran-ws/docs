@@ -3864,9 +3864,9 @@
  "source": "https://github.com/quran-ws/guidelines",
  "standard": "Quranic Software Terminology Standard",
  "version": {
-  "commit": "ec5dddeab463",
-  "date": "2026-09-06T20:34:40+03:00",
-  "dirty": true,
+  "commit": "153261cf79a2",
+  "date": "2026-09-06T20:55:34+03:00",
+  "dirty": null,
   "repo": "quran-ws/guidelines"
  }
 }

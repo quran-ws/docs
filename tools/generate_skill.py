@@ -65,6 +65,7 @@ def arabic_plurals(entry):
 
 
 REPO = "quran-ws/guidelines"   # the fallback when there is no git remote to read
+WATCHED = "standards/terminology"   # the path a name can change under
 
 
 def version():
@@ -81,14 +82,19 @@ def version():
         except (OSError, subprocess.CalledProcessError):
             return None
 
-    commit = git("rev-parse", "HEAD")
+    # The commit that last touched the terminology, not HEAD. HEAD moves with
+    # every commit in the repository, including the one that carries this file,
+    # so stamping it would make the build's own output differ from what was just
+    # committed. update_check.py asks GitHub about the same path.
+    stamp = git("log", "-1", "--format=%H %cI", "--", WATCHED) or ""
+    commit, _, date = stamp.partition(" ")
     remote = git("remote", "get-url", "origin") or ""
     match = re.search(r"github\.com[:/](.+?)(?:\.git)?$", remote)
     return {
         "repo": match.group(1) if match else REPO,
-        "commit": commit[:12] if commit else None,
-        "date": git("log", "-1", "--format=%cI", "--", "standards/terminology"),
-        "dirty": bool(git("status", "--porcelain", "--", "standards/terminology")) or None,
+        "commit": commit[:12] or None,
+        "date": date or None,
+        "dirty": bool(git("status", "--porcelain", "--", WATCHED)) or None,
     }
 
 

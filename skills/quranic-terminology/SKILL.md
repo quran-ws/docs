@@ -16,7 +16,7 @@ answer a naming question without guessing.
 > Status: 0 entries adopted, 146 still draft. A draft entry is a
 > proposal, not a ruling — say so when you rely on one.
 >
-> Built from `quran-ws/guidelines`@`ec5dddeab463`. The dictionary keeps moving, so before an
+> Built from `quran-ws/guidelines`@`153261cf79a2`. The dictionary keeps moving, so before an
 > audit that someone will act on, check the snapshot is still current:
 >
 > ```bash
