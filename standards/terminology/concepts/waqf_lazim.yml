@@ -8,9 +8,9 @@ names:
   by_shape: مِيم
   mushaf_introduction: عَلَامَة الوَقْف اللَّازِم
   unicode: ARABIC SMALL HIGH MEEM INITIAL FORM
-kind: mark
+kind: classification_value
 category: dabt
-parent: mushaf_mark
+parent: waqf_mark_type
 origin: quranic
 tier: core
 status: draft

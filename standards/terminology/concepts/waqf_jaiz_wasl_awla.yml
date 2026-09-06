@@ -8,9 +8,9 @@ names:
   by_shape: صلى
   mushaf_introduction: عَلَامَة الوَقْف الجَائِز مَع كَوْن الوَصْل أَوْلَى
   unicode: ARABIC SMALL HIGH LIGATURE SAD WITH LAM WITH ALEF MAKSURA
-kind: mark
+kind: classification_value
 category: dabt
-parent: mushaf_mark
+parent: waqf_mark_type
 origin: quranic
 tier: core
 status: draft

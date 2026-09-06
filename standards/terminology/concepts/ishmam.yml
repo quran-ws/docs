@@ -10,7 +10,7 @@ names:
   unicode: ARABIC ROUNDED HIGH STOP WITH FILLED CENTRE
 kind: mark
 category: dabt
-parent: mushaf_mark
+parent: qiraah_mark
 origin: quranic
 tier: core
 status: draft

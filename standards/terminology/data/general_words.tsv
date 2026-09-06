@@ -9,15 +9,27 @@
 # A word belongs here only when it is an ordinary Arabic word with a plain
 # English equivalent. A technical term does not, however familiar it looks.
 #
-# arabic	english
-صغير	small
-صغيرة	small
-مستدير	rounded
-مستطيل	rectangular
-محذوف	omitted
-محذوفة	omitted
-صفر	zero
-نقطة	dot
-نقطتان	two_dots
-ثلاث	three
-نقط	dots
+# The third column is the word's place in the English name:
+#   word   stays where it stands       ثَلَاث نُقَط     → three_dots
+#   head   moves to the end            عَلَامَة الوَقْف  → waqf_mark
+# A head is a noun that governs what follows it, so English puts it last. A
+# chain of heads reverses: نَوْع عَلَامَة الوَقْف → waqf_mark_type.
+#
+# arabic	english	role
+صغير	small	word
+صغيرة	small	word
+مستدير	rounded	word
+مستطيل	rectangular	word
+محذوف	omitted	word
+محذوفة	omitted	word
+صفر	zero	word
+نقطة	dot	word
+نقطتان	two_dots	word
+ثلاث	three	word
+نقط	dots	word
+علامة	mark	head
+خط	line	head
+نوع	type	head
+تقسيم	division	word
+إملائي	orthographic	word
+إملائية	orthographic	word

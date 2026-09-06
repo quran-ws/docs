@@ -1,0 +1,15 @@
+concept: orthographic_mark
+names:
+  code: orthographic_mark
+  display: Orthographic Mark
+  arabic:
+    vocalized: العَلَامَة الإمْلَائِيَّة
+kind: classification
+category: dabt
+parent: mushaf_mark
+origin: quranic
+tier: core
+status: draft
+definition: علامة تضبط رسم الكلمة، كالهمزة والمدة والحروف الصغيرة.
+purpose: تستخدم أبًا للعلامات التي تتعلق برسم الكلمة لا بحركتها ولا بالوقف عليها.
+sources: []

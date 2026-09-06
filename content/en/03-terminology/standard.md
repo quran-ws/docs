@@ -254,7 +254,6 @@ so it is written `t`:
 
 ```text
 همزة الوصل    → hamzat_al_wasl     not hamzah_al_wasl
-علامة التحزيب → alamat_al_tahzib   not alamah_al_tahzib
 سجدة التلاوة  → sajdat_al_tilawah  not sajdah_al_tilawah
 ```
 
@@ -688,6 +687,27 @@ mark                   a mark drawn in the mushaf
 unit                   a textual, orthographic or typographic unit
 ```
 
+## A mark's parent is its family
+
+The marks of ḍabṭ are not one list. Each mark belongs to a family, and that
+family is its parent:
+
+```text
+mushaf_mark
+├── harakah            fathah, dammah, kasrah, sukun, shaddah
+├── tanwin             tanwin al-rafa, al-nasb, al-khafd
+├── ijam               dot, two_dots, three_dots
+├── orthographic_mark  hamzah, maddah, the small letters
+├── qiraah_mark        saktah, ishmam, tashil, imalah
+└── waqf_mark_type     lazim, mamnu, and the permissible kinds
+```
+
+`mushaf_mark` is not made the parent of every mark: one parent for
+thirty-seven marks says nothing. It stays the parent of the marks that have no
+family.
+
+---
+
 `kind` describes the **shape** of an entry rather than its domain; the domain is
 carried by `category` alone. So kinds such as `textual_concept`,
 `recitation_concept` or `typographic_unit` do not arise: those are all `concept`
@@ -916,7 +936,7 @@ Two concepts are not merged because their translations look alike.
 A mark drawn in the mushaf is a separate concept from what it indicates:
 
 ```text
-alamat_al_sakt     the mark that is drawn      mark
+saktah_mark        the mark that is drawn      mark
 saktah             the pause itself            concept
 
 sajdah_mark        the mark of a sajdah place  mark
@@ -932,7 +952,7 @@ Unicode.
 together with its position:
 
 ```text
-U+06DC   ARABIC SMALL HIGH SEEN   →  alamat_al_sakt  or  seen_al_qiraah
+U+06DC   ARABIC SMALL HIGH SEEN   →  saktah_mark  or  seen_al_qiraah
 U+06EC   ROUNDED HIGH STOP        →  al_ishmam       or  al_tashil
 ```
 

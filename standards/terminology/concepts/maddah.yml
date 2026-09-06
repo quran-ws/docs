@@ -10,7 +10,7 @@ names:
   unicode: ARABIC MADDAH ABOVE
 kind: mark
 category: dabt
-parent: mushaf_mark
+parent: orthographic_mark
 origin: quranic
 tier: core
 status: draft

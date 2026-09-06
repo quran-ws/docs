@@ -10,7 +10,7 @@ names:
   unicode: ARABIC FATHA
 kind: mark
 category: dabt
-parent: mushaf_mark
+parent: harakah
 origin: quranic
 tier: core
 status: draft

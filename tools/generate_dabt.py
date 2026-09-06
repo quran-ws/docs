@@ -32,11 +32,11 @@ NAMING_PHRASE = {
  "waqf-awla": ["الوَقْف الجَائِز", "الوَقْف أَوْلَى"],
  "waqf-lazim": ["الوَقْف اللَّازِم"],
  "muanaqah": ["تَعَانُق الوَقْف"], "waqf-mamnu": ["الوَقْف المَمْنُوع"],
- "saktah": ["عَلَامَة السَّكْت"], "seen-reading": ["سِين القِرَاءَة"],
+ "saktah": ["عَلَامَة السَّكْتَة"], "seen-reading": ["سِين القِرَاءَة"],
  "imalah": ["الإمَالَة"], "ishmam": ["الإشْمَام"], "tashil": ["التَّسْهِيل"],
- "sajdah-sign": ["عَلَامَة مَوْضِع السَّجْدَة"],
- "sajdah-line": ["خَطّ مُوجِب السَّجْدَة"],
- "hizb": ["عَلَامَة التَّحْزِيب"],
+ "sajdah-sign": ["عَلَامَة السَّجْدَة"],
+ "sajdah-line": ["خَطّ السَّجْدَة"],
+ "hizb": ["عَلَامَة التَّقْسِيم"],
 }
 
 # Display forms that differ from the derived code, each with its evidence.
@@ -68,7 +68,27 @@ PREVIOUS_NAMES = {
     "dot": {"nuqtah"},
     "two_dots": {"nuqtatan"},
     "seen_al_qiraah": {"sin_qiraah"},
+    "saktah_mark": {"alamat_al_sakt"},
+    "sajdah_mark": {"alamat_mawdi_al_sajdah"},
+    "division_mark": {"alamat_al_tahzib"},
+    "sajdah_line": {"khatt_mujib_al_sajdah"},
 }
+
+# A mark's parent is its family. Before this, every mark hung off mushaf_mark
+# while mark_family carried the real grouping, so the tree said one thing and
+# the field said another. Families with no concept of their own — the catch-all
+# `dabt` and the "stands alone" `mustaqill` — keep the generic parent.
+FAMILY_PARENT = {
+    "harakah": "harakah",
+    "tanwin": "tanwin",
+    "ijam": "ijam",
+    "imlaiyyah": "orthographic_mark",
+    "alamat_qiraah": "qiraah_mark",
+    "waqf": "waqf_mark_type",
+}
+# A waqf mark is a value of the waqf-mark classification, not a mark of its own:
+# section 27 gives waqf_lazim exactly this shape.
+FAMILY_KIND = {"waqf": "classification_value"}
 
 FAMILY = {"حركة": "harakah", "تنوين": "tanwin", "نقط": "ijam", "إملائية": "imlaiyyah",
           "ضبط": "dabt", "وقف": "waqf", "علامة قراءة": "alamat_qiraah", "مستقل": "mustaqill"}
@@ -104,6 +124,7 @@ def build():
         disp_alias = disp.lower().replace("-", "_").replace(" ", "_")
         intro = r[7].strip()
         absent = "لَمْ تُذْكَر" in intro or "لَمْ تُفْرَد" in intro or "لَمْ تَرِد" in intro
+        family = FAMILY.get(r[3].strip(), r[3].strip())
         e = {
             "concept": code,
             "names": {
@@ -115,9 +136,9 @@ def build():
                 "by_shape": r[6].strip() or None,
                 "mushaf_introduction": None if absent else (intro or None),
             },
-            "kind": "mark",
+            "kind": FAMILY_KIND.get(family, "mark"),
             "category": "dabt",
-            "parent": "mushaf_mark",
+            "parent": FAMILY_PARENT.get(family, "mushaf_mark"),
             "origin": "quranic",
             "tier": "core",
             "status": "draft",
@@ -133,7 +154,7 @@ def build():
             **({"deprecated": [old, old.replace("-", "_")]}
                if old.replace("-", "_") in DEPRECATED_IDS else {}),
             "unicode": [],
-            "mark_family": FAMILY.get(r[3].strip(), r[3].strip()),
+            "mark_family": family,
             "sources": [{"id": "hafs_svg_registry", "ref": f"standard!{old}"}],
         }
         for cp in parse_codepoints(r[2]):

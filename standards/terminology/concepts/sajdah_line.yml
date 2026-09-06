@@ -1,9 +1,9 @@
-concept: khatt_mujib_al_sajdah
+concept: sajdah_line
 names:
-  code: khatt_mujib_al_sajdah
-  display: Khatt Mujib al-Sajdah
+  code: sajdah_line
+  display: Sajdah Line
   arabic:
-    vocalized: خَطّ مُوجِب السَّجْدَة
+    vocalized: خَطّ السَّجْدَة
   dabt: خَطّ مُوجِب السَّجْدَة
   by_shape: خَطّ أُفُقِيّ فَوْق الكَلِمَة
   mushaf_introduction: خَطّ أُفُقِيّ فَوْق الكَلِمَة الدَّالّ على مُوجِب السَّجْدَة
@@ -17,8 +17,8 @@ symbol: خَطّ أُفُقِيّ
 definition: الدَّلَالَة على الكَلِمَة المُوجِبَة للسَّجْدَة
 purpose: Marks the word that makes prostration due.
 alternative_spellings:
+- khatt_mujib_al_sajdah
 - sajdah-line
-- sajdah_line
 unicode: []
 mark_family: mustaqill
 sources:

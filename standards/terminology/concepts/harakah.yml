@@ -1,0 +1,15 @@
+concept: harakah
+names:
+  code: harakah
+  display: Harakah
+  arabic:
+    vocalized: الحَرَكَة
+kind: classification
+category: dabt
+parent: mushaf_mark
+origin: quranic
+tier: core
+status: draft
+definition: علامة تضبط حركة الحرف من فتح أو ضم أو كسر أو سكون.
+purpose: تستخدم أبًا لعلامات الضبط التي تحدد نطق الحرف نفسه.
+sources: []

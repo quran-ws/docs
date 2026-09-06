@@ -8,9 +8,9 @@ names:
   by_shape: جِيم
   mushaf_introduction: عَلَامَة الوَقْف الجَائِز جَوَازاً مُسْتَوِيَ الطَّرَفَيْن
   unicode: ARABIC SMALL HIGH JEEM
-kind: mark
+kind: classification_value
 category: dabt
-parent: mushaf_mark
+parent: waqf_mark_type
 origin: quranic
 tier: core
 status: draft

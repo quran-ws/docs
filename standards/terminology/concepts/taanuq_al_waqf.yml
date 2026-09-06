@@ -8,9 +8,9 @@ names:
   by_shape: ثَلَاث نُقَط تَتَكَرَّر عَلَى كَلِمَتَيْن
   mushaf_introduction: عَلَامَة تَعَانُق الوَقْف
   unicode: ARABIC SMALL HIGH THREE DOTS
-kind: mark
+kind: classification_value
 category: dabt
-parent: mushaf_mark
+parent: waqf_mark_type
 origin: quranic
 tier: core
 status: draft

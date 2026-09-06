@@ -238,7 +238,6 @@ Riwayah   وليس Riwaya
 
 ```text
 همزة الوصل    → hamzat_al_wasl     لا hamzah_al_wasl
-علامة التحزيب → alamat_al_tahzib   لا alamah_al_tahzib
 سجدة التلاوة  → sajdat_al_tilawah  لا sajdah_al_tilawah
 ```
 
@@ -647,6 +646,25 @@ mark                   علامة مرسومة في المصحف
 unit                   وحدة نصية أو كتابية أو طباعية
 ```
 
+## الأب هو العائلة
+
+علامات الضبط ليست قائمة واحدة، فلكل علامة عائلة تنتمي إليها، وهي أبوها:
+
+```text
+mushaf_mark
+├── harakah            الفتحة والضمة والكسرة والسكون والشدة
+├── tanwin             تنوين الرفع والنصب والخفض
+├── ijam               النقطة والنقطتان والثلاث نقط
+├── orthographic_mark  الهمزة والمدة والحروف الصغيرة
+├── qiraah_mark        السكت والإشمام والتسهيل والإمالة
+└── waqf_mark_type     اللازم والممنوع والجائز بأنواعه
+```
+
+ولا يجعل `mushaf_mark` أبًا لكل علامة، فالأب الواحد لسبع وثلاثين علامة لا يفيد
+شيئًا. ويبقى أبًا للعلامات التي لا عائلة لها.
+
+---
+
 الـ`kind` يصف **شكل** الـEntry لا مجاله؛ فالمجال يحمله `category` وحده.
 ولذلك لا تنشأ أنواع مثل `textual_concept` أو `recitation_concept` أو
 `typographic_unit`: هذه كلها `concept` أو `unit` تختلف في `category` لا في `kind`.
@@ -866,7 +884,7 @@ Sujud al-Tilawah ≠ Sajdah Mark
 العلامة المرسومة في المصحف مفهوم مستقل عما تدل عليه:
 
 ```text
-alamat_al_sakt     العلامة المرسومة       mark
+saktah_mark        العلامة المرسومة       mark
 saktah             السكتة نفسها           concept
 
 sajdah_mark        علامة موضع السجدة      mark
@@ -880,7 +898,7 @@ sujud_al_tilawah   السجود نفسه            concept
 **محرف واحد يخدم علامتين**، فتتحدد العلامة بالمحرف مع موضعه:
 
 ```text
-U+06DC   ARABIC SMALL HIGH SEEN   →  alamat_al_sakt  أو  seen_al_qiraah
+U+06DC   ARABIC SMALL HIGH SEEN   →  saktah_mark  أو  seen_al_qiraah
 U+06EC   ROUNDED HIGH STOP        →  al_ishmam       أو  al_tashil
 ```
 

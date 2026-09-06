@@ -444,60 +444,13 @@ sidebar:
 
 ## الضبط — `dabt`
 
-### Alamat al-Sakt — عَلَامَة السَّكْت
-
-| | |
-| --- | --- |
-| `code` | `alamat_al_sakt` |
-| `kind` | `mark` |
-| `parent` | `mushaf_mark` |
-| بالحركات | عَلَامَة السَّكْت |
-| الرمز | س |
-| المحارف | `U+06DC` |
-| أسماء متروكة | `saktah`، `saktah` |
-
-**التعريف:** الدَّلَالَة على السَّكْت: وَقْفَة يَسِيرَة من غَيْر تَنَفُّس ثمَّ الوَصْل بما بعده
-
-**الغرض:** Marks a saktah: a brief pause without taking a breath, then continuing.
-
-### Alamat al-Tahzib — عَلَامَة التَّحْزِيب
-
-| | |
-| --- | --- |
-| `code` | `alamat_al_tahzib` |
-| `kind` | `mark` |
-| `parent` | `mushaf_mark` |
-| بالحركات | عَلَامَة التَّحْزِيب |
-| الرمز | نَجْمَة |
-| المحارف | `U+06DE` |
-| أسماء متروكة | `hizb`، `hizb` |
-
-**التعريف:** الدَّلَالَة على بِدَايَة الأَجْزَاء والأَحْزَاب وأَنْصَافِها وأَرْبَاعِها
-
-**الغرض:** Marks the start of a juz, a hizb, or a half or quarter of one.
-
-### Alamat Mawdi al-Sajdah — عَلَامَة مَوْضِع السَّجْدَة
-
-| | |
-| --- | --- |
-| `code` | `alamat_mawdi_al_sajdah` |
-| `kind` | `mark` |
-| `parent` | `mushaf_mark` |
-| بالحركات | عَلَامَة مَوْضِع السَّجْدَة |
-| الرمز | مِحْرَاب |
-| تهجئات أخرى | `sajdah-sign`، `sajdah_sign` |
-
-**التعريف:** الدَّلَالَة على مَوْضِع السُّجُود
-
-**الغرض:** Marks the point at which the reader prostrates.
-
 ### Dammah — الضَّمَّة
 
 | | |
 | --- | --- |
 | `code` | `dammah` |
 | `kind` | `mark` |
-| `parent` | `mushaf_mark` |
+| `parent` | `harakah` |
 | بالحركات | الضَّمَّة |
 | الرمز | ـُ |
 | المحارف | `U+064F` |
@@ -507,13 +460,30 @@ sidebar:
 
 **الغرض:** Marks the letter as carrying the vowel u (dammah).
 
+### Division Mark — عَلَامَة التَّقْسِيم
+
+| | |
+| --- | --- |
+| `code` | `division_mark` |
+| `kind` | `mark` |
+| `parent` | `mushaf_mark` |
+| بالحركات | عَلَامَة التَّقْسِيم |
+| الرمز | نَجْمَة |
+| المحارف | `U+06DE` |
+| تهجئات أخرى | `alamat_al_tahzib` |
+| أسماء متروكة | `hizb`، `hizb` |
+
+**التعريف:** الدَّلَالَة على بِدَايَة الأَجْزَاء والأَحْزَاب وأَنْصَافِها وأَرْبَاعِها
+
+**الغرض:** Marks the start of a juz, a hizb, or a half or quarter of one.
+
 ### Dot — النُّقْطَة
 
 | | |
 | --- | --- |
 | `code` | `dot` |
 | `kind` | `mark` |
-| `parent` | `mushaf_mark` |
+| `parent` | `ijam` |
 | بالحركات | النُّقْطَة |
 | الرمز | نُقْطَة وَاحِدَة |
 | تهجئات أخرى | `nuqtah` |
@@ -528,7 +498,7 @@ sidebar:
 | --- | --- |
 | `code` | `fathah` |
 | `kind` | `mark` |
-| `parent` | `mushaf_mark` |
+| `parent` | `harakah` |
 | بالحركات | الفَتْحَة |
 | الرمز | ـَ |
 | المحارف | `U+064E` |
@@ -544,7 +514,7 @@ sidebar:
 | --- | --- |
 | `code` | `hamzah` |
 | `kind` | `mark` |
-| `parent` | `mushaf_mark` |
+| `parent` | `orthographic_mark` |
 | بالحركات | الهَمْزَة |
 | الرمز | ء |
 | المحارف | `U+0621`، `U+0654`، `U+0655` |
@@ -560,7 +530,7 @@ sidebar:
 | --- | --- |
 | `code` | `hamzat_al_wasl` |
 | `kind` | `mark` |
-| `parent` | `mushaf_mark` |
+| `parent` | `orthographic_mark` |
 | بالحركات | هَمْزَة الوَصْل |
 | الرمز | ص صَغِيرَة فَوْق الأَلِف |
 | المحارف | `U+0671` |
@@ -570,13 +540,39 @@ sidebar:
 
 **الغرض:** Marks a connecting hamzah, dropped whenever the word is reached in continuation.
 
+### Harakah — الحَرَكَة
+
+| | |
+| --- | --- |
+| `code` | `harakah` |
+| `kind` | `classification` |
+| `parent` | `mushaf_mark` |
+| بالحركات | الحَرَكَة |
+
+**التعريف:** علامة تضبط حركة الحرف من فتح أو ضم أو كسر أو سكون.
+
+**الغرض:** تستخدم أبًا لعلامات الضبط التي تحدد نطق الحرف نفسه.
+
+### Ijam — الإعْجَام
+
+| | |
+| --- | --- |
+| `code` | `ijam` |
+| `kind` | `classification` |
+| `parent` | `mushaf_mark` |
+| بالحركات | الإعْجَام |
+
+**التعريف:** النقط الذي يميز الحرف عما يشاركه في صورة الرسم.
+
+**الغرض:** تستخدم أبًا لصور النقط، فما يميزها هو عددها وموضعها لا وظيفتها.
+
 ### Imalah — الإمَالَة
 
 | | |
 | --- | --- |
 | `code` | `imalah` |
 | `kind` | `mark` |
-| `parent` | `mushaf_mark` |
+| `parent` | `qiraah_mark` |
 | بالحركات | الإمَالَة |
 | الرمز | نُقْطَة تَحْت الحَرْف |
 | المحارف | `U+06EA` |
@@ -591,7 +587,7 @@ sidebar:
 | --- | --- |
 | `code` | `ishmam` |
 | `kind` | `mark` |
-| `parent` | `mushaf_mark` |
+| `parent` | `qiraah_mark` |
 | بالحركات | الإشْمَام |
 | الرمز | نُقْطَة فَوْق الحَرْف |
 | المحارف | `U+06EC` |
@@ -606,7 +602,7 @@ sidebar:
 | --- | --- |
 | `code` | `kasrah` |
 | `kind` | `mark` |
-| `parent` | `mushaf_mark` |
+| `parent` | `harakah` |
 | بالحركات | الكَسْرَة |
 | الرمز | ـِ |
 | المحارف | `U+0650` |
@@ -616,28 +612,13 @@ sidebar:
 
 **الغرض:** Marks the letter as carrying the vowel i (kasrah).
 
-### Khatt Mujib al-Sajdah — خَطّ مُوجِب السَّجْدَة
-
-| | |
-| --- | --- |
-| `code` | `khatt_mujib_al_sajdah` |
-| `kind` | `mark` |
-| `parent` | `mushaf_mark` |
-| بالحركات | خَطّ مُوجِب السَّجْدَة |
-| الرمز | خَطّ أُفُقِيّ |
-| تهجئات أخرى | `sajdah-line`، `sajdah_line` |
-
-**التعريف:** الدَّلَالَة على الكَلِمَة المُوجِبَة للسَّجْدَة
-
-**الغرض:** Marks the word that makes prostration due.
-
 ### Maddah — المَدَّة
 
 | | |
 | --- | --- |
 | `code` | `maddah` |
 | `kind` | `mark` |
-| `parent` | `mushaf_mark` |
+| `parent` | `orthographic_mark` |
 | بالحركات | المَدَّة |
 | الرمز | خَطّ المَدّ |
 | المحارف | `U+0653`، `U+06E4` |
@@ -652,7 +633,7 @@ sidebar:
 | --- | --- |
 | `code` | `omitted_alif` |
 | `kind` | `mark` |
-| `parent` | `mushaf_mark` |
+| `parent` | `orthographic_mark` |
 | بالحركات | الأَلِف المَحْذُوفَة |
 | الرمز | ا صَغِيرَة قَائِمَة |
 | المحارف | `U+0670` |
@@ -661,6 +642,32 @@ sidebar:
 **التعريف:** الدَّلَالَة على أَلِف مَحْذُوفَة من الرَّسْم واجِبَة النُّطْق
 
 **الغرض:** Restores an alif omitted from the Uthmani skeleton but obligatory in pronunciation.
+
+### Orthographic Mark — العَلَامَة الإمْلَائِيَّة
+
+| | |
+| --- | --- |
+| `code` | `orthographic_mark` |
+| `kind` | `classification` |
+| `parent` | `mushaf_mark` |
+| بالحركات | العَلَامَة الإمْلَائِيَّة |
+
+**التعريف:** علامة تضبط رسم الكلمة، كالهمزة والمدة والحروف الصغيرة.
+
+**الغرض:** تستخدم أبًا للعلامات التي تتعلق برسم الكلمة لا بحركتها ولا بالوقف عليها.
+
+### Qiraah Mark — عَلَامَة القِرَاءَة
+
+| | |
+| --- | --- |
+| `code` | `qiraah_mark` |
+| `kind` | `classification` |
+| `parent` | `mushaf_mark` |
+| بالحركات | عَلَامَة القِرَاءَة |
+
+**التعريف:** علامة ترشد إلى وجه من وجوه الأداء في موضعها، كالسكت والإشمام والتسهيل.
+
+**الغرض:** تستخدم أبًا للعلامات التي تنبه القارئ إلى أداء خاص، لا إلى ضبط الحرف.
 
 ### Rectangular Zero — الصِّفْر المُسْتَطِيل
 
@@ -694,13 +701,60 @@ sidebar:
 
 **الغرض:** Marks a letter present in the skeleton but never pronounced — neither in continuation nor when stopping.
 
+### Sajdah Line — خَطّ السَّجْدَة
+
+| | |
+| --- | --- |
+| `code` | `sajdah_line` |
+| `kind` | `mark` |
+| `parent` | `mushaf_mark` |
+| بالحركات | خَطّ السَّجْدَة |
+| الرمز | خَطّ أُفُقِيّ |
+| تهجئات أخرى | `khatt_mujib_al_sajdah`، `sajdah-line` |
+
+**التعريف:** الدَّلَالَة على الكَلِمَة المُوجِبَة للسَّجْدَة
+
+**الغرض:** Marks the word that makes prostration due.
+
+### Sajdah Mark — عَلَامَة السَّجْدَة
+
+| | |
+| --- | --- |
+| `code` | `sajdah_mark` |
+| `kind` | `mark` |
+| `parent` | `mushaf_mark` |
+| بالحركات | عَلَامَة السَّجْدَة |
+| الرمز | مِحْرَاب |
+| تهجئات أخرى | `alamat_mawdi_al_sajdah`، `sajdah-sign`، `sajdah_sign` |
+
+**التعريف:** الدَّلَالَة على مَوْضِع السُّجُود
+
+**الغرض:** Marks the point at which the reader prostrates.
+
+### Saktah Mark — عَلَامَة السَّكْتَة
+
+| | |
+| --- | --- |
+| `code` | `saktah_mark` |
+| `kind` | `mark` |
+| `parent` | `qiraah_mark` |
+| بالحركات | عَلَامَة السَّكْتَة |
+| الرمز | س |
+| المحارف | `U+06DC` |
+| تهجئات أخرى | `alamat_al_sakt` |
+| أسماء متروكة | `saktah`، `saktah` |
+
+**التعريف:** الدَّلَالَة على السَّكْت: وَقْفَة يَسِيرَة من غَيْر تَنَفُّس ثمَّ الوَصْل بما بعده
+
+**الغرض:** Marks a saktah: a brief pause without taking a breath, then continuing.
+
 ### Seen al-Qiraah — سِين القِرَاءَة
 
 | | |
 | --- | --- |
 | `code` | `seen_al_qiraah` |
 | `kind` | `mark` |
-| `parent` | `mushaf_mark` |
+| `parent` | `qiraah_mark` |
 | بالحركات | سِين القِرَاءَة |
 | الرمز | س |
 | المحارف | `U+06DC`، `U+06E3` |
@@ -716,7 +770,7 @@ sidebar:
 | --- | --- |
 | `code` | `shaddah` |
 | `kind` | `mark` |
-| `parent` | `mushaf_mark` |
+| `parent` | `harakah` |
 | بالحركات | الشَّدَّة |
 | الرمز | ـّ |
 | المحارف | `U+0651` |
@@ -748,7 +802,7 @@ sidebar:
 | --- | --- |
 | `code` | `small_noon` |
 | `kind` | `mark` |
-| `parent` | `mushaf_mark` |
+| `parent` | `orthographic_mark` |
 | بالحركات | النُّون الصَّغِيرَة |
 | الرمز | ن صَغِيرَة |
 | المحارف | `U+06E8` |
@@ -764,7 +818,7 @@ sidebar:
 | --- | --- |
 | `code` | `small_waw` |
 | `kind` | `mark` |
-| `parent` | `mushaf_mark` |
+| `parent` | `orthographic_mark` |
 | بالحركات | الوَاو الصَّغِيرَة |
 | الرمز | و صَغِيرَة |
 | المحارف | `U+06E5` |
@@ -780,7 +834,7 @@ sidebar:
 | --- | --- |
 | `code` | `small_yaa` |
 | `kind` | `mark` |
-| `parent` | `mushaf_mark` |
+| `parent` | `orthographic_mark` |
 | بالحركات | اليَاء الصَّغِيرَة |
 | الرمز | ي صَغِيرَة |
 | المحارف | `U+06E6`، `U+06E7` |
@@ -796,7 +850,7 @@ sidebar:
 | --- | --- |
 | `code` | `sukun` |
 | `kind` | `mark` |
-| `parent` | `mushaf_mark` |
+| `parent` | `harakah` |
 | بالحركات | السُّكُون |
 | الرمز | ـْ |
 | المحارف | `U+0652`، `U+06E1` |
@@ -810,8 +864,8 @@ sidebar:
 | | |
 | --- | --- |
 | `code` | `taanuq_al_waqf` |
-| `kind` | `mark` |
-| `parent` | `mushaf_mark` |
+| `kind` | `classification_value` |
+| `parent` | `waqf_mark_type` |
 | بالحركات | تَعَانُق الوَقْف |
 | الرمز | ثَلَاث نُقَط في مَوْضِعَيْن |
 | المحارف | `U+06DB` |
@@ -821,13 +875,26 @@ sidebar:
 
 **الغرض:** Two candidate stopping points: stopping at one makes stopping at the other invalid.
 
+### Tanwin — التَّنْوِين
+
+| | |
+| --- | --- |
+| `code` | `tanwin` |
+| `kind` | `classification` |
+| `parent` | `mushaf_mark` |
+| بالحركات | التَّنْوِين |
+
+**التعريف:** نون ساكنة زائدة تلحق آخر الاسم، وترسم بتكرار صورة الحركة.
+
+**الغرض:** تستخدم أبًا لعلامات التنوين الثلاث، فتجمعها بدل تفريقها في قائمة واحدة.
+
 ### Tanwin al-Khafd — تَنْوِين الخَفْض
 
 | | |
 | --- | --- |
 | `code` | `tanwin_al_khafd` |
 | `kind` | `mark` |
-| `parent` | `mushaf_mark` |
+| `parent` | `tanwin` |
 | بالحركات | تَنْوِين الخَفْض |
 | الرمز | ـٍ |
 | المحارف | `U+064D`، `U+08F2` |
@@ -843,7 +910,7 @@ sidebar:
 | --- | --- |
 | `code` | `tanwin_al_nasb` |
 | `kind` | `mark` |
-| `parent` | `mushaf_mark` |
+| `parent` | `tanwin` |
 | بالحركات | تَنْوِين النَّصْب |
 | الرمز | ـً |
 | المحارف | `U+064B`، `U+08F0` |
@@ -859,7 +926,7 @@ sidebar:
 | --- | --- |
 | `code` | `tanwin_al_rafa` |
 | `kind` | `mark` |
-| `parent` | `mushaf_mark` |
+| `parent` | `tanwin` |
 | بالحركات | تَنْوِين الرَّفْع |
 | الرمز | ـٌ |
 | المحارف | `U+064C`، `U+08F1` |
@@ -875,7 +942,7 @@ sidebar:
 | --- | --- |
 | `code` | `tashil` |
 | `kind` | `mark` |
-| `parent` | `mushaf_mark` |
+| `parent` | `qiraah_mark` |
 | بالحركات | التَّسْهِيل |
 | الرمز | نُقْطَة مَكَان الهَمْزَة |
 | المحارف | `U+06EC` |
@@ -890,7 +957,7 @@ sidebar:
 | --- | --- |
 | `code` | `three_dots` |
 | `kind` | `mark` |
-| `parent` | `mushaf_mark` |
+| `parent` | `ijam` |
 | بالحركات | الثَّلَاث نُقَط |
 | الرمز | ثَلَاث نُقَط |
 | تهجئات أخرى | `thalath_nuqat`، `three-dots` |
@@ -905,7 +972,7 @@ sidebar:
 | --- | --- |
 | `code` | `two_dots` |
 | `kind` | `mark` |
-| `parent` | `mushaf_mark` |
+| `parent` | `ijam` |
 | بالحركات | النُّقْطَتَان |
 | الرمز | نُقْطَتَان |
 | تهجئات أخرى | `nuqtatan`، `two-dots` |
@@ -919,8 +986,8 @@ sidebar:
 | | |
 | --- | --- |
 | `code` | `waqf_jaiz_mustawi_al_tarafayn` |
-| `kind` | `mark` |
-| `parent` | `mushaf_mark` |
+| `kind` | `classification_value` |
+| `parent` | `waqf_mark_type` |
 | بالحركات | الوَقْف الجَائِز مُسْتَوِي الطَّرَفَيْن |
 | الرمز | ج |
 | المحارف | `U+06DA` |
@@ -935,8 +1002,8 @@ sidebar:
 | | |
 | --- | --- |
 | `code` | `waqf_jaiz_waqf_awla` |
-| `kind` | `mark` |
-| `parent` | `mushaf_mark` |
+| `kind` | `classification_value` |
+| `parent` | `waqf_mark_type` |
 | بالحركات | الوَقْف الجَائِز الوَقْف أَوْلَى |
 | الرمز | قلى |
 | المحارف | `U+06D7` |
@@ -951,8 +1018,8 @@ sidebar:
 | | |
 | --- | --- |
 | `code` | `waqf_jaiz_wasl_awla` |
-| `kind` | `mark` |
-| `parent` | `mushaf_mark` |
+| `kind` | `classification_value` |
+| `parent` | `waqf_mark_type` |
 | بالحركات | الوَقْف الجَائِز الوَصْل أَوْلَى |
 | الرمز | صلى |
 | المحارف | `U+06D6` |
@@ -967,8 +1034,8 @@ sidebar:
 | | |
 | --- | --- |
 | `code` | `waqf_lazim` |
-| `kind` | `mark` |
-| `parent` | `mushaf_mark` |
+| `kind` | `classification_value` |
+| `parent` | `waqf_mark_type` |
 | بالحركات | الوَقْف اللَّازِم |
 | الرمز | م |
 | المحارف | `U+06D8` |
@@ -983,8 +1050,8 @@ sidebar:
 | | |
 | --- | --- |
 | `code` | `waqf_mamnu` |
-| `kind` | `mark` |
-| `parent` | `mushaf_mark` |
+| `kind` | `classification_value` |
+| `parent` | `waqf_mark_type` |
 | بالحركات | الوَقْف المَمْنُوع |
 | الرمز | لا |
 | المحارف | `U+06D9` |
@@ -997,20 +1064,6 @@ sidebar:
 
 ## علامات المصحف — `mushaf_marks`
 
-### Division Mark — علامة التقسيم
-
-| | |
-| --- | --- |
-| `code` | `division_mark` |
-| `plural` | `division_marks` |
-| `kind` | `mark` |
-| `parent` | `mushaf_mark` |
-| بالحركات | عَلَامَة التَّقْسِيم |
-
-**التعريف:** علامة تنظيمية تبين بداية جزء أو حزب أو ربع أو تقسيم مشابه.
-
-**الغرض:** تستخدم لتمثيل علامات التقسيم في بيانات المصحف وتخطيطه.
-
 ### Mushaf Mark — علامة المصحف
 
 | | |
@@ -1022,20 +1075,6 @@ sidebar:
 **التعريف:** رمز أو علامة غير داخلة في الحروف الأصلية للكلمة، تستخدم في المصحف لأغراض القراءة أو التنظيم أو الإرشاد.
 
 **الغرض:** يوفر parent موحدًا للعلامات المختلفة بدل معاملتها كأنواع غير مرتبطة.
-
-### Sajdah Mark — علامة السجدة
-
-| | |
-| --- | --- |
-| `code` | `sajdah_mark` |
-| `plural` | `sajdah_marks` |
-| `kind` | `mark` |
-| `parent` | `mushaf_mark` |
-| بالحركات | عَلَامَة السَّجْدَة |
-
-**التعريف:** علامة توضع في المصحف للدلالة على موضع متعلق بسجود التلاوة.
-
-**الغرض:** تستخدم لتمثيل العلامة البصرية بصورة مستقلة عن مفهوم `Sujud al-Tilawah` نفسه.
 
 
 ## عد الآي — `ayah_numbering`

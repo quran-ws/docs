@@ -8,9 +8,9 @@ names:
   by_shape: قلى
   mushaf_introduction: عَلَامَة الوَقْف الجَائِز مَع كَوْن الوَقْف أَوْلَى
   unicode: ARABIC SMALL HIGH LIGATURE QAF WITH LAM WITH ALEF MAKSURA
-kind: mark
+kind: classification_value
 category: dabt
-parent: mushaf_mark
+parent: waqf_mark_type
 origin: quranic
 tier: core
 status: draft

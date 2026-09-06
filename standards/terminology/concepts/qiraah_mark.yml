@@ -1,0 +1,15 @@
+concept: qiraah_mark
+names:
+  code: qiraah_mark
+  display: Qiraah Mark
+  arabic:
+    vocalized: عَلَامَة القِرَاءَة
+kind: classification
+category: dabt
+parent: mushaf_mark
+origin: quranic
+tier: core
+status: draft
+definition: علامة ترشد إلى وجه من وجوه الأداء في موضعها، كالسكت والإشمام والتسهيل.
+purpose: تستخدم أبًا للعلامات التي تنبه القارئ إلى أداء خاص، لا إلى ضبط الحرف.
+sources: []

@@ -1,0 +1,15 @@
+concept: tanwin
+names:
+  code: tanwin
+  display: Tanwin
+  arabic:
+    vocalized: التَّنْوِين
+kind: classification
+category: dabt
+parent: mushaf_mark
+origin: quranic
+tier: core
+status: draft
+definition: نون ساكنة زائدة تلحق آخر الاسم، وترسم بتكرار صورة الحركة.
+purpose: تستخدم أبًا لعلامات التنوين الثلاث، فتجمعها بدل تفريقها في قائمة واحدة.
+sources: []

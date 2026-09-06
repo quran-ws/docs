@@ -10,7 +10,7 @@ names:
   unicode: ARABIC EMPTY CENTRE LOW STOP
 kind: mark
 category: dabt
-parent: mushaf_mark
+parent: qiraah_mark
 origin: quranic
 tier: core
 status: draft

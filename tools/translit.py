@@ -97,7 +97,8 @@ def _load_general_words():
         for row in _csv.reader(fh, delimiter="\t"):
             if not row or row[0].startswith("#") or len(row) < 2:
                 continue
-            words["".join(c for c in row[0] if c not in HARAKAT and c != DAGGER_ALIF)] = row[1]
+            role = row[2].strip() if len(row) > 2 else "word"
+            words["".join(c for c in row[0] if c not in HARAKAT and c != DAGGER_ALIF)] = (row[1], role)
     return words
 
 
@@ -122,6 +123,12 @@ def general_word(word):
         GENERAL_WORDS = _load_general_words()
     bare = "".join(c for c in _strip(word) if c not in HARAKAT and c != DAGGER_ALIF)
     return GENERAL_WORDS.get(bare) or (GENERAL_WORDS.get(bare[2:]) if bare.startswith("ال") else None)
+
+
+def _general(word):
+    """(english, role) for an ordinary word, or (None, None)."""
+    hit = general_word(word)
+    return hit if hit else (None, None)
 
 
 def established_name(word):
@@ -303,6 +310,10 @@ def code_spelling(phrase, keep_leading_article=False):
     # An adjective translated into English moves in front of its noun, because
     # that is English word order: المِيم الصَّغِيرَة is small_meem, not meem_small.
     pending_adjective = None
+    # A translated construct head moves to the end, for the same reason. A chain
+    # of them reverses, because that is how English stacks qualifiers:
+    # نَوْع عَلَامَة الوَقْف is waqf_mark_type.
+    trailing_heads = []
     for idx, w in enumerate(words):
         # A definite first word makes a following definite word its adjective,
         # and an adjective's article is not part of the name: waqf_lazim.
@@ -311,10 +322,12 @@ def code_spelling(phrase, keep_leading_article=False):
         adjective = idx > 0 and has_article(w) and has_article(words[0])
         construct = idx < len(words) - 1 and not adjective
         bare = "".join(c for c in w if c not in HARAKAT and c != DAGGER_ALIF)
-        english = general_word(w)
+        english, role = _general(w)
         if english:
             if adjective:
                 pending_adjective = english
+            elif role == "head" and idx < len(words) - 1:
+                trailing_heads.append(english)
             else:
                 parts.append(english)
             continue
@@ -337,6 +350,11 @@ def code_spelling(phrase, keep_leading_article=False):
             parts.append(transliterate_word(w, construct))
     if pending_adjective:
         parts.insert(0, pending_adjective)
+    if trailing_heads:
+        # English needs no article on the qualifier: saktah_mark, not al_saktah_mark.
+        if parts and parts[0] == "al":
+            parts.pop(0)
+        parts.extend(reversed(trailing_heads))
     return "_".join(p for p in parts if p)
 
 

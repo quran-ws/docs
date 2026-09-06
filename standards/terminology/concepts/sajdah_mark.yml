@@ -4,14 +4,24 @@ names:
   display: Sajdah Mark
   arabic:
     vocalized: عَلَامَة السَّجْدَة
-    singular: علامة السجدة
+  dabt: عَلَامَة مَوْضِع السَّجْدَة — المِحْرَاب
+  by_shape: مِحْرَاب صَغِير
+  mushaf_introduction: عَلَامَة مَوْضِع السَّجْدَة
 kind: mark
-category: mushaf_marks
+category: dabt
 parent: mushaf_mark
-origin: standard
+origin: quranic
 tier: core
 status: draft
-plural: sajdah_marks
-definition: علامة توضع في المصحف للدلالة على موضع متعلق بسجود التلاوة.
-purpose: تستخدم لتمثيل العلامة البصرية بصورة مستقلة عن مفهوم `Sujud al-Tilawah` نفسه.
-sources: []
+symbol: مِحْرَاب
+definition: الدَّلَالَة على مَوْضِع السُّجُود
+purpose: Marks the point at which the reader prostrates.
+alternative_spellings:
+- alamat_mawdi_al_sajdah
+- sajdah-sign
+- sajdah_sign
+unicode: []
+mark_family: mustaqill
+sources:
+- id: hafs_svg_registry
+  ref: standard!sajdah-sign

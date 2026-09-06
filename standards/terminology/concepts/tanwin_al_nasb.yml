@@ -10,7 +10,7 @@ names:
   unicode: ARABIC FATHATAN
 kind: mark
 category: dabt
-parent: mushaf_mark
+parent: tanwin
 origin: quranic
 tier: core
 status: draft

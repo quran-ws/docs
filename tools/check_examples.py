@@ -23,7 +23,7 @@ PAGES = ["content/ar/03-terminology/standard.md",
 # Shown on purpose as the wrong form, so they must NOT resolve.
 COUNTER_EXAMPLES = {
     "al_fathah", "al_sukun", "al_ishmam", "al_tashil", "hamzah_al_wasl",
-    "alamah_al_tahzib", "waqf_al_lazim", "noon_al_sakinah", "rasm_al_uthmani",
+    "waqf_al_lazim", "noon_al_sakinah", "rasm_al_uthmani",
     "quran_section", "quran_type", "mushaf_type", "revelation_classification_makki",
     "customer_identifier_value",
 }

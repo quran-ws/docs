@@ -1,0 +1,15 @@
+concept: ijam
+names:
+  code: ijam
+  display: Ijam
+  arabic:
+    vocalized: الإعْجَام
+kind: classification
+category: dabt
+parent: mushaf_mark
+origin: quranic
+tier: core
+status: draft
+definition: النقط الذي يميز الحرف عما يشاركه في صورة الرسم.
+purpose: تستخدم أبًا لصور النقط، فما يميزها هو عددها وموضعها لا وظيفتها.
+sources: []
