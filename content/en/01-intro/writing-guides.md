@@ -52,7 +52,9 @@ The same goes for "should be capable of" and "is required to". Name the action.
 The Arabic page carries rules that have no English equivalent: joining list
 items with و rather than commas, not attaching several coordinated nouns to one
 possessive, and a table of errors common in Arabic technical prose (حيث إن not
-حيث أن، أثر في not أثر على، دون not بدون). See
+حيث أن، أثر في not أثر على، دون not بدون). Note also that Arabic **letter
+names** are written as they are said — `noon_saghirah`, not `nun_saghirah` —
+which the terminology standard covers in section 6. See
 [كيف تكتب دليلًا](/guidelines/ar/01-intro/writing-guides/), section 3 and 4.
 
 Reference: [دليل التحرير والصياغة العربية](https://github.com/kamalyaser31/arabic-guide),

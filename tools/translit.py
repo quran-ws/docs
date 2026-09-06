@@ -7,6 +7,9 @@ Input must be vocalized: short vowels cannot be recovered from unvocalized
 Arabic, and guessing them is exactly the opinion this is meant to remove.
 """
 
+import csv as _csv
+import os as _os
+
 FATHA, KASRA, DAMMA, SUKUN, SHADDA = "َ", "ِ", "ُ", "ْ", "ّ"
 FATHATAN, KASRATAN, DAMMATAN = "ً", "ٍ", "ٌ"
 TANWIN = {FATHATAN, KASRATAN, DAMMATAN}
@@ -27,6 +30,40 @@ CONSONANTS = {
 SILENT = set("ءأإؤئع")
 ALIFS = set("اآى")
 VOWEL_OF = {FATHA: "a", KASRA: "i", DAMMA: "u", FATHATAN: "a", KASRATAN: "i", DAMMATAN: "u"}
+
+
+def _load_letter_names():
+    """The name of an Arabic letter is written as it is said: noon, not nun.
+
+    A letter name carries no meaning beyond its sound, so spelling it letter by
+    letter throws away the only thing it has. It also keeps `nun` and `sin`,
+    which are ordinary English words, out of identifiers. Every other term
+    follows the derivation.
+    """
+    path = _os.path.join(_os.path.dirname(_os.path.dirname(_os.path.abspath(__file__))),
+                         "standards/terminology/data/letter_names.tsv")
+    names = {}
+    if not _os.path.exists(path):
+        return names
+    with open(path, encoding="utf-8") as fh:
+        for row in _csv.reader(fh, delimiter="\t"):
+            if not row or row[0].startswith("#") or len(row) < 3:
+                continue
+            bare = "".join(c for c in row[1] if c not in HARAKAT and c != DAGGER_ALIF)
+            names[bare] = row[2]
+    return names
+
+
+LETTER_NAMES = None
+
+
+def letter_name(word):
+    """The established code name for a letter name, or None."""
+    global LETTER_NAMES
+    if LETTER_NAMES is None:
+        LETTER_NAMES = _load_letter_names()
+    bare = "".join(c for c in _strip(word) if c not in HARAKAT and c != DAGGER_ALIF)
+    return LETTER_NAMES.get(bare)
 
 
 def _strip(text):
@@ -196,6 +233,13 @@ def code_spelling(phrase, keep_leading_article=False):
         adjective = idx > 0 and has_article(w) and has_article(words[0])
         construct = idx < len(words) - 1 and not adjective
         bare = "".join(c for c in w if c not in HARAKAT and c != DAGGER_ALIF)
+        established = letter_name(w) or (letter_name(_drop_article(w)) if has_article(w) else None)
+        if established:
+            if has_article(w) and (parts or keep_leading_article) and not adjective:
+                parts.append("al")
+            parts.append(established)
+            continue
+
         if has_article(w):
             rest = _drop_article(w)
             if (parts and not adjective) or (not parts and keep_leading_article):

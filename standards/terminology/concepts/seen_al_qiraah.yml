@@ -1,10 +1,9 @@
-concept: sin_qiraah
+concept: seen_al_qiraah
 names:
-  code: sin_qiraah
-  display: Seen Qiraah
-  display_evidence: letter name; unmeasurable directly, both forms are English words
+  code: seen_al_qiraah
+  display: Seen al-Qiraah
   arabic:
-    vocalized: السِّين القِرَاءَة
+    vocalized: سِين القِرَاءَة
   dabt: السِّين الدَّالَّة على وَجْه القِرَاءَة
   by_shape: سِين فَوْق الصَّاد أو تَحْتَهَا
   mushaf_introduction: السِّين فَوْق الصَّاد أو تَحْتَهَا
@@ -22,8 +21,8 @@ purpose: A sin above the sad signals reading with sin; a sin below it signals re
   sad.
 alternative_spellings:
 - seen-reading
-- seen_qiraah
 - seen_reading
+- sin_qiraah
 unicode:
 - cp: U+06DC
   name: ARABIC SMALL HIGH SEEN

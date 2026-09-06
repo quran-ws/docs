@@ -32,7 +32,7 @@ NAMING_PHRASE = {
  "waqf-awla": ["الوَقْف الجَائِز", "الوَقْف أَوْلَى"],
  "waqf-lazim": ["الوَقْف اللَّازِم"],
  "muanaqah": ["تَعَانُق الوَقْف"], "waqf-mamnu": ["الوَقْف المَمْنُوع"],
- "saktah": ["عَلَامَة السَّكْت"], "seen-reading": ["السِّين", "القِرَاءَة"],
+ "saktah": ["عَلَامَة السَّكْت"], "seen-reading": ["سِين القِرَاءَة"],
  "imalah": ["الإمَالَة"], "ishmam": ["الإشْمَام"], "tashil": ["التَّسْهِيل"],
  "sajdah-sign": ["عَلَامَة مَوْضِع السَّجْدَة"],
  "sajdah-line": ["خَطّ مُوجِب السَّجْدَة"],
@@ -51,6 +51,15 @@ DISPLAY = {
 # names, not alternative spellings, so they are recorded as deprecated and kept
 # out of the alias index: `hizb` is the division, `saktah` is the pause itself.
 DEPRECATED_IDS = {"hizb", "saktah"}
+
+# Names this repository itself published before the letter-name rule. They must
+# keep resolving, so they are carried as aliases rather than dropped.
+PREVIOUS_NAMES = {
+    "noon_saghirah": "nun_saghirah",
+    "yaa_saghirah": "ya_saghirah",
+    "meem_saghirah": "mim_saghirah",
+    "seen_al_qiraah": "sin_qiraah",
+}
 
 FAMILY = {"حركة": "harakah", "تنوين": "tanwin", "نقط": "ijam", "إملائية": "imlaiyyah",
           "ضبط": "dabt", "وقف": "waqf", "علامة قراءة": "alamat_qiraah", "مستقل": "mustaqill"}
@@ -107,7 +116,9 @@ def build():
             "definition": r[9].strip(),
             "purpose": r[14].strip(),
             "alternative_spellings": sorted(
-                {old, old.replace("-", "_"), disp_alias} - {code} - DEPRECATED_IDS),
+                ({old, old.replace("-", "_"), disp_alias}
+                 | ({PREVIOUS_NAMES[code]} if code in PREVIOUS_NAMES else set()))
+                - {code} - DEPRECATED_IDS),
             **({"deprecated": [old]} if old in DEPRECATED_IDS else {}),
             "unicode": [],
             "mark_family": FAMILY.get(r[3].strip(), r[3].strip()),

@@ -28,6 +28,19 @@ CASES = [
     ("مُصْحَف", "mushaf"), ("حِزْب", "hizb"), ("ثُمْن", "thumn"),
     ("مَنْزِل", "manzil"), ("وَقْف", "waqf"), ("حَدْر", "hadr"),
     ("رَسْم", "rasm"), ("جَذْر", "jadhr"), ("حَرْف", "harf"),
+    # letter names are written as they are said, not derived letter by letter
+    ("النُّون الصَّغِيرَة", "noon_saghirah"),
+    ("المِيم الصَّغِيرَة", "meem_saghirah"),
+    ("سِين القِرَاءَة", "seen_al_qiraah"),
+    ("اليَاء الصَّغِيرَة", "yaa_saghirah"),
+    ("الوَاو الصَّغِيرَة", "waw_saghirah"),
+    ("الأَلِف المَحْذُوفَة", "alif_mahdhufah"),
+    ("الجِيم", "jeem"),
+    ("الصَّاد", "saad"),
+    # but only letter NAMES: every other term still derives
+    ("تَجْوِيد", "tajwid"),
+    ("مَكِّيّ", "makki"),
+    ("الحَرْف المُقَطَّع", "harf_muqatta"),
     # section 8 — the article is always al, never assimilated to a sun letter
     ("رُبْع الحِزْب", "rub_al_hizb"),
     ("سُجُود التِّلَاوَة", "sujud_al_tilawah"),
