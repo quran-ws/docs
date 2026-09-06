@@ -27,7 +27,7 @@ NAMING_PHRASE = {
  "small-noon": ["النُّون الصَّغِيرَة"],
  "sifr-mustadir": ["الصِّفْر المُسْتَدِير"], "sifr-mustatil": ["الصِّفْر المُسْتَطِيل"],
  "meem-iqlab": ["المِيم الصَّغِيرَة"],
- "waqf-jaiz": ["الوَقْف الجَائِز"],
+ "waqf-jaiz": ["الوَقْف الجَائِز", "مُسْتَوِي الطَّرَفَيْن"],
  "wasl-awla": ["الوَقْف الجَائِز", "الوَصْل أَوْلَى"],
  "waqf-awla": ["الوَقْف الجَائِز", "الوَقْف أَوْلَى"],
  "waqf-lazim": ["الوَقْف اللَّازِم"],
@@ -50,7 +50,7 @@ DISPLAY = {
 # Registry ids that name a different concept in the dictionary. These are wrong
 # names, not alternative spellings, so they are recorded as deprecated and kept
 # out of the alias index: `hizb` is the division, `saktah` is the pause itself.
-DEPRECATED_IDS = {"hizb", "saktah"}
+DEPRECATED_IDS = {"hizb", "saktah", "waqf_jaiz"}
 
 # Names this repository itself published before the letter-name rule. They must
 # keep resolving, so they are carried as aliases rather than dropped.
@@ -70,7 +70,7 @@ def parse_codepoints(cell):
 
 
 def display_for(code, parts):
-    words = display_spelling(" ".join(parts)).split()
+    words = " ".join(display_spelling(p) for p in parts).split()
     out, ev = [], []
     for w in words:
         key = w.lower().lstrip("al-")
@@ -118,8 +118,11 @@ def build():
             "alternative_spellings": sorted(
                 ({old, old.replace("-", "_"), disp_alias}
                  | ({PREVIOUS_NAMES[code]} if code in PREVIOUS_NAMES else set()))
-                - {code} - DEPRECATED_IDS),
-            **({"deprecated": [old]} if old in DEPRECATED_IDS else {}),
+                - {code} - DEPRECATED_IDS
+                - ({old, old.replace("-", "_")}
+                   if old.replace("-", "_") in DEPRECATED_IDS else set())),
+            **({"deprecated": [old, old.replace("-", "_")]}
+               if old.replace("-", "_") in DEPRECATED_IDS else {}),
             "unicode": [],
             "mark_family": FAMILY.get(r[3].strip(), r[3].strip()),
             "sources": [{"id": "hafs_svg_registry", "ref": f"standard!{old}"}],

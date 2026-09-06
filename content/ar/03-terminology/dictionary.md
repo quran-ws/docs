@@ -1077,20 +1077,25 @@ Kufi
 
 ---
 
-## Waqf Jaiz — الوقف الجائز
+## Waqf Jaiz Mustawi al-Tarafayn — الوقف الجائز مستوي الطرفين
 
-**Canonical:** `waqf_jaiz`  
+**Canonical:** `waqf_jaiz_mustawi_al_tarafayn`  
 **Kind:** `classification_value`  
 **Parent:** `waqf_mark_type`
 
 **Definition:**  
-موضع يجوز فيه الوقف والوصل جوازًا مستوي الطرفين، فلا يترجح أحدهما.
+موضع يجوز فيه الوقف والوصل على السواء، فلا يترجح أحدهما على الآخر.
 
 **Purpose:**  
-يستخدم قيمةً لعلامة الجيم، وهي الجواز الذي لا تفضيل فيه.
+نستخدمه قيمةً لعلامة الجيم في المصحف.
 
 **Mushaf introduction:** عَلَامَة الوَقْف الجَائِز جَوَازًا مُسْتَوِيَ الطَّرَفَيْن  
+**Deprecated:** `waqf_jaiz`  
 **English gloss:** `Permissible Waqf`
+
+**Note:**  
+مقدمة المصحف تسمي ثلاث علامات بالجائز: الجيم وصلى وقلى. فاسم `waqf_jaiz`
+وحده لا يميز الجيم عن أختيها، ويبقى متروكًا للتصنيف الجامع إن احتيج إليه.
 
 ---
 

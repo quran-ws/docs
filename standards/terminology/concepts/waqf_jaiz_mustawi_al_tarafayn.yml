@@ -1,9 +1,9 @@
-concept: waqf_jaiz
+concept: waqf_jaiz_mustawi_al_tarafayn
 names:
-  code: waqf_jaiz
-  display: Waqf Jaiz
+  code: waqf_jaiz_mustawi_al_tarafayn
+  display: Waqf Jaiz Mustawi al-Tarafayn
   arabic:
-    vocalized: الوَقْف الجَائِز
+    vocalized: الوَقْف الجَائِز مُسْتَوِي الطَّرَفَيْن
   dabt: الجِيم — عَلَامَة الوَقْف الجَائِز
   by_shape: جِيم
   mushaf_introduction: عَلَامَة الوَقْف الجَائِز جَوَازاً مُسْتَوِيَ الطَّرَفَيْن
@@ -17,8 +17,10 @@ status: draft
 symbol: ج
 definition: الوَقْف جَائِز جَوَازاً مُسْتَوِيَ الطَّرَفَيْن، فالوَقْف والوَصْل سَوَاء
 purpose: A permissible stop, with stopping and continuing equally sound.
-alternative_spellings:
+alternative_spellings: []
+deprecated:
 - waqf-jaiz
+- waqf_jaiz
 unicode:
 - cp: U+06DA
   name: ARABIC SMALL HIGH JEEM

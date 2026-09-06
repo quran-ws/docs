@@ -21,6 +21,7 @@ purpose: 'Marks a saktah: a brief pause without taking a breath, then continuing
 alternative_spellings: []
 deprecated:
 - saktah
+- saktah
 unicode:
 - cp: U+06DC
   name: ARABIC SMALL HIGH SEEN

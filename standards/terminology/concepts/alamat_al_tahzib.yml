@@ -20,6 +20,7 @@ purpose: Marks the start of a juz, a hizb, or a half or quarter of one.
 alternative_spellings: []
 deprecated:
 - hizb
+- hizb
 unicode:
 - cp: U+06DE
   name: ARABIC START OF RUB EL HIZB
