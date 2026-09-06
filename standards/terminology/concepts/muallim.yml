@@ -15,7 +15,9 @@ definition: نمط تلاوة معد للتعليم وقد يتضمن تكرار
 definition_en: >
   A recitation style meant for teaching, which may repeat ayahs or leave the learner
   time to repeat after the reciter.
-purpose: يستخدم لتصنيف التسجيلات التعليمية وتمييزها عن التسجيلات العادية.
-purpose_en: >
-  Used to classify teaching recordings and keep them apart from ordinary ones.
+purpose: يستخدم لتصنيف التسجيل بحسب نمطه.
+purpose_en: Used to classify a recording by its style.
+related:
+  - recitation_style
+  - instructional_ayah_repetition
 sources: []

@@ -1,0 +1,44 @@
+concept: word_timing
+names:
+  code: word_timing
+  display: Word Timing
+kind: concept
+category: recitation
+origin: standard
+tier: core
+status: draft
+plural: word_timings
+definition: مدى زمني في تسجيل تلاوة، محدد ببداية ونهاية، يقابل كلمة بعينها من آية.
+definition_en: >-
+  A span of time in a recitation recording, given by a start and an end, corresponding to
+  one word of an ayah.
+purpose: >-
+  يستخدم لإبراز الكلمة المتلوة أثناء الاستماع، ولمحاذاة النص بالصوت على مستوى أدق من الآية،
+  ولتقطيع التسجيل عند كلمة.
+purpose_en: >-
+  Used to highlight the word being recited while listening, to align text with audio at a
+  level finer than the ayah, and to cut a recording at a word.
+boundaries:
+- توقيت الكلمة يقع داخل توقيت آيتها ولا يتجاوزه.
+- >-
+  تسمي واجهات الصوت هذا المفهوم `segment`، والاسم في هذا المعيار `word_timing`، لأن `segment`
+  في مدونات التحليل اللغوي اسم للوحدة الصرفية.
+boundaries_en:
+- >-
+  A word timing falls inside the timing of its ayah and does not cross it.
+- >-
+  Audio APIs call this concept `segment`; the name in this standard is `word_timing`, because
+  in linguistic corpora `segment` names the morpheme.
+alternative_spellings:
+- word_timestamp
+- word_alignment
+- word_segment_timing
+- timing_segment
+- audio_segment
+- word_timings
+related:
+- ayah_timing
+- word
+- word_key
+- recitation
+sources: []

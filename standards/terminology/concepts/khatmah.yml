@@ -6,7 +6,7 @@ names:
     vocalized: الخَتْمَة
     singular: الختمة
 kind: concept
-category: tajwid
+category: recitation
 origin: quranic
 tier: core
 status: draft
@@ -20,4 +20,8 @@ purpose_en: >
   sessions to the course of one khatmah.
 alternative_spellings:
 - khatma
+related:
+  - juz
+  - manzil
+  - recitation
 sources: []

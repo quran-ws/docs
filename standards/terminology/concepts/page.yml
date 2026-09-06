@@ -13,12 +13,16 @@ status: draft
 plural: pages
 definition: وحدة طباعية من تخطيط مصحف معين، وقد يختلف محتواها وحدودها باختلاف المصحف أو الطبعة.
 definition_en: >
-  A typographic unit of a given Mushaf's layout; its content and its boundaries may
-  differ from one Mushaf or edition to another.
+  A typographic unit of a given mushaf's layout; its content and its boundaries may
+  differ from one mushaf or edition to another.
 purpose: تستخدم في العرض والتنقل والمحاذاة البصرية بحسب صفحات مصحف معين.
 purpose_en: >
   Used for rendering, navigation and visual alignment according to the pages of a
-  particular Mushaf.
+  particular mushaf.
 alternative_spellings:
 - safhah
+related:
+  - mushaf_edition
+  - layout
+  - line
 sources: []

@@ -2,8 +2,10 @@ concept: small_noon
 names:
   code: small_noon
   display: Small Noon
+  display_evidence: 'GitHub phrase search: noon sakinah 478 vs nun sakinah 118'
   arabic:
     vocalized: النُّون الصَّغِيرَة
+    singular: النون الصغيرة
   dabt: النُّون الصَّغِيرَة — الحَرْف المُلْحَق بالرَّسْم
   by_shape: نُون صَغِيرَة فَوْق السَّطْر
   mushaf_introduction: مِنَ الحُرُوف الصَّغِيرَة الدَّالَّة على المَتْرُوك مِنَ الرَّسْم
@@ -15,13 +17,12 @@ origin: quranic
 tier: core
 status: draft
 symbol: ن صَغِيرَة
-definition: الدَّلَالَة على نُون مَحْذُوفَة من الرَّسْم واجِبَة النُّطْق، في مَوْضِع واحِد
-  (21:88) وحده
-definition_en: Restores a nun omitted from the skeleton but obligatory in pronunciation —
-  one place only (21:88).
+definition: الدلالة على نون محذوفة من الرسم واجبة النطق، في موضع واحد (21:88) وحده
+definition_en: Restores a noon omitted from the skeleton but obligatory in pronunciation,
+  at one place only (21:88).
 purpose: تستخدم قيمةً من علامات الرسم، ليعرف بها ما خالف فيه الرسم اللفظ في الكلمة.
-purpose_en: Used as a value of the orthographic marks, so that where the rasm departs from
-  the pronunciation of a word is known.
+purpose_en: Used as a value of the orthographic marks, so that software can tell where the
+  rasm departs from the pronunciation.
 alternative_spellings:
 - noon_saghirah
 - nun_saghirah
@@ -32,6 +33,7 @@ unicode:
   category: Mn
   combining_class: 230
   block: Arabic
+  unidata: 13.0.0
 mark_family: imlaiyyah
 sources:
 - id: hafs_svg_registry

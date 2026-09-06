@@ -10,7 +10,8 @@ qattan_mabahith:
   url: https://files.turath.io/books-v3/11368.json
   note: >
     Reference for ulum al-Quran concepts: nuzul, Makki and Madani, asbab
-    al-nuzul, rasm, the qiraat, and ayah numbering. Cite with `ref` as a page.
+    al-nuzul, rasm, the qiraat, and ayah numbering. Cite with `ref` as
+    volume/page, e.g. "1/60" (one volume; the volume is still written).
 
 quranpedia_tajweed:
   title: معجم مصطلحات التجويد
@@ -43,7 +44,7 @@ tajweed_engine:
   note: >
     7 topics, 27 categories, 58 hukums and 182 rules, each hukum attributed
     to a school (ابن الجزري، ابن الطحان الأندلسي). Cite with `ref` as the
-    hukum or rule id, e.g. "tafkheem-rank-1-jazari".
+    topic, hukum or rule id, e.g. "noon-tanween", "tafkheem-rank-1-jazari".
 
 hafs_svg_registry:
   title: مصحف حفص — كلمة كلمة
@@ -52,7 +53,8 @@ hafs_svg_registry:
   note: >
     The project's own naming registry: 35 mark names, the SVG structure
     glossary, and the word-attribute model. Exported to
-    standards/terminology/data/. Cite with `ref` as the sheet and row.
+    standards/terminology/data/. Cite with `ref` as sheet!id, e.g.
+    "standard!damma" — the sheet name and the row's file id.
 
 nashr:
   title: النشر في القراءات العشر

@@ -37,10 +37,13 @@ def build():
 
 if __name__ == "__main__":
     index, clashes = build()
-    json.dump(index, open(OUT, "w"), ensure_ascii=False, indent=1, sort_keys=True)
-    print(f"{len(index)} spellings resolving to {len(set(index.values()))} concepts")
     if clashes:
-        print(f"\n{len(clashes)} spellings claimed by two concepts:")
+        # Nothing is written: a half-right index on disk is worse than the old one.
+        print(f"{len(clashes)} spellings claimed by two concepts:")
         for f, a, b in clashes:
             print(f"  {f!r}: {a} and {b}")
         sys.exit(1)
+    with open(OUT, "w", encoding="utf-8") as fh:
+        json.dump(index, fh, ensure_ascii=False, indent=1, sort_keys=True)
+        fh.write("\n")
+    print(f"{len(index)} spellings resolving to {len(set(index.values()))} concepts")

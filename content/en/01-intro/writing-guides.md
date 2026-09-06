@@ -8,7 +8,7 @@ sidebar:
 
 Readers arrive with a question. A good page answers it in the first line, then explains.
 
-Rules for the sentence itself are in [Writing style](./writing-style/).
+Rules for the sentence itself are in [Writing style](/guidelines/en/01-intro/writing-style/).
 
 ## 1. Lead with the rule
 
@@ -23,7 +23,7 @@ No:   Considering the transliteration of ta marbutah, we find that...
       and therefore it is preferable to write h in one case and t in another.
 ```
 
-## 2. Explain why only when the reason changes what someone does
+## 2. Give a reason only when it changes what someone does
 
 Don't justify every rule. Give the reason when it:
 
@@ -31,7 +31,7 @@ Don't justify every rule. Give the reason when it:
 - shows when an exception is allowed,
 - explains a rule that looks surprising.
 
-A clear rule stands on its own. Explaining what needs no explanation buries what does.
+A clear rule needs no reason. Adding one hides the reasons that matter.
 
 ## 3. State the page's status
 
@@ -66,22 +66,24 @@ written by hand:
 | A terminology table | `standards/terminology/concepts/` |
 | A list of alternative spellings | `standards/terminology/aliases.json` |
 | Unicode properties of a character | generated from the Unicode database |
-| The list of Mushaf marks | `standards/terminology/data/dabt_marks.tsv` |
+| The list of mushaf marks | `standards/terminology/data/dabt_marks.tsv` |
 
 A copied table goes stale and nobody notices, and the reader can't tell which
 copy is right.
 
-## 5. A rule that can't be checked can't be enforced
+## 5. Give every rule a check
 
 This is the most important rule here. If you write a rule, write the thing that
 catches its violation:
 
 | Rule | What checks it |
 | --- | --- |
-| Spelling rules, sections 4–8 | `tools/test_translit.py` — 49 golden cases |
+| Spelling rules, §4–§8 | `tools/test_translit.py` — the golden cases |
 | Entry structure | `tools/validate.py` against `schema.json` |
 | Display names follow usage | `tools/measure_display.py`, evidence recorded in the entry |
 | No two concepts share a name | `tools/build_aliases.py` fails on a clash |
+| Names in the prose still resolve | `tools/check_examples.py` |
+| The examples are canonical and their tests pass | `tools/check_example_files.py` |
 
 Where a rule genuinely can't be automated, give the counter-example outright:
 
@@ -93,11 +95,11 @@ Write:       Don't abbreviate unless the abbreviation is standard:
 
 ## 6. Use one name for each concept
 
-Use the name in the [dictionary](../03-terminology/dictionary.md), and don't
+Use the name in the [dictionary](/guidelines/en/03-terminology/dictionary/), and don't
 vary it for variety. If you need a term that isn't there, add it to the
 dictionary before using it in a page.
 
-Write Arabic terms vocalized when the vocalization is part of the point:
+Write Arabic terms vocalised when the vocalisation is part of the point:
 
 ```text
 Yes:  الوَقْف اللَّازِم    (when discussing how the name is derived)
@@ -117,7 +119,7 @@ No:   الوقف اللازم
 ## 8. Quranic text in a page
 
 - Quote only as much as the example needs.
-- Write it in full Uthmani rasm; never strip the ḍabṭ to save space.
+- Write it in full Uthmani rasm; never strip the dabt to save space.
 - Give the location: `(2:2)`.
 - If the point is a mark, show the mark rather than only naming it:
 
@@ -150,6 +152,6 @@ Pick the form from the information:
 - [ ] `status` is right, and nothing is `adopted` without a source.
 - [ ] No table copied from something `standards/` can generate.
 - [ ] Every rule has a check, or an explicit counter-example.
-- [ ] Terms come from the dictionary, vocalized where it matters.
+- [ ] Terms come from the dictionary, vocalised where it matters.
 - [ ] The mirror page in the other language is updated, or the gap is stated.
-- [ ] `python3 tools/validate.py` passes if the page touches terminology.
+- [ ] `python3 tools/build.py` passes.

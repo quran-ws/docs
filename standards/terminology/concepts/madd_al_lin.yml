@@ -1,0 +1,48 @@
+concept: madd_al_lin
+names:
+  code: madd_al_lin
+  display: Madd al-Lin
+  arabic:
+    vocalized: مَدّ اللِّين
+    singular: مد اللين
+kind: classification_value
+category: tajwid
+parent: madd
+origin: quranic
+tier: core
+status: draft
+definition: >-
+  مد الواو أو الياء الساكنة المفتوح ما قبلها عند الوقف على الكلمة بسكون عارض، كما في «خوف»
+  و«بيت».
+definition_en: >-
+  Lengthening a vowelless waw or yaa preceded by a fathah when stopping on the word with an
+  incidental sukun, as in «خوف» and «بيت».
+purpose: >-
+  يستخدم قيمةً من قيم المد، فيوسم به موضع النص مع مقداره، ويُقرأ منه ما يختلف به الطريق في
+  وصف التسجيل والمصحف.
+purpose_en: >-
+  Used as a value of madd, so that a place in the text is tagged with it and with its length,
+  and what differs by tariq is read from it in describing a recording or a mushaf.
+alternative_spellings:
+- madd_lin
+- madd_leen
+- madd_al_leen
+- lin
+- leen
+- mad_leen
+english_glosses:
+- soft madd
+related:
+- madd
+- madd_arid_li_al_sukun
+- waqf
+sources:
+- id: quranpedia_tajweed
+  ref: '106'
+  url: https://tajweed.quranpedia.net/term/show/106
+- id: quranpedia_tajweed
+  ref: '93'
+  url: https://tajweed.quranpedia.net/term/show/93
+- id: tajweed_engine
+  ref: leen-waw
+  url: https://github.com/quranpedia/tajweed-engine

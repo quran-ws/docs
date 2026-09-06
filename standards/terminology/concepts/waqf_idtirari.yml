@@ -1,0 +1,36 @@
+concept: waqf_idtirari
+names:
+  code: waqf_idtirari
+  display: Waqf Idtirari
+  arabic:
+    vocalized: الوَقْف الاِضْطِرَارِيّ
+    singular: الوقف الاضطراري
+kind: classification_value
+category: waqf
+parent: sabab_al_waqf
+origin: quranic
+tier: extended
+status: draft
+definition: >-
+  ما يعرض للقارئ بسبب يضطره إلى الوقف، من ضيق نفس أو عطاس أو نسيان، فيقف على أي كلمة ثم يبتدئ
+  بما يصح الابتداء به.
+definition_en: >-
+  A stop forced on the reader by something that compels it, such as shortness of breath, a
+  sneeze or forgetting; the reader stops on any word and then begins again where beginning
+  is sound.
+purpose: >-
+  يستخدم قيمةً من قيم سبب الوقف، فيُوسم به الوقف الواقع في التلاوة عند تحليلها أو تعليمها.
+purpose_en: >-
+  Used as a value of the cause of the stop, tagging a stop that occurred in a tilawah when
+  it is analysed or taught.
+alternative_spellings:
+- idtirari
+- waqf_idtirary
+- waqf_idhtirari
+related:
+- sabab_al_waqf
+- waqf
+sources:
+- id: quranpedia_tajweed
+  ref: '117'
+  url: https://tajweed.quranpedia.net/term/show/117

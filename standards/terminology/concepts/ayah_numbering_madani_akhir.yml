@@ -3,7 +3,7 @@ names:
   code: ayah_numbering_madani_akhir
   display: Madani Akhir Numbering
   arabic:
-    vocalized: العَدّ المَدَنِي الأَخِير
+    vocalized: العَدّ المَدَنِيّ الأَخِير
     singular: العد المدني الأخير
 kind: classification_value
 category: ayah_numbering
@@ -14,14 +14,13 @@ status: draft
 definition: >
   عد أهل المدينة في روايته الأخيرة، وهي رواية إسماعيل بن جعفر عن سليمان بن جماز.
 definition_en: >
-  The counting of the people of Madinah in its later transmission, that of Ismail ibn
-  Jafar from Sulayman ibn Jammaz.
+  The later Madinan numbering system, that of Ismail ibn Jafar from Sulayman ibn Jammaz.
 purpose: >
-  يستخدم قيمةً من قيم نظام عد الآي، فيعرف به ما تستند إليه أرقام الآيات وحدودها
-  في مصحف أو dataset، وتقابل به مواضع الآي بين الأنظمة.
+  يستخدم قيمة من قيم نظام عد الآي، فيعرف به ما تستند إليه أرقام الآيات وحدودها في مصحف
+  أو `dataset`، وتقابل به مواضع الآي بين الأنظمة.
 purpose_en: >
-  Used as a value of the ayah numbering system, so that what a Mushaf's or a dataset's
-  ayah numbers and boundaries rest on is known, and ayah positions can be mapped between
+  Used as a value of the ayah numbering system, so that a mushaf or dataset states which
+  numbering its ayah numbers and boundaries follow, and positions can be mapped between
   systems.
 alternative_spellings:
   - madani_akhir
@@ -40,4 +39,6 @@ note_en: >
   derivation of the Arabic name: deriving from «العَدّ» gives `add`, an English verb,
   and `makki` is already a value of `revelation_classification`. The reasoning is in the
   decision record.
-sources: []
+sources:
+  - id: bayan_dani
+    ref: "1/79"

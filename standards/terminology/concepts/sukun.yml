@@ -4,9 +4,10 @@ names:
   display: Sukun
   arabic:
     vocalized: السُّكُون
+    singular: السكون
   dabt: السُّكُون — رَأْس الخَاء المُهْمَلَة
   by_shape: رَأْس خَاء بِلَا نُقْطَة
-  mushaf_introduction: رَأْس خَاء صَغِيرَة بِدُون نُقْطَة
+  mushaf_introduction: رَأْس خَاء صَغِيرَة دُون نُقْطَة
   unicode: ARABIC SUKUN
 kind: mark
 category: dabt
@@ -15,25 +16,30 @@ origin: quranic
 tier: core
 status: draft
 symbol: ـْ
-definition: الدَّلَالَة على سُكُون الحَرْف وإظْهَارِه، بحيث يَقْرَعُه اللِّسَان
-definition_en: Marks the letter as vowelless and clearly articulated — the tongue strikes
-  it.
+definition: الدلالة على سكون الحرف وإظهاره
+definition_en: Marks a letter that carries no vowel and is articulated clearly.
 purpose: تستخدم قيمةً من قيم الحركة، ليقرأ منها نطق الحرف في التحليل والعرض والتعليم بدل قراءة
   صورة الشكل.
 purpose_en: Used as a value of harakah, so that a letter's pronunciation is read from it in
   analysis, rendering and teaching rather than from the shape of the mark.
-alternative_spellings: []
+alternative_spellings:
+- sukoon
+related:
+- harakah
+- noon_sakinah
 unicode:
 - cp: U+0652
   name: ARABIC SUKUN
   category: Mn
   combining_class: 34
   block: Arabic
+  unidata: 13.0.0
 - cp: U+06E1
   name: ARABIC SMALL HIGH DOTLESS HEAD OF KHAH
   category: Mn
   combining_class: 230
   block: Arabic
+  unidata: 13.0.0
 mark_family: harakah
 sources:
 - id: hafs_svg_registry

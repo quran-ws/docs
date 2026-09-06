@@ -3,8 +3,9 @@ names:
   code: imalah
   display: Imalah
   arabic:
-    vocalized: الإمَالَة
-  dabt: الإمَالَة — النُّقْطَة تَحْت الحَرْف
+    vocalized: الإِمَالَة
+    singular: الإمالة
+  dabt: الإِمَالَة — النُّقْطَة تَحْت الحَرْف
   by_shape: نُقْطَة كَبِيرَة مَطْمُوسَة تَحْت الحَرْف
   mushaf_introduction: نُقْطَة كَبِيرَة مَطْمُوسَة الوَسَط تَحْت الحَرْف
   unicode: ARABIC EMPTY CENTRE LOW STOP
@@ -15,8 +16,10 @@ origin: quranic
 tier: core
 status: draft
 symbol: نُقْطَة تَحْت الحَرْف
-definition: الدَّلَالَة على الإمَالَة الكُبْرَى، في مَوْضِع واحِد (11:41) وحده
-definition_en: Marks the major imalah — one place only (11:41).
+definition: 'الدلالة على الإمالة الكبرى: نطق الفتحة مائلة إلى الكسرة، وهي في رواية حفص في
+  موضع واحد (11:41)'
+definition_en: 'Marks the major imalah: a fathah pronounced leaning toward kasrah. In the
+  riwayah of Hafs it occurs at one place only (11:41).'
 purpose: تستخدم قيمةً من علامات القراءة، لينبه بها القارئ إلى أداء خاص في موضعه.
 purpose_en: Used as a value of the qiraah marks, so that the reader is alerted to a particular
   delivery at its place.
@@ -27,6 +30,7 @@ unicode:
   category: Mn
   combining_class: 220
   block: Arabic
+  unidata: 13.0.0
 mark_family: alamat_qiraah
 sources:
 - id: hafs_svg_registry

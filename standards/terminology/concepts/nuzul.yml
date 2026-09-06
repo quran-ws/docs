@@ -14,8 +14,8 @@ definition: >
   إنزال القرآن على النبي صلى الله عليه وسلم منجمًا في مدة الرسالة، على حسب
   الوقائع والحاجة.
 definition_en: >
-  The sending down of the Quran upon the Prophet, peace be upon him, in stages over the
-  period of the message, according to events and need.
+  The revelation of the Quran to the Prophet, peace be upon him, in stages over the
+  years of his mission, as events and needs arose.
 purpose: >
   يستخدم أصلًا تتفرع عنه ترتيب النزول وتصنيفه وأسبابه، فهذه الثلاثة كلها صفات
   لواقعة النزول، ولا تعرف إلا به.
@@ -35,4 +35,6 @@ related:
   - revelation_order
   - revelation_classification
   - asbab_al_nuzul
-sources: []
+sources:
+  - id: qattan_mabahith
+    ref: "1/100"

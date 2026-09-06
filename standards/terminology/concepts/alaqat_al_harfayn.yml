@@ -1,0 +1,55 @@
+concept: alaqat_al_harfayn
+names:
+  code: alaqat_al_harfayn
+  display: Alaqat al-Harfayn
+  arabic:
+    vocalized: عَلَاقَة الحَرْفَيْن
+    singular: علاقة الحرفين
+kind: classification
+category: tajwid
+origin: quranic
+tier: extended
+status: draft
+definition: >-
+  نسبة الحرفين المتجاورين أحدهما إلى الآخر في المخرج والصفة: تماثل أو تجانس أو تقارب أو تباعد؛
+  وعليها يُبنى إدغام الأول في الثاني أو إظهاره.
+definition_en: >-
+  The relation of two adjacent letters to each other in point of articulation and attribute:
+  identical, of one kind, close, or distant; the merging of the first into the second, or
+  its clear sounding, is built on it.
+purpose: >-
+  تستخدم تصنيفًا يوسم به الموضع الذي يقع فيه إدغام الحرفين أو إظهارهما، فيُعلم سبب الحكم لا
+  الحكم وحده.
+purpose_en: >-
+  Used as a classification tagging the place where two letters are merged or sounded apart,
+  so that the cause of the ruling is known and not only the ruling.
+boundaries:
+- العلاقة سبب، والإدغام والإظهار حكم يترتب عليها.
+boundaries_en:
+- >-
+  The relation is a cause; idgham and izhar are the ruling that follows from it.
+alternative_spellings:
+- letter_relations
+- alaqat_al_huruf
+- ilaqat_al_harfayn
+english_glosses:
+- relation of two letters
+related:
+- idgham
+- izhar
+- makhraj
+- sifat_al_huruf
+- mutamathilan
+- mutajanisan
+- mutaqariban
+- mutabaidan
+sources:
+- id: quranpedia_tajweed
+  ref: '58'
+  url: https://tajweed.quranpedia.net/term/show/58
+- id: quranpedia_tajweed
+  ref: '59'
+  url: https://tajweed.quranpedia.net/term/show/59
+- id: quranpedia_tajweed
+  ref: '62'
+  url: https://tajweed.quranpedia.net/term/show/62

@@ -1,0 +1,21 @@
+{
+  "name": "quran-ws",
+  "owner": {
+    "name": "Quran.ws",
+    "url": "https://github.com/quran-ws"
+  },
+  "metadata": {
+    "description": "Guidelines for Quranic software: the Terminology Standard and its dictionary, packaged as an agent skill.",
+    "homepage": "https://github.com/quran-ws/guidelines"
+  },
+  "plugins": [
+    {
+      "name": "quranic-terminology",
+      "version": "0.1.0",
+      "source": "./",
+      "description": "Resolve, derive and audit the names of Quranic concepts by the Quran.ws Terminology Standard.",
+      "category": "development",
+      "keywords": ["quran", "terminology", "naming", "audit"]
+    }
+  ]
+}

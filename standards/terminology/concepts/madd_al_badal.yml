@@ -1,0 +1,42 @@
+concept: madd_al_badal
+names:
+  code: madd_al_badal
+  display: Madd al-Badal
+  arabic:
+    vocalized: مَدّ البَدَل
+    singular: مد البدل
+kind: classification_value
+category: tajwid
+parent: madd
+origin: quranic
+tier: core
+status: draft
+definition: >-
+  مد سببه همزة قبل حرف المد، أُبدل فيه حرف المد من همزة ساكنة، كما في «آمن» و«أوتوا» و«إيمان»؛
+  ومقداره حركتان عند حفص، ويُزاد عند ورش.
+definition_en: >-
+  A madd caused by a hamzah before the letter of madd, where the letter of madd was substituted
+  for a vowelless hamzah, as in «آمن», «أوتوا» and «إيمان»; its length is 2 counts for Hafs,
+  more for Warsh.
+purpose: >-
+  يستخدم قيمةً من قيم المد، فيوسم به موضع النص مع مقداره، ويُقرأ منه ما يختلف به الطريق في
+  وصف التسجيل والمصحف.
+purpose_en: >-
+  Used as a value of madd, so that a place in the text is tagged with it and with its length,
+  and what differs by tariq is read from it in describing a recording or a mushaf.
+alternative_spellings:
+- madd_badal
+- badal
+- mad_badal
+english_glosses:
+- substitution madd
+related:
+- madd
+- hamzah
+sources:
+- id: quranpedia_tajweed
+  ref: '98'
+  url: https://tajweed.quranpedia.net/term/show/98
+- id: tajweed_engine
+  ref: madd-badal
+  url: https://github.com/quranpedia/tajweed-engine

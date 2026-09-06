@@ -40,4 +40,8 @@ related:
   - word
   - tafsir
   - ayah
-sources: []
+sources:
+  - id: itqan
+    ref: "2/3"
+  - id: qattan_mabahith
+    ref: "1/8"

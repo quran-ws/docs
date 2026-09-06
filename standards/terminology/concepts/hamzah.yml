@@ -4,6 +4,7 @@ names:
   display: Hamzah
   arabic:
     vocalized: الهَمْزَة
+    singular: الهمزة
   dabt: الهَمْزَة — رَأْس العَيْن
   by_shape: رَأْس عَيْن
   mushaf_introduction: null
@@ -15,29 +16,34 @@ origin: quranic
 tier: core
 status: draft
 symbol: ء
-definition: الدَّلَالَة على هَمْزَة القَطْع المُحَقَّقَة
-definition_en: Marks a fully realised glottal stop (hamzat al-qat').
+definition: الدلالة على همزة القطع المحققة
+definition_en: Marks a fully realised hamzah (hamzat al-qat).
 purpose: تستخدم قيمةً من علامات الرسم، ليعرف بها ما خالف فيه الرسم اللفظ في الكلمة.
-purpose_en: Used as a value of the orthographic marks, so that where the rasm departs from
-  the pronunciation of a word is known.
+purpose_en: Used as a value of the orthographic marks, so that software can tell where the
+  rasm departs from the pronunciation.
 alternative_spellings:
 - hamza
+related:
+- hamzat_al_wasl
 unicode:
 - cp: U+0621
   name: ARABIC LETTER HAMZA
   category: Lo
   combining_class: 0
   block: Arabic
+  unidata: 13.0.0
 - cp: U+0654
   name: ARABIC HAMZA ABOVE
   category: Mn
   combining_class: 230
   block: Arabic
+  unidata: 13.0.0
 - cp: U+0655
   name: ARABIC HAMZA BELOW
   category: Mn
   combining_class: 220
   block: Arabic
+  unidata: 13.0.0
 mark_family: imlaiyyah
 sources:
 - id: hafs_svg_registry

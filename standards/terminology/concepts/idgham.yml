@@ -1,0 +1,67 @@
+concept: idgham
+names:
+  code: idgham
+  display: Idgham
+  arabic:
+    vocalized: الإِدْغَام
+    singular: الإدغام
+kind: classification_value
+category: tajwid
+parent: hukm_al_tajwid
+origin: quranic
+tier: core
+status: draft
+definition: >-
+  إدخال حرف ساكن في حرف متحرك بعده بحيث يصيران حرفًا واحدًا مشددًا، كاملًا كان الإدغام أو
+  ناقصًا، بغنة أو بغير غنة.
+definition_en: >-
+  Merging a vowelless letter into a vowelled letter after it so that the two become one doubled
+  letter, whether the merging is complete or partial, with ghunnah or without it.
+purpose: >-
+  يستخدم قيمةً من قيم حكم التجويد، فيوسم به موضع النص في التحليل والتلوين والتعليم، وتتفرع
+  تحته أنواعه في سجل الأحكام.
+purpose_en: >-
+  Used as a value of the tajwid ruling, so that a place in the text is tagged with it in analysis,
+  colouring and instruction, and its kinds branch under it in the registry of rulings.
+boundaries:
+- >-
+  الإدغام حكم، والتماثل والتجانس والتقارب علاقة بين الحرفين يقع الإدغام بسببها.
+boundaries_en:
+- >-
+  Idgham is a ruling; mutamathilan, mutajanisan and mutaqariban are the relation between the
+  two letters because of which it falls.
+alternative_spellings:
+- idghaam
+- idgam
+- edgham
+- idgham_bighunnah
+- idgham_bila_ghunnah
+- idgham_shafawi
+english_glosses:
+- assimilation
+- merging
+related:
+- izhar
+- ikhfa
+- iqlab
+- ghunnah
+- alaqat_al_harfayn
+- mutamathilan
+- mutajanisan
+- mutaqariban
+sources:
+- id: quranpedia_tajweed
+  ref: '57'
+  url: https://tajweed.quranpedia.net/term/show/57
+- id: quranpedia_tajweed
+  ref: '60'
+  url: https://tajweed.quranpedia.net/term/show/60
+- id: quranpedia_tajweed
+  ref: '61'
+  url: https://tajweed.quranpedia.net/term/show/61
+- id: quranpedia_tajweed
+  ref: '63'
+  url: https://tajweed.quranpedia.net/term/show/63
+- id: tajweed_engine
+  ref: idgham-bi-ghunnah-noon
+  url: https://github.com/quranpedia/tajweed-engine

@@ -1,0 +1,15 @@
+# Connectives: words that join the parts of a name and carry nothing into it.
+#
+# Section 14: a compound name is the words that name the thing, in English
+# order. A word that only relates one part to another — "with", "being",
+# "such that", "permissibly" — says what the order of the parts already says,
+# so it is dropped: الوَقْف الجَائِز مَعَ كَوْنِ الوَصْل أَوْلَى is waqf_jaiz_wasl_awla.
+#
+# A row is matched by its letters, whatever its vocalization, so the case
+# ending of كَوْن (كَوْنِ, كَوْنُ) needs no row of its own.
+#
+# arabic	english	note
+مَعَ	with
+كَوْن	being	the case ending is ignored
+بِحَيْثُ	such that
+جَوَازًا	permissibly

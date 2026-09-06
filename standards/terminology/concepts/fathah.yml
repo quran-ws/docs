@@ -4,7 +4,8 @@ names:
   display: Fathah
   arabic:
     vocalized: الفَتْحَة
-  dabt: الفَتْحَة (وتُسمَّى قديماً النَّصْبَة)
+    singular: الفتحة
+  dabt: الفَتْحَة (وتُسمَّى قديمًا النَّصْبَة)
   by_shape: أَلِف مُضْجَعَة فَوْق الحَرْف
   mushaf_introduction: null
   unicode: ARABIC FATHA
@@ -15,8 +16,8 @@ origin: quranic
 tier: core
 status: draft
 symbol: ـَ
-definition: الدَّلَالَة على حَرَكَة الحَرْف بالفَتْح
-definition_en: Marks the letter as carrying the vowel a (fathah).
+definition: الدلالة على حركة الحرف بالفتح
+definition_en: The mark for the short vowel a on the letter.
 purpose: تستخدم قيمةً من قيم الحركة، ليقرأ منها نطق الحرف في التحليل والعرض والتعليم بدل قراءة
   صورة الشكل.
 purpose_en: Used as a value of harakah, so that a letter's pronunciation is read from it in
@@ -29,6 +30,7 @@ unicode:
   category: Mn
   combining_class: 30
   block: Arabic
+  unidata: 13.0.0
 mark_family: harakah
 sources:
 - id: hafs_svg_registry

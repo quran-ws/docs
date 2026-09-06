@@ -4,6 +4,7 @@ names:
   display: Waqf Mamnu
   arabic:
     vocalized: الوَقْف المَمْنُوع
+    singular: الوقف الممنوع
   dabt: لا — عَلَامَة الوَقْف المَمْنُوع
   by_shape: لا
   mushaf_introduction: null
@@ -15,21 +16,30 @@ origin: quranic
 tier: core
 status: draft
 symbol: لا
-definition: مُثْبَتَة في السِّجِلّ ولم تَرِد في هذه الطَّبْعَة البَتَّة
-definition_en: Registered in the schema but never used in this edition — zero occurrences.
+definition: الوقف ممنوع، لأن الوقف على الموضع يفسد المعنى أو يقطع ما لا ينفصل عما بعده
+definition_en: 'A forbidden stop: stopping here would break the meaning or attach what follows
+  to the wrong clause.'
 purpose: تستخدم قيمةً من قيم نوع علامة الوقف، ليتفرع عليها العرض والتلقين والتنبيه في التطبيقات
   بدل قراءة صورة الرمز.
-purpose_en: Used as a value of the waqf mark type, so that rendering, instruction and warnings
+purpose_en: Used as a value of the waqf mark type, so that rendering, teaching and warnings
   in applications branch on it rather than on the shape of the sign.
 alternative_spellings:
 - waqf-mamnu
+related:
+- waqf
+- waqf_mark
+note: مثبتة في سجل المصحف ولم ترد في هذه الطبعة البتة.
+note_en: 'Registered in the mushaf registry but never used in this edition: zero occurrences.'
 unicode:
 - cp: U+06D9
   name: ARABIC SMALL HIGH LAM ALEF
   category: Mn
   combining_class: 230
   block: Arabic
+  unidata: 13.0.0
 mark_family: waqf
 sources:
 - id: hafs_svg_registry
   ref: standard!waqf-mamnu
+- id: qattan_mabahith
+  ref: 1/152

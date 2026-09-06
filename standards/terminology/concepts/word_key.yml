@@ -1,0 +1,42 @@
+concept: word_key
+names:
+  code: word_key
+  display: Word Key
+kind: property
+category: structure
+origin: standard
+tier: core
+status: draft
+plural: word_keys
+definition: >-
+  معرف نصي للكلمة يضيف إلى مفتاح الآية موضع الكلمة فيها، على صورة `2:255:5`، وموضع الكلمة
+  يُعد من أول الآية بحسب منهج تقسيم معلن.
+definition_en: >-
+  A textual identifier of a word that adds the word's position within the ayah to the ayah
+  key, in the form `2:255:5`; the position is counted from the start of the ayah by a declared
+  segmentation method.
+purpose: >-
+  يستخدم مفتاحًا للبيانات المرتبطة بالكلمة: التوقيت والترجمة كلمة بكلمة والتحليل الصرفي والصور.
+purpose_en: >-
+  Used as the key for data attached to the word: timing, word-by-word translation, morphological
+  analysis and images.
+boundaries:
+- >-
+  الموضع في المفتاح موضع الكلمة لا `token`؛ فتغيير منهج التقسيم الذي يعد الكلمات يغير المفتاح.
+boundaries_en:
+- >-
+  The position in the key is the word's, not the token's; changing the segmentation method
+  that counts the words changes the key.
+alternative_spellings:
+- wid
+- data_wid
+- word_ref
+- word_position_key
+related:
+- ayah_key
+- word
+- word_timing
+- word_by_word_translation
+sources:
+- id: hafs_svg_registry
+  ref: word_attributes!data-wid

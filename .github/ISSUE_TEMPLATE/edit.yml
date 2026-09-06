@@ -1,34 +1,42 @@
 name: تصحيح فقرة — Suggest an edit
-description: اقتراح تعديل على فقرة بعينها في الأدلة.
+description: اقتراح تعديل على فقرة بعينها في الأدلة. — Propose a change to one paragraph of the guidelines.
 title: "edit: "
 labels: ["edit"]
 body:
   - type: textarea
     id: location
     attributes:
-      label: الموضع
-      description: يملؤه الرابط تلقائيًّا — القسم وروابطه. اتركه كما هو.
+      label: الموضع — Location
+      description: |
+        يُملأ تلقائيًا إذا فُتح النموذج من زر «اقترح تعديلًا» في الموقع. وإلا فاكتب مسار الصفحة والعنوان الذي تقع الفقرة تحته.
+        Filled in automatically when the form is opened from the "Suggest an edit" button on the site. Otherwise write the page path and the heading the paragraph sits under.
     validations:
       required: true
   - type: textarea
     id: quote
     attributes:
-      label: النص الحالي
-      description: يملؤه الرابط تلقائيًّا.
+      label: النص الحالي — Current text
+      description: |
+        يُملأ تلقائيًا من الموقع. وإلا فالصق الفقرة كما هي.
+        Filled in automatically from the site. Otherwise paste the paragraph as it is.
       render: markdown
     validations:
       required: true
   - type: textarea
     id: suggestion
     attributes:
-      label: التعديل المقترح
-      description: اكتب الفقرة كما تراها صحيحة، لا وصفًا للتعديل.
+      label: التعديل المقترح — Proposed text
+      description: |
+        اكتب الفقرة كما تراها صحيحة، لا وصفًا للتعديل.
+        Write the paragraph as you think it should read, not a description of the change.
     validations:
       required: true
   - type: textarea
     id: why
     attributes:
-      label: لماذا
-      description: الحالة الواقعية أو المصدر الذي يوجب التعديل.
+      label: لماذا — Why
+      description: |
+        الحالة الواقعية أو المصدر الذي يوجب التعديل.
+        The real case, or the source, that requires the change.
     validations:
       required: true

@@ -15,8 +15,24 @@ definition: مجموعة من قصار السور التي تلي المثاني
 definition_en: >
   A group of the short surahs following the mathani; scholars differ over where it
   begins.
-purpose: تستخدم لتصنيف سور المفصل وربط البيانات والخطط المتعلقة بها.
+purpose: >
+  تستخدم قيمة من قيم تصنيف السور، فتربط بها خطط القراءة وما يعالج المجموعة وحدة واحدة من
+  كتب التفسير.
 purpose_en: >
-  Used to classify the surahs of the mufassal and to attach the data and the plans that
-  concern them.
-sources: []
+  Used as a value of surah group, so that reading plans and the tafsir works that treat
+  the group as a unit can refer to it.
+related:
+  - surah_group
+  - surah
+note: >
+  لا يعين المعيار أعضاء المجموعة سورة سورة: فالمصادر تختلف في السابعة من الطوال وفي أول
+  المفصل، ولا سجل بعد يحصر أعضاء كل مجموعة بمصدره.
+note_en: >
+  The standard does not list the group's members surah by surah: the sources differ over
+  the seventh of the tiwal and the start of the mufassal, and no registry yet enumerates
+  each group's members with its source.
+sources:
+  - id: itqan
+    ref: "1/201"
+  - id: itqan
+    ref: "1/221"

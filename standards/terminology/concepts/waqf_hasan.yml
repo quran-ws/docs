@@ -15,7 +15,14 @@ definition: ما أفاد معنًى وتعلق بما بعده لفظًا وم�
 definition_en: >
   A stop that yields a meaning but is connected to what follows it in wording and in
   meaning.
-purpose: يستخدم قيمةً في تصنيف مواضع الوقف.
-purpose_en: >
-  Used as a value in classifying the places of stopping.
-sources: []
+purpose: يستخدم قيمةً من قيم حكم الوقف، فيوسم به الموضع في التعليم والتحليل.
+purpose_en: Used as a value of the waqf ruling, so that a place is tagged with it in teaching and analysis.
+related:
+  - waqf_ruling
+  - waqf
+sources:
+  - id: quranpedia_tajweed
+    ref: "124"
+    url: https://tajweed.quranpedia.net/term/show/124
+  - id: nashr
+    ref: "1/226"

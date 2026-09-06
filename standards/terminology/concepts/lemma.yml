@@ -14,4 +14,8 @@ definition_en: >
 purpose: تستخدم لتجميع الصور التصريفية المختلفة تحت مدخل معجمي واحد.
 purpose_en: >
   Used to gather the different inflected forms under one dictionary entry.
+related:
+  - root
+  - stem
+  - morphology
 sources: []

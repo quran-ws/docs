@@ -18,4 +18,12 @@ definition_en: >
 purpose: تستخدم لربط نصوص ترجمة المعاني بالآيات واللغات والمترجمين والمصادر.
 purpose_en: >
   Used to tie translated-meaning texts to ayahs, languages, translators and sources.
-sources: []
+related:
+  - transliteration
+  - spoken_translation
+  - translator
+  - word_by_word_translation
+  - tafsir
+sources:
+  - id: qattan_mabahith
+    ref: "1/324"

@@ -1,0 +1,62 @@
+concept: izhar
+names:
+  code: izhar
+  display: Izhar
+  arabic:
+    vocalized: الإِظْهَار
+    singular: الإظهار
+kind: classification_value
+category: tajwid
+parent: hukm_al_tajwid
+origin: quranic
+tier: core
+status: draft
+definition: >-
+  إخراج الحرف الساكن من مخرجه من غير غنة زائدة فيه، كإظهار النون الساكنة والتنوين عند حروف
+  الحلق، وإظهار الميم الساكنة عند غير الباء والميم.
+definition_en: >-
+  Sounding a vowelless letter from its point of articulation with no added ghunnah, as noon
+  sakinah and tanwin are sounded before the throat letters, and meem sakinah before any letter
+  other than baa and meem.
+purpose: >-
+  يستخدم قيمةً من قيم حكم التجويد، فيوسم به موضع النص في التحليل والتلوين والتعليم، وتتفرع
+  تحته أنواعه في سجل الأحكام.
+purpose_en: >-
+  Used as a value of the tajwid ruling, so that a place in the text is tagged with it in analysis,
+  colouring and instruction, and its kinds branch under it in the registry of rulings.
+boundaries:
+- >-
+  الإظهار حكم يقابل الإدغام والإخفاء، وليس غياب الحكم: الموضع الموسوم به موضع تحقق فيه سبب
+  ثم لم يقع فيه إدغام ولا إخفاء.
+boundaries_en:
+- >-
+  Izhar is a ruling standing opposite idgham and ikhfa, not the absence of a ruling: a place
+  tagged with it is one where a cause was present and neither idgham nor ikhfa fell.
+alternative_spellings:
+- izhaar
+- idhhar
+- idhar
+- ithhar
+- izhar_halqi
+- izhar_shafawi
+english_glosses:
+- clear pronunciation
+related:
+- idgham
+- ikhfa
+- iqlab
+- noon_sakinah
+- meem_sakinah
+sources:
+- id: quranpedia_tajweed
+  ref: '64'
+  url: https://tajweed.quranpedia.net/term/show/64
+- id: quranpedia_tajweed
+  ref: '65'
+  url: https://tajweed.quranpedia.net/term/show/65
+- id: quranpedia_tajweed
+  ref: '66'
+  url: https://tajweed.quranpedia.net/term/show/66
+- id: tajweed_engine
+  ref: izhar-halqi-noon
+  url: https://github.com/quranpedia/tajweed-engine

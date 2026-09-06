@@ -15,11 +15,26 @@ definition: مجموعة من أطول سور القرآن في أوله، مع 
 definition_en: >
   A group of the longest surahs of the Quran, at its beginning, with a known
   disagreement over which surah is the seventh.
-purpose: تستخدم لتصنيف السور وفق التقسيم التراثي.
+purpose: >
+  تستخدم قيمة من قيم تصنيف السور، فتربط بها خطط القراءة وما يعالج المجموعة وحدة واحدة من
+  كتب التفسير.
 purpose_en: >
-  Used to classify the surahs according to the traditional division.
+  Used as a value of surah group, so that reading plans and the tafsir works that treat
+  the group as a unit can refer to it.
 english_glosses:
 - Seven Long Surahs
-sources: []
+related:
+  - surah_group
+  - surah
+note: >
+  لا يعين المعيار أعضاء المجموعة سورة سورة: فالمصادر تختلف في السابعة من الطوال وفي أول
+  المفصل، ولا سجل بعد يحصر أعضاء كل مجموعة بمصدره.
+note_en: >
+  The standard does not list the group's members surah by surah: the sources differ over
+  the seventh of the tiwal and the start of the mufassal, and no registry yet enumerates
+  each group's members with its source.
+sources:
+  - id: itqan
+    ref: "1/201"
 alternative_spellings:
 - sab_tiwal

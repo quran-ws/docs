@@ -14,11 +14,23 @@ definition: قراءة القرآن بتؤدة وبيان للحروف والك�
 definition_en: >
   Reciting the Quran deliberately, making the letters and words distinct, observing the
   stops and the meaning.
-purpose: يستخدم عندما يكون المقصود مفهوم الترتيل نفسه، ولا يستخدم مرادفًا تلقائيًا لتصنيف
-  تسجيل `Murattal`.
-purpose_en: >
-  Used when the concept of tartil itself is meant. It is never used as an automatic
-  synonym for the `Murattal` recording style.
+purpose: يستخدم صفةً للأداء في وصف التسجيل والتعليم، لا اسمًا للنمط الذي يُنشر به التسجيل.
+purpose_en: Used as a quality of delivery in describing a recording or a lesson, not as the name of the style a recording is published under.
+boundaries:
+  - الترتيل صفة الأداء نفسه، والمرتل نمط تسجيل؛ فلا يستعمل أحد الاسمين مكان الآخر.
+boundaries_en:
+  - >-
+    Tartil is a quality of the delivery itself; murattal is a recording style. Neither
+    name stands for the other.
 alternative_spellings:
 - tarteel
-sources: []
+related:
+  - murattal
+  - recitation
+  - recitation_pace
+sources:
+  - id: quranpedia_tajweed
+    ref: "21"
+    url: https://tajweed.quranpedia.net/term/show/21
+  - id: nashr
+    ref: "1/205"

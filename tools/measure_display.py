@@ -28,6 +28,15 @@ CONTESTED = [
     ("qiraah", "qiraat"),
     ("madd tabii", "madd tabee"),
     ("idgham naqis", "idgham naqees"),
+    # display forms the dictionary chose without a measurement (review C, I3)
+    ("dimashqi numbering", "shami numbering"),
+    ("uthmani rasm", "rasm uthmani"),
+    ("omitted alif", "dagger alif"),
+    ("rounded zero", "round zero"),
+    ("rectangular zero", "oval zero"),
+    ("division mark", "hizb mark"),
+    ("small meem", "meem iqlab"),
+    ("harf muqatta", "muqattaat"),
 ]
 
 
@@ -48,15 +57,19 @@ def count(phrase):
     try:
         return int(out.stdout.strip())
     except ValueError:
+        # Not installed, not authenticated, and rate-limited all end here; say which.
+        print(f"  gh search failed for {phrase!r}: {out.stderr.strip() or 'no output'}")
         return None
 
 
 def load():
-    return json.load(open(CACHE)) if os.path.exists(CACHE) else {}
+    return json.load(open(CACHE, encoding="utf-8")) if os.path.exists(CACHE) else {}
 
 
 def save(d):
-    json.dump(d, open(CACHE, "w"), ensure_ascii=False, indent=1, sort_keys=True)
+    with open(CACHE, "w", encoding="utf-8") as fh:
+        json.dump(d, fh, ensure_ascii=False, indent=1, sort_keys=True)
+        fh.write("\n")
 
 
 def measure(pairs, delay=4):

@@ -7,7 +7,8 @@ names:
     singular: الطريق
 kind: concept
 category: qiraat
-parent: riwayah
+part_of: riwayah
+registry: tariq
 origin: quranic
 tier: core
 status: draft
@@ -22,13 +23,19 @@ purpose_en: >
   transmission apart.
 alternative_spellings:
 - tareeq
-sources: []
+related:
+  - riwayah
+  - qiraah
+  - wajh
+sources:
+  - id: nashr
+    ref: "1/115"
+  - id: nashr
+    ref: "1/146"
 note: >
-  لا سجل لطرق العشر بعد. النشر يسمي طرق كل رواية، وهي عند حد الطريق قريب من
-  تسعمئة وثمانين طريقًا؛ والمجموعة مغلقة ومعروفة، لكنها لم تُفرغ في سجل، فالنقص
-  مسجَّل لا مسكوت عنه.
+  الطرق الأربعة التي تخزنها التطبيقات — الشاطبية وطيبة النشر والدرة والتيسير — في
+  `registries/tariq.tsv`، وحصر طرق النشر كلها، وهي نحو 980 طريقًا، لا يزال مفتوحًا.
 note_en: >
-  There is no registry of the turuq of the ten yet. Al-Nashr names the turuq of each
-  riwayah, coming to some nine hundred and eighty at the level of the tariq. The set is
-  closed and known, but it has not been written into a registry, so the gap is recorded
-  rather than passed over.
+  The four named routes applications store — shatibiyyah, tayyibat_al_nashr, durrah,
+  taysir — are in `registries/tariq.tsv`; the full enumeration, some 980 turuq of
+  al-Nashr, is still open.

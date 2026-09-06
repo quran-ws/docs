@@ -13,12 +13,21 @@ status: draft
 plural: juzs
 definition: واحد من ثلاثين قسمًا في التقسيم المشهور للمصحف لتيسير القراءة والختم.
 definition_en: >
-  One of the thirty parts of the well-known division of the Mushaf, made to ease reading
-  and completing it.
+  One of the 30 parts of the well-known division of the mushaf, made to ease reading and
+  completing it.
 purpose: يستخدم للتنقل وتنظيم القراءة والجداول والخطط المرتبطة بأجزاء القرآن.
 purpose_en: >
   Used for navigation, for organising reading, and for the schedules and plans built on
   the parts of the Quran.
 alternative_spellings:
-- juzu
+  - juzu
+  - juz'
+  - juzz
+  - para
+english_glosses:
+  - Part
+related:
+  - hizb
+  - manzil
+  - khatmah
 sources: []

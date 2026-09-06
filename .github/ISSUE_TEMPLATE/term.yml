@@ -1,85 +1,205 @@
 name: اقتراح مصطلح — Propose a term
-description: إضافة مفهوم إلى قاموس المصطلحات، أو تعديل اسمه أو تعريفه.
+description: إضافة مفهوم إلى قاموس المصطلحات، أو تعديل اسمه أو تعريفه. — Add a concept to the dictionary, or change its name or definition.
 title: "term: "
 labels: ["terminology"]
 body:
   - type: markdown
     attributes:
       value: |
-        القسم 30 من المعيار يشترط الإجابة عن هذه الأسئلة قبل قبول أي Entry.
-        إن لم يتضح المفهوم أو الغرض البرمجي منه، لا يعتمد حتى تظهر الحاجة إليه.
+        القاعدة الأولى: المفهوم يدخل هذا المعيار إذا تعذر تعريفه دون الرجوع إلى القرآن أو المصحف. وما عداه حقيقي، وليس لنا أن نسميه.
+        ثم يُجاب عن أسئلة قسم «قاعدة قبول أي مصطلح جديد» في المعيار. الاسم البرمجي `code` لا يُختار هنا، بل يُشتق من الاسم العربي المشكول بـ`tools/translit.py`.
+
+        First rule: a concept belongs in this standard when it cannot be defined without referring to the Quran or the mushaf. Everything else is real, and not ours to name.
+        Then answer the questions of the standard's section "The rule for accepting a new term". The `code` name is not chosen here; the build derives it from the vocalised Arabic with `tools/translit.py`.
+  - type: checkboxes
+    id: searched
+    attributes:
+      label: بحثت أولًا — I searched first
+      options:
+        - label: "شغّلت `python3 skills/quranic-terminology/scripts/lookup.py --search <كلمة>` بالعربية والإنجليزية ولم أجد مدخلًا لهذا المفهوم. — I ran `lookup.py --search` in Arabic and English and found no entry for this concept."
+          required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: لماذا هو مفهوم قرآني؟ — Why is it a Quranic concept?
+      description: |
+        لماذا لا يمكن تعريفه دون الرجوع إلى القرآن أو المصحف؟ الكتاب والمؤلف والوسم والبث خارج المعيار.
+        Why can it not be defined without referring to the Quran or the mushaf? A book, an author, a tag or a stream is out of scope.
+    validations:
+      required: true
   - type: textarea
     id: concept
     attributes:
-      label: المفهوم وتعريفه
-      description: ما الذي يمثله؟ وما تعريفه الدقيق؟
+      label: المفهوم وتعريفه — The concept and its definition
+      description: |
+        ما الذي يمثله؟ وما تعريفه الدقيق؟ جملة كاملة تجيب عن «ما هذا؟».
+        What does it stand for, and what is its exact definition? A full sentence answering "what is this?".
     validations:
       required: true
   - type: textarea
     id: purpose
     attributes:
-      label: الغرض البرمجي
-      description: لماذا نحتاج تمثيله في الكود أو الـAPI أو البيانات؟
+      label: الغرض البرمجي — Why software models it
+      description: |
+        لماذا نحتاج تمثيله في الكود أو الـ`API` أو البيانات؟
+        Why does code, an API or a dataset need to represent it?
     validations:
       required: true
   - type: textarea
     id: boundaries
     attributes:
-      label: الحدود والمفاهيم المتشابهة
-      description: ما الذي لا يشمله؟ وبأي مفهوم قد يختلط؟
+      label: الحدود والمفاهيم المتشابهة — Boundaries and what it may be confused with
+      description: |
+        ما الذي لا يشمله؟ وبأي مفهوم قد يختلط؟ اذكر المدخل المشابه إن وُجد.
+        What does it exclude, and which concept might it be confused with? Name the similar entry if there is one.
     validations:
       required: true
   - type: input
+    id: arabic_vocalized
+    attributes:
+      label: الاسم العربي مشكولًا — Vocalised Arabic name
+      description: |
+        منه يُشتق `code`، فاكتبه بالحركات كاملة، مثل «الوَقْف اللَّازِم». مطلوب إذا كان `origin` هو `quranic`.
+        The `code` name is derived from this, so write it fully vocalised, e.g. «الوَقْف اللَّازِم». Required when `origin` is `quranic`.
+  - type: dropdown
+    id: origin
+    attributes:
+      label: origin
+      description: |
+        `quranic` مفهوم قرآني متخصص يحتفظ باسمه العربي؛ `borrowed` مصطلح تقني أو لغوي عام له تعريف مستقر في غير هذا المعيار؛ `standard` مفهوم يعرّفه هذا المعيار للنمذجة ولا نظير له في التراث.
+        `quranic`: a specialised Quranic concept keeping its Arabic name. `borrowed`: a general technical or linguistic term defined elsewhere. `standard`: a concept this standard defines for modelling, with no traditional counterpart.
+      options:
+        - quranic
+        - borrowed
+        - standard
+    validations:
+      required: true
+  - type: dropdown
     id: kind
     attributes:
       label: kind
-      description: entity، concept، property، classification، classification_value، role، discipline، process، content، analysis، mark، text_unit، layout_unit
+      description: |
+        القيم معرّفة في `standards/terminology/schema.json`، وقسم «لكل مدخل نوع» في المعيار يشرحها.
+        The values are defined in `standards/terminology/schema.json`; the standard's section "Every entry has a kind" explains them.
+      options:
+        - entity
+        - concept
+        - classification
+        - classification_value
+        - property
+        - role
+        - process
+        - content
+        - analysis
+        - mark
+        - unit
     validations:
       required: true
-  - type: input
+  - type: dropdown
     id: category
     attributes:
       label: category
-      description: core، structure، text، mushaf، qiraat، recitation، tajwid، waqf، revelation، linguistics، translation، tafsir، typography، audio، metadata
+      description: |
+        القيم معرّفة في `standards/terminology/schema.json`. لا يُضاف مجال قبل أن تكون له مفاهيم.
+        The values are defined in `standards/terminology/schema.json`. A domain is not added before it has concepts.
+      options:
+        - core
+        - structure
+        - text
+        - divisions
+        - surah_classification
+        - mushaf
+        - dabt
+        - ayah_numbering
+        - revelation
+        - qiraat
+        - recitation
+        - recitation_pace
+        - recitation_style
+        - tajwid
+        - waqf
+        - linguistics
+        - translation
+        - tafsir
+        - quranic_sciences
+    validations:
+      required: true
+  - type: dropdown
+    id: tier
+    attributes:
+      label: tier
+      description: |
+        `core` ما تخزنه التطبيقات فعلًا؛ `extended` حقيقي لكنه نادر النمذجة أو حدوده مختلف فيها.
+        `core`: what applications actually store. `extended`: real, but rarely modelled or with disputed boundaries.
+      options:
+        - core
+        - extended
     validations:
       required: true
   - type: input
     id: parent
     attributes:
       label: parent
-      description: مطلوب إذا كان kind هو classification_value.
-  - type: dropdown
-    id: nature
-    attributes:
-      label: طبيعة المفهوم
-      options:
-        - مفهوم قرآني متخصص — يحتفظ بالمصطلح العربي
-        - مفهوم تقني عام — يستخدم الإنجليزية الطبيعية
-    validations:
-      required: true
+      description: |
+        مطلوب إذا كان `kind` هو `classification_value`؛ اكتب `code` التصنيف الأب.
+        Required when `kind` is `classification_value`; the `code` of the parent classification.
   - type: input
-    id: canonical
+    id: registry
     attributes:
-      label: Canonical Name والمفرد والجمع
-      description: 'مثال: ayah / ayahs — وإن كان عربي الأصل فيجب أن يتبع Canonical Code Spelling.'
-    validations:
-      required: true
+      label: registry
+      description: |
+        إذا كان للمفهوم أفراد محصورون (كالسور والقراءات) فاذكر السجل الذي يعدّهم، أو اقترح سجلًا جديدًا. الأفراد صفوف لا مداخل.
+        If the concept has a closed set of members (like surahs or qiraat), name the registry that lists them, or propose a new one. Members are rows, not entries.
+  - type: input
+    id: display
+    attributes:
+      label: الاسم في النثر الإنجليزي — English display name
+      description: |
+        التهجئة الأكثر استعمالًا في الكتابة الإنجليزية، مع ما يدل عليها (مصدر أو قياس). `display` يُقاس ولا يُختار.
+        The most common spelling in English writing, with the evidence for it. `display` is measured, not chosen.
+  - type: input
+    id: plural
+    attributes:
+      label: الجمع في الكود — Plural in code
+      description: |
+        مثل `ayahs`. الاسم البرمجي و`s` بعده دائمًا، ولو كان مركبًا: `mawdi_al_sajdahs`.
+        e.g. `ayahs`. Always the code plus `s`, a construct included: `mawdi_al_sajdahs`.
   - type: textarea
     id: alternatives
     attributes:
-      label: التهجئات البديلة وEnglish glosses وDeprecated
-      description: ميّز بينها؛ فالبديل ليس ترجمة، والـDeprecated ليس خطأ.
+      label: التهجئات البديلة والترجمات والأسماء المهجورة — Alternative spellings, English glosses, deprecated names
+      description: |
+        ميّز بينها: البديل تهجئة أخرى للاسم نفسه، والترجمة كلمة إنجليزية بالمعنى (`verse`)، والمهجور اسم كان مستعملًا ولم يعد.
+        Keep them apart: an alternative is another spelling of the same name, a gloss is an English word for the meaning (`verse`), a deprecated name was in use and no longer is.
+  - type: input
+    id: related
+    attributes:
+      label: related
+      description: |
+        مداخل قائمة يلزم الربط بها، بأسمائها `code`.
+        Existing entries it should link to, by `code`.
+  - type: input
+    id: symbol
+    attributes:
+      label: العلامة ورمزها — Symbol and codepoint
+      description: |
+        للعلامات فقط: العلامة نفسها ورمزها في يونيكود، مثل «ۘ U+06D8». خصائص يونيكود تُولَّد ولا تُكتب.
+        Marks only: the character itself and its codepoint, e.g. «ۘ U+06D8». Unicode properties are generated, never written.
   - type: textarea
     id: layers
     attributes:
-      label: الاسم عبر الطبقات
-      description: كيف يظهر في Model وDatabase وForeign key وAPI؟ هل يعمل بصورة طبيعية في الثلاثة؟
+      label: الاسم عبر الطبقات — The name across the layers
+      description: |
+        كيف يظهر في النموذج وقاعدة البيانات والمفتاح الأجنبي والـ`API`؟ هل يعمل طبيعيًا في الأربعة؟
+        How does it appear in the model, the database, the foreign key and the API? Does it read naturally in all four?
     validations:
       required: true
   - type: textarea
     id: sources
     attributes:
-      label: مصدر التعريف
-      description: المصدر يوثق المفهوم وتعريفه، لا اختيار الاسم البرمجي.
+      label: مصدر التعريف — Source of the definition
+      description: |
+        معرّف المصدر من `standards/terminology/sources.yml` مع رقم الصفحة أو المصطلح، مثل `qattan_mabahith 1/120`. المصدر يوثق المفهوم وتعريفه، لا اختيار الاسم البرمجي. وإن لم يكن المصدر في القائمة فاذكره كاملًا.
+        The source id from `standards/terminology/sources.yml` with the page or term number, e.g. `qattan_mabahith 1/120`. A source establishes the concept and its definition, not the choice of code name. If the source is not listed, cite it in full.
     validations:
       required: true

@@ -4,9 +4,10 @@ names:
   display: Small Yaa
   arabic:
     vocalized: اليَاء الصَّغِيرَة
+    singular: الياء الصغيرة
   dabt: اليَاء الصَّغِيرَة — عَلَامَة صِلَة هَاء الضَّمِير
   by_shape: يَاء صَغِيرَة مَرْدُودَة بَعْد الهَاء
-  mushaf_introduction: اليَاء الصَّغِيرَة المَرْدُودَة إلى خَلْف
+  mushaf_introduction: اليَاء الصَّغِيرَة المَرْدُودَة إِلى خَلْف
   unicode: ARABIC SMALL YEH
 kind: mark
 category: dabt
@@ -15,11 +16,11 @@ origin: quranic
 tier: core
 status: draft
 symbol: ي صَغِيرَة
-definition: الدَّلَالَة على صِلَة هَاء الضَّمِير المَكْسُورَة بياء لَفْظِيَّة في حال الوَصْل
-definition_en: Marks the silah of the pronoun ha with kasrah — pronounced as a ya in continuation.
+definition: الدلالة على صلة هاء الضمير المكسورة بياء لفظية في حال الوصل
+definition_en: Marks the silah of the pronoun haa with kasrah, pronounced as a yaa in continuation.
 purpose: تستخدم قيمةً من علامات الرسم، ليعرف بها ما خالف فيه الرسم اللفظ في الكلمة.
-purpose_en: Used as a value of the orthographic marks, so that where the rasm departs from
-  the pronunciation of a word is known.
+purpose_en: Used as a value of the orthographic marks, so that software can tell where the
+  rasm departs from the pronunciation.
 alternative_spellings:
 - small-ya
 - small_ya
@@ -31,11 +32,13 @@ unicode:
   category: Lm
   combining_class: 0
   block: Arabic
+  unidata: 13.0.0
 - cp: U+06E7
   name: ARABIC SMALL HIGH YEH
   category: Mn
   combining_class: 230
   block: Arabic
+  unidata: 13.0.0
 mark_family: imlaiyyah
 sources:
 - id: hafs_svg_registry

@@ -3,7 +3,7 @@ names:
   code: ayah_numbering_kufi
   display: Kufi Numbering
   arabic:
-    vocalized: العَدّ الكُوفِي
+    vocalized: العَدّ الكُوفِيّ
     singular: العد الكوفي
 kind: classification_value
 category: ayah_numbering
@@ -14,19 +14,20 @@ status: draft
 definition: >
   عد أهل الكوفة، المروي عن حمزة الزيات عن ابن أبي ليلى عن أبي عبد الرحمن السلمي عن علي بن أبي طالب، وهو العد الذي يجري عليه أكثر المصاحف المطبوعة اليوم.
 definition_en: >
-  The counting of the people of Kufa, transmitted from Hamzah al-Zayyat from Ibn Abi
-  Layla from Abu Abd al-Rahman al-Sulami from Ali ibn Abi Talib. It is the counting most
-  printed Mushafs follow today.
+  The Kufan numbering system, transmitted from Hamzah al-Zayyat from Ibn Abi Layla from
+  Abu Abd al-Rahman al-Sulami from Ali ibn Abi Talib. It is the numbering most printed
+  mushafs follow today.
 purpose: >
-  يستخدم قيمةً من قيم نظام عد الآي، فيعرف به ما تستند إليه أرقام الآيات وحدودها
-  في مصحف أو dataset، وتقابل به مواضع الآي بين الأنظمة.
+  يستخدم قيمة من قيم نظام عد الآي، فيعرف به ما تستند إليه أرقام الآيات وحدودها في مصحف
+  أو `dataset`، وتقابل به مواضع الآي بين الأنظمة.
 purpose_en: >
-  Used as a value of the ayah numbering system, so that what a Mushaf's or a dataset's
-  ayah numbers and boundaries rest on is known, and ayah positions can be mapped between
+  Used as a value of the ayah numbering system, so that a mushaf or dataset states which
+  numbering its ayah numbers and boundaries follow, and positions can be mapped between
   systems.
 alternative_spellings:
   - kufi_numbering
   - kufan_numbering
+  - kufi
 related:
   - ayah_numbering_system
   - ayah
@@ -40,4 +41,6 @@ note_en: >
   derivation of the Arabic name: deriving from «العَدّ» gives `add`, an English verb,
   and `makki` is already a value of `revelation_classification`. The reasoning is in the
   decision record.
-sources: []
+sources:
+  - id: bayan_dani
+    ref: "1/80"

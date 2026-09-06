@@ -21,4 +21,13 @@ purpose_en: >
 alternative_spellings:
 - asbab_al-nozool
 - asbab_un-nuzul
-sources: []
+related:
+  - nuzul
+  - ayah
+  - sabab_al_tasmiyah
+  - naskh
+sources:
+  - id: qattan_mabahith
+    ref: "1/75"
+  - id: itqan
+    ref: "1/107"

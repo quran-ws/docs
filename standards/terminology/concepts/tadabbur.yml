@@ -38,4 +38,7 @@ english_glosses:
 related:
   - ayah
   - tafsir
-sources: []
+sources:
+  - id: quranpedia_tajweed
+    ref: "29"
+    url: https://tajweed.quranpedia.net/term/show/29

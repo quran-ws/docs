@@ -7,35 +7,52 @@ canonical one, an English gloss standing in for a Quranic term, an Arabic
 plural used as a collection name.
 
     python3 audit_terminology.py PATH [PATH ...]
+    python3 audit_terminology.py src --by file          # or concept (default), rule
     python3 audit_terminology.py src --json
-    python3 audit_terminology.py src --strict     # exit 1 if there are errors
+    python3 audit_terminology.py src --strict           # exit 1 if there are errors
 
-Every finding names the rule, the section of the standard behind it, and the
-canonical name to use instead. Nothing is rewritten: the script reports, and
-the decision to rename stays with whoever knows the code.
+Every finding names the rule, the section of the standard behind it, the
+canonical name to use instead, and the layer the file belongs to, so that a
+report can separate the cheap internal rename from the one that needs a
+migration. Nothing is rewritten: the script reports, and the decision to
+rename stays with whoever knows the code.
+
+A project tells the audit what it already knows in `.terminology.json` at the
+audited root (or `--config PATH`); `assets/terminology.example.json` documents
+every key. A single line is excused with the words `terminology: ignore` in a
+comment on it.
+
+Exit codes: 0 ran; 1 errors found and --strict; 2 nothing to audit (a path
+that does not exist, a tree with no files the audit reads, unreadable data).
 """
 import argparse
+import fnmatch
 import json
 import os
 import re
+import signal
 import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 DATA = os.path.join(os.path.dirname(HERE), "data", "terminology.json")
+CONFIG_NAME = ".terminology.json"
 
 CODE_SUFFIXES = {
     ".py", ".js", ".jsx", ".ts", ".tsx", ".mjs", ".cjs", ".go", ".rs", ".java",
     ".kt", ".swift", ".rb", ".php", ".cs", ".c", ".h", ".cpp", ".hpp", ".dart",
     ".sql", ".graphql", ".gql", ".proto", ".json", ".yml", ".yaml", ".toml",
-    ".prisma", ".vue", ".svelte", ".scala", ".ex", ".exs", ".sh",
+    ".prisma", ".vue", ".svelte", ".scala", ".ex", ".exs", ".sh", ".html",
+    ".xml", ".csv", ".tsv", ".ini", ".env", ".blade.php",
 }
 PROSE_SUFFIXES = {".md", ".mdx", ".txt", ".rst", ".adoc"}
+EXTRA_NAMES = {".env.example", ".env.sample"}
 SKIP_DIRS = {
     ".git", "node_modules", "vendor", "dist", "build", "out", "target",
     "__pycache__", ".venv", "venv", ".next", ".nuxt", ".cache", "coverage",
     ".mypy_cache", ".pytest_cache", "migrations_backup",
 }
 MAX_BYTES = 2_000_000
+IGNORE_LINE = re.compile(r"terminology:\s*ignore", re.I)
 
 # An identifier as it is written in any of the languages above, before it is
 # split: dots and hyphens included, so `ayah.aya_key` and `verse-list` are one
@@ -44,17 +61,52 @@ IDENTIFIER = re.compile(r"[A-Za-z][A-Za-z0-9_.\-]*")
 CAMEL = re.compile(r"(?<=[a-z0-9])(?=[A-Z])|(?<=[A-Z])(?=[A-Z][a-z])")
 
 RULES = {
-    "deprecated": ("error", "A deprecated name: it names a different concept."),
+    "deprecated": ("error", "A deprecated name: it names a different concept (section 20)."),
     "spelling": ("error", "Not the canonical code spelling (sections 4-8)."),
     "arabic_plural": ("error", "An Arabic plural used as a name (section 11)."),
     "display_in_code": ("warning", "The display name, used as an identifier (section 9)."),
     "gloss": ("warning", "An English gloss standing in for a Quranic term (sections 3, 19)."),
+    "generic": ("warning", "An ordinary English word that is also a recorded spelling of a "
+                           "concept; a finding only if the identifier is about that concept."),
 }
+RULE_ORDER = ("deprecated", "spelling", "arabic_plural", "display_in_code", "gloss", "generic")
+
+# Ordinary English words that some entry records as a spelling. Alone they say
+# nothing about the Quran — `segment` is an audio segment far more often than a
+# morpheme — so a single-word hit on one of these is a warning to check, never
+# an error. A project adds its own under `ignore_words`.
+GENERIC_WORDS = {
+    "segment", "segments", "reading", "readings", "stop", "sign", "mark", "dot", "dots",
+    "place", "count", "number", "line", "page", "word", "letter", "root", "text",
+    "character", "glyph", "translation", "position", "index", "order", "part", "unit",
+    "quarter", "half", "eighth", "chain", "path", "way", "style", "pace", "school",
+}
+
+# Where a file sits says what a rename costs. A database column or a wire
+# format is a compatibility surface: renaming it is a migration, not an edit.
+LAYERS = (
+    ("compatibility surface", re.compile(
+        r"(^|/)(migrations?|schema|db|database|sql|prisma|proto|graphql|openapi|swagger|"
+        r"api-spec|contracts?)(/|$)|\.(sql|prisma|proto|graphql|gql)$|"
+        r"(^|/)(openapi|swagger|schema)[^/]*\.(json|ya?ml)$", re.I)),
+    ("ui", re.compile(
+        r"\.(tsx|jsx|vue|svelte|html|blade\.php)$|(^|/)(components?|views?|templates?|"
+        r"pages|screens|ui|locales?|i18n|lang)(/|$)", re.I)),
+)
 
 
 def load(path=DATA):
     with open(path, encoding="utf-8") as fh:
         return json.load(fh)
+
+
+def suffix_of(name):
+    lower = name.lower()
+    if lower.endswith(".blade.php"):
+        return ".blade.php"
+    if lower in EXTRA_NAMES:
+        return ".env"
+    return os.path.splitext(lower)[1]
 
 
 def parts_of(identifier):
@@ -87,7 +139,7 @@ def lookup(parts, index):
     return found
 
 
-def build_index(data):
+def build_index(data, ignore_words):
     """One map from a written form to (rule, concept, the form without its `s`)."""
     index = {}
 
@@ -119,33 +171,122 @@ def build_index(data):
     # added — `es` would make `files` a plural of `fil`.
     for form, hit in list(index.items()):
         index.setdefault(form + "s", hit)
+    # A single ordinary word is a hint, not a ruling.
+    for form, (rule, concept, base) in list(index.items()):
+        if rule == "spelling" and "_" not in form and form in GENERIC_WORDS:
+            index[form] = ("generic", concept, base)
+    for word in ignore_words:
+        for form in (word, word + "s"):
+            index.pop(form.lower().replace("-", "_").replace(" ", "_"), None)
     return index
 
 
-def files(paths):
+# --- configuration ---------------------------------------------------------
+
+CONFIG_KEYS = {"exclude", "ignore_words", "allow_gloss_in", "compatibility", "paths"}
+
+
+def find_config(paths, explicit):
+    """`--config`, else the nearest .terminology.json above the audited paths."""
+    if explicit:
+        return explicit
+    for path in paths:
+        here = os.path.abspath(path if os.path.isdir(path) else os.path.dirname(path) or ".")
+        while True:
+            candidate = os.path.join(here, CONFIG_NAME)
+            if os.path.isfile(candidate):
+                return candidate
+            parent = os.path.dirname(here)
+            if parent == here:
+                break
+            here = parent
+    return None
+
+
+def load_config(path):
+    if not path:
+        return {"root": os.getcwd(), "exclude": [], "ignore_words": [],
+                "allow_gloss_in": [], "compatibility": [], "paths": [], "file": None}
+    with open(path, encoding="utf-8") as fh:
+        raw = json.load(fh)
+    unknown = sorted(k for k in raw if k not in CONFIG_KEYS and not k.startswith(("_", "$")))
+    if unknown:
+        raise ValueError(f"{path}: unknown keys {unknown}; the keys are {sorted(CONFIG_KEYS)}")
+    cfg = {key: list(raw.get(key) or []) for key in CONFIG_KEYS}
+    cfg["root"] = os.path.dirname(os.path.abspath(path))
+    cfg["file"] = path
+    return cfg
+
+
+def matches(rel, patterns):
+    """A path matches a glob when the glob covers it or any directory above it."""
+    rel = rel.replace(os.sep, "/")
+    for pattern in patterns:
+        pattern = pattern.rstrip("/")
+        if fnmatch.fnmatch(rel, pattern) or fnmatch.fnmatch(rel, pattern + "/*"):
+            return True
+        # `src/poetry/**` and `src/poetry` both mean the directory and everything in it.
+        bare = pattern[:-3] if pattern.endswith("/**") else pattern
+        if rel == bare or rel.startswith(bare + "/"):
+            return True
+    return False
+
+
+# --- scanning --------------------------------------------------------------
+
+def files(paths, cfg):
     for path in paths:
         if os.path.isfile(path):
             yield path
             continue
         for root, dirs, names in os.walk(path):
-            dirs[:] = [d for d in dirs if d not in SKIP_DIRS and not d.startswith(".")]
+            dirs[:] = sorted(d for d in dirs if d not in SKIP_DIRS and not d.startswith("."))
             for name in sorted(names):
-                suffix = os.path.splitext(name)[1].lower()
-                if suffix in CODE_SUFFIXES or suffix in PROSE_SUFFIXES:
-                    yield os.path.join(root, name)
+                if name == CONFIG_NAME:
+                    continue
+                full = os.path.join(root, name)
+                if suffix_of(name) in CODE_SUFFIXES or suffix_of(name) in PROSE_SUFFIXES:
+                    if not matches(os.path.relpath(full, cfg["root"]), cfg["exclude"]):
+                        yield full
 
 
-def scan(paths, index, data):
-    findings, used = [], {}
-    for path in files(paths):
+def shown_path(path):
+    """A path an agent can open from where it stands: relative to the cwd when
+    the file is under it, otherwise as it was given."""
+    rel = os.path.relpath(path)
+    return rel if not rel.startswith("..") else path
+
+
+def layer_of(rel, suffix, cfg):
+    if matches(rel, cfg["compatibility"]):
+        return "compatibility surface"
+    if suffix in PROSE_SUFFIXES:
+        return "prose"
+    for name, pattern in LAYERS:
+        if pattern.search(rel.replace(os.sep, "/")):
+            return name
+    return "internal"
+
+
+def scan(paths, index, data, cfg):
+    findings, used, counted = {}, {}, {"files": 0, "ignored_lines": 0, "allowed_glosses": 0}
+    for path in files(paths, cfg):
         try:
             if os.path.getsize(path) > MAX_BYTES:
                 continue
             text = open(path, encoding="utf-8", errors="ignore").read()
         except OSError:
             continue
-        prose = os.path.splitext(path)[1].lower() in PROSE_SUFFIXES
+        counted["files"] += 1
+        suffix = suffix_of(os.path.basename(path))
+        prose = suffix in PROSE_SUFFIXES
+        rel = os.path.relpath(path, cfg["root"])
+        layer = layer_of(rel, suffix, cfg)
+        gloss_allowed = matches(rel, cfg["allow_gloss_in"])
         for number, line in enumerate(text.splitlines(), 1):
+            if IGNORE_LINE.search(line):
+                counted["ignored_lines"] += 1
+                continue
             for match in IDENTIFIER.finditer(line):
                 identifier = match.group(0)
                 for form, (rule, concept, base) in lookup(parts_of(identifier), index):
@@ -155,20 +296,31 @@ def scan(paths, index, data):
                         continue
                     # Prose is meant to carry the display name and may quote a
                     # gloss, so only a wrong name is a finding there.
-                    if prose and rule in ("display_in_code", "gloss"):
+                    if prose and rule in ("display_in_code", "gloss", "generic"):
                         continue
-                    findings.append({
+                    if gloss_allowed and rule in ("gloss", "generic"):
+                        counted["allowed_glosses"] += 1
+                        continue
+                    key = (path, number, identifier, form)
+                    if key in findings:
+                        findings[key]["count"] += 1
+                        continue
+                    entry = data["concepts"][concept]
+                    findings[key] = {
                         "rule": rule,
                         "severity": RULES[rule][0],
-                        "file": path,
+                        "file": shown_path(path),
                         "line": number,
                         "identifier": identifier,
                         "found": form,
                         "concept": concept,
-                        "canonical": data["concepts"][concept]["code"],
-                        "display": data["concepts"][concept].get("display"),
-                    })
-    return findings, used
+                        "canonical": entry["code"],
+                        "display": entry.get("display"),
+                        "layer": layer,
+                        "known": layer == "compatibility surface" and bool(cfg["compatibility"]),
+                        "count": 1,
+                    }
+    return list(findings.values()), used, counted
 
 
 def canonical_uses(data, used):
@@ -183,55 +335,150 @@ def canonical_uses(data, used):
     return out
 
 
-def report(findings, mixed, data, limit):
-    if not findings:
+def summarise(findings, mixed, counted, data, cfg):
+    live = [f for f in findings if not f["known"]]
+    by_layer = {}
+    for f in live:
+        by_layer.setdefault(f["layer"], {"errors": 0, "warnings": 0})
+        by_layer[f["layer"]]["errors" if f["severity"] == "error" else "warnings"] += 1
+    version = data.get("version") or {}
+    return {
+        "files_scanned": counted["files"],
+        "findings": len(live),
+        "errors": sum(1 for f in live if f["severity"] == "error"),
+        "warnings": sum(1 for f in live if f["severity"] == "warning"),
+        "known": len(findings) - len(live),
+        "ignored_lines": counted["ignored_lines"],
+        "allowed_glosses": counted["allowed_glosses"],
+        "concepts_mixed": len(mixed),
+        "layers": by_layer,
+        "config": cfg["file"],
+        "snapshot": version.get("snapshot") or version.get("commit"),
+        "entries": len(data["concepts"]),
+        "draft_entries": sum(1 for e in data["concepts"].values() if e["status"] != "adopted"),
+    }
+
+
+# --- reporting -------------------------------------------------------------
+
+def line_of(f):
+    times = f" ×{f['count']}" if f["count"] > 1 else ""
+    return (f"  {f['file']}:{f['line']}: {f['identifier']!r} has {f['found']!r}{times} "
+            f"→ `{f['canonical']}` ({f['display']})  [{f['layer']}]")
+
+
+def report(findings, mixed, summary, by, limit):
+    print(f"audited {summary['files_scanned']} files against snapshot "
+          f"{summary['snapshot'] or 'unstamped'} ({summary['entries']} entries, "
+          f"{summary['draft_entries']} draft)"
+          + (f", config {summary['config']}" if summary['config'] else ""))
+    live = [f for f in findings if not f["known"]]
+    known = [f for f in findings if f["known"]]
+    if not live:
         print("ok — every name in this tree resolves to its canonical form")
-    for rule in ("deprecated", "spelling", "arabic_plural", "display_in_code", "gloss"):
-        group = [f for f in findings if f["rule"] == rule]
+
+    if by == "rule":
+        groups = [(r, [f for f in live if f["rule"] == r]) for r in RULE_ORDER]
+        title = lambda r, g: f"{len(g)} {RULES[r][0]}: {r} — {RULES[r][1]}"
+    elif by == "file":
+        names = sorted({f["file"] for f in live})
+        groups = [(n, [f for f in live if f["file"] == n]) for n in names]
+        title = lambda n, g: f"{n} — {len(g)} findings [{g[0]['layer']}]"
+    else:
+        order = sorted({f["concept"] for f in live},
+                       key=lambda c: (-sum(1 for f in live if f["concept"] == c), c))
+        groups = [(c, [f for f in live if f["concept"] == c]) for c in order]
+
+        def title(c, g):
+            forms = {}
+            for f in g:
+                forms[f["found"]] = forms.get(f["found"], 0) + f["count"]
+            errors = sum(1 for f in g if f["severity"] == "error")
+            return (f"`{g[0]['canonical']}` ({g[0]['display']}) — {len(g)} findings, "
+                    f"{errors} errors: " + ", ".join(f"{k} ×{v}" for k, v in sorted(forms.items())))
+
+    for key, group in groups:
         if not group:
             continue
-        severity, why = RULES[rule]
-        print(f"\n{len(group)} {severity}: {rule} — {why}")
+        print(f"\n{title(key, group)}")
+        group = sorted(group, key=lambda f: (f["severity"] != "error", f["file"], f["line"]))
         for f in group[:limit]:
-            entry = data["concepts"][f["concept"]]
-            print(f"  {f['file']}:{f['line']}: {f['identifier']!r} has {f['found']!r} "
-                  f"→ `{f['canonical']}` ({entry.get('display')})")
+            print(line_of(f))
         if len(group) > limit:
-            print(f"  … and {len(group) - limit} more")
+            print(f"  … and {len(group) - limit} more (raise --limit, or --json)")
+
+    if known:
+        print(f"\n{len(known)} on a compatibility surface — known, leave alone unless a "
+              f"migration is planned:")
+        seen = set()
+        for f in known:
+            k = (f["identifier"], f["found"])
+            if k not in seen:
+                seen.add(k)
+                print(f"  {f['identifier']!r} has {f['found']!r} → `{f['canonical']}`  "
+                      f"(first at {f['file']}:{f['line']})")
     if mixed:
         print(f"\n{len(mixed)} concepts written more than one way (section 26):")
         for m in mixed:
             forms = ", ".join(f"{k} ×{v}" for k, v in m["spellings"].items())
             print(f"  {m['canonical']}: {forms}")
-    errors = [f for f in findings if f["severity"] == "error"]
-    print(f"\n{len(errors)} errors, {len(findings) - len(errors)} warnings, "
-          f"{len(findings)} findings in total")
-    return errors
+    layers = ", ".join(f"{k}: {v['errors']}e/{v['warnings']}w" for k, v in
+                       sorted(summary["layers"].items()))
+    print(f"\n{summary['errors']} errors, {summary['warnings']} warnings, "
+          f"{summary['findings']} findings" + (f" — {layers}" if layers else "")
+          + (f"; {summary['known']} known" if summary["known"] else "")
+          + (f"; {summary['ignored_lines']} lines ignored" if summary["ignored_lines"] else ""))
 
 
-def main():
+def main(argv=None):
+    if hasattr(signal, "SIGPIPE"):
+        signal.signal(signal.SIGPIPE, signal.SIG_DFL)
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("paths", nargs="+", help="files or directories to audit")
+    ap.add_argument("paths", nargs="*", help="files or directories to audit")
     ap.add_argument("--json", action="store_true", help="machine-readable findings")
     ap.add_argument("--strict", action="store_true", help="exit 1 when there are errors")
-    ap.add_argument("--limit", type=int, default=20, help="findings printed per rule")
+    ap.add_argument("--by", choices=("concept", "file", "rule"), default="concept",
+                    help="how to group the report (default: concept)")
+    ap.add_argument("--limit", type=int, default=20, help="findings printed per group")
+    ap.add_argument("--config", help=f"project configuration (default: nearest {CONFIG_NAME})")
     ap.add_argument("--data", default=DATA, help="path to terminology.json")
-    args = ap.parse_args()
+    args = ap.parse_args(argv)
 
-    data = load(args.data)
-    index = build_index(data)
-    findings, used = scan(args.paths, index, data)
+    try:
+        data = load(args.data)
+    except (OSError, ValueError) as exc:
+        print(f"could not read the dictionary at {args.data}: {exc}", file=sys.stderr)
+        return 2
+    try:
+        cfg = load_config(find_config(args.paths or ["."], args.config))
+    except (OSError, ValueError) as exc:
+        print(f"could not read the configuration: {exc}", file=sys.stderr)
+        return 2
+    paths = args.paths or cfg["paths"] or ["."]
+    missing = [p for p in paths if not os.path.exists(p)]
+    if missing:
+        print("no such path: " + ", ".join(missing), file=sys.stderr)
+        return 2
+
+    index = build_index(data, cfg["ignore_words"])
+    findings, used, counted = scan(paths, index, data, cfg)
+    if counted["files"] == 0:
+        print("nothing audited: no file the audit reads under " + ", ".join(paths)
+              + (f" (exclude patterns: {cfg['exclude']})" if cfg["exclude"] else ""),
+              file=sys.stderr)
+        return 2
+    findings.sort(key=lambda f: (f["file"], f["line"], f["identifier"]))
     mixed = canonical_uses(data, used)
+    summary = summarise(findings, mixed, counted, data, cfg)
 
     if args.json:
-        json.dump({"findings": findings, "mixed": mixed}, sys.stdout,
+        json.dump({"summary": summary, "findings": findings, "mixed": mixed}, sys.stdout,
                   ensure_ascii=False, indent=1)
         print()
-        errors = [f for f in findings if f["severity"] == "error"]
     else:
-        errors = report(findings, mixed, data, args.limit)
-    return 1 if (args.strict and errors) else 0
+        report(findings, mixed, summary, args.by, args.limit)
+    return 1 if (args.strict and summary["errors"]) else 0
 
 
 if __name__ == "__main__":

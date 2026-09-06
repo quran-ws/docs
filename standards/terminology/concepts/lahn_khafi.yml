@@ -1,0 +1,39 @@
+concept: lahn_khafi
+names:
+  code: lahn_khafi
+  display: Lahn Khafi
+  arabic:
+    vocalized: اللَّحْن الخَفِيّ
+    singular: اللحن الخفي
+kind: classification_value
+category: tajwid
+parent: lahn
+origin: quranic
+tier: extended
+status: draft
+definition: >-
+  خطأ يطرأ على اللفظ فيخل بكمال الأداء دون المبنى والمعنى، كترك الغنة أو تقصير المد، ولا يدركه
+  إلا أهل الفن.
+definition_en: >-
+  An error in the wording that damages the perfection of delivery without touching form or
+  meaning, such as dropping the ghunnah or shortening a madd; only those trained in the discipline
+  notice it.
+purpose: >-
+  يستخدم قيمةً من قيم اللحن، فيُميز في تقارير التقويم ما يخص إتقان التجويد عما يخص صحة اللفظ.
+purpose_en: >-
+  Used as a value of lahn, so that assessment reports keep what concerns mastery of tajwid
+  apart from what concerns the correctness of the wording.
+alternative_spellings:
+- lahn_khafiy
+- lahn_khafee
+english_glosses:
+- subtle error
+related:
+- lahn
+- lahn_jali
+- ghunnah
+- madd
+sources:
+- id: quranpedia_tajweed
+  ref: '10'
+  url: https://tajweed.quranpedia.net/term/show/10

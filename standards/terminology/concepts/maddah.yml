@@ -4,6 +4,7 @@ names:
   display: Maddah
   arabic:
     vocalized: المَدَّة
+    singular: المدة
   dabt: عَلَامَة المَدّ — المَدَّة
   by_shape: خَطّ مُتَمَوِّج مَمْدُود فَوْق الحَرْف
   mushaf_introduction: عَلَامَة المَدّ
@@ -15,24 +16,26 @@ origin: quranic
 tier: core
 status: draft
 symbol: خَطّ المَدّ
-definition: الدَّلَالَة على لُزُوم مَدّ الحَرْف مَدّاً زَائِداً على المَدّ الطَّبِيعِيّ الأَصْلِيّ
-definition_en: Marks a lengthening beyond the natural two counts; the exact duration is a
-  tajwid matter.
+definition: الدلالة على لزوم مد الحرف مدًّا زائدًا على المد الطبيعي
+definition_en: Marks that the letter is lengthened beyond the natural madd.
 purpose: تستخدم قيمةً من علامات الرسم، ليعرف بها ما خالف فيه الرسم اللفظ في الكلمة.
-purpose_en: Used as a value of the orthographic marks, so that where the rasm departs from
-  the pronunciation of a word is known.
-alternative_spellings: []
+purpose_en: Used as a value of the orthographic marks, so that software can tell where the
+  rasm departs from the pronunciation.
+alternative_spellings:
+- madda
 unicode:
 - cp: U+0653
   name: ARABIC MADDAH ABOVE
   category: Mn
   combining_class: 230
   block: Arabic
+  unidata: 13.0.0
 - cp: U+06E4
   name: ARABIC SMALL HIGH MADDA
   category: Mn
   combining_class: 230
   block: Arabic
+  unidata: 13.0.0
 mark_family: imlaiyyah
 sources:
 - id: hafs_svg_registry

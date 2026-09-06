@@ -15,22 +15,24 @@ definition: >
   الآية في نظام عد تقابل آيةً في نظام آخر، سواء اتفق رقماهما أو اختلفا لاختلاف
   مواضع الفصل بين الآي.
 definition_en: >
-  The ayah in one counting system that corresponds to an ayah in another, whether or not
-  their numbers agree, since the systems divide the text at different points.
+  The ayah in one numbering system that corresponds to an ayah in another. Their numbers
+  may differ, because the systems divide the text at different points.
 purpose: >
   تستخدم للربط بين أرقام الآيات عبر أنظمة العد، فلا تقارن البيانات المبنية على
   نظام ببيانات مبنية على غيره بالرقم وحده.
 purpose_en: >
-  Used to map ayah numbers across counting systems, so that data built on one system is
+  Used to map ayah numbers across numbering systems, so that data built on one system is
   never compared with data built on another by number alone.
 boundaries:
   - المقابلة بين نظامي عد، وليست تشابهًا في اللفظ ولا تكرارًا للنص.
 boundaries_en:
   - >-
-    This is a correspondence between two counting systems, not a similarity of wording
+    This is a correspondence between two numbering systems, not a similarity of wording
     or a repetition of text.
 related:
   - ayah_numbering_system
   - ayah
   - mutashabihat
-sources: []
+sources:
+  - id: qiraat_ayah_map
+    url: https://github.com/quranpedia/qiraat-ayah-map

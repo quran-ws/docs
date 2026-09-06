@@ -4,6 +4,7 @@ names:
   display: Hamzat al-Wasl
   arabic:
     vocalized: هَمْزَة الوَصْل
+    singular: همزة الوصل
   dabt: رَأْس الصَّاد (من «صِلَة») — عَلَامَة هَمْزَة الوَصْل
   by_shape: رَأْس صَاد فَوْق الأَلِف
   mushaf_introduction: رَأْس صَاد صَغِيرَة فَوْق أَلِف الوَصْل
@@ -15,20 +16,29 @@ origin: quranic
 tier: core
 status: draft
 symbol: ص صَغِيرَة فَوْق الأَلِف
-definition: الدَّلَالَة على سُقُوط الهَمْزَة وَصْلاً
+definition: الدلالة على سقوط الهمزة وصلًا
 definition_en: Marks a connecting hamzah, dropped whenever the word is reached in continuation.
 purpose: تستخدم قيمةً من علامات الرسم، ليعرف بها ما خالف فيه الرسم اللفظ في الكلمة.
-purpose_en: Used as a value of the orthographic marks, so that where the rasm departs from
-  the pronunciation of a word is known.
+purpose_en: Used as a value of the orthographic marks, so that software can tell where the
+  rasm departs from the pronunciation.
 alternative_spellings:
+- alif_wasl
+- hamzat_wasl
+- wasl
 - wasla
+related:
+- hamzah
 unicode:
 - cp: U+0671
   name: ARABIC LETTER ALEF WASLA
   category: Lo
   combining_class: 0
   block: Arabic
+  unidata: 13.0.0
 mark_family: imlaiyyah
 sources:
 - id: hafs_svg_registry
   ref: standard!wasla
+- id: quranpedia_tajweed
+  ref: '127'
+  url: https://tajweed.quranpedia.net/term/show/127

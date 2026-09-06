@@ -6,18 +6,27 @@ names:
     vocalized: سُجُود التِّلَاوَة
     singular: سجود التلاوة
 kind: concept
-category: waqf
+category: recitation
 origin: quranic
 tier: core
 status: draft
 definition: سجدة تؤدى عند قراءة أو سماع موضع من مواضع سجود التلاوة.
 definition_en: >
   A prostration performed on reciting or hearing one of the places of sujud al-tilawah.
-purpose: يمثل العبادة أو الحكم نفسه، ويظل مستقلًا عن العلامة المطبوعة في المصحف.
-purpose_en: >
-  Represents the act of worship, or its ruling, and stays independent of the mark
-  printed in the Mushaf.
+purpose: يستخدم لربط أحكام السجود وآدابه بموضعه، وليبقى الفعل في البيانات مستقلًا عن العلامة والموضع.
+purpose_en: Used to attach the rulings and manner of the prostration to its place, and to keep the act apart from the mark and the place in data.
+boundaries:
+  - سجود التلاوة فعل، وعلامة السجدة رسم في المصحف، وموضع السجدة مكان من النص.
+boundaries_en:
+  - >-
+    Sujud al-tilawah is an act; the sajdah mark is a sign in the mushaf; mawdi al-sajdah
+    is a place in the text.
 alternative_spellings:
 - sajdah_al-tilawah
 - sajdat_al-tilawah
-sources: []
+related:
+  - mawdi_al_sajdah
+  - sajdah_mark
+sources:
+  - id: itqan
+    ref: "1/381"

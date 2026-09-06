@@ -4,6 +4,7 @@ names:
   display: Qiraah Mark
   arabic:
     vocalized: عَلَامَة القِرَاءَة
+    singular: علامة القراءة
 kind: classification
 category: dabt
 parent: mushaf_mark
@@ -18,4 +19,7 @@ purpose: تستخدم أبًا للعلامات التي تنبه القارئ �
 purpose_en: >
   Used as the parent of the marks that alert the reader to a particular delivery rather
   than to the pointing of a letter.
+related:
+  - mushaf_mark
+  - qiraah
 sources: []

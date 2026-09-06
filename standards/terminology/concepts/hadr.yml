@@ -15,9 +15,18 @@ definition: الإسراع في القراءة مع المحافظة على ال
 definition_en: >
   Reciting quickly while keeping the letters, the vowels and the rules of delivery
   intact.
-purpose: تستخدم لتمثيل مرتبة القراءة الأسرع ضمن مراتب الأداء.
+purpose: >
+  تستخدم قيمة من قيم مراتب القراءة، فيوسم بها التسجيل أو جلسة التعليم وتصفى بها.
 purpose_en: >
-  Used to represent the fastest of the recitation paces.
+  Used as a value of recitation pace, so that a recording or a teaching session is
+  tagged by its pace and filtered by it.
 alternative_spellings:
 - hadar
-sources: []
+related:
+  - recitation_pace
+sources:
+  - id: quranpedia_tajweed
+    ref: "24"
+    url: https://tajweed.quranpedia.net/term/show/24
+  - id: nashr
+    ref: "1/205"

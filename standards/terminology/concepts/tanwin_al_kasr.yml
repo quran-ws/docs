@@ -4,9 +4,10 @@ names:
   display: Tanwin al-Kasr
   arabic:
     vocalized: تَنْوِين الكَسْر
+    singular: تنوين الكسر
   dabt: تَنْوِين الخَفْض — الكَسْرَتَان
   by_shape: أَلِفَان مُضْجَعَتَان تَحْت الحَرْف
-  mushaf_introduction: 'الحَرَكَتَان: تَرْكِيباً أو تَتَابُعاً'
+  mushaf_introduction: 'الحَرَكَتَان: تَرْكِيبًا أو تَتَابُعًا'
   unicode: ARABIC KASRATAN
 kind: mark
 category: dabt
@@ -15,30 +16,35 @@ origin: quranic
 tier: core
 status: draft
 symbol: ـٍ
-definition: الدَّلَالَة على التَّنْوِين المَخْفُوض. وتَرْكِيب الحَرَكَتَيْن يدلّ على إظْهَار
-  التَّنْوِين، وتَتَابُعُهما مع تَشْدِيد التَّالِي على الإدْغَام الكَامِل، وبدونه على الإدْغَام
-  النَّاقِص أو الإخْفَاء
-definition_en: Marks the in tanwin. Stacked marks signal izhar; staggered marks with a shadda
+definition: الدلالة على التنوين المخفوض. وتركيب الحركتين يدل على إظهار التنوين، وتتابعهما
+  مع تشديد التالي على الإدغام الكامل، ودونه على الإدغام الناقص أو الإخفاء
+definition_en: Marks the in tanwin. Stacked marks signal izhar; staggered marks with a shaddah
   on the next letter signal complete idgham, and without one, incomplete idgham or ikhfa.
 purpose: تستخدم قيمةً من قيم التنوين، ليقرأ منها نطق آخر الاسم وحكمه بدل قراءة صورة الشكل.
 purpose_en: Used as a value of tanwin, so that the pronunciation of the noun's ending and
   its ruling are read from it rather than from the shape of the mark.
 alternative_spellings:
 - kasratan
+- tanween_kasr
 - tanwin_al_jarr
 - tanwin_al_khafd
 - tanwin_kasr
+related:
+- tanwin
+- noon_sakinah
 unicode:
 - cp: U+064D
   name: ARABIC KASRATAN
   category: Mn
   combining_class: 29
   block: Arabic
+  unidata: 13.0.0
 - cp: U+08F2
   name: ARABIC OPEN KASRATAN
   category: Mn
   combining_class: 29
   block: Arabic Extended-A
+  unidata: 13.0.0
 mark_family: tanwin
 sources:
 - id: hafs_svg_registry

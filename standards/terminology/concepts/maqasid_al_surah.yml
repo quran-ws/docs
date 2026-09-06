@@ -21,7 +21,7 @@ purpose: >
   الآيات، وعن الموضوعات التي تعدد ما ورد فيها.
 purpose_en: >
   Used as content attached to a whole surah rather than to one of its ayahs, which sets
-  it apart from tafsir, that proceeds ayah by ayah, and from the topics, that enumerate
+  it apart from tafsir, which proceeds ayah by ayah, and from a topic index, which lists
   what the surah contains.
 boundaries:
   - المقصد غرض جامع للسورة، والموضوع واحد مما ورد فيها.

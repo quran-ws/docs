@@ -19,4 +19,6 @@ purpose: يستخدم لتوفير تمثيل قابل للقراءة بنظام
 purpose_en: >
   Used to give a readable representation in another writing system, or for systematic
   conversion between writing systems.
+related:
+  - translation
 sources: []

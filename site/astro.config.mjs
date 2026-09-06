@@ -8,12 +8,31 @@ import { rehypeSuggestEdit } from './src/plugins/suggest-edit.mjs';
 const BASE = '/guidelines';
 const contentDir = fileURLToPath(new URL('../content/', import.meta.url));
 
-/** Read `sidebar.order` out of a page's frontmatter; unordered pages sort last. */
-function sidebarOrder(path) {
+/** The frontmatter block of a page, as text. */
+function frontmatter(path) {
   const source = readFileSync(path, 'utf8');
-  const block = source.startsWith('---') ? source.slice(3, source.indexOf('\n---', 3)) : '';
+  return source.startsWith('---') ? source.slice(3, source.indexOf('\n---', 3)) : '';
+}
+
+/** Read `sidebar.order` out of a page's frontmatter; unordered pages sort last. */
+function sidebarOrder(block) {
   const order = Number(block.match(/^sidebar:\s*\n(?:\s+.*\n)*?\s+order:\s*(-?\d+)/m)?.[1]);
   return Number.isFinite(order) ? order : Number.MAX_SAFE_INTEGER;
+}
+
+/**
+ * The page's `status` (see src/content.config.ts), shown as a sidebar badge so
+ * a reader sees what binds and what is still a draft before opening the page.
+ * A page with no status is a draft, as the schema's default says.
+ */
+const BADGES = {
+  draft: { text: 'draft', variant: 'caution' },
+  proposed: { text: 'proposed', variant: 'tip' },
+  adopted: { text: 'adopted', variant: 'success' },
+};
+function statusBadge(block) {
+  const status = block.match(/^status:\s*(\w+)/m)?.[1] ?? 'draft';
+  return BADGES[status] ?? BADGES.draft;
 }
 
 /**
@@ -41,7 +60,8 @@ function sectionItems(dir) {
     .filter((name) => name.endsWith('.md') || name.endsWith('.mdx'))
     .map((name) => {
       const stem = name.replace(/\.mdx?$/, '');
-      return { stem, order: sidebarOrder(`${arDir}/${name}`) };
+      const block = frontmatter(`${arDir}/${name}`);
+      return { stem, order: sidebarOrder(block), badge: statusBadge(block) };
     })
     .sort((a, b) => a.order - b.order || a.stem.localeCompare(b.stem))
     .filter(
@@ -49,7 +69,7 @@ function sectionItems(dir) {
         existsSync(`${contentDir}en/${dir}/${stem}.md`) ||
         existsSync(`${contentDir}en/${dir}/${stem}.mdx`)
     )
-    .map(({ stem }) => ({ slug: stem === 'index' ? dir : `${dir}/${stem}` }));
+    .map(({ stem, badge }) => ({ slug: stem === 'index' ? dir : `${dir}/${stem}`, badge }));
 }
 
 export default defineConfig({
@@ -78,6 +98,15 @@ export default defineConfig({
       social: {
         github: 'https://github.com/quran-ws/guidelines',
       },
+      // Starlight appends the entry's filePath, which is relative to site/ and
+      // so starts with `../content/`; ending the base in `site/` makes the
+      // `..` resolve to the repository root.
+      editLink: {
+        baseUrl: 'https://github.com/quran-ws/guidelines/edit/main/site/',
+      },
+      // `lastUpdated` is off: at build time Starlight reads git history for
+      // src/content/docs only, and our pages live in ../content, so no page
+      // would ever get a date.
       sidebar: [
         { label: 'المدخل', translations: { en: 'Introduction' }, items: sectionItems('01-intro') },
         { label: 'النص القرآني', translations: { en: 'Quranic text' }, items: sectionItems('02-quranic-text') },

@@ -1,0 +1,35 @@
+concept: mutaqariban
+names:
+  code: mutaqariban
+  display: Mutaqariban
+  arabic:
+    vocalized: المُتَقَارِبَان
+    singular: المتقاربان
+kind: classification_value
+category: tajwid
+parent: alaqat_al_harfayn
+origin: quranic
+tier: extended
+status: draft
+definition: حرفان تقاربا مخرجًا أو صفة أو فيهما معًا، كاللام والراء في «قل رب».
+definition_en: >-
+  Two letters close in point of articulation, in attribute, or in both, like the lam and the
+  raa in «قل رب».
+purpose: >-
+  يستخدم قيمةً من قيم علاقة الحرفين، فيُقرأ منه سبب الإدغام أو الإظهار في الموضع بدل استنباطه
+  من الحرفين في كل مرة.
+purpose_en: >-
+  Used as a value of the relation of two letters, so that the cause of idgham or izhar at
+  the place is read from it rather than worked out from the two letters every time.
+alternative_spellings:
+- mutaqaribain
+- mutaqaribayn
+- mutaqariban_saghir
+related:
+- alaqat_al_harfayn
+- idgham
+- izhar
+sources:
+- id: quranpedia_tajweed
+  ref: '62'
+  url: https://tajweed.quranpedia.net/term/show/62

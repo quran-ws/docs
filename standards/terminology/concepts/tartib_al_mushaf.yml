@@ -1,0 +1,43 @@
+concept: tartib_al_mushaf
+names:
+  code: tartib_al_mushaf
+  display: Tartib al-Mushaf
+  arabic:
+    vocalized: تَرْتِيب المُصْحَف
+    singular: ترتيب المصحف
+kind: property
+category: structure
+origin: quranic
+tier: core
+status: draft
+definition: >-
+  ترتيب السور كما استقر عليه المصحف العثماني، من الفاتحة إلى الناس، وهو الترتيب الذي تُرقم
+  به السور.
+definition_en: >-
+  The order of the surahs as settled in the Uthmani mushaf, from al-Fatihah to al-Nas; it
+  is the order the surahs are numbered by.
+purpose: >-
+  يستخدم ترتيبًا افتراضيًّا للسور في العرض والتنقل، ورقم السورة فيه هو رقمها في المفتاح؛ ويُذكر
+  باسمه حيث يقابله ترتيب النزول.
+purpose_en: >-
+  Used as the default order of surahs in display and navigation; a surah's number in it is
+  its number in the key, and it is named where the revelation order stands opposite it.
+boundaries:
+- >-
+  ترتيب المصحف غير ترتيب النزول: للسورة رقم واحد في المصحف، وقد تختلف رتبتها في النزول باختلاف
+  المصدر.
+boundaries_en:
+- >-
+  The mushaf order is not the revelation order: a surah has one number in the mushaf, and
+  its rank in revelation may differ by source.
+alternative_spellings:
+- surah_order
+- uthmani_order
+- tartib_al_suwar
+english_glosses:
+- Mushaf order
+related:
+- revelation_order
+- surah
+- ayah_key
+sources: []

@@ -4,8 +4,8 @@ names:
   display: Ayah
   transliteration: āyah
   arabic:
-    vocalized: آيَة
-    singular: آية
+    vocalized: الآيَة
+    singular: الآية
     plural: آيات
 kind: entity
 category: structure
@@ -28,20 +28,27 @@ purpose_en: >
   translations, tafsir, recitations, analyses and other data to a specific place in the
   Quran.
 boundaries:
-  - موقعها في صفحة أو سطر يخص المصحف أو الـlayout، لا هوية الآية نفسها.
+  - موقعها في صفحة أو سطر يخص المصحف أو تخطيطه، لا هوية الآية نفسها.
   - الفاصلة نهاية الآية، وليست الآية.
 boundaries_en:
   - >-
-    Its position on a page or a line belongs to the Mushaf and its layout, not to the
+    Its position on a page or a line belongs to the mushaf and its layout, not to the
     identity of the ayah.
   - >-
     The fasilah is the ayah's ending, not the ayah.
 alternative_spellings:
   - aya
+  - ayat
+  - ayaat
 english_glosses:
-  - verse
+  - Verse
 related:
   - surah
   - ayah_numbering_system
   - fasilah
-sources: []
+  - ayah_mark
+  - ayah_key
+  - word
+sources:
+  - id: qattan_mabahith
+    ref: "1/140"

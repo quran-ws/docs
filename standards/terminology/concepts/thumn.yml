@@ -7,17 +7,20 @@ names:
     singular: الثمن
 kind: entity
 category: divisions
-parent: hizb
+part_of: hizb
 origin: quranic
 tier: core
 status: draft
 plural: thumns
 definition: ثمن الحزب، وهو تقسيم مستخدم في بعض المصاحف والمدارس.
 definition_en: >
-  An eighth of a hizb, a division used in some Mushafs and schools.
+  An eighth of a hizb, a division used in some mushafs and schools.
 purpose: يستخدم عند دعم مصادر أو مصاحف تعتمد تقسيم الحزب إلى أثمان.
 purpose_en: >
-  Used when supporting sources or Mushafs that divide the hizb into eighths.
+  Used when supporting sources or mushafs that divide the hizb into eighths.
 alternative_spellings:
 - thumun
+related:
+  - hizb
+  - rubu_al_hizb
 sources: []

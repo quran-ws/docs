@@ -1,0 +1,44 @@
+concept: ayah_key
+names:
+  code: ayah_key
+  display: Ayah Key
+kind: property
+category: structure
+origin: standard
+tier: core
+status: draft
+plural: ayah_keys
+definition: >-
+  معرف نصي للآية يجمع رقم سورتها ورقمها فيها مفصولين بنقطتين، على صورة `2:255`، ولا يُقرأ
+  إلا في ضوء نظام عد الآي الذي يستند إليه.
+definition_en: >-
+  A textual identifier of an ayah joining its surah number and its number within it with a
+  colon, in the form `2:255`; it is read only in the light of the ayah numbering system it
+  rests on.
+purpose: >-
+  يستخدم مفتاحًا للربط بين مصادر البيانات ونقل الإشارة إلى الآية بين الواجهات والملفات؛ وتقييده
+  بنظام العد يمنع أن يشير المفتاح الواحد إلى موضعين.
+purpose_en: >-
+  Used as the key that joins data sources and carries a reference to an ayah between APIs
+  and files; binding it to a numbering system stops one key from pointing at two places.
+boundaries:
+- 'المفتاح مرجع لا هوية: تغيير نظام العد يغير المفتاح ولا يغير الآية.'
+- المفتاح غير الرقم المتسلسل للآية في المصحف كله.
+boundaries_en:
+- >-
+  The key is a reference, not an identity: changing the numbering system changes the key and
+  not the ayah.
+- The key is not the running number of the ayah across the whole mushaf.
+alternative_spellings:
+- ayah_ref
+- ayah_reference
+- aya_key
+english_glosses:
+- verse key
+related:
+- ayah
+- surah
+- ayah_numbering_system
+- word_key
+- tartib_al_mushaf
+sources: []

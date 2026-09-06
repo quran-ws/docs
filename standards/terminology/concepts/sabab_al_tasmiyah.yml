@@ -33,4 +33,6 @@ alternative_spellings:
 related:
   - surah
   - asbab_al_nuzul
-sources: []
+sources:
+  - id: itqan
+    ref: "1/178"

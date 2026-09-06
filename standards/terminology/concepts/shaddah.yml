@@ -4,9 +4,10 @@ names:
   display: Shaddah
   arabic:
     vocalized: الشَّدَّة
+    singular: الشدة
   dabt: الشَّدَّة — رَأْس الشِّين (من «شَدِيد»)
   by_shape: رَأْس شِين بِلَا نُقَط
-  mushaf_introduction: الشَّدَّة الدَّالَّة على الإدْغَام
+  mushaf_introduction: الشَّدَّة الدَّالَّة على الإِدْغَام
   unicode: ARABIC SHADDA
 kind: mark
 category: dabt
@@ -15,20 +16,28 @@ origin: quranic
 tier: core
 status: draft
 symbol: ـّ
-definition: الدَّلَالَة على إدْغَام الحَرْف الأَوَّل في الثَّانِي
-definition_en: Marks assimilation of a first letter into the second (doubling).
+definition: الدلالة على تشديد الحرف بإدغام الأول الساكن في الثاني المتحرك، فينطقان حرفًا واحدًا
+  مشددًا
+definition_en: 'Marks a doubled letter: the first, vowelless, is merged into the second and
+  the two are pronounced as one stressed letter.'
 purpose: تستخدم قيمةً من قيم الحركة، ليقرأ منها نطق الحرف في التحليل والعرض والتعليم بدل قراءة
   صورة الشكل.
 purpose_en: Used as a value of harakah, so that a letter's pronunciation is read from it in
   analysis, rendering and teaching rather than from the shape of the mark.
 alternative_spellings:
 - shadda
+- tashdeed
+- tashdid
+related:
+- harakah
+- idgham
 unicode:
 - cp: U+0651
   name: ARABIC SHADDA
   category: Mn
   combining_class: 33
   block: Arabic
+  unidata: 13.0.0
 mark_family: harakah
 sources:
 - id: hafs_svg_registry

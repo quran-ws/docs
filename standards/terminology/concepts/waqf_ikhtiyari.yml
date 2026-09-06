@@ -1,0 +1,35 @@
+concept: waqf_ikhtiyari
+names:
+  code: waqf_ikhtiyari
+  display: Waqf Ikhtiyari
+  arabic:
+    vocalized: الوَقْف الاِخْتِيَارِيّ
+    singular: الوقف الاختياري
+kind: classification_value
+category: waqf
+parent: sabab_al_waqf
+origin: quranic
+tier: extended
+status: draft
+definition: >-
+  ما يقصده القارئ باختياره من غير سبب يعرض، وهو الذي تجري عليه أحكام التام والكافي والحسن
+  والقبيح.
+definition_en: >-
+  A stop the reader makes by choice with no cause arising; it is the one the rulings of tamm,
+  kafi, hasan and qabih apply to.
+purpose: >-
+  يستخدم قيمةً من قيم سبب الوقف، فيُوسم به الوقف الواقع في التلاوة عند تحليلها أو تعليمها.
+purpose_en: >-
+  Used as a value of the cause of the stop, tagging a stop that occurred in a tilawah when
+  it is analysed or taught.
+alternative_spellings:
+- ikhtiyari
+- waqf_ikhtiyary
+related:
+- sabab_al_waqf
+- waqf
+- waqf_ruling
+sources:
+- id: quranpedia_tajweed
+  ref: '120'
+  url: https://tajweed.quranpedia.net/term/show/120

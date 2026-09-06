@@ -15,7 +15,14 @@ definition: ما تم معناه وتعلق بما بعده معنًى لا لف
 definition_en: >
   A stop whose meaning is complete but which is connected to what follows it in meaning,
   not in wording.
-purpose: يستخدم قيمةً في تصنيف مواضع الوقف.
-purpose_en: >
-  Used as a value in classifying the places of stopping.
-sources: []
+purpose: يستخدم قيمةً من قيم حكم الوقف، فيوسم به الموضع في التعليم والتحليل.
+purpose_en: Used as a value of the waqf ruling, so that a place is tagged with it in teaching and analysis.
+related:
+  - waqf_ruling
+  - waqf
+sources:
+  - id: quranpedia_tajweed
+    ref: "123"
+    url: https://tajweed.quranpedia.net/term/show/123
+  - id: nashr
+    ref: "1/226"

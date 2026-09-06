@@ -3,7 +3,7 @@ names:
   code: ayah_numbering_makki
   display: Makki Numbering
   arabic:
-    vocalized: العَدّ المَكِّي
+    vocalized: العَدّ المَكِّيّ
     singular: العد المكي
 kind: classification_value
 category: ayah_numbering
@@ -14,14 +14,14 @@ status: draft
 definition: >
   عد أهل مكة، المروي عن ابن كثير عن مجاهد عن ابن عباس عن أبي بن كعب.
 definition_en: >
-  The counting of the people of Makkah, transmitted from Ibn Kathir from Mujahid from
-  Ibn Abbas from Ubayy ibn Kab.
+  The Makkan numbering system, transmitted from Ibn Kathir from Mujahid from Ibn Abbas
+  from Ubayy ibn Kab.
 purpose: >
-  يستخدم قيمةً من قيم نظام عد الآي، فيعرف به ما تستند إليه أرقام الآيات وحدودها
-  في مصحف أو dataset، وتقابل به مواضع الآي بين الأنظمة.
+  يستخدم قيمة من قيم نظام عد الآي، فيعرف به ما تستند إليه أرقام الآيات وحدودها في مصحف
+  أو `dataset`، وتقابل به مواضع الآي بين الأنظمة.
 purpose_en: >
-  Used as a value of the ayah numbering system, so that what a Mushaf's or a dataset's
-  ayah numbers and boundaries rest on is known, and ayah positions can be mapped between
+  Used as a value of the ayah numbering system, so that a mushaf or dataset states which
+  numbering its ayah numbers and boundaries follow, and positions can be mapped between
   systems.
 alternative_spellings:
   - makki_numbering
@@ -39,4 +39,6 @@ note_en: >
   derivation of the Arabic name: deriving from «العَدّ» gives `add`, an English verb,
   and `makki` is already a value of `revelation_classification`. The reasoning is in the
   decision record.
-sources: []
+sources:
+  - id: bayan_dani
+    ref: "1/79"

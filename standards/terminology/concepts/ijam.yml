@@ -3,7 +3,8 @@ names:
   code: ijam
   display: Ijam
   arabic:
-    vocalized: الإعْجَام
+    vocalized: الإِعْجَام
+    singular: الإعجام
 kind: classification
 category: dabt
 parent: mushaf_mark
@@ -17,4 +18,12 @@ purpose: تستخدم أبًا لصور النقط، فما يميزها هو ع
 purpose_en: >
   Used as the parent of the dot shapes, which are told apart by their number and
   position rather than by their function.
-sources: []
+related:
+  - mushaf_mark
+  - letter
+sources:
+  - id: quranpedia_tajweed
+    ref: "135"
+    url: https://tajweed.quranpedia.net/term/show/135
+  - id: qattan_mabahith
+    ref: "1/151"

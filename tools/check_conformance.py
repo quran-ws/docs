@@ -9,6 +9,10 @@ by hand, which is to say not checked.
 A departure that the decision record argues for is listed in DOCUMENTED below,
 so the check stays useful: an undocumented mismatch is a finding, and a
 documented one is a fact about the entry.
+
+A problem fails the build. A warning is printed and counted, and does not: it
+marks work the entry still owes — a source it has not cited yet — rather than
+a rule it breaks.
 """
 import glob, os, re, sys, collections
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -17,8 +21,19 @@ from translit import code_spelling
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CONCEPTS = os.path.join(ROOT, "standards/terminology/concepts")
+SOURCES = os.path.join(ROOT, "standards/terminology/sources.yml")
 
 ARABIC = re.compile(r"[\u0600-\u06FF]")
+# A run of Latin letters inside Arabic prose. Backticked code and the words
+# below are how an Arabic sentence legitimately names a Latin thing.
+LATIN = re.compile(r"[A-Za-z]{2,}")
+LATIN_ALLOWED = {"dataset"}
+LIST_FIELDS = ("alternative_spellings", "english_glosses", "deprecated", "related",
+               "part_of", "boundaries", "boundaries_en")
+# Fields that describe a drawn sign. A mark carries them; so does a value of the
+# waqf-mark classification, because those values are drawn too; nothing else.
+DRAWN_FIELDS = ("symbol", "unicode", "mark_family")
+DRAWN_CLASSIFICATION = "waqf_mark_type"
 
 # Codes that deliberately are not the derivation of their Arabic name. Each one
 # is argued in content/*/03-terminology/decisions.md; the reason is repeated
@@ -32,19 +47,6 @@ DOCUMENTED = {
     "ayah_numbering_kufi": "section 14 — the value takes its parent's name; `add` is an English verb",
 }
 
-# Mismatches whose cause is in the tool, not the entry. Kept apart from
-# DOCUMENTED so that a decision is never confused with a defect: these are
-# meant to disappear, and the entry they name is already correct.
-TOOL_DEFECTS = {
-    "waqf_jaiz_mustawi_al_tarafayn":
-        "translit.py drops the `al` of a construct that follows a definite head. "
-        "`مُسْتَوِي الطَّرَفَيْن` alone gives `mustawi_al_tarafayn`, and inside "
-        "`الوَقْف الجَائِز مُسْتَوِي الطَّرَفَيْن` it gives `mustawi_tarafayn`. Section 8 "
-        "keeps the `al` when the first word is indefinite, so the entry is right "
-        "and the derivation is wrong.",
-}
-
-
 def load():
     entries = {}
     for path in sorted(glob.glob(os.path.join(CONCEPTS, "*.yml"))):
@@ -53,8 +55,15 @@ def load():
     return entries
 
 
-def check(entries):
-    problems = []
+def load_sources():
+    return yaml.safe_load(open(SOURCES, encoding="utf-8")) or {}
+
+
+def check(entries, sources=None):
+    """(problems, warnings) — see the module docstring for the difference."""
+    problems, warnings = [], []
+    if sources is None:
+        sources = load_sources()
     children = collections.Counter(e.get("parent") for e in entries.values())
 
     for code, e in sorted(entries.items()):
@@ -68,8 +77,7 @@ def check(entries):
             except Exception as exc:
                 problems.append(f"{code}: cannot derive from {arabic!r} — {exc}")
                 derived = None
-            if (derived and derived != names.get("code")
-                    and code not in DOCUMENTED and code not in TOOL_DEFECTS):
+            if derived and derived != names.get("code") and code not in DOCUMENTED:
                 problems.append(
                     f"{code}: code is {names.get('code')!r}, {arabic!r} derives to {derived!r} "
                     f"— add it to DOCUMENTED with its reason, or fix one of the two")
@@ -82,6 +90,35 @@ def check(entries):
         parent = e.get("parent")
         if parent and parent not in entries:
             problems.append(f"{code}: parent {parent!r} has no entry")
+        # section 13 — a value's parent is the classification it is a value of
+        if (e["kind"] == "classification_value" and parent in entries
+                and entries[parent]["kind"] != "classification"):
+            problems.append(f"{code}: a classification_value whose parent {parent!r} "
+                            f"is a {entries[parent]['kind']}, not a classification (section 13)")
+
+        # part_of is containment; what contains the entry must exist
+        part_of = e.get("part_of") or []
+        for whole in ([part_of] if isinstance(part_of, str) else part_of):
+            if whole not in entries:
+                problems.append(f"{code}: part_of {whole!r}, which has no entry")
+
+        # only a drawn sign has a shape: a mark, or a value of the waqf-mark
+        # classification, which is drawn in the mushaf too
+        drawn = e["kind"] == "mark" or (
+            e["kind"] == "classification_value" and parent == DRAWN_CLASSIFICATION)
+        for field in DRAWN_FIELDS:
+            if e.get(field) and not drawn:
+                problems.append(f"{code}: has {field}, and only a mark or a value of "
+                                f"{DRAWN_CLASSIFICATION} is drawn")
+
+        # a list that names something twice names it once
+        for field in LIST_FIELDS:
+            values = e.get(field) or []
+            if isinstance(values, str):
+                continue
+            dupes = sorted({v for v in values if values.count(v) > 1})
+            if dupes:
+                problems.append(f"{code}: {field} lists {dupes} more than once")
 
         # section 11 — the plural is the code plus s, never an Arabic plural
         # and never the plural of the English gloss
@@ -120,16 +157,33 @@ def check(entries):
             if value and ARABIC.search(re.sub(r"«[^»]*»", "", value)):
                 problems.append(f"{code}: {en} still has Arabic in it outside «…»")
 
-        # section 28 — an entry with no source is not adopted
+        # Arabic prose that names a Latin thing does it in backticks
+        for ar in ("definition", "purpose", "note"):
+            value = e.get(ar)
+            if not value:
+                continue
+            bare = re.sub(r"`[^`]*`", "", value)
+            latin = sorted({w for w in LATIN.findall(bare) if w.lower() not in LATIN_ALLOWED})
+            if latin:
+                warnings.append(f"{code}: {ar} has Latin words outside backticks: {latin}")
+
+        # section 28 — an entry with no source is not adopted, and a Quranic
+        # concept with no source has not been documented yet
         if e.get("status") == "adopted" and not e.get("sources"):
             problems.append(f"{code}: adopted with no source (section 28)")
+        if e.get("origin") == "quranic" and not e.get("sources"):
+            warnings.append(f"{code}: origin quranic with no source yet (section 28)")
+        for src in e.get("sources") or []:
+            if src.get("id") not in sources:
+                problems.append(f"{code}: cites source {src.get('id')!r}, which is not "
+                                f"in sources.yml")
 
-    return problems
+    return problems, warnings
 
 
 def main():
     entries = load()
-    problems = check(entries)
+    problems, warnings = check(entries)
     documented = sorted(c for c in DOCUMENTED if c in entries)
     if problems:
         print(f"{len(problems)} problems in {len(entries)} entries:")
@@ -137,15 +191,15 @@ def main():
             print(f"  {p}")
     else:
         print(f"ok — {len(entries)} entries obey the rules the standard states")
+    if warnings:
+        unsourced = sum(1 for w in warnings if "no source yet" in w)
+        print(f"\n{len(warnings)} warnings ({unsourced} quranic entries still without a source):")
+        for w in warnings:
+            print(f"  {w}")
     if documented:
         print(f"\n{len(documented)} documented departures from the derivation:")
         for c in documented:
             print(f"  {c}: {DOCUMENTED[c]}")
-    defects = sorted(c for c in TOOL_DEFECTS if c in entries)
-    if defects:
-        print(f"\n{len(defects)} entries held back by a defect in the tool, not in the entry:")
-        for c in defects:
-            print(f"  {c}: {TOOL_DEFECTS[c]}")
     return 1 if problems else 0
 
 

@@ -31,8 +31,11 @@ boundaries_en:
 alternative_spellings:
   - ayah_timestamp
   - recitation_timing
+  - timing
+  - verse_timing
 related:
   - recitation
   - ayah
   - reciter
+  - word_timing
 sources: []

@@ -4,7 +4,7 @@ names:
   display: Madani
   arabic:
     vocalized: مَدَنِيّ
-    singular: المدني
+    singular: مدني
 kind: classification_value
 category: revelation
 parent: revelation_classification
@@ -13,12 +13,25 @@ tier: core
 status: draft
 definition: ما نزل من القرآن بعد الهجرة، ولو نزل خارج المدينة.
 definition_en: >
-  What was revealed of the Quran after the Hijrah, even if it was revealed outside
+  The part of the Quran revealed after the Hijrah, even where it was revealed outside
   Madinah.
-purpose: يستخدم كقيمة لتصنيف سورة أو آية ضمن `Revelation Classification`.
-purpose_en: >
-  Used as a value classifying a surah or an ayah under `Revelation Classification`.
+purpose: يستخدم قيمةً من قيم تصنيف النزول، فتوسم به السورة أو الآية.
+purpose_en: Used as a value of revelation classification, tagging a surah or an ayah with it.
+boundaries:
+- مدني وصف لزمن النزول بعد الهجرة، لا لمكان النزول.
+boundaries_en:
+- Madani describes the time of revelation, after the Hijrah, not the place of revelation.
 alternative_spellings:
 - madaniyy
 - madinan
-sources: []
+english_glosses:
+  - Medinan
+related:
+  - makki
+  - revelation_classification
+  - nuzul
+sources:
+  - id: qattan_mabahith
+    ref: "1/60"
+  - id: itqan
+    ref: "1/37"

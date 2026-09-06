@@ -4,6 +4,7 @@ names:
   display: Sajdah Mark
   arabic:
     vocalized: عَلَامَة السَّجْدَة
+    singular: علامة السجدة
   dabt: عَلَامَة مَوْضِع السَّجْدَة — المِحْرَاب
   by_shape: مِحْرَاب صَغِير
   mushaf_introduction: عَلَامَة مَوْضِع السَّجْدَة
@@ -14,17 +15,34 @@ origin: quranic
 tier: core
 status: draft
 symbol: مِحْرَاب
-definition: الدَّلَالَة على مَوْضِع السُّجُود
+definition: الدلالة على موضع السجود
 definition_en: Marks the point at which the reader prostrates.
 purpose: تستخدم علامةً من علامات المصحف، ليعرف بها موضعها ودلالتها في العرض والتحليل.
-purpose_en: Used as a mark of the Mushaf, so that its place and what it points to are known
-  in rendering and in analysis.
+purpose_en: Used as a mark of the mushaf, so that rendering and analysis know where it sits
+  and what it points to.
+boundaries:
+- علامة السجدة رسم في المصحف، وموضع السجدة مكان من النص، وسجود التلاوة الفعل.
+boundaries_en:
+- The sajdah mark is a sign in the mushaf; mawdi al-sajdah is the place in the text; sujud
+  al-tilawah is the act.
 alternative_spellings:
-- alamat_mawdi_al_sajdah
+- sajda_mark
+- sajda_sign
 - sajdah-sign
 - sajdah_sign
+deprecated:
+- alamat_mawdi_al_sajdah
+related:
+- mawdi_al_sajdah
+- sujud_al_tilawah
+- sajdah_line
+note: كان `alamat_mawdi_al_sajdah` مدخلًا مستقلًا يعرف الشيء نفسه، فدمج في هذا المدخل.
+note_en: '`alamat_mawdi_al_sajdah` was a separate entry defining the same thing; it was merged
+  into this one.'
 unicode: []
 mark_family: mustaqill
 sources:
 - id: hafs_svg_registry
   ref: standard!sajdah-sign
+- id: itqan
+  ref: 1/381

@@ -4,7 +4,8 @@ names:
   display: Two Dots
   arabic:
     vocalized: النُّقْطَتَان
-  dabt: نَقْط الإعْجَام — النُّقْطَتَان
+    singular: النقطتان
+  dabt: نَقْط الإِعْجَام — النُّقْطَتَان
   by_shape: نُقْطَتَان مُتَّصِلَتَان
   mushaf_introduction: null
 kind: mark
@@ -14,8 +15,9 @@ origin: quranic
 tier: core
 status: draft
 symbol: نُقْطَتَان
-definition: إعْجَام الحَرْف وتَمْيِيزُه عمَّا يُشَارِكُه في الرَّسْم
-definition_en: Distinguishes a letter from others that share the same skeleton (i'jam).
+definition: نقطتان فوق الحرف أو تحته تميزانه عما يشاركه في الرسم، كالتاء والياء والقاف
+definition_en: 'Two dots, above or below, distinguishing a letter from the others that share
+  its skeleton (ijam): taa, yaa, qaaf.'
 purpose: تستخدم قيمةً من قيم النقط، ليتميز بها الحرف عما يشاركه في الرسم في التحليل والبحث.
 purpose_en: Used as a value of ijam, so that a letter is told apart from those sharing its
   skeleton in analysis and in search.

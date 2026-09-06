@@ -1,0 +1,42 @@
+concept: wazn
+names:
+  code: wazn
+  display: Wazn
+  arabic:
+    vocalized: الوَزْن
+    singular: الوزن
+    plural: أَوْزَان
+kind: unit
+category: linguistics
+origin: quranic
+tier: extended
+status: draft
+plural: wazns
+definition: >-
+  صورة الكلمة الصرفية ممثلةً بحروف «فعل» وما يلحقها من زوائد، تبين بناءها بصرف النظر عن جذرها.
+definition_en: >-
+  The morphological form of a word represented by the letters of «فعل» with whatever affixes
+  attach to them, showing its structure regardless of its root.
+purpose: >-
+  يستخدم في التحليل الصرفي والبحث بالبناء، فتُجمع كلمات على وزن واحد وإن اختلفت جذورها.
+purpose_en: >-
+  Used in morphological analysis and in searching by structure, so that words of one pattern
+  are gathered though their roots differ.
+boundaries:
+- الوزن صورة البناء، والجذر مادته، والجذع الكلمة مجردةً من اللواصق.
+boundaries_en:
+- >-
+  The wazn is the form of the structure, the root is its material, and the stem is the word
+  stripped of its affixes.
+alternative_spellings:
+- wazan
+- awzan
+english_glosses:
+- morphological pattern
+- pattern
+related:
+- root
+- stem
+- morphology
+- lemma
+sources: []

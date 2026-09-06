@@ -29,7 +29,7 @@ boundaries:
 boundaries_en:
   - >-
     Abrogation bears on the ruling, not on the text: an ayah whose ruling is abrogated
-    stands in the Mushaf as it is.
+    stands in the mushaf as it is.
   - >-
     The relation is disputed in many places, so it is bound to its source and never
     presented as agreed upon.
@@ -42,4 +42,8 @@ english_glosses:
 related:
   - ayah
   - asbab_al_nuzul
-sources: []
+sources:
+  - id: qattan_mabahith
+    ref: "1/237"
+  - id: itqan
+    ref: "3/66"

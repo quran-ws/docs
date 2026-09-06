@@ -1,9 +1,16 @@
-Prose in this repository — everything under content/ — is licensed
-Creative Commons Attribution 4.0 International (CC BY 4.0).
+Prose in this repository is licensed Creative Commons Attribution 4.0
+International (CC BY 4.0): everything under content/, surveys/, and the
+reference pages the build copies into skills/*/references/.
 https://creativecommons.org/licenses/by/4.0/
 
-Code, schemas, and machine-readable data — everything under tools/,
-standards/, site/, and examples/ — are licensed MIT.
+Code, schemas, and machine-readable data are licensed MIT: everything under
+tools/, standards/, site/, examples/, tests/, and the scripts and data files
+under skills/.
+
+A generated file carries the licence of what it was generated from. The
+dictionary pages under content/ and the data under skills/*/data/ are rendered
+from standards/terminology/, so they are MIT like their source; the standard and
+the decision record copied into skills/*/references/ stay CC BY 4.0.
 
 MIT License
 
@@ -28,4 +35,5 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 The Quranic text itself is not covered by either licence and carries no
-claim of ownership.
+claim of ownership. Third-party sources cited in standards/terminology/
+sources.yml keep their own terms.

@@ -7,20 +7,29 @@ names:
     singular: ربع الحزب
 kind: entity
 category: divisions
-parent: hizb
+part_of: hizb
 origin: quranic
 tier: core
 status: draft
 plural: rubu_al_hizbs
 definition: ربع الحزب في التقسيم المشهور للمصحف.
 definition_en: >
-  A quarter of a hizb in the well-known division of the Mushaf.
+  A quarter of a hizb in the well-known division of the mushaf.
 purpose: يستخدم لتمثيل التقسيم الأدق للحزب ومواضع علاماته في المصحف.
 purpose_en: >
   Used to represent the finer division of the hizb and where its marks fall in the
-  Mushaf.
+  mushaf.
 alternative_spellings:
-- rub_al_hizb
-- rub'_al-hizb
-- rub_el_hizb
+  - rub_al_hizb
+  - rub'_al-hizb
+  - rub_el_hizb
+  - rub
+  - rubu
+  - rub_hizb
+  - hizb_quarter
+  - quarter_hizb
+related:
+  - hizb
+  - thumn
+  - division_mark
 sources: []

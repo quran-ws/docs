@@ -12,10 +12,20 @@ tier: core
 status: draft
 definition: تصنيف لما ترشد إليه علامة الوقف المرسومة في المصحف من لزوم أو منع أو جواز.
 definition_en: >
-  A classification of what a waqf mark drawn in the Mushaf points to: that stopping is
+  A classification of what a waqf mark drawn in the mushaf points to: that stopping is
   compulsory, forbidden or permitted.
 purpose: يوفر مجموعة قيم موحدة تتفرع عليها التطبيقات، بدل قراءة صورة الرمز نفسه.
 purpose_en: >
   Gives applications one set of values to branch on, instead of reading the shape of the
   sign itself.
-sources: []
+boundaries:
+  - نوع العلامة ما ترشد إليه العلامة المرسومة، وحكم الوقف صفة الموضع نفسه ولو لم تُرسم عليه علامة.
+boundaries_en:
+  - The mark type is what a drawn mark points to; the waqf ruling belongs to the place itself, even where no mark is drawn on it.
+related:
+  - waqf
+  - waqf_mark
+  - waqf_ruling
+sources:
+  - id: qattan_mabahith
+    ref: "1/152"

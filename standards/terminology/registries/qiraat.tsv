@@ -1,4 +1,4 @@
-# The ten qiraat, the reciters who transmit them, and the twenty riwayat.
+# The 10 qiraat, the reciters who transmit them, and the 20 riwayahs.
 #
 # WHY THIS IS A REGISTRY AND NOT 49 DICTIONARY ENTRIES
 # The dictionary defines concepts: what a `qiraah` is, what a `riwayah` is,
@@ -44,7 +44,7 @@
 #
 # NOT ENUMERATED HERE: the turuq, and here is exactly why.
 # Al-Nashr names the routes below each riwayah, and at the level of tariq the
-# ten readings run to some 980 of them. Reading them out of the isnad section
+# 10 readings run to some 980 of them. Reading them out of the isnad section
 # was tried: a scan of its hundred pages yields 416 occurrences of "tariq X"
 # resolving to 224 distinct names. They are chain links at every depth of the
 # tree, and prose gives no reliable way to attach each one to its parent.
@@ -53,12 +53,10 @@
 # have no such total to reconcile against. An unverifiable 40-row table would
 # look exactly like a verified one, which is the argument against writing it.
 #
-# The route level that applications actually store — "from the way of
-# al-Shatibiyyah", "of al-Durrah", "of Taybat al-Nashr" — is a different thing
-# again: those are books, and al-Nashr cites al-Taysir at 1/58 and
-# al-Shatibiyyah at 1/61 as works it transmits from. A book is not a tariq as
-# the dictionary defines one (a segment of the chain below the rawi), so they
-# are not filed here under that name.
+# The route level applications actually store — «من طريق الشاطبية», «طيبة النشر»,
+# al-Durrah, al-Taysir — is in registries/tariq.tsv: each is a book whose name has
+# become the name of the path below the rawi that it fixes, which is the sense
+# the `tariq` entry gives.
 #
 # To close this: work from al-Nashr's per-riwayah sections rather than a regex,
 # and find a count the result must reconcile to before trusting any of it.

@@ -4,7 +4,8 @@ names:
   display: Three Dots
   arabic:
     vocalized: الثَّلَاث نُقَط
-  dabt: نَقْط الإعْجَام — الثَّلَاث نُقَط
+    singular: الثلاث نقط
+  dabt: نَقْط الإِعْجَام — الثَّلَاث نُقَط
   by_shape: ثَلَاث نُقَط مُثَلَّثَة
   mushaf_introduction: null
 kind: mark
@@ -14,8 +15,9 @@ origin: quranic
 tier: core
 status: draft
 symbol: ثَلَاث نُقَط
-definition: إعْجَام الحَرْف وتَمْيِيزُه عمَّا يُشَارِكُه في الرَّسْم
-definition_en: Distinguishes a letter from others that share the same skeleton (i'jam).
+definition: ثلاث نقاط فوق الحرف تميزه عما يشاركه في الرسم، كالثاء والشين
+definition_en: 'Three dots above the letter, distinguishing it from the others that share
+  its skeleton (ijam): thaa, sheen.'
 purpose: تستخدم قيمةً من قيم النقط، ليتميز بها الحرف عما يشاركه في الرسم في التحليل والبحث.
 purpose_en: Used as a value of ijam, so that a letter is told apart from those sharing its
   skeleton in analysis and in search.

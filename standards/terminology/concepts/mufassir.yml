@@ -32,4 +32,7 @@ english_glosses:
   - Exegete
 related:
   - tafsir
-sources: []
+  - translator
+sources:
+  - id: itqan
+    ref: "4/200"

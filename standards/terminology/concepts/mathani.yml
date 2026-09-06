@@ -11,10 +11,28 @@ parent: surah_group
 origin: quranic
 tier: extended
 status: draft
-definition: مجموعة السور التي تلي المئين في التقسيم التقليدي.
+definition: >
+  السور التي تقصر عن المئين وتليها في التقسيم التقليدي، وسميت مثاني لكثرة ما تثنى، أي
+  تكرر قراءتها.
 definition_en: >
-  The group of surahs following the miun in the traditional division.
-purpose: تستخدم ضمن تصنيف السور التراثي.
+  The surahs shorter than the miun, coming after them in the traditional division;
+  called mathani because they are recited more often.
+purpose: >
+  تستخدم قيمة من قيم تصنيف السور، فتربط بها خطط القراءة وما يعالج المجموعة وحدة واحدة من
+  كتب التفسير.
 purpose_en: >
-  Used within the traditional classification of the surahs.
-sources: []
+  Used as a value of surah group, so that reading plans and the tafsir works that treat
+  the group as a unit can refer to it.
+related:
+  - surah_group
+  - surah
+note: >
+  لا يعين المعيار أعضاء المجموعة سورة سورة: فالمصادر تختلف في السابعة من الطوال وفي أول
+  المفصل، ولا سجل بعد يحصر أعضاء كل مجموعة بمصدره.
+note_en: >
+  The standard does not list the group's members surah by surah: the sources differ over
+  the seventh of the tiwal and the start of the mufassal, and no registry yet enumerates
+  each group's members with its source.
+sources:
+  - id: itqan
+    ref: "1/201"

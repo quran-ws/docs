@@ -41,5 +41,7 @@ english_glosses:
 related:
   - ayah
   - word
-  - equivalent_ayah
-sources: []
+  - hifz
+sources:
+  - id: itqan
+    ref: "3/390"

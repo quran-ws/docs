@@ -1,0 +1,67 @@
+concept: hukm_al_tajwid
+names:
+  code: hukm_al_tajwid
+  display: Hukm al-Tajwid
+  arabic:
+    vocalized: حُكْم التَّجْوِيد
+    singular: حكم التجويد
+    plural: أَحْكَام التَّجْوِيد
+kind: classification
+category: tajwid
+registry: tajwid_rules
+origin: quranic
+tier: core
+status: draft
+plural: hukm_al_tajwids
+definition: >-
+  ما يجب في أداء الحرف عند حرف يليه أو عند سكون أو همز، من إظهار أو إدغام أو إقلاب أو إخفاء
+  أو مد أو قلقلة أو تفخيم أو ترقيق، مما تقرره قواعد التجويد في موضع بعينه من النص.
+definition_en: >-
+  What is due in delivering a letter before the letter that follows it, or at a sukun or a
+  hamzah: izhar, idgham, iqlab, ikhfa, madd, qalqalah, tafkhim or tarqiq, as the rules of
+  tajwid settle it at a given place in the text.
+purpose: >-
+  يستخدم أبًا لأحكام التجويد ووعاءً لسجلها، فتُنسب إليه مواضع النص التي يقع فيها حكم، ويُشار
+  إلى الحكم بعينه بصف من السجل بدل اسم حر يختلف من محرك إلى محرك.
+purpose_en: >-
+  Used as the parent of the rulings of tajwid and the holder of their registry, so that the
+  places in the text where a ruling falls are attributed to it, and a particular ruling is
+  named by a row of the registry rather than by a free name that differs from one engine to
+  another.
+boundaries:
+- الحكم ما يقع في الموضع، والتجويد العلم الذي يقرره.
+- 'الحكم غير القاعدة: القاعدة شرط الحكم، والحكم أثرها في الموضع.'
+boundaries_en:
+- >-
+  The ruling is what falls at the place; tajwid is the discipline that settles it.
+- >-
+  A ruling is not a rule: the rule is the condition, and the ruling is its effect at the place.
+alternative_spellings:
+- hukm
+- hukum
+- ahkam_al_tajwid
+- ahkam_al_tajweed
+- tajwid_rule
+- tajweed_rule
+- tajweed_ruling
+english_glosses:
+- tajwid ruling
+related:
+- tajwid
+- izhar
+- idgham
+- iqlab
+- ikhfa
+- qalqalah
+- madd
+- ghunnah
+- tafkhim
+- tarqiq
+- noon_sakinah
+- meem_sakinah
+sources:
+- id: quranpedia_tajweed
+  ref: '4'
+  url: https://tajweed.quranpedia.net/term/show/4
+- id: tajweed_engine
+  url: https://github.com/quranpedia/tajweed-engine

@@ -14,14 +14,10 @@ status: draft
 definition: >
   ما دل على معنى في غيره، كحروف الجر والعطف والنفي والاستفهام.
 definition_en: >
-  A word carrying a meaning in something other than itself, such as the prepositions and
-  the particles of conjunction, negation and interrogation.
-purpose: >
-  يستخدم قيمةً من قيم قسم الكلمة، ويسمى بالاسم الكامل لأن `harf` وحده اسم
-  الحرف المبنى، وهو وحدة من وحدات الكتابة لا قسم من أقسام الكلمة.
-purpose_en: >
-  Used as a value of part of speech. It takes the full name because `harf` alone is the
-  name of the written letter, which is a unit of writing and not a part of speech.
+  A particle: a word with no meaning of its own that gives meaning to the words around
+  it, such as prepositions and the particles of conjunction, negation and interrogation.
+purpose: يستخدم قيمةً من قيم قسم الكلمة، وتحته تندرج وسوم الحروف التفصيلية في مدونات الصرف القرآني.
+purpose_en: Used as a value of part of speech, and the detailed particle tags of Quranic morphology corpora fall under it.
 boundaries:
   - حرف المعنى قسم من أقسام الكلمة، وحرف المبنى — وهو `letter` — وحدة من النص
     المكتوب.
@@ -35,3 +31,9 @@ related:
   - part_of_speech
   - letter
 sources: []
+note: >
+  يسمى بالاسم الكامل لأن `harf` وحده اسم الحرف المبنى، وهو وحدة من وحدات الكتابة لا قسم من
+  أقسام الكلمة؛ والقرار في سجل القرارات.
+note_en: >
+  It takes the full name because `harf` alone is the name of the written letter, a unit of
+  writing and not a part of speech; the decision is in the decision record.

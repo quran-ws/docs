@@ -14,8 +14,8 @@ definition: >
   ما فسر به القرآن من القرآن نفسه، أو من السنة، أو من قول الصحابة والتابعين،
   منقولًا بإسناده.
 definition_en: >
-  What the Quran has been explained by from the Quran itself, from the Sunnah, or from
-  the sayings of the Companions and the Successors, transmitted with its chain.
+  Tafsir transmitted with a chain of narration: explanation of the Quran drawn from the
+  Quran itself, from the Sunnah, or from the sayings of the Companions and Successors.
 purpose: >
   يستخدم محتوى يربط بالآية ويحمل معه ناقله ودرجة النقل، فلا يعامل معاملة نص
   التفسير المؤلف الذي ينسب إلى كتاب واحد.
@@ -54,4 +54,7 @@ note_en: >
 related:
   - tafsir
   - ayah
-sources: []
+  - tafsir_al_ray
+sources:
+  - id: qattan_mabahith
+    ref: "1/358"

@@ -11,19 +11,33 @@ origin: quranic
 tier: core
 status: draft
 plural: mushafs
-definition: الصحف التي جمع فيها القرآن مكتوبًا ومرتبًا؛ فالمصحف وعاء مكتوب للقرآن وليس مرادفًا
-  مطلقًا للقرآن نفسه.
+definition: >
+  الصحف التي جمع فيها القرآن مكتوبًا ومرتبًا على ترتيبه المعروف.
 definition_en: >
-  The written, ordered collection of the Quran in leaves; a Mushaf is a written vessel
-  for the Quran and not an absolute synonym for the Quran itself.
+  The Quran as a written, bound book, in its established order.
 purpose: يستخدم عندما تكون خصائص التمثيل المكتوب للقرآن مهمة، مثل الرسم والتخطيط والصفحات
   والأسطر والعلامات.
 purpose_en: >
   Used when the properties of the written representation matter: rasm, layout, pages,
   lines and marks.
+boundaries:
+  - المصحف وعاء مكتوب للقرآن وليس القرآن نفسه؛ فتختلف المصاحف في الرسم والصفحات والعلامات والقرآن واحد.
+boundaries_en:
+  - >-
+    A mushaf is a written vessel for the Quran, not the Quran itself: mushafs differ in
+    rasm, pages and marks while the Quran is one.
 alternative_spellings:
-- mus'haf
-- muṣḥaf
+  - mus'haf
+  - muṣḥaf
+  - moshaf
 english_glosses:
 - Quran Codex
-sources: []
+related:
+  - quran
+  - mushaf_edition
+  - rasm
+  - layout
+  - page
+sources:
+  - id: qattan_mabahith
+    ref: "1/119"

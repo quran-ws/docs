@@ -7,11 +7,11 @@ sidebar:
 ---
 
 Most readers are developers building Quran applications. Many don't read Arabic
-well, and most have never studied qira'at, tajwid, or ḍabṭ. Write plainly for
-them, and keep the content exact.
+well, and most have never studied qiraat, tajwid or dabt (the marks that vowel
+the text). Write plainly for them, and keep the content exact.
 
 This page is about the sentence. What a page must contain and how it is
-arranged is in [Writing a guide](./writing-guides/).
+arranged is in [Writing a guide](/guidelines/en/01-intro/writing-guides/).
 
 ## 1. Plain words, ordinary sentences
 
@@ -29,11 +29,16 @@ No:   A duplicated table silently falls into desuetude.
 - Say it plainly instead of turning it into a slogan or a neat contrast.
 - Prefer the familiar word when two are equally correct.
 - Use the direct verb: "the file is generated", not "generation of the file takes place".
-- Write numbers as digits in technical prose: 4, not four. Ranges use an en dash: 4–8.
+- Write a count or a measurement as digits: 10 qiraat, 60 hizbs, 114 surahs; not
+  ten, sixty, a hundred and fourteen. A small number that is not counting things
+  — "the three may differ", "one name cannot serve all four" — stays a word.
+  Ranges use an en dash: 4–8.
+- Use British spelling: modelling, judgement, normalise. A code identifier keeps
+  its own spelling: `normalize`, `tokenization`.
 - Define a scholarly or Quranic-sciences term the first time, or link it to the dictionary.
-- Don't assume the reader knows a riwayah from a qira'ah, or rasm from ḍabṭ.
+- Don't assume the reader knows a riwayah from a qiraah, or rasm from dabt.
 
-Plain in style, not in accuracy. The content stays exact.
+Plain language does not mean loose content. The facts stay exact.
 
 ## 2. Short, direct sentences
 
@@ -54,7 +59,7 @@ Use:    Naming needs four different things: a stable identifier in code, a
 Also avoid heavy noun phrases, inverted word order where plain order is
 clearer, and formal verbs where an ordinary one works.
 
-## 3. Write the standard, not the road to it
+## 3. State the rule, not how it was reached
 
 Readers want the rule, not how we arrived at it. State what is settled and
 leave the arguments, the measurements and the rejected alternatives to the
@@ -87,11 +92,11 @@ rationale into one sentence.
 
 ```text
 Avoid:  `code` an identifier used in code, APIs and databases. Derived by
-        sections 4 to 8 without exception, and what matters is that it stays
+        §4–§8 without exception, and what matters is that it stays
         stable even if unfamiliar.
 
 Use:    `code` is the stable identifier used in code, APIs and databases. We
-        generate it by the rules in sections 4 to 8, and don't change it later
+        generate it by the rules in §4–§8, and don't change it later
         just because a more common spelling exists.
 ```
 
@@ -101,7 +106,7 @@ whose referent isn't immediately visible, and defining a field by contrasting
 it with another instead of saying what it holds.
 
 A table is the wrong shape for field definitions: a narrow cell forces the
-fragment. Tables compare; sentences define.
+fragment. Use a table to compare things and a sentence to define one.
 
 ## 5. Don't build parallel sentences for their own sake
 
@@ -130,7 +135,28 @@ Requirement:  The system must display the ayah.
 
 The same goes for "should be capable of" and "is required to". Name the action.
 
-## 7. Don't translate field names or their values
+## 7. Write a concept by its code name in prose
+
+In running prose, write a concept the way its `code` is spelt, as a lowercase
+common noun: ayah, surah, mushaf, tajwid, waqf lazim, dabt. The `display` form
+(Tajweed, Noon Saghirah) is for user interfaces, the `display` field, and entry
+headings. Capitalise only at the start of a sentence, in a heading, or in a
+proper name: Hafs, al-Tawbah, the Quran.
+
+```text
+Avoid:  The Mushaf carries Tajweed colouring on every Ayah.
+Use:    The mushaf carries tajwid colouring on every ayah.
+```
+
+- Plurals in prose follow the code rule: riwayahs, hizbs, tariqs, rawis. `qiraat`
+  is kept only as the name of the discipline.
+- It is "numbering system", never "counting system" or "school", for the value;
+  "the Basran school" names the transmitters, not the system.
+- It is "dabt", not "ḍabṭ"; "codepoint"; "alif". Letter names are written as they
+  are said: noon, meem, seen, yaa, saad, haa, baa.
+- `al-` is never assimilated to a sun letter: al-Tawbah, not at-Tawbah.
+
+## 8. Don't translate field names or their values
 
 Field names and their values are written in English in the files, so write them
 in the page exactly as they appear there, in code font. Translating them cuts
@@ -144,15 +170,15 @@ Use:   | `kind` | `entity` |
 Explain what the values mean once, where the standard defines them, rather than
 with every entry. The prose around them is written in the page's language.
 
-## 8. Arabic-specific rules
+## 9. Arabic-specific rules
 
 The Arabic page carries rules that have no English equivalent: joining list
 items with و rather than commas, not attaching several coordinated nouns to one
 possessive, and a table of errors common in Arabic technical prose (حيث إن not
 حيث أن، أثر في not أثر على، دون not بدون). Note also that Arabic **letter
 names** are written as they are said — `noon_sakinah`, not `nun_sakinah` —
-which the terminology standard covers in section 6. See
-[أسلوب الكتابة العربية](/guidelines/ar/01-intro/writing-style/), sections 7, 8 and 9.
+which the terminology standard covers in §6. See
+[أسلوب الكتابة العربية](/guidelines/ar/01-intro/writing-style/), sections 7, 8 and 10.
 
 Reference: [دليل التحرير والصياغة العربية](https://github.com/kamalyaser31/arabic-guide),
 drawn from the Saudi Aramco Arabic style guide.
@@ -166,3 +192,5 @@ drawn from the Saudi Aramco Arabic style guide.
 - [ ] States the standard, not how it was reached.
 - [ ] No "must be able to" — say what is required or what is possible.
 - [ ] Field names and values in English code font, not translated.
+- [ ] British spelling; concepts by their code spelling, lowercase, in prose.
+- [ ] Counts as digits; "numbering system", "dabt", "alif", letter names as said.

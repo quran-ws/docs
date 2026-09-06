@@ -19,4 +19,8 @@ purpose: يستخدم للبحث الصرفي والتحليل اللغوي وت
 purpose_en: >
   Used for morphological search, linguistic analysis, and gathering words that share an
   origin.
+related:
+  - lemma
+  - stem
+  - morphology
 sources: []

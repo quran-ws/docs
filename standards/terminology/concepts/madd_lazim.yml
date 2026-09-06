@@ -1,0 +1,54 @@
+concept: madd_lazim
+names:
+  code: madd_lazim
+  display: Madd Lazim
+  arabic:
+    vocalized: المَدّ اللَّازِم
+    singular: المد اللازم
+kind: classification_value
+category: tajwid
+parent: madd
+origin: quranic
+tier: core
+status: draft
+definition: >-
+  مد فرعي سببه سكون أصلي ثابت وصلًا ووقفًا بعد حرف المد، في كلمة أو في حرف من فواتح السور،
+  مثقلًا كان بالإدغام أو مخففًا؛ ومقداره ست حركات.
+definition_en: >-
+  A secondary madd caused by an original sukun, fixed in continuing and in stopping, after
+  the letter of madd, in a word or in a letter of the surah openings, whether heavy with idgham
+  or light; its length is 6 counts.
+purpose: >-
+  يستخدم قيمةً من قيم المد، فيوسم به موضع النص مع مقداره، ويُقرأ منه ما يختلف به الطريق في
+  وصف التسجيل والمصحف.
+purpose_en: >-
+  Used as a value of madd, so that a place in the text is tagged with it and with its length,
+  and what differs by tariq is read from it in describing a recording or a mushaf.
+alternative_spellings:
+- madd_laazim
+- lazim
+- madd_lazim_kalimi
+- madd_lazim_harfi
+- mad_lazim
+english_glosses:
+- necessary madd
+related:
+- madd
+- huruf_muqattaah
+- sukun
+sources:
+- id: quranpedia_tajweed
+  ref: '103'
+  url: https://tajweed.quranpedia.net/term/show/103
+- id: quranpedia_tajweed
+  ref: '110'
+  url: https://tajweed.quranpedia.net/term/show/110
+- id: quranpedia_tajweed
+  ref: '111'
+  url: https://tajweed.quranpedia.net/term/show/111
+- id: quranpedia_tajweed
+  ref: '112'
+  url: https://tajweed.quranpedia.net/term/show/112
+- id: tajweed_engine
+  ref: madd-lazim-harfi
+  url: https://github.com/quranpedia/tajweed-engine

@@ -15,9 +15,18 @@ definition: القراءة ببطء وتؤدة مع استيفاء الحروف 
 definition_en: >
   Reciting slowly and deliberately, giving the letters and their rules their full due;
   much used in teaching.
-purpose: تستخدم لوصف مرتبة القراءة البطيئة الدقيقة.
+purpose: >
+  تستخدم قيمة من قيم مراتب القراءة، فيوسم بها التسجيل أو جلسة التعليم وتصفى بها.
 purpose_en: >
-  Used to describe the slow, exacting pace of recitation.
+  Used as a value of recitation pace, so that a recording or a teaching session is
+  tagged by its pace and filtered by it.
 alternative_spellings:
 - tahqeeq
-sources: []
+related:
+  - recitation_pace
+sources:
+  - id: quranpedia_tajweed
+    ref: "26"
+    url: https://tajweed.quranpedia.net/term/show/26
+  - id: nashr
+    ref: "1/205"

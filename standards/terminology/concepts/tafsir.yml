@@ -24,4 +24,14 @@ alternative_spellings:
 english_glosses:
 - Exegesis
 - Commentary
-sources: []
+related:
+  - tafsir_mathur
+  - tafsir_al_ray
+  - mufassir
+  - gharib_al_quran
+  - ayah
+sources:
+  - id: qattan_mabahith
+    ref: "1/334"
+  - id: itqan
+    ref: "4/192"

@@ -31,9 +31,16 @@ boundaries_en:
     The place is a location in the text, the sajdah mark is a sign drawn for it, and
     sujud al-tilawah is the act.
 english_glosses:
-  - Sajdah Place
+  - Prostration
 related:
   - sajdah_mark
   - sujud_al_tilawah
   - ayah
-sources: []
+  - sajdah_line
+alternative_spellings:
+  - sajdah
+  - sajda
+  - sajdah_place
+sources:
+  - id: itqan
+    ref: "1/381"

@@ -2,10 +2,9 @@ concept: noon_sakinah
 names:
   code: noon_sakinah
   display: Noon Sakinah
-  display_evidence: 'GitHub phrase search: noon sakinah 478 vs nun sakinah 118. Letter names are written
-    as they are said, so the derivation gives noon rather than nun.
-
-    '
+  display_evidence: >
+    GitHub phrase search: noon sakinah 478 vs nun sakinah 118. Letter names are
+    written as they are said, so the derivation gives noon rather than nun.
   transliteration: nūn sākinah
   arabic:
     vocalized: النُّون السَّاكِنَة
@@ -15,27 +14,42 @@ category: tajwid
 origin: quranic
 tier: core
 status: draft
-definition: 'نون خالية من الحركة، تثبت لفظًا وخطًا ووصلًا ووقفًا.
-
-  '
+definition: >
+  نون خالية من الحركة، تثبت لفظًا وخطًا ووصلًا ووقفًا.
 definition_en: >
   A noon carrying no vowel, fixed in pronunciation and in writing, in continuing and in
   stopping.
-purpose: 'نستخدمها موضعًا تتفرع عليه أحكام الإظهار والإدغام والإقلاب والإخفاء في محركات التجويد.
-
-  '
+purpose: >
+  تستخدم موضعًا تتفرع عليه أحكام الإظهار والإدغام والإقلاب والإخفاء في محركات التجويد.
 purpose_en: >
-  We use it as the place that the rulings of izhar, idgham, iqlab and ikhfa branch from
-  in tajwid engines.
+  Used as the trigger of the four rulings, izhar, idgham, iqlab and ikhfa, in tajwid
+  engines.
 alternative_spellings:
 - nun_sakinah
 - noon_saakinah
 related:
-- tajwid
-- tanwin
+  - tajwid
+  - tanwin
+  - izhar
+  - idgham
+  - iqlab
+  - ikhfa
+  - meem_sakinah
 sources:
-- id: tajweed_engine
-  ref: noon-tanween
-  url: https://github.com/quranpedia/tajweed-engine
+  - id: tajweed_engine
+    ref: "noon-tanween"
+    url: https://github.com/quranpedia/tajweed-engine
+  - id: quranpedia_tajweed
+    ref: "64"
+    url: https://tajweed.quranpedia.net/term/show/64
+  - id: quranpedia_tajweed
+    ref: "57"
+    url: https://tajweed.quranpedia.net/term/show/57
+  - id: quranpedia_tajweed
+    ref: "86"
+    url: https://tajweed.quranpedia.net/term/show/86
+  - id: quranpedia_tajweed
+    ref: "67"
+    url: https://tajweed.quranpedia.net/term/show/67
 english_glosses:
 - Unvowelled Noon

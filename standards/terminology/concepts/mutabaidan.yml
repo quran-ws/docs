@@ -1,0 +1,32 @@
+concept: mutabaidan
+names:
+  code: mutabaidan
+  display: Mutabaidan
+  arabic:
+    vocalized: المُتَبَاعِدَان
+    singular: المتباعدان
+kind: classification_value
+category: tajwid
+parent: alaqat_al_harfayn
+origin: quranic
+tier: extended
+status: draft
+definition: حرفان تباعدا مخرجًا واختلفا صفة، ولا إدغام بينهما.
+definition_en: >-
+  Two letters distant in point of articulation and differing in attribute; no idgham falls
+  between them.
+purpose: >-
+  يستخدم قيمةً من قيم علاقة الحرفين، فيُقرأ منه سبب الإدغام أو الإظهار في الموضع بدل استنباطه
+  من الحرفين في كل مرة.
+purpose_en: >-
+  Used as a value of the relation of two letters, so that the cause of idgham or izhar at
+  the place is read from it rather than worked out from the two letters every time.
+alternative_spellings:
+- mutabaidain
+- mutabaidayn
+- mutaba'idan
+related:
+- alaqat_al_harfayn
+- idgham
+- izhar
+sources: []

@@ -1,0 +1,39 @@
+concept: lahn
+names:
+  code: lahn
+  display: Lahn
+  arabic:
+    vocalized: اللَّحْن
+    singular: اللحن
+kind: classification
+category: tajwid
+origin: quranic
+tier: extended
+status: draft
+definition: الخطأ في قراءة القرآن والميل بها عن الصواب، جليًّا كان أو خفيًّا.
+definition_en: >-
+  Error in reciting the Quran and departure from what is correct, whether plain or subtle.
+purpose: >-
+  يستخدم تصنيفًا لما تبلغ عنه أدوات تقويم التلاوة، فيُفرق بين ما يخل بالمبنى أو المعنى وما
+  يخل بكمال الأداء.
+purpose_en: >-
+  Used as a classification of what recitation-assessment tools report, separating what damages
+  the form or the meaning from what damages the perfection of delivery.
+boundaries:
+- اللحن خطأ في الأداء، والوجه اختلاف جائز فيه.
+boundaries_en:
+- Lahn is an error in delivery; a wajh is a permitted variation in it.
+alternative_spellings:
+- lahn_error
+- tajwid_error
+english_glosses:
+- recitation error
+related:
+- lahn_jali
+- lahn_khafi
+- tajwid
+- tilawah
+sources:
+- id: quranpedia_tajweed
+  ref: '8'
+  url: https://tajweed.quranpedia.net/term/show/8

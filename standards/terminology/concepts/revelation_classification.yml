@@ -4,7 +4,7 @@ names:
   display: Revelation Classification
   arabic:
     vocalized: تَصْنِيف النُّزُول
-    singular: المكي والمدني
+    singular: تصنيف النزول
 kind: classification
 category: revelation
 origin: standard
@@ -19,4 +19,13 @@ purpose: يستخدم لتصنيف السور أو الآيات بحسب علا�
 purpose_en: >
   Used to classify surahs or ayahs by their relation to the Hijrah, without implying
   that the classification is only geographical.
-sources: []
+related:
+  - makki
+  - madani
+  - disputed
+  - nuzul
+sources:
+  - id: qattan_mabahith
+    ref: "1/60"
+  - id: itqan
+    ref: "1/37"

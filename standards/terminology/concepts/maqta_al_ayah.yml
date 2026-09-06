@@ -1,0 +1,51 @@
+concept: maqta_al_ayah
+names:
+  code: maqta_al_ayah
+  display: Maqta al-Ayah
+  arabic:
+    vocalized: مَقْطَع الآيَة
+    singular: مقطع الآية
+    plural: مقاطع الآيات
+kind: unit
+category: mushaf
+origin: standard
+tier: core
+status: draft
+plural: maqta_al_ayahs
+definition: >-
+  ما ظهر من آية واحدة في سطر واحد من صفحة مصحف بعينه؛ فالآية التي تمتد على سطرين مقطعان.
+definition_en: >-
+  What appears of one ayah on one line of a page of a given mushaf; an ayah that runs over
+  two lines is two maqtas.
+purpose: >-
+  يستخدم وحدةً للعرض والوسم في تخطيط الصفحة، لأن الآية لا تلزم السطر ولا السطر الآية؛ وعليه
+  تُبنى المحاذاة والإبراز في مصحف مرسوم.
+purpose_en: >-
+  Used as the unit of display and tagging in the page layout, because an ayah does not keep
+  to a line nor a line to an ayah; alignment and highlighting in a drawn mushaf are built
+  on it.
+boundaries:
+- المقطع صفة في تخطيط مصحف بعينه، وليس جزءًا من هوية الآية.
+- >-
+  المقطع غير الكلمة: قد يكون كلمة أو كلمات، أو جزء كلمة حيث يُقطع داخلها.
+boundaries_en:
+- >-
+  A maqta belongs to the layout of one mushaf and is no part of the identity of the ayah.
+- >-
+  A maqta is not a word: it may be a word, several words, or part of a word where the break
+  falls inside one.
+alternative_spellings:
+- ayah_segment
+- ayah_part
+- line_ayah
+- g_ayah
+english_glosses:
+- ayah fragment
+related:
+- ayah
+- line
+- page
+- layout
+sources:
+- id: hafs_svg_registry
+  ref: glossary!g.ayah

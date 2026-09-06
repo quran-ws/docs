@@ -22,15 +22,13 @@ purpose_en: >
   segmentation boundary, and to keep what a segmenter produces distinct from what a
   reader counts as a word.
 boundaries:
-  - الكلمة وحدة يعرفها القارئ، والـtoken وحدة ينتجها منهج تقسيم؛ فاختلاف المنهج
-    يغير عدد الـtokens ولا يغير عدد الكلمات.
+  - الكلمة وحدة يعرفها القارئ، و`token` وحدة ينتجها منهج تقسيم؛ فاختلاف المنهج
+    يغير عدد `tokens` ولا يغير عدد الكلمات.
 boundaries_en:
   - >-
     A word is a unit the reader recognises; a token is a unit a segmentation method
     produces, so changing the method changes the number of tokens and not the number of
     words.
-english_glosses:
-  - Token
 related:
   - word
   - morpheme

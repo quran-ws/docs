@@ -14,7 +14,14 @@ definition: تحليل بنية الكلمة وصيغتها وما تحمله م
 definition_en: >
   The analysis of a word's structure and form and the morphological properties it
   carries.
-purpose: يستخدم لتمثيل السمات الصرفية للكلمات أو الـtokens.
+purpose: يستخدم لتمثيل السمات الصرفية للكلمات أو `tokens`.
 purpose_en: >
   Used to represent the morphological features of words or tokens.
+related:
+  - morpheme
+  - root
+  - lemma
+  - stem
+  - part_of_speech
+  - wazn
 sources: []

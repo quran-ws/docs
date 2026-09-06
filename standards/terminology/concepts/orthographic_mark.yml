@@ -3,7 +3,8 @@ names:
   code: orthographic_mark
   display: Orthographic Mark
   arabic:
-    vocalized: العَلَامَة الإمْلَائِيَّة
+    vocalized: العَلَامَة الإِمْلَائِيَّة
+    singular: العلامة الإملائية
 kind: classification
 category: dabt
 parent: mushaf_mark
@@ -18,4 +19,13 @@ purpose: تستخدم أبًا للعلامات التي تتعلق برسم ا�
 purpose_en: >
   Used as the parent of the marks that concern how a word is written, rather than its
   vowel or how it is stopped on.
-sources: []
+related:
+  - mushaf_mark
+  - rasm
+sources:
+  - id: quranpedia_tajweed
+    ref: "134"
+    url: https://tajweed.quranpedia.net/term/show/134
+  - id: quranpedia_tajweed
+    ref: "135"
+    url: https://tajweed.quranpedia.net/term/show/135

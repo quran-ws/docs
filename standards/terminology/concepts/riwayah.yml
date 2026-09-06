@@ -7,7 +7,7 @@ names:
     singular: الرواية
 kind: concept
 category: qiraat
-parent: qiraah
+part_of: qiraah
 registry: qiraat
 origin: quranic
 tier: core
@@ -17,9 +17,21 @@ definition: ما ينسب إلى راو عن إمام القراءة؛ مثل ر
 definition_en: >
   What is attributed to a transmitter from an imam of a qiraah, such as the riwayah of
   Hafs from Asim.
-purpose: تستخدم لتحديد الرواية التي يتبعها نص أو مصحف أو تسجيل أو dataset.
+purpose: تستخدم لتحديد الرواية التي يتبعها نص أو مصحف أو تسجيل أو `dataset`.
 purpose_en: >
-  Used to state which riwayah a text, a Mushaf, a recording or a dataset follows.
+  Used to state which riwayah a text, a mushaf, a recording or a dataset follows.
 alternative_spellings:
-- riwaya
-sources: []
+  - riwaya
+  - rewaya
+  - riwayat
+related:
+  - qiraah
+  - rawi
+  - tariq
+  - recitation
+  - mushaf_edition
+sources:
+  - id: qattan_mabahith
+    ref: "1/171"
+  - id: nashr
+    ref: "1/115"

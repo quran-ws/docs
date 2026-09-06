@@ -14,8 +14,25 @@ definition: قطع القراءة عند موضع من النص وفق أحكا�
 definition_en: >
   Stopping the recitation at a place in the text according to the rules of stopping and
   starting.
-purpose: يمثل المفهوم العام للوقف، بينما تمثل `Waqf Mark` العلامات المطبوعة التي ترشد إليه.
+purpose: >
+  يمثل المفهوم العام للوقف، بينما تمثل `waqf_mark` العلامات المطبوعة التي ترشد إليه.
 purpose_en: >
-  Represents the general concept of stopping, while `Waqf Mark` represents the printed
+  Represents the general concept of stopping, while `waqf_mark` represents the printed
   signs that point to it.
-sources: []
+english_glosses:
+  - Stop
+  - Pause
+related:
+  - waqf_mark
+  - waqf_ruling
+  - waqf_mark_type
+  - tajwid
+  - saktah
+sources:
+  - id: quranpedia_tajweed
+    ref: "115"
+    url: https://tajweed.quranpedia.net/term/show/115
+  - id: itqan
+    ref: "1/282"
+  - id: nashr
+    ref: "1/226"

@@ -13,8 +13,12 @@ status: draft
 plural: lines
 definition: سطر طباعي داخل صفحة مصحف أو تخطيط معين.
 definition_en: >
-  A typeset line within a page of a Mushaf or of a given layout.
+  A typeset line within a page of a mushaf or of a given layout.
 purpose: يستخدم لتمثيل مواقع النص والأشكال داخل التخطيط الطباعي.
 purpose_en: >
   Used to represent where text and shapes sit within the typeset layout.
+related:
+  - page
+  - layout
+  - maqta_al_ayah
 sources: []

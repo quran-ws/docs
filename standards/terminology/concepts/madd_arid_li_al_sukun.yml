@@ -1,0 +1,51 @@
+concept: madd_arid_li_al_sukun
+names:
+  code: madd_arid_li_al_sukun
+  display: Madd Arid lil-Sukun
+  display_evidence: >-
+    No dominant English form; «lil-Sukun» is how the phrase is written in English tajwid teaching,
+    and the hyphenated preposition follows the display rule for the article.
+  arabic:
+    vocalized: المَدّ العَارِض لِلسُّكُون
+    singular: المد العارض للسكون
+kind: classification_value
+category: tajwid
+parent: madd
+origin: quranic
+tier: core
+status: draft
+definition: >-
+  مد سببه سكون عارض في الوقف بعد حرف المد، ويجوز فيه القصر والتوسط والطول.
+definition_en: >-
+  A madd caused by an incidental sukun in stopping after the letter of madd; shortening, middle
+  length and full length are all permitted in it.
+purpose: >-
+  يستخدم قيمةً من قيم المد، فيوسم به موضع النص مع مقداره، ويُقرأ منه ما يختلف به الطريق في
+  وصف التسجيل والمصحف.
+purpose_en: >-
+  Used as a value of madd, so that a place in the text is tagged with it and with its length,
+  and what differs by tariq is read from it in describing a recording or a mushaf.
+alternative_spellings:
+- madd_arid_lilsukun
+- madd_arid_lil_sukun
+- madd_arid
+- arid_lil_sukun
+- madd_aarid
+- madd_arid_lissukun
+english_glosses:
+- incidental madd
+related:
+- madd
+- madd_al_lin
+- waqf
+- wajh
+note: >-
+  الاشتقاق يعطي `madd_arid_li_al_sukun` بفصل لام الجر عن أداة التعريف، على ما يقرره القسم
+  8، والصورة الملحومة `lilsukun` محالة في `alternative_spellings`.
+note_en: >-
+  The derivation gives `madd_arid_li_al_sukun`, separating the preposition from the article
+  as section 8 requires; the fused form `lilsukun` resolves through `alternative_spellings`.
+sources:
+- id: quranpedia_tajweed
+  ref: '109'
+  url: https://tajweed.quranpedia.net/term/show/109

@@ -1,0 +1,73 @@
+// The same model as quran_text.sql, for an ORM. Model names are the canonical
+// code in PascalCase; @@map keeps the table names canonical in the database.
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model MushafEdition {
+  mushaf_edition_id     Int      @id @default(autoincrement())
+  code                  String   @unique
+  name                  String
+  publisher             String
+  riwayah               String   // registry member: hafs_an_asim
+  ayah_numbering_system String   // registry member: ayah_numbering_kufi
+  version               String
+  text_hash             String
+  retrieved             DateTime
+  ayahs                 Ayah[]
+
+  @@map("mushaf_editions")
+}
+
+model Surah {
+  surah_number              Int     @id
+  code                      String  @unique // registry member: fatihah
+  revelation_classification String  // makki | madani | disputed
+  revelation_order          Int?
+  ayah_count                Int
+  ayahs                     Ayah[]
+
+  @@map("surahs")
+}
+
+model Ayah {
+  ayah_key               String        // textual key `112:1`
+  mushaf_edition_id      Int
+  surah_number           Int
+  ayah_number            Int
+  ayah_numbering_system  String
+  text                   String        @db.Text // exactly as transmitted, never normalised
+  text_hash              String
+  basmalah_present       Boolean       @default(false)
+  basmalah_text          String?       @db.Text
+  search_key             String?       @db.Text // derived; never shown, never stored in place of text
+  search_key_source_hash String?
+  mushaf_edition         MushafEdition @relation(fields: [mushaf_edition_id], references: [mushaf_edition_id])
+  surah                  Surah         @relation(fields: [surah_number], references: [surah_number])
+  words                  Word[]
+
+  @@id([mushaf_edition_id, ayah_numbering_system, ayah_key])
+  @@unique([mushaf_edition_id, surah_number, ayah_number, ayah_numbering_system])
+  @@map("ayahs")
+}
+
+model Word {
+  word_key              String // textual key `112:1:3`
+  mushaf_edition_id     Int
+  ayah_numbering_system String
+  ayah_key              String
+  word_position         Int
+  tokenization          String
+  text                  String @db.Text
+  ayah                  Ayah   @relation(fields: [mushaf_edition_id, ayah_numbering_system, ayah_key], references: [mushaf_edition_id, ayah_numbering_system, ayah_key])
+
+  @@id([mushaf_edition_id, ayah_numbering_system, tokenization, word_key])
+  @@unique([mushaf_edition_id, ayah_numbering_system, ayah_key, tokenization, word_position])
+  @@map("words")
+}

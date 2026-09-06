@@ -1,0 +1,51 @@
+concept: ayah_count
+names:
+  code: ayah_count
+  display: Ayah Count
+  arabic:
+    vocalized: عَدَد الآيَات
+    singular: عدد الآيات
+kind: property
+category: ayah_numbering
+registry: ayah_counts
+origin: standard
+tier: core
+status: draft
+plural: ayah_counts
+definition: >-
+  عدد آيات السورة في نظام عد بعينه، وقد يختلف من نظام إلى نظام باختلاف الفواصل المعدودة.
+definition_en: >-
+  The number of ayahs in a surah under a given numbering system; it may differ from one system
+  to another as the counted fasilahs differ.
+purpose: >-
+  يستخدم للتحقق من المراجع وحدود السور وبناء الفهارس، ويُقرأ من سجل العد لا يُحسب من نص بعينه.
+purpose_en: >-
+  Used to check references and surah boundaries and to build indexes; it is read from the
+  registry of counts, not computed from one text.
+boundaries:
+- العدد صفة في السورة تحت نظام عد، لا في المصحف.
+boundaries_en:
+- >-
+  The count belongs to the surah under a numbering system, not to the mushaf.
+alternative_spellings:
+- ayat_count
+- number_of_ayahs
+- adad_al_ayat
+- adad_al_ay
+english_glosses:
+- verse count
+related:
+- ayah_numbering_system
+- surah
+- ayah
+note: >-
+  الاسم البرمجي على نسق `ayah_numbering_*` واسم السجل، لا اشتقاق من «عَدَد الآيَات»؛ فالمفهوم
+  من مفاهيم التمثيل وإن كان لعدد الآي أصل في علم العد.
+note_en: >-
+  The code name follows `ayah_numbering_*` and the registry's name, not a derivation of «عَدَد
+  الآيَات»; the concept is one of modelling, though the count of ayahs has its origin in the
+  science of counting.
+sources:
+- id: bayan_dani
+  ref: 1/79
+  url: https://files.turath.io/books-v3/5542.json

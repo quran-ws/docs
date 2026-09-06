@@ -13,10 +13,25 @@ tier: extended
 status: draft
 definition: السور التي تقارب آياتها المئة أو تزيد عليها أو تنقص عنها قليلًا.
 definition_en: >
-  The surahs whose ayahs come to about a hundred, a little more or a little less.
-purpose: تستخدم لتصنيف السور وفق تقسيمها التراثي.
+  The surahs whose ayahs come to about 100, a little more or a little less.
+purpose: >
+  تستخدم قيمة من قيم تصنيف السور، فتربط بها خطط القراءة وما يعالج المجموعة وحدة واحدة من
+  كتب التفسير.
 purpose_en: >
-  Used to classify the surahs according to their traditional division.
+  Used as a value of surah group, so that reading plans and the tafsir works that treat
+  the group as a unit can refer to it.
 english_glosses:
 - Hundred-Verse Surahs
-sources: []
+related:
+  - surah_group
+  - surah
+note: >
+  لا يعين المعيار أعضاء المجموعة سورة سورة: فالمصادر تختلف في السابعة من الطوال وفي أول
+  المفصل، ولا سجل بعد يحصر أعضاء كل مجموعة بمصدره.
+note_en: >
+  The standard does not list the group's members surah by surah: the sources differ over
+  the seventh of the tiwal and the start of the mufassal, and no registry yet enumerates
+  each group's members with its source.
+sources:
+  - id: itqan
+    ref: "1/201"

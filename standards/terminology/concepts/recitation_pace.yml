@@ -4,7 +4,7 @@ names:
   display: Recitation Pace
   arabic:
     vocalized: مَرَاتِب القِرَاءَة
-    singular: مرتبة القراءة من حيث السرعة
+    singular: مراتب القراءة
 kind: classification
 category: recitation_pace
 origin: standard
@@ -13,8 +13,16 @@ status: draft
 definition: تصنيف لسرعة أداء القراءة مع المحافظة على أحكامها.
 definition_en: >
   A classification of how fast a recitation is delivered while its rules are kept.
-purpose: يفصل مراتب السرعة التقليدية عن أنماط التسجيل مثل `Murattal` و`Mujawwad`.
+purpose: يفصل مراتب السرعة التقليدية عن أنماط التسجيل مثل `murattal` و`mujawwad`.
 purpose_en: >
-  Keeps the traditional paces apart from recording styles such as `Murattal` and
-  `Mujawwad`.
-sources: []
+  Keeps the traditional paces apart from recording styles such as `murattal` and
+  `mujawwad`.
+related:
+  - tahqiq
+  - tadwir
+  - hadr
+  - recitation_style
+  - tartil
+sources:
+  - id: nashr
+    ref: "1/205"

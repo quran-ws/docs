@@ -1,0 +1,51 @@
+concept: madd_al_silah
+names:
+  code: madd_al_silah
+  display: Madd al-Silah
+  arabic:
+    vocalized: مَدّ الصِّلَة
+    singular: مد الصلة
+kind: classification_value
+category: tajwid
+parent: madd
+origin: quranic
+tier: core
+status: draft
+definition: >-
+  مد ناشئ عن صلة هاء الضمير بواو أو ياء إذا وقعت بين متحركين؛ صغرى إن لم يقع بعدها همز، وكبرى
+  إن وقع.
+definition_en: >-
+  A madd arising from joining the pronoun haa to a waw or a yaa when it falls between two
+  vowelled letters; sughra when no hamzah follows, kubra when one does.
+purpose: >-
+  يستخدم قيمةً من قيم المد، فيوسم به موضع النص مع مقداره، ويُقرأ منه ما يختلف به الطريق في
+  وصف التسجيل والمصحف.
+purpose_en: >-
+  Used as a value of madd, so that a place in the text is tagged with it and with its length,
+  and what differs by tariq is read from it in describing a recording or a mushaf.
+alternative_spellings:
+- madd_silah
+- silah
+- madd_al_sila
+- madd_silah_sughra
+- madd_silah_kubra
+- mad_silah
+english_glosses:
+- pronoun madd
+related:
+- madd
+- small_waw
+- small_yaa
+sources:
+- id: quranpedia_tajweed
+  ref: '97'
+  url: https://tajweed.quranpedia.net/term/show/97
+- id: quranpedia_tajweed
+  ref: '96'
+  url: https://tajweed.quranpedia.net/term/show/96
+- id: quranpedia_tajweed
+  ref: '95'
+  url: https://tajweed.quranpedia.net/term/show/95
+- id: tajweed_engine
+  ref: madd-silah-sughra
+  url: https://github.com/quranpedia/tajweed-engine

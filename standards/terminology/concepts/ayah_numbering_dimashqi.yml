@@ -2,8 +2,10 @@ concept: ayah_numbering_dimashqi
 names:
   code: ayah_numbering_dimashqi
   display: Dimashqi Numbering
+  display_evidence: >
+    GitHub phrase search: dimashqi numbering 0 vs shami numbering 0. No form is established, so the display follows the code; `shami` stays an alias.
   arabic:
-    vocalized: العَدّ الدِّمَشْقِي
+    vocalized: العَدّ الدِّمَشْقِيّ
     singular: العد الدمشقي
 kind: classification_value
 category: ayah_numbering
@@ -14,20 +16,21 @@ status: draft
 definition: >
   عد أهل الشام، المروي عن يحيى بن الحارث الذماري عن ابن عامر، ويسمى العد الشامي.
 definition_en: >
-  The counting of the people of Sham, transmitted from Yahya ibn al-Harith al-Dhimari
-  from Ibn Amir; also called the Shami counting.
+  The Damascene numbering system, transmitted from Yahya ibn al-Harith al-Dhimari from
+  Ibn Amir; also called the Shami numbering.
 purpose: >
-  يستخدم قيمةً من قيم نظام عد الآي، فيعرف به ما تستند إليه أرقام الآيات وحدودها
-  في مصحف أو dataset، وتقابل به مواضع الآي بين الأنظمة.
+  يستخدم قيمة من قيم نظام عد الآي، فيعرف به ما تستند إليه أرقام الآيات وحدودها في مصحف
+  أو `dataset`، وتقابل به مواضع الآي بين الأنظمة.
 purpose_en: >
-  Used as a value of the ayah numbering system, so that what a Mushaf's or a dataset's
-  ayah numbers and boundaries rest on is known, and ayah positions can be mapped between
+  Used as a value of the ayah numbering system, so that a mushaf or dataset states which
+  numbering its ayah numbers and boundaries follow, and positions can be mapped between
   systems.
 alternative_spellings:
   - dimashqi_numbering
   - shami
   - shami_numbering
   - damascene_numbering
+  - dimashqi
 related:
   - ayah_numbering_system
   - ayah
@@ -41,4 +44,6 @@ note_en: >
   derivation of the Arabic name: deriving from «العَدّ» gives `add`, an English verb,
   and `makki` is already a value of `revelation_classification`. The reasoning is in the
   decision record.
-sources: []
+sources:
+  - id: bayan_dani
+    ref: "1/82"

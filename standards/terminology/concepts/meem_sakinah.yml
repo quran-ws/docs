@@ -1,0 +1,51 @@
+concept: meem_sakinah
+names:
+  code: meem_sakinah
+  display: Meem Sakinah
+  display_evidence: >-
+    tools/display_measurements.json: meem sakinah 308 vs mim sakinah 57. Letter names are
+    written as they are said, so the derivation gives meem.
+  arabic:
+    vocalized: المِيم السَّاكِنَة
+    singular: الميم الساكنة
+kind: concept
+category: tajwid
+origin: quranic
+tier: core
+status: draft
+definition: ميم خالية من الحركة، ثابتة لفظًا وخطًّا، تقع في وسط الكلمة أو آخرها.
+definition_en: >-
+  A meem carrying no vowel, fixed in pronunciation and in writing, falling in the middle of
+  a word or at its end.
+purpose: تستخدم موضعًا تتفرع عليه الأحكام الشفوية الثلاثة، الإدغام والإخفاء والإظهار، في محركات التجويد.
+purpose_en: Used as the trigger of the three labial rulings, idgham, ikhfa and izhar, in tajwid engines.
+boundaries:
+- الميم الساكنة غير الميم المقلوبة عن النون في الإقلاب وإن اتحد صوتهما.
+boundaries_en:
+- >-
+  Meem sakinah is not the meem that noon turns into in iqlab, though the two sound the same.
+alternative_spellings:
+- mim_sakinah
+- meem_saakinah
+- meem_sakina
+english_glosses:
+- unvowelled meem
+related:
+- noon_sakinah
+- izhar
+- idgham
+- ikhfa
+- ghunnah
+sources:
+- id: quranpedia_tajweed
+  ref: '63'
+  url: https://tajweed.quranpedia.net/term/show/63
+- id: quranpedia_tajweed
+  ref: '66'
+  url: https://tajweed.quranpedia.net/term/show/66
+- id: quranpedia_tajweed
+  ref: '68'
+  url: https://tajweed.quranpedia.net/term/show/68
+- id: tajweed_engine
+  ref: izhar-shafawi-meem
+  url: https://github.com/quranpedia/tajweed-engine

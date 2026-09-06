@@ -1,0 +1,21 @@
+{
+  "dataset": "tanzil_uthmani_hafs_kufi",
+  "mushaf_edition": "tanzil_uthmani",
+  "name": "Tanzil Uthmani text",
+  "publisher": "Tanzil.net, served by api.alquran.cloud as edition quran-uthmani",
+  "riwayah": "hafs_an_asim",
+  "qiraah": "asim",
+  "ayah_numbering_system": "ayah_numbering_kufi",
+  "rasm": "rasm_uthmani",
+  "version": "1.0.0",
+  "source_hash": "5479eee85e42dd3315cb339a95115328f2617f0d23214c832cc38f519d6ccd35",
+  "source_hash_covers": "the one ayah in ayah.json; for a full import, the hash of the whole published file",
+  "derived_from": null,
+  "encoding": "UTF-8",
+  "surah_count": 114,
+  "ayah_count": 6236,
+  "license": "Tanzil's own terms; the Quranic text carries no claim of ownership",
+  "errata": "errata.json",
+  "released": "2026-09-06",
+  "note": "version is this dataset's own; Tanzil publishes a version number with each release, record it in derived_from when importing the full text, e.g. {\"dataset\": \"tanzil\", \"version\": \"1.1\", \"source_hash\": \"…\"}"
+}

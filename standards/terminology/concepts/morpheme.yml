@@ -23,18 +23,25 @@ purpose_en: >
   Used to represent the division of a Quranic word into its morphological parts, which
   is the level that morphological features and tags are attached to in analysis corpora.
 boundaries:
-  - الوحدة الصرفية جزء من الكلمة، والـtoken وحدة تقسيم قد تساوي الكلمة أو تزيد
+  - الوحدة الصرفية جزء من الكلمة، و`token` وحدة تقسيم قد تساوي الكلمة أو تزيد
     عليها.
 boundaries_en:
   - >-
     A morpheme is a part of a word; a token is a unit of segmentation that may equal a
     word or span more than one.
 alternative_spellings:
-  - segment
   - word_segment
 related:
   - word
   - token
   - stem
   - morphology
+note: >
+  الاسم `segment` يعني في مدونات الصرف القرآني الوحدة الصرفية، ويعني في واجهات الصوت
+  توقيت الكلمة؛ فلا يُحَلّ الاسم وحده إلى شيء، و`word_segment` يُحَلّ إلى هذا المدخل،
+  والمعنى الصوتي في `word_timing`.
+note_en: >
+  In Quranic morphology corpora `segment` means the morpheme; in audio APIs it means a
+  word timing. The bare name resolves to nothing, `word_segment` resolves here, and the
+  audio sense is `word_timing`.
 sources: []

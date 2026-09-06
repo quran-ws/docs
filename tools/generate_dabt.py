@@ -4,14 +4,24 @@
 copied from the column that records it. Nothing here is invented: where the
 registry says a name is absent, the field is null.
 """
-import csv, os, sys, re
-sys.path.insert(0, os.path.dirname(__file__))
-from translit import code_spelling, display_spelling
-from unicode_props import properties
+import json, os, sys, re
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from translit import code_spelling, display_spelling, _bare
+from unicode_props import properties, UNIDATA_VERSION
+from registry import records
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TSV = os.path.join(ROOT, "standards/terminology/data/dabt_marks.tsv")
 OUT = os.path.join(ROOT, "standards/terminology/concepts")
+SCHEMA = os.path.join(ROOT, "standards/terminology/schema.json")
+
+# The registry's columns, by the header in its first row.
+COL = {
+    "id": "الاسم في الملفات", "codepoints": "المحارف", "family": "الفئة",
+    "dabt": "الاسم الاصطلاحي في علم الضبط", "by_shape": "الاسم حسب كتابتها باللغة العربية",
+    "intro": "الاسم بحسب ضبط المصحف", "symbol": "الرمز في المصحف كتابة",
+    "definition": "الغرض في ضبط المصحف", "definition_en": "الغرض في ضبط المصحف (إنجليزي)",
+}
 
 # The phrase in the علم الضبط column that *names* the mark, as opposed to
 # describing its shape. Choosing the phrase is editorial; spelling it is not.
@@ -27,13 +37,13 @@ NAMING_PHRASE = {
  "small-noon": ["النُّون الصَّغِيرَة"],
  "sifr-mustadir": ["الصِّفْر المُسْتَدِير"], "sifr-mustatil": ["الصِّفْر المُسْتَطِيل"],
  "meem-iqlab": ["المِيم الصَّغِيرَة"],
- "waqf-jaiz": ["الوَقْف الجَائِز", "مُسْتَوِي الطَّرَفَيْن"],
- "wasl-awla": ["الوَقْف الجَائِز", "الوَصْل أَوْلَى"],
- "waqf-awla": ["الوَقْف الجَائِز", "الوَقْف أَوْلَى"],
+ "waqf-jaiz": ["الوَقْف الجَائِز مُسْتَوِي الطَّرَفَيْن"],
+ "wasl-awla": ["الوَقْف الجَائِز مَعَ كَوْنِ الوَصْل أَوْلَى"],
+ "waqf-awla": ["الوَقْف الجَائِز مَعَ كَوْنِ الوَقْف أَوْلَى"],
  "waqf-lazim": ["الوَقْف اللَّازِم"],
  "muanaqah": ["وَقْف المُعَانَقَة"], "waqf-mamnu": ["الوَقْف المَمْنُوع"],
  "saktah": ["عَلَامَة السَّكْتَة"], "seen-reading": ["سِين القِرَاءَة"],
- "imalah": ["الإمَالَة"], "ishmam": ["الإشْمَام"], "tashil": ["التَّسْهِيل"],
+ "imalah": ["الإِمَالَة"], "ishmam": ["الإِشْمَام"], "tashil": ["التَّسْهِيل"],
  "sajdah-sign": ["عَلَامَة السَّجْدَة"],
  "sajdah-line": ["خَطّ السَّجْدَة"],
  "hizb": ["عَلَامَة التَّقْسِيم"],
@@ -42,18 +52,89 @@ NAMING_PHRASE = {
 # Display forms that differ from the derived code, each with its evidence.
 # Letter names take their spoken form: a letter's name *is* its pronunciation.
 DISPLAY = {
-    "nun": ("Noon", "GitHub phrase search: noon sakinah 478 vs nun sakinah 118"),
-    "mim": ("Meem", "GitHub phrase search: meem sakinah 308 vs mim sakinah 57"),
-    "sin": ("Seen", "letter name; unmeasurable directly, both forms are English words"),
+    "noon": ("Noon", "GitHub phrase search: noon sakinah 478 vs nun sakinah 118"),
+    "meem": ("Meem", "GitHub phrase search: meem sakinah 308 vs mim sakinah 57"),
+    "seen": ("Seen", "letter name; unmeasurable directly, both forms are English words"),
 }
 
-# Registry ids that name a different concept in the dictionary. These are wrong
-# names, not alternative spellings, so they are recorded as deprecated and kept
-# out of the alias index: `hizb` is the division, `saktah` is the pause itself.
-DEPRECATED_IDS = {"hizb", "saktah", "waqf_jaiz"}
+# Section 20: a name merged away into this entry is deprecated, not an
+# alternative spelling, and the note says what it was.
+MERGED = {
+    "sajdah-sign": (["alamat_mawdi_al_sajdah"],
+                    "كان `alamat_mawdi_al_sajdah` مدخلًا مستقلًا يعرف الشيء نفسه، فدمج في هذا المدخل.",
+                    "`alamat_mawdi_al_sajdah` was a separate entry defining the same thing; it was merged into this one."),
+    "hizb": (["alamat_al_tahzib"],
+             "كان `alamat_al_tahzib` مدخلًا مستقلًا يعرف الشيء نفسه، فدمج في هذا المدخل.",
+             "`alamat_al_tahzib` was a separate entry defining the same thing; it was merged into this one."),
+}
 
-# Names this repository itself published before the letter-name rule. They must
-# keep resolving, so they are carried as aliases rather than dropped.
+# A note is a fact about the entry that is not its definition.
+NOTE = {
+    "waqf-mamnu": ("مثبتة في سجل المصحف ولم ترد في هذه الطبعة البتة.",
+                   "Registered in the mushaf registry but never used in this edition: zero occurrences."),
+    "waqf-jaiz": ("كان `waqf_jaiz` اسم هذه العلامة في سجل المصحف، وهو اسم يصدق على ثلاث علامات جائزة، فأُهمل.",
+                  "`waqf_jaiz` was this mark's id in the mushaf registry; it fits three permissible marks, so it is deprecated."),
+}
+
+# Section 17: where a mark is confused with what it marks, both entries say so.
+BOUNDARIES = {
+    "sajdah-sign": (["علامة السجدة رسم في المصحف، وموضع السجدة مكان من النص، وسجود التلاوة الفعل."],
+                    ["The sajdah mark is a sign in the mushaf; mawdi al-sajdah is the place in the text; sujud al-tilawah is the act."]),
+    "saktah": (["علامة السكتة رسم في المصحف، والسكتة الوقفة نفسها."],
+               ["The saktah mark is a sign in the mushaf; the saktah is the pause itself."]),
+    "hizb": (["علامة التقسيم رسم في المصحف، والجزء والحزب وأرباعه أقسام من النص تدل عليها."],
+             ["The division mark is a sign in the mushaf; the juz, the hizb and its quarters are divisions of the text it points to."]),
+}
+RELATED = {
+    "sajdah-sign": ["mawdi_al_sajdah", "sujud_al_tilawah", "sajdah_line"],
+    "sajdah-line": ["sajdah_mark", "mawdi_al_sajdah"],
+    "saktah": ["saktah", "qiraah_mark"],
+    "hizb": ["hizb", "rubu_al_hizb", "juz"],
+    "meem-iqlab": ["noon_sakinah", "iqlab"],
+    "wasla": ["hamzah"], "hamza": ["hamzat_al_wasl"],
+    "small-alef": ["rasm", "orthographic_mark"],
+    "waqf-lazim": ["waqf", "waqf_mark"], "waqf-mamnu": ["waqf", "waqf_mark"],
+    "waqf-jaiz": ["waqf", "waqf_mark"], "wasl-awla": ["waqf", "waqf_mark"],
+    "waqf-awla": ["waqf", "waqf_mark"], "muanaqah": ["waqf", "waqf_mark"],
+    "shadda": ["harakah", "idgham"], "sukun": ["harakah", "noon_sakinah"],
+    "fathatan": ["tanwin", "noon_sakinah"], "kasratan": ["tanwin", "noon_sakinah"],
+    "dammatan": ["tanwin", "noon_sakinah"],
+}
+# Spellings a codebase actually uses for the mark, beyond its previous names.
+EXTRA_ALIASES = {
+    "hizb": {"hizb_mark", "rub_mark", "rub_el_hizb_mark", "juz_mark"},
+    "sajdah-sign": {"sajda_mark", "sajdah_sign", "sajda_sign"},
+    "meem-iqlab": {"iqlab_meem", "meem_iqlab"},
+    "small-alef": {"dagger_alif", "small_alif", "superscript_alif"},
+    "sukun": {"sukoon"}, "fathatan": {"tanween_fath"}, "kasratan": {"tanween_kasr"},
+    "dammatan": {"tanween_damm"}, "maddah": {"madda"}, "shadda": {"tashdid", "tashdeed"},
+    "wasla": {"hamzat_wasl", "alif_wasl", "wasl"},
+}
+# Sources beyond the registry row: the term in the tajwid dictionary.
+EXTRA_SOURCES = {
+    "waqf-lazim": [{"id": "quranpedia_tajweed", "ref": "122", "url": "https://tajweed.quranpedia.net/term/show/122"},
+                   {"id": "qattan_mabahith", "ref": "1/152"}],
+    "waqf-mamnu": [{"id": "qattan_mabahith", "ref": "1/152"}],
+    "waqf-jaiz": [{"id": "qattan_mabahith", "ref": "1/152"}],
+    "wasl-awla": [{"id": "qattan_mabahith", "ref": "1/152"}],
+    "waqf-awla": [{"id": "qattan_mabahith", "ref": "1/152"}],
+    "muanaqah": [{"id": "qattan_mabahith", "ref": "1/152"}],
+    "saktah": [{"id": "quranpedia_tajweed", "ref": "126", "url": "https://tajweed.quranpedia.net/term/show/126"}],
+    "wasla": [{"id": "quranpedia_tajweed", "ref": "127", "url": "https://tajweed.quranpedia.net/term/show/127"}],
+    "ishmam": [{"id": "quranpedia_tajweed", "ref": "131", "url": "https://tajweed.quranpedia.net/term/show/131"}],
+    "meem-iqlab": [{"id": "quranpedia_tajweed", "ref": "86", "url": "https://tajweed.quranpedia.net/term/show/86"}],
+    "sajdah-sign": [{"id": "itqan", "ref": "1/381"}],
+    "sajdah-line": [{"id": "itqan", "ref": "1/381"}],
+}
+
+# Registry ids that name a different concept in the dictionary: `hizb` is the
+# division and `saktah` is the pause itself. Section 20 records a wrong name
+# nowhere but in the boundaries of the right entry, so these ids are neither
+# aliases nor deprecated names of the mark; BOUNDARIES states the confusion.
+OTHER_CONCEPT_IDS = {"hizb", "saktah"}
+# A former id of the mark that no longer names anything: deprecated, with a note.
+DEPRECATED_IDS = {"waqf_jaiz"}
+
 # Names an entry has carried before. They stay resolvable as alternative
 # spellings, so a project that adopted an earlier name is not stranded.
 PREVIOUS_NAMES = {
@@ -69,8 +150,6 @@ PREVIOUS_NAMES = {
     "two_dots": {"nuqtatan"},
     "seen_al_qiraah": {"sin_qiraah"},
     "saktah_mark": {"alamat_al_sakt"},
-    "sajdah_mark": {"alamat_mawdi_al_sajdah"},
-    "division_mark": {"alamat_al_tahzib"},
     "sajdah_line": {"khatt_mujib_al_sajdah"},
     "waqf_al_muanaqah": {"taanuq_al_waqf", "waqf_al_muraqabah", "muraqabah"},
     "tanwin_al_fath": {"tanwin_al_nasb"},
@@ -127,12 +206,12 @@ PURPOSE = {
         "skeleton in analysis and in search."),
     "imlaiyyah": (
         "تستخدم قيمةً من علامات الرسم، ليعرف بها ما خالف فيه الرسم اللفظ في الكلمة.",
-        "Used as a value of the orthographic marks, so that where the rasm departs from the "
-        "pronunciation of a word is known."),
+        "Used as a value of the orthographic marks, so that software can tell where the rasm "
+        "departs from the pronunciation."),
     "waqf": (
         "تستخدم قيمةً من قيم نوع علامة الوقف، ليتفرع عليها العرض والتلقين والتنبيه في "
         "التطبيقات بدل قراءة صورة الرمز.",
-        "Used as a value of the waqf mark type, so that rendering, instruction and warnings in "
+        "Used as a value of the waqf mark type, so that rendering, teaching and warnings in "
         "applications branch on it rather than on the shape of the sign."),
     "alamat_qiraah": (
         "تستخدم قيمةً من علامات القراءة، لينبه بها القارئ إلى أداء خاص في موضعه.",
@@ -140,12 +219,12 @@ PURPOSE = {
         "delivery at its place."),
     "dabt": (
         "تستخدم علامةً من علامات المصحف، ليعرف بها موضعها ودلالتها في العرض والتحليل.",
-        "Used as a mark of the Mushaf, so that its place and what it points to are known in "
-        "rendering and in analysis."),
+        "Used as a mark of the mushaf, so that rendering and analysis know where it sits and "
+        "what it points to."),
     "mustaqill": (
         "تستخدم علامةً من علامات المصحف، ليعرف بها موضعها ودلالتها في العرض والتحليل.",
-        "Used as a mark of the Mushaf, so that its place and what it points to are known in "
-        "rendering and in analysis."),
+        "Used as a mark of the mushaf, so that rendering and analysis know where it sits and "
+        "what it points to."),
 }
 
 
@@ -157,7 +236,8 @@ def display_for(code, parts):
     words = " ".join(display_spelling(p) for p in parts).split()
     out, ev = [], []
     for w in words:
-        key = w.lower().lstrip("al-")
+        key = w.lower()
+        key = key[3:] if key.startswith("al-") else key
         if key in DISPLAY:
             out.append(DISPLAY[key][0]); ev.append(DISPLAY[key][1])
         else:
@@ -165,30 +245,44 @@ def display_for(code, parts):
     return " ".join(out), ("; ".join(dict.fromkeys(ev)) or None)
 
 
+def unicode_fields():
+    """The fields schema.json lets a unicode block carry.
+
+    The block is read from the Unicode database of the running interpreter, so
+    the database version is recorded beside it when the schema has a place for
+    it: two builds on two Pythons then say why they differ.
+    """
+    schema = json.load(open(SCHEMA, encoding="utf-8"))
+    return set(schema["properties"]["unicode"]["items"]["properties"])
+
+
 def build():
-    rows = list(csv.reader(open(TSV), delimiter="\t"))
+    rows = records(TSV, header_in_first_row=True)
+    allowed = unicode_fields()
+    unconsumed = [r[COL["id"]] for r in rows if r[COL["id"]] not in NAMING_PHRASE]
+    if unconsumed:
+        raise SystemExit(f"dabt_marks.tsv rows with no naming phrase, which would be "
+                         f"silently dropped: {unconsumed} — add them to NAMING_PHRASE")
     entries = []
-    for r in rows[1:]:
-        old = r[1]
-        if old not in NAMING_PHRASE:
-            continue
+    for r in rows:
+        old = r[COL["id"]]
         parts = NAMING_PHRASE[old]
         code = "_".join(code_spelling(p) for p in parts)
         disp, ev = display_for(code, parts)
         # The familiar form must resolve to the concept, so it becomes an alias.
         disp_alias = disp.lower().replace("-", "_").replace(" ", "_")
-        intro = r[7].strip()
+        intro = r[COL["intro"]]
         absent = "لَمْ تُذْكَر" in intro or "لَمْ تُفْرَد" in intro or "لَمْ تَرِد" in intro
-        family = FAMILY.get(r[3].strip(), r[3].strip())
+        family = FAMILY.get(r[COL["family"]], r[COL["family"]])
         e = {
             "concept": code,
             "names": {
                 "code": code,
                 "display": disp,
                 **({"display_evidence": ev} if ev else {}),
-                "arabic": {"vocalized": parts[0] if len(parts) == 1 else " ".join(parts)},
-                "dabt": r[5].strip(),
-                "by_shape": r[6].strip() or None,
+                "arabic": {"vocalized": " ".join(parts), "singular": _bare(" ".join(parts))},
+                "dabt": r[COL["dabt"]],
+                "by_shape": r[COL["by_shape"]] or None,
                 "mushaf_introduction": None if absent else (intro or None),
             },
             "kind": FAMILY_KIND.get(family, "mark"),
@@ -197,29 +291,40 @@ def build():
             "origin": "quranic",
             "tier": "core",
             "status": "draft",
-            "symbol": r[8].strip() or None,
-            # Column 10 defines the mark; column 15 is that same definition in
-            # English, not a second fact about the mark.
-            "definition": r[9].strip(),
-            "definition_en": r[14].strip(),
+            "symbol": r[COL["symbol"]] or None,
+            # The definition column defines the mark; its English twin is that
+            # same definition translated, not a second fact about the mark.
+            "definition": r[COL["definition"]],
+            "definition_en": r[COL["definition_en"]],
             "purpose": PURPOSE[family][0],
             "purpose_en": PURPOSE[family][1],
+            **({"boundaries": BOUNDARIES[old][0], "boundaries_en": BOUNDARIES[old][1]}
+               if old in BOUNDARIES else {}),
             "alternative_spellings": sorted(
                 ({old, old.replace("-", "_"), disp_alias}
                  | PREVIOUS_NAMES.get(code, set())
-                 | REGISTRY_SHORTHAND.get(code, set()))
-                - {code} - DEPRECATED_IDS
+                 | REGISTRY_SHORTHAND.get(code, set())
+                 | EXTRA_ALIASES.get(old, set()))
+                - {code} - DEPRECATED_IDS - OTHER_CONCEPT_IDS
                 - ({old, old.replace("-", "_")}
                    if old.replace("-", "_") in DEPRECATED_IDS else set())),
-            **({"deprecated": [old, old.replace("-", "_")]}
-               if old.replace("-", "_") in DEPRECATED_IDS else {}),
+            **({"deprecated": sorted(({old, old.replace("-", "_")}
+                                       if old.replace("-", "_") in DEPRECATED_IDS else set())
+                                      | set(MERGED.get(old, ([],))[0]))}
+               if old.replace("-", "_") in DEPRECATED_IDS or old in MERGED else {}),
+            **({"related": RELATED[old]} if old in RELATED else {}),
+            **({"note": NOTE[old][0], "note_en": NOTE[old][1]} if old in NOTE else
+               {"note": MERGED[old][1], "note_en": MERGED[old][2]} if old in MERGED else {}),
             "unicode": [],
             "mark_family": family,
-            "sources": [{"id": "hafs_svg_registry", "ref": f"standard!{old}"}],
+            "sources": [{"id": "hafs_svg_registry", "ref": f"standard!{old}"}] + EXTRA_SOURCES.get(old, []),
         }
-        for cp in parse_codepoints(r[2]):
+        for cp in parse_codepoints(r[COL["codepoints"]]):
             p = properties(cp)
-            e["unicode"].append({k: p[k] for k in ("cp", "name", "category", "combining_class", "block")})
+            block = {k: p[k] for k in ("cp", "name", "category", "combining_class", "block")}
+            if "unidata" in allowed:
+                block["unidata"] = UNIDATA_VERSION
+            e["unicode"].append(block)
             e["names"].setdefault("unicode", p["name"])
         entries.append(e)
     return entries

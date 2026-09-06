@@ -3,7 +3,7 @@ names:
   code: ayah_numbering_basri
   display: Basri Numbering
   arabic:
-    vocalized: العَدّ البَصْرِي
+    vocalized: العَدّ البَصْرِيّ
     singular: العد البصري
 kind: classification_value
 category: ayah_numbering
@@ -14,18 +14,19 @@ status: draft
 definition: >
   عد أهل البصرة، المروي عن عاصم الجحدري عن أسلافه من أهل البصرة.
 definition_en: >
-  The counting of the people of Basra, transmitted from Asim al-Jahdari from his
-  predecessors among the Basrans.
+  The Basran numbering system, transmitted from Asim al-Jahdari and the Basran
+  authorities before him.
 purpose: >
-  يستخدم قيمةً من قيم نظام عد الآي، فيعرف به ما تستند إليه أرقام الآيات وحدودها
-  في مصحف أو dataset، وتقابل به مواضع الآي بين الأنظمة.
+  يستخدم قيمة من قيم نظام عد الآي، فيعرف به ما تستند إليه أرقام الآيات وحدودها في مصحف
+  أو `dataset`، وتقابل به مواضع الآي بين الأنظمة.
 purpose_en: >
-  Used as a value of the ayah numbering system, so that what a Mushaf's or a dataset's
-  ayah numbers and boundaries rest on is known, and ayah positions can be mapped between
+  Used as a value of the ayah numbering system, so that a mushaf or dataset states which
+  numbering its ayah numbers and boundaries follow, and positions can be mapped between
   systems.
 alternative_spellings:
   - basri_numbering
   - basran_numbering
+  - basri
 related:
   - ayah_numbering_system
   - ayah
@@ -39,4 +40,6 @@ note_en: >
   derivation of the Arabic name: deriving from «العَدّ» gives `add`, an English verb,
   and `makki` is already a value of `revelation_classification`. The reasoning is in the
   decision record.
-sources: []
+sources:
+  - id: bayan_dani
+    ref: "1/80"

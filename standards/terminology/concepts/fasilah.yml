@@ -17,12 +17,21 @@ definition_en: >
   The close of an ayah or a passage as a matter of its composition; some scholars define
   it as the ayah's last word.
 purpose: تستخدم في الدراسات والبيانات التي تتناول فواصل الآيات والنظم القرآني، ولا تستخدم
-  مرادفًا لـ`Ayah`.
+  مرادفًا لـ`ayah`.
 purpose_en: >
   Used in studies and datasets concerned with ayah endings and Quranic composition. It
-  is never used as a synonym for `Ayah`.
+  is never used as a synonym for `ayah`.
+boundaries:
+- الفاصلة خاتمة الآية من جهة النظم، وعلامة الآية رسم في المصحف يدل عليها.
+boundaries_en:
+- The fasilah is the ayah's ending as a matter of the text; the ayah mark is the sign drawn in the mushaf for it.
 alternative_spellings:
 - fasila
 english_glosses:
 - Verse Ending
-sources: []
+related:
+  - ayah
+  - ayah_mark
+sources:
+  - id: qattan_mabahith
+    ref: "1/153"
