@@ -1,7 +1,7 @@
-concept: sifr_mustatil
+concept: rectangular_zero
 names:
-  code: sifr_mustatil
-  display: Sifr Mustatil
+  code: rectangular_zero
+  display: Rectangular Zero
   arabic:
     vocalized: الصِّفْر المُسْتَطِيل
   dabt: الصِّفْر المُسْتَطِيل القَائِم
@@ -19,6 +19,7 @@ definition: الدَّلَالَة على زِيَادَة الأَلِف وَص
 purpose: Marks an alif dropped in continuation but pronounced when stopping on it.
 alternative_spellings:
 - sifr-mustatil
+- sifr_mustatil
 unicode:
 - cp: U+06E0
   name: ARABIC SMALL HIGH UPRIGHT RECTANGULAR ZERO
@@ -29,5 +30,3 @@ mark_family: dabt
 sources:
 - id: hafs_svg_registry
   ref: standard!sifr-mustatil
-english_glosses:
-- Rectangular Zero

@@ -1,7 +1,7 @@
-concept: meem_saghirah
+concept: small_meem
 names:
-  code: meem_saghirah
-  display: Meem Saghirah
+  code: small_meem
+  display: Small Meem
   arabic:
     vocalized: المِيم الصَّغِيرَة
   dabt: المِيم الصَّغِيرَة — عَلَامَة القَلْب
@@ -20,6 +20,7 @@ purpose: Marks iqlab — a silent nun or tanwin turning into a mim before ba.
 alternative_spellings:
 - meem-iqlab
 - meem_iqlab
+- meem_saghirah
 - mim_saghirah
 unicode:
 - cp: U+06E2
@@ -36,5 +37,3 @@ mark_family: dabt
 sources:
 - id: hafs_svg_registry
   ref: standard!meem-iqlab
-english_glosses:
-- Small Meem

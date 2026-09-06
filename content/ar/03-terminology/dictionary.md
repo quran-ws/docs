@@ -491,23 +491,6 @@ sidebar:
 
 **الغرض:** Marks the point at which the reader prostrates.
 
-### Alif Mahdhufah — الأَلِف المَحْذُوفَة
-
-| | |
-| --- | --- |
-| `code` | `alif_mahdhufah` |
-| `kind` | `mark` |
-| `parent` | `mushaf_mark` |
-| بالحركات | الأَلِف المَحْذُوفَة |
-| الرمز | ا صَغِيرَة قَائِمَة |
-| المحارف | `U+0670` |
-| تهجئات أخرى | `small-alef`، `small_alef` |
-| مقابل إنجليزي | `Omitted Alif` |
-
-**التعريف:** الدَّلَالَة على أَلِف مَحْذُوفَة من الرَّسْم واجِبَة النُّطْق
-
-**الغرض:** Restores an alif omitted from the Uthmani skeleton but obligatory in pronunciation.
-
 ### Dammah — الضَّمَّة
 
 | | |
@@ -523,6 +506,21 @@ sidebar:
 **التعريف:** الدَّلَالَة على حَرَكَة الحَرْف بالضَّمّ
 
 **الغرض:** Marks the letter as carrying the vowel u (dammah).
+
+### Dot — النُّقْطَة
+
+| | |
+| --- | --- |
+| `code` | `dot` |
+| `kind` | `mark` |
+| `parent` | `mushaf_mark` |
+| بالحركات | النُّقْطَة |
+| الرمز | نُقْطَة وَاحِدَة |
+| تهجئات أخرى | `nuqtah` |
+
+**التعريف:** إعْجَام الحَرْف وتَمْيِيزُه عمَّا يُشَارِكُه في الرَّسْم
+
+**الغرض:** Distinguishes a letter from others that share the same skeleton (i'jam).
 
 ### Fathah — الفَتْحَة
 
@@ -648,69 +646,53 @@ sidebar:
 
 **الغرض:** Marks a lengthening beyond the natural two counts; the exact duration is a tajwid matter.
 
-### Meem Saghirah — المِيم الصَّغِيرَة
+### Omitted Alif — الأَلِف المَحْذُوفَة
 
 | | |
 | --- | --- |
-| `code` | `meem_saghirah` |
+| `code` | `omitted_alif` |
 | `kind` | `mark` |
 | `parent` | `mushaf_mark` |
-| بالحركات | المِيم الصَّغِيرَة |
-| الرمز | م صَغِيرَة |
-| المحارف | `U+06E2`، `U+06ED` |
-| تهجئات أخرى | `meem-iqlab`، `meem_iqlab`، `mim_saghirah` |
-| مقابل إنجليزي | `Small Meem` |
+| بالحركات | الأَلِف المَحْذُوفَة |
+| الرمز | ا صَغِيرَة قَائِمَة |
+| المحارف | `U+0670` |
+| تهجئات أخرى | `alif_mahdhufah`، `small-alef`، `small_alef` |
 
-**التعريف:** الدَّلَالَة على قَلْب النُّون السَّاكِنَة أو التَّنْوِين مِيماً عند البَاء
+**التعريف:** الدَّلَالَة على أَلِف مَحْذُوفَة من الرَّسْم واجِبَة النُّطْق
 
-**الغرض:** Marks iqlab — a silent nun or tanwin turning into a mim before ba.
+**الغرض:** Restores an alif omitted from the Uthmani skeleton but obligatory in pronunciation.
 
-### Noon Saghirah — النُّون الصَّغِيرَة
+### Rectangular Zero — الصِّفْر المُسْتَطِيل
 
 | | |
 | --- | --- |
-| `code` | `noon_saghirah` |
+| `code` | `rectangular_zero` |
 | `kind` | `mark` |
 | `parent` | `mushaf_mark` |
-| بالحركات | النُّون الصَّغِيرَة |
-| الرمز | ن صَغِيرَة |
-| المحارف | `U+06E8` |
-| تهجئات أخرى | `nun_saghirah`، `small-noon`، `small_noon` |
-| مقابل إنجليزي | `Small Noon` |
+| بالحركات | الصِّفْر المُسْتَطِيل |
+| الرمز | مُسْتَطِيل قَائِم صَغِير |
+| المحارف | `U+06E0` |
+| تهجئات أخرى | `sifr-mustatil`، `sifr_mustatil` |
 
-**التعريف:** الدَّلَالَة على نُون مَحْذُوفَة من الرَّسْم واجِبَة النُّطْق، في مَوْضِع واحِد (21:88) وحده
+**التعريف:** الدَّلَالَة على زِيَادَة الأَلِف وَصْلاً لا وَقْفاً؛ فتُنْطَق عند الوَقْف عليها
 
-**الغرض:** Restores a nun omitted from the skeleton but obligatory in pronunciation — one place only (21:88).
+**الغرض:** Marks an alif dropped in continuation but pronounced when stopping on it.
 
-### Nuqtah — النُّقْطَة
+### Rounded Zero — الصِّفْر المُسْتَدِير
 
 | | |
 | --- | --- |
-| `code` | `nuqtah` |
+| `code` | `rounded_zero` |
 | `kind` | `mark` |
 | `parent` | `mushaf_mark` |
-| بالحركات | النُّقْطَة |
-| الرمز | نُقْطَة وَاحِدَة |
-| تهجئات أخرى | `dot` |
+| بالحركات | الصِّفْر المُسْتَدِير |
+| الرمز | دَائِرَة صَغِيرَة |
+| المحارف | `U+06DF` |
+| تهجئات أخرى | `sifr-mustadir`، `sifr_mustadir` |
 
-**التعريف:** إعْجَام الحَرْف وتَمْيِيزُه عمَّا يُشَارِكُه في الرَّسْم
+**التعريف:** الدَّلَالَة على زِيَادَة الحَرْف رَسْماً؛ فلا يُنْطَق وَصْلاً ولا وَقْفاً
 
-**الغرض:** Distinguishes a letter from others that share the same skeleton (i'jam).
-
-### Nuqtatan — النُّقْطَتَان
-
-| | |
-| --- | --- |
-| `code` | `nuqtatan` |
-| `kind` | `mark` |
-| `parent` | `mushaf_mark` |
-| بالحركات | النُّقْطَتَان |
-| الرمز | نُقْطَتَان |
-| تهجئات أخرى | `two-dots`، `two_dots` |
-
-**التعريف:** إعْجَام الحَرْف وتَمْيِيزُه عمَّا يُشَارِكُه في الرَّسْم
-
-**الغرض:** Distinguishes a letter from others that share the same skeleton (i'jam).
+**الغرض:** Marks a letter present in the skeleton but never pronounced — neither in continuation nor when stopping.
 
 ### Seen al-Qiraah — سِين القِرَاءَة
 
@@ -744,39 +726,69 @@ sidebar:
 
 **الغرض:** Marks assimilation of a first letter into the second (doubling).
 
-### Sifr Mustadir — الصِّفْر المُسْتَدِير
+### Small Meem — المِيم الصَّغِيرَة
 
 | | |
 | --- | --- |
-| `code` | `sifr_mustadir` |
+| `code` | `small_meem` |
 | `kind` | `mark` |
 | `parent` | `mushaf_mark` |
-| بالحركات | الصِّفْر المُسْتَدِير |
-| الرمز | دَائِرَة صَغِيرَة |
-| المحارف | `U+06DF` |
-| تهجئات أخرى | `sifr-mustadir` |
-| مقابل إنجليزي | `Rounded Zero` |
+| بالحركات | المِيم الصَّغِيرَة |
+| الرمز | م صَغِيرَة |
+| المحارف | `U+06E2`، `U+06ED` |
+| تهجئات أخرى | `meem-iqlab`، `meem_iqlab`، `meem_saghirah`، `mim_saghirah` |
 
-**التعريف:** الدَّلَالَة على زِيَادَة الحَرْف رَسْماً؛ فلا يُنْطَق وَصْلاً ولا وَقْفاً
+**التعريف:** الدَّلَالَة على قَلْب النُّون السَّاكِنَة أو التَّنْوِين مِيماً عند البَاء
 
-**الغرض:** Marks a letter present in the skeleton but never pronounced — neither in continuation nor when stopping.
+**الغرض:** Marks iqlab — a silent nun or tanwin turning into a mim before ba.
 
-### Sifr Mustatil — الصِّفْر المُسْتَطِيل
+### Small Noon — النُّون الصَّغِيرَة
 
 | | |
 | --- | --- |
-| `code` | `sifr_mustatil` |
+| `code` | `small_noon` |
 | `kind` | `mark` |
 | `parent` | `mushaf_mark` |
-| بالحركات | الصِّفْر المُسْتَطِيل |
-| الرمز | مُسْتَطِيل قَائِم صَغِير |
-| المحارف | `U+06E0` |
-| تهجئات أخرى | `sifr-mustatil` |
-| مقابل إنجليزي | `Rectangular Zero` |
+| بالحركات | النُّون الصَّغِيرَة |
+| الرمز | ن صَغِيرَة |
+| المحارف | `U+06E8` |
+| تهجئات أخرى | `noon_saghirah`، `nun_saghirah`، `small-noon` |
 
-**التعريف:** الدَّلَالَة على زِيَادَة الأَلِف وَصْلاً لا وَقْفاً؛ فتُنْطَق عند الوَقْف عليها
+**التعريف:** الدَّلَالَة على نُون مَحْذُوفَة من الرَّسْم واجِبَة النُّطْق، في مَوْضِع واحِد (21:88) وحده
 
-**الغرض:** Marks an alif dropped in continuation but pronounced when stopping on it.
+**الغرض:** Restores a nun omitted from the skeleton but obligatory in pronunciation — one place only (21:88).
+
+### Small Waw — الوَاو الصَّغِيرَة
+
+| | |
+| --- | --- |
+| `code` | `small_waw` |
+| `kind` | `mark` |
+| `parent` | `mushaf_mark` |
+| بالحركات | الوَاو الصَّغِيرَة |
+| الرمز | و صَغِيرَة |
+| المحارف | `U+06E5` |
+| تهجئات أخرى | `small-waw`، `waw_saghirah` |
+
+**التعريف:** الدَّلَالَة على صِلَة هَاء الضَّمِير المَضْمُومَة بواو لَفْظِيَّة في حال الوَصْل
+
+**الغرض:** Marks the silah of the pronoun ha with dammah — pronounced as a waw in continuation.
+
+### Small Yaa — اليَاء الصَّغِيرَة
+
+| | |
+| --- | --- |
+| `code` | `small_yaa` |
+| `kind` | `mark` |
+| `parent` | `mushaf_mark` |
+| بالحركات | اليَاء الصَّغِيرَة |
+| الرمز | ي صَغِيرَة |
+| المحارف | `U+06E6`، `U+06E7` |
+| تهجئات أخرى | `small-ya`، `small_ya`، `ya_saghirah`، `yaa_saghirah` |
+
+**التعريف:** الدَّلَالَة على صِلَة هَاء الضَّمِير المَكْسُورَة بياء لَفْظِيَّة في حال الوَصْل
+
+**الغرض:** Marks the silah of the pronoun ha with kasrah — pronounced as a ya in continuation.
 
 ### Sukun — السُّكُون
 
@@ -872,16 +884,31 @@ sidebar:
 
 **الغرض:** Marks tashil: the hamzah softened to a sound between a hamzah and an alif.
 
-### Thalath Nuqat — الثَّلَاث نُقَط
+### Three Dots — الثَّلَاث نُقَط
 
 | | |
 | --- | --- |
-| `code` | `thalath_nuqat` |
+| `code` | `three_dots` |
 | `kind` | `mark` |
 | `parent` | `mushaf_mark` |
 | بالحركات | الثَّلَاث نُقَط |
 | الرمز | ثَلَاث نُقَط |
-| تهجئات أخرى | `three-dots`، `three_dots` |
+| تهجئات أخرى | `thalath_nuqat`، `three-dots` |
+
+**التعريف:** إعْجَام الحَرْف وتَمْيِيزُه عمَّا يُشَارِكُه في الرَّسْم
+
+**الغرض:** Distinguishes a letter from others that share the same skeleton (i'jam).
+
+### Two Dots — النُّقْطَتَان
+
+| | |
+| --- | --- |
+| `code` | `two_dots` |
+| `kind` | `mark` |
+| `parent` | `mushaf_mark` |
+| بالحركات | النُّقْطَتَان |
+| الرمز | نُقْطَتَان |
+| تهجئات أخرى | `nuqtatan`، `two-dots` |
 
 **التعريف:** إعْجَام الحَرْف وتَمْيِيزُه عمَّا يُشَارِكُه في الرَّسْم
 
@@ -966,40 +993,6 @@ sidebar:
 **التعريف:** مُثْبَتَة في السِّجِلّ ولم تَرِد في هذه الطَّبْعَة البَتَّة
 
 **الغرض:** Registered in the schema but never used in this edition — zero occurrences.
-
-### Waw Saghirah — الوَاو الصَّغِيرَة
-
-| | |
-| --- | --- |
-| `code` | `waw_saghirah` |
-| `kind` | `mark` |
-| `parent` | `mushaf_mark` |
-| بالحركات | الوَاو الصَّغِيرَة |
-| الرمز | و صَغِيرَة |
-| المحارف | `U+06E5` |
-| تهجئات أخرى | `small-waw`، `small_waw` |
-| مقابل إنجليزي | `Small Waw` |
-
-**التعريف:** الدَّلَالَة على صِلَة هَاء الضَّمِير المَضْمُومَة بواو لَفْظِيَّة في حال الوَصْل
-
-**الغرض:** Marks the silah of the pronoun ha with dammah — pronounced as a waw in continuation.
-
-### Yaa Saghirah — اليَاء الصَّغِيرَة
-
-| | |
-| --- | --- |
-| `code` | `yaa_saghirah` |
-| `kind` | `mark` |
-| `parent` | `mushaf_mark` |
-| بالحركات | اليَاء الصَّغِيرَة |
-| الرمز | ي صَغِيرَة |
-| المحارف | `U+06E6`، `U+06E7` |
-| تهجئات أخرى | `small-ya`، `small_ya`، `ya_saghirah` |
-| مقابل إنجليزي | `Small Yaa` |
-
-**التعريف:** الدَّلَالَة على صِلَة هَاء الضَّمِير المَكْسُورَة بياء لَفْظِيَّة في حال الوَصْل
-
-**الغرض:** Marks the silah of the pronoun ha with kasrah — pronounced as a ya in continuation.
 
 
 ## علامات المصحف — `mushaf_marks`

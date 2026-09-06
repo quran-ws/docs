@@ -80,8 +80,30 @@ def _load_established():
     return names
 
 
+def _load_general_words():
+    """Ordinary Arabic words that are written in English (section 3).
+
+    Section 3 decides whether a concept keeps its Arabic name. The same rule
+    applies inside a compound: the Quranic word is transliterated, the ordinary
+    word beside it is translated. `saghirah` carries nothing that `small` does
+    not, so the mark is small_meem.
+    """
+    path = _os.path.join(_os.path.dirname(_os.path.dirname(_os.path.abspath(__file__))),
+                         "standards/terminology/data/general_words.tsv")
+    words = {}
+    if not _os.path.exists(path):
+        return words
+    with open(path, encoding="utf-8") as fh:
+        for row in _csv.reader(fh, delimiter="\t"):
+            if not row or row[0].startswith("#") or len(row) < 2:
+                continue
+            words["".join(c for c in row[0] if c not in HARAKAT and c != DAGGER_ALIF)] = row[1]
+    return words
+
+
 LETTER_NAMES = None
 ESTABLISHED = None
+GENERAL_WORDS = None
 
 
 def letter_name(word):
@@ -91,6 +113,15 @@ def letter_name(word):
         LETTER_NAMES = _load_letter_names()
     bare = "".join(c for c in _strip(word) if c not in HARAKAT and c != DAGGER_ALIF)
     return LETTER_NAMES.get(bare)
+
+
+def general_word(word):
+    """The English form of an ordinary Arabic word, or None."""
+    global GENERAL_WORDS
+    if GENERAL_WORDS is None:
+        GENERAL_WORDS = _load_general_words()
+    bare = "".join(c for c in _strip(word) if c not in HARAKAT and c != DAGGER_ALIF)
+    return GENERAL_WORDS.get(bare) or (GENERAL_WORDS.get(bare[2:]) if bare.startswith("ال") else None)
 
 
 def established_name(word):
@@ -269,6 +300,9 @@ def code_spelling(phrase, keep_leading_article=False):
         return bare.startswith("ال") and len(bare) > 2
 
     parts = []
+    # An adjective translated into English moves in front of its noun, because
+    # that is English word order: المِيم الصَّغِيرَة is small_meem, not meem_small.
+    pending_adjective = None
     for idx, w in enumerate(words):
         # A definite first word makes a following definite word its adjective,
         # and an adjective's article is not part of the name: waqf_lazim.
@@ -277,6 +311,14 @@ def code_spelling(phrase, keep_leading_article=False):
         adjective = idx > 0 and has_article(w) and has_article(words[0])
         construct = idx < len(words) - 1 and not adjective
         bare = "".join(c for c in w if c not in HARAKAT and c != DAGGER_ALIF)
+        english = general_word(w)
+        if english:
+            if adjective:
+                pending_adjective = english
+            else:
+                parts.append(english)
+            continue
+
         established = (established_name(w) or letter_name(w)
                        or ((established_name(_drop_article(w)) or letter_name(_drop_article(w)))
                            if has_article(w) else None))
@@ -293,6 +335,8 @@ def code_spelling(phrase, keep_leading_article=False):
             parts.append(transliterate_word(rest, construct))
         else:
             parts.append(transliterate_word(w, construct))
+    if pending_adjective:
+        parts.insert(0, pending_adjective)
     return "_".join(p for p in parts if p)
 
 

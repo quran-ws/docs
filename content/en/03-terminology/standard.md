@@ -129,6 +129,34 @@ Surah → Ayah → Kalimah
 A concept having an Arabic name does not make transliterating it the better
 choice.
 
+## The same rule inside a compound name
+
+A compound name can join a technical word to an ordinary one. The technical word
+is transliterated and the ordinary one is translated:
+
+```text
+المِيم الصَّغِيرَة    → small_meem        not meem_saghirah
+الصِّفْر المُسْتَدِير → rounded_zero      not sifr_mustadir
+الثَّلَاث نُقَط      → three_dots        not thalath_nuqat
+الأَلِف المَحْذُوفَة  → omitted_alif      not alif_mahdhufah
+```
+
+`saghirah` adds nothing to `small`, and a reader of either language loses by it.
+
+A translated adjective moves in front of its noun, because that is English word
+order.
+
+A technical word stays transliterated, however ordinary it looks:
+
+```text
+النُّون السَّاكِنَة  → noon_sakinah    `sakinah` is a term of tajwid
+الوَقْف اللَّازِم    → waqf_lazim      `lazim` is a term of waqf
+```
+
+The ordinary words are listed in
+`standards/terminology/data/general_words.tsv`, and are translated wherever they
+appear.
+
 The rule:
 
 > **Quran-specific concepts retain Quranic names; general concepts use natural
@@ -308,7 +336,7 @@ its sound:
 to 8:
 
 ```text
-noon_saghirah      a letter name, written as said
+small_noon         a letter name, written as said
 seen_al_qiraah     a letter name
 tajwid             not a letter name, so derived (not tajweed)
 haqiqi             not a letter name, so derived (not haqeeqi)
@@ -475,8 +503,8 @@ construct:
 
 ```text
 الوقف اللازم     → waqf_lazim      not waqf_al_lazim
-الصفر المستدير   → sifr_mustadir   not sifr_al_mustadir
-الواو الصغيرة    → waw_saghirah    not waw_al_saghirah
+النون الساكنة    → noon_sakinah    not noon_al_sakinah
+الرسم العثماني   → rasm_uthmani    not rasm_al_uthmani
 ```
 
 Telling the two apart is mechanical. If the first word carries `ال`, what

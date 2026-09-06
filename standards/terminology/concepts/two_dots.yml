@@ -1,7 +1,7 @@
-concept: nuqtatan
+concept: two_dots
 names:
-  code: nuqtatan
-  display: Nuqtatan
+  code: two_dots
+  display: Two Dots
   arabic:
     vocalized: النُّقْطَتَان
   dabt: نَقْط الإعْجَام — النُّقْطَتَان
@@ -17,8 +17,8 @@ symbol: نُقْطَتَان
 definition: إعْجَام الحَرْف وتَمْيِيزُه عمَّا يُشَارِكُه في الرَّسْم
 purpose: Distinguishes a letter from others that share the same skeleton (i'jam).
 alternative_spellings:
+- nuqtatan
 - two-dots
-- two_dots
 unicode: []
 mark_family: ijam
 sources:

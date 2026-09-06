@@ -1,7 +1,7 @@
-concept: yaa_saghirah
+concept: small_yaa
 names:
-  code: yaa_saghirah
-  display: Yaa Saghirah
+  code: small_yaa
+  display: Small Yaa
   arabic:
     vocalized: اليَاء الصَّغِيرَة
   dabt: اليَاء الصَّغِيرَة — عَلَامَة صِلَة هَاء الضَّمِير
@@ -21,6 +21,7 @@ alternative_spellings:
 - small-ya
 - small_ya
 - ya_saghirah
+- yaa_saghirah
 unicode:
 - cp: U+06E6
   name: ARABIC SMALL YEH
@@ -36,5 +37,3 @@ mark_family: imlaiyyah
 sources:
 - id: hafs_svg_registry
   ref: standard!small-ya
-english_glosses:
-- Small Yaa

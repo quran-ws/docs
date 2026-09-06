@@ -25,7 +25,7 @@ python3 tools/generate_dictionary.py
 
 ## Why `code` and `display` differ
 
-`code` is derived and never negotiated: `noon_saghirah`, `waqf_lazim`, `tajwid`.
+`code` is derived and never negotiated: `small_noon`, `waqf_lazim`, `tajwid`.
 `display` is whatever English writing actually uses, measured: `Noon Saghirah`,
 `Waqf Lazim`, `Tajweed`. Both are recorded, the evidence for the second is
 recorded with it, and `aliases.json` resolves either to the same concept.

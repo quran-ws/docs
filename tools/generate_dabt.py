@@ -54,11 +54,20 @@ DEPRECATED_IDS = {"hizb", "saktah", "waqf_jaiz"}
 
 # Names this repository itself published before the letter-name rule. They must
 # keep resolving, so they are carried as aliases rather than dropped.
+# Names an entry has carried before. They stay resolvable as alternative
+# spellings, so a project that adopted an earlier name is not stranded.
 PREVIOUS_NAMES = {
-    "noon_saghirah": "nun_saghirah",
-    "yaa_saghirah": "ya_saghirah",
-    "meem_saghirah": "mim_saghirah",
-    "seen_al_qiraah": "sin_qiraah",
+    "small_noon": {"nun_saghirah", "noon_saghirah"},
+    "small_yaa": {"ya_saghirah", "yaa_saghirah"},
+    "small_meem": {"mim_saghirah", "meem_saghirah"},
+    "small_waw": {"waw_saghirah"},
+    "rounded_zero": {"sifr_mustadir"},
+    "rectangular_zero": {"sifr_mustatil"},
+    "omitted_alif": {"alif_mahdhufah"},
+    "three_dots": {"thalath_nuqat"},
+    "dot": {"nuqtah"},
+    "two_dots": {"nuqtatan"},
+    "seen_al_qiraah": {"sin_qiraah"},
 }
 
 FAMILY = {"حركة": "harakah", "تنوين": "tanwin", "نقط": "ijam", "إملائية": "imlaiyyah",
@@ -117,7 +126,7 @@ def build():
             "purpose": r[14].strip(),
             "alternative_spellings": sorted(
                 ({old, old.replace("-", "_"), disp_alias}
-                 | ({PREVIOUS_NAMES[code]} if code in PREVIOUS_NAMES else set()))
+                 | PREVIOUS_NAMES.get(code, set()))
                 - {code} - DEPRECATED_IDS
                 - ({old, old.replace("-", "_")}
                    if old.replace("-", "_") in DEPRECATED_IDS else set())),

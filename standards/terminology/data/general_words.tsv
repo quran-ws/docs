@@ -1,0 +1,23 @@
+# General Arabic words that are written in English, per section 3.
+#
+# Section 3 decides whether a CONCEPT keeps its Arabic name. This table applies
+# the same rule inside a compound name: the Quranic word is transliterated and
+# the ordinary word beside it is translated. So المِيم الصَّغِيرَة is small_meem,
+# not meem_saghirah — `saghirah` carries nothing that `small` does not, and a
+# reader of either language loses by it.
+#
+# A word belongs here only when it is an ordinary Arabic word with a plain
+# English equivalent. A technical term does not, however familiar it looks.
+#
+# arabic	english
+صغير	small
+صغيرة	small
+مستدير	rounded
+مستطيل	rectangular
+محذوف	omitted
+محذوفة	omitted
+صفر	zero
+نقطة	dot
+نقطتان	two_dots
+ثلاث	three
+نقط	dots

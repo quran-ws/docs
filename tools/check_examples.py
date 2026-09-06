@@ -23,14 +23,14 @@ PAGES = ["content/ar/03-terminology/standard.md",
 # Shown on purpose as the wrong form, so they must NOT resolve.
 COUNTER_EXAMPLES = {
     "al_fathah", "al_sukun", "al_ishmam", "al_tashil", "hamzah_al_wasl",
-    "alamah_al_tahzib", "waqf_al_lazim", "sifr_al_mustadir", "waw_al_saghirah",
+    "alamah_al_tahzib", "waqf_al_lazim", "noon_al_sakinah", "rasm_al_uthmani",
     "quran_section", "quran_type", "mushaf_type", "revelation_classification_makki",
     "customer_identifier_value",
 }
 # Vocabulary of the standard itself: field names, kinds, categories, source ids.
 SCHEMA_WORDS = {
     # data files referred to by name in the prose
-    "established_spellings", "letter_names", "dabt_marks",
+    "established_spellings", "letter_names", "dabt_marks", "general_words",
     "display_evidence", "alternative_spellings", "english_glosses", "by_shape",
     "mushaf_introduction", "combining_class", "do_not_confuse_with", "arabic_status",
     "classification_value", "text_unit", "layout_unit", "word_root",

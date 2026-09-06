@@ -121,6 +121,31 @@ Surah → Ayah → Kalimah
 
 وجود اسم عربي للمفهوم لا يعني أن نقله صوتيًا هو الخيار الأفضل.
 
+## القاعدة نفسها داخل الاسم المركب
+
+الاسم المركب قد يجمع كلمة اصطلاحية وكلمة عامة. فننقل الاصطلاحية ونترجم العامة:
+
+```text
+المِيم الصَّغِيرَة    → small_meem        لا meem_saghirah
+الصِّفْر المُسْتَدِير → rounded_zero      لا sifr_mustadir
+الثَّلَاث نُقَط      → three_dots        لا thalath_nuqat
+الأَلِف المَحْذُوفَة  → omitted_alif      لا alif_mahdhufah
+```
+
+`saghirah` لا تزيد شيئًا على `small`، والقارئ العربي والإنجليزي كلاهما يخسر بها.
+
+والصفة المترجمة تتقدم على موصوفها، لأن هذا ترتيب الإنجليزية.
+
+أما الكلمة الاصطلاحية فتبقى منقولة، ولو بدت مألوفة:
+
+```text
+النُّون السَّاكِنَة  → noon_sakinah    فـ«ساكنة» مصطلح تجويدي
+الوَقْف اللَّازِم    → waqf_lazim      فـ«لازم» مصطلح في الوقف
+```
+
+الكلمات العامة مسجلة في `standards/terminology/data/general_words.tsv`،
+وتترجم حيثما وردت.
+
 القاعدة:
 
 > **Quran-specific concepts retain Quranic names; general concepts use natural technical English.**
@@ -290,7 +315,7 @@ Tadweer
 **القاعدة خاصة باسم الحرف وحده.** وبقية المصطلحات تشتق كما في الأقسام 4–8:
 
 ```text
-noon_saghirah      اسم حرف، فيكتب كما ينطق
+small_noon         اسم حرف، فيكتب كما ينطق
 seen_al_qiraah     اسم حرف
 tajwid             ليس اسم حرف، فيشتق (لا tajweed)
 haqiqi             ليس اسم حرف، فيشتق (لا haqeeqi)
@@ -446,8 +471,8 @@ sujud_al_tilawah
 
 ```text
 الوقف اللازم     → waqf_lazim      لا waqf_al_lazim
-الصفر المستدير   → sifr_mustadir   لا sifr_al_mustadir
-الواو الصغيرة    → waw_saghirah    لا waw_al_saghirah
+النون الساكنة    → noon_sakinah    لا noon_al_sakinah
+الرسم العثماني   → rasm_uthmani    لا rasm_al_uthmani
 ```
 
 والتمييز بينهما آلي. إذا كان الاسم الأول معرفًا بـ`ال` فما بعده صفة، وتحذف

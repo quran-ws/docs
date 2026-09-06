@@ -1,11 +1,11 @@
-concept: nuqtah
+concept: three_dots
 names:
-  code: nuqtah
-  display: Nuqtah
+  code: three_dots
+  display: Three Dots
   arabic:
-    vocalized: النُّقْطَة
-  dabt: نَقْط الإعْجَام — النُّقْطَة
-  by_shape: نُقْطَة وَاحِدَة
+    vocalized: الثَّلَاث نُقَط
+  dabt: نَقْط الإعْجَام — الثَّلَاث نُقَط
+  by_shape: ثَلَاث نُقَط مُثَلَّثَة
   mushaf_introduction: null
 kind: mark
 category: dabt
@@ -13,13 +13,14 @@ parent: mushaf_mark
 origin: quranic
 tier: core
 status: draft
-symbol: نُقْطَة وَاحِدَة
+symbol: ثَلَاث نُقَط
 definition: إعْجَام الحَرْف وتَمْيِيزُه عمَّا يُشَارِكُه في الرَّسْم
 purpose: Distinguishes a letter from others that share the same skeleton (i'jam).
 alternative_spellings:
-- dot
+- thalath_nuqat
+- three-dots
 unicode: []
 mark_family: ijam
 sources:
 - id: hafs_svg_registry
-  ref: standard!dot
+  ref: standard!three-dots

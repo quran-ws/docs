@@ -1,7 +1,7 @@
-concept: sifr_mustadir
+concept: rounded_zero
 names:
-  code: sifr_mustadir
-  display: Sifr Mustadir
+  code: rounded_zero
+  display: Rounded Zero
   arabic:
     vocalized: الصِّفْر المُسْتَدِير
   dabt: الصِّفْر المُسْتَدِير
@@ -16,10 +16,11 @@ tier: core
 status: draft
 symbol: دَائِرَة صَغِيرَة
 definition: الدَّلَالَة على زِيَادَة الحَرْف رَسْماً؛ فلا يُنْطَق وَصْلاً ولا وَقْفاً
-purpose: Marks a letter present in the skeleton but never pronounced — neither in continuation nor when
-  stopping.
+purpose: Marks a letter present in the skeleton but never pronounced — neither in continuation
+  nor when stopping.
 alternative_spellings:
 - sifr-mustadir
+- sifr_mustadir
 unicode:
 - cp: U+06DF
   name: ARABIC SMALL HIGH ROUNDED ZERO
@@ -30,5 +31,3 @@ mark_family: dabt
 sources:
 - id: hafs_svg_registry
   ref: standard!sifr-mustadir
-english_glosses:
-- Rounded Zero

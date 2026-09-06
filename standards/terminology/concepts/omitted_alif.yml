@@ -1,7 +1,7 @@
-concept: alif_mahdhufah
+concept: omitted_alif
 names:
-  code: alif_mahdhufah
-  display: Alif Mahdhufah
+  code: omitted_alif
+  display: Omitted Alif
   arabic:
     vocalized: الأَلِف المَحْذُوفَة
   dabt: الأَلِف المَحْذُوفَة — أَلِف صَغِيرَة قَائِمَة
@@ -18,6 +18,7 @@ symbol: ا صَغِيرَة قَائِمَة
 definition: الدَّلَالَة على أَلِف مَحْذُوفَة من الرَّسْم واجِبَة النُّطْق
 purpose: Restores an alif omitted from the Uthmani skeleton but obligatory in pronunciation.
 alternative_spellings:
+- alif_mahdhufah
 - small-alef
 - small_alef
 unicode:
@@ -30,5 +31,3 @@ mark_family: imlaiyyah
 sources:
 - id: hafs_svg_registry
   ref: standard!small-alef
-english_glosses:
-- Omitted Alif
