@@ -95,7 +95,20 @@ it with another instead of saying what it holds.
 A table is the wrong shape for field definitions: a narrow cell forces the
 fragment. Tables compare; sentences define.
 
-## 5. State a requirement or a capability, never both at once
+## 5. Don't build parallel sentences for their own sake
+
+Explain a relationship the way people normally explain it. Don't force an idea
+into a symmetrical shape or repeat a structure for effect.
+
+```text
+Avoid:  Every concept has several names, and every name has its field.
+Use:    We use several fields to hold a concept's different names.
+```
+
+Headings follow the same rule: "Give each page a single purpose" is clearer
+than "One page, one purpose".
+
+## 6. State a requirement or a capability, never both at once
 
 This is the commonest fault in standards writing. "must be able to" mixes
 describing what something can do with requiring that it do it, and the reader
@@ -109,7 +122,7 @@ Requirement:  The system must display the ayah.
 
 The same goes for "should be capable of" and "is required to". Name the action.
 
-## 6. Arabic-specific rules
+## 7. Arabic-specific rules
 
 The Arabic page carries rules that have no English equivalent: joining list
 items with و rather than commas, not attaching several coordinated nouns to one
@@ -122,7 +135,7 @@ which the terminology standard covers in section 6. See
 Reference: [دليل التحرير والصياغة العربية](https://github.com/kamalyaser31/arabic-guide),
 drawn from the Saudi Aramco Arabic style guide.
 
-## 7. Lead with the rule
+## 8. Lead with the rule
 
 Put the rule in the first line under the heading, not in the last paragraph.
 Never make the reader infer it.
@@ -135,7 +148,7 @@ No:   Considering the transliteration of ta marbutah, we find that...
       and therefore it is preferable to write h in one case and t in another.
 ```
 
-## 8. Explain why only when the reason changes what someone does
+## 9. Explain why only when the reason changes what someone does
 
 Don't justify every rule. Give the reason when it:
 
@@ -145,7 +158,7 @@ Don't justify every rule. Give the reason when it:
 
 A clear rule stands on its own. Explaining what needs no explanation buries what does.
 
-## 9. State the page's status
+## 10. State the page's status
 
 Every page carries `status` in its frontmatter, so nobody has to guess what binds:
 
@@ -168,7 +181,7 @@ Inside a page, mark the difference where it matters:
 **Recommended:** cite the page or term number alongside the source.
 ```
 
-## 10. Never copy a source of truth
+## 11. Never copy a source of truth
 
 `standards/` is the source; `content/` explains it. Anything generated is never
 written by hand:
@@ -183,7 +196,7 @@ written by hand:
 A copied table goes stale and nobody notices, and the reader can't tell which
 copy is right.
 
-## 11. A rule that can't be checked can't be enforced
+## 12. A rule that can't be checked can't be enforced
 
 This is the most important rule here. If you write a rule, write the thing that
 catches its violation:
@@ -203,7 +216,7 @@ Write:       Don't abbreviate unless the abbreviation is standard:
              surah not srh, ayah not ay.
 ```
 
-## 12. One term per concept
+## 13. Use one name for each concept
 
 Use the name in the [dictionary](../03-terminology/dictionary.md), and don't
 vary it for variety. If you need a term that isn't there, add it to the
@@ -216,7 +229,7 @@ Yes:  الوَقْف اللَّازِم    (when discussing how the name is deri
 No:   الوقف اللازم
 ```
 
-## 13. Arabic and English
+## 14. Arabic and English
 
 `content/ar` and `content/en` mirror each other file for file.
 
@@ -226,7 +239,7 @@ No:   الوقف اللازم
 - A translation carries the same rule. If the two versions state different
   rules, that's an error to fix, not a difference of translation.
 
-## 14. Quranic text in a page
+## 15. Quranic text in a page
 
 - Quote only as much as the example needs.
 - Write it in full Uthmani rasm; never strip the ḍabṭ to save space.
@@ -238,7 +251,7 @@ Yes:  The compulsory-stop mark: ۘ
 No:   The compulsory-stop mark is a small mim.
 ```
 
-## 15. Show what is better seen
+## 16. Show what is better seen
 
 Pick the form from the information:
 
@@ -250,7 +263,7 @@ Pick the form from the information:
 | Right versus wrong | one block showing both |
 | Steps to perform | numbered list |
 
-## 16. One page, one purpose
+## 17. Give each page a single purpose
 
 - The title says what the reader will find: "Writing a guide", not "Writing".
 - If a page grew long because it covers two subjects, split it.
@@ -261,6 +274,7 @@ Pick the form from the information:
 - [ ] Plain language; no scholarly term left undefined or unlinked.
 - [ ] Short sentences; no heavy noun phrases.
 - [ ] Each field defined in sentences: what it is, what it's for, the rule.
+- [ ] No parallel constructions or slogan-shaped headings.
 - [ ] States the standard, not how it was reached.
 - [ ] No "must be able to" — say what is required or what is possible.
 - [ ] The rule is in the first line, not the last paragraph.
