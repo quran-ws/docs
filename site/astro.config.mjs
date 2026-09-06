@@ -30,6 +30,19 @@ export default defineConfig({
         { label: 'المصدر المفتوح', translations: { en: 'Open source' }, autogenerate: { directory: '05-open-source' } },
         { label: 'الهندسة', translations: { en: 'Engineering' }, autogenerate: { directory: '06-engineering' } },
       ],
+      head: [
+        { tag: 'link', attrs: { rel: 'preconnect', href: 'https://fonts.googleapis.com' } },
+        { tag: 'link', attrs: { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: true } },
+        {
+          tag: 'link',
+          attrs: {
+            rel: 'stylesheet',
+            // Rubik for everything it covers; Noto Naskh Arabic only catches the
+            // Quranic marks Rubik has no glyphs for. See custom.css.
+            href: 'https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&family=Noto+Naskh+Arabic:wght@400..700&display=swap',
+          },
+        },
+      ],
       customCss: ['./src/styles/custom.css'],
     }),
   ],

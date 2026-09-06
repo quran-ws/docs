@@ -1,21 +1,51 @@
-/* Arabic prose needs more line height and a face that renders vocalization. */
+/* Rubik is the face for everything. Its Arabic subset carries the basic
+   harakat — fathah, kasrah, dammah, shaddah, sukun, superscript alef — so
+   vocalized prose like سُورَة renders correctly in it.
+
+   It carries none of the Quranic dabt marks: no صلى (U+06D6), قلى (U+06D7),
+   ج (U+06DA), م (U+06D8), ۩ (U+06E9), ۞ (U+06DE), the two zeros (U+06DF,
+   U+06E0), open tanwin (U+08F0-08F2), or the small letters (U+06E5-06E8).
+   That is 15 of the 24 characters this repository documents. Noto Naskh
+   Arabic sits behind it purely to catch those; the browser falls back per
+   glyph, so only the marks change face. Do not remove it — the mark tables
+   render as tofu without it. */
 :root {
-  --sl-font-arabic: 'Noto Naskh Arabic', 'Amiri', 'Scheherazade New', serif;
+  --sl-font: 'Rubik', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --sl-font-arabic: 'Rubik', 'Noto Naskh Arabic', 'Amiri', serif;
+  /* A mark shown on its own has no Rubik glyph at all, so it leads with naskh. */
+  --sl-font-quranic: 'Noto Naskh Arabic', 'Amiri', 'Scheherazade New', serif;
 }
+
 [dir='rtl'] .sl-markdown-content {
   font-family: var(--sl-font-arabic);
-  line-height: 2;
+  line-height: 2.05; /* vocalized Arabic needs room above and below the baseline */
 }
+
+/* Code keeps its own direction inside RTL prose, or identifiers read backwards. */
 [dir='rtl'] .sl-markdown-content code,
 [dir='rtl'] .sl-markdown-content pre {
   direction: ltr;
   text-align: left;
+  font-family: var(--sl-font-mono);
 }
-/* Status badge, so a reader never mistakes a draft for a binding rule. */
+
+/* Quranic text and isolated marks: naskh first, and larger, since the marks
+   are small by design and unreadable at body size. */
+.quran,
+[lang='ar-x-quran'] {
+  font-family: var(--sl-font-quranic);
+  font-size: 1.35em;
+  line-height: 2.4;
+}
+
+/* Status badge, so a draft is never mistaken for a binding rule. */
+[class^='status-']::before {
+  color: #fff;
+  border-radius: 4px;
+  padding: 0.1rem 0.5rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+}
 .status-draft::before { content: 'draft'; background: #b45309; }
 .status-proposed::before { content: 'proposed'; background: #1d4ed8; }
 .status-adopted::before { content: 'adopted'; background: #15803d; }
-[class^='status-']::before {
-  color: #fff; border-radius: 4px; padding: 0.1rem 0.5rem;
-  font-size: 0.75rem; letter-spacing: 0.04em;
-}
