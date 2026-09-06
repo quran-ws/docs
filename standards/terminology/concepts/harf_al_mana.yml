@@ -1,0 +1,27 @@
+concept: harf_al_mana
+names:
+  code: harf_al_mana
+  display: Harf al-Mana
+  arabic:
+    vocalized: حَرْف المَعْنَى
+    singular: حرف المعنى
+kind: classification_value
+category: linguistics
+parent: part_of_speech
+origin: quranic
+tier: core
+status: draft
+definition: >
+  ما دل على معنى في غيره، كحروف الجر والعطف والنفي والاستفهام.
+purpose: >
+  يستخدم قيمةً من قيم قسم الكلمة، ويسمى بالاسم الكامل لأن `harf` وحده اسم
+  الحرف المبنى، وهو وحدة من وحدات الكتابة لا قسم من أقسام الكلمة.
+boundaries:
+  - حرف المعنى قسم من أقسام الكلمة، وحرف المبنى — وهو `letter` — وحدة من النص
+    المكتوب.
+english_glosses:
+  - Particle
+related:
+  - part_of_speech
+  - letter
+sources: []

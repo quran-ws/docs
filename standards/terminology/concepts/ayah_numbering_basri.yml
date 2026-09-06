@@ -1,0 +1,30 @@
+concept: ayah_numbering_basri
+names:
+  code: ayah_numbering_basri
+  display: Basri Numbering
+  arabic:
+    vocalized: العَدّ البَصْرِي
+    singular: العد البصري
+kind: classification_value
+category: ayah_numbering
+parent: ayah_numbering_system
+origin: quranic
+tier: core
+status: draft
+definition: >
+  عد أهل البصرة، المروي عن عاصم الجحدري عن أسلافه من أهل البصرة.
+purpose: >
+  يستخدم قيمةً من قيم نظام عد الآي، فيعرف به ما تستند إليه أرقام الآيات وحدودها
+  في مصحف أو dataset، وتقابل به مواضع الآي بين الأنظمة.
+alternative_spellings:
+  - basri_numbering
+  - basran_numbering
+related:
+  - ayah_numbering_system
+  - ayah
+  - equivalent_ayah
+note: >
+  الاسم البرمجي هنا اسم الأصل وما يميز القيمة، لا اشتقاق من الاسم العربي؛
+  فاشتقاق «العَدّ» يعطي `add` وهو فعل إنجليزي، و`makki` مأخوذ قيمةً من قيم
+  `revelation_classification`. والوجه في ذلك مسجل في سجل القرارات.
+sources: []

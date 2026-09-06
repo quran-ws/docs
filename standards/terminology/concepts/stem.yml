@@ -1,0 +1,25 @@
+concept: stem
+names:
+  code: stem
+  display: Stem
+  arabic:
+    vocalized: الجِذْع
+    singular: الجذع
+kind: unit
+category: linguistics
+origin: borrowed
+tier: core
+status: draft
+plural: stems
+definition: >
+  ما يبقى من الكلمة بعد نزع السوابق واللواحق، وتلحق به الزوائد الصرفية.
+purpose: >
+  يستخدم في التحليل الصرفي مستوى وسطًا بين صورة الكلمة وجذرها، فبعض المدونات
+  تسجل الجذع ولا تسجل الجذر، وبعضها تسجلهما معًا.
+boundaries:
+  - الجذر أصل اشتقاقي مجرد، والجذع صورة قائمة في الكلمة بعد نزع الزوائد.
+related:
+  - root
+  - lemma
+  - morpheme
+sources: []

@@ -1,0 +1,27 @@
+concept: font
+names:
+  code: font
+  display: Font
+  arabic:
+    vocalized: الخَطّ
+    singular: الخط
+kind: concept
+category: mushaf
+origin: borrowed
+tier: core
+status: draft
+plural: fonts
+definition: >
+  ملف يحمل مجموعة من الـglyphs وقواعد إخراجها، يعرض به نص المصحف.
+purpose: >
+  يستخدم لأن نص المصحف لا يعرض عرضًا صحيحًا إلا بخط بعينه في كثير من المصاحف
+  الرقمية، فترتبط به رموز الحروف وأشكالها ومواضع الأسطر.
+boundaries:
+  - الخط وسيلة عرض، والرسم صفة للنص المكتوب نفسه.
+  - الـglyph شكل داخل الخط، والحرف وحدة من النص.
+related:
+  - glyph
+  - rasm
+  - layout
+  - line
+sources: []

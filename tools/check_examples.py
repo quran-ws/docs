@@ -5,7 +5,8 @@ the rule keeps showing the old name. This has already happened three times, so
 it is checked rather than remembered.
 
 Names shown deliberately as wrong — the "avoid" side of an example — are listed
-in COUNTER_EXAMPLES. Everything else must resolve through aliases.json.
+in COUNTER_EXAMPLES. Everything else must resolve through aliases.json, or —
+for a member of a closed set, such as a rawi — through registry_aliases.json.
 
     python3 tools/check_examples.py
 """
@@ -13,6 +14,7 @@ import glob, json, os, re, sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 ALIASES = os.path.join(ROOT, "standards/terminology/aliases.json")
+REGISTRY_ALIASES = os.path.join(ROOT, "standards/terminology/registry_aliases.json")
 PAGES = ["content/ar/03-terminology/standard.md",
          "content/ar/01-intro/writing-style.md",
          "content/ar/01-intro/writing-guides.md",
@@ -38,6 +40,7 @@ SCHEMA_WORDS = {
     "technical_unit", "presentation_concept", "orthographic_concept", "rasm_type",
     "quran_name", "recitation_feature", "recitation_practice",
     "surah_classification", "ayah_numbering", "mushaf_marks", "recitation_pace",
+    "quranic_sciences",
     "recitation_style", "waqf_mark_type", "waqf_ruling", "surah_group",
     "ayah_numbering_system", "revelation_order", "revelation_classification",
     "recitation_performance_style", "instructional_ayah_repetition",
@@ -52,12 +55,21 @@ SCHEMA_WORDS = {
     "qattan_mabahith", "quranpedia_tajweed", "jamharah_dictionary",
     "tajweed_engine", "hafs_svg_registry",
     "test_translit", "build_aliases", "generate_dabt", "generate_dictionary",
+    "check_conformance", "tool_defects",
     "generate_concepts", "unicode_props", "measure_display", "check_examples",
+    "check_registries", "build_registry_aliases", "registry_aliases",
+    "extract_ayah_counts", "ayah_counts", "turath_cache",
+    # registry file names, and the sources their rows cite
+    "qiraat_ayah_map", "ghayat_al_nihayah", "bayan_dani", "nasser_transmission",
 }
 
 
 def main():
     aliases = json.load(open(ALIASES))
+    members = set()
+    if os.path.exists(REGISTRY_ALIASES):
+        for names in json.load(open(REGISTRY_ALIASES)).values():
+            members.update(names)
     problems = []
     for rel in PAGES:
         path = os.path.join(ROOT, rel)
@@ -67,8 +79,8 @@ def main():
         for name in sorted(set(re.findall(r"\b([a-z][a-z0-9]*(?:_[a-z0-9]+)+)\b", text))):
             if name in SCHEMA_WORDS or name in COUNTER_EXAMPLES:
                 continue
-            if name not in aliases:
-                problems.append(f"  {rel}: {name!r} resolves to no concept")
+            if name not in aliases and name not in members:
+                problems.append(f"  {rel}: {name!r} resolves to no concept or member")
     for name in sorted(COUNTER_EXAMPLES):
         if name in aliases:
             problems.append(f"  {name!r} is listed as a counter-example but resolves to "

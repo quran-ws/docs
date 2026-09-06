@@ -1,0 +1,25 @@
+concept: sabab_al_tasmiyah
+names:
+  code: sabab_al_tasmiyah
+  display: Sabab al-Tasmiyah
+  arabic:
+    vocalized: سَبَب التَّسْمِيَة
+    singular: سبب التسمية
+kind: content
+category: quranic_sciences
+origin: quranic
+tier: extended
+status: draft
+definition: >
+  بيان العلة التي سميت بها السورة اسمها، وما ورد في ذلك من أثر أو وجه لغوي.
+purpose: >
+  يستخدم محتوى يربط بالسورة، ويفرد عن سبب النزول لأنه يخص الاسم لا النزول،
+  وكثير من السور لها أكثر من اسم فلها أكثر من سبب.
+boundaries:
+  - سبب التسمية يخص اسم السورة، وسبب النزول يخص نزول الآية.
+alternative_spellings:
+  - sabab_al_tasmiya
+related:
+  - surah
+  - asbab_al_nuzul
+sources: []

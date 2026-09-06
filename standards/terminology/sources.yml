@@ -53,3 +53,66 @@ hafs_svg_registry:
     The project's own naming registry: 35 mark names, the SVG structure
     glossary, and the word-attribute model. Exported to
     standards/terminology/data/. Cite with `ref` as the sheet and row.
+
+nashr:
+  title: النشر في القراءات العشر
+  author: ابن الجزري (ت ٨٣٣هـ)
+  editor: علي محمد الضباع
+  kind: book
+  url: https://files.turath.io/books-v3/22642.json
+  note: >
+    The reference work for the ten readings, their ruwat and their turuq. Its
+    isnad section names each imam together with both of his ruwat, one section
+    per reading. Cite with `ref` as volume/page.
+
+ghayat_al_nihayah:
+  title: غاية النهاية في طبقات القراء
+  author: ابن الجزري (ت ٨٣٣هـ)
+  kind: book
+  url: https://files.turath.io/books-v3/12040.json
+  note: >
+    Biographical dictionary of the reciters. Cite for the identity of a named
+    rawi — his full name, teachers and death date — with `ref` as volume/page.
+
+itqan:
+  title: الإتقان في علوم القرآن
+  author: جلال الدين السيوطي (ت ٩١١هـ)
+  editor: محمد أبو الفضل إبراهيم
+  kind: book
+  url: https://files.turath.io/books-v3/11728.json
+  note: >
+    Cite النوع السابع عشر for the names of the surahs, and النوع التاسع عشر for
+    the schools of ayah numbering. `ref` is volume/page.
+
+bayan_dani:
+  title: البيان في عد آي القرآن
+  author: أبو عمرو الداني (ت ٤٤٤هـ)
+  kind: book
+  url: https://files.turath.io/books-v3/5542.json
+  note: >
+    The primary work on ayah numbering: one section per surah giving its count
+    in each of the six schools and naming every disputed boundary. This is the
+    source for numbering data, not a table copied from a website.
+
+nasser_transmission:
+  title: The Transmission of the Variant Readings of the Qurʾān
+  author: Shady Hekmat Nasser
+  publisher: Brill
+  kind: book
+  language: en
+  note: >
+    An English-language monograph on the ten readings and their transmitters.
+    Cited for the English rendering of the readers' and transmitters' names —
+    the `transliteration` column of registries/qiraat.tsv follows its
+    convention, and `display` is that form with the diacritics removed.
+
+qiraat_ayah_map:
+  title: qiraat-ayah-map
+  publisher: quranpedia
+  kind: dataset
+  url: https://github.com/quranpedia/qiraat-ayah-map
+  note: >
+    Machine-readable mapping of ayah boundaries across the six counting
+    schools, with the classical attestation behind each disputed boundary.
+    Its identifier keys are carried in the registries as alternative
+    spellings, so a dataset keyed its way resolves to the same member.

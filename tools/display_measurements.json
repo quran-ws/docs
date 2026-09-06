@@ -1,4 +1,12 @@
 {
+ "al imran | aal imran": {
+  "a": 18368,
+  "b": 519
+ },
+ "ali imran | aal imran": {
+  "a": 12352,
+  "b": 519
+ },
  "mim mushaddad | meem mushaddad": {
   "a": 2,
   "b": 55
@@ -23,8 +31,32 @@
   "a": 25280,
   "b": 45440
  },
+ "tanwin damm | tanwin al-rafa": {
+  "a": 492,
+  "b": 0
+ },
+ "tanwin fath | tanwin al-nasb": {
+  "a": 618,
+  "b": 0
+ },
+ "tanwin kasr | tanwin al-jarr": {
+  "a": 551,
+  "b": 0
+ },
  "tarqiq | tarqeeq": {
   "a": 1156,
   "b": 286
+ },
+ "تنوين الضم | تنوين الرفع": {
+  "a": null,
+  "b": null
+ },
+ "تنوين الفتح | تنوين النصب": {
+  "a": 217,
+  "b": 184
+ },
+ "تنوين الكسر | تنوين الجر": {
+  "a": 161,
+  "b": 21
  }
 }

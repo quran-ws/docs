@@ -1,0 +1,44 @@
+concept: ayah_mark
+names:
+  code: ayah_mark
+  display: Ayah Mark
+  arabic:
+    vocalized: عَلَامَة الآيَة
+    singular: علامة الآية
+  dabt: عَلَامَة رَأْس الآيَة
+  by_shape: دَارَة
+  mushaf_introduction: عَلَامَة رَأْس الآيَة
+  unicode: ARABIC END OF AYAH
+kind: mark
+category: dabt
+parent: mushaf_mark
+origin: quranic
+tier: core
+status: draft
+symbol: ۝
+definition: >
+  الدَّارَة الفاصلة بين الآيتين، توضع عند نهاية الآية ويكتب فيها رقمها في أكثر
+  المصاحف.
+purpose: >
+  تستخدم لتحديد حدود الآية في النص المكتوب، وهي العلامة التي يقرأ منها المحلل
+  والعارض نهاية الآية ورقمها.
+boundaries:
+  - العلامة رسم في المصحف، والفاصلة خاتمة الآية من جهة النظم.
+  - رقم الآية داخل الدارة يتبع نظام عد الآي، ولا يعد جزءًا من العلامة.
+alternative_spellings:
+  - end_of_ayah
+  - ayah_marker
+  - ayah_separator
+unicode:
+  - cp: U+06DD
+    name: ARABIC END OF AYAH
+    category: Cf
+    combining_class: 0
+    block: Arabic
+    chart: https://unicode.org/charts/PDF/U0600.pdf
+mark_family: mustaqill
+related:
+  - ayah
+  - fasilah
+  - ayah_numbering_system
+sources: []

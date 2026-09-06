@@ -1,0 +1,30 @@
+concept: morpheme
+names:
+  code: morpheme
+  display: Morpheme
+  arabic:
+    vocalized: الوَحْدَة الصَّرْفِيَّة
+    singular: الوحدة الصرفية
+kind: unit
+category: linguistics
+origin: borrowed
+tier: core
+status: draft
+plural: morphemes
+definition: >
+  أصغر وحدة في الكلمة تحمل معنى أو وظيفة صرفية، كالسابقة واللاحقة والجذع.
+purpose: >
+  تستخدم لتمثيل تقسيم الكلمة القرآنية إلى أجزائها الصرفية، وهو المستوى الذي
+  تنسب إليه السمات الصرفية والوسوم في مدونات التحليل.
+boundaries:
+  - الوحدة الصرفية جزء من الكلمة، والـtoken وحدة تقسيم قد تساوي الكلمة أو تزيد
+    عليها.
+alternative_spellings:
+  - segment
+  - word_segment
+related:
+  - word
+  - token
+  - stem
+  - morphology
+sources: []

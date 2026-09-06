@@ -1,0 +1,25 @@
+concept: mufassir
+names:
+  code: mufassir
+  display: Mufassir
+  arabic:
+    vocalized: المُفَسِّر
+    singular: المفسر
+kind: role
+category: tafsir
+origin: quranic
+tier: core
+status: draft
+plural: mufassirs
+definition: >
+  من نسب إليه تفسير للقرآن، تأليفًا أو رواية.
+purpose: >
+  يستخدم لنسبة التفسير إلى صاحبه، فيتميز صاحب القول عن الكتاب الذي نقل فيه وعن
+  محققه وناشره.
+boundaries:
+  - المفسر صاحب القول، وقد ينقل قوله في كتاب لغيره.
+english_glosses:
+  - Exegete
+related:
+  - tafsir
+sources: []

@@ -1,0 +1,31 @@
+concept: part_of_speech
+names:
+  code: part_of_speech
+  display: Part of Speech
+  arabic:
+    vocalized: قِسْم الكَلِمَة
+    singular: قسم الكلمة
+kind: classification
+category: linguistics
+origin: borrowed
+tier: core
+status: draft
+definition: >
+  تصنيف الكلمة أو الوحدة الصرفية بحسب بابها النحوي، كالاسم والفعل والحرف وما
+  يتفرع عنها.
+purpose: >
+  يستخدم وسمًا أساسيًا في التحليل الصرفي والنحوي، وعليه يقوم البحث بالوسم
+  والتصفية وبناء التحليل الإعرابي.
+alternative_spellings:
+  - pos
+english_glosses:
+  - Part of Speech
+related:
+  - morphology
+  - irab
+  - morpheme
+note: >
+  القسمة الثلاثية هي المستوى الذي يثبته المعيار. أما الوسوم التفصيلية التي
+  تستعملها مدونات الصرف القرآني — وهي عشرات — فبيانات تندرج تحت هذه القيم
+  الثلاث، ولا تفرد مداخل في القاموس.
+sources: []

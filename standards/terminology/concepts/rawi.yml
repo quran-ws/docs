@@ -7,6 +7,7 @@ names:
     singular: الراوي
 kind: role
 category: qiraat
+registry: qiraat
 origin: quranic
 tier: core
 status: draft

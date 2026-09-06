@@ -1,0 +1,28 @@
+concept: maqasid_al_surah
+names:
+  code: maqasid_al_surah
+  display: Maqasid al-Surah
+  arabic:
+    vocalized: مَقَاصِد السُّورَة
+    singular: مقاصد السورة
+kind: content
+category: quranic_sciences
+origin: quranic
+tier: extended
+status: draft
+definition: >
+  المعاني الكلية التي تدور عليها السورة ويجمع بينها موضوعها، وما تنتظم به آياتها
+  من غرض واحد.
+purpose: >
+  يستخدم محتوى يربط بالسورة كلها لا بآية منها، فيتميز عن التفسير الذي يمضي على
+  الآيات، وعن الموضوعات التي تعدد ما ورد فيها.
+boundaries:
+  - المقصد غرض جامع للسورة، والموضوع واحد مما ورد فيها.
+alternative_spellings:
+  - maqasid
+english_glosses:
+  - Surah Objectives
+related:
+  - surah
+  - tafsir
+sources: []

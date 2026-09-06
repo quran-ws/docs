@@ -1,0 +1,44 @@
+surface	current	canonical	rule	note
+surah_info_json	introduction	summary	§10	`introduction` names a position in a document, not what the field holds
+surah_info_json	surah_number	surah_number	§21	already correct — the surah's established number is its mushaf order
+surah_info_json	surah_type	revelation_classification	§24	a classification is named, never called `type`
+surah_info_json	words_count	word_count	§11	singular for the thing counted
+surah_info_json	descent	revelation_order	§3 §26	`descent` is a literal rendering of نزول and names no concept in English
+surah_info_json	grace	fadail_al_quran	new entry	`grace` carries a Christian sense that فضل does not
+surah_info_json	prophet	prophetic_guidance	§10	a person's name used as the name of content about him
+surah_info_json	revelation	asbab_al_nuzul	§26	the field holds the causes, not the revelation; `nuzul` is now its own entry
+surah_info_json	topics	topics	—	correct, and outside the standard
+surah_info_json	purposes	maqasid_al_surah	new entry	`purposes` collides with the entry field `purpose` (§16)
+surah_info_json	asmaoha	asma_al_surah	§4	an Arabic pronoun suffix transliterated into an identifier
+surah_info_json	ayahs_count	ayah_numbering	§11 §21	a list of one count per system, not a count
+surah_info_json	ayahs_count[].title	ayah_numbering_system	§13 §19	an Arabic display label used as the key of a value
+surah_info_json	ayahs_count[].value	number_of_ayahs	§26	`surahs.number_of_ayahs` already names this fact in the same application
+surah_info_json	*.title	(drop)	§29	the same 11 labels repeated in 114 files; presentation, not data
+surah_info_json	*.value	(the field itself)	§10	`value` is one of the vague names the standard rules out
+surah_info_value	surah_type = "مدنية"	madani	§19	an Arabic display string stored as the value of a classification
+surah_info_value	descent = "87"	87	§21	an established number stored as a string
+surah_info_value	surah_number = "2"	2	§21	an established number stored as a string
+surah_info_value	words_count = "6140"	6140	§21	a count stored as a string
+ayah_modal_tab	tafsir	tafsir	—	already correct
+ayah_modal_tab	library	books	§10	the tab lists books; a library is where they are kept
+ayah_modal_tab	e3rab	irab	§7	no digit stands for an ayn
+ayah_modal_tab	asbab	asbab_al_nuzul	§8 §26	the construct is part of the name
+ayah_modal_tab	nasekh	naskh	§6	long vowels are written short, and the science is النسخ
+ayah_modal_tab	meanings	gharib_al_quran	§26	the tab is labelled غريب القرآن; `meanings` names something wider
+ayah_modal_tab	notes	tadabbur	new entry	the tab is labelled الوقفات التدبرية
+ayah_modal_tab	topics	topics	—	correct, and outside the standard
+ayah_modal_tab	fatwa	fatwas	§11	plural for a collection
+ayah_modal_tab	qiraat	qiraahs	§5 §11	ta marbutah gives h, and an Arabic plural is not a collection name
+ayah_modal_tab	translations	translations	—	already correct
+ayah_modal_tab	similar	mutashabihat	§26	the tab is labelled المتشابهات
+ayah_modal_tab	sayings	tafsir_mathur	new entry	the tab is labelled موسوعة التفسير بالمأثور
+ayah_modal_tab	tajweed	tajwid	§6	the standard's own documented case
+ayah_modal_tab	attachments	attachments	—	correct, and outside the standard
+ayah_modal_tab	surah_info	surah_info	—	correct, and outside the standard
+ayah_modal_tab	surah_resources	surah_resources	—	correct, and outside the standard
+db_column	surahs.revelation_type	surahs.revelation_classification	§24	
+db_column	surahs.revelation_type = meccan/medinan	makki / madani / disputed	§19	English glosses used as identifiers, and `disputed` is missing
+db_column	surah_infos.sabab_alnzool	sabab_al_nuzul	§6 §8	
+db_column	surah_infos.sabab_altasmyah	sabab_al_tasmiyah	§6 §8	
+db_column	surah_infos.src	source	§10	an abbreviation the standard rules out
+db_column	surah_infos.details	details	§10	vague; name what it holds

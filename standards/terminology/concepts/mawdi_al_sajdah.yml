@@ -1,0 +1,29 @@
+concept: mawdi_al_sajdah
+names:
+  code: mawdi_al_sajdah
+  display: Mawdi al-Sajdah
+  arabic:
+    vocalized: مَوْضِع السَّجْدَة
+    singular: موضع السجدة
+kind: concept
+category: structure
+registry: sajdah
+origin: quranic
+tier: core
+status: draft
+plural: mawdi_al_sajdahs
+definition: >
+  الموضع من النص الذي يسجد عنده القارئ، وينتهي بآية بعينها، ومواضعه معدودة
+  مختلف في عد بعضها.
+purpose: >
+  يستخدم لربط السجدة بموضعها من السورة والآية والصفحة، ولتمييز الموضع عن
+  العلامة التي ترسم عنده وعن السجود نفسه.
+boundaries:
+  - الموضع مكان من النص، وعلامة السجدة رسم يدل عليه، وسجود التلاوة هو الفعل.
+english_glosses:
+  - Sajdah Place
+related:
+  - sajdah_mark
+  - sujud_al_tilawah
+  - ayah
+sources: []

@@ -1,0 +1,25 @@
+concept: token
+names:
+  code: token
+  display: Token
+kind: unit
+category: text
+origin: borrowed
+tier: core
+status: draft
+plural: tokens
+definition: >
+  وحدة ينتجها تقسيم النص وفق منهج معلن، وقد تطابق الكلمة، وقد تكون جزءًا منها،
+  وقد تجمع أكثر من كلمة.
+purpose: >
+  يستخدم لربط التحليل الآلي بالنص حين لا يكون حد الكلمة هو حد التقسيم، وليبقى
+  ما ينتجه المقسم متميزًا عما يعده القارئ كلمة.
+boundaries:
+  - الكلمة وحدة يعرفها القارئ، والـtoken وحدة ينتجها منهج تقسيم؛ فاختلاف المنهج
+    يغير عدد الـtokens ولا يغير عدد الكلمات.
+english_glosses:
+  - Token
+related:
+  - word
+  - morpheme
+sources: []

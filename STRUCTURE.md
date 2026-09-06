@@ -38,6 +38,12 @@ guidelines/
 │       │   ├── dabt_marks.tsv     # 35 علامة بأسمائها الخمسة
 │       │   ├── hafs_svg_*.tsv     # مسرد المشروع وبنيته ونموذج الكلمة
 │       │   └── tajweed_engine_rules.json
+│       ├── registries/            # المجموعات المغلقة: سطر لكل فرد
+│       │   ├── qiraat.tsv         # ١٠ قراءات، ١٩ راوياً، ٢٠ رواية
+│       │   ├── surahs.tsv         # ١١٤ سورة
+│       │   ├── ayah_numbering.tsv # مذاهب العد الستة وجملها
+│       │   ├── ayah_counts.tsv    # عدد آي كل سورة في المذاهب الستة
+│       │   └── sajdah.tsv         # ١٥ موضع سجدة
 │       └── concepts/              # ملف YAML لكل مفهوم
 │           ├── ayah.yml
 │           ├── waqf_lazim.yml     # مولد من dabt_marks.tsv
@@ -58,4 +64,5 @@ guidelines/
 - **Numbered section directories** (`01-`, `02-`) fix reading order in both plain GitHub browsing and the generated site sidebar. Numbers are for ordering only; never reference them in links from prose.
 - **`ar` and `en` mirror each other file-for-file.** A page that exists in one locale and not the other is a known gap, not a different structure. Arabic is the authoring source for text-adab and terminology; English is the source for engineering pages.
 - **Every page states its status in frontmatter**: `draft`, `proposed`, or `adopted`. Only `adopted` pages are binding on our projects.
+- **A concept gets an entry, a member gets a row.** `concepts/` holds what needs a definition; `registries/` holds closed sets whose members have nothing to say beyond their name and their place in the set — the ten qiraat, the 114 surahs. The concept entry names its registry, and `tools/check_registries.py` checks the rows.
 - **`standards/` is the source of truth, `content/` explains it.** The terminology tables in prose are generated from `standards/terminology/concepts/*.yml`, never hand-maintained in two places.

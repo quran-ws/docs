@@ -1,0 +1,37 @@
+concept: tafsir_mathur
+names:
+  code: tafsir_mathur
+  display: Tafsir Mathur
+  arabic:
+    vocalized: التَّفْسِير المَأْثُور
+    singular: التفسير المأثور
+kind: content
+category: tafsir
+origin: quranic
+tier: core
+status: draft
+definition: >
+  ما فسر به القرآن من القرآن نفسه، أو من السنة، أو من قول الصحابة والتابعين،
+  منقولًا بإسناده.
+purpose: >
+  يستخدم محتوى يربط بالآية ويحمل معه ناقله ودرجة النقل، فلا يعامل معاملة نص
+  التفسير المؤلف الذي ينسب إلى كتاب واحد.
+boundaries:
+  - التفسير المأثور منقول بإسناد، والتفسير المؤلف قول صاحب الكتاب.
+  - الأثر الواحد ليس مفهومًا في هذا المعيار؛ المفهوم هو نوع المحتوى المرتب على
+    الآية.
+alternative_spellings:
+  - tafsir_bil_mathur
+  - tafsir_bialmathur
+  - mathur
+english_glosses:
+  - Transmitted Tafsir
+note: >
+  العنوان الأشهر «التَّفْسِير بِالمَأْثُور»، واشتقاقه يلحم حرف الجر بالاسم
+  فيعطي `tafsir_bialmathur`. والاسم المثبت هو الصورة الوصفية، وهي عربية مستعملة،
+  والصورة الأشهر محالة في `alternative_spellings`. وهي العلة التي أفرد لها
+  `naskh` دون «الناسخ والمنسوخ».
+related:
+  - tafsir
+  - ayah
+sources: []

@@ -1,9 +1,9 @@
-concept: tanwin_al_rafa
+concept: tanwin_al_damm
 names:
-  code: tanwin_al_rafa
-  display: Tanwin al-Rafa
+  code: tanwin_al_damm
+  display: Tanwin al-Damm
   arabic:
-    vocalized: تَنْوِين الرَّفْع
+    vocalized: تَنْوِين الضَّمّ
   dabt: تَنْوِين الرَّفْع — الضَّمَّتَان
   by_shape: وَاوَان صَغِيرَتَان فَوْق الحَرْف
   mushaf_introduction: 'الحَرَكَتَان: تَرْكِيباً أو تَتَابُعاً'
@@ -22,6 +22,8 @@ purpose: Marks the un tanwin. Stacked marks signal izhar; staggered marks with a
   the next letter signal complete idgham, and without one, incomplete idgham or ikhfa.
 alternative_spellings:
 - dammatan
+- tanwin_al_rafa
+- tanwin_damm
 unicode:
 - cp: U+064C
   name: ARABIC DAMMATAN

@@ -63,13 +63,19 @@
         "waqf",
         "linguistics",
         "translation",
-        "tafsir"
+        "tafsir",
+        "quranic_sciences"
       ]
     },
     "parent": {
       "type": "string",
       "pattern": "^[a-z][a-z0-9_]*$",
       "description": "Required when kind is classification_value (§14)."
+    },
+    "registry": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9_]*$",
+      "description": "The registry in standards/terminology/registries/ that enumerates this concept's members (§13). A concept with a closed set of members names it here instead of giving each member an entry."
     },
     "origin": {
       "description": "quranic: a specialized Quranic concept keeping its Arabic name. borrowed: a general technical or linguistic term with a settled definition elsewhere. standard: a concept this standard defines for software modeling with no traditional counterpart.",

@@ -1,0 +1,26 @@
+concept: equivalent_ayah
+names:
+  code: equivalent_ayah
+  display: Equivalent Ayah
+  arabic:
+    vocalized: الآيَة المُقَابِلَة
+    singular: الآية المقابلة
+kind: concept
+category: ayah_numbering
+origin: standard
+tier: core
+status: draft
+plural: equivalent_ayahs
+definition: >
+  الآية في نظام عد تقابل آيةً في نظام آخر، سواء اتفق رقماهما أو اختلفا لاختلاف
+  مواضع الفصل بين الآي.
+purpose: >
+  تستخدم للربط بين أرقام الآيات عبر أنظمة العد، فلا تقارن البيانات المبنية على
+  نظام ببيانات مبنية على غيره بالرقم وحده.
+boundaries:
+  - المقابلة بين نظامي عد، وليست تشابهًا في اللفظ ولا تكرارًا للنص.
+related:
+  - ayah_numbering_system
+  - ayah
+  - mutashabihat
+sources: []

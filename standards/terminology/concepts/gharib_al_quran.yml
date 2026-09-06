@@ -1,0 +1,31 @@
+concept: gharib_al_quran
+names:
+  code: gharib_al_quran
+  display: Gharib al-Quran
+  arabic:
+    vocalized: غَرِيب القُرْآن
+    singular: غريب القرآن
+kind: content
+category: quranic_sciences
+origin: quranic
+tier: core
+status: draft
+definition: >
+  بيان معاني الألفاظ القرآنية التي خفي معناها على أكثر القراء، لقلة دورانها في
+  الاستعمال أو لتغير دلالتها.
+purpose: >
+  يستخدم محتوى يربط بكلمة بعينها من الآية لا بالآية كلها، فيتميز عن التفسير
+  الذي يفسر المعنى الكلي.
+boundaries:
+  - غريب القرآن بيان لفظة، والتفسير بيان معنى الآية.
+  - المعنى منسوب إلى كتاب بعينه، فقد يختلف بين المصادر.
+alternative_spellings:
+  - gharib
+  - word_meaning
+english_glosses:
+  - Word Meanings
+related:
+  - word
+  - tafsir
+  - ayah
+sources: []

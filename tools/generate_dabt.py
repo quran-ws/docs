@@ -18,8 +18,8 @@ OUT = os.path.join(ROOT, "standards/terminology/concepts")
 NAMING_PHRASE = {
  "fatha": ["الفَتْحَة"], "kasra": ["الكَسْرَة"], "damma": ["الضَّمَّة"],
  "sukun": ["السُّكُون"], "shadda": ["الشَّدَّة"],
- "fathatan": ["تَنْوِين النَّصْب"], "kasratan": ["تَنْوِين الخَفْض"],
- "dammatan": ["تَنْوِين الرَّفْع"],
+ "fathatan": ["تَنْوِين الفَتْح"], "kasratan": ["تَنْوِين الكَسْر"],
+ "dammatan": ["تَنْوِين الضَّمّ"],
  "dot": ["النُّقْطَة"], "two-dots": ["النُّقْطَتَان"], "three-dots": ["الثَّلَاث نُقَط"],
  "hamza": ["الهَمْزَة"], "wasla": ["هَمْزَة الوَصْل"],
  "small-alef": ["الأَلِف المَحْذُوفَة"], "maddah": ["المَدَّة"],
@@ -31,7 +31,7 @@ NAMING_PHRASE = {
  "wasl-awla": ["الوَقْف الجَائِز", "الوَصْل أَوْلَى"],
  "waqf-awla": ["الوَقْف الجَائِز", "الوَقْف أَوْلَى"],
  "waqf-lazim": ["الوَقْف اللَّازِم"],
- "muanaqah": ["تَعَانُق الوَقْف"], "waqf-mamnu": ["الوَقْف المَمْنُوع"],
+ "muanaqah": ["وَقْف المُعَانَقَة"], "waqf-mamnu": ["الوَقْف المَمْنُوع"],
  "saktah": ["عَلَامَة السَّكْتَة"], "seen-reading": ["سِين القِرَاءَة"],
  "imalah": ["الإمَالَة"], "ishmam": ["الإشْمَام"], "tashil": ["التَّسْهِيل"],
  "sajdah-sign": ["عَلَامَة السَّجْدَة"],
@@ -72,6 +72,19 @@ PREVIOUS_NAMES = {
     "sajdah_mark": {"alamat_mawdi_al_sajdah"},
     "division_mark": {"alamat_al_tahzib"},
     "sajdah_line": {"khatt_mujib_al_sajdah"},
+    "waqf_al_muanaqah": {"taanuq_al_waqf", "waqf_al_muraqabah", "muraqabah"},
+    "tanwin_al_fath": {"tanwin_al_nasb"},
+    "tanwin_al_kasr": {"tanwin_al_khafd", "tanwin_al_jarr"},
+    "tanwin_al_damm": {"tanwin_al_rafa"},
+}
+
+# The registry's own file id, in column 1, for the rows whose id is an Arabic
+# phrase rather than a Latin one. It is the entry's name without the article,
+# so it must resolve to it.
+REGISTRY_SHORTHAND = {
+    "tanwin_al_fath": {"tanwin_fath"},
+    "tanwin_al_kasr": {"tanwin_kasr"},
+    "tanwin_al_damm": {"tanwin_damm"},
 }
 
 # A mark's parent is its family. Before this, every mark hung off mushaf_mark
@@ -147,7 +160,8 @@ def build():
             "purpose": r[14].strip(),
             "alternative_spellings": sorted(
                 ({old, old.replace("-", "_"), disp_alias}
-                 | PREVIOUS_NAMES.get(code, set()))
+                 | PREVIOUS_NAMES.get(code, set())
+                 | REGISTRY_SHORTHAND.get(code, set()))
                 - {code} - DEPRECATED_IDS
                 - ({old, old.replace("-", "_")}
                    if old.replace("-", "_") in DEPRECATED_IDS else set())),

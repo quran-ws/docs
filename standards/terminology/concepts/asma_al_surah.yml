@@ -1,0 +1,29 @@
+concept: asma_al_surah
+names:
+  code: asma_al_surah
+  display: Asma al-Surah
+  arabic:
+    vocalized: أَسْمَاء السُّورَة
+    singular: أسماء السورة
+kind: content
+category: quranic_sciences
+origin: quranic
+tier: core
+status: draft
+definition: >
+  ما سميت به السورة من أسماء، وأكثر السور لها أكثر من اسم، منها ما ثبت بالأثر
+  ومنها ما جرى به الاصطلاح.
+purpose: >
+  يستخدم لأن اسم السورة ليس حقلًا واحدًا: فالمصاحف تختلف في الاسم المثبت،
+  والبحث يحتاج أن يجد السورة بأي أسمائها.
+boundaries:
+  - الاسم غير سبب التسمية؛ الأول ما تسمى به، والثاني علة التسمية.
+  - أسماء السورة غير أسماء القرآن نفسه.
+alternative_spellings:
+  - asmaa_al_surah
+english_glosses:
+  - Surah Names
+related:
+  - surah
+  - sabab_al_tasmiyah
+sources: []

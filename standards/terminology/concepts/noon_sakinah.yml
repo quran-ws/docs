@@ -26,7 +26,7 @@ alternative_spellings:
 - noon_saakinah
 related:
 - tajwid
-- tanwin_al_nasb
+- tanwin
 sources:
 - id: tajweed_engine
   ref: noon-tanween

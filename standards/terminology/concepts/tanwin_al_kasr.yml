@@ -1,9 +1,9 @@
-concept: tanwin_al_khafd
+concept: tanwin_al_kasr
 names:
-  code: tanwin_al_khafd
-  display: Tanwin al-Khafd
+  code: tanwin_al_kasr
+  display: Tanwin al-Kasr
   arabic:
-    vocalized: تَنْوِين الخَفْض
+    vocalized: تَنْوِين الكَسْر
   dabt: تَنْوِين الخَفْض — الكَسْرَتَان
   by_shape: أَلِفَان مُضْجَعَتَان تَحْت الحَرْف
   mushaf_introduction: 'الحَرَكَتَان: تَرْكِيباً أو تَتَابُعاً'
@@ -22,6 +22,9 @@ purpose: Marks the in tanwin. Stacked marks signal izhar; staggered marks with a
   the next letter signal complete idgham, and without one, incomplete idgham or ikhfa.
 alternative_spellings:
 - kasratan
+- tanwin_al_jarr
+- tanwin_al_khafd
+- tanwin_kasr
 unicode:
 - cp: U+064D
   name: ARABIC KASRATAN

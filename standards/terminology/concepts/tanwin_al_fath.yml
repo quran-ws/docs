@@ -1,9 +1,9 @@
-concept: tanwin_al_nasb
+concept: tanwin_al_fath
 names:
-  code: tanwin_al_nasb
-  display: Tanwin al-Nasb
+  code: tanwin_al_fath
+  display: Tanwin al-Fath
   arabic:
-    vocalized: تَنْوِين النَّصْب
+    vocalized: تَنْوِين الفَتْح
   dabt: تَنْوِين النَّصْب — الفَتْحَتَان
   by_shape: أَلِفَان مُضْجَعَتَان فَوْق الحَرْف
   mushaf_introduction: 'الحَرَكَتَان: تَرْكِيباً أو تَتَابُعاً'
@@ -22,6 +22,8 @@ purpose: Marks the an tanwin. Stacked marks signal izhar; staggered marks with a
   the next letter signal complete idgham, and without one, incomplete idgham or ikhfa.
 alternative_spellings:
 - fathatan
+- tanwin_al_nasb
+- tanwin_fath
 unicode:
 - cp: U+064B
   name: ARABIC FATHATAN

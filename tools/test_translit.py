@@ -55,8 +55,22 @@ CASES = [
     ("تَجْوِيد", "tajwid"),
     ("مَكِّيّ", "makki"),
     ("الحَرْف المُقَطَّع", "harf_muqatta"),
+    # the mark takes its name from what it marks, as waqf_mark and sajdah_mark do
+    ("عَلَامَة الآيَة", "ayah_mark"),
+    # a place, a science and a role, each derived by the same rules
+    ("مَوْضِع السَّجْدَة", "mawdi_al_sajdah"), ("النَّسْخ", "naskh"),
+    ("المُتَشَابِهَات", "mutashabihat"), ("المُفَسِّر", "mufassir"),
     # section 8 — the article is always al, never assimilated to a sun letter
     ("رُبْع الحِزْب", "rubu_al_hizb"),
+    ("غَرِيب القُرْآن", "gharib_al_quran"),
+    ("حَرْف المَعْنَى", "harf_al_mana"),
+    # the surah card and the ayah modal
+    ("فَضَائِل القُرْآن", "fadail_al_quran"), ("مَقَاصِد السُّورَة", "maqasid_al_surah"),
+    ("أَسْمَاء السُّورَة", "asma_al_surah"), ("التَّدَبُّر", "tadabbur"),
+    ("التَّفْسِير المَأْثُور", "tafsir_mathur"), ("النُّزُول", "nuzul"),
+    # the three parts of speech
+    ("الاِسْم", "ism"), ("الفِعْل", "fil"),
+    ("سَبَب التَّسْمِيَة", "sabab_al_tasmiyah"),
     ("سُجُود التِّلَاوَة", "sujud_al_tilawah"),
     ("أَسْبَاب النُّزُول", "asbab_al_nuzul"),
     ("وَقْف المُعَانَقَة", "waqf_al_muanaqah"),

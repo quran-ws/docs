@@ -1,0 +1,32 @@
+concept: mutashabihat
+names:
+  code: mutashabihat
+  display: Mutashabihat
+  arabic:
+    vocalized: المُتَشَابِهَات
+    singular: المتشابهات
+kind: analysis
+category: quranic_sciences
+origin: quranic
+tier: core
+status: draft
+definition: >
+  المواضع التي يتشابه فيها لفظ الآيات أو أجزاؤها في القرآن، تشابهًا تامًّا أو مع
+  اختلاف يسير في كلمة أو ترتيب.
+purpose: >
+  تستخدم أساسًا لأدوات الحفظ والمراجعة والبحث، إذ يحتاج الحافظ إلى معرفة
+  المواضع التي يلتبس بعضها ببعض وموضع الفرق بينها.
+boundaries:
+  - التشابه اللفظي المقصود هنا غير المتشابه المقابل للمحكم في علوم القرآن.
+  - التشابه علاقة بين موضعين أو أكثر، لا صفة في آية واحدة.
+alternative_spellings:
+  - mutashabih
+  - mutashabihat_lafziyyah
+  - similar_ayahs
+english_glosses:
+  - Similar Passages
+related:
+  - ayah
+  - word
+  - equivalent_ayah
+sources: []

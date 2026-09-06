@@ -1,0 +1,32 @@
+concept: fadail_al_quran
+names:
+  code: fadail_al_quran
+  display: Fadail al-Quran
+  arabic:
+    vocalized: فَضَائِل القُرْآن
+    singular: فضائل القرآن
+kind: content
+category: quranic_sciences
+origin: quranic
+tier: core
+status: draft
+definition: >
+  ما ورد في فضل القرآن أو فضل سورة منه أو آية، وما يترتب على قراءتها من أجر أو
+  أثر.
+purpose: >
+  يستخدم محتوى يربط بالقرآن كله أو بسورة أو آية، ويفرد عن التفسير لأنه لا يفسر
+  المعنى، وعن الحديث لأنه مرتب على الموضع لا على الراوي.
+boundaries:
+  - الفضل مرتب على الموضع من القرآن، والحديث الذي ورد فيه أصل ينقل عنه لا يمثل
+    مكانه.
+  - كثير مما يروى في فضائل السور ضعيف أو موضوع، فيقيد بمصدره ودرجته.
+alternative_spellings:
+  - fadail
+  - fadail_al_surah
+english_glosses:
+  - Merits
+related:
+  - quran
+  - surah
+  - ayah
+sources: []

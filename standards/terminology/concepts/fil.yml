@@ -1,0 +1,24 @@
+concept: fil
+names:
+  code: fil
+  display: Fil
+  arabic:
+    vocalized: الفِعْل
+    singular: الفعل
+kind: classification_value
+category: linguistics
+parent: part_of_speech
+origin: quranic
+tier: core
+status: draft
+definition: >
+  ما دل على معنى في نفسه مقترن بزمان، ويتصرف بالماضي والمضارع والأمر.
+purpose: >
+  يستخدم قيمةً من قيم قسم الكلمة، وعليه تعلق السمات الصرفية الخاصة بالفعل من
+  الزمن والبناء للمعلوم أو المجهول والوزن.
+english_glosses:
+  - Verb
+related:
+  - part_of_speech
+  - morphology
+sources: []

@@ -1,0 +1,26 @@
+concept: ayah_timing
+names:
+  code: ayah_timing
+  display: Ayah Timing
+kind: concept
+category: recitation
+origin: standard
+tier: core
+status: draft
+plural: ayah_timings
+definition: >
+  مدى زمني في تسجيل تلاوة، محدد ببداية ونهاية، يقابل آية بعينها.
+purpose: >
+  يستخدم لربط النص بالصوت، وعليه يقوم التتبع أثناء الاستماع والانتقال إلى آية
+  والتكرار والاقتطاع.
+boundaries:
+  - التوقيت صفة في التسجيل لا في الآية، فيختلف باختلاف التلاوة.
+  - التوقيت على مستوى الآية غير المحاذاة على مستوى الكلمة.
+alternative_spellings:
+  - ayah_timestamp
+  - recitation_timing
+related:
+  - recitation
+  - ayah
+  - reciter
+sources: []

@@ -1,9 +1,9 @@
-concept: taanuq_al_waqf
+concept: waqf_al_muanaqah
 names:
-  code: taanuq_al_waqf
-  display: Taanuq al-Waqf
+  code: waqf_al_muanaqah
+  display: Waqf al-Muanaqah
   arabic:
-    vocalized: تَعَانُق الوَقْف
+    vocalized: وَقْف المُعَانَقَة
   dabt: وَقْف المُعَانَقَة (ويُسمَّى وَقْف المُرَاقَبَة)
   by_shape: ثَلَاث نُقَط تَتَكَرَّر عَلَى كَلِمَتَيْن
   mushaf_introduction: عَلَامَة تَعَانُق الوَقْف
@@ -19,6 +19,9 @@ definition: مَوْضِعَان للوَقْف، إذا وُقِفَ على أ�
 purpose: 'Two candidate stopping points: stopping at one makes stopping at the other invalid.'
 alternative_spellings:
 - muanaqah
+- muraqabah
+- taanuq_al_waqf
+- waqf_al_muraqabah
 unicode:
 - cp: U+06DB
   name: ARABIC SMALL HIGH THREE DOTS

@@ -1,0 +1,30 @@
+concept: tadabbur
+names:
+  code: tadabbur
+  display: Tadabbur
+  arabic:
+    vocalized: التَّدَبُّر
+    singular: التدبر
+kind: content
+category: quranic_sciences
+origin: quranic
+tier: core
+status: draft
+plural: tadabburs
+definition: >
+  التأمل في معاني القرآن وما يقتضيه من عمل، وما يقيده القارئ من وقفة عند آية
+  أو لفظة.
+purpose: >
+  يستخدم محتوى يربط بآية أو بموضع منها، ويفرد عن التفسير لأنه لا يلتزم بيان
+  المعنى الظاهر، وقائله ليس بالضرورة مفسرًا.
+boundaries:
+  - التفسير بيان لمعنى الآية على منهج، والتدبر أثر المعنى في المتدبر.
+alternative_spellings:
+  - tadabur
+  - waqfat_tadabburiyyah
+english_glosses:
+  - Reflection
+related:
+  - ayah
+  - tafsir
+sources: []

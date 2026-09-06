@@ -1,0 +1,32 @@
+concept: naskh
+names:
+  code: naskh
+  display: Naskh
+  arabic:
+    vocalized: النَّسْخ
+    singular: النسخ
+kind: concept
+category: quranic_sciences
+origin: quranic
+tier: extended
+status: draft
+definition: >
+  رفع حكم شرعي بدليل شرعي متأخر عنه، ويبحث في القرآن بنسبة الآية الناسخة إلى
+  الآية المنسوخة.
+purpose: >
+  يستخدم لتمثيل العلاقة بين آيتين إحداهما ناسخة والأخرى منسوخة، وهي علاقة بين
+  موضعين من النص لا صفة في آية واحدة.
+boundaries:
+  - النسخ حكم على الحكم لا على النص، فالآية المنسوخ حكمها ثابتة في المصحف.
+  - النسبة مختلف فيها في كثير من المواضع، فتقيد بمصدرها ولا تعرض حكمًا مجمعًا
+    عليه.
+alternative_spellings:
+  - nasikh_mansukh
+  - nasikh_wa_mansukh
+  - nasekh_mansokh
+english_glosses:
+  - Abrogation
+related:
+  - ayah
+  - asbab_al_nuzul
+sources: []

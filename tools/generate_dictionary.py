@@ -23,6 +23,7 @@ CATEGORY_AR = [
     ("recitation_style", "أنماط الأداء"), ("tajwid", "التجويد"),
     ("waqf", "الوقف"), ("linguistics", "اللغة"),
     ("translation", "الترجمة"), ("tafsir", "التفسير"),
+    ("quranic_sciences", "علوم القرآن"),
 ]
 # Field values are written exactly as they appear in the concept file, so a
 # reader can copy them into YAML. Their Arabic meaning belongs in the standard
