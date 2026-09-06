@@ -568,6 +568,16 @@ choose the most common English spelling and record where that came from in
 **`arabic.vocalized`** is the Arabic name written with its vowel marks. `code`
 is derived from it, and cannot be derived without it.
 
+It is the name we give the concept, and it can differ from the name a source
+gives it. The source's name is kept in `dabt` or in `mushaf_introduction`, so
+nothing is lost.
+
+`arabic.vocalized` is not edited to reach a preferred code name. Editing it
+changes the Arabic name itself, and is accepted only on Arabic grounds: that the
+new name fits the boundaries of the concept better. `division_mark` is the
+example — the mark shows the start of a juz, a hizb, and their halves and
+quarters, so التقسيم covers what التحزيب leaves out.
+
 **`dabt`** is the name of the mark in the science of ḍabṭ, copied as its source
 gives it.
 
