@@ -4,13 +4,19 @@
 
 لكل مصطلح:
 
-- **Canonical**: الاسم البرمجي المعتمد.
-- **Kind**: نوع المفهوم.
-- **Parent**: المفهوم الأب عند وجوده.
+- **Canonical**: الاسم البرمجي المعتمد، مشتقًا بقواعد الأقسام 4 إلى 8 من المعيار.
+- **Kind**: دور المدخل البنيوي، من القائمة المغلقة في القسم 12.
+- **Parent**: المفهوم الأب عند وجوده، ولازم في قيم التصنيفات.
+- **Tier**: `core` لما تخزنه التطبيقات، و`extended` لما هو ثابت نادر النمذجة.
 - **Definition**: ما هو المفهوم؟
 - **Purpose**: لماذا نمثله برمجيًا؟
 - **Alternative**: تهجئات أخرى للاسم نفسه.
 - **English gloss**: ترجمة أو شرح إنجليزي، وليست اسمًا Canonical.
+- **Mushaf introduction**: اسم العلامة كما ورد في مقدمة المصحف، وخلوه خبر عن
+  المصدر لا نقص في المدخل.
+
+> هذا القاموس مسودة. المصدر البرمجي له `standards/terminology/concepts/*.yml`،
+> وهذا الملف مخرج منه، فلا يعدل فيه ما يمكن توليده.
 
 ---
 
@@ -48,21 +54,6 @@
 
 ---
 
-## Kitab — الكتاب
-
-**Canonical:** `Kitab`  
-**Kind:** `quran_name`  
-**Status:** `non-core`
-
-**Definition:**  
-اسم يطلق على القرآن من جهة كونه مكتوبًا مجموعًا، مع ورود لفظ الكتاب في استعمالات أخرى.
-
-**Purpose:**  
-يفيد في البيانات المتعلقة بأسماء القرآن وأوصافه، ولا يستخدم بديلًا برمجيًا عن `Quran`.
-
-**English gloss:** `Book`
-
----
 
 # 2. Structure
 
@@ -134,9 +125,10 @@
 
 ---
 
-## Disjointed Letters — الحروف المقطعة
+## Disjointed Letter — الحرف المقطع
 
-**Canonical:** `Disjointed Letters`  
+**Canonical:** `Disjointed Letter`  
+**Plural:** `Disjointed Letters`  
 **Kind:** `textual_concept`
 
 **Definition:**  
@@ -347,8 +339,9 @@
 
 ## Surah Group — تصنيف السور
 
-**Canonical:** `Surah Group`  
-**Kind:** `classification`
+**Canonical:** `surah_group`  
+**Kind:** `classification`  
+**Tier:** `extended`
 
 **Definition:**  
 تصنيف يجمع سورًا وفق تقسيمات اصطلاحية موروثة تعتمد الطول أو موضعها ضمن مجموعات السور.
@@ -362,7 +355,8 @@
 
 **Canonical:** `Sabe al-Tiwal`  
 **Kind:** `classification_value`  
-**Parent:** `Surah Group`
+**Parent:** `surah_group`  
+**Tier:** `extended`
 
 **Definition:**  
 مجموعة من أطول سور القرآن في أوله، مع خلاف معروف في تعيين السورة السابعة.
@@ -378,7 +372,8 @@
 
 **Canonical:** `Miun`  
 **Kind:** `classification_value`  
-**Parent:** `Surah Group`
+**Parent:** `surah_group`  
+**Tier:** `extended`
 
 **Definition:**  
 السور التي تقارب آياتها المئة أو تزيد عليها أو تنقص عنها قليلًا.
@@ -394,7 +389,8 @@
 
 **Canonical:** `Mathani`  
 **Kind:** `classification_value`  
-**Parent:** `Surah Group`
+**Parent:** `surah_group`  
+**Tier:** `extended`
 
 **Definition:**  
 مجموعة السور التي تلي المئين في التقسيم التقليدي.
@@ -408,7 +404,8 @@
 
 **Canonical:** `Mufassal`  
 **Kind:** `classification_value`  
-**Parent:** `Surah Group`
+**Parent:** `surah_group`  
+**Tier:** `extended`
 
 **Definition:**  
 مجموعة من قصار السور التي تلي المثاني، مع اختلاف العلماء في أولها.
@@ -589,18 +586,6 @@ Kufi
 
 # 9. Revelation
 
-## Revelation — النزول
-
-**Canonical:** `Revelation`  
-**Kind:** `concept`
-
-**Definition:**  
-نزول القرآن من عند الله على النبي ﷺ بواسطة الوحي.
-
-**Purpose:**  
-يستخدم كمجال جامع للبيانات المتعلقة بزمن النزول وترتيبه وأسبابه وتصنيفاته.
-
----
 
 ## Asbab al-Nuzul — أسباب النزول
 
@@ -780,7 +765,7 @@ Kufi
 
 **Canonical:** `Recitation`  
 **Plural:** `Recitations`  
-**Kind:** `concept / entity`
+**Kind:** `entity`
 
 **Definition:**  
 قراءة القرآن وأداؤه صوتيًا.
@@ -1053,118 +1038,199 @@ Kufi
 
 ---
 
-## Waqf Type — نوع علامة الوقف
+## Waqf Mark Type — نوع علامة الوقف
 
-**Canonical:** `Waqf Type`  
+**Canonical:** `waqf_mark_type`  
 **Kind:** `classification`
 
 **Definition:**  
-تصنيف لحكم الوقف أو الوصل الذي تدل عليه علامة الوقف.
+تصنيف لما ترشد إليه علامة الوقف المرسومة في المصحف من لزوم أو منع أو جواز.
 
 **Purpose:**  
-يوفر مجموعة قيم موحدة يمكن استخدامها في datasets والـAPIs بدل الاعتماد على الرمز فقط.
+يوفر مجموعة قيم موحدة تتفرع عليها التطبيقات، بدل قراءة صورة الرمز نفسه.
+
+**Note:**  
+هذا تصنيف للعلامة المرسومة، ويختلف عن `waqf_ruling` الذي يصنف الموضع نفسه.
 
 ---
 
-## Mandatory Waqf — الوقف اللازم
+## Waqf Lazim — الوقف اللازم
 
-**Canonical:** `Mandatory Waqf`  
-**Code:** `mandatory`  
+**Canonical:** `waqf_lazim`  
 **Kind:** `classification_value`  
-**Parent:** `Waqf Type`
+**Parent:** `waqf_mark_type`
 
 **Definition:**  
-موضع يدل على لزوم الوقف لصيانة المعنى من الالتباس.
+موضع يدل على لزوم الوقف، لأن وصل ما بعده بما قبله يوهم خلاف المعنى المراد.
 
 **Purpose:**  
-يستخدم لتصنيف علامة الوقف اللازمة.
+يستخدم قيمةً لعلامة الوقف اللازم، وهي الميم في المصحف.
 
-**Traditional term:** `Waqf Lazim`
+**Mushaf introduction:** عَلَامَة الوَقْف اللَّازِم  
+**English gloss:** `Mandatory Waqf`
 
 ---
 
-## Prohibited Waqf — الوقف الممنوع
+## Waqf Jaiz — الوقف الجائز
 
-**Canonical:** `Prohibited Waqf`  
-**Code:** `prohibited`  
+**Canonical:** `waqf_jaiz`  
 **Kind:** `classification_value`  
-**Parent:** `Waqf Type`
+**Parent:** `waqf_mark_type`
+
+**Definition:**  
+موضع يجوز فيه الوقف والوصل جوازًا مستوي الطرفين، فلا يترجح أحدهما.
+
+**Purpose:**  
+يستخدم قيمةً لعلامة الجيم، وهي الجواز الذي لا تفضيل فيه.
+
+**Mushaf introduction:** عَلَامَة الوَقْف الجَائِز جَوَازًا مُسْتَوِيَ الطَّرَفَيْن  
+**English gloss:** `Permissible Waqf`
+
+---
+
+## Waqf Jaiz Wasl Awla — الوقف الجائز والوصل أولى
+
+**Canonical:** `waqf_jaiz_wasl_awla`  
+**Kind:** `classification_value`  
+**Parent:** `waqf_mark_type`
+
+**Definition:**  
+موضع يجوز فيه الوقف والوصل، مع كون الوصل أولى.
+
+**Purpose:**  
+يستخدم قيمةً لعلامة «صلى».
+
+**Mushaf introduction:** عَلَامَة الوَقْف الجَائِز مَع كَوْن الوَصْل أَوْلَى  
+**English gloss:** `Continuation Preferred`
+
+---
+
+## Waqf Jaiz Waqf Awla — الوقف الجائز والوقف أولى
+
+**Canonical:** `waqf_jaiz_waqf_awla`  
+**Kind:** `classification_value`  
+**Parent:** `waqf_mark_type`
+
+**Definition:**  
+موضع يجوز فيه الوقف والوصل، مع كون الوقف أولى.
+
+**Purpose:**  
+يستخدم قيمةً لعلامة «قلى».
+
+**Mushaf introduction:** عَلَامَة الوَقْف الجَائِز مَع كَوْن الوَقْف أَوْلَى  
+**English gloss:** `Waqf Preferred`
+
+---
+
+## Taanuq al-Waqf — تعانق الوقف
+
+**Canonical:** `taanuq_al_waqf`  
+**Code:** `taanuq_al_waqf`  
+**Kind:** `classification_value`  
+**Parent:** `waqf_mark_type`
+
+**Definition:**  
+موضعان للوقف، إذا وُقف على أحدهما لم يصح الوقف على الآخر.
+
+**Purpose:**  
+يستخدم لربط موضعي التعانق وإظهار العلاقة بين العلامتين؛ فهي علامة واحدة
+ترد في زوج، لا علامتان مستقلتان.
+
+**Mushaf introduction:** عَلَامَة تَعَانُق الوَقْف  
+**Alternative:** `waqf_al_muanaqah`  
+**English gloss:** `Interchangeable Waqf`
+
+---
+
+## Waqf Mamnu — الوقف الممنوع
+
+**Canonical:** `waqf_mamnu`  
+**Kind:** `classification_value`  
+**Parent:** `waqf_mark_type`
 
 **Definition:**  
 موضع يدل على منع الوقف الاختياري فيه.
 
 **Purpose:**  
-يستخدم لتصنيف علامة منع الوقف.
+يستخدم قيمةً لعلامة «لا».
 
-**Traditional term:** `Waqf Mamnu`
+**Mushaf introduction:** — لم ترد في مقدمة هذه الطبعة، ولا موضع لها فيها.
+
+**Note:**  
+المصطلح ثابت في علم الضبط، والعلامة مسجلة في السجل وغير مستعملة في هذه
+الطبعة. وخلو مقدمة المصحف من ذكرها خبر عن الطبعة لا نقص في المدخل.
 
 ---
 
-## Permissible Waqf — الوقف الجائز
+## Waqf Ruling — حكم الوقف
 
-**Canonical:** `Permissible Waqf`  
-**Code:** `permissible`  
-**Kind:** `classification_value`  
-**Parent:** `Waqf Type`
+**Canonical:** `waqf_ruling`  
+**Kind:** `classification`
 
 **Definition:**  
-موضع يجوز فيه الوقف والوصل دون ترجيح أحدهما.
+تصنيف الموضع نفسه من جهة تمام المعنى عنده، لا من جهة العلامة المرسومة عليه.
 
 **Purpose:**  
-يستخدم لتصنيف علامة الوقف الجائز.
-
-**Traditional term:** `Waqf Jaiz`
+يستخدم في التعليم والتحليل النحوي والدلالي للوقف، ويبقى مستقلًا عن
+`waqf_mark_type` لأنهما تصنيفان لشيئين مختلفين: هذا للموضع وذاك للعلامة.
 
 ---
 
-## Continuation Preferred — الوصل أولى
+## Waqf Tam — الوقف التام
 
-**Canonical:** `Continuation Preferred`  
-**Code:** `continuation_preferred`  
+**Canonical:** `waqf_tam`  
 **Kind:** `classification_value`  
-**Parent:** `Waqf Type`
+**Parent:** `waqf_ruling`
 
 **Definition:**  
-موضع يجوز فيه الوقف والوصل مع كون مواصلة القراءة أولى.
+ما تم معناه ولم يتعلق بما بعده لفظًا ولا معنى.
 
 **Purpose:**  
-يستخدم لتمييز هذه الحالة عن الجواز المطلق أو تفضيل الوقف.
+يستخدم قيمةً في تصنيف مواضع الوقف تعليميًا وتحليليًا.
 
 ---
 
-## Waqf Preferred — الوقف أولى
+## Waqf Kafi — الوقف الكافي
 
-**Canonical:** `Waqf Preferred`  
-**Code:** `waqf_preferred`  
+**Canonical:** `waqf_kafi`  
 **Kind:** `classification_value`  
-**Parent:** `Waqf Type`
+**Parent:** `waqf_ruling`
 
 **Definition:**  
-موضع يجوز فيه الوقف والوصل مع كون الوقف أولى.
+ما تم معناه وتعلق بما بعده معنًى لا لفظًا.
 
 **Purpose:**  
-يستخدم لتصنيف مواضع تفضيل الوقف.
+يستخدم قيمةً في تصنيف مواضع الوقف.
 
 ---
 
-## Interchangeable Waqf — وقف المعانقة
+## Waqf Hasan — الوقف الحسن
 
-**Canonical:** `Interchangeable Waqf`  
-**Code:** `interchangeable`  
+**Canonical:** `waqf_hasan`  
 **Kind:** `classification_value`  
-**Parent:** `Waqf Type`
+**Parent:** `waqf_ruling`
 
 **Definition:**  
-علامتان مرتبطتان بموضعين يجوز الوقف على أحدهما دون الجمع بين الوقف عليهما.
+ما أفاد معنًى وتعلق بما بعده لفظًا ومعنًى.
 
 **Purpose:**  
-يستخدم لربط موضعي المعانقة وإظهار العلاقة بين العلامتين.
-
-**Traditional terms:** `Waqf al-Muanaqah`, `Waqf al-Muraqabah`
+يستخدم قيمةً في تصنيف مواضع الوقف.
 
 ---
 
-# 16. Sajdah
+## Waqf Qabih — الوقف القبيح
+
+**Canonical:** `waqf_qabih`  
+**Kind:** `classification_value`  
+**Parent:** `waqf_ruling`
+
+**Definition:**  
+ما لم يفد معنًى، أو أفاد معنًى غير مراد.
+
+**Purpose:**  
+يستخدم قيمةً في تصنيف مواضع الوقف، وفي التنبيه في تطبيقات التعليم.
+
+---
 
 ## Sujud al-Tilawah — سجود التلاوة
 
@@ -1181,20 +1247,8 @@ Kufi
 
 ---
 
-## Sajdah Location — موضع السجدة
 
-**Canonical:** `Sajdah Location`  
-**Kind:** `location`
-
-**Definition:**  
-موضع من النص القرآني يرتبط بسجود التلاوة.
-
-**Purpose:**  
-يستخدم لربط بيانات السجدة بالموضع القرآني دون ربطها بتخطيط مصحف بعينه.
-
----
-
-# 17. Linguistics
+# 16. Linguistics
 
 ## Root — الجذر
 
@@ -1210,7 +1264,7 @@ Kufi
 
 ---
 
-## Lemma — اللمّة / المدخل المعجمي
+## Lemma — المدخل المعجمي
 
 **Canonical:** `Lemma`  
 **Plural:** `Lemmas`  
@@ -1253,7 +1307,7 @@ Kufi
 
 ---
 
-# 18. Translation
+# 17. Translation
 
 ## Translation — الترجمة
 
@@ -1290,7 +1344,7 @@ Kufi
 
 **Canonical:** `Transliteration`  
 **Plural:** `Transliterations`  
-**Kind:** `content / process`
+**Kind:** `content`
 
 **Definition:**  
 تمثيل حروف نظام كتابي بحروف نظام آخر وفق قواعد محددة، دون ترجمة المعنى.
@@ -1302,7 +1356,7 @@ Kufi
 
 ---
 
-# 19. Tafsir
+# 18. Tafsir
 
 ## Tafsir — التفسير
 
@@ -1321,70 +1375,33 @@ Kufi
 
 ---
 
-# 20. بنية الـEntry
+# 19. بنية الـEntry
 
-المصدر البرمجي للقاموس يستخدم بنية موحدة:
+بنية المدخل يحددها القسم 27 من **Quranic Software Terminology Standard**،
+والمصدر البرمجي لهذا القاموس هو `standards/terminology/concepts/*.yml`،
+يتحقق منه بـ`standards/terminology/schema.json`.
 
-```yaml
-concept: ayah
-kind: entity
-category: structure
-
-canonical: ayah
-plural: ayahs
-
-arabic:
-  singular: آية
-  plural: آيات
-
-definition: >
-  وحدة من النص القرآني تقع ضمن سورة ولها حدود محددة،
-  وقد يختلف رقمها أو بعض حدودها بحسب نظام عد الآي.
-
-purpose: >
-  تستخدم كوحدة أساسية للإشارة إلى النص القرآني وربط
-  الترجمات والتفاسير والتلاوات والتحليلات والبيانات
-  الأخرى بموضع محدد من القرآن.
-
-alternative_spellings:
-  - aya
-
-english_glosses:
-  - verse
-
-related:
-  - surah
-  - ayah_numbering_system
-
-sources: []
-```
-
----
-
-# 21. نقاط تحتاج مراجعة قبل اعتماد v1.0
+# 20. نقاط تحتاج مراجعة قبل اعتماد v1.0
 
 هذه المفاهيم تحتاج نقاشًا إضافيًا قبل تثبيت الـCanonical النهائي:
 
 ```text
-Kitab
 Fasilah
-Disjointed Letters
-
+Disjointed Letter
 Mushaf Edition
 Rasm / Orthography
-
-Sabe al-Tiwal
-
-Recitation vs Tilawah
-Reciter vs Qari
-
-Mandatory Waqf vs Waqf Lazim
-Prohibited Waqf vs Waqf Mamnu
-Permissible Waqf vs Waqf Jaiz
-
-Sujud al-Tilawah vs Sajdah al-Tilawah
-
 Ayah Numbering System terminology
+```
+
+وقد حسمت هذه بعد أن كانت مطروحة:
+
+```text
+Kitab                       أخرج من القاموس؛ اسم للقرآن لا مفهوم برمجي
+Sabe al-Tiwal والمجموعات    نقلت إلى tier: extended لاختلاف حدودها
+Recitation vs Tilawah       Recitation، والمفهوم عام لا يخصه القرآن
+Reciter vs Qari             Reciter، وQari تسجل بديلًا
+Waqf Lazim وأخواتها         الأسماء العربية، موافقةً لسائر قيم التصنيفات
+Sujud al-Tilawah            أبقي، وفصلت عنه علامة السجدة المرسومة
 ```
 
 في هذه الحالات يجب أن نختار بناء على السؤال الأساسي في المعيار:
