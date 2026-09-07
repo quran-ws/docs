@@ -8,12 +8,15 @@ origin: borrowed
 tier: core
 status: draft
 plural: graphemes
-definition: وحدة كتابية يدركها المستخدم كوحدة واحدة، وقد تتكون من أكثر من Unicode codepoint.
+definition: الوحدة الكتابية وحدة يدركها المستخدم على أنها وحدة واحدة، وقد تتكون من أكثر من `codepoint`.
 definition_en: >
   A written unit that a user perceives as one unit, which may consist of more than one
-  Unicode codepoint.
-purpose: تستخدم في التقسيم البصري والتحرير واختيار النص عندما لا يكون الـcodepoint وحدة مناسبة.
+  `codepoint`.
+purpose: نستخدمها في التقسيم البصري والتحرير واختيار النص عندما لا يكون `codepoint` وحدة مناسبة.
 purpose_en: >
   Used for visual segmentation, editing and text selection, where the codepoint is not
   the right unit.
+related:
+  - codepoint
+  - character
 sources: []

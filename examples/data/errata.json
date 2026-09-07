@@ -1,0 +1,26 @@
+{
+  "mushaf_edition": "tanzil_uthmani",
+  "errata": [
+    {
+      "id": "2026-0001",
+      "location": {
+        "surah_number": 1,
+        "ayah_number": 1,
+        "word_position": 1,
+        "ayah_numbering_system": "kufi"
+      },
+      "offset": {
+        "unit": "codepoint",
+        "start": 0,
+        "end": 1
+      },
+      "before": "U+FEFF U+0628",
+      "after": "U+0628",
+      "kind": "transmission_error",
+      "confirmed_by": "the published source file has no U+FEFF; the mark was added by the export",
+      "confirmed_on": "2026-09-06",
+      "fixed_in": "2.0.0",
+      "note": "A U+FEFF (byte order mark) picked up during export sits before the first letter of 1:1. Invisible on screen, counted by every string operation. Found by tools/audit_text.py, the BOM check."
+    }
+  ]
+}

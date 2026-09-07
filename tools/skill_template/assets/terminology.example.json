@@ -1,0 +1,21 @@
+{
+  "_comment": "Copy this to .terminology.json at the root of the project (or pass --config). Every key is optional. Globs are relative to the directory holding this file; `dir/**` and `dir` both mean the directory and everything under it. Lines carrying a comment with the words `terminology: ignore` are excused one at a time, in the code itself.",
+
+  "paths": ["src", "app", "database", "data"],
+  "_paths": "What `audit_terminology.py` audits when it is given no path: the directories that model Quranic data. Tests and tooling are usually not worth the noise.",
+
+  "exclude": ["src/poetry/**", "public/vendor/**", "**/*.min.js", "docs/glossary.md"],
+  "_exclude": "Trees the audit does not read at all: a module about something else that shares a word (poetry has verses; a paginator has pages), third-party code, generated bundles.",
+
+  "ignore_words": ["segment", "reading"],
+  "_ignore_words": "Words that mean something else in this project and are never a finding here. `segment` is an audio segment, not a morpheme; `reading` is a screen-reader reading, not a qiraah. Each one is a decision: write why in a commit message or a comment next to this file.",
+
+  "allow_gloss_in": ["src/api/v1/**", "src/i18n/**"],
+  "_allow_gloss_in": "Where an English gloss (`verse`, `chapter`) is allowed to stand in for the name: a published API whose field names are a promise to clients, or UI strings, where `display` and plain English belong. Spelling errors and deprecated names are still reported there.",
+
+  "external_names": ["UthmanicHafs[A-Za-z0-9.\\-]*", "ARABIC [A-Z ]+", "quranpedia/qiraat-ayah-map"],
+  "_external_names": "Names the project quotes rather than chooses: a vendor's package and column names, Unicode character names, an upstream repository, a font family. They are locators, and renaming them would break the reference, so the audit reads past them. Regular expressions, matched anywhere in a line.",
+
+  "compatibility": ["database/migrations/**", "database/schema.sql", "openapi.yml"],
+  "_compatibility": "Compatibility surfaces: database columns, wire formats, dataset headers. Findings there are reported once, as known, and do not fail --strict, because renaming them is a migration with a cost — plan it, do not lint it. New columns and fields are still expected to follow the standard: keep the audit running on the files that create them."
+}

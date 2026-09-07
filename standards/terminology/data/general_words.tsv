@@ -12,6 +12,9 @@
 # The third column is the word's place in the English name:
 #   word   stays where it stands       ثَلَاث نُقَط     → three_dots
 #   head   moves to the end            عَلَامَة الوَقْف  → waqf_mark
+#   with_head  translated only beside a head word, transliterated otherwise:
+#          العَلَامَة الإِمْلَائِيَّة → orthographic_mark, but الرَّسْم الإِمْلَائِيّ → rasm_imlai,
+#          the name every codebase already uses for the type of rasm
 # A head is a noun that governs what follows it, so English puts it last. A
 # chain of heads reverses: نَوْع عَلَامَة الوَقْف → waqf_mark_type.
 #
@@ -31,5 +34,11 @@
 خط	line	head
 نوع	type	head
 تقسيم	division	word
-إملائي	orthographic	word
-إملائية	orthographic	word
+إملائي	orthographic	with_head
+إملائية	orthographic	with_head
+موضع	place	head
+حرف	letter	head
+أسماء	names	head
+حكم	ruling	head
+علاقة	relation	head
+حرفين	letter	word

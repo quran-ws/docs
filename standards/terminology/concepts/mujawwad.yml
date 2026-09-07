@@ -11,11 +11,24 @@ parent: recitation_style
 origin: quranic
 tier: core
 status: draft
-definition: وصف لتلاوة أو تسجيل ينشر بوصفه مجودًا.
+definition: >
+  المجود نمط أداء بطيء يُمد فيه الصوت وتُستوفى أحكام التجويد بتطريب، وهو الوصف الذي تُنشر به
+  التسجيلات المؤداة على هذا النحو.
 definition_en: >
-  A description of a recitation or a recording published as mujawwad.
-purpose: يستخدم لتصنيف نمط التسجيل، ولا يستخدم مرادفًا لعلم `Tajwid`.
+  A recitation style that is slow and melodic, with the tajwid rules drawn out; the
+  label given to recordings delivered that way.
+purpose: >
+  نستخدمه لتصنيف التسجيل بحسب نمطه.
 purpose_en: >
-  Used to classify the style of a recording. It is never used as a synonym for the
-  discipline of `Tajwid`.
+  Used to classify a recording by its style.
+boundaries:
+  - المجود نمط تسجيل، والتجويد علم يؤدى به كل نمط، لذلك لا يستعمل أحد الاسمين مكان الآخر.
+boundaries_en:
+  - >-
+    Mujawwad is a recording style; tajwid is the discipline every style is delivered by.
+    Neither name stands for the other.
+related:
+  - recitation_style
+  - murattal
+  - tajwid
 sources: []

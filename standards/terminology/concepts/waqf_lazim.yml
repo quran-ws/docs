@@ -4,6 +4,7 @@ names:
   display: Waqf Lazim
   arabic:
     vocalized: الوَقْف اللَّازِم
+    singular: الوقف اللازم
   dabt: المِيم — عَلَامَة الوَقْف اللَّازِم
   by_shape: مِيم
   mushaf_introduction: عَلَامَة الوَقْف اللَّازِم
@@ -15,22 +16,32 @@ origin: quranic
 tier: core
 status: draft
 symbol: م
-definition: الوَقْف لَازِم، لأنَّ وَصْلَ ما بعده بما قبله يُوهِم خِلَاف المَعْنَى المُرَاد
+definition: الوقف اللازم علامة تدل على أن الوقف لازم، لأن وصل ما بعده بما قبله يوهم خلاف المعنى
+  المراد.
 definition_en: 'A compulsory stop: continuing across it would suggest a meaning other than
   the one intended.'
-purpose: تستخدم قيمةً من قيم نوع علامة الوقف، ليتفرع عليها العرض والتلقين والتنبيه في التطبيقات
-  بدل قراءة صورة الرمز.
-purpose_en: Used as a value of the waqf mark type, so that rendering, instruction and warnings
+purpose: نستخدمها قيمة من قيم نوع علامة الوقف، فنبني عليها العرض والتلقين والتنبيه في التطبيقات
+  بدلًا من قراءة صورة الرمز.
+purpose_en: Used as a value of the waqf mark type, so that rendering, teaching and warnings
   in applications branch on it rather than on the shape of the sign.
 alternative_spellings:
 - waqf-lazim
+related:
+- waqf
+- waqf_mark
 unicode:
 - cp: U+06D8
   name: ARABIC SMALL HIGH MEEM INITIAL FORM
   category: Mn
   combining_class: 230
   block: Arabic
+  unidata: 13.0.0
 mark_family: waqf
 sources:
 - id: hafs_svg_registry
   ref: standard!waqf-lazim
+- id: quranpedia_tajweed
+  ref: '122'
+  url: https://tajweed.quranpedia.net/term/show/122
+- id: qattan_mabahith
+  ref: 1/152

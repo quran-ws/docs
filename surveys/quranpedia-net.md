@@ -3,7 +3,8 @@
 Status: draft
 Surveyed: 2026-09-06
 Subject: `~/Documents/Github/quranpedia.net` (Laravel, MySQL, 267 migrations, 65 Eloquent models, 83 tables — 77 of them domain tables)
-Measured against: `standards/terminology/` (117 concepts) and `content/en/03-terminology/standard.md`
+Measured against: `standards/terminology/` (117 concepts at the time; 146 after §1a) and `content/en/03-terminology/standard.md`
+See also: `OPEN.md` for what this survey raised that is still undecided; a section overtaken by a later decision says so at its head
 
 ---
 
@@ -392,6 +393,8 @@ Note the spelling trap: the app's own rule slugs are `madda_obligatory`, `madda_
 
 ## 4. What this implies for the dictionary's shape
 
+> **Superseded.** This section argued for five new domains. The decision went the other way: the standard names the concepts of the Quranic text and its sciences and stops there, so `library`, `content`, `audio` and `people` are a project's own to name. See *The standard names the Quran's own sciences, and stops there* in `content/{ar,en}/03-terminology/decisions.md`. The paragraphs are kept as written, as the case the decision answered.
+
 The 10-of-77 number is not a quality judgement on either side. It says the dictionary today is a dictionary of *the Quranic text and its mushaf*, and quranpedia is mostly an application about *scholarship attached to that text*. Two things follow.
 
 **The `category` list needs new domains.** §25 fixes eighteen domains and says a domain is not added before there are concepts for it. quranpedia supplies the concepts for at least: `library` (book, author, chapter, edition), `content` beyond tafsir (fatwa, note, topic, athar), `analysis` (mutashabihat, similar ayah), `audio` (timing, radio, granularity), `people` (the six roles). Five new domains, each with concepts already in production behind them.
@@ -402,13 +405,13 @@ The 10-of-77 number is not a quality judgement on either side. It says the dicti
 
 ## 5. Open questions
 
-These need a decision before entries are written; they are not oversights.
+These need a decision before entries are written; they are not oversights. The ones still open are tracked in `OPEN.md`.
 
-1. **Are the ten qiraat and their rawis concepts or data?** The dictionary defines `qiraah`, `riwayah`, `tariq`, `rawi` as concepts. quranpedia stores the ten readers and their twenty rawis as rows. §13 says values of a classification get entries — do نافع، عاصم، حمزة qualify, or is a qiraah an entity with instances rather than a classification with values? The same question applies to the six ayah-numbering systems, and there the answer feels like yes.
+1. *Answered — data.* They are rows in `standards/terminology/registries/qiraat.tsv`; a concept with a closed set of members names its registry instead of giving each member an entry. The question as asked: **Are the ten qiraat and their rawis concepts or data?** The dictionary defines `qiraah`, `riwayah`, `tariq`, `rawi` as concepts. quranpedia stores the ten readers and their twenty rawis as rows. §13 says values of a classification get entries — do نافع، عاصم، حمزة qualify, or is a qiraah an entity with instances rather than a classification with values? The same question applies to the six ayah-numbering systems, and there the answer feels like yes.
 
 2. **`nahw` vs `irab`** — one concept or two? quranpedia serves both.
 
-3. **Where does the boundary of the standard fall?** `users`, `sessions`, `subscriptions`, `imports`, `proofreader_findings`, `api_usage_logs`, `messages` are ordinary application tables and clearly outside. But `attachment`, `thumbnail`, `radio`, `source` are Quran-adjacent. The standard has no stated rule for what it declines to name, and one would settle a dozen of the items above.
+3. *Answered.* A concept belongs when it cannot be defined without referring to the Quran or the mushaf; the rule heads the standard's "rule for accepting a new term". The question as asked: **Where does the boundary of the standard fall?** `users`, `sessions`, `subscriptions`, `imports`, `proofreader_findings`, `api_usage_logs`, `messages` are ordinary application tables and clearly outside. But `attachment`, `thumbnail`, `radio`, `source` are Quran-adjacent. The standard has no stated rule for what it declines to name, and one would settle a dozen of the items above.
 
 4. **`quran_qa`** — quranpedia has 3 tables and a public section for Q&A on the Quran. Is that a distinct content concept, or a `fatwa` under another name? The data has separate sources, so probably distinct.
 

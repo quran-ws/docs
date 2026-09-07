@@ -4,6 +4,7 @@ names:
   display: Omitted Alif
   arabic:
     vocalized: الأَلِف المَحْذُوفَة
+    singular: الألف المحذوفة
   dabt: الأَلِف المَحْذُوفَة — أَلِف صَغِيرَة قَائِمَة
   by_shape: أَلِف صَغِيرَة قَائِمَة فَوْق الحَرْف
   mushaf_introduction: مِنَ الحُرُوف الصَّغِيرَة الدَّالَّة على المَتْرُوك مِنَ الرَّسْم
@@ -15,21 +16,28 @@ origin: quranic
 tier: core
 status: draft
 symbol: ا صَغِيرَة قَائِمَة
-definition: الدَّلَالَة على أَلِف مَحْذُوفَة من الرَّسْم واجِبَة النُّطْق
+definition: الألف المحذوفة علامة تدل على ألف محذوفة من الرسم واجبة النطق.
 definition_en: Restores an alif omitted from the Uthmani skeleton but obligatory in pronunciation.
-purpose: تستخدم قيمةً من علامات الرسم، ليعرف بها ما خالف فيه الرسم اللفظ في الكلمة.
-purpose_en: Used as a value of the orthographic marks, so that where the rasm departs from
-  the pronunciation of a word is known.
+purpose: نستخدمها قيمة من علامات الرسم، فنعرف بها المواضع التي يخالف فيها الرسم اللفظ في الكلمة.
+purpose_en: Used as a value of the orthographic marks, so that software can tell where the
+  rasm departs from the pronunciation.
 alternative_spellings:
 - alif_mahdhufah
+- dagger_alif
 - small-alef
 - small_alef
+- small_alif
+- superscript_alif
+related:
+- rasm
+- orthographic_mark
 unicode:
 - cp: U+0670
   name: ARABIC LETTER SUPERSCRIPT ALEF
   category: Mn
   combining_class: 35
   block: Arabic
+  unidata: 13.0.0
 mark_family: imlaiyyah
 sources:
 - id: hafs_svg_registry

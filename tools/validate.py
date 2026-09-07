@@ -12,12 +12,12 @@ CONCEPTS = os.path.join(ROOT, "standards/terminology/concepts")
 
 
 def main():
-    validator = Draft202012Validator(json.load(open(SCHEMA)))
+    validator = Draft202012Validator(json.load(open(SCHEMA, encoding="utf-8")))
     files = sorted(glob.glob(os.path.join(CONCEPTS, "*.yml")))
     failures = 0
     for path in files:
         entry = yaml.safe_load(open(path, encoding="utf-8"))
-        errors = sorted(validator.iter_errors(entry), key=lambda e: e.path)
+        errors = sorted(validator.iter_errors(entry), key=lambda e: [str(p) for p in e.path])
         if errors:
             failures += 1
             print(f"\n{os.path.basename(path)}")

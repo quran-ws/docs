@@ -1,0 +1,45 @@
+concept: word_meanings
+names:
+  code: word_meanings
+  display: Word Meanings
+  arabic:
+    vocalized: غَرِيب القُرْآن
+    singular: غريب القرآن
+kind: content
+category: quranic_sciences
+origin: borrowed
+tier: core
+status: draft
+definition: >
+  غريب القرآن هو بيان معاني الألفاظ القرآنية التي خفي معناها على أكثر القراء، لقلة استعمالها أو
+  لتغير دلالتها.
+definition_en: >
+  The explanation of Quranic words whose meaning is obscure to most readers, whether
+  because they are rare in use or because their sense has shifted.
+purpose: >
+  نستخدمه محتوى يُربط بكلمة بعينها من الآية وليس بالآية كلها، وبذلك يتميز عن التفسير الذي يفسر
+  المعنى الكلي.
+purpose_en: >
+  Used as content attached to a particular word of an ayah rather than to the whole
+  ayah, which is what sets it apart from tafsir and its explanation of the ayah's
+  overall meaning.
+boundaries:
+  - غريب القرآن بيان لمعنى لفظة، والتفسير بيان لمعنى الآية.
+  - المعنى منسوب إلى كتاب بعينه، وقد يختلف بين المصادر.
+boundaries_en:
+  - >-
+    Gharib al-Quran explains a word; tafsir explains the meaning of an ayah.
+  - >-
+    The meaning is attributed to a particular book, so it may differ between sources.
+alternative_spellings:
+  - gharib
+  - word_meaning
+related:
+  - word
+  - tafsir
+  - ayah
+sources:
+  - id: itqan
+    ref: "2/3"
+  - id: qattan_mabahith
+    ref: "1/8"

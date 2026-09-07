@@ -4,6 +4,7 @@ names:
   display: Waqf al-Muanaqah
   arabic:
     vocalized: وَقْف المُعَانَقَة
+    singular: وقف المعانقة
   dabt: وَقْف المُعَانَقَة (ويُسمَّى وَقْف المُرَاقَبَة)
   by_shape: ثَلَاث نُقَط تَتَكَرَّر عَلَى كَلِمَتَيْن
   mushaf_introduction: عَلَامَة تَعَانُق الوَقْف
@@ -15,25 +16,32 @@ origin: quranic
 tier: core
 status: draft
 symbol: ثَلَاث نُقَط في مَوْضِعَيْن
-definition: مَوْضِعَان للوَقْف، إذا وُقِفَ على أَحَدِهما لم يَصِحَّ الوَقْف على الآخَر
+definition: وقف المعانقة علامة تدل على موضعين للوقف، إذا وقف القارئ على أحدهما لم يصح الوقف
+  على الآخر.
 definition_en: 'Two candidate stopping points: stopping at one makes stopping at the other
-  invalid.'
-purpose: تستخدم قيمةً من قيم نوع علامة الوقف، ليتفرع عليها العرض والتلقين والتنبيه في التطبيقات
-  بدل قراءة صورة الرمز.
-purpose_en: Used as a value of the waqf mark type, so that rendering, instruction and warnings
+  not allowed.'
+purpose: نستخدمها قيمة من قيم نوع علامة الوقف، فنبني عليها العرض والتلقين والتنبيه في التطبيقات
+  بدلًا من قراءة صورة الرمز.
+purpose_en: Used as a value of the waqf mark type, so that rendering, teaching and warnings
   in applications branch on it rather than on the shape of the sign.
 alternative_spellings:
 - muanaqah
 - muraqabah
 - taanuq_al_waqf
 - waqf_al_muraqabah
+related:
+- waqf
+- waqf_mark
 unicode:
 - cp: U+06DB
   name: ARABIC SMALL HIGH THREE DOTS
   category: Mn
   combining_class: 230
   block: Arabic
+  unidata: 13.0.0
 mark_family: waqf
 sources:
 - id: hafs_svg_registry
   ref: standard!muanaqah
+- id: qattan_mabahith
+  ref: 1/152

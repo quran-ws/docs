@@ -4,6 +4,7 @@ names:
   display: Division Mark
   arabic:
     vocalized: عَلَامَة التَّقْسِيم
+    singular: علامة التقسيم
   dabt: عَلَامَة التَّحْزِيب
   by_shape: نَجْمَة مُثَمَّنَة
   mushaf_introduction: عَلَامَة بِدَايَة الأَجْزَاء والأَحْزَاب وأَنْصَافِها وأَرْبَاعِها
@@ -15,22 +16,37 @@ origin: quranic
 tier: core
 status: draft
 symbol: نَجْمَة
-definition: الدَّلَالَة على بِدَايَة الأَجْزَاء والأَحْزَاب وأَنْصَافِها وأَرْبَاعِها
+definition: علامة التقسيم علامة تدل على بداية الأجزاء والأحزاب وأنصافها وأرباعها.
 definition_en: Marks the start of a juz, a hizb, or a half or quarter of one.
-purpose: تستخدم علامةً من علامات المصحف، ليعرف بها موضعها ودلالتها في العرض والتحليل.
-purpose_en: Used as a mark of the Mushaf, so that its place and what it points to are known
-  in rendering and in analysis.
+purpose: نستخدمها علامة من علامات المصحف، فنعرف بها موضعها ودلالتها في العرض والتحليل.
+purpose_en: Used as a mark of the mushaf, so that rendering and analysis know where it sits
+  and what it points to.
+boundaries:
+- علامة التقسيم رسم في المصحف، والجزء والحزب وأرباعه أقسام من النص تدل عليها.
+boundaries_en:
+- The division mark is a sign in the mushaf; the juz, the hizb and its quarters are divisions
+  of the text it points to.
 alternative_spellings:
-- alamat_al_tahzib
+- hizb_mark
+- juz_mark
+- rub_el_hizb_mark
+- rub_mark
 deprecated:
+- alamat_al_tahzib
+related:
 - hizb
-- hizb
+- rubu_al_hizb
+- juz
+note: كان `alamat_al_tahzib` مدخلًا مستقلًا يعرف الشيء نفسه، ثم دُمج في هذا المدخل.
+note_en: '`alamat_al_tahzib` was a separate entry defining the same thing; it was merged into
+  this one.'
 unicode:
 - cp: U+06DE
   name: ARABIC START OF RUB EL HIZB
   category: So
   combining_class: 0
   block: Arabic
+  unidata: 13.0.0
 mark_family: mustaqill
 sources:
 - id: hafs_svg_registry

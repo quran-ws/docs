@@ -1,31 +1,47 @@
 name: اقتراح قاعدة — Propose a guideline
-description: إضافة قاعدة إلى الأدلة أو تعديل قاعدة قائمة.
+description: إضافة قاعدة إلى الأدلة أو تعديل قاعدة قائمة. — Add a rule to the guidelines, or change an existing one.
 title: "guideline: "
 labels: ["guideline"]
 body:
   - type: textarea
     id: case
     attributes:
-      label: الحالة التي دفعت للاقتراح
-      description: الأدلة تتغير بحالات واقعية واجهناها، لا بتفضيلات عامة. اذكر المشروع والموضع.
+      label: الحالة — The case
+      description: |
+        الأدلة تتغير بحالات واقعية واجهناها، لا بتفضيلات عامة. اذكر المشروع والموضع وما الذي التبس أو تعذر.
+        The guidelines change through real cases, not general preferences. Name the project, the place, and what was ambiguous or impossible.
     validations:
       required: true
   - type: textarea
     id: rule
     attributes:
-      label: القاعدة المقترحة
+      label: القاعدة المقترحة — The proposed rule
+      description: |
+        اكتبها كما ستظهر في الصفحة: القاعدة في السطر الأول، ثم السبب إن غيّر السبب التصرف.
+        Write it as it would appear on the page: the rule in the first line, then the reason if the reason changes what someone does.
+    validations:
+      required: true
+  - type: textarea
+    id: check
+    attributes:
+      label: ما يتحقق منها — What checks it
+      description: |
+        القاعدة التي لا يمكن اختبارها لا يمكن إلزام أحد بها. أي اختبار أو قيد أو فحص في البناء يكشف مخالفتها؟ وإن تعذر، فما المثال المخالف الصريح؟
+        A rule that cannot be checked cannot be enforced. Which test, constraint or build check catches a violation? If none can, what is the explicit counter-example?
     validations:
       required: true
   - type: textarea
     id: alternatives
     attributes:
-      label: البدائل ولماذا رُفضت
+      label: البدائل ولماذا رُفضت — Alternatives, and why they were rejected
     validations:
       required: true
   - type: textarea
     id: impact
     attributes:
-      label: الأثر على المشاريع القائمة
-      description: هل تخالف مشاريعنا الحالية القاعدة؟ وهل يلزم migration أو تحذير Deprecated؟
+      label: الأثر على المشاريع القائمة — Impact on existing projects
+      description: |
+        هل تخالف مشاريعنا الحالية القاعدة؟ وهل يلزم ترحيل أو تحذير `deprecated`؟
+        Do our current projects break the rule? Is a migration or a `deprecated` warning needed?
     validations:
       required: true

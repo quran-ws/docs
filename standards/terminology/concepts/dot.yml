@@ -4,7 +4,8 @@ names:
   display: Dot
   arabic:
     vocalized: النُّقْطَة
-  dabt: نَقْط الإعْجَام — النُّقْطَة
+    singular: النقطة
+  dabt: نَقْط الإِعْجَام — النُّقْطَة
   by_shape: نُقْطَة وَاحِدَة
   mushaf_introduction: null
 kind: mark
@@ -14,9 +15,12 @@ origin: quranic
 tier: core
 status: draft
 symbol: نُقْطَة وَاحِدَة
-definition: إعْجَام الحَرْف وتَمْيِيزُه عمَّا يُشَارِكُه في الرَّسْم
-definition_en: Distinguishes a letter from others that share the same skeleton (i'jam).
-purpose: تستخدم قيمةً من قيم النقط، ليتميز بها الحرف عما يشاركه في الرسم في التحليل والبحث.
+definition: النقطة نقطة واحدة فوق الحرف أو تحته تميزه عن الحرف الذي يشاركه في الرسم، مثل الباء
+  والنون والجيم والخاء والذال.
+definition_en: 'One dot, above or below, distinguishing a letter from the others that share
+  its skeleton (ijam): baa, noon, jeem, khaa, dhaal.'
+purpose: نستخدمها قيمة من قيم النقط، فنميز بها الحرف عن الحرف الذي يشاركه في الرسم في التحليل
+  والبحث.
 purpose_en: Used as a value of ijam, so that a letter is told apart from those sharing its
   skeleton in analysis and in search.
 alternative_spellings:

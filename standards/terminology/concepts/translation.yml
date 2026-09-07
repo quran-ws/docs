@@ -11,11 +11,19 @@ origin: borrowed
 tier: core
 status: draft
 plural: translations
-definition: نقل معاني القرآن إلى لغة أخرى، وليست الترجمة قرآنًا بلفظه.
+definition: الترجمة هي نقل معاني القرآن إلى لغة أخرى، وهي ليست قرآنًا بلفظه.
 definition_en: >
   Rendering the meanings of the Quran into another language. A translation is not the
   Quran in its wording.
-purpose: تستخدم لربط نصوص ترجمة المعاني بالآيات واللغات والمترجمين والمصادر.
+purpose: نستخدم الترجمة لربط نصوص ترجمة المعاني بالآيات واللغات والمترجمين والمصادر.
 purpose_en: >
   Used to tie translated-meaning texts to ayahs, languages, translators and sources.
-sources: []
+related:
+  - transliteration
+  - spoken_translation
+  - translator
+  - word_by_word_translation
+  - tafsir
+sources:
+  - id: qattan_mabahith
+    ref: "1/324"

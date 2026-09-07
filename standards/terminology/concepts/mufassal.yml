@@ -11,12 +11,28 @@ parent: surah_group
 origin: quranic
 tier: extended
 status: draft
-definition: مجموعة من قصار السور التي تلي المثاني، مع اختلاف العلماء في أولها.
+definition: المفصل مجموعة من قصار السور التي تلي المثاني، ويختلف العلماء في أولها.
 definition_en: >
   A group of the short surahs following the mathani; scholars differ over where it
   begins.
-purpose: تستخدم لتصنيف سور المفصل وربط البيانات والخطط المتعلقة بها.
+purpose: >
+  نستخدمها قيمة من قيم تصنيف السور، فنربط بها خطط القراءة وكتب التفسير التي تعالج المجموعة وحدة
+  واحدة.
 purpose_en: >
-  Used to classify the surahs of the mufassal and to attach the data and the plans that
-  concern them.
-sources: []
+  Used as a value of surah group, so that reading plans and the tafsir works that treat
+  the group as a unit can refer to it.
+related:
+  - surah_group
+  - surah
+note: >
+  لا يعين المعيار أعضاء المجموعة سورة سورة، لأن المصادر تختلف في السابعة من الطوال وفي أول
+  المفصل، ولا يوجد بعد سجل يحصر أعضاء كل مجموعة مع مصدره.
+note_en: >
+  The standard does not list the group's members surah by surah: the sources differ over
+  the seventh of the tiwal and the start of the mufassal, and no registry yet enumerates
+  each group's members with its source.
+sources:
+  - id: itqan
+    ref: "1/201"
+  - id: itqan
+    ref: "1/221"

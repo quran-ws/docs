@@ -1,0 +1,37 @@
+concept: ayah_ending
+names:
+  code: ayah_ending
+  display: Ayah Ending
+  arabic:
+    vocalized: الفَاصِلَة
+    singular: الفاصلة
+kind: concept
+category: structure
+origin: borrowed
+tier: core
+status: draft
+plural: ayah_endings
+definition: الفاصلة هي خاتمة الآية أو المقطع من جهة النظم، ويعرفها بعض العلماء بأنها الكلمة الأخيرة من
+  الآية.
+definition_en: >
+  The close of an ayah or a passage as a matter of its composition; some scholars define
+  it as the ayah's last word.
+purpose: نستخدمها في الدراسات والبيانات التي تتناول فواصل الآيات والنظم القرآني، ولا نستخدمها مرادفًا
+  لـ`ayah`.
+purpose_en: >
+  Used in studies and datasets concerned with ayah endings and Quranic composition. It
+  is never used as a synonym for `ayah`.
+boundaries:
+- الفاصلة خاتمة الآية من جهة النظم، أما علامة الآية فهي رسم في المصحف يدل على الفاصلة.
+boundaries_en:
+- The fasilah is the ayah's ending as a matter of the text; the ayah mark is the sign drawn in the mushaf for it.
+alternative_spellings:
+- fasila
+english_glosses:
+- Verse Ending
+related:
+  - ayah
+  - ayah_mark
+sources:
+  - id: qattan_mabahith
+    ref: "1/153"

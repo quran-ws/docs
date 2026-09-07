@@ -15,8 +15,13 @@ what numparse-style component arithmetic below is for.
 
 The only real proof this reads the book correctly is that it reconciles: the
 114 Kufi counts must match the printed mushaf surah by surah, and each school's
-column must sum to the total al-Dani states for that school. Both are checked
-on every run and printed.
+column must sum to the total al-Dani states for that school, or differ from it
+by exactly the residual TOLERATED records and the registry's header explains.
+Both are checked on every run and printed; any other difference fails.
+
+`--check` reads the committed registry and needs no copy of the book, so a
+fresh clone checks offline. Rebuilding the registry fetches the book once and
+caches it under tools/turath_cache/.
 """
 import json, os, re, sys, urllib.request
 
@@ -25,10 +30,15 @@ CACHE = os.path.join(ROOT, "tools/turath_cache/5542.json")
 OUT = os.path.join(ROOT, "standards/terminology/registries/ayah_counts.tsv")
 BOOK_URL = "https://files.turath.io/books-v3/5542.json"
 
-SCHOOLS = ["madani_awwal", "madani_akhir", "makki", "kufi", "basri", "dimashqi"]
+SCHOOLS = ["madani_first", "madani_last", "makki", "kufi", "basri", "dimashqi"]
+
+# The residual each column is allowed against al-Dani's stated total: one ayah
+# in four schools, from the two sections (al-Saffat, al-Takwir) where he counts
+# for Abu Jafar apart — see the registry header. Anything else is a regression.
+TOLERATED = {"madani_first": 1, "madani_last": 1, "makki": 1, "dimashqi": 1}
 
 # The totals al-Dani states for each school, with the page each is stated on.
-ATTESTED = {"madani_awwal": (6217, "1/79"), "madani_akhir": (6214, "1/79"),
+ATTESTED = {"madani_first": (6217, "1/79"), "madani_last": (6214, "1/79"),
             "makki": (6219, "1/79"), "kufi": (6236, "1/80"),
             "basri": (6204, "1/80"), "dimashqi": (6226, "1/82")}
 
@@ -52,9 +62,9 @@ HUND = {'مئه':100,'مائه':100,'مئتا':200,'مئتان':200,'مائتا'
  'ثمانمائه':800,'تسعمئه':900,'تسعمائه':900}
 
 LABELS = [
- (r'المدني[_\s]الاول', ["madani_awwal"]), (r'المدني[_\s]الاخير', ["madani_akhir"]),
- (r'المدنيين', ["madani_awwal","madani_akhir"]), (r'المدنيان', ["madani_awwal","madani_akhir"]),
- (r'مدنيان', ["madani_awwal","madani_akhir"]), (r'مدنيين', ["madani_awwal","madani_akhir"]),
+ (r'المدني[_\s]الاول', ["madani_first"]), (r'المدني[_\s]الاخير', ["madani_last"]),
+ (r'المدنيين', ["madani_first","madani_last"]), (r'المدنيان', ["madani_first","madani_last"]),
+ (r'مدنيان', ["madani_first","madani_last"]), (r'مدنيين', ["madani_first","madani_last"]),
  (r'الكوفي', ["kufi"]), (r'كوفي', ["kufi"]),
  (r'البصري', ["basri"]), (r'بصري', ["basri"]),
  (r'الشامي', ["dimashqi"]), (r'شامي', ["dimashqi"]),
@@ -195,9 +205,27 @@ def report(res, failed):
     for s in SCHOOLS:
         total = sum(v[s] for v in res.values())
         want, page = ATTESTED[s]
-        flag = "matches" if total == want else f"{total - want:+d} against"
+        residual = total - want
+        if residual == 0:
+            flag = "matches"
+        elif residual == TOLERATED.get(s, 0):
+            flag = f"{residual:+d} against, the residual the header explains, for"
+        else:
+            flag = f"{residual:+d} against — NOT the tolerated residual — for"
+            ok = False
         print(f"  {s:14} {total:5}  {flag} al-Dani's stated {want} ({page})")
     return ok
+
+
+def committed():
+    """The registry as committed, in the shape extract() returns."""
+    res = {}
+    for line in open(OUT, encoding="utf-8"):
+        if line.startswith("#") or not line.strip():
+            continue
+        cells = line.rstrip("\n").split("\t")
+        res[int(cells[0])] = {s: int(cells[i + 1]) for i, s in enumerate(SCHOOLS)}
+    return res, [n for n in range(1, 115) if n not in res]
 
 
 HEADER = '''# Per-surah ayah counts in the six schools of numbering.
@@ -226,14 +254,18 @@ HEADER = '''# Per-surah ayah counts in the six schools of numbering.
 #
 # `ref` cites al-Bayan by volume/page for the school totals this reconciles to.
 #
-# surah\tmadani_awwal\tmadani_akhir\tmakki\tkufi\tbasri\tdimashqi\tref'''
+# surah\tmadani_first\tmadani_last\tmakki\tkufi\tbasri\tdimashqi\tref'''
 
 
 def main():
+    if "--check" in sys.argv:
+        print("checking the committed registry")
+        return 0 if report(*committed()) else 1
     res, failed = extract()
     ok = report(res, failed)
-    if "--check" in sys.argv:
-        return 0 if ok else 1
+    if not ok:
+        print("\nrefusing to write: the reading does not reconcile")
+        return 1
     if failed:
         print("\nrefusing to write: some sections were not read")
         return 1

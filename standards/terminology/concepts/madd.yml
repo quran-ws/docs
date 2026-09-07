@@ -1,0 +1,76 @@
+concept: madd
+names:
+  code: madd
+  display: Madd
+  arabic:
+    vocalized: المَدّ
+    singular: المد
+    plural: مدود
+kind: classification
+category: tajwid
+origin: quranic
+tier: core
+status: draft
+definition: >-
+  المد إطالة الصوت بحرف من حروف المد الثلاثة، وهي الألف الساكنة بعد فتح والواو الساكنة بعد ضم
+  والياء الساكنة بعد كسر. ويكون المد أصليًّا لا يقوم الحرف إلا به، أو فرعيًّا بسبب همز أو سكون.
+definition_en: >-
+  Prolonging the sound on one of the three letters of madd: a vowelless alif after a fathah,
+  a vowelless waw after a dammah, a vowelless yaa after a kasrah; whether the madd is original,
+  without which the letter does not stand, or secondary, caused by a hamzah or a sukun.
+purpose: >-
+  نستخدمه تصنيفًا تتفرع عليه أنواع المد، فنوسم به موضع النص مع نوعه ومقداره. ولأن مقادير المدود
+  تختلف باختلاف الطريق، فإنها تُبين في وصف التسجيل والمصحف.
+purpose_en: >-
+  Used as a classification that the kinds of madd branch from, so that a place in the text
+  is tagged with its kind and its length; and because the lengths of the madds are among what
+  differs by tariq, they are part of describing a recording or a mushaf.
+boundaries:
+- >-
+  حروف المد غير حروف اللين وإن اشتركتا في الواو والياء، فحرف المد ساكن بعد حركة تجانسه، وحرف
+  اللين ساكن بعد فتح.
+- المد هو الحكم، والمدة هي العلامة التي تدل عليه في المصحف.
+boundaries_en:
+- >-
+  The letters of madd are not the letters of lin, though waw and yaa belong to both: a letter
+  of madd is vowelless after the vowel of its own kind, a letter of lin is vowelless after
+  a fathah.
+- >-
+  Madd is the ruling; the maddah is the mark that points to it in the mushaf.
+alternative_spellings:
+- mad
+- madd_rule
+- mudud
+- mudood
+- madd_type
+english_glosses:
+- prolongation
+- lengthening
+related:
+- maddah
+- madd_tabii
+- madd_muttasil
+- madd_munfasil
+- madd_lazim
+- madd_al_badal
+- madd_al_iwad
+- madd_al_silah
+- madd_al_lin
+- madd_arid_li_al_sukun
+- tajwid_ruling
+sources:
+- id: quranpedia_tajweed
+  ref: '90'
+  url: https://tajweed.quranpedia.net/term/show/90
+- id: quranpedia_tajweed
+  ref: '92'
+  url: https://tajweed.quranpedia.net/term/show/92
+- id: quranpedia_tajweed
+  ref: '99'
+  url: https://tajweed.quranpedia.net/term/show/99
+- id: quranpedia_tajweed
+  ref: '107'
+  url: https://tajweed.quranpedia.net/term/show/107
+- id: quranpedia_tajweed
+  ref: '108'
+  url: https://tajweed.quranpedia.net/term/show/108

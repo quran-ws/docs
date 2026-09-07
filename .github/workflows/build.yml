@@ -1,0 +1,38 @@
+name: build
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  guidelines:
+    name: generate and check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: python3 -m pip install -r requirements.txt
+      - run: python3 tools/build.py
+      - run: python3 -m pytest -q
+      - name: generated files are in step with their source
+        run: |
+          git status --porcelain
+          git diff --exit-code --stat
+  site:
+    name: site
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: site
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: site/.nvmrc
+          cache: npm
+          cache-dependency-path: site/package-lock.json
+      - run: npm ci
+      - run: npm run build

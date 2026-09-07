@@ -10,13 +10,23 @@ category: surah_classification
 origin: standard
 tier: extended
 status: draft
-definition: تصنيف يجمع سورًا وفق تقسيمات اصطلاحية موروثة تعتمد الطول أو موضعها ضمن مجموعات
-  السور.
+definition: تصنيف السور هو تصنيف يجمع سورًا وفق تقسيمات اصطلاحية موروثة تعتمد الطول أو موضع السورة ضمن مجموعات السور.
 definition_en: >
   A classification gathering surahs by inherited conventional divisions that rest on
   length or on their place among the groups of surahs.
-purpose: يوفر parent موحدًا لتصنيفات مثل الطوال والمئين والمثاني والمفصل.
+purpose: >
+  يوفر تصنيف السور أبًا موحدًا لتصنيفات مثل الطوال والمئين والمثاني والمفصل.
 purpose_en: >
   Gives classifications such as the tiwal, the miun, the mathani and the mufassal one
   parent.
-sources: []
+related:
+  - saba_tiwal
+  - miun
+  - mathani
+  - mufassal
+  - surah
+sources:
+  - id: itqan
+    ref: "1/201"
+  - id: itqan
+    ref: "1/221"

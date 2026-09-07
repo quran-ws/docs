@@ -52,7 +52,6 @@
         "surah_classification",
         "mushaf",
         "dabt",
-        "mushaf_marks",
         "ayah_numbering",
         "revelation",
         "qiraat",
@@ -70,12 +69,17 @@
     "parent": {
       "type": "string",
       "pattern": "^[a-z][a-z0-9_]*$",
-      "description": "Required when kind is classification_value (§14)."
+      "description": "The entry this one is a kind of: the classification a value belongs to, or the family a mark belongs to (§14). Required when kind is classification_value. Never used for containment: that is `part_of`."
+    },
+    "part_of": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9_]*$",
+      "description": "The entity this one is a part of, not a kind of: rubu_al_hizb is part of hizb, mushaf_edition is part of mushaf. Optional; distinct from `parent`."
     },
     "registry": {
       "type": "string",
       "pattern": "^[a-z][a-z0-9_]*$",
-      "description": "The registry in standards/terminology/registries/ that enumerates this concept's members (§13). A concept with a closed set of members names it here instead of giving each member an entry."
+      "description": "The registry in standards/terminology/registries/ that enumerates this concept's members (§13): the file name without .tsv. A concept with a closed set of members names it here instead of giving each member an entry."
     },
     "origin": {
       "description": "quranic: a specialized Quranic concept keeping its Arabic name. borrowed: a general technical or linguistic term with a settled definition elsewhere. standard: a concept this standard defines for software modeling with no traditional counterpart.",
@@ -102,7 +106,7 @@
     },
     "symbol": {
       "type": "string",
-      "description": "The character a mark is rendered with."
+      "description": "The character a mark is rendered with. Applies to kind: mark and to the drawn values of waqf_mark_type."
     },
     "definition": {
       "type": "string",
@@ -125,40 +129,48 @@
       "items": {
         "type": "string"
       },
-      "description": "What the concept does not include (§17)."
+      "description": "What the concept does not include (§17).",
+      "uniqueItems": true
     },
     "boundaries_en": {
       "type": "array",
       "items": {
         "type": "string"
       },
-      "description": "The boundaries in English, line for line with `boundaries`."
+      "description": "The boundaries in English, line for line with `boundaries`.",
+      "uniqueItems": true
     },
     "alternative_spellings": {
       "type": "array",
       "items": {
         "type": "string"
       },
-      "description": "Every attested spelling. Generated into the alias index so any of them resolves to this concept."
+      "description": "Every attested spelling. Generated into the alias index so any of them resolves to this concept. Never an English gloss (§19).",
+      "uniqueItems": true
     },
     "english_glosses": {
       "type": "array",
       "items": {
         "type": "string"
-      }
+      },
+      "uniqueItems": true,
+      "description": "English words a reader may search by (Verse, Chapter). Search keys, not names to write with; a gloss is never an alternative spelling."
     },
     "deprecated": {
       "type": "array",
       "items": {
         "type": "string"
-      }
+      },
+      "uniqueItems": true,
+      "description": "Names this concept was known by that are wrong, not merely alternative: they are kept out of the alias index."
     },
     "related": {
       "type": "array",
       "items": {
         "type": "string",
         "pattern": "^[a-z][a-z0-9_]*$"
-      }
+      },
+      "uniqueItems": true
     },
     "sources": {
       "type": "array",
@@ -176,7 +188,7 @@
           },
           "ref": {
             "type": "string",
-            "description": "Term id, page, or volume within that source."
+            "description": "Where in the source, in the form sources.yml states for it: a page as volume/page (\"1/60\"), a dictionary term id (\"122\"), a corpus id, or sheet!row for a registry."
           },
           "url": {
             "type": "string",
@@ -226,10 +238,12 @@
           "additionalProperties": false,
           "properties": {
             "singular": {
-              "type": "string"
+              "type": "string",
+              "description": "The unvocalized singular, as it is typed and searched for."
             },
             "plural": {
-              "type": "string"
+              "type": "string",
+              "description": "The unvocalized Arabic plural, for search. Never the code plural (§11)."
             },
             "vocalized": {
               "type": "string",
@@ -269,11 +283,11 @@
         "alamat_qiraah",
         "mustaqill"
       ],
-      "description": "The registry's own grouping of marks. Applies to kind: mark."
+      "description": "The mushaf registry's own grouping of marks, kept as recorded. The dictionary's grouping is `parent`; the two are reconciled by tools/generate_dabt.py. Applies to kind: mark and to the drawn values of waqf_mark_type."
     },
     "unicode": {
       "type": "array",
-      "description": "Generated from the Unicode database; never hand-written.",
+      "description": "Generated from the Unicode database; never hand-written. Applies to kind: mark and to the drawn values of waqf_mark_type.",
       "items": {
         "type": "object",
         "additionalProperties": false,
@@ -305,6 +319,10 @@
           },
           "chart": {
             "type": "string"
+          },
+          "unidata": {
+            "type": "string",
+            "description": "Version of the Unicode database the block was read from, e.g. \"15.1.0\"."
           }
         }
       }

@@ -1,0 +1,39 @@
+concept: surah_name_reason
+names:
+  code: surah_name_reason
+  display: Surah Name Reason
+  arabic:
+    vocalized: سَبَب التَّسْمِيَة
+    singular: سبب التسمية
+kind: content
+category: quranic_sciences
+origin: standard
+tier: extended
+status: draft
+definition: >
+  سبب التسمية هو بيان العلة التي سميت بها السورة اسمها، وما ورد في ذلك من أثر أو وجه
+  لغوي.
+definition_en: >
+  The statement of why a surah was given its name, and what has been transmitted about
+  it by narration or on linguistic grounds.
+purpose: >
+  نستخدم سبب التسمية محتوى يربط بالسورة. ونفصله عن سبب النزول لأنه يخص الاسم وليس
+  النزول، ولأن كثيرًا من السور لها أكثر من اسم ولذلك أكثر من سبب تسمية.
+purpose_en: >
+  Used as content attached to a surah. It is kept apart from the occasion of revelation
+  because it concerns the name and not the revelation, and because many surahs have more
+  than one name and so more than one reason.
+boundaries:
+  - سبب التسمية يخص اسم السورة، وسبب النزول يخص نزول الآية.
+boundaries_en:
+  - >-
+    The reason for the name concerns the surah's name; the occasion of revelation
+    concerns the revelation of an ayah.
+alternative_spellings:
+  - sabab_al_tasmiya
+related:
+  - surah
+  - asbab_al_nuzul
+sources:
+  - id: itqan
+    ref: "1/178"

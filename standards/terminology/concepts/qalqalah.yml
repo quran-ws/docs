@@ -1,0 +1,50 @@
+concept: qalqalah
+names:
+  code: qalqalah
+  display: Qalqalah
+  arabic:
+    vocalized: القَلْقَلَة
+    singular: القلقلة
+kind: classification_value
+category: tajwid
+parent: tajwid_ruling
+origin: quranic
+tier: core
+status: draft
+definition: >-
+  القلقلة هي اضطراب في صوت الحرف الساكن عند النطق به حتى تسمع له نبرة قوية. وتقع في
+  حروف «قطب جد»، وتقوى بحسب موضع الحرف من الكلمة والوقف عليه.
+definition_en: >-
+  A disturbance in the sound of a vowelless letter as it is pronounced, so that a strong beat
+  is heard, in the letters of «قطب جد»; it grows stronger by the letter's place in the word
+  and by stopping on it.
+purpose: >-
+  نستخدم القلقلة قيمة من قيم حكم التجويد. نوسم بها موضع النص في التحليل والتلوين
+  والتعليم، وتندرج تحتها أنواعها في سجل الأحكام.
+purpose_en: >-
+  Used as a value of the tajwid ruling, so that a place in the text is tagged with it in analysis,
+  colouring and instruction, and its kinds branch under it in the registry of rulings.
+boundaries:
+  - القلقلة صفة من صفات الحروف التي لا ضد لها، وتعد حكمًا حين نوسم بها الموضع الذي تظهر
+    فيه.
+boundaries_en:
+- >-
+  Qalqalah is one of the attributes of the letters that have no opposite; it counts as a ruling
+  when the place where it appears is tagged with it.
+alternative_spellings:
+- qalqala
+- qalqalah_sughra
+- qalqalah_kubra
+- qalqalh
+english_glosses:
+- echoing
+related:
+- sukun
+- tajwid_ruling
+sources:
+- id: quranpedia_tajweed
+  ref: '78'
+  url: https://tajweed.quranpedia.net/term/show/78
+- id: tajweed_engine
+  ref: qalqalah-sughra
+  url: https://github.com/quranpedia/tajweed-engine

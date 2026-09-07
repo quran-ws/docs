@@ -10,17 +10,33 @@ category: core
 origin: quranic
 tier: core
 status: draft
-definition: كلام الله المنزل على محمد ﷺ والمتعبد بتلاوته، ويطلق على مجموعه وعلى بعضه بحسب
-  السياق.
+definition: >
+  القرآن هو كلام الله المنزل على محمد صلى الله عليه وسلم والمتعبد بتلاوته. ويطلق الاسم
+  على مجموعه وعلى بعضه بحسب السياق.
 definition_en: >
-  The speech of Allah sent down upon Muhammad, peace be upon him, whose recitation is an
-  act of worship. The name is used of the whole and, by context, of a part of it.
-purpose: يمثل المحتوى القرآني نفسه بصورة مستقلة عن مصحف أو تخطيط أو تنسيق أو تمثيل رقمي معين.
+  The speech of Allah revealed to Muhammad, peace be upon him, whose recitation is
+  worship. The name covers the whole and, by context, any part of it.
+purpose: نستخدم القرآن لتمثيل المحتوى القرآني نفسه مستقلًا عن مصحف أو تخطيط أو تنسيق أو تمثيل رقمي معين.
 purpose_en: >
-  Represents the Quranic content itself, independent of any particular Mushaf, layout,
+  Represents the Quranic content itself, independent of any particular mushaf, layout,
   formatting or digital representation.
+boundaries:
+  - القرآن هو الكلام نفسه، والمصحف هو وعاؤه المكتوب. لذلك ما يخص الصفحات والرسم
+    والعلامات ينسب إلى المصحف وليس إلى القرآن.
+boundaries_en:
+  - >-
+    The Quran is the speech itself; the mushaf is its written vessel. Pages, rasm and
+    marks belong to the mushaf, not to the Quran.
 alternative_spellings:
-- koran
-- qur'an
-- qur’an
-sources: []
+  - koran
+  - qur'an
+  - qur’an
+  - quraan
+  - al_quran
+related:
+  - mushaf
+  - surah
+  - ayah
+sources:
+  - id: qattan_mabahith
+    ref: "1/15"

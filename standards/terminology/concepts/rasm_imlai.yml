@@ -1,0 +1,63 @@
+concept: rasm_imlai
+names:
+  code: rasm_imlai
+  display: Rasm Imlai
+  arabic:
+    vocalized: الرَّسْم الإِمْلَائِيّ
+    singular: الرسم الإملائي
+kind: classification_value
+category: mushaf
+parent: rasm
+origin: quranic
+tier: core
+status: draft
+definition: >-
+  الرسم الإملائي هو كتابة ألفاظ القرآن على قواعد الإملاء المعاصرة، بإثبات ما يحذف في
+  الرسم العثماني وحذف ما يزاد فيه، حتى تقرأ الكلمة على صورتها المألوفة.
+definition_en: >-
+  Writing the words of the Quran by the rules of modern orthography, writing what the Uthmani
+  rasm omits and omitting what it adds, so that they read in their familiar form.
+purpose: >-
+  نستخدم الرسم الإملائي لتحديد أن النص يتبع الإملاء المعاصر. وهذا هو النص الذي تبنى
+  عليه صيغة البحث والاقتباس والعرض خارج المصحف، مقابل النص العثماني الذي يعرض به
+  المصحف.
+purpose_en: >-
+  Used to state that a text follows modern orthography, which is the text that search, quotation
+  and display outside the mushaf are built on, as against the Uthmani text the mushaf is displayed
+  in.
+boundaries:
+  - الرسم الإملائي يخص الكتابة وليس القراءة، فاللفظ واحد والذي يختلف هو صورة الكلمة.
+  - النص الإملائي غير نص البحث المجرد من الضبط، حتى لو اشتق الثاني من الأول.
+boundaries_en:
+- >-
+  The imlai rasm is a writing and not a reading: the wording is one, and what differs is the
+  form of the word.
+- >-
+  The imlai text is not the search text stripped of dabt, though the second is derived from
+  the first.
+alternative_spellings:
+- imlaei
+- imlai
+- imla'i
+- imlaai
+- simple
+- text_simple
+- text_imlaei
+- rasm_imlaei
+english_glosses:
+- modern orthography
+- standard orthography
+related:
+- rasm
+- rasm_uthmani
+note: >-
+  اشتقاق الاسم بالأداة يعطي `orthographic_rasm`، لأن جدول الكلمات العامة يترجم
+  «إملائي» إلى `orthographic` من أجل «العلامة الإملائية». والاسم المثبت هو
+  `rasm_imlai` لأنه الاسم الذي تستعمله قواعد البيانات والواجهات، والقرار مسجل في سجل
+  القرارات.
+note_en: >-
+  Deriving the name with the tool gives `orthographic_rasm`, because the general-words table
+  translates «إملائي» to `orthographic` for the sake of «العلامة الإملائية»; the recorded
+  name is `rasm_imlai`, which is what databases and APIs use, and the decision is in the decision
+  record.
+sources: []

@@ -6,19 +6,30 @@ names:
     vocalized: الاِسْتِعَاذَة
     singular: الاستعاذة
 kind: concept
-category: tajwid
+category: recitation
 origin: quranic
 tier: core
 status: draft
-definition: طلب العوذ بالله من الشيطان عند إرادة تلاوة القرآن.
+definition: الاستعاذة طلب العوذ بالله من الشيطان عند إرادة تلاوة القرآن.
 definition_en: >
   Seeking refuge with Allah from the Shaytan before reciting the Quran.
-purpose: يستخدم لتمثيل الاستعاذة وصيغها وموضعها بالنسبة إلى بداية التلاوة.
+purpose: نستخدمها لتمثيل الاستعاذة وصيغها وموضعها بالنسبة إلى بداية التلاوة.
 purpose_en: >
   Used to represent the istiadhah, its wordings, and its position relative to the start
   of a recitation.
 alternative_spellings:
-- isti'adhah
-- istiʿādhah
-- ta'awwudh
-sources: []
+  - isti'adhah
+  - istiʿādhah
+  - ta'awwudh
+  - istiadha
+  - istiaadhah
+  - taawwudh
+related:
+  - basmalah
+  - recitation
+sources:
+  - id: quranpedia_tajweed
+    ref: "27"
+    url: https://tajweed.quranpedia.net/term/show/27
+  - id: nashr
+    ref: "1/243"

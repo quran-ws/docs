@@ -1,0 +1,31 @@
+concept: muqatta_letter
+names:
+  code: muqatta_letter
+  display: Muqatta Letter
+  arabic:
+    vocalized: الحَرْف المُقَطَّع
+    singular: الحرف المقطع
+kind: concept
+category: structure
+origin: quranic
+tier: core
+status: draft
+plural: muqatta_letters
+definition: الحروف المقطعة حروف هجائية افتتحت بها بعض السور، مثل «الم» و«الر» و«حم» و«كهيعص».
+definition_en: >
+  Alphabetic letters that open certain surahs, such as Alif Laam Meem, Alif Laam Raa,
+  Haa Meem and Kaaf Haa Yaa Ayn Saad.
+purpose: نستخدمه لتعريف هذه الفواتح وتمييزها وربطها بالسور ومواضعها النصية.
+purpose_en: >
+  Used to identify these openings, keep them distinct, and tie them to their surahs and
+  their positions in the text.
+english_glosses:
+  - Disjointed Letters
+related:
+  - surah
+sources:
+  - id: quranpedia_tajweed
+    ref: "113"
+    url: https://tajweed.quranpedia.net/term/show/113
+  - id: itqan
+    ref: "3/361"

@@ -12,24 +12,28 @@ parent: revelation_classification
 origin: quranic
 tier: core
 status: draft
-plural: makkis
 definition: >
-  ما نزل من القرآن قبل الهجرة، ولو نزل خارج مكة.
+  المكي ما نزل من القرآن قبل الهجرة، ولو نزل خارج مكة.
 definition_en: >
-  What was revealed of the Quran before the Hijrah, even if it was revealed outside
+  The part of the Quran revealed before the Hijrah, even where it was revealed outside
   Makkah.
-purpose: >
-  يستخدم قيمةً لتصنيف السور أو الآيات ضمن revelation_classification، ولا
-  يستخدم للدلالة على المكان الجغرافي وحده.
-purpose_en: >
-  Used as a value classifying surahs or ayahs under revelation_classification. It is
-  never used for the geographical place alone.
+purpose: نستخدمه قيمة من قيم تصنيف النزول، فنوسم به السورة أو الآية.
+purpose_en: Used as a value of revelation classification, tagging a surah or an ayah with it.
+boundaries:
+  - مكي وصف لزمن النزول قبل الهجرة، وليس لمكان النزول.
+boundaries_en:
+  - Makki describes the time of revelation, before the Hijrah, not the place of revelation.
 alternative_spellings:
   - makkiyy
+  - makkan
 english_glosses:
-  - meccan
+  - Meccan
 related:
   - madani
   - revelation_classification
-  - nuzul
-sources: []
+  - revelation
+sources:
+  - id: qattan_mabahith
+    ref: "1/60"
+  - id: itqan
+    ref: "1/37"

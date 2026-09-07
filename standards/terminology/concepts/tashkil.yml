@@ -1,0 +1,46 @@
+concept: tashkil
+names:
+  code: tashkil
+  display: Tashkil
+  arabic:
+    vocalized: التَّشْكِيل
+    singular: التشكيل
+kind: concept
+category: dabt
+origin: quranic
+tier: core
+status: draft
+definition: >-
+  التشكيل هو طبقة علامات الضبط الملحقة بحروف النص، من الحركات والتنوين والشدة والسكون
+  وما يتبعها، منظورًا إليها جملة واحدة.
+definition_en: >-
+  The layer of dabt marks attached to the letters of the text, the harakat, tanwin, shaddah,
+  sukun and what goes with them, taken as a whole.
+purpose: >-
+  نستخدم التشكيل حين نتعامل مع طبقة الضبط كلها وليس مع علامة بعينها، مثل إثباتها في
+  العرض أو تجريد النص منها للبحث.
+purpose_en: >-
+  Used when the whole layer of dabt is handled at once, kept in display or stripped from the
+  text for search, rather than one mark.
+boundaries:
+  - التشكيل هو الطبقة كلها، والحركة هي العلامة الواحدة.
+  - الضبط هو العلم وقواعده، والتشكيل هو ما ينتج عنه على الحروف.
+boundaries_en:
+- Tashkil is the layer; a harakah is one mark.
+- >-
+  Dabt is the discipline and its rules; tashkil is what it produces on the letters.
+alternative_spellings:
+- tashkeel
+english_glosses:
+- vowel marks
+- vocalization
+- vocalisation
+related:
+- harakah
+- mushaf_mark
+- ijam
+- rasm
+sources:
+- id: quranpedia_tajweed
+  ref: '135'
+  url: https://tajweed.quranpedia.net/term/show/135

@@ -7,6 +7,18 @@
   "a": 12352,
   "b": 519
  },
+ "dimashqi numbering | shami numbering": {
+  "a": 0,
+  "b": 0
+ },
+ "idgham naqis | idgham naqees": {
+  "a": 8,
+  "b": 0
+ },
+ "madd tabii | madd tabee": {
+  "a": 63,
+  "b": 111
+ },
  "mim mushaddad | meem mushaddad": {
   "a": 2,
   "b": 55
@@ -19,9 +31,13 @@
   "a": 118,
   "b": 478
  },
- "qiraah | qiraat": {
+ "omitted alif | dagger alif": {
   "a": null,
   "b": null
+ },
+ "qiraah | qiraat": {
+  "a": 2564,
+  "b": 6592
  },
  "tafkhim | tafkheem": {
   "a": 900,
@@ -46,6 +62,10 @@
  "tarqiq | tarqeeq": {
   "a": 1156,
   "b": 286
+ },
+ "uthmani rasm | rasm uthmani": {
+  "a": 65,
+  "b": 100
  },
  "تنوين الضم | تنوين الرفع": {
   "a": null,

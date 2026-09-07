@@ -1,0 +1,47 @@
+concept: abrogation
+names:
+  code: abrogation
+  display: Abrogation
+  arabic:
+    vocalized: النَّسْخ
+    singular: النسخ
+kind: concept
+category: quranic_sciences
+origin: borrowed
+tier: extended
+status: draft
+definition: >
+  النسخ هو رفع حكم شرعي بدليل شرعي جاء بعده، ويدرس في القرآن بنسبة الآية الناسخة إلى
+  الآية المنسوخة.
+definition_en: >
+  The lifting of a legal ruling by a later legal proof. In the Quran it is studied by
+  relating an abrogating ayah to an abrogated one.
+purpose: >
+  نستخدم النسخ لتمثيل العلاقة بين آيتين إحداهما ناسخة والأخرى منسوخة. وهذه علاقة بين
+  موضعين من النص وليست صفة في آية واحدة.
+purpose_en: >
+  Used to represent the relation between two ayahs, one abrogating and one abrogated: a
+  relation between two places in the text, not a property of a single ayah.
+boundaries:
+  - النسخ يقع على الحكم وليس على النص، فالآية التي نسخ حكمها تبقى ثابتة في المصحف.
+  - العلماء يختلفون في نسبة النسخ في كثير من المواضع، لذلك تقيد كل نسبة بمصدرها ولا تعرض
+    على أنها حكم مجمع عليه.
+boundaries_en:
+  - >-
+    Abrogation bears on the ruling, not on the text: an ayah whose ruling is abrogated
+    stands in the mushaf as it is.
+  - >-
+    The relation is disputed in many places, so it is bound to its source and never
+    presented as agreed upon.
+alternative_spellings:
+  - nasikh_mansukh
+  - nasikh_wa_mansukh
+  - nasekh_mansokh
+related:
+  - ayah
+  - asbab_al_nuzul
+sources:
+  - id: qattan_mabahith
+    ref: "1/237"
+  - id: itqan
+    ref: "3/66"

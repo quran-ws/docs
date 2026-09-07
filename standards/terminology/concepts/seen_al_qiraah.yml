@@ -2,8 +2,10 @@ concept: seen_al_qiraah
 names:
   code: seen_al_qiraah
   display: Seen al-Qiraah
+  display_evidence: letter name; unmeasurable directly, both forms are English words
   arabic:
     vocalized: سِين القِرَاءَة
+    singular: سين القراءة
   dabt: السِّين الدَّالَّة على وَجْه القِرَاءَة
   by_shape: سِين فَوْق الصَّاد أو تَحْتَهَا
   mushaf_introduction: السِّين فَوْق الصَّاد أو تَحْتَهَا
@@ -15,11 +17,11 @@ origin: quranic
 tier: core
 status: draft
 symbol: س
-definition: السِّين فوق الصَّاد تدلّ على القِرَاءَة بالسِّين، والسِّين تحت الصَّاد تدلّ على
-  القِرَاءَة بالصَّاد
-definition_en: A sin above the sad signals reading with sin; a sin below it signals reading
-  with sad.
-purpose: تستخدم قيمةً من علامات القراءة، لينبه بها القارئ إلى أداء خاص في موضعه.
+definition: سين القراءة سين صغيرة فوق الصاد تدل على القراءة بالسين، وتحتها تدل على القراءة
+  بالصاد.
+definition_en: A small seen above a saad marks reading it as seen; below it, reading it as
+  saad.
+purpose: نستخدمها قيمة من علامات القراءة، فننبه بها القارئ إلى أداء خاص في موضعها.
 purpose_en: Used as a value of the qiraah marks, so that the reader is alerted to a particular
   delivery at its place.
 alternative_spellings:
@@ -32,11 +34,13 @@ unicode:
   category: Mn
   combining_class: 230
   block: Arabic
+  unidata: 13.0.0
 - cp: U+06E3
   name: ARABIC SMALL LOW SEEN
   category: Mn
   combining_class: 220
   block: Arabic
+  unidata: 13.0.0
 mark_family: alamat_qiraah
 sources:
 - id: hafs_svg_registry

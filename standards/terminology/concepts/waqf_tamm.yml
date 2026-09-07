@@ -11,11 +11,19 @@ parent: waqf_ruling
 origin: quranic
 tier: core
 status: draft
-definition: ما تم معناه ولم يتعلق بما بعده لفظًا ولا معنى.
+definition: >
+  الوقف التام هو الوقف على ما تم معناه ولم يتعلق بما بعده لفظًا ولا معنًى.
 definition_en: >
   A stop whose meaning is complete and which is connected to what follows it neither in
   wording nor in meaning.
-purpose: يستخدم قيمةً في تصنيف مواضع الوقف تعليميًا وتحليليًا.
-purpose_en: >
-  Used as a value in classifying the places of stopping, for teaching and for analysis.
-sources: []
+purpose: نستخدم الوقف التام قيمة من قيم حكم الوقف، ونوسم به الموضع في التعليم والتحليل.
+purpose_en: Used as a value of the waqf ruling, so that a place is tagged with it in teaching and analysis.
+related:
+  - waqf_ruling
+  - waqf
+sources:
+  - id: quranpedia_tajweed
+    ref: "121"
+    url: https://tajweed.quranpedia.net/term/show/121
+  - id: nashr
+    ref: "1/226"

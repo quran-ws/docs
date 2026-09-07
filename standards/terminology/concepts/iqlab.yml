@@ -1,0 +1,46 @@
+concept: iqlab
+names:
+  code: iqlab
+  display: Iqlab
+  arabic:
+    vocalized: الإِقْلَاب
+    singular: الإقلاب
+kind: classification_value
+category: tajwid
+parent: tajwid_ruling
+origin: quranic
+tier: core
+status: draft
+definition: الإقلاب قلب النون الساكنة أو التنوين ميمًا مخفاة بغنة عند الباء.
+definition_en: >-
+  Turning noon sakinah or tanwin into a meem, concealed with ghunnah, before a baa.
+purpose: >-
+  نستخدمه قيمة من قيم حكم التجويد، فنوسم به موضع النص في التحليل والتلوين والتعليم، وتتفرع تحته
+  أنواعه في سجل الأحكام.
+purpose_en: >-
+  Used as a value of the tajwid ruling, so that a place in the text is tagged with it in analysis,
+  colouring and instruction, and its kinds branch under it in the registry of rulings.
+boundaries:
+- الإقلاب حكم في النطق، والميم الصغيرة هي العلامة التي يُرسم بها في المصحف.
+boundaries_en:
+- >-
+  Iqlab is a ruling of pronunciation; the small meem is the mark the mushaf draws it with.
+alternative_spellings:
+- iqlaab
+- qalb
+- iqlab_qalb
+- eqlab
+english_glosses:
+- conversion
+related:
+- noon_sakinah
+- tanwin
+- ghunnah
+- small_meem
+sources:
+- id: quranpedia_tajweed
+  ref: '86'
+  url: https://tajweed.quranpedia.net/term/show/86
+- id: tajweed_engine
+  ref: iqlab-noon
+  url: https://github.com/quranpedia/tajweed-engine

@@ -8,11 +8,29 @@ origin: borrowed
 tier: core
 status: draft
 plural: characters
-definition: وحدة نصية مجردة في نظام تمثيل رقمي، ولا يلزم أن تطابق حرفًا لغويًا واحدًا.
+definition: المحرف وحدة نصية مجردة في نظام تمثيل رقمي، ولا يلزم أن يطابق حرفًا لغويًا واحدًا.
 definition_en: >
   An abstract unit of text in a digital encoding; it need not correspond to a single
   linguistic letter.
-purpose: تستخدم عند معالجة النص برمجيًا على مستوى المحارف.
+purpose: >
+  نستخدمه حيث يلزم أن تكون الإزاحة أو الطول أو المقارنة دقيقة، مثل اختبارات مسار النص وفهارس
+  البحث وقائمة المحارف المسموح بها.
 purpose_en: >
-  Used when processing text programmatically at the character level.
+  Used where an offset, a length or a comparison must be exact: text-path tests, search
+  indexes and the allowlist of permitted characters.
+boundaries:
+  - المحرف وحدة ترميز والحرف وحدة لغوية، فقد يُمثل الحرف الواحد بأكثر من محرف.
+  - المحرف ليس الشكل المرسوم (`glyph`)، فالشكل ينتجه الخط والمحرف يحمله النص.
+boundaries_en:
+  - >-
+    A character is a unit of encoding; a letter is a linguistic unit, and one letter may
+    be carried by more than one character.
+  - >-
+    A character is not a glyph: the glyph is produced by the font, the character is
+    carried by the text.
+related:
+  - letter
+  - glyph
+  - codepoint
+  - grapheme
 sources: []

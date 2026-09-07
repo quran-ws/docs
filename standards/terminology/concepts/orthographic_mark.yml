@@ -3,19 +3,29 @@ names:
   code: orthographic_mark
   display: Orthographic Mark
   arabic:
-    vocalized: العَلَامَة الإمْلَائِيَّة
+    vocalized: العَلَامَة الإِمْلَائِيَّة
+    singular: العلامة الإملائية
 kind: classification
 category: dabt
 parent: mushaf_mark
 origin: quranic
 tier: core
 status: draft
-definition: علامة تضبط رسم الكلمة، كالهمزة والمدة والحروف الصغيرة.
+definition: العلامة الإملائية هي علامة تضبط رسم الكلمة، مثل الهمزة والمدة والحروف الصغيرة.
 definition_en: >
   A mark fixing how a word is written, such as the hamzah, the maddah and the small
   letters.
-purpose: تستخدم أبًا للعلامات التي تتعلق برسم الكلمة لا بحركتها ولا بالوقف عليها.
+purpose: نستخدم العلامة الإملائية أبًا للعلامات التي تتعلق برسم الكلمة وليس بحركتها ولا بالوقف عليها.
 purpose_en: >
   Used as the parent of the marks that concern how a word is written, rather than its
   vowel or how it is stopped on.
-sources: []
+related:
+  - mushaf_mark
+  - rasm
+sources:
+  - id: quranpedia_tajweed
+    ref: "134"
+    url: https://tajweed.quranpedia.net/term/show/134
+  - id: quranpedia_tajweed
+    ref: "135"
+    url: https://tajweed.quranpedia.net/term/show/135

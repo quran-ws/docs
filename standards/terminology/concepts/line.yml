@@ -11,10 +11,14 @@ origin: borrowed
 tier: core
 status: draft
 plural: lines
-definition: سطر طباعي داخل صفحة مصحف أو تخطيط معين.
+definition: السطر هو السطر الطباعي داخل صفحة مصحف أو تخطيط معين.
 definition_en: >
-  A typeset line within a page of a Mushaf or of a given layout.
-purpose: يستخدم لتمثيل مواقع النص والأشكال داخل التخطيط الطباعي.
+  A typeset line within a page of a mushaf or of a given layout.
+purpose: نستخدمه لتمثيل مواقع النص والأشكال داخل التخطيط الطباعي.
 purpose_en: >
   Used to represent where text and shapes sit within the typeset layout.
+related:
+  - page
+  - layout
+  - ayah_fragment
 sources: []

@@ -12,15 +12,35 @@ origin: standard
 tier: core
 status: draft
 plural: ayah_numbering_systems
-definition: نظام يحدد حدود الآيات وأعدادها وأرقامها وبعض المسائل المتعلقة بالبسملة وفق مدارس
-  عد الآي.
+definition: نظام عد الآي هو النظام الذي يحدد حدود الآيات وأعدادها وأرقامها وبعض المسائل المتعلقة بالبسملة،
+  وفق إحدى مدارس عد الآي.
 definition_en: >
-  A system that fixes the boundaries of the ayahs, their totals, their numbers, and
-  certain questions about the basmalah, according to the schools of ayah counting.
-purpose: يستخدم لتحديد النظام الذي تستند إليه أرقام الآيات وحدودها في dataset أو Mushaf معين.
+  A system that fixes the boundaries of the ayahs, their totals and their numbers, and
+  certain questions about the basmalah, as transmitted by one of the schools of ayah
+  counting.
+purpose: >
+  نستخدمه لتحديد النظام الذي تستند إليه أرقام الآيات وحدودها في مصحف أو `dataset` معين.
 purpose_en: >
-  Used to state which system a given dataset's or Mushaf's ayah numbers and boundaries
-  rest on.
+  Used to state which numbering system a mushaf's or a dataset's ayah numbers and
+  boundaries follow.
 alternative_spellings:
 - ayah_counting_system
-sources: []
+related:
+  - ayah
+  - equivalent_ayah
+  - basmalah
+  - ayah_count
+  - ayah_numbering_kufi
+  - ayah_numbering_basri
+  - ayah_numbering_dimashqi
+  - ayah_numbering_makki
+  - ayah_numbering_madani_first
+  - ayah_numbering_madani_last
+sources:
+  - id: quranpedia_tajweed
+    ref: "31"
+    url: https://tajweed.quranpedia.net/term/show/31
+  - id: bayan_dani
+    ref: "1/79"
+  - id: itqan
+    ref: "1/225"

@@ -1,0 +1,53 @@
+concept: ghunnah
+names:
+  code: ghunnah
+  display: Ghunnah
+  arabic:
+    vocalized: الغُنَّة
+    singular: الغنة
+kind: concept
+category: tajwid
+origin: quranic
+tier: core
+status: draft
+definition: >-
+  الغنة صوت يخرج من الخيشوم مركب في جسم النون والميم، ولا عمل للسان فيه. ويختلف مقدارها بحسب
+  الحكم، فهي أكمل ما تكون في المشدد والمدغم، ثم في المخفى، ثم في الساكن المظهر.
+definition_en: >-
+  A sound from the nasal cavity built into the body of noon and meem, in which the tongue
+  plays no part; its length differs by ruling, fullest in the doubled and the merged letter,
+  then in the concealed, then in the vowelless letter sounded clearly.
+purpose: >-
+  نستخدمها صفة نوسم بها مواضع النص التي تُمد فيها الغنة، مثل النون والميم المشددتين والإدغام
+  بغنة والإخفاء والإقلاب، حتى تُتبع في التلوين والتعليم، ولأن مقدارها يختلف باختلاف الطريق.
+purpose_en: >-
+  Used as an attribute tagging the places in the text where the ghunnah is held, such as the
+  two doubled letters, idgham with ghunnah, ikhfa and iqlab, so that it is followed in colouring
+  and instruction, and because its length is among what differs by tariq.
+boundaries:
+- >-
+  الغنة صفة صوت وليست حكمًا في نفسها، فهي تلحق الإدغام والإخفاء والإقلاب ولا تقابلها.
+boundaries_en:
+- >-
+  Ghunnah is an attribute of sound and not a ruling in itself: it accompanies idgham, ikhfa
+  and iqlab and does not stand opposite them.
+alternative_spellings:
+- ghunna
+- gunnah
+- ghunnah_sound
+english_glosses:
+- nasalisation
+related:
+- idgham
+- ikhfa
+- iqlab
+- noon_sakinah
+- meem_sakinah
+- tajwid_ruling
+sources:
+- id: quranpedia_tajweed
+  ref: '85'
+  url: https://tajweed.quranpedia.net/term/show/85
+- id: tajweed_engine
+  ref: noon-mushaddadah
+  url: https://github.com/quranpedia/tajweed-engine

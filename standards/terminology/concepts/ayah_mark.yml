@@ -17,23 +17,23 @@ tier: core
 status: draft
 symbol: ۝
 definition: >
-  الدَّارَة الفاصلة بين الآيتين، توضع عند نهاية الآية ويكتب فيها رقمها في أكثر
-  المصاحف.
+  علامة الآية هي الدارة الفاصلة بين الآيتين، وتوضع عند نهاية الآية ويكتب فيها
+  رقمها في أكثر المصاحف.
 definition_en: >
   The circle separating one ayah from the next. It is placed at the ayah's end and, in
-  most Mushafs, carries its number.
+  most mushafs, carries its number.
 purpose: >
-  تستخدم لتحديد حدود الآية في النص المكتوب، وهي العلامة التي يقرأ منها المحلل
-  والعارض نهاية الآية ورقمها.
+  نستخدمها لتحديد حدود الآية في النص المكتوب، فمنها يقرأ المحلل والعارض نهاية
+  الآية ورقمها.
 purpose_en: >
   Used to mark an ayah's boundary in the written text; it is the sign from which a
   renderer or an analyser reads where an ayah ends and what its number is.
 boundaries:
-  - العلامة رسم في المصحف، والفاصلة خاتمة الآية من جهة النظم.
+  - العلامة رسم في المصحف، أما الفاصلة فهي خاتمة الآية من جهة النظم.
   - رقم الآية داخل الدارة يتبع نظام عد الآي، ولا يعد جزءًا من العلامة.
 boundaries_en:
   - >-
-    The mark is something drawn in the Mushaf; the fasilah is the ayah's ending as a
+    The mark is something drawn in the mushaf; the ayah ending is the close of the ayah as a
     matter of the text itself.
   - >-
     The number inside the circle follows an ayah numbering system and is not part of the
@@ -52,6 +52,6 @@ unicode:
 mark_family: mustaqill
 related:
   - ayah
-  - fasilah
+  - ayah_ending
   - ayah_numbering_system
 sources: []

@@ -1,0 +1,42 @@
+concept: tafsir_al_ray
+names:
+  code: tafsir_al_ray
+  display: Tafsir al-Ray
+  arabic:
+    vocalized: تَفْسِير الرَّأْي
+    singular: تفسير الرأي
+kind: content
+category: tafsir
+origin: quranic
+tier: core
+status: draft
+definition: >-
+  تفسير الرأي هو بيان معاني القرآن بالاجتهاد والنظر بعد معرفة كلام العرب وأساليبه
+  وأصول التفسير، سواء كان الاجتهاد محمودًا أو مذمومًا.
+definition_en: >-
+  Explaining the meanings of the Quran by reasoning and reflection, after knowledge of the
+  speech of the Arabs, its styles and the principles of tafsir, whether the reasoning is approved
+  or censured.
+purpose: >-
+  نستخدم تفسير الرأي نوعًا للمحتوى المؤلف الذي ينسب إلى صاحبه قولًا، حتى يتميز عما
+  ينقل بإسناد.
+purpose_en: >-
+  Used as the kind of authored content attributed to its author as his statement, kept apart
+  from what is transmitted with a chain.
+boundaries:
+- تفسير الرأي قول صاحبه، والتفسير المأثور منقول بإسناد.
+boundaries_en:
+- >-
+  Tafsir al-ray is the statement of its author; tafsir mathur is transmitted with a chain.
+alternative_spellings:
+- tafsir_bil_ray
+- tafsir_bialray
+- tafsir_al_raay
+- tafsir_bir_ray
+english_glosses:
+- reasoned tafsir
+related:
+- tafsir_mathur
+- tafsir
+- mufassir
+sources: []

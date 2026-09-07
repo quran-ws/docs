@@ -4,6 +4,7 @@ names:
   display: Rectangular Zero
   arabic:
     vocalized: الصِّفْر المُسْتَطِيل
+    singular: الصفر المستطيل
   dabt: الصِّفْر المُسْتَطِيل القَائِم
   by_shape: مُسْتَطِيل صَغِير قَائِم خَالِي الوَسَط
   mushaf_introduction: دَائِرَة قَائِمَة مُسْتَطِيلَة خَالِيَة الوَسَط
@@ -15,11 +16,12 @@ origin: quranic
 tier: core
 status: draft
 symbol: مُسْتَطِيل قَائِم صَغِير
-definition: الدَّلَالَة على زِيَادَة الأَلِف وَصْلاً لا وَقْفاً؛ فتُنْطَق عند الوَقْف عليها
+definition: الصفر المستطيل علامة تدل على زيادة الألف في الوصل دون الوقف، ولذلك تنطق عند الوقف
+  عليها.
 definition_en: Marks an alif dropped in continuation but pronounced when stopping on it.
-purpose: تستخدم علامةً من علامات المصحف، ليعرف بها موضعها ودلالتها في العرض والتحليل.
-purpose_en: Used as a mark of the Mushaf, so that its place and what it points to are known
-  in rendering and in analysis.
+purpose: نستخدمها علامة من علامات المصحف، فنعرف بها موضعها ودلالتها في العرض والتحليل.
+purpose_en: Used as a mark of the mushaf, so that rendering and analysis know where it sits
+  and what it points to.
 alternative_spellings:
 - sifr-mustatil
 - sifr_mustatil
@@ -29,6 +31,7 @@ unicode:
   category: Mn
   combining_class: 230
   block: Arabic
+  unidata: 13.0.0
 mark_family: dabt
 sources:
 - id: hafs_svg_registry

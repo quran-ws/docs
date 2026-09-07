@@ -3,22 +3,31 @@ names:
   code: recitation
   display: Recitation
   arabic:
-    vocalized: التِّلَاوَة
-    singular: التلاوة
+    vocalized: تَسْجِيل التِّلَاوَة
+    singular: تسجيل التلاوة
 kind: entity
 category: recitation
 origin: borrowed
 tier: core
 status: draft
 plural: recitations
-definition: قراءة القرآن وأداؤه صوتيًا.
-definition_en: >
-  Reading the Quran and delivering it aloud.
-purpose: يستخدم لتمثيل فعل التلاوة، وبرمجيًا يمكن أن يمثل تسجيلًا مرتبطًا بمؤدٍ وقراءة ورواية
-  ونمط أداء.
-purpose_en: >
-  Used to represent the act of reciting; in software it may represent a recording bound
-  to a performer, a qiraah, a riwayah and a style of delivery.
-alternative_spellings:
-- tilawah
+definition: تسجيل التلاوة هو تسجيل منشور لتلاوة القرآن، منسوب إلى قارئ ورواية ونمط أداء.
+definition_en: A published recording of a recitation of the Quran, attributed to a reciter, a riwayah and a style of delivery.
+purpose: نستخدم تسجيل التلاوة لتمثيل التسجيل الذي تربط به التوقيتات ونمط الأداء ومرتبة السرعة. وينسب التسجيل إلى قارئ ورواية، ويبقى مستقلًا عن فعل التلاوة.
+purpose_en: Used to represent the recording that timings, style and pace are attached to; it is attributed to a reciter and a riwayah and kept apart from the act of tilawah.
+boundaries:
+  - تسجيل التلاوة هو التسجيل المنشور المنسوب إلى قارئ ورواية ونمط أداء، أما التلاوة فهي
+    الفعل نفسه.
+boundaries_en:
+  - >-
+    A recitation is the published recording attributed to a reciter, a riwayah and a
+    style; tilawah is the act.
+related:
+  - reciter
+  - riwayah
+  - recitation_style
+  - recitation_pace
+  - ayah_timing
+  - word_timing
+  - tilawah
 sources: []

@@ -10,11 +10,23 @@ category: revelation
 origin: standard
 tier: core
 status: draft
-definition: ترتيب السور أو الآيات بحسب زمن نزولها، وقد يختلف بحسب المصدر المعتمد.
+definition: ترتيب النزول هو ترتيب السور أو الآيات بحسب زمن نزولها، وقد يختلف بحسب المصدر المعتمد.
 definition_en: >
   The order of the surahs or the ayahs by the time of their revelation, which may differ
   from one accepted source to another.
-purpose: يستخدم لتخزين ترتيب النزول بصورة مستقلة عن ترتيب المصحف.
+purpose: نستخدم ترتيب النزول لتخزين ترتيب نزول السور أو الآيات مستقلًا عن ترتيب المصحف.
 purpose_en: >
-  Used to store the order of revelation independently of the order of the Mushaf.
-sources: []
+  Used to store the order of revelation independently of the order of the mushaf.
+boundaries:
+  - ترتيب النزول غير ترتيب المصحف، ورقم السورة يعبر عن ترتيب المصحف.
+boundaries_en:
+  - >-
+    Revelation order is not mushaf order: `surah_number` is the mushaf order.
+related:
+  - revelation
+  - surah
+sources:
+  - id: qattan_mabahith
+    ref: "1/140"
+  - id: itqan
+    ref: "1/93"

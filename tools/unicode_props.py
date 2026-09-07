@@ -8,6 +8,10 @@ generated, so they cannot drift from the standard they claim to describe.
 import sys
 import unicodedata
 
+# The database this interpreter carries. Two Pythons can name a character
+# differently, so a generated block says which database it was read from.
+UNIDATA_VERSION = unicodedata.unidata_version
+
 # Blocks these marks fall in, with the official code chart for each.
 BLOCKS = [
     (0x0600, 0x06FF, "Arabic", "https://unicode.org/charts/PDF/U0600.pdf"),

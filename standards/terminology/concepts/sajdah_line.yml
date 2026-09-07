@@ -4,6 +4,7 @@ names:
   display: Sajdah Line
   arabic:
     vocalized: خَطّ السَّجْدَة
+    singular: خط السجدة
   dabt: خَطّ مُوجِب السَّجْدَة
   by_shape: خَطّ أُفُقِيّ فَوْق الكَلِمَة
   mushaf_introduction: خَطّ أُفُقِيّ فَوْق الكَلِمَة الدَّالّ على مُوجِب السَّجْدَة
@@ -14,16 +15,21 @@ origin: quranic
 tier: core
 status: draft
 symbol: خَطّ أُفُقِيّ
-definition: الدَّلَالَة على الكَلِمَة المُوجِبَة للسَّجْدَة
+definition: خط السجدة خط فوق الكلمة يدل على أنها الكلمة الموجبة للسجدة.
 definition_en: Marks the word that makes prostration due.
-purpose: تستخدم علامةً من علامات المصحف، ليعرف بها موضعها ودلالتها في العرض والتحليل.
-purpose_en: Used as a mark of the Mushaf, so that its place and what it points to are known
-  in rendering and in analysis.
+purpose: نستخدمها علامة من علامات المصحف، فنعرف بها موضعها ودلالتها في العرض والتحليل.
+purpose_en: Used as a mark of the mushaf, so that rendering and analysis know where it sits
+  and what it points to.
 alternative_spellings:
 - khatt_mujib_al_sajdah
 - sajdah-line
+related:
+- sajdah_mark
+- sajdah
 unicode: []
 mark_family: mustaqill
 sources:
 - id: hafs_svg_registry
   ref: standard!sajdah-line
+- id: itqan
+  ref: 1/381

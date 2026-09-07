@@ -4,9 +4,10 @@ names:
   display: Tashil
   arabic:
     vocalized: التَّسْهِيل
+    singular: التسهيل
   dabt: التَّسْهِيل — الهَمْزَة بَيْنَ بَيْنَ
   by_shape: نُقْطَة كَبِيرَة مَطْمُوسَة مَكَان الهَمْزَة
-  mushaf_introduction: النُّقْطَة بِدُون الحَرَكَة مَكَان الهَمْزَة
+  mushaf_introduction: النُّقْطَة دُون الحَرَكَة مَكَان الهَمْزَة
   unicode: ARABIC ROUNDED HIGH STOP WITH FILLED CENTRE
 kind: mark
 category: dabt
@@ -15,9 +16,9 @@ origin: quranic
 tier: core
 status: draft
 symbol: نُقْطَة مَكَان الهَمْزَة
-definition: الدَّلَالَة على تَسْهِيل الهَمْزَة بَيْنَ بَيْنَ، أي بَيْنَها وبَيْنَ الأَلِف
+definition: علامة التسهيل تدل على تسهيل الهمزة بين بين، أي بينها وبين الألف.
 definition_en: 'Marks tashil: the hamzah softened to a sound between a hamzah and an alif.'
-purpose: تستخدم قيمةً من علامات القراءة، لينبه بها القارئ إلى أداء خاص في موضعه.
+purpose: نستخدمها قيمة من علامات القراءة، فننبه بها القارئ إلى أداء خاص في موضعها.
 purpose_en: Used as a value of the qiraah marks, so that the reader is alerted to a particular
   delivery at its place.
 alternative_spellings: []
@@ -27,6 +28,7 @@ unicode:
   category: Mn
   combining_class: 230
   block: Arabic
+  unidata: 13.0.0
 mark_family: alamat_qiraah
 sources:
 - id: hafs_svg_registry

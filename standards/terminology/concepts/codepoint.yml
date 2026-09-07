@@ -8,11 +8,16 @@ origin: borrowed
 tier: core
 status: draft
 plural: codepoints
-definition: قيمة رقمية معرفة في معيار ترميز مثل Unicode.
+definition: نقطة الترميز قيمة رقمية معرفة في معيار ترميز مثل `Unicode`.
 definition_en: >
   A numeric value defined by an encoding standard such as Unicode.
-purpose: تستخدم عندما يتعلق العمل بالتمثيل الرقمي الدقيق للمحارف والرموز القرآنية.
+purpose: >
+  نستخدمها حيث يهم الترميز الدقيق للمحرف أو العلامة، مثل قواعد التطبيع ومقابلات الخطوط وقائمة
+  النقاط المسموح بها.
 purpose_en: >
-  Used when the work concerns the exact digital representation of Quranic characters and
-  marks.
+  Used where the exact encoding of a character or mark matters: normalisation rules,
+  font mappings and the allowlist of permitted codepoints.
+related:
+  - character
+  - grapheme
 sources: []

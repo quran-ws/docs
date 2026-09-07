@@ -12,19 +12,20 @@ tier: core
 status: draft
 plural: fonts
 definition: >
-  ملف يحمل مجموعة من الـglyphs وقواعد إخراجها، يعرض به نص المصحف.
+  الخط ملف يحمل مجموعة من الأشكال المرسومة (`glyphs`) وقواعد إخراجها، ويُعرض به نص المصحف.
 definition_en: >
   A file carrying a set of glyphs and the rules for laying them out, used to render the
-  text of a Mushaf.
+  text of a mushaf.
 purpose: >
-  يستخدم لأن نص المصحف لا يعرض عرضًا صحيحًا إلا بخط بعينه في كثير من المصاحف
-  الرقمية، فترتبط به رموز الحروف وأشكالها ومواضع الأسطر.
+  نستخدمه لتسجيل الخط الذي يعتمد عليه المصحف الرقمي، لأن كثيرًا من المصاحف لا يُعرض نصها عرضًا
+  صحيحًا إلا بخط بعينه. وترتبط بالخط ترميز الحروف وأشكالها ومواضع الأسطر.
 purpose_en: >
-  Used because in many digital Mushafs the text renders correctly only in one particular
-  font, so letter codes, their shapes and line positions are tied to it.
+  Used to record which font a digital mushaf depends on, since in many of them the text
+  renders correctly in one font only, so letter codes, their shapes and line positions
+  are tied to it.
 boundaries:
   - الخط وسيلة عرض، والرسم صفة للنص المكتوب نفسه.
-  - الـglyph شكل داخل الخط، والحرف وحدة من النص.
+  - الشكل المرسوم (`glyph`) شكل داخل الخط، والحرف وحدة من النص.
 boundaries_en:
   - >-
     A font is a means of display; the rasm is a property of the written text itself.

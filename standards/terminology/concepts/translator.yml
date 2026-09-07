@@ -1,0 +1,33 @@
+concept: translator
+names:
+  code: translator
+  display: Translator
+  arabic:
+    vocalized: المُتَرْجِم
+    singular: المترجم
+kind: role
+category: translation
+origin: borrowed
+tier: core
+status: draft
+plural: translators
+definition: المترجم هو من نسبت إليه ترجمة لمعاني القرآن إلى لغة أخرى، سواء كان فردًا أو هيئة.
+definition_en: >-
+  One to whom a translation of the meanings of the Quran into another language is attributed,
+  whether a person or a body.
+purpose: >-
+  نستخدم المترجم لنسبة الترجمة إلى صاحبها، ولتمييزه عن الناشر والمراجع ومصدر النص.
+purpose_en: >-
+  Used to attribute a translation to its author, keeping the author apart from the publisher,
+  the reviewer and the source of the text.
+boundaries:
+  - المترجم غير المفسر حتى لو استند في ترجمته إلى تفسير.
+boundaries_en:
+- >-
+  The translator is not the mufassir, though the translation may rest on a tafsir.
+alternative_spellings:
+- mutarjim
+related:
+- translation
+- mufassir
+sources: []

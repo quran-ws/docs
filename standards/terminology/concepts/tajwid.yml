@@ -8,30 +8,46 @@ names:
     derived, because the doubling in general use is lexical and not a rule.
   transliteration: tajwīd
   arabic:
-    vocalized: تَجْوِيد
-    singular: تجويد
+    vocalized: التَّجْوِيد
+    singular: التجويد
 kind: concept
 category: tajwid
+registry: tajwid_rules
 origin: quranic
 tier: core
 status: draft
 definition: >
-  علم أداء حروف القرآن من مخارجها وإعطائها حقوقها ومستحقاتها من الصفات
+  التجويد هو علم أداء حروف القرآن من مخارجها وإعطائها حقوقها ومستحقاتها من الصفات
   والأحكام.
 definition_en: >
   The discipline of delivering the letters of the Quran from their points of
   articulation and giving them their due properties and rulings.
 purpose: >
-  يمثل المجال الجامع لقواعد التجويد وأحكامه وannotations التطبيقات، وتنسب
-  إليه الأحكام والقواعد في القواميس والمحركات.
+  نستخدم التجويد لتمثيل العلم الذي تنتمي إليه قواعد التجويد وأحكامه وتلوينات العرض في
+  التطبيقات، وتنسب إليه القاعدة في المحرك أو القاموس.
 purpose_en: >
-  Represents the field that gathers the rules of tajwid, its rulings and application
-  annotations; rulings and rules in dictionaries and engines are attributed to it.
+  Used as the discipline that tajwid rules, rulings and colour annotations belong to, so
+  that a rule in an engine or a dictionary is attributed to it.
+boundaries:
+  - التجويد علم، والمجود نمط تسجيل، ولا يستعمل أحد الاسمين مكان الآخر.
+boundaries_en:
+  - >-
+    Tajwid is a discipline; mujawwad is a recording style. Neither name stands for the
+    other.
 alternative_spellings:
   - tajweed
+  - tajwīd
 related:
   - recitation
   - waqf
+  - mujawwad
+  - noon_sakinah
+  - tajwid_ruling
 sources:
   - id: tajweed_engine
     url: https://github.com/quranpedia/tajweed-engine
+  - id: quranpedia_tajweed
+    ref: "4"
+    url: https://tajweed.quranpedia.net/term/show/4
+  - id: qattan_mabahith
+    ref: "1/190"

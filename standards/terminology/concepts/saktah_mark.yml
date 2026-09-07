@@ -4,6 +4,7 @@ names:
   display: Saktah Mark
   arabic:
     vocalized: عَلَامَة السَّكْتَة
+    singular: علامة السكتة
   dabt: السِّين — عَلَامَة السَّكْت
   by_shape: سِين
   mushaf_introduction: السِّين فَوْق الحَرْف الأَخِير الدَّالَّة على السَّكْت
@@ -15,24 +16,31 @@ origin: quranic
 tier: core
 status: draft
 symbol: س
-definition: 'الدَّلَالَة على السَّكْت: وَقْفَة يَسِيرَة من غَيْر تَنَفُّس ثمَّ الوَصْل بما
-  بعده'
+definition: علامة السكتة علامة تدل على السكت، وهو وقفة يسيرة من غير تنفس ثم الوصل بما بعده.
 definition_en: 'Marks a saktah: a brief pause without taking a breath, then continuing.'
-purpose: تستخدم قيمةً من علامات القراءة، لينبه بها القارئ إلى أداء خاص في موضعه.
+purpose: نستخدمها قيمة من علامات القراءة، فننبه بها القارئ إلى أداء خاص في موضعها.
 purpose_en: Used as a value of the qiraah marks, so that the reader is alerted to a particular
   delivery at its place.
+boundaries:
+- علامة السكتة رسم في المصحف، والسكتة الوقفة نفسها.
+boundaries_en:
+- The saktah mark is a sign in the mushaf; the saktah is the pause itself.
 alternative_spellings:
 - alamat_al_sakt
-deprecated:
+related:
 - saktah
-- saktah
+- qiraah_mark
 unicode:
 - cp: U+06DC
   name: ARABIC SMALL HIGH SEEN
   category: Mn
   combining_class: 230
   block: Arabic
+  unidata: 13.0.0
 mark_family: alamat_qiraah
 sources:
 - id: hafs_svg_registry
   ref: standard!saktah
+- id: quranpedia_tajweed
+  ref: '126'
+  url: https://tajweed.quranpedia.net/term/show/126

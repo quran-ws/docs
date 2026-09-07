@@ -1,0 +1,50 @@
+concept: ikhfa
+names:
+  code: ikhfa
+  display: Ikhfa
+  arabic:
+    vocalized: الإِخْفَاء
+    singular: الإخفاء
+kind: classification_value
+category: tajwid
+parent: tajwid_ruling
+origin: quranic
+tier: core
+status: draft
+definition: >-
+  الإخفاء هو النطق بالحرف الساكن على صفة بين الإظهار والإدغام، دون تشديد ومع بقاء الغنة. ويكون
+  حقيقيًّا في النون الساكنة والتنوين عند حروفه الخمسة عشر، وشفويًّا في الميم الساكنة عند الباء.
+definition_en: >-
+  Pronouncing a vowelless letter in a manner between izhar and idgham, without doubling and
+  with the ghunnah kept: haqiqi in noon sakinah and tanwin before its 15 letters, and shafawi
+  in meem sakinah before a baa.
+purpose: >-
+  نستخدمه قيمة من قيم حكم التجويد، فنوسم به موضع النص في التحليل والتلوين والتعليم، وتتفرع تحته
+  أنواعه في سجل الأحكام.
+purpose_en: >-
+  Used as a value of the tajwid ruling, so that a place in the text is tagged with it in analysis,
+  colouring and instruction, and its kinds branch under it in the registry of rulings.
+alternative_spellings:
+- ikhfaa
+- ikhfa'
+- ekhfa
+- ikhfa_haqiqi
+- ikhfa_shafawi
+english_glosses:
+- concealment
+related:
+- izhar
+- idgham
+- ghunnah
+- noon_sakinah
+- meem_sakinah
+sources:
+- id: quranpedia_tajweed
+  ref: '67'
+  url: https://tajweed.quranpedia.net/term/show/67
+- id: quranpedia_tajweed
+  ref: '68'
+  url: https://tajweed.quranpedia.net/term/show/68
+- id: tajweed_engine
+  ref: ikhfa-haqiqi-noon
+  url: https://github.com/quranpedia/tajweed-engine

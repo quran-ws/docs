@@ -4,9 +4,10 @@ names:
   display: Tanwin al-Damm
   arabic:
     vocalized: تَنْوِين الضَّمّ
+    singular: تنوين الضم
   dabt: تَنْوِين الرَّفْع — الضَّمَّتَان
   by_shape: وَاوَان صَغِيرَتَان فَوْق الحَرْف
-  mushaf_introduction: 'الحَرَكَتَان: تَرْكِيباً أو تَتَابُعاً'
+  mushaf_introduction: 'الحَرَكَتَان: تَرْكِيبًا أو تَتَابُعًا'
   unicode: ARABIC DAMMATAN
 kind: mark
 category: dabt
@@ -15,29 +16,36 @@ origin: quranic
 tier: core
 status: draft
 symbol: ـٌ
-definition: الدَّلَالَة على التَّنْوِين المَرْفُوع. وتَرْكِيب الحَرَكَتَيْن يدلّ على إظْهَار
-  التَّنْوِين، وتَتَابُعُهما مع تَشْدِيد التَّالِي على الإدْغَام الكَامِل، وبدونه على الإدْغَام
-  النَّاقِص أو الإخْفَاء
-definition_en: Marks the un tanwin. Stacked marks signal izhar; staggered marks with a shadda
+definition: تنوين الضم علامة تدل على التنوين المرفوع. وتركيب الحركتين يدل على إظهار التنوين،
+  وتتابعهما مع تشديد الحرف التالي يدل على الإدغام الكامل، وتتابعهما دون تشديد يدل على الإدغام
+  الناقص أو الإخفاء.
+definition_en: Marks the un tanwin. Stacked marks signal izhar; staggered marks with a shaddah
   on the next letter signal complete idgham, and without one, incomplete idgham or ikhfa.
-purpose: تستخدم قيمةً من قيم التنوين، ليقرأ منها نطق آخر الاسم وحكمه بدل قراءة صورة الشكل.
+purpose: نستخدمها قيمة من قيم التنوين، فنقرأ منها نطق آخر الاسم وحكمه بدلًا من قراءة صورة
+  الشكل.
 purpose_en: Used as a value of tanwin, so that the pronunciation of the noun's ending and
   its ruling are read from it rather than from the shape of the mark.
 alternative_spellings:
 - dammatan
+- tanween_damm
 - tanwin_al_rafa
 - tanwin_damm
+related:
+- tanwin
+- noon_sakinah
 unicode:
 - cp: U+064C
   name: ARABIC DAMMATAN
   category: Mn
   combining_class: 28
   block: Arabic
+  unidata: 13.0.0
 - cp: U+08F1
   name: ARABIC OPEN DAMMATAN
   category: Mn
   combining_class: 28
   block: Arabic Extended-A
+  unidata: 13.0.0
 mark_family: tanwin
 sources:
 - id: hafs_svg_registry

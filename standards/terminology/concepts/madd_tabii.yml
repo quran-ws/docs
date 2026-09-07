@@ -1,0 +1,46 @@
+concept: madd_tabii
+names:
+  code: madd_tabii
+  display: Madd Tabee
+  display_evidence: >-
+    GitHub phrase search: madd tabee 111 vs madd tabii 63. The display follows the
+    dominant English form; the code stays derived.
+  arabic:
+    vocalized: المَدّ الطَّبِيعِيّ
+    singular: المد الطبيعي
+kind: classification_value
+category: tajwid
+parent: madd
+origin: quranic
+tier: core
+status: draft
+definition: >-
+  المد الطبيعي هو المد الذي لا تقوم ذات حرف المد إلا به، ولا يتوقف على سبب من همز أو سكون،
+  ومقداره حركتان.
+definition_en: >-
+  The madd without which the letter of madd itself does not stand, depending on no cause of
+  hamzah or sukun; its length is 2 counts.
+purpose: >-
+  نستخدمه قيمة من قيم المد، فنوسم به موضع النص مع مقداره، ونقرأ منه ما يختلف باختلاف الطريق في
+  وصف التسجيل والمصحف.
+purpose_en: >-
+  Used as a value of madd, so that a place in the text is tagged with it and with its length,
+  and what differs by tariq is read from it in describing a recording or a mushaf.
+alternative_spellings:
+- madd_tabee
+- madd_tabi'i
+- madd_tabiee
+- madd_asli
+english_glosses:
+- natural madd
+related:
+- madd
+- madd_al_iwad
+- madd_al_silah
+sources:
+- id: quranpedia_tajweed
+  ref: '100'
+  url: https://tajweed.quranpedia.net/term/show/100
+- id: tajweed_engine
+  ref: madd-tabee-kalimi
+  url: https://github.com/quranpedia/tajweed-engine

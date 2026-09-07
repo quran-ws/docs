@@ -12,18 +12,17 @@ tier: core
 status: draft
 plural: mufassirs
 definition: >
-  من نسب إليه تفسير للقرآن، تأليفًا أو رواية.
+  المفسر من نُسب إليه تفسير للقرآن، تأليفًا أو رواية.
 definition_en: >
   One to whom a tafsir of the Quran is attributed, whether by authorship or by
   transmission.
 purpose: >
-  يستخدم لنسبة التفسير إلى صاحبه، فيتميز صاحب القول عن الكتاب الذي نقل فيه وعن
-  محققه وناشره.
+  نستخدمه لنسبة التفسير إلى صاحبه، فيتميز صاحب القول عن الكتاب الذي نُقل فيه وعن محققه وناشره.
 purpose_en: >
   Used to attribute a tafsir to its author, keeping the one who said it apart from the
   book his words were transmitted in, and from its editor and publisher.
 boundaries:
-  - المفسر صاحب القول، وقد ينقل قوله في كتاب لغيره.
+  - المفسر صاحب القول، وقد يُنقل قوله في كتاب لغيره.
 boundaries_en:
   - >-
     The mufassir is the one whose statement it is, and his statement may be transmitted
@@ -32,4 +31,7 @@ english_glosses:
   - Exegete
 related:
   - tafsir
-sources: []
+  - translator
+sources:
+  - id: itqan
+    ref: "4/200"

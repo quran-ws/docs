@@ -6,8 +6,8 @@ template: splash
 hero:
   tagline: How we write code, handle Quranic text, name concepts, and manage releases and corrections.
   actions:
-    - text: Writing guides
-      link: /guidelines/en/01-intro/writing-guides/
+    - text: Terminology standard
+      link: /guidelines/en/03-terminology/standard/
       icon: right-arrow
     - text: Repository
       link: https://github.com/quran-ws/guidelines
@@ -22,7 +22,7 @@ hero:
   </div>
   <div>
     <dt>LICENSE</dt>
-    <dd class="mono">CC BY 4.0</dd>
+    <dd class="mono">CC BY 4.0 · MIT</dd>
   </div>
   <div>
     <dt>SOURCE</dt>
@@ -44,16 +44,16 @@ hero:
       <a href="/guidelines/en/01-intro/">Introduction</a>
       <p>Writing style, and how the guides themselves are written.</p>
     </div>
-    <span class="qw-index-state state-written"></span>
+    <span class="qw-index-state status-draft">draft</span>
   </div>
 
   <div class="qw-index-row">
     <span class="qw-index-num">§02</span>
     <div class="qw-index-body">
       <a href="/guidelines/en/02-quranic-text/">Handling Quranic text</a>
-      <p>Immutable source text, encoding and normalization, tokenization and offsets, display, and the tests that guard them.</p>
+      <p>Immutable source text, encoding and normalisation, tokenisation and offsets, display, and the tests that guard them.</p>
     </div>
-    <span class="qw-index-state status-draft"></span>
+    <span class="qw-index-state status-draft">draft</span>
   </div>
 
   <div class="qw-index-row is-current">
@@ -64,10 +64,12 @@ hero:
       <span class="qw-index-links">
         <a href="/guidelines/en/03-terminology/standard/">standard</a>
         <a href="/guidelines/en/03-terminology/decisions/">decisions</a>
-        <a href="/guidelines/ar/03-terminology/dictionary/">dictionary · ar</a>
+        <a href="/guidelines/en/03-terminology/dictionary/">dictionary</a>
+        <a href="/guidelines/en/03-terminology/registries/">registries</a>
+        <a href="https://github.com/quran-ws/guidelines/tree/main/skills/quranic-terminology">agent skill</a>
       </span>
     </div>
-    <span class="qw-index-state status-draft"></span>
+    <span class="qw-index-state status-draft">draft</span>
   </div>
 
   <div class="qw-index-row">
@@ -76,7 +78,7 @@ hero:
       <a href="/guidelines/en/04-versioning/">Versioning and corrections</a>
       <p>Semantic versioning for data and not only code, errata logs, and how users are told the text changed.</p>
     </div>
-    <span class="qw-index-state state-planned"></span>
+    <span class="qw-index-state status-draft">draft</span>
   </div>
 
   <div class="qw-index-row">
@@ -85,16 +87,16 @@ hero:
       <a href="/guidelines/en/05-open-source/">Open source and version control</a>
       <p>Licensing, repository layout, and the rules for commits, PRs and review.</p>
     </div>
-    <span class="qw-index-state state-planned"></span>
+    <span class="qw-index-state status-draft">draft</span>
   </div>
 
   <div class="qw-index-row">
     <span class="qw-index-num">§06</span>
     <div class="qw-index-body">
       <a href="/guidelines/en/06-engineering/">Engineering</a>
-      <p>API design, data modelling, Mushaf rendering and fonts, and audio.</p>
+      <p>API design, data modelling, mushaf rendering and fonts, and audio.</p>
     </div>
-    <span class="qw-index-state state-planned"></span>
+    <span class="qw-index-state status-draft">draft</span>
   </div>
 
 </div>

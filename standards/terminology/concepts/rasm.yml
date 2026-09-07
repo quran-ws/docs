@@ -5,18 +5,39 @@ names:
   arabic:
     vocalized: الرَّسْم
     singular: الرسم
-kind: concept
+kind: classification
 category: mushaf
 origin: quranic
 tier: core
 status: draft
-definition: طريقة كتابة ألفاظ القرآن من حيث إثبات الحروف وحذفها وزيادتها وفصلها ووصلها ونحو
-  ذلك.
+definition: الرسم هو طريقة كتابة ألفاظ القرآن من حيث إثبات الحروف وحذفها وزيادتها وفصلها ووصلها وما يشبه ذلك.
 definition_en: >
   The way the words of the Quran are written: which letters are written and which
   omitted or added, and where words are joined or kept apart.
-purpose: يستخدم لتمييز الطبقة الإملائية/الرسمية للنص عن الخط والتخطيط والـglyphs.
+purpose: >
+  نستخدم الرسم تصنيفًا يبين على أي رسم كتب النص أو المصحف أو `dataset`. ويبنى عليه
+  البحث والمقارنة والعرض، ويميز طبقة الرسم عن الخط والتخطيط والمحارف المرسومة.
 purpose_en: >
-  Used to keep the orthographic layer of the text distinct from the font, the layout and
-  the glyphs.
+  Used as a classification stating which rasm a text, a mushaf or a dataset is written
+  in, so that search, comparison and rendering branch on it; and it keeps the layer of
+  the rasm distinct from the font, the layout and the drawn glyphs.
+boundaries:
+  - الرسم هو إثبات الحروف وحذفها وفصلها ووصلها، أما الضبط فهو علامات النطق التي توضع على
+    الحروف.
+  - الخط هو صورة الحروف في مصحف بعينه، أما الرسم فهو ما يثبت في كل مصحف كتب به.
+boundaries_en:
+  - >-
+    The rasm is which letters are written, omitted, joined or kept apart; the dabt is the
+    marks of pronunciation placed on the letters.
+  - >-
+    The script is the shape of the letters in one mushaf; the rasm is what holds in every
+    mushaf written in it.
+alternative_spellings:
+  - rasm_type
+english_glosses:
+  - orthography
+related:
+  - rasm_uthmani
+  - rasm_imlai
+  - mushaf_mark
 sources: []

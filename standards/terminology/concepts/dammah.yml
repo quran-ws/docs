@@ -4,7 +4,8 @@ names:
   display: Dammah
   arabic:
     vocalized: الضَّمَّة
-  dabt: الضَّمَّة (وتُسمَّى قديماً الرَّفْعَة)
+    singular: الضمة
+  dabt: الضَّمَّة (وتُسمَّى قديمًا الرَّفْعَة)
   by_shape: وَاو صَغِيرَة فَوْق الحَرْف
   mushaf_introduction: null
   unicode: ARABIC DAMMA
@@ -15,10 +16,10 @@ origin: quranic
 tier: core
 status: draft
 symbol: ـُ
-definition: الدَّلَالَة على حَرَكَة الحَرْف بالضَّمّ
-definition_en: Marks the letter as carrying the vowel u (dammah).
-purpose: تستخدم قيمةً من قيم الحركة، ليقرأ منها نطق الحرف في التحليل والعرض والتعليم بدل قراءة
-  صورة الشكل.
+definition: الضمة علامة تدل على حركة الحرف بالضم.
+definition_en: The mark for the short vowel u on the letter.
+purpose: نستخدمها قيمة من قيم الحركة، فنقرأ منها نطق الحرف في التحليل والعرض والتعليم بدلًا
+  من قراءة صورة الشكل.
 purpose_en: Used as a value of harakah, so that a letter's pronunciation is read from it in
   analysis, rendering and teaching rather than from the shape of the mark.
 alternative_spellings:
@@ -29,6 +30,7 @@ unicode:
   category: Mn
   combining_class: 31
   block: Arabic
+  unidata: 13.0.0
 mark_family: harakah
 sources:
 - id: hafs_svg_registry

@@ -11,11 +11,24 @@ parent: recitation_style
 origin: quranic
 tier: core
 status: draft
-definition: وصف لتلاوة أو تسجيل ينشر بوصفه مرتلًا.
+definition: >
+  المرتل نمط أداء متزن دون تطريب، على مرتبة الترتيل، وهو الوصف الذي تُنشر به التسجيلات المؤداة
+  على هذا النحو.
 definition_en: >
-  A description of a recitation or a recording published as murattal.
-purpose: يستخدم لتصنيف التسجيل، ولا يستخدم مرادفًا عامًا لمفهوم `Tartil`.
+  A recitation style that is measured and unadorned, at a reading pace; the label given
+  to recordings delivered that way.
+purpose: >
+  نستخدمه لتصنيف التسجيل بحسب نمطه.
 purpose_en: >
-  Used to classify a recording. It is never used as a general synonym for the concept of
-  `Tartil`.
+  Used to classify a recording by its style.
+boundaries:
+  - المرتل نمط تسجيل، والترتيل صفة الأداء نفسه، لذلك لا يستعمل أحد الاسمين مكان الآخر.
+boundaries_en:
+  - >-
+    Murattal is a recording style; tartil is a quality of the delivery itself. Neither
+    name stands for the other.
+related:
+  - recitation_style
+  - mujawwad
+  - tartil
 sources: []

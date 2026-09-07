@@ -7,28 +7,36 @@ names:
     singular: الطريق
 kind: concept
 category: qiraat
-parent: riwayah
+part_of: riwayah
+registry: tariq
 origin: quranic
 tier: core
 status: draft
 plural: tariqs
-definition: وجه النقل المأخوذ عن الراوي بواسطة من دونه في سلسلة نقل القراءة.
+definition: الطريق هو وجه النقل المأخوذ عن الراوي بواسطة من دونه في سلسلة نقل القراءة.
 definition_en: >
   A path of transmission taken from a rawi through those below him in the chain of
   transmission of a qiraah.
-purpose: يستخدم عندما تحتاج البيانات إلى مستوى أدق من الرواية لتمييز طرق الأداء والنقل.
+purpose: نستخدم الطريق عندما تحتاج البيانات إلى مستوى أدق من الرواية لتمييز طرق الأداء والنقل.
 purpose_en: >
   Used when data needs a finer level than the riwayah to tell paths of delivery and
   transmission apart.
 alternative_spellings:
 - tareeq
-sources: []
+related:
+  - riwayah
+  - qiraah
+  - wajh
+sources:
+  - id: nashr
+    ref: "1/115"
+  - id: nashr
+    ref: "1/146"
 note: >
-  لا سجل لطرق العشر بعد. النشر يسمي طرق كل رواية، وهي عند حد الطريق قريب من
-  تسعمئة وثمانين طريقًا؛ والمجموعة مغلقة ومعروفة، لكنها لم تُفرغ في سجل، فالنقص
-  مسجَّل لا مسكوت عنه.
+  الطرق الأربعة التي تخزنها التطبيقات، وهي الشاطبية وطيبة النشر والدرة والتيسير، مسجلة
+  في `registries/tariq.tsv`. أما حصر طرق النشر كلها، وعددها نحو 980 طريقًا، فلا يزال
+  مفتوحًا.
 note_en: >
-  There is no registry of the turuq of the ten yet. Al-Nashr names the turuq of each
-  riwayah, coming to some nine hundred and eighty at the level of the tariq. The set is
-  closed and known, but it has not been written into a registry, so the gap is recorded
-  rather than passed over.
+  The four named routes applications store — shatibiyyah, tayyibat_al_nashr, durrah,
+  taysir — are in `registries/tariq.tsv`; the full enumeration, some 980 turuq of
+  al-Nashr, is still open.

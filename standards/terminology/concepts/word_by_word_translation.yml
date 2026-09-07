@@ -1,0 +1,38 @@
+concept: word_by_word_translation
+names:
+  code: word_by_word_translation
+  display: Word by Word Translation
+kind: content
+category: translation
+parent: translation
+origin: standard
+tier: core
+status: draft
+plural: word_by_word_translations
+definition: >-
+  الترجمة كلمة بكلمة هي ترجمة تعطي كل كلمة من كلمات الآية معناها في لغة أخرى على حدة،
+  بترتيب كلمات الأصل.
+definition_en: >-
+  A translation giving each word of the ayah its meaning in another language on its own, in
+  the order of the original words.
+purpose: نستخدم الترجمة كلمة بكلمة في العرض التعليمي والتعلم، ونربطها بالكلمة بمفتاحها وليس بالآية.
+purpose_en: >-
+  Used in instructional display and in learning, and attached to the word by its key rather
+  than to the ayah.
+boundaries:
+- ترجمة الكلمة على حدة ليست ترجمة للآية، ولا تُعرض مكانها.
+boundaries_en:
+- >-
+  The translation of a word on its own is not a translation of the ayah, and is not shown
+  in its place.
+alternative_spellings:
+- wbw
+- word_by_word
+- wbw_translation
+- word_translation
+- wordbyword
+related:
+- translation
+- word
+- word_key
+sources: []

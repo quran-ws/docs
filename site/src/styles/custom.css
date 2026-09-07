@@ -175,16 +175,14 @@ site-search button {
 
 /* ---------------------------------------------------------------------------
    Table of contents. The default is an undifferentiated grey wall; this
-   numbers the top level and demotes nested headings under it.
+   demotes nested headings under the top level. Section numbers, where a page
+   has them, are written in the heading text itself, so they show here as
+   they do in the body and on GitHub.
    --------------------------------------------------------------------------- */
 starlight-toc nav > h2 {
   font-size: var(--sl-text-xs);
   font-weight: 600;
   color: var(--qw-faint);
-}
-
-starlight-toc nav ul {
-  counter-reset: qw-toc;
 }
 
 starlight-toc nav a {
@@ -194,31 +192,10 @@ starlight-toc nav a {
   line-height: 1.6;
 }
 
-starlight-toc nav > ul > li > a[href]::before {
-  counter-increment: qw-toc;
-  content: counter(qw-toc);
-  font-family: var(--sl-font-mono);
-  font-size: 0.6875rem;
-  color: var(--qw-faint);
-  margin-inline-end: 0.625rem;
-}
-
-/* The overview entry is not a section, so it is not numbered — and it must
-   not consume a number either, or every heading is off by one against the
-   counter in the page body. */
-starlight-toc nav > ul > li > a[href='#_top']::before {
-  content: none;
-  counter-increment: none;
-}
-
 starlight-toc nav a[aria-current='true'] {
   border-inline-start-color: var(--qw-ink);
   color: var(--qw-ink);
   font-weight: 600;
-}
-
-starlight-toc nav a[aria-current='true']::before {
-  color: var(--qw-ink);
 }
 
 /* Nested entries are secondary, and say so. */
@@ -251,43 +228,15 @@ starlight-toc nav ul ul a[href] {
   letter-spacing: -0.02em;
 }
 
-/* Numbered h2s. The source writes `# 1. Title`; the numeral fights the RTL
-   run when it sits inside the heading text, so it goes in the margin instead.
-   Pages that don't number their sections get the rule and nothing else. */
-.sl-markdown-content {
-  counter-reset: qw-section;
-}
-
+/* Section headings. Where a page numbers its sections, the number is in the
+   heading text in the source (`## 4. Title`), so it is the same on the site,
+   in the TOC and on GitHub; nothing is added here. */
 .sl-markdown-content h2 {
-  display: flex;
-  align-items: baseline;
-  gap: 0.875rem;
   font-weight: 600;
   letter-spacing: -0.01em;
   padding-bottom: 0.5rem;
   border-bottom: 2px solid var(--qw-ink);
 }
-
-/* The splash page's one heading is a label, not a numbered section. */
-.content-panel:has(.hero) .sl-markdown-content h2::before,
-main:has(> .content-panel .hero) .sl-markdown-content h2::before {
-  content: none;
-}
-
-.sl-markdown-content h2::before {
-  counter-increment: qw-section;
-  content: counter(qw-section);
-  flex-shrink: 0;
-  font-family: var(--sl-font-mono);
-  font-size: 0.6em;
-  font-weight: 500;
-  color: var(--qw-faint);
-  direction: ltr;
-  unicode-bidi: isolate;
-}
-
-/* The anchor-link icon Starlight injects must not be counted as content. */
-.sl-markdown-content h2 > a.sl-anchor-link { align-self: center; }
 
 .sl-markdown-content h3 {
   font-weight: 600;
@@ -375,32 +324,25 @@ main:has(> .content-panel .hero) .sl-markdown-content h2::before {
 }
 
 /* ---------------------------------------------------------------------------
-   Status. Two axes, deliberately distinguished:
-   `status-*` is the page's adoption state, from its frontmatter.
-   `state-*` is how far a section has been written, on the home index.
+   Status chips. One axis: the page's adoption state (`status-draft`,
+   `status-proposed`, `status-adopted`), the same value its frontmatter
+   carries. The chip's text is written in the HTML, so it reads on GitHub
+   too, where this stylesheet is not loaded.
    --------------------------------------------------------------------------- */
-[class^='status-']::before,
-[class^='state-']::before {
+[class*='status-'] {
   display: inline-block;
   font-family: var(--sl-font-mono);
   font-size: 0.6875rem;
   font-weight: 600;
   letter-spacing: 0.06em;
+  text-transform: uppercase;
   padding: 0.25rem 0.5rem;
   border-radius: 0;
 }
 
-.status-draft::before { content: 'DRAFT'; color: var(--qw-draft); background: var(--qw-draft-bg); }
-.status-proposed::before { content: 'PROPOSED'; color: var(--qw-proposed); background: var(--qw-proposed-bg); }
-.status-adopted::before { content: 'ADOPTED'; color: var(--qw-adopted); background: var(--qw-adopted-bg); }
-.state-written::before { content: 'WRITTEN'; color: var(--qw-adopted); background: var(--qw-adopted-bg); }
-.state-planned::before {
-  content: 'PLANNED';
-  color: var(--qw-faint);
-  background: transparent;
-  border: 1px solid var(--qw-rule);
-  padding: 0.1875rem 0.5rem;
-}
+.status-draft { color: var(--qw-draft); background: var(--qw-draft-bg); }
+.status-proposed { color: var(--qw-proposed); background: var(--qw-proposed-bg); }
+.status-adopted { color: var(--qw-adopted); background: var(--qw-adopted-bg); }
 
 /* ---------------------------------------------------------------------------
    Home: the spec cover, and the numbered section index.

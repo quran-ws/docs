@@ -4,6 +4,7 @@ names:
   display: Rounded Zero
   arabic:
     vocalized: الصِّفْر المُسْتَدِير
+    singular: الصفر المستدير
   dabt: الصِّفْر المُسْتَدِير
   by_shape: دَائِرَة صَغِيرَة خَالِيَة الوَسَط
   mushaf_introduction: دَائِرَة صَغِيرَة خَالِيَة الوَسَط
@@ -15,12 +16,13 @@ origin: quranic
 tier: core
 status: draft
 symbol: دَائِرَة صَغِيرَة
-definition: الدَّلَالَة على زِيَادَة الحَرْف رَسْماً؛ فلا يُنْطَق وَصْلاً ولا وَقْفاً
+definition: الصفر المستدير علامة تدل على زيادة الحرف في الرسم، ولذلك لا ينطق في الوصل ولا
+  في الوقف.
 definition_en: Marks a letter present in the skeleton but never pronounced — neither in continuation
   nor when stopping.
-purpose: تستخدم علامةً من علامات المصحف، ليعرف بها موضعها ودلالتها في العرض والتحليل.
-purpose_en: Used as a mark of the Mushaf, so that its place and what it points to are known
-  in rendering and in analysis.
+purpose: نستخدمها علامة من علامات المصحف، فنعرف بها موضعها ودلالتها في العرض والتحليل.
+purpose_en: Used as a mark of the mushaf, so that rendering and analysis know where it sits
+  and what it points to.
 alternative_spellings:
 - sifr-mustadir
 - sifr_mustadir
@@ -30,6 +32,7 @@ unicode:
   category: Mn
   combining_class: 230
   block: Arabic
+  unidata: 13.0.0
 mark_family: dabt
 sources:
 - id: hafs_svg_registry

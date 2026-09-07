@@ -6,16 +6,26 @@ names:
     vocalized: عَلَامَة المُصْحَف
     singular: علامة المصحف
 kind: classification
-category: mushaf_marks
+category: dabt
 origin: standard
 tier: core
 status: draft
-definition: رمز أو علامة غير داخلة في الحروف الأصلية للكلمة، تستخدم في المصحف لأغراض القراءة
+definition: علامة المصحف رمز أو علامة غير داخلة في الحروف الأصلية للكلمة، وتستخدم في المصحف لأغراض القراءة
   أو التنظيم أو الإرشاد.
 definition_en: >
-  A sign or mark that is not one of a word's original letters, used in the Mushaf for
+  A sign or mark that is not one of a word's original letters, used in the mushaf for
   reading, organisation or guidance.
-purpose: يوفر parent موحدًا للعلامات المختلفة بدل معاملتها كأنواع غير مرتبطة.
+purpose: >
+  نستخدمها أبًا موحدًا للعلامات المختلفة بدلًا من معاملتها أنواعًا غير مرتبطة.
 purpose_en: >
   Gives the different marks one parent, instead of treating them as unrelated kinds.
-sources: []
+related:
+  - harakah
+  - tanwin
+  - ijam
+  - orthographic_mark
+  - qiraah_mark
+  - waqf_mark
+sources:
+  - id: qattan_mabahith
+    ref: "1/152"

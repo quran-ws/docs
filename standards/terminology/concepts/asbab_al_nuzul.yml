@@ -10,15 +10,24 @@ category: revelation
 origin: quranic
 tier: core
 status: draft
-definition: الحوادث أو الأسئلة التي نزلت آية أو آيات متحدثة عنها أو مبينة لحكم يتعلق بها.
+definition: أسباب النزول هي الحوادث أو الأسئلة التي نزلت آية أو آيات للحديث عنها أو لبيان حكم يتعلق بها.
 definition_en: >
   The events or questions that an ayah, or several ayahs, was revealed to address or to
   rule on.
-purpose: تستخدم لربط الآيات بالمرويات والمعلومات المتعلقة بسبب نزولها.
+purpose: نستخدمها لربط الآيات بالمرويات والمعلومات المتعلقة بسبب نزولها.
 purpose_en: >
   Used to attach the narrations and the material about an ayah's occasion of revelation
   to the ayah itself.
 alternative_spellings:
 - asbab_al-nozool
 - asbab_un-nuzul
-sources: []
+related:
+  - revelation
+  - ayah
+  - surah_name_reason
+  - abrogation
+sources:
+  - id: qattan_mabahith
+    ref: "1/75"
+  - id: itqan
+    ref: "1/107"

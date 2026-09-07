@@ -1,0 +1,14 @@
+{
+  "name": "quranic-terminology",
+  "description": "Name and audit the concepts of Quranic software by the Quran.ws Terminology Standard: resolve any spelling to its canonical name, audit a codebase, derive a name from vocalized Arabic, draft a new entry.",
+  "version": "0.1.0",
+  "author": {
+    "name": "Quran.ws",
+    "url": "https://github.com/quran-ws/guidelines"
+  },
+  "homepage": "https://github.com/quran-ws/guidelines",
+  "repository": "https://github.com/quran-ws/guidelines",
+  "license": "MIT AND CC-BY-4.0",
+  "keywords": ["quran", "terminology", "naming", "audit", "arabic", "mushaf", "tajwid"],
+  "skills": ["./skills/quranic-terminology"]
+}

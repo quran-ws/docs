@@ -11,29 +11,27 @@ origin: borrowed
 tier: core
 status: draft
 definition: >
-  تصنيف الكلمة أو الوحدة الصرفية بحسب بابها النحوي، كالاسم والفعل والحرف وما
-  يتفرع عنها.
+  قسم الكلمة هو تصنيف الكلمة أو الوحدة الصرفية بحسب بابها النحوي، مثل الاسم والفعل
+  والحرف وما يتفرع عنها.
 definition_en: >
-  The classification of a word or a morpheme by its grammatical class: ism, fil, harf
+  The classification of a word or a morpheme by its grammatical class: noun, verb, particle
   and what branches from them.
 purpose: >
-  يستخدم وسمًا أساسيًا في التحليل الصرفي والنحوي، وعليه يقوم البحث بالوسم
+  نستخدم قسم الكلمة وسمًا أساسيًا في التحليل الصرفي والنحوي، ويقوم عليه البحث بالوسم
   والتصفية وبناء التحليل الإعرابي.
 purpose_en: >
   Used as the basic tag in morphological and syntactic analysis; searching by tag,
   filtering, and building the syntactic analysis all rest on it.
 alternative_spellings:
   - pos
-english_glosses:
-  - Part of Speech
 related:
   - morphology
   - irab
   - morpheme
 note: >
-  القسمة الثلاثية هي المستوى الذي يثبته المعيار. أما الوسوم التفصيلية التي
-  تستعملها مدونات الصرف القرآني — وهي عشرات — فبيانات تندرج تحت هذه القيم
-  الثلاث، ولا تفرد مداخل في القاموس.
+  المعيار يثبت القسمة الثلاثية فقط. أما الوسوم التفصيلية التي تستعملها مدونات الصرف
+  القرآني، وعددها عشرات، فهي بيانات تندرج تحت هذه القيم الثلاث ولا تفرد لها مداخل في
+  القاموس.
 note_en: >
   The threefold division is the level this standard fixes. The detailed tags used by
   Quranic morphology corpora — dozens of them — are data falling under these three

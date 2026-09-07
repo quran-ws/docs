@@ -1,0 +1,42 @@
+concept: madd_al_iwad
+names:
+  code: madd_al_iwad
+  display: Madd al-Iwad
+  arabic:
+    vocalized: مَدّ العِوَض
+    singular: مد العوض
+kind: classification_value
+category: tajwid
+parent: madd
+origin: quranic
+tier: core
+status: draft
+definition: مد العوض هو مد الألف عوضًا عن تنوين الفتح عند الوقف على الكلمة، ومقداره حركتان.
+definition_en: >-
+  Lengthening an alif in place of tanwin al-fath when stopping on the word; its length is
+  2 counts.
+purpose: >-
+  نستخدمه قيمة من قيم المد، فنوسم به موضع النص مع مقداره، ونقرأ منه ما يختلف باختلاف الطريق في
+  وصف التسجيل والمصحف.
+purpose_en: >-
+  Used as a value of madd, so that a place in the text is tagged with it and with its length,
+  and what differs by tariq is read from it in describing a recording or a mushaf.
+alternative_spellings:
+- madd_iwad
+- madd_al_ewad
+- madd_ewad
+- iwad
+- mad_iwad
+english_glosses:
+- compensation madd
+related:
+- madd
+- tanwin_al_fath
+- waqf
+sources:
+- id: quranpedia_tajweed
+  ref: '105'
+  url: https://tajweed.quranpedia.net/term/show/105
+- id: tajweed_engine
+  ref: madd-iwad
+  url: https://github.com/quranpedia/tajweed-engine

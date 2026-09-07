@@ -1,9 +1,9 @@
 concept: ayah_numbering_basri
 names:
-  code: ayah_numbering_basri
+  code: basri
   display: Basri Numbering
   arabic:
-    vocalized: العَدّ البَصْرِي
+    vocalized: العَدّ البَصْرِيّ
     singular: العد البصري
 kind: classification_value
 category: ayah_numbering
@@ -12,31 +12,38 @@ origin: quranic
 tier: core
 status: draft
 definition: >
-  عد أهل البصرة، المروي عن عاصم الجحدري عن أسلافه من أهل البصرة.
+  العد البصري هو نظام عد الآي المروي عن عاصم الجحدري عن أسلافه من أهل البصرة.
 definition_en: >
-  The counting of the people of Basra, transmitted from Asim al-Jahdari from his
-  predecessors among the Basrans.
+  The Basran numbering system, transmitted from Asim al-Jahdari and the Basran
+  authorities before him.
 purpose: >
-  يستخدم قيمةً من قيم نظام عد الآي، فيعرف به ما تستند إليه أرقام الآيات وحدودها
-  في مصحف أو dataset، وتقابل به مواضع الآي بين الأنظمة.
+  نستخدمه قيمة من قيم نظام عد الآي. وبه يبين المصحف أو `dataset` النظام الذي تستند إليه أرقام
+  آياته وحدودها، وبه نقابل مواضع الآي بين الأنظمة.
 purpose_en: >
-  Used as a value of the ayah numbering system, so that what a Mushaf's or a dataset's
-  ayah numbers and boundaries rest on is known, and ayah positions can be mapped between
+  Used as a value of the ayah numbering system, so that a mushaf or dataset states which
+  numbering its ayah numbers and boundaries follow, and positions can be mapped between
   systems.
 alternative_spellings:
   - basri_numbering
+  - basran
   - basran_numbering
 related:
   - ayah_numbering_system
   - ayah
   - equivalent_ayah
 note: >
-  الاسم البرمجي هنا اسم الأصل وما يميز القيمة، لا اشتقاق من الاسم العربي؛
-  فاشتقاق «العَدّ» يعطي `add` وهو فعل إنجليزي، و`makki` مأخوذ قيمةً من قيم
-  `revelation_classification`. والوجه في ذلك مسجل في سجل القرارات.
+  الاسم البرمجي `basri` وحده، لأن اسم القيمة فريد داخل تصنيفها لا في القاموس كله (§14)؛
+  فالعمود يحمل قيم تصنيف واحد، ولا يلتبس `makki` هنا بـ`makki` في `revelation_classification`.
+  أما معرّف المدخل فهو `ayah_numbering_basri`، اسم الأب مع الاسم البرمجي، حتى يكون للمدخلين
+  المشتركين في الاسم عنوانان مختلفان. ولا يشتق الاسم من «العَدّ» لأن اشتقاقه يعطي `add` وهو
+  فعل إنجليزي. والسبب مسجل في سجل القرارات.
 note_en: >
-  The code name here is the name of the school and what distinguishes the value, not a
-  derivation of the Arabic name: deriving from «العَدّ» gives `add`, an English verb,
-  and `makki` is already a value of `revelation_classification`. The reasoning is in the
-  decision record.
-sources: []
+  The code is `basri` alone, because a value's name is unique within its classification,
+  not across the dictionary (§14): a column holds one classification's values, so `makki`
+  here is never confused with `makki` in `revelation_classification`. The entry's id is
+  `ayah_numbering_basri`, the parent's name plus the code, so that two entries sharing a
+  name have different addresses. The code is not derived from «العَدّ» because that gives
+  `add`, an English verb. The reasoning is in the decision record.
+sources:
+  - id: bayan_dani
+    ref: "1/80"

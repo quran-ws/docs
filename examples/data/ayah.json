@@ -1,0 +1,45 @@
+{
+  "mushaf_edition": "tanzil_uthmani",
+  "riwayah": "hafs_an_asim",
+  "ayah_numbering_system": "kufi",
+  "ayah_key": "112:1",
+  "surah_number": 112,
+  "ayah_number": 1,
+  "text": "قُلْ هُوَ ٱللَّهُ أَحَدٌ",
+  "text_hash": "5479eee85e42dd3315cb339a95115328f2617f0d23214c832cc38f519d6ccd35",
+  "basmalah": {
+    "present": true,
+    "counted_as_ayah": false,
+    "text": "بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ",
+    "text_hash": "ac1e6f8f64c2e83d0b5087625a5e1eb0067b99d4a8962d3ad30528709dcf3dd6"
+  },
+  "tokenization": "whitespace",
+  "words": [
+    {
+      "word_key": "112:1:1",
+      "word_position": 1,
+      "text": "قُلْ"
+    },
+    {
+      "word_key": "112:1:2",
+      "word_position": 2,
+      "text": "هُوَ"
+    },
+    {
+      "word_key": "112:1:3",
+      "word_position": 3,
+      "text": "ٱللَّهُ"
+    },
+    {
+      "word_key": "112:1:4",
+      "word_position": 4,
+      "text": "أَحَدٌ"
+    }
+  ],
+  "source": {
+    "dataset_version": "tanzil_uthmani as served by api.alquran.cloud, edition quran-uthmani",
+    "retrieved": "2026-09-06",
+    "url": "https://api.alquran.cloud/v1/ayah/112:1/quran-uthmani",
+    "note": "The API returns the basmalah joined to the first ayah of the surah, and 1:1 with a leading U+FEFF. The record stores the ayah without the basmalah, the basmalah in its own field, and neither with the BOM."
+  }
+}

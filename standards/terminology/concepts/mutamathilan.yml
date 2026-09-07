@@ -1,0 +1,39 @@
+concept: mutamathilan
+names:
+  code: mutamathilan
+  display: Mutamathilan
+  arabic:
+    vocalized: المُتَمَاثِلَان
+    singular: المتماثلان
+kind: classification_value
+category: tajwid
+parent: letter_relation
+origin: quranic
+tier: extended
+status: draft
+definition: المتماثلان حرفان اتحدا في المخرج والصفة، مثل الباء في «اضرب بعصاك».
+definition_en: >-
+  Two letters identical in point of articulation and in attribute, like the two baas in «اضرب
+  بعصاك».
+purpose: >-
+  نستخدمه قيمة من قيم علاقة الحرفين، فنقرأ منه سبب الإدغام أو الإظهار في الموضع بدلًا من
+  استنباطه من الحرفين في كل مرة.
+purpose_en: >-
+  Used as a value of the relation of two letters, so that the cause of idgham or izhar at
+  the place is read from it rather than worked out from the two letters every time.
+alternative_spellings:
+- mutamathilain
+- mutamathilayn
+- mithlayn
+- mutamathilan_saghir
+related:
+- letter_relation
+- idgham
+- izhar
+sources:
+- id: quranpedia_tajweed
+  ref: '58'
+  url: https://tajweed.quranpedia.net/term/show/58
+- id: tajweed_engine
+  ref: mutamathilain-idgham-kamil
+  url: https://github.com/quranpedia/tajweed-engine

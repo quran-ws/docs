@@ -1,0 +1,54 @@
+# A proposed entry for the Quranic Software Terminology dictionary.
+#
+# Written by scripts/propose.py; every field is one the schema
+# (data/schema.json) knows, and the required ones are marked. The Arabic
+# fields are the source of the entry — the English ones translate them, never
+# the other way round — so leave a TODO where you cannot write Arabic rather
+# than machine-translating it: a maintainer will write it. An entry with a TODO
+# in it is a draft, which is what a proposal is.
+#
+# Send it as a pull request or an issue at https://github.com/quran-ws/guidelines
+# under standards/terminology/concepts/{{CODE}}.yml.
+
+concept: {{CODE}}                # required — identical to names.code
+names:
+  code: {{CODE}}                 # required — derived from the vocalized Arabic (sections 4-8), never chosen
+  display: {{DISPLAY}}           # required — the English form usage has settled on, measured; write how it was measured in display_evidence
+  # display_evidence: "GitHub phrase search: 'Rubu al-Hizb' 210 vs 'Rub el Hizb' 40"
+  arabic:
+    vocalized: {{ARABIC}}        # required for origin: quranic — the one field no tool can supply
+    # singular: the unvocalized singular, if it differs from the vocalized form with the marks removed
+    # plural: {{ARABIC_PLURAL}}   # the Arabic plural, so the audit recognises it as a plural that is not a name (section 11)
+  # transliteration: the scholarly rendering with diacritics (ALA-LC), optional
+kind: {{KIND}}                   # required — entity | concept | classification | classification_value | property | role | process | content | analysis | mark | unit (section 12)
+category: {{CATEGORY}}           # required — one of: {{CATEGORIES}} (section 25)
+# parent: {{PARENT}}             # required when kind is classification_value: the classification this is a value of (section 14)
+# part_of:                       # what contains it, when containment matters and is not is-a
+origin: quranic                  # required — quranic: cannot be defined without the Quran or the mushaf | borrowed: a general term with a settled definition elsewhere | standard: defined here for software with no traditional counterpart
+tier: core                       # required — core: applications store it | extended: real but rarely modelled, or with disputed boundaries
+status: draft                    # required — a proposal is draft; adopted needs a source
+plural: {{PLURAL}}               # the code plural: the code plus s, never the Arabic plural (section 11)
+definition: >                    # required — Arabic. What is it? No implementation detail, no circularity (section 15)
+  TODO
+definition_en: >                 # a translation of definition, never a second definition
+  TODO: what it is, in one or two sentences, without saying how software stores it
+purpose: >                       # required — Arabic. Why does software model it? Never a restatement of the definition (section 16)
+  TODO
+purpose_en: >
+  TODO: why an application stores it, what it attaches to, what branches on it
+boundaries:                      # Arabic — what the concept does not include (section 17)
+  - TODO
+boundaries_en:                   # line for line with boundaries
+  - "TODO: the neighbouring concept this is not, and what belongs to it instead"
+alternative_spellings:           # every spelling seen in the wild, so each resolves here (section 19)
+  - TODO
+english_glosses:                 # English words that mean it — search keys, never names (sections 3, 19)
+  - TODO
+deprecated: []                   # names retired in favour of this one; they keep resolving (section 20)
+related:                         # entries a reader of this one should see; the build makes the pairs symmetric
+{{RELATED}}
+sources:                         # required for adopted: what establishes the definition, not the name (section 28)
+  - id: TODO                     # a key in standards/terminology/sources.yml, or propose a new source with it
+    ref: TODO                    # the term id, page or volume in that source
+# note: an Arabic note on anything above that needs saying
+# note_en: the same in English

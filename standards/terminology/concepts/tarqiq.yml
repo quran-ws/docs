@@ -1,0 +1,43 @@
+concept: tarqiq
+names:
+  code: tarqiq
+  display: Tarqiq
+  display_evidence: >-
+    tools/display_measurements.json: tarqiq 1156 vs tarqeeq 286; the derived form is also
+    the dominant one.
+  arabic:
+    vocalized: التَّرْقِيق
+    singular: الترقيق
+kind: concept
+category: tajwid
+origin: quranic
+tier: core
+status: draft
+definition: >-
+  الترقيق هو نحول يدخل على صوت الحرف فلا يمتلئ الفم بصداه. وهو لازم في حروف الاستفال،
+  وعارض في الراء ولام لفظ الجلالة.
+definition_en: >-
+  A thinness entering the sound of a letter so that the mouth does not fill with its echo;
+  inherent in the letters of istifal, and incidental in the raa and the lam of the name of
+  Allah.
+purpose: >-
+  نستخدم الترقيق لوسم مواضع الحروف المرققة ترقيقًا عارضًا في التلوين والتعليم، وهو
+  مقابل التفخيم.
+purpose_en: >-
+  Used to tag the places of letters carrying incidental tarqiq in colouring and instruction,
+  as the counterpart of tafkhim.
+alternative_spellings:
+- tarqeeq
+- tarqiq_rule
+english_glosses:
+- light pronunciation
+related:
+- tafkhim
+- tajwid_ruling
+sources:
+- id: quranpedia_tajweed
+  ref: '88'
+  url: https://tajweed.quranpedia.net/term/show/88
+- id: tajweed_engine
+  ref: raa-tarqeeq
+  url: https://github.com/quranpedia/tajweed-engine

@@ -1,0 +1,96 @@
+openapi: 3.1.0
+info:
+  title: Quranic text API — one endpoint, in canonical names
+  version: 1.0.0
+  description: |
+    An ayah by its location. The numbering system and the riwayah are explicit
+    parameters with documented defaults, never implied. The response returns the
+    text exactly as stored, with the hash and the edition it came from, so a
+    consumer can tell which text it has.
+
+paths:
+  /surahs/{surah_number}/ayahs/{ayah_number}:
+    get:
+      operationId: getAyah
+      summary: One ayah by location
+      parameters:
+        - name: surah_number
+          in: path
+          required: true
+          schema: { type: integer, minimum: 1, maximum: 114 }
+        - name: ayah_number
+          in: path
+          required: true
+          description: In the numbering system given by `ayah_numbering_system`.
+          schema: { type: integer, minimum: 1 }
+        - name: ayah_numbering_system
+          in: query
+          required: false
+          description: Member of the ayah_numbering registry, by its registry code. Default `kufi`.
+          schema:
+            type: string
+            default: kufi
+            enum:
+              - madani_first
+              - madani_last
+              - makki
+              - kufi
+              - basri
+              - dimashqi
+        - name: riwayah
+          in: query
+          required: false
+          description: Member of the qiraat registry, riwayah rows. Default `hafs_an_asim`.
+          schema: { type: string, default: hafs_an_asim, example: warsh_an_nafi }
+        - name: mushaf_edition
+          in: query
+          required: false
+          description: The edition code. Default is the server's current edition for that riwayah.
+          schema: { type: string, example: tanzil_uthmani }
+      responses:
+        "200":
+          description: The ayah, exactly as stored.
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/Ayah" }
+        "404":
+          description: No ayah at that location in that numbering system. The response names the system, and never guesses another.
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/NotFound" }
+
+components:
+  schemas:
+    Ayah:
+      type: object
+      required: [ayah_key, mushaf_edition, riwayah, ayah_numbering_system, surah_number, ayah_number, text, text_hash, dataset_version]
+      properties:
+        ayah_key: { type: string, example: "112:1", description: The textual key, surah and ayah number, read in the light of the numbering system. }
+        mushaf_edition: { type: string, example: tanzil_uthmani }
+        riwayah: { type: string, example: hafs_an_asim }
+        ayah_numbering_system: { type: string, example: kufi }
+        surah_number: { type: integer, example: 112 }
+        ayah_number: { type: integer, example: 1 }
+        text:
+          type: string
+          description: Exactly as transmitted. Not normalised, no edition marks, never cut.
+        text_hash: { type: string, description: sha256 of `text` }
+        dataset_version: { type: string, description: The release of the text dataset this row comes from. }
+        basmalah:
+          type: object
+          description: Its own field. Whether it counts as an ayah is the numbering system's call.
+          properties:
+            present: { type: boolean }
+            counted_as_ayah: { type: boolean }
+            text: { type: string }
+        search_key:
+          type: string
+          description: Derived from `text` for search only. Never shown to the reader.
+    NotFound:
+      type: object
+      required: [error, surah_number, ayah_number, ayah_numbering_system]
+      properties:
+        error: { type: string, example: no_such_ayah }
+        surah_number: { type: integer }
+        ayah_number: { type: integer }
+        ayah_numbering_system: { type: string }

@@ -11,12 +11,14 @@ origin: borrowed
 tier: core
 status: draft
 plural: transliterations
-definition: تمثيل حروف نظام كتابي بحروف نظام آخر وفق قواعد محددة، دون ترجمة المعنى.
+definition: النقل الحرفي هو تمثيل حروف نظام كتابي بحروف نظام آخر وفق قواعد محددة، دون ترجمة المعنى.
 definition_en: >
   Representing the letters of one writing system with those of another by fixed rules,
   without translating the meaning.
-purpose: يستخدم لتوفير تمثيل قابل للقراءة بنظام كتابي آخر أو للتحويل المنهجي بين أنظمة الكتابة.
+purpose: نستخدم النقل الحرفي لتوفير تمثيل قابل للقراءة بنظام كتابي آخر أو للتحويل المنهجي بين أنظمة الكتابة.
 purpose_en: >
   Used to give a readable representation in another writing system, or for systematic
   conversion between writing systems.
+related:
+  - translation
 sources: []

@@ -1,0 +1,51 @@
+concept: ayah_numbering_madani_last
+names:
+  code: madani_last
+  display: Last Madani Numbering
+  arabic:
+    vocalized: العَدّ المَدَنِيّ الأَخِير
+    singular: العد المدني الأخير
+kind: classification_value
+category: ayah_numbering
+parent: ayah_numbering_system
+origin: quranic
+tier: core
+status: draft
+definition: >
+  العد المدني الأخير هو نظام عد أهل المدينة في روايته الأخيرة، وهي رواية إسماعيل بن جعفر عن
+  سليمان بن جماز.
+definition_en: >
+  The later Madinan numbering system, that of Ismail ibn Jafar from Sulayman ibn Jammaz.
+purpose: >
+  نستخدمه قيمة من قيم نظام عد الآي. وبه يبين المصحف أو `dataset` النظام الذي تستند إليه أرقام
+  آياته وحدودها، وبه نقابل مواضع الآي بين الأنظمة.
+purpose_en: >
+  Used as a value of the ayah numbering system, so that a mushaf or dataset states which
+  numbering its ayah numbers and boundaries follow, and positions can be mapped between
+  systems.
+alternative_spellings:
+  - ayah_numbering_madani_akhir
+  - madani_akhir
+  - last_madani
+  - last_madinan
+  - madani_last_numbering
+related:
+  - ayah_numbering_system
+  - ayah
+  - equivalent_ayah
+note: >
+  الاسم البرمجي `madani_last` وحده، لأن اسم القيمة فريد داخل تصنيفها لا في القاموس كله (§14)؛
+  فالعمود يحمل قيم تصنيف واحد، ولا يلتبس `makki` هنا بـ`makki` في `revelation_classification`.
+  أما معرّف المدخل فهو `ayah_numbering_madani_last`، اسم الأب مع الاسم البرمجي، حتى يكون للمدخلين
+  المشتركين في الاسم عنوانان مختلفان. ولا يشتق الاسم من «العَدّ» لأن اشتقاقه يعطي `add` وهو
+  فعل إنجليزي. والسبب مسجل في سجل القرارات.
+note_en: >
+  The code is `madani_last` alone, because a value's name is unique within its classification,
+  not across the dictionary (§14): a column holds one classification's values, so `makki`
+  here is never confused with `makki` in `revelation_classification`. The entry's id is
+  `ayah_numbering_madani_last`, the parent's name plus the code, so that two entries sharing a
+  name have different addresses. The code is not derived from «العَدّ» because that gives
+  `add`, an English verb. The reasoning is in the decision record.
+sources:
+  - id: bayan_dani
+    ref: "1/79"

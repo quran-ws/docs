@@ -11,15 +11,29 @@ origin: borrowed
 tier: core
 status: draft
 plural: words
-definition: وحدة من النص تعامل بوصفها كلمة مستقلة وفق منهج التقسيم النصي المعتمد.
+definition: >
+  الكلمة هي وحدة من النص يعرفها القارئ كلمة واحدة، ولا يتغير عدها بتغير منهج تقسيم
+  النص.
 definition_en: >
-  A unit of the text treated as a word in its own right according to the adopted method
-  of textual segmentation.
-purpose: تستخدم لربط البيانات على مستوى الكلمة مثل الجذر والصرف والإعراب والتجويد والمحاذاة
-  الصوتية والموضع البصري.
+  A unit of the text that a reader recognises as one word, independent of how a
+  segmenter splits the text.
+purpose: نستخدم الكلمة لربط البيانات على مستوى الكلمة، مثل الجذر والصرف والإعراب والتجويد والمحاذاة الصوتية والموضع البصري.
 purpose_en: >
   Used to attach word-level data: root, morphology, irab, tajwid, audio alignment and
   visual position.
+boundaries:
+  - الكلمة وحدة يعرفها القارئ، و`token` وحدة ينتجها منهج تقسيم. لذلك اختلاف المنهج يغير
+    عدد `tokens` ولا يغير عدد الكلمات.
+boundaries_en:
+  - >-
+    A word is a unit the reader recognises; a token is a unit a segmentation method
+    produces, so changing the method changes the number of tokens and not the number of
+    words.
 alternative_spellings:
 - kalimah
+related:
+  - token
+  - morpheme
+  - letter
+  - word_key
 sources: []

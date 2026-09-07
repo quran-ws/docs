@@ -1,0 +1,43 @@
+concept: madd_munfasil
+names:
+  code: madd_munfasil
+  display: Madd Munfasil
+  arabic:
+    vocalized: المَدّ المُنْفَصِل
+    singular: المد المنفصل
+kind: classification_value
+category: tajwid
+parent: madd
+origin: quranic
+tier: core
+status: draft
+definition: >-
+  المد المنفصل مد فرعي سببه همزة في أول الكلمة التالية لحرف المد، وهو جائز، فيُقصر ويُمد بحسب
+  الرواية والطريق.
+definition_en: >-
+  A secondary madd caused by a hamzah at the start of the word following the letter of madd;
+  it is permissible, shortened or lengthened by riwayah and tariq.
+purpose: >-
+  نستخدمه قيمة من قيم المد، فنوسم به موضع النص مع مقداره، ونقرأ منه ما يختلف باختلاف الطريق في
+  وصف التسجيل والمصحف.
+purpose_en: >-
+  Used as a value of madd, so that a place in the text is tagged with it and with its length,
+  and what differs by tariq is read from it in describing a recording or a mushaf.
+alternative_spellings:
+- madd_jaiz_munfasil
+- munfasil
+- madd_munfasil_jaiz
+- mad_munfasil
+english_glosses:
+- separated madd
+related:
+- madd
+- madd_muttasil
+- hamzah
+sources:
+- id: quranpedia_tajweed
+  ref: '102'
+  url: https://tajweed.quranpedia.net/term/show/102
+- id: tajweed_engine
+  ref: madd-munfasil
+  url: https://github.com/quranpedia/tajweed-engine

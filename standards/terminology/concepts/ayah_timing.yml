@@ -9,19 +9,19 @@ tier: core
 status: draft
 plural: ayah_timings
 definition: >
-  مدى زمني في تسجيل تلاوة، محدد ببداية ونهاية، يقابل آية بعينها.
+  توقيت الآية مدى زمني في تسجيل تلاوة، له بداية ونهاية، ويقابل آية بعينها.
 definition_en: >
   A span of time in a recitation recording, given by a start and an end, corresponding
   to one ayah.
 purpose: >
-  يستخدم لربط النص بالصوت، وعليه يقوم التتبع أثناء الاستماع والانتقال إلى آية
-  والتكرار والاقتطاع.
+  نستخدمه لربط النص بالصوت. وعليه يقوم تتبع النص في أثناء الاستماع والانتقال إلى آية وتكرارها
+  واقتطاعها.
 purpose_en: >
   Used to bind text to audio; following along while listening, jumping to an ayah,
   repeating it and clipping it all rest on it.
 boundaries:
-  - التوقيت صفة في التسجيل لا في الآية، فيختلف باختلاف التلاوة.
-  - التوقيت على مستوى الآية غير المحاذاة على مستوى الكلمة.
+  - التوقيت صفة للتسجيل وليس للآية، فيختلف باختلاف التلاوة.
+  - التوقيت على مستوى الآية يختلف عن المحاذاة على مستوى الكلمة.
 boundaries_en:
   - >-
     A timing is a property of the recording, not of the ayah, so it differs from one
@@ -31,8 +31,11 @@ boundaries_en:
 alternative_spellings:
   - ayah_timestamp
   - recitation_timing
+  - timing
+  - verse_timing
 related:
   - recitation
   - ayah
   - reciter
+  - word_timing
 sources: []

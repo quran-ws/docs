@@ -1,0 +1,4 @@
+# Python 3.8 or later. Install with: python3 -m pip install -r requirements.txt
+PyYAML>=6,<7
+jsonschema>=4.18,<5
+pytest>=7

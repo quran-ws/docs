@@ -4,17 +4,35 @@ names:
   display: Harakah
   arabic:
     vocalized: الحَرَكَة
+    singular: الحركة
 kind: classification
 category: dabt
 parent: mushaf_mark
 origin: quranic
 tier: core
 status: draft
-definition: علامة تضبط حركة الحرف من فتح أو ضم أو كسر أو سكون.
+definition: >
+  الحركة علامة تضبط حركة الحرف أو سكونه أو تشديده، وهي الفتحة والضمة والكسرة والسكون والشدة.
 definition_en: >
-  A mark fixing a letter's vowel: fathah, dammah, kasrah or sukun.
-purpose: تستخدم أبًا لعلامات الضبط التي تحدد نطق الحرف نفسه.
+  A mark fixing a letter's vowel, its absence or its doubling: fathah, dammah, kasrah,
+  sukun and shaddah.
+purpose: نستخدمها أبًا لعلامات الضبط التي تحدد نطق الحرف نفسه.
 purpose_en: >
   Used as the parent of the dabt marks that determine how the letter itself is
   pronounced.
-sources: []
+alternative_spellings:
+  - haraka
+  - harakat
+english_glosses:
+  - Vowel Mark
+  - diacritics
+related:
+  - mushaf_mark
+  - tanwin
+  - tashkil
+sources:
+  - id: quranpedia_tajweed
+    ref: "135"
+    url: https://tajweed.quranpedia.net/term/show/135
+  - id: qattan_mabahith
+    ref: "1/151"

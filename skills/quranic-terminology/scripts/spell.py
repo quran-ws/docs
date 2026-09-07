@@ -10,12 +10,14 @@ Arabic, and guessing them is exactly the opinion this is meant to remove.
 import csv as _csv
 import os as _os
 
+# Where the spelling tables live. The skill's copy of this module repoints this
+# one line at its own data/spelling/ directory (tools/generate_skill.py).
+TABLES_DIR = _os.path.join(_os.path.dirname(_os.path.dirname(
+    _os.path.abspath(__file__))), "data", "spelling")
+
 FATHA, KASRA, DAMMA, SUKUN, SHADDA = "َ", "ِ", "ُ", "ْ", "ّ"
 FATHATAN, KASRATAN, DAMMATAN = "ً", "ٍ", "ٌ"
 TANWIN = {FATHATAN, KASRATAN, DAMMATAN}
-_TABLES = _os.path.join(_os.path.dirname(_os.path.dirname(
-    _os.path.abspath(__file__))), "data", "spelling")
-
 HARAKAT = {FATHA, KASRA, DAMMA, SUKUN, SHADDA} | TANWIN
 DAGGER_ALIF, MADDA, SUPERSCRIPTS = "ٰ", "ٓ", "ۖۗۘۙۚۛۜ"
 
@@ -41,6 +43,26 @@ def _is_word_final(text, i):
     return all(c in HARAKAT or c == DAGGER_ALIF for c in text[i + 1:])
 
 
+def _table(name):
+    """Rows of a spelling table, comments and blank lines dropped.
+
+    A missing table is an error, not an empty table: deriving `nun_sakinah`
+    because letter_names.tsv was not found would be a wrong answer given with
+    confidence, and a copy of this module with no tables beside it must say so.
+    """
+    path = _os.path.join(TABLES_DIR, name)
+    if not _os.path.exists(path):
+        raise FileNotFoundError(f"spelling table {name} not found in {TABLES_DIR}")
+    with open(path, encoding="utf-8") as fh:
+        return [row for row in _csv.reader(fh, delimiter="\t")
+                if row and row[0].strip() and not row[0].startswith("#")]
+
+
+def _bare(text):
+    """The letters alone: harakat and the dagger alif removed."""
+    return "".join(c for c in text if c not in HARAKAT and c != DAGGER_ALIF)
+
+
 def _load_letter_names():
     """The name of an Arabic letter is written as it is said: noon, not nun.
 
@@ -49,17 +71,7 @@ def _load_letter_names():
     which are ordinary English words, out of identifiers. Every other term
     follows the derivation.
     """
-    path = _os.path.join(_TABLES, "letter_names.tsv")
-    names = {}
-    if not _os.path.exists(path):
-        return names
-    with open(path, encoding="utf-8") as fh:
-        for row in _csv.reader(fh, delimiter="\t"):
-            if not row or row[0].startswith("#") or len(row) < 3:
-                continue
-            bare = "".join(c for c in row[1] if c not in HARAKAT and c != DAGGER_ALIF)
-            names[bare] = row[2]
-    return names
+    return {_bare(row[1]): row[2] for row in _table("letter_names.tsv") if len(row) >= 3}
 
 
 def _load_established():
@@ -69,16 +81,7 @@ def _load_established():
     deriving `juzu` would be correct and useless. Each row carries the
     measurement that justifies it, so the table cannot grow by taste.
     """
-    path = _os.path.join(_TABLES, "established_spellings.tsv")
-    names = {}
-    if not _os.path.exists(path):
-        return names
-    with open(path, encoding="utf-8") as fh:
-        for row in _csv.reader(fh, delimiter="\t"):
-            if not row or row[0].startswith("#") or len(row) < 2:
-                continue
-            names["".join(c for c in row[0] if c not in HARAKAT and c != DAGGER_ALIF)] = row[1]
-    return names
+    return {_bare(row[0]): row[1] for row in _table("established_spellings.tsv") if len(row) >= 2}
 
 
 def _load_general_words():
@@ -89,22 +92,24 @@ def _load_general_words():
     word beside it is translated. `saghirah` carries nothing that `small` does
     not, so the mark is small_meem.
     """
-    path = _os.path.join(_TABLES, "general_words.tsv")
-    words = {}
-    if not _os.path.exists(path):
-        return words
-    with open(path, encoding="utf-8") as fh:
-        for row in _csv.reader(fh, delimiter="\t"):
-            if not row or row[0].startswith("#") or len(row) < 2:
-                continue
-            role = row[2].strip() if len(row) > 2 else "word"
-            words["".join(c for c in row[0] if c not in HARAKAT and c != DAGGER_ALIF)] = (row[1], role)
-    return words
+    return {_bare(row[0]): (row[1], row[2].strip() if len(row) > 2 else "word")
+            for row in _table("general_words.tsv") if len(row) >= 2}
+
+
+def _load_connectives():
+    """Words that join the parts of a name and carry nothing into it (section 14).
+
+    `مَعَ كَوْنِ` in الوَقْف الجَائِز مَعَ كَوْنِ الوَصْل أَوْلَى says how the two halves
+    relate, which the order of the English words already says. The name is
+    waqf_jaiz_wasl_awla.
+    """
+    return {_bare(row[0]) for row in _table("connectives.tsv")}
 
 
 LETTER_NAMES = None
 ESTABLISHED = None
 GENERAL_WORDS = None
+CONNECTIVES = None
 
 
 def letter_name(word):
@@ -112,8 +117,7 @@ def letter_name(word):
     global LETTER_NAMES
     if LETTER_NAMES is None:
         LETTER_NAMES = _load_letter_names()
-    bare = "".join(c for c in _strip(word) if c not in HARAKAT and c != DAGGER_ALIF)
-    return LETTER_NAMES.get(bare)
+    return LETTER_NAMES.get(_bare(_strip(word)))
 
 
 def general_word(word):
@@ -121,7 +125,7 @@ def general_word(word):
     global GENERAL_WORDS
     if GENERAL_WORDS is None:
         GENERAL_WORDS = _load_general_words()
-    bare = "".join(c for c in _strip(word) if c not in HARAKAT and c != DAGGER_ALIF)
+    bare = _bare(_strip(word))
     return GENERAL_WORDS.get(bare) or (GENERAL_WORDS.get(bare[2:]) if bare.startswith("ال") else None)
 
 
@@ -136,8 +140,15 @@ def established_name(word):
     global ESTABLISHED
     if ESTABLISHED is None:
         ESTABLISHED = _load_established()
-    bare = "".join(c for c in _strip(word) if c not in HARAKAT and c != DAGGER_ALIF)
-    return ESTABLISHED.get(bare)
+    return ESTABLISHED.get(_bare(_strip(word)))
+
+
+def is_connective(word):
+    """Whether the word joins the parts of a name without belonging to it."""
+    global CONNECTIVES
+    if CONNECTIVES is None:
+        CONNECTIVES = _load_connectives()
+    return _bare(_strip(word)) in CONNECTIVES
 
 
 def _strip(text):
@@ -313,17 +324,62 @@ def _drop_article(word):
     return "".join(rest)
 
 
+# Prepositions written as one letter joined to the next word (section 8). The
+# letter carries a kasrah, which is what tells بِالرَّأْي (bi + al-ray) apart from
+# بَالِغ. Before the article, لِ swallows the article's alif: لِلسُّكُون.
+PREPOSITIONS = {"ب": "bi", "ل": "li"}
+
+
+def split_preposition(word):
+    """(preposition, rest) when the word is a one-letter preposition on a definite
+    noun, else (None, word). The rest is the noun with its article restored."""
+    if len(word) > 3 and word[0] in PREPOSITIONS and word[1] == KASRA:
+        rest = word[2:]
+        bare = _bare(rest)
+        if bare.startswith("ال"):
+            return PREPOSITIONS[word[0]], rest
+        if word[0] == "ل" and bare.startswith("ل") and len(bare) > 2:
+            return "li", "ا" + rest
+    return None, word
+
+
+def check_vocalized(phrase):
+    """Raise ValueError naming the first word that carries no vowel mark.
+
+    Short vowels cannot be recovered from unvocalized Arabic, and guessing them
+    is exactly the opinion the derivation exists to remove. A word the tables
+    settle by its letters alone — a letter name, an established spelling, an
+    ordinary word, a connective — needs no marks.
+    """
+    for w in _strip(phrase).split():
+        bare = _bare(w)
+        if len(bare) <= 2 or any(c in HARAKAT for c in w):
+            continue
+        if letter_name(w) or established_name(w) or general_word(w) or is_connective(w):
+            continue
+        if bare.startswith("ال") and (letter_name(w[2:]) or established_name(w[2:])):
+            continue
+        raise ValueError(f"{w!r} is not vocalized: the derivation needs the short vowels")
+
+
 def code_spelling(phrase, keep_leading_article=False):
     """Canonical Code Spelling of a full term, joined with underscores.
 
     A medial article is always rendered `al`, never assimilated to a sun letter,
     so that one convention holds across every term (section 8). A *leading*
-    article is dropped: the term is `fathah`, not `al_fathah`.
+    article is dropped: the term is `fathah`, not `al_fathah`. A one-letter
+    preposition is its own part, and the noun it governs keeps its article:
+    tafsir_bi_al_ray, madd_arid_li_al_sukun. A connective (connectives.tsv) is
+    dropped: waqf_jaiz_wasl_awla.
     """
-    words = [w for w in _strip(phrase).split() if w]
+    words = [w for w in _strip(phrase).split() if w and not is_connective(w)]
+    # A word marked `with_head` is translated only beside a head word, where the
+    # compound is an English phrase (orthographic_mark); alone it is the Arabic
+    # term (rasm_imlai).
+    has_head = any(_general(w)[1] == "head" for w in words)
 
     def has_article(w):
-        bare = "".join(c for c in w if c not in HARAKAT and c != DAGGER_ALIF)
+        bare = _bare(w)
         return bare.startswith("ال") and len(bare) > 2
 
     parts = []
@@ -335,14 +391,29 @@ def code_spelling(phrase, keep_leading_article=False):
     # نَوْع عَلَامَة الوَقْف is waqf_mark_type.
     trailing_heads = []
     for idx, w in enumerate(words):
-        # A definite first word makes a following definite word its adjective,
-        # and an adjective's article is not part of the name: waqf_lazim.
-        # An indefinite first word makes the pair a construct, whose article
-        # is kept: rubu_al_hizb.
-        adjective = idx > 0 and has_article(w) and has_article(words[0])
-        construct = idx < len(words) - 1 and not adjective
-        bare = "".join(c for c in w if c not in HARAKAT and c != DAGGER_ALIF)
+        preposition, w = split_preposition(w)
+        if preposition:
+            parts.append(preposition)
+        # A definite word makes a following definite word its adjective, and an
+        # adjective's article is not part of the name: waqf_lazim. An indefinite
+        # word makes the pair a construct, whose article is kept: rubu_al_hizb.
+        # The word that decides is the one right before, wherever the phrase
+        # opened: in الوَقْف الجَائِز مُسْتَوِي الطَّرَفَيْن the genitive after the
+        # indefinite head keeps its `al` — waqf_jaiz_mustawi_al_tarafayn. A noun
+        # governed by a preposition opens a phrase of its own and is never an
+        # adjective.
+        adjective = (idx > 0 and has_article(w) and has_article(words[idx - 1])
+                     and not preposition)
+        # A word is a construct head only when the next word is its genitive:
+        # a noun followed by its own adjective keeps the pausal h (section 5),
+        # qalqalah_sughra, and so does the genitive itself, madd_al_silah_sughra.
+        following = words[idx + 1] if idx < len(words) - 1 else None
+        next_is_adjective = (following is not None and has_article(following)
+                             and has_article(w) and not split_preposition(following)[0])
+        construct = following is not None and not adjective and not next_is_adjective
         english, role = _general(w)
+        if role == "with_head" and not has_head:
+            english = None
         if english:
             if adjective:
                 pending_adjective = english
@@ -385,6 +456,8 @@ def display_spelling(phrase):
     for p in parts:
         if p == "al" and out:
             out.append("al-")
+        elif p in PREPOSITIONS.values() and out:
+            out.append(p)
         else:
             out.append(p.capitalize() if not (out and out[-1] == "al-") else p)
     joined = ""
@@ -398,7 +471,41 @@ def display_spelling(phrase):
     return joined.strip()
 
 
+def main(argv=None):
+    import argparse, json, sys
+    ap = argparse.ArgumentParser(
+        prog="spell", description=__doc__,
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+        epilog="The display form printed here is derived. An entry's recorded `display`\n"
+               "may differ where usage was measured (tajwid → Tajweed): the entry wins.")
+    ap.add_argument("terms", nargs="+", help="vocalized Arabic terms, one per argument")
+    ap.add_argument("--json", action="store_true", help="one JSON object per term")
+    ap.add_argument("--keep-leading-article", action="store_true",
+                    help="keep a leading al: al_fathah rather than fathah")
+    args = ap.parse_args(argv)
+    failed = 0
+    out = []
+    for term in args.terms:
+        try:
+            check_vocalized(term)
+            code = code_spelling(term, args.keep_leading_article)
+            display = display_spelling(term)
+        except ValueError as exc:
+            failed += 1
+            if args.json:
+                out.append({"arabic": term, "error": str(exc)})
+            else:
+                print(f"{term}\terror: {exc}", file=sys.stderr)
+            continue
+        if args.json:
+            out.append({"arabic": term, "code": code, "display": display,
+                        "note": "display is derived; an entry's measured display wins"})
+        else:
+            print(f"{term}\t{code}\t{display}")
+    if args.json:
+        print(json.dumps(out, ensure_ascii=False, indent=1))
+    return 1 if failed else 0
+
+
 if __name__ == "__main__":
-    import sys
-    for arg in sys.argv[1:]:
-        print(f"{arg}\t{code_spelling(arg)}\t{display_spelling(arg)}")
+    raise SystemExit(main())

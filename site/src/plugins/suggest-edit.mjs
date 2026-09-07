@@ -90,6 +90,11 @@ export function rehypeSuggestEdit() {
     let section = [];
     let anchor = '';
     let nth = 0;
+    // A generated page names the file its section came from in a comment
+    // (`<!-- source: standards/… -->`) right under the heading. An edit to
+    // such a section belongs in that file, not in the page, so the link
+    // points there. The comment holds until the next heading.
+    let generatedFrom = '';
 
     for (const node of tree.children) {
       if (node.type === 'element' && HEADINGS.has(node.tagName)) {
@@ -97,6 +102,16 @@ export function rehypeSuggestEdit() {
         section = section.slice(0, depth - 2).concat(text(node).trim());
         anchor = typeof node.properties?.id === 'string' ? node.properties.id : '';
         nth = 0;
+        generatedFrom = '';
+        children.push(node);
+        continue;
+      }
+
+      // Astro passes markdown's HTML through as `raw`, so the comment arrives
+      // as its source text rather than as a `comment` node.
+      if (node.type === 'raw' || node.type === 'comment') {
+        const from = String(node.value ?? '').match(/(?:<!--)?\s*source:\s*(\S+)\s*(?:-->)?/)?.[1];
+        if (from) generatedFrom = from;
         children.push(node);
         continue;
       }
@@ -115,12 +130,16 @@ export function rehypeSuggestEdit() {
       nth += 1;
       const line = node.position.start.line + offset;
       const where = section.length ? section.join(' › ') : 'صدر الصفحة — page opening';
-      const url = anchor ? `${pageUrl(source)}#${encodeURIComponent(anchor)}` : pageUrl(source);
+      // URLSearchParams encodes the whole value once; encoding the anchor
+      // here as well would leave it unreadable in the issue.
+      const url = anchor ? `${pageUrl(source)}#${anchor}` : pageUrl(source);
       const location = [
         `${where} — block ${nth}`,
         url,
         `${source}${anchor ? `#${anchor}` : ''}`,
-        `${REPO}/blob/main/${source}#L${line} (line at the time of writing)`,
+        generatedFrom
+          ? `${REPO}/blob/main/${generatedFrom} (the page is generated from this file; edit it there)`
+          : `${REPO}/blob/main/${source}#L${line} (line at the time of writing)`,
       ].join('\n');
 
       const params = new URLSearchParams({
