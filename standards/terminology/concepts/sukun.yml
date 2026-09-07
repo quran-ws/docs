@@ -16,10 +16,10 @@ origin: quranic
 tier: core
 status: draft
 symbol: ـْ
-definition: الدلالة على سكون الحرف وإظهاره
+definition: السكون علامة تدل على سكون الحرف وإظهاره.
 definition_en: Marks a letter that carries no vowel and is articulated clearly.
-purpose: تستخدم قيمةً من قيم الحركة، ليقرأ منها نطق الحرف في التحليل والعرض والتعليم بدل قراءة
-  صورة الشكل.
+purpose: نستخدمها قيمة من قيم الحركة، فنقرأ منها نطق الحرف في التحليل والعرض والتعليم بدلًا
+  من قراءة صورة الشكل.
 purpose_en: Used as a value of harakah, so that a letter's pronunciation is read from it in
   analysis, rendering and teaching rather than from the shape of the mark.
 alternative_spellings:

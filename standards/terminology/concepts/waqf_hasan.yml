@@ -11,11 +11,11 @@ parent: waqf_ruling
 origin: quranic
 tier: core
 status: draft
-definition: ما أفاد معنًى وتعلق بما بعده لفظًا ومعنًى.
+definition: الوقف الحسن هو الوقف على ما أفاد معنًى وتعلق بما بعده لفظًا ومعنًى.
 definition_en: >
   A stop that yields a meaning but is connected to what follows it in wording and in
   meaning.
-purpose: يستخدم قيمةً من قيم حكم الوقف، فيوسم به الموضع في التعليم والتحليل.
+purpose: نستخدم الوقف الحسن قيمة من قيم حكم الوقف، ونوسم به الموضع في التعليم والتحليل.
 purpose_en: Used as a value of the waqf ruling, so that a place is tagged with it in teaching and analysis.
 related:
   - waqf_ruling

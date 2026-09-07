@@ -1,7 +1,7 @@
-concept: hukm_al_tajwid
+concept: tajwid_ruling
 names:
-  code: hukm_al_tajwid
-  display: Hukm al-Tajwid
+  code: tajwid_ruling
+  display: Tajwid Ruling
   arabic:
     vocalized: حُكْم التَّجْوِيد
     singular: حكم التجويد
@@ -12,25 +12,26 @@ registry: tajwid_rules
 origin: quranic
 tier: core
 status: draft
-plural: hukm_al_tajwids
+plural: tajwid_rulings
 definition: >-
-  ما يجب في أداء الحرف عند حرف يليه أو عند سكون أو همز، من إظهار أو إدغام أو إقلاب أو إخفاء
-  أو مد أو قلقلة أو تفخيم أو ترقيق، مما تقرره قواعد التجويد في موضع بعينه من النص.
+  حكم التجويد هو ما تقرره قواعد التجويد في أداء الحرف في موضع بعينه من النص، عند حرف
+  يليه أو عند سكون أو همز، مثل الإظهار والإدغام والإقلاب والإخفاء والمد والقلقلة
+  والتفخيم والترقيق.
 definition_en: >-
   What is due in delivering a letter before the letter that follows it, or at a sukun or a
   hamzah: izhar, idgham, iqlab, ikhfa, madd, qalqalah, tafkhim or tarqiq, as the rules of
   tajwid settle it at a given place in the text.
 purpose: >-
-  يستخدم أبًا لأحكام التجويد ووعاءً لسجلها، فتُنسب إليه مواضع النص التي يقع فيها حكم، ويُشار
-  إلى الحكم بعينه بصف من السجل بدل اسم حر يختلف من محرك إلى محرك.
+  نستخدم حكم التجويد أبًا لأحكام التجويد ووعاء لسجلها. وتنسب إليه مواضع النص التي يقع
+  فيها حكم، ويشار إلى الحكم بعينه بصف من السجل بدل اسم حر يختلف من محرك إلى محرك.
 purpose_en: >-
   Used as the parent of the rulings of tajwid and the holder of their registry, so that the
   places in the text where a ruling falls are attributed to it, and a particular ruling is
   named by a row of the registry rather than by a free name that differs from one engine to
   another.
 boundaries:
-- الحكم ما يقع في الموضع، والتجويد العلم الذي يقرره.
-- 'الحكم غير القاعدة: القاعدة شرط الحكم، والحكم أثرها في الموضع.'
+  - الحكم هو ما يقع في الموضع، والتجويد هو العلم الذي يقرره.
+  - الحكم غير القاعدة، فالقاعدة هي شرط الحكم، والحكم هو أثر القاعدة في الموضع.
 boundaries_en:
 - >-
   The ruling is what falls at the place; tajwid is the discipline that settles it.

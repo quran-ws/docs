@@ -12,11 +12,11 @@ origin: quranic
 tier: core
 status: draft
 definition: >
-  ما تم معناه ولم يتعلق بما بعده لفظًا ولا معنًى.
+  الوقف التام هو الوقف على ما تم معناه ولم يتعلق بما بعده لفظًا ولا معنًى.
 definition_en: >
   A stop whose meaning is complete and which is connected to what follows it neither in
   wording nor in meaning.
-purpose: يستخدم قيمةً من قيم حكم الوقف، فيوسم به الموضع في التعليم والتحليل.
+purpose: نستخدم الوقف التام قيمة من قيم حكم الوقف، ونوسم به الموضع في التعليم والتحليل.
 purpose_en: Used as a value of the waqf ruling, so that a place is tagged with it in teaching and analysis.
 related:
   - waqf_ruling

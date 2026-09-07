@@ -17,18 +17,19 @@ One row per concept, sorted by code. Follow the code to the full entry.
 
 | code | display | Arabic | kind | category | definition |
 | --- | --- | --- | --- | --- | --- |
-| [`alaqat_al_harfayn`](#alaqat_al_harfayn) | Alaqat al-Harfayn | علاقة الحرفين | `classification` | `tajwid` | The relation of two adjacent letters to each other in point of articulation and attribute: identical, of one kind, close, or distant; the merging of the first into the second, or its clear sounding, is built on it. |
+| [`abrogation`](#abrogation) | Abrogation | النسخ | `concept` | `quranic_sciences` | The lifting of a legal ruling by a later legal proof. |
 | [`asbab_al_nuzul`](#asbab_al_nuzul) | Asbab al-Nuzul | أسباب النزول | `content` | `revelation` | The events or questions that an ayah, or several ayahs, was revealed to address or to rule on. |
-| [`asma_al_surah`](#asma_al_surah) | Asma al-Surah | أسماء السورة | `content` | `quranic_sciences` | The names a surah is known by. |
 | [`ayah`](#ayah) | Ayah | الآية | `entity` | `structure` | A unit of the Quranic text falling within a surah and having determined boundaries. |
 | [`ayah_count`](#ayah_count) | Ayah Count | عدد الآيات | `property` | `ayah_numbering` | The number of ayahs in a surah under a given numbering system; it may differ from one system to another as the counted fasilahs differ. |
+| [`ayah_ending`](#ayah_ending) | Ayah Ending | الفاصلة | `concept` | `structure` | The close of an ayah or a passage as a matter of its composition; some scholars define it as the ayah's last word. |
+| [`ayah_fragment`](#ayah_fragment) | Ayah Fragment | مقطع الآية | `unit` | `mushaf` | What appears of one ayah on one line of a page of a given mushaf; an ayah that runs over two lines is two maqtas. |
 | [`ayah_key`](#ayah_key) | Ayah Key |  | `property` | `structure` | A textual identifier of an ayah joining its surah number and its number within it with a colon, in the form `2:255`; it is read only in the light of the ayah numbering system it rests on. |
 | [`ayah_mark`](#ayah_mark) | Ayah Mark | علامة الآية | `mark` | `dabt` | The circle separating one ayah from the next. |
 | [`ayah_numbering_basri`](#ayah_numbering_basri) | Basri Numbering | العد البصري | `classification_value` | `ayah_numbering` | The Basran numbering system, transmitted from Asim al-Jahdari and the Basran authorities before him. |
 | [`ayah_numbering_dimashqi`](#ayah_numbering_dimashqi) | Dimashqi Numbering | العد الدمشقي | `classification_value` | `ayah_numbering` | The Damascene numbering system, transmitted from Yahya ibn al-Harith al-Dhimari from Ibn Amir; also called the Shami numbering. |
 | [`ayah_numbering_kufi`](#ayah_numbering_kufi) | Kufi Numbering | العد الكوفي | `classification_value` | `ayah_numbering` | The Kufan numbering system, transmitted from Hamzah al-Zayyat from Ibn Abi Layla from Abu Abd al-Rahman al-Sulami from Ali ibn Abi Talib. |
-| [`ayah_numbering_madani_akhir`](#ayah_numbering_madani_akhir) | Madani Akhir Numbering | العد المدني الأخير | `classification_value` | `ayah_numbering` | The later Madinan numbering system, that of Ismail ibn Jafar from Sulayman ibn Jammaz. |
-| [`ayah_numbering_madani_awwal`](#ayah_numbering_madani_awwal) | Madani Awwal Numbering | العد المدني الأول | `classification_value` | `ayah_numbering` | The earlier Madinan numbering system, that of Abu Jafar Yazid ibn al-Qaqa and Shaybah ibn Nassah. |
+| [`ayah_numbering_madani_first`](#ayah_numbering_madani_first) | First Madani Numbering | العد المدني الأول | `classification_value` | `ayah_numbering` | The earlier Madinan numbering system, that of Abu Jafar Yazid ibn al-Qaqa and Shaybah ibn Nassah. |
+| [`ayah_numbering_madani_last`](#ayah_numbering_madani_last) | Last Madani Numbering | العد المدني الأخير | `classification_value` | `ayah_numbering` | The later Madinan numbering system, that of Ismail ibn Jafar from Sulayman ibn Jammaz. |
 | [`ayah_numbering_makki`](#ayah_numbering_makki) | Makki Numbering | العد المكي | `classification_value` | `ayah_numbering` | The Makkan numbering system, transmitted from Ibn Kathir from Mujahid from Ibn Abbas from Ubayy ibn Kab. |
 | [`ayah_numbering_system`](#ayah_numbering_system) | Ayah Numbering System | نظام عد الآي | `classification` | `ayah_numbering` | A system that fixes the boundaries of the ayahs, their totals and their numbers, and certain questions about the basmalah, as transmitted by one of the schools of ayah counting. |
 | [`ayah_timing`](#ayah_timing) | Ayah Timing |  | `concept` | `recitation` | A span of time in a recitation recording, given by a start and an end, corresponding to one ayah. |
@@ -40,13 +41,8 @@ One row per concept, sorted by code. Follow the code to the full entry.
 | [`division_mark`](#division_mark) | Division Mark | علامة التقسيم | `mark` | `dabt` | Marks the start of a juz, a hizb, or a half or quarter of one. |
 | [`dot`](#dot) | Dot | النقطة | `mark` | `dabt` | One dot, above or below, distinguishing a letter from the others that share its skeleton (ijam): baa, noon, jeem, khaa, dhaal. |
 | [`equivalent_ayah`](#equivalent_ayah) | Equivalent Ayah | الآية المقابلة | `concept` | `ayah_numbering` | The ayah in one numbering system that corresponds to an ayah in another. |
-| [`fadail_al_quran`](#fadail_al_quran) | Fadail al-Quran | فضائل القرآن | `content` | `quranic_sciences` | What has been transmitted about the merit of the Quran, or of one of its surahs or ayahs, and the reward or effect that follows from reciting it. |
-| [`farsh`](#farsh) | Farsh | الفرش | `concept` | `qiraat` | The words the readers differ on at particular places in the surahs, where the difference follows no general rule but each place is named on its own, arranged by surah. |
-| [`fasilah`](#fasilah) | Fasilah | الفاصلة | `concept` | `structure` | The close of an ayah or a passage as a matter of its composition; some scholars define it as the ayah's last word. |
 | [`fathah`](#fathah) | Fathah | الفتحة | `mark` | `dabt` | The mark for the short vowel a on the letter. |
-| [`fil`](#fil) | Fil | الفعل | `classification_value` | `linguistics` | A verb: a word whose meaning is tied to a time, with past, present and imperative forms. |
 | [`font`](#font) | Font | الخط | `concept` | `mushaf` | A file carrying a set of glyphs and the rules for laying them out, used to render the text of a mushaf. |
-| [`gharib_al_quran`](#gharib_al_quran) | Gharib al-Quran | غريب القرآن | `content` | `quranic_sciences` | The explanation of Quranic words whose meaning is obscure to most readers, whether because they are rare in use or because their sense has shifted. |
 | [`ghunnah`](#ghunnah) | Ghunnah | الغنة | `concept` | `tajwid` | A sound from the nasal cavity built into the body of noon and meem, in which the tongue plays no part; its length differs by ruling, fullest in the doubled and the merged letter, then in the concealed, then in the vowelless letter sounded clearly. |
 | [`glyph`](#glyph) | Glyph |  | `unit` | `text` | The visual shape a font produces to represent a letter, a character, or a group of them. |
 | [`grapheme`](#grapheme) | Grapheme |  | `unit` | `text` | A written unit that a user perceives as one unit, which may consist of more than one `codepoint`. |
@@ -54,12 +50,7 @@ One row per concept, sorted by code. Follow the code to the full entry.
 | [`hamzah`](#hamzah) | Hamzah | الهمزة | `mark` | `dabt` | Marks a fully realised hamzah (hamzat al-qat). |
 | [`hamzat_al_wasl`](#hamzat_al_wasl) | Hamzat al-Wasl | همزة الوصل | `mark` | `dabt` | Marks a connecting hamzah, dropped whenever the word is reached in continuation. |
 | [`harakah`](#harakah) | Harakah | الحركة | `classification` | `dabt` | A mark fixing a letter's vowel, its absence or its doubling: fathah, dammah, kasrah, sukun and shaddah. |
-| [`harf_al_mana`](#harf_al_mana) | Harf al-Mana | حرف المعنى | `classification_value` | `linguistics` | A particle: a word with no meaning of its own that gives meaning to the words around it, such as prepositions and the particles of conjunction, negation and interrogation. |
-| [`harf_muqatta`](#harf_muqatta) | Harf Muqatta | الحرف المقطع | `concept` | `structure` | Alphabetic letters that open certain surahs, such as Alif Laam Meem, Alif Laam Raa, Haa Meem and Kaaf Haa Yaa Ayn Saad. |
-| [`hifz`](#hifz) | Hifz | الحفظ | `concept` | `recitation` | Committing the Quran, in whole or in part, to memory, so that it is recited without looking in the mushaf. |
 | [`hizb`](#hizb) | Hizb | الحزب | `entity` | `divisions` | In the current division, half a juz, so that the Quran is 60 hizbs. |
-| [`hukm_al_tajwid`](#hukm_al_tajwid) | Hukm al-Tajwid | حكم التجويد | `classification` | `tajwid` | What is due in delivering a letter before the letter that follows it, or at a sukun or a hamzah: izhar, idgham, iqlab, ikhfa, madd, qalqalah, tafkhim or tarqiq, as the rules of tajwid settle it at a given place in the text. |
-| [`huruf_muqattaah`](#huruf_muqattaah) | Huruf Muqattaah | الحروف المقطعة | `concept` | `structure` | The group of alphabetic letters that open 29 surahs, read by the names of the letters and not by their sounds, such as «الم» and «كهيعص». |
 | [`idgham`](#idgham) | Idgham | الإدغام | `classification_value` | `tajwid` | Merging a vowelless letter into a vowelled letter after it so that the two become one doubled letter, whether the merging is complete or partial, with ghunnah or without it. |
 | [`ijam`](#ijam) | Ijam | الإعجام | `classification` | `dabt` | The dotting that distinguishes a letter from the letters that share its written shape. |
 | [`ikhfa`](#ikhfa) | Ikhfa | الإخفاء | `classification_value` | `tajwid` | Pronouncing a vowelless letter in a manner between izhar and idgham, without doubling and with the ghunnah kept: haqiqi in noon sakinah and tanwin before its 15 letters, and shafawi in meem sakinah before a baa. |
@@ -68,18 +59,15 @@ One row per concept, sorted by code. Follow the code to the full entry.
 | [`iqlab`](#iqlab) | Iqlab | الإقلاب | `classification_value` | `tajwid` | Turning noon sakinah or tanwin into a meem, concealed with ghunnah, before a baa. |
 | [`irab`](#irab) | Irab | الإعراب | `analysis` | `linguistics` | The statement of the syntactic function of words, their case markers, and their relations within the construction. |
 | [`ishmam`](#ishmam) | Ishmam | الإشمام | `mark` | `dabt` | Marks ishmam: the lips are rounded to hint at a dropped dammah, without any sound. |
-| [`ism`](#ism) | Ism | الاسم | `classification_value` | `linguistics` | A noun in the Arabic sense: a word whose meaning is not tied to a time. |
 | [`istiadhah`](#istiadhah) | Istiadhah | الاستعاذة | `concept` | `recitation` | Seeking refuge with Allah from the Shaytan before reciting the Quran. |
 | [`izhar`](#izhar) | Izhar | الإظهار | `classification_value` | `tajwid` | Sounding a vowelless letter from its point of articulation with no added ghunnah, as noon sakinah and tanwin are sounded before the throat letters, and meem sakinah before any letter other than baa and meem. |
 | [`juz`](#juz) | Juz | الجزء | `entity` | `divisions` | One of the 30 parts of the well-known division of the mushaf, made to ease reading and completing it. |
 | [`kasrah`](#kasrah) | Kasrah | الكسرة | `mark` | `dabt` | The mark for the short vowel i on the letter. |
 | [`khatmah`](#khatmah) | Khatmah | الختمة | `concept` | `recitation` | Reading the Quran in full, from its beginning to its end. |
-| [`lahn`](#lahn) | Lahn | اللحن | `classification` | `tajwid` | Error in reciting the Quran and departure from what is correct, whether plain or subtle. |
-| [`lahn_jali`](#lahn_jali) | Lahn Jali | اللحن الجلي | `classification_value` | `tajwid` | An error in the wording that damages its form or its meaning, such as one letter put for another or one vowel for another; the learned and the unlearned alike notice it. |
-| [`lahn_khafi`](#lahn_khafi) | Lahn Khafi | اللحن الخفي | `classification_value` | `tajwid` | An error in the wording that damages the perfection of delivery without touching form or meaning, such as dropping the ghunnah or shortening a madd; only those trained in the discipline notice it. |
 | [`layout`](#layout) | Layout | التخطيط | `concept` | `mushaf` | The visual arrangement of the text and its elements into pages, lines and positions within a given mushaf or view. |
 | [`lemma`](#lemma) | Lemma |  | `unit` | `linguistics` | The base dictionary form that an inflected word form is referred back to. |
 | [`letter`](#letter) | Letter | الحرف | `unit` | `text` | A letter of the alphabet as a linguistic unit of writing. |
+| [`letter_relation`](#letter_relation) | Letter Relation | علاقة الحرفين | `classification` | `tajwid` | The relation of two adjacent letters to each other in point of articulation and attribute: identical, of one kind, close, or distant; the merging of the first into the second, or its clear sounding, is built on it. |
 | [`line`](#line) | Line | السطر | `unit` | `mushaf` | A typeset line within a page of a mushaf or of a given layout. |
 | [`madani`](#madani) | Madani | مدني | `classification_value` | `revelation` | The part of the Quran revealed after the Hijrah, even where it was revealed outside Madinah. |
 | [`madd`](#madd) | Madd | المد | `classification` | `tajwid` | Prolonging the sound on one of the three letters of madd: a vowelless alif after a fathah, a vowelless waw after a dammah, a vowelless yaa after a kasrah; whether the madd is original, without which the letter does not stand, or secondary, caused by a hamzah or a sukun. |
@@ -93,13 +81,9 @@ One row per concept, sorted by code. Follow the code to the full entry.
 | [`madd_muttasil`](#madd_muttasil) | Madd Muttasil | المد المتصل | `classification_value` | `tajwid` | A secondary madd caused by a hamzah after the letter of madd within one word; it is obligatory for all the readers, and its lengths differ by riwayah and tariq. |
 | [`madd_tabii`](#madd_tabii) | Madd Tabee | المد الطبيعي | `classification_value` | `tajwid` | The madd without which the letter of madd itself does not stand, depending on no cause of hamzah or sukun; its length is 2 counts. |
 | [`maddah`](#maddah) | Maddah | المدة | `mark` | `dabt` | Marks that the letter is lengthened beyond the natural madd. |
-| [`makhraj`](#makhraj) | Makhraj | المخرج | `concept` | `tajwid` | The place a letter issues from and is distinguished by: the oral cavity, the throat, the tongue, the lips or the nasal cavity. |
 | [`makki`](#makki) | Makki | مكي | `classification_value` | `revelation` | The part of the Quran revealed before the Hijrah, even where it was revealed outside Makkah. |
 | [`manzil`](#manzil) | Manzil | المنزل | `entity` | `divisions` | One of 7 traditional parts of the Quran, made to ease completing it in a week. |
-| [`maqasid_al_surah`](#maqasid_al_surah) | Maqasid al-Surah | مقاصد السورة | `content` | `quranic_sciences` | The overarching meanings a surah turns on, held together by its subject, and the single aim its ayahs are ordered around. |
-| [`maqta_al_ayah`](#maqta_al_ayah) | Maqta al-Ayah | مقطع الآية | `unit` | `mushaf` | What appears of one ayah on one line of a page of a given mushaf; an ayah that runs over two lines is two maqtas. |
 | [`mathani`](#mathani) | Mathani | المثاني | `classification_value` | `surah_classification` | The surahs shorter than the miun, coming after them in the traditional division; called mathani because they are recited more often. |
-| [`mawdi_al_sajdah`](#mawdi_al_sajdah) | Mawdi al-Sajdah | موضع السجدة | `concept` | `structure` | The place in the text at which the reader prostrates, ending at a particular ayah. |
 | [`meem_sakinah`](#meem_sakinah) | Meem Sakinah | الميم الساكنة | `concept` | `tajwid` | A meem carrying no vowel, fixed in pronunciation and in writing, falling in the middle of a word or at its end. |
 | [`miun`](#miun) | Miun | المئون | `classification_value` | `surah_classification` | The surahs whose ayahs come to about 100, a little more or a little less. |
 | [`morpheme`](#morpheme) | Morpheme | الوحدة الصرفية | `unit` | `linguistics` | The smallest unit within a word carrying a meaning or a morphological function, such as a prefix, a suffix or a stem. |
@@ -108,27 +92,27 @@ One row per concept, sorted by code. Follow the code to the full entry.
 | [`mufassal`](#mufassal) | Mufassal | المفصل | `classification_value` | `surah_classification` | A group of the short surahs following the mathani; scholars differ over where it begins. |
 | [`mufassir`](#mufassir) | Mufassir | المفسر | `role` | `tafsir` | One to whom a tafsir of the Quran is attributed, whether by authorship or by transmission. |
 | [`mujawwad`](#mujawwad) | Mujawwad | مجود | `classification_value` | `recitation_style` | A recitation style that is slow and melodic, with the tajwid rules drawn out; the label given to recordings delivered that way. |
+| [`muqatta_letter`](#muqatta_letter) | Muqatta Letter | الحرف المقطع | `concept` | `structure` | Alphabetic letters that open certain surahs, such as Alif Laam Meem, Alif Laam Raa, Haa Meem and Kaaf Haa Yaa Ayn Saad. |
 | [`muqri`](#muqri) | Muqri | المقرئ | `role` | `qiraat` | One who has received the recitation, mastered it, and transmits it to learners. |
 | [`murattal`](#murattal) | Murattal | مرتل | `classification_value` | `recitation_style` | A recitation style that is measured and unadorned, at a reading pace; the label given to recordings delivered that way. |
 | [`mushaf`](#mushaf) | Mushaf | المصحف | `entity` | `core` | The Quran as a written, bound book, in its established order. |
 | [`mushaf_edition`](#mushaf_edition) | Mushaf Edition | طبعة المصحف | `entity` | `core` | A specific published edition of the mushaf with its own publisher, rasm, dabt, layout and other properties. |
 | [`mushaf_mark`](#mushaf_mark) | Mushaf Mark | علامة المصحف | `classification` | `dabt` | A sign or mark that is not one of a word's original letters, used in the mushaf for reading, organisation or guidance. |
-| [`mutabaidan`](#mutabaidan) | Mutabaidan | المتباعدان | `classification_value` | `tajwid` | Two letters distant in point of articulation and differing in attribute; no idgham falls between them. |
 | [`mutajanisan`](#mutajanisan) | Mutajanisan | المتجانسان | `classification_value` | `tajwid` | Two letters of one point of articulation differing in attribute, like the dal and the taa in «قد تبين». |
 | [`mutamathilan`](#mutamathilan) | Mutamathilan | المتماثلان | `classification_value` | `tajwid` | Two letters identical in point of articulation and in attribute, like the two baas in «اضرب بعصاك». |
-| [`mutaqariban`](#mutaqariban) | Mutaqariban | المتقاربان | `classification_value` | `tajwid` | Two letters close in point of articulation, in attribute, or in both, like the lam and the raa in «قل رب». |
 | [`mutashabihat`](#mutashabihat) | Mutashabihat | المتشابهات | `analysis` | `quranic_sciences` | The places in the Quran where the wording of ayahs, or of parts of them, resembles one another, whether exactly or with a slight difference in a word or in order. |
-| [`naskh`](#naskh) | Naskh | النسخ | `concept` | `quranic_sciences` | The lifting of a legal ruling by a later legal proof. |
 | [`noon_sakinah`](#noon_sakinah) | Noon Sakinah | النون الساكنة | `concept` | `tajwid` | A noon carrying no vowel, fixed in pronunciation and in writing, in continuing and in stopping. |
-| [`nuzul`](#nuzul) | Nuzul | النزول | `concept` | `revelation` | The revelation of the Quran to the Prophet, peace be upon him, in stages over the years of his mission, as events and needs arose. |
+| [`noun`](#noun) | Noun | الاسم | `classification_value` | `linguistics` | A noun in the Arabic sense: a word whose meaning is not tied to a time. |
 | [`omitted_alif`](#omitted_alif) | Omitted Alif | الألف المحذوفة | `mark` | `dabt` | Restores an alif omitted from the Uthmani skeleton but obligatory in pronunciation. |
 | [`orthographic_mark`](#orthographic_mark) | Orthographic Mark | العلامة الإملائية | `classification` | `dabt` | A mark fixing how a word is written, such as the hamzah, the maddah and the small letters. |
 | [`page`](#page) | Page | الصفحة | `unit` | `mushaf` | A typographic unit of a given mushaf's layout; its content and its boundaries may differ from one mushaf or edition to another. |
-| [`part_of_speech`](#part_of_speech) | Part of Speech | قسم الكلمة | `classification` | `linguistics` | The classification of a word or a morpheme by its grammatical class: ism, fil, harf and what branches from them. |
+| [`part_of_speech`](#part_of_speech) | Part of Speech | قسم الكلمة | `classification` | `linguistics` | The classification of a word or a morpheme by its grammatical class: noun, verb, particle and what branches from them. |
+| [`particle`](#particle) | Particle | حرف المعنى | `classification_value` | `linguistics` | A particle: a word with no meaning of its own that gives meaning to the words around it, such as prepositions and the particles of conjunction, negation and interrogation. |
 | [`qalqalah`](#qalqalah) | Qalqalah | القلقلة | `classification_value` | `tajwid` | A disturbance in the sound of a vowelless letter as it is pronounced, so that a strong beat is heard, in the letters of «قطب جد»; it grows stronger by the letter's place in the word and by stopping on it. |
 | [`qiraah`](#qiraah) | Qiraah | القراءة | `concept` | `qiraat` | One of the ways of reciting the Quran, attributed to one of the imams of the qiraat, from which the riwayahs and tariqs branch. |
 | [`qiraah_mark`](#qiraah_mark) | Qiraah Mark | علامة القراءة | `classification` | `dabt` | A mark pointing to a particular manner of delivery at its place, such as saktah, ishmam and tashil. |
 | [`quran`](#quran) | Quran | القرآن | `concept` | `core` | The speech of Allah revealed to Muhammad, peace be upon him, whose recitation is worship. |
+| [`quran_merits`](#quran_merits) | Quran Merits | فضائل القرآن | `content` | `quranic_sciences` | What has been transmitted about the merit of the Quran, or of one of its surahs or ayahs, and the reward or effect that follows from reciting it. |
 | [`rasm`](#rasm) | Rasm | الرسم | `classification` | `mushaf` | The way the words of the Quran are written: which letters are written and which omitted or added, and where words are joined or kept apart. |
 | [`rasm_imlai`](#rasm_imlai) | Rasm Imlai | الرسم الإملائي | `classification_value` | `mushaf` | Writing the words of the Quran by the rules of modern orthography, writing what the Uthmani rasm omits and omitting what it adds, so that they read in their familiar form. |
 | [`rasm_uthmani`](#rasm_uthmani) | Rasm Uthmani | الرسم العثماني | `classification_value` | `mushaf` | The way the words of the Uthmani mushafs are written, with the omission, addition, substitution, separation and joining that go with it. |
@@ -138,6 +122,8 @@ One row per concept, sorted by code. Follow the code to the full entry.
 | [`recitation_style`](#recitation_style) | Recitation Style | نمط الأداء | `classification` | `recitation_style` | A classification of recordings and recitations by how they are delivered, murattal, mujawwad or muallim, independent of the qiraah and the riwayah. |
 | [`reciter`](#reciter) | Reciter | القارئ | `role` | `recitation` | The person who performs a recitation of the Quran. |
 | [`rectangular_zero`](#rectangular_zero) | Rectangular Zero | الصفر المستطيل | `mark` | `dabt` | Marks an alif dropped in continuation but pronounced when stopping on it. |
+| [`reflection`](#reflection) | Reflection | التدبر | `content` | `quranic_sciences` | Reflecting on the meanings of the Quran and what they call for in action, and what a reader records of a pause at an ayah or a word. |
+| [`revelation`](#revelation) | Revelation | النزول | `concept` | `revelation` | The revelation of the Quran to the Prophet, peace be upon him, in stages over the years of his mission, as events and needs arose. |
 | [`revelation_classification`](#revelation_classification) | Revelation Classification | تصنيف النزول | `classification` | `revelation` | A classification of the Quranic text by whether its revelation fell before or after the Hijrah, in the accepted usage. |
 | [`revelation_order`](#revelation_order) | Revelation Order | ترتيب النزول | `property` | `revelation` | The order of the surahs or the ayahs by the time of their revelation, which may differ from one accepted source to another. |
 | [`riwayah`](#riwayah) | Riwayah | الرواية | `concept` | `qiraat` | What is attributed to a transmitter from an imam of a qiraah, such as the riwayah of Hafs from Asim. |
@@ -146,26 +132,25 @@ One row per concept, sorted by code. Follow the code to the full entry.
 | [`rubu_al_hizb`](#rubu_al_hizb) | Rubu al-Hizb | ربع الحزب | `entity` | `divisions` | A quarter of a hizb in the well-known division of the mushaf. |
 | [`ruku`](#ruku) | Ruku | الركوع | `entity` | `divisions` | A conventional section of the Quran used to organise reading, printed in some mushafs. |
 | [`saba_tiwal`](#saba_tiwal) | Saba Tiwal | السبع الطوال | `classification_value` | `surah_classification` | A group of the longest surahs of the Quran, at its beginning, with a known disagreement over which surah is the seventh. |
-| [`sabab_al_tasmiyah`](#sabab_al_tasmiyah) | Sabab al-Tasmiyah | سبب التسمية | `content` | `quranic_sciences` | The statement of why a surah was given its name, and what has been transmitted about it by narration or on linguistic grounds. |
-| [`sabab_al_waqf`](#sabab_al_waqf) | Sabab al-Waqf | سبب الوقف | `classification` | `waqf` | The division of waqf by what moved the reader to it: necessity, testing, waiting, or choice. |
+| [`sajdah`](#sajdah) | Sajdah | السجدة | `concept` | `structure` | A place in the Quran at which the reader and the listener prostrate, ending at a particular ayah. |
 | [`sajdah_line`](#sajdah_line) | Sajdah Line | خط السجدة | `mark` | `dabt` | Marks the word that makes prostration due. |
 | [`sajdah_mark`](#sajdah_mark) | Sajdah Mark | علامة السجدة | `mark` | `dabt` | Marks the point at which the reader prostrates. |
 | [`saktah`](#saktah) | Saktah | السكتة | `concept` | `tajwid` | Cutting off the voice for a short moment without breathing, then continuing the recitation. |
 | [`saktah_mark`](#saktah_mark) | Saktah Mark | علامة السكتة | `mark` | `dabt` | Marks a saktah: a brief pause without taking a breath, then continuing. |
 | [`seen_al_qiraah`](#seen_al_qiraah) | Seen al-Qiraah | سين القراءة | `mark` | `dabt` | A small seen above a saad marks reading it as seen; below it, reading it as saad. |
 | [`shaddah`](#shaddah) | Shaddah | الشدة | `mark` | `dabt` | Marks a doubled letter: the first, vowelless, is merged into the second and the two are pronounced as one stressed letter. |
-| [`sifat_al_huruf`](#sifat_al_huruf) | Sifat al-Huruf | صفات الحروف | `concept` | `tajwid` | Manners that attend a letter as it is pronounced and distinguish it from a letter sharing its point of articulation; some have an opposite, such as hams and jahr, shiddah and rakhawah, and some have none, such as safir and qalqalah. |
 | [`small_meem`](#small_meem) | Small Meem | الميم الصغيرة | `mark` | `dabt` | Marks iqlab: a vowelless noon or tanwin pronounced as meem before baa. |
 | [`small_noon`](#small_noon) | Small Noon | النون الصغيرة | `mark` | `dabt` | Restores a noon omitted from the skeleton but obligatory in pronunciation, at one place only (21:88). |
 | [`small_waw`](#small_waw) | Small Waw | الواو الصغيرة | `mark` | `dabt` | Marks the silah of the pronoun haa with dammah, pronounced as a waw in continuation. |
 | [`small_yaa`](#small_yaa) | Small Yaa | الياء الصغيرة | `mark` | `dabt` | Marks the silah of the pronoun haa with kasrah, pronounced as a yaa in continuation. |
 | [`spoken_translation`](#spoken_translation) | Spoken Translation | الترجمة المنطوقة | `content` | `translation` | Rendering the meanings of the Quran into another language in audio or spoken material. |
 | [`stem`](#stem) | Stem | الجذع | `unit` | `linguistics` | What remains of a word once its prefixes and suffixes are removed, and what the morphological additions attach to. |
-| [`sujud_al_tilawah`](#sujud_al_tilawah) | Sujud al-Tilawah | سجود التلاوة | `concept` | `recitation` | A prostration performed on reciting or hearing one of the places of sujud al-tilawah. |
 | [`sukun`](#sukun) | Sukun | السكون | `mark` | `dabt` | Marks a letter that carries no vowel and is articulated clearly. |
 | [`surah`](#surah) | Surah | السورة | `entity` | `structure` | A principal unit of the structure of the Quran, made up of ordered ayahs, with a name and a known place in the order of the mushaf. |
 | [`surah_group`](#surah_group) | Surah Group | تصنيف السور | `classification` | `surah_classification` | A classification gathering surahs by inherited conventional divisions that rest on length or on their place among the groups of surahs. |
-| [`tadabbur`](#tadabbur) | Tadabbur | التدبر | `content` | `quranic_sciences` | Reflecting on the meanings of the Quran and what they call for in action, and what a reader records of a pause at an ayah or a word. |
+| [`surah_name_reason`](#surah_name_reason) | Surah Name Reason | سبب التسمية | `content` | `quranic_sciences` | The statement of why a surah was given its name, and what has been transmitted about it by narration or on linguistic grounds. |
+| [`surah_names`](#surah_names) | Surah Names | أسماء السورة | `content` | `quranic_sciences` | The names a surah is known by. |
+| [`surah_objectives`](#surah_objectives) | Surah Objectives | مقاصد السورة | `content` | `quranic_sciences` | The overarching meanings a surah turns on, held together by its subject, and the single aim its ayahs are ordered around. |
 | [`tadwir`](#tadwir) | Tadwir | التدوير | `classification_value` | `recitation_pace` | Reciting at a middle speed between tahqiq and hadr, while keeping the rules. |
 | [`tafkhim`](#tafkhim) | Tafkhim | التفخيم | `concept` | `tajwid` | A fullness entering the sound of a letter so that the mouth fills with its echo; inherent in the letters of istila, and incidental in the raa, the lam of the name of Allah and the alif, following what precedes them. |
 | [`tafsir`](#tafsir) | Tafsir | التفسير | `content` | `tafsir` | Stating the meanings of the Quran, explaining its wording, and the rulings and guidance it points to, according to the principles of tafsir. |
@@ -173,14 +158,13 @@ One row per concept, sorted by code. Follow the code to the full entry.
 | [`tafsir_mathur`](#tafsir_mathur) | Tafsir Mathur | التفسير المأثور | `content` | `tafsir` | Tafsir transmitted with a chain of narration: explanation of the Quran drawn from the Quran itself, from the Sunnah, or from the sayings of the Companions and Successors. |
 | [`tahqiq`](#tahqiq) | Tahqiq | التحقيق | `classification_value` | `recitation_pace` | Reciting slowly and deliberately, giving the letters and their rules their full due; much used in teaching. |
 | [`tajwid`](#tajwid) | Tajweed | التجويد | `concept` | `tajwid` | The discipline of delivering the letters of the Quran from their points of articulation and giving them their due properties and rulings. |
-| [`takbir`](#takbir) | Takbir | التكبير | `concept` | `recitation` | Saying «الله أكبر» between the surahs from the end of al-Duha to the end of al-Nas, transmitted from the people of Makkah in the riwayah of al-Bazzi from Ibn Kathir, and done at a khatmah in other riwayahs. |
+| [`tajwid_ruling`](#tajwid_ruling) | Tajwid Ruling | حكم التجويد | `classification` | `tajwid` | What is due in delivering a letter before the letter that follows it, or at a sukun or a hamzah: izhar, idgham, iqlab, ikhfa, madd, qalqalah, tafkhim or tarqiq, as the rules of tajwid settle it at a given place in the text. |
 | [`tanwin`](#tanwin) | Tanwin | التنوين | `classification` | `dabt` | An added vowelless noon at the end of a noun, written by doubling the shape of the vowel. |
 | [`tanwin_al_damm`](#tanwin_al_damm) | Tanwin al-Damm | تنوين الضم | `mark` | `dabt` | Marks the un tanwin. |
 | [`tanwin_al_fath`](#tanwin_al_fath) | Tanwin al-Fath | تنوين الفتح | `mark` | `dabt` | Marks the an tanwin. |
 | [`tanwin_al_kasr`](#tanwin_al_kasr) | Tanwin al-Kasr | تنوين الكسر | `mark` | `dabt` | Marks the in tanwin. |
 | [`tariq`](#tariq) | Tariq | الطريق | `concept` | `qiraat` | A path of transmission taken from a rawi through those below him in the chain of transmission of a qiraah. |
 | [`tarqiq`](#tarqiq) | Tarqiq | الترقيق | `concept` | `tajwid` | A thinness entering the sound of a letter so that the mouth does not fill with its echo; inherent in the letters of istifal, and incidental in the raa and the lam of the name of Allah. |
-| [`tartib_al_mushaf`](#tartib_al_mushaf) | Tartib al-Mushaf | ترتيب المصحف | `property` | `structure` | The order of the surahs as settled in the Uthmani mushaf, from al-Fatihah to al-Nas; it is the order the surahs are numbered by. |
 | [`tartil`](#tartil) | Tartil | الترتيل | `concept` | `recitation` | Reciting the Quran deliberately, making the letters and words distinct, observing the stops and the meaning. |
 | [`tashil`](#tashil) | Tashil | التسهيل | `mark` | `dabt` | Marks tashil: the hamzah softened to a sound between a hamzah and an alif. |
 | [`tashkil`](#tashkil) | Tashkil | التشكيل | `concept` | `dabt` | The layer of dabt marks attached to the letters of the text, the harakat, tanwin, shaddah, sukun and what goes with them, taken as a whole. |
@@ -192,15 +176,11 @@ One row per concept, sorted by code. Follow the code to the full entry.
 | [`translator`](#translator) | Translator | المترجم | `role` | `translation` | One to whom a translation of the meanings of the Quran into another language is attributed, whether a person or a body. |
 | [`transliteration`](#transliteration) | Transliteration | النقل الحرفي | `content` | `translation` | Representing the letters of one writing system with those of another by fixed rules, without translating the meaning. |
 | [`two_dots`](#two_dots) | Two Dots | النقطتان | `mark` | `dabt` | Two dots, above or below, distinguishing a letter from the others that share its skeleton (ijam): taa, yaa, qaaf. |
-| [`usul`](#usul) | Usul | الأصول | `concept` | `qiraat` | The general rules of a reading that apply to everything meeting their condition, such as madd, hamzah, imalah, idgham and the pronoun haa. |
+| [`verb`](#verb) | Verb | الفعل | `classification_value` | `linguistics` | A verb: a word whose meaning is tied to a time, with past, present and imperative forms. |
 | [`wajh`](#wajh) | Wajh | الوجه | `concept` | `qiraat` | One of several manners of delivery, any of which may be taken within one riwayah or one tariq, such as the wajhs of madd arid li al-sukun. |
 | [`waqf`](#waqf) | Waqf | الوقف | `concept` | `waqf` | Stopping the recitation at a place in the text according to the rules of stopping and starting. |
 | [`waqf_al_muanaqah`](#waqf_al_muanaqah) | Waqf al-Muanaqah | وقف المعانقة | `classification_value` | `dabt` | Two candidate stopping points: stopping at one makes stopping at the other not allowed. |
 | [`waqf_hasan`](#waqf_hasan) | Waqf Hasan | الوقف الحسن | `classification_value` | `waqf` | A stop that yields a meaning but is connected to what follows it in wording and in meaning. |
-| [`waqf_idtirari`](#waqf_idtirari) | Waqf Idtirari | الوقف الاضطراري | `classification_value` | `waqf` | A stop forced on the reader by something that compels it, such as shortness of breath, a sneeze or forgetting; the reader stops on any word and then begins again where beginning is sound. |
-| [`waqf_ikhtibari`](#waqf_ikhtibari) | Waqf Ikhtibari | الوقف الاختباري | `classification_value` | `waqf` | A stop made to show what is cut and what is joined, what is written and what is omitted in the rasm, at a question or in teaching. |
-| [`waqf_ikhtiyari`](#waqf_ikhtiyari) | Waqf Ikhtiyari | الوقف الاختياري | `classification_value` | `waqf` | A stop the reader makes by choice with no cause arising; it is the one the rulings of tamm, kafi, hasan and qabih apply to. |
-| [`waqf_intizari`](#waqf_intizari) | Waqf Intizari | الوقف الانتظاري | `classification_value` | `waqf` | A stop made on a word the qiraat differ on, so that the reader covers its wajhs when gathering the readings. |
 | [`waqf_jaiz_mustawi_al_tarafayn`](#waqf_jaiz_mustawi_al_tarafayn) | Waqf Jaiz Mustawi al-Tarafayn | الوقف الجائز مستوي الطرفين | `classification_value` | `dabt` | A permissible stop, with stopping and continuing equally sound. |
 | [`waqf_jaiz_waqf_awla`](#waqf_jaiz_waqf_awla) | Waqf Jaiz Waqf Awla | الوقف الجائز مع كون الوقف أولى | `classification_value` | `dabt` | A permissible stop, and stopping is the better choice. |
 | [`waqf_jaiz_wasl_awla`](#waqf_jaiz_wasl_awla) | Waqf Jaiz Wasl Awla | الوقف الجائز مع كون الوصل أولى | `classification_value` | `dabt` | A permissible stop, but continuing is the better choice. |
@@ -212,33 +192,33 @@ One row per concept, sorted by code. Follow the code to the full entry.
 | [`waqf_qabih`](#waqf_qabih) | Waqf Qabih | الوقف القبيح | `classification_value` | `waqf` | A stop that yields no meaning, or yields a meaning that is not the one intended. |
 | [`waqf_ruling`](#waqf_ruling) | Waqf Ruling | حكم الوقف | `classification` | `waqf` | A classification of the place itself by whether the meaning is complete there, not of the mark drawn at it. |
 | [`waqf_tamm`](#waqf_tamm) | Waqf Tamm | الوقف التام | `classification_value` | `waqf` | A stop whose meaning is complete and which is connected to what follows it neither in wording nor in meaning. |
-| [`wazn`](#wazn) | Wazn | الوزن | `unit` | `linguistics` | The morphological form of a word represented by the letters of «فعل» with whatever affixes attach to them, showing its structure regardless of its root. |
 | [`word`](#word) | Word | الكلمة | `unit` | `text` | A unit of the text that a reader recognises as one word, independent of how a segmenter splits the text. |
 | [`word_by_word_translation`](#word_by_word_translation) | Word by Word Translation |  | `content` | `translation` | A translation giving each word of the ayah its meaning in another language on its own, in the order of the original words. |
 | [`word_key`](#word_key) | Word Key |  | `property` | `structure` | A textual identifier of a word that adds the word's position within the ayah to the ayah key, in the form `2:255:5`; the position is counted from the start of the ayah by a declared segmentation method. |
+| [`word_meanings`](#word_meanings) | Word Meanings | غريب القرآن | `content` | `quranic_sciences` | The explanation of Quranic words whose meaning is obscure to most readers, whether because they are rare in use or because their sense has shifted. |
 | [`word_timing`](#word_timing) | Word Timing |  | `concept` | `recitation` | A span of time in a recitation recording, given by a start and an end, corresponding to one word of an ayah. |
 
 ## By category
 
 - **Core** — `core`: [`mushaf`](#mushaf), [`mushaf_edition`](#mushaf_edition), [`quran`](#quran)
-- **Structure** — `structure`: [`ayah`](#ayah), [`ayah_key`](#ayah_key), [`basmalah`](#basmalah), [`fasilah`](#fasilah), [`harf_muqatta`](#harf_muqatta), [`huruf_muqattaah`](#huruf_muqattaah), [`mawdi_al_sajdah`](#mawdi_al_sajdah), [`surah`](#surah), [`tartib_al_mushaf`](#tartib_al_mushaf), [`word_key`](#word_key)
+- **Structure** — `structure`: [`ayah`](#ayah), [`ayah_ending`](#ayah_ending), [`ayah_key`](#ayah_key), [`basmalah`](#basmalah), [`muqatta_letter`](#muqatta_letter), [`sajdah`](#sajdah), [`surah`](#surah), [`word_key`](#word_key)
 - **Text** — `text`: [`character`](#character), [`codepoint`](#codepoint), [`glyph`](#glyph), [`grapheme`](#grapheme), [`letter`](#letter), [`token`](#token), [`word`](#word)
 - **Quran divisions** — `divisions`: [`hizb`](#hizb), [`juz`](#juz), [`manzil`](#manzil), [`rubu_al_hizb`](#rubu_al_hizb), [`ruku`](#ruku), [`thumn`](#thumn)
 - **Surah classification** — `surah_classification`: [`mathani`](#mathani), [`miun`](#miun), [`mufassal`](#mufassal), [`saba_tiwal`](#saba_tiwal), [`surah_group`](#surah_group)
-- **Mushaf and layout** — `mushaf`: [`font`](#font), [`layout`](#layout), [`line`](#line), [`maqta_al_ayah`](#maqta_al_ayah), [`page`](#page), [`rasm`](#rasm), [`rasm_imlai`](#rasm_imlai), [`rasm_uthmani`](#rasm_uthmani)
+- **Mushaf and layout** — `mushaf`: [`ayah_fragment`](#ayah_fragment), [`font`](#font), [`layout`](#layout), [`line`](#line), [`page`](#page), [`rasm`](#rasm), [`rasm_imlai`](#rasm_imlai), [`rasm_uthmani`](#rasm_uthmani)
 - **Dabt and Mushaf marks** — `dabt`: [`ayah_mark`](#ayah_mark), [`dammah`](#dammah), [`division_mark`](#division_mark), [`dot`](#dot), [`fathah`](#fathah), [`hamzah`](#hamzah), [`hamzat_al_wasl`](#hamzat_al_wasl), [`harakah`](#harakah), [`ijam`](#ijam), [`imalah`](#imalah), [`ishmam`](#ishmam), [`kasrah`](#kasrah), [`maddah`](#maddah), [`mushaf_mark`](#mushaf_mark), [`omitted_alif`](#omitted_alif), [`orthographic_mark`](#orthographic_mark), [`qiraah_mark`](#qiraah_mark), [`rectangular_zero`](#rectangular_zero), [`rounded_zero`](#rounded_zero), [`sajdah_line`](#sajdah_line), [`sajdah_mark`](#sajdah_mark), [`saktah_mark`](#saktah_mark), [`seen_al_qiraah`](#seen_al_qiraah), [`shaddah`](#shaddah), [`small_meem`](#small_meem), [`small_noon`](#small_noon), [`small_waw`](#small_waw), [`small_yaa`](#small_yaa), [`sukun`](#sukun), [`tanwin`](#tanwin), [`tanwin_al_damm`](#tanwin_al_damm), [`tanwin_al_fath`](#tanwin_al_fath), [`tanwin_al_kasr`](#tanwin_al_kasr), [`tashil`](#tashil), [`tashkil`](#tashkil), [`three_dots`](#three_dots), [`two_dots`](#two_dots), [`waqf_al_muanaqah`](#waqf_al_muanaqah), [`waqf_jaiz_mustawi_al_tarafayn`](#waqf_jaiz_mustawi_al_tarafayn), [`waqf_jaiz_waqf_awla`](#waqf_jaiz_waqf_awla), [`waqf_jaiz_wasl_awla`](#waqf_jaiz_wasl_awla), [`waqf_lazim`](#waqf_lazim), [`waqf_mamnu`](#waqf_mamnu), [`waqf_mark`](#waqf_mark)
-- **Ayah numbering** — `ayah_numbering`: [`ayah_count`](#ayah_count), [`ayah_numbering_basri`](#ayah_numbering_basri), [`ayah_numbering_dimashqi`](#ayah_numbering_dimashqi), [`ayah_numbering_kufi`](#ayah_numbering_kufi), [`ayah_numbering_madani_akhir`](#ayah_numbering_madani_akhir), [`ayah_numbering_madani_awwal`](#ayah_numbering_madani_awwal), [`ayah_numbering_makki`](#ayah_numbering_makki), [`ayah_numbering_system`](#ayah_numbering_system), [`equivalent_ayah`](#equivalent_ayah)
-- **Revelation** — `revelation`: [`asbab_al_nuzul`](#asbab_al_nuzul), [`disputed`](#disputed), [`madani`](#madani), [`makki`](#makki), [`nuzul`](#nuzul), [`revelation_classification`](#revelation_classification), [`revelation_order`](#revelation_order)
-- **Qiraat** — `qiraat`: [`farsh`](#farsh), [`muqri`](#muqri), [`qiraah`](#qiraah), [`rawi`](#rawi), [`riwayah`](#riwayah), [`tariq`](#tariq), [`usul`](#usul), [`wajh`](#wajh)
-- **Recitation** — `recitation`: [`ayah_timing`](#ayah_timing), [`hifz`](#hifz), [`istiadhah`](#istiadhah), [`khatmah`](#khatmah), [`recitation`](#recitation), [`reciter`](#reciter), [`sujud_al_tilawah`](#sujud_al_tilawah), [`takbir`](#takbir), [`tartil`](#tartil), [`tilawah`](#tilawah), [`word_timing`](#word_timing)
+- **Ayah numbering** — `ayah_numbering`: [`ayah_count`](#ayah_count), [`ayah_numbering_basri`](#ayah_numbering_basri), [`ayah_numbering_dimashqi`](#ayah_numbering_dimashqi), [`ayah_numbering_kufi`](#ayah_numbering_kufi), [`ayah_numbering_madani_first`](#ayah_numbering_madani_first), [`ayah_numbering_madani_last`](#ayah_numbering_madani_last), [`ayah_numbering_makki`](#ayah_numbering_makki), [`ayah_numbering_system`](#ayah_numbering_system), [`equivalent_ayah`](#equivalent_ayah)
+- **Revelation** — `revelation`: [`asbab_al_nuzul`](#asbab_al_nuzul), [`disputed`](#disputed), [`madani`](#madani), [`makki`](#makki), [`revelation`](#revelation), [`revelation_classification`](#revelation_classification), [`revelation_order`](#revelation_order)
+- **Qiraat** — `qiraat`: [`muqri`](#muqri), [`qiraah`](#qiraah), [`rawi`](#rawi), [`riwayah`](#riwayah), [`tariq`](#tariq), [`wajh`](#wajh)
+- **Recitation** — `recitation`: [`ayah_timing`](#ayah_timing), [`istiadhah`](#istiadhah), [`khatmah`](#khatmah), [`recitation`](#recitation), [`reciter`](#reciter), [`tartil`](#tartil), [`tilawah`](#tilawah), [`word_timing`](#word_timing)
 - **Recitation pace** — `recitation_pace`: [`hadr`](#hadr), [`recitation_pace`](#recitation_pace), [`tadwir`](#tadwir), [`tahqiq`](#tahqiq)
 - **Recitation style** — `recitation_style`: [`instructional_ayah_repetition`](#instructional_ayah_repetition), [`muallim`](#muallim), [`mujawwad`](#mujawwad), [`murattal`](#murattal), [`recitation_style`](#recitation_style)
-- **Tajwid** — `tajwid`: [`alaqat_al_harfayn`](#alaqat_al_harfayn), [`ghunnah`](#ghunnah), [`hukm_al_tajwid`](#hukm_al_tajwid), [`idgham`](#idgham), [`ikhfa`](#ikhfa), [`iqlab`](#iqlab), [`izhar`](#izhar), [`lahn`](#lahn), [`lahn_jali`](#lahn_jali), [`lahn_khafi`](#lahn_khafi), [`madd`](#madd), [`madd_al_badal`](#madd_al_badal), [`madd_al_iwad`](#madd_al_iwad), [`madd_al_lin`](#madd_al_lin), [`madd_al_silah`](#madd_al_silah), [`madd_arid_li_al_sukun`](#madd_arid_li_al_sukun), [`madd_lazim`](#madd_lazim), [`madd_munfasil`](#madd_munfasil), [`madd_muttasil`](#madd_muttasil), [`madd_tabii`](#madd_tabii), [`makhraj`](#makhraj), [`meem_sakinah`](#meem_sakinah), [`mutabaidan`](#mutabaidan), [`mutajanisan`](#mutajanisan), [`mutamathilan`](#mutamathilan), [`mutaqariban`](#mutaqariban), [`noon_sakinah`](#noon_sakinah), [`qalqalah`](#qalqalah), [`saktah`](#saktah), [`sifat_al_huruf`](#sifat_al_huruf), [`tafkhim`](#tafkhim), [`tajwid`](#tajwid), [`tarqiq`](#tarqiq)
-- **Waqf** — `waqf`: [`sabab_al_waqf`](#sabab_al_waqf), [`waqf`](#waqf), [`waqf_hasan`](#waqf_hasan), [`waqf_idtirari`](#waqf_idtirari), [`waqf_ikhtibari`](#waqf_ikhtibari), [`waqf_ikhtiyari`](#waqf_ikhtiyari), [`waqf_intizari`](#waqf_intizari), [`waqf_kafi`](#waqf_kafi), [`waqf_mark_type`](#waqf_mark_type), [`waqf_qabih`](#waqf_qabih), [`waqf_ruling`](#waqf_ruling), [`waqf_tamm`](#waqf_tamm)
-- **Linguistics** — `linguistics`: [`fil`](#fil), [`harf_al_mana`](#harf_al_mana), [`irab`](#irab), [`ism`](#ism), [`lemma`](#lemma), [`morpheme`](#morpheme), [`morphology`](#morphology), [`part_of_speech`](#part_of_speech), [`root`](#root), [`stem`](#stem), [`wazn`](#wazn)
+- **Tajwid** — `tajwid`: [`ghunnah`](#ghunnah), [`idgham`](#idgham), [`ikhfa`](#ikhfa), [`iqlab`](#iqlab), [`izhar`](#izhar), [`letter_relation`](#letter_relation), [`madd`](#madd), [`madd_al_badal`](#madd_al_badal), [`madd_al_iwad`](#madd_al_iwad), [`madd_al_lin`](#madd_al_lin), [`madd_al_silah`](#madd_al_silah), [`madd_arid_li_al_sukun`](#madd_arid_li_al_sukun), [`madd_lazim`](#madd_lazim), [`madd_munfasil`](#madd_munfasil), [`madd_muttasil`](#madd_muttasil), [`madd_tabii`](#madd_tabii), [`meem_sakinah`](#meem_sakinah), [`mutajanisan`](#mutajanisan), [`mutamathilan`](#mutamathilan), [`noon_sakinah`](#noon_sakinah), [`qalqalah`](#qalqalah), [`saktah`](#saktah), [`tafkhim`](#tafkhim), [`tajwid`](#tajwid), [`tajwid_ruling`](#tajwid_ruling), [`tarqiq`](#tarqiq)
+- **Waqf** — `waqf`: [`waqf`](#waqf), [`waqf_hasan`](#waqf_hasan), [`waqf_kafi`](#waqf_kafi), [`waqf_mark_type`](#waqf_mark_type), [`waqf_qabih`](#waqf_qabih), [`waqf_ruling`](#waqf_ruling), [`waqf_tamm`](#waqf_tamm)
+- **Linguistics** — `linguistics`: [`irab`](#irab), [`lemma`](#lemma), [`morpheme`](#morpheme), [`morphology`](#morphology), [`noun`](#noun), [`part_of_speech`](#part_of_speech), [`particle`](#particle), [`root`](#root), [`stem`](#stem), [`verb`](#verb)
 - **Translation** — `translation`: [`spoken_translation`](#spoken_translation), [`translation`](#translation), [`translator`](#translator), [`transliteration`](#transliteration), [`word_by_word_translation`](#word_by_word_translation)
 - **Tafsir** — `tafsir`: [`mufassir`](#mufassir), [`tafsir`](#tafsir), [`tafsir_al_ray`](#tafsir_al_ray), [`tafsir_mathur`](#tafsir_mathur)
-- **Quranic sciences** — `quranic_sciences`: [`asma_al_surah`](#asma_al_surah), [`fadail_al_quran`](#fadail_al_quran), [`gharib_al_quran`](#gharib_al_quran), [`maqasid_al_surah`](#maqasid_al_surah), [`mutashabihat`](#mutashabihat), [`naskh`](#naskh), [`sabab_al_tasmiyah`](#sabab_al_tasmiyah), [`tadabbur`](#tadabbur)
+- **Quranic sciences** — `quranic_sciences`: [`abrogation`](#abrogation), [`mutashabihat`](#mutashabihat), [`quran_merits`](#quran_merits), [`reflection`](#reflection), [`surah_name_reason`](#surah_name_reason), [`surah_names`](#surah_names), [`surah_objectives`](#surah_objectives), [`word_meanings`](#word_meanings)
 
 ## Core — `core`
 
@@ -317,7 +297,7 @@ One row per concept, sorted by code. Follow the code to the full entry.
 
 - The Quran is the speech itself; the mushaf is its written vessel. Pages, rasm and marks belong to the mushaf, not to the Quran.
 
-**Related:** [`mushaf`](#mushaf), [`surah`](#surah), [`ayah`](#ayah), [`fadail_al_quran`](#fadail_al_quran)
+**Related:** [`mushaf`](#mushaf), [`surah`](#surah), [`ayah`](#ayah), [`quran_merits`](#quran_merits)
 
 **Sources:**
 
@@ -350,13 +330,43 @@ One row per concept, sorted by code. Follow the code to the full entry.
 **Purpose:** Used as the basic unit for referring to the Quranic text, and for attaching translations, tafsir, recitations, analyses and other data to a specific place in the Quran.
 
 - Its position on a page or a line belongs to the mushaf and its layout, not to the identity of the ayah.
-- The fasilah is the ayah's ending, not the ayah.
+- The ayah ending is the close of the ayah, not the ayah.
 
-**Related:** [`surah`](#surah), [`ayah_numbering_system`](#ayah_numbering_system), [`fasilah`](#fasilah), [`ayah_mark`](#ayah_mark), [`ayah_key`](#ayah_key), [`word`](#word), [`asbab_al_nuzul`](#asbab_al_nuzul), [`ayah_count`](#ayah_count), [`ayah_numbering_basri`](#ayah_numbering_basri), [`ayah_numbering_dimashqi`](#ayah_numbering_dimashqi), [`ayah_numbering_kufi`](#ayah_numbering_kufi), [`ayah_numbering_madani_akhir`](#ayah_numbering_madani_akhir), [`ayah_numbering_madani_awwal`](#ayah_numbering_madani_awwal), [`ayah_numbering_makki`](#ayah_numbering_makki), [`ayah_timing`](#ayah_timing), [`equivalent_ayah`](#equivalent_ayah), [`fadail_al_quran`](#fadail_al_quran), [`gharib_al_quran`](#gharib_al_quran), [`maqta_al_ayah`](#maqta_al_ayah), [`mawdi_al_sajdah`](#mawdi_al_sajdah), [`mutashabihat`](#mutashabihat), [`naskh`](#naskh), [`quran`](#quran), [`tadabbur`](#tadabbur), [`tafsir`](#tafsir), [`tafsir_mathur`](#tafsir_mathur)
+**Related:** [`surah`](#surah), [`ayah_numbering_system`](#ayah_numbering_system), [`ayah_ending`](#ayah_ending), [`ayah_mark`](#ayah_mark), [`ayah_key`](#ayah_key), [`word`](#word), [`abrogation`](#abrogation), [`asbab_al_nuzul`](#asbab_al_nuzul), [`ayah_count`](#ayah_count), [`ayah_fragment`](#ayah_fragment), [`ayah_numbering_basri`](#ayah_numbering_basri), [`ayah_numbering_dimashqi`](#ayah_numbering_dimashqi), [`ayah_numbering_kufi`](#ayah_numbering_kufi), [`ayah_numbering_madani_first`](#ayah_numbering_madani_first), [`ayah_numbering_madani_last`](#ayah_numbering_madani_last), [`ayah_numbering_makki`](#ayah_numbering_makki), [`ayah_timing`](#ayah_timing), [`equivalent_ayah`](#equivalent_ayah), [`mutashabihat`](#mutashabihat), [`quran`](#quran), [`quran_merits`](#quran_merits), [`reflection`](#reflection), [`sajdah`](#sajdah), [`tafsir`](#tafsir), [`tafsir_mathur`](#tafsir_mathur), [`word_meanings`](#word_meanings)
 
 **Sources:**
 
 - [مباحث في علوم القرآن](https://files.turath.io/books-v3/11368.json) — `1/140`
+
+<a id="ayah_ending"></a>
+
+### Ayah Ending — الفاصلة
+
+<!-- source: standards/terminology/concepts/ayah_ending.yml -->
+
+| field | value |
+| --- | --- |
+| `code` | `ayah_ending` |
+| `plural` | `ayah_endings` |
+| `kind` | `concept` |
+| Origin | `borrowed` |
+| Tier | `core` |
+| Status | `draft` |
+| Vocalized | الفَاصِلَة |
+| Other spellings | `fasila` |
+| English gloss | `Verse Ending` |
+
+**Definition:** The close of an ayah or a passage as a matter of its composition; some scholars define it as the ayah's last word.
+
+**Purpose:** Used in studies and datasets concerned with ayah endings and Quranic composition. It is never used as a synonym for `ayah`.
+
+- The fasilah is the ayah's ending as a matter of the text; the ayah mark is the sign drawn in the mushaf for it.
+
+**Related:** [`ayah`](#ayah), [`ayah_mark`](#ayah_mark)
+
+**Sources:**
+
+- [مباحث في علوم القرآن](https://files.turath.io/books-v3/11368.json) — `1/153`
 
 <a id="ayah_key"></a>
 
@@ -382,7 +392,7 @@ One row per concept, sorted by code. Follow the code to the full entry.
 - The key is a reference, not an identity: changing the numbering system changes the key and not the ayah.
 - The key is not the running number of the ayah across the whole mushaf.
 
-**Related:** [`ayah`](#ayah), [`surah`](#surah), [`ayah_numbering_system`](#ayah_numbering_system), [`word_key`](#word_key), [`tartib_al_mushaf`](#tartib_al_mushaf)
+**Related:** [`ayah`](#ayah), [`surah`](#surah), [`ayah_numbering_system`](#ayah_numbering_system), [`word_key`](#word_key)
 
 <a id="basmalah"></a>
 
@@ -405,127 +415,69 @@ One row per concept, sorted by code. Follow the code to the full entry.
 
 **Purpose:** Used to identify the basmalah and to represent its position and its relation to the surah and to the ayah numbering system.
 
-**Related:** [`surah`](#surah), [`ayah_numbering_system`](#ayah_numbering_system), [`istiadhah`](#istiadhah), [`takbir`](#takbir)
+**Related:** [`surah`](#surah), [`ayah_numbering_system`](#ayah_numbering_system), [`istiadhah`](#istiadhah)
 
 **Sources:**
 
 - [معجم مصطلحات التجويد](https://tajweed.quranpedia.net/term/show/30) — `30`
 - [مباحث في علوم القرآن](https://files.turath.io/books-v3/11368.json) — `1/145`
 
-<a id="fasilah"></a>
+<a id="muqatta_letter"></a>
 
-### Fasilah — الفاصلة
+### Muqatta Letter — الحرف المقطع
 
-<!-- source: standards/terminology/concepts/fasilah.yml -->
-
-| field | value |
-| --- | --- |
-| `code` | `fasilah` |
-| `plural` | `fasilahs` |
-| `kind` | `concept` |
-| Origin | `quranic` |
-| Tier | `core` |
-| Status | `draft` |
-| Vocalized | الفَاصِلَة |
-| Other spellings | `fasila` |
-| English gloss | `Verse Ending` |
-
-**Definition:** The close of an ayah or a passage as a matter of its composition; some scholars define it as the ayah's last word.
-
-**Purpose:** Used in studies and datasets concerned with ayah endings and Quranic composition. It is never used as a synonym for `ayah`.
-
-- The fasilah is the ayah's ending as a matter of the text; the ayah mark is the sign drawn in the mushaf for it.
-
-**Related:** [`ayah`](#ayah), [`ayah_mark`](#ayah_mark)
-
-**Sources:**
-
-- [مباحث في علوم القرآن](https://files.turath.io/books-v3/11368.json) — `1/153`
-
-<a id="harf_muqatta"></a>
-
-### Harf Muqatta — الحرف المقطع
-
-<!-- source: standards/terminology/concepts/harf_muqatta.yml -->
+<!-- source: standards/terminology/concepts/muqatta_letter.yml -->
 
 | field | value |
 | --- | --- |
-| `code` | `harf_muqatta` |
-| `plural` | `harf_muqattas` |
+| `code` | `muqatta_letter` |
+| `plural` | `muqatta_letters` |
 | `kind` | `concept` |
 | Origin | `quranic` |
 | Tier | `core` |
 | Status | `draft` |
 | Vocalized | الحَرْف المُقَطَّع |
-| English gloss | `Disjointed Letters`, `Separated Letters` |
+| English gloss | `Disjointed Letters` |
 
 **Definition:** Alphabetic letters that open certain surahs, such as Alif Laam Meem, Alif Laam Raa, Haa Meem and Kaaf Haa Yaa Ayn Saad.
 
 **Purpose:** Used to identify these openings, keep them distinct, and tie them to their surahs and their positions in the text.
 
-**Related:** [`surah`](#surah), [`huruf_muqattaah`](#huruf_muqattaah)
+**Related:** [`surah`](#surah)
 
 **Sources:**
 
 - [معجم مصطلحات التجويد](https://tajweed.quranpedia.net/term/show/113) — `113`
 - [الإتقان في علوم القرآن](https://files.turath.io/books-v3/11728.json) — `3/361`
 
-<a id="huruf_muqattaah"></a>
+<a id="sajdah"></a>
 
-### Huruf Muqattaah — الحروف المقطعة
+### Sajdah — السجدة
 
-<!-- source: standards/terminology/concepts/huruf_muqattaah.yml -->
+<!-- source: standards/terminology/concepts/sajdah.yml -->
 
 | field | value |
 | --- | --- |
-| `code` | `huruf_muqattaah` |
+| `code` | `sajdah` |
+| `plural` | `sajdahs` |
 | `kind` | `concept` |
 | Origin | `quranic` |
 | Tier | `core` |
 | Status | `draft` |
-| Vocalized | الحُرُوف المُقَطَّعَة |
-| Other spellings | `muqattaat`, `al_muqattaat`, `huruf_muqattaat`, `huroof_muqattaat`, `fawatih_al_suwar` |
-| English gloss | `disjointed letters`, `mysterious letters` |
-
-**Definition:** The group of alphabetic letters that open 29 surahs, read by the names of the letters and not by their sounds, such as «الم» and «كهيعص».
-
-**Purpose:** Used to tag the surah openings that are read by the names of their letters, so that recitation, madd, search and translation treat them in their own way.
-
-- A single letter is a `harf_muqatta`; this is the opening as a group.
-- The opening is an ayah or part of one depending on the numbering system, and is not the name of the surah.
-
-**Related:** [`harf_muqatta`](#harf_muqatta), [`madd_lazim`](#madd_lazim), [`surah`](#surah)
-
-**Sources:**
-
-- [معجم مصطلحات التجويد](https://tajweed.quranpedia.net/term/show/113) — `113`
-
-<a id="mawdi_al_sajdah"></a>
-
-### Mawdi al-Sajdah — موضع السجدة
-
-<!-- source: standards/terminology/concepts/mawdi_al_sajdah.yml -->
-
-| field | value |
-| --- | --- |
-| `code` | `mawdi_al_sajdah` |
-| `plural` | `mawdi_al_sajdahs` |
-| `kind` | `concept` |
-| Origin | `quranic` |
-| Tier | `core` |
-| Status | `draft` |
-| Vocalized | مَوْضِع السَّجْدَة |
+| Vocalized | السَّجْدَة |
 | Registry | [`sajdah`](/guidelines/en/03-terminology/registries/#sajdah) |
-| Other spellings | `sajdah`, `sajda`, `sajdah_place` |
-| English gloss | `Prostration` |
+| Other spellings | `sajda`, `sajdah_place`, `mawdi_al_sajdah`, `sujud_al_tilawah`, `sajdat_al_tilawah` |
+| English gloss | `Prostration`, `Prostration of Recitation` |
 
-**Definition:** The place in the text at which the reader prostrates, ending at a particular ayah. The places are countable, and some of them are disputed.
+**Definition:** A place in the Quran at which the reader and the listener prostrate, ending at a particular ayah. The sajdahs are countable, fifteen by the common count, and some of them are disputed.
 
-**Purpose:** Used to tie a sajdah to its place in the surah, the ayah and the page, and to keep the place apart from the mark drawn at it and from the prostration itself.
+**Purpose:** Used to count the sajdahs, to tie each one to its surah, ayah and page, to attach the rulings and manner of the prostration to it, and to keep it apart from the mark drawn at it.
 
-- The place is a location in the text, the sajdah mark is a sign drawn for it, and sujud al-tilawah is the act.
+- The sajdah is the place in the text and the prostration at it, one thing; the sajdah mark is the sign drawn in the mushaf for it.
 
-**Related:** [`sajdah_mark`](#sajdah_mark), [`sujud_al_tilawah`](#sujud_al_tilawah), [`ayah`](#ayah), [`sajdah_line`](#sajdah_line)
+> Merged from `sajdah_place` and `sujud_al_tilawah`. The dictionary used to keep the place apart from the act; no software stores an act apart from its place, and the common name, "the fifteen sajdahs", names both at once. The reasoning is in the decision record.
+
+**Related:** [`sajdah_mark`](#sajdah_mark), [`sajdah_line`](#sajdah_line), [`ayah`](#ayah), [`tilawah`](#tilawah)
 
 **Sources:**
 
@@ -554,37 +506,12 @@ One row per concept, sorted by code. Follow the code to the full entry.
 
 **Purpose:** Used as the principal unit for organising the text and for attaching ayahs and surah-level data.
 
-**Related:** [`ayah`](#ayah), [`asma_al_surah`](#asma_al_surah), [`surah_group`](#surah_group), [`revelation_classification`](#revelation_classification), [`basmalah`](#basmalah), [`ayah_count`](#ayah_count), [`ayah_key`](#ayah_key), [`fadail_al_quran`](#fadail_al_quran), [`harf_muqatta`](#harf_muqatta), [`huruf_muqattaah`](#huruf_muqattaah), [`maqasid_al_surah`](#maqasid_al_surah), [`mathani`](#mathani), [`miun`](#miun), [`mufassal`](#mufassal), [`quran`](#quran), [`revelation_order`](#revelation_order), [`saba_tiwal`](#saba_tiwal), [`sabab_al_tasmiyah`](#sabab_al_tasmiyah), [`tartib_al_mushaf`](#tartib_al_mushaf)
+**Related:** [`ayah`](#ayah), [`surah_names`](#surah_names), [`surah_group`](#surah_group), [`revelation_classification`](#revelation_classification), [`basmalah`](#basmalah), [`ayah_count`](#ayah_count), [`ayah_key`](#ayah_key), [`mathani`](#mathani), [`miun`](#miun), [`mufassal`](#mufassal), [`muqatta_letter`](#muqatta_letter), [`quran`](#quran), [`quran_merits`](#quran_merits), [`revelation_order`](#revelation_order), [`saba_tiwal`](#saba_tiwal), [`surah_name_reason`](#surah_name_reason), [`surah_objectives`](#surah_objectives)
 
 **Sources:**
 
 - [مباحث في علوم القرآن](https://files.turath.io/books-v3/11368.json) — `1/140`
 - [الإتقان في علوم القرآن](https://files.turath.io/books-v3/11728.json) — `1/178`
-
-<a id="tartib_al_mushaf"></a>
-
-### Tartib al-Mushaf — ترتيب المصحف
-
-<!-- source: standards/terminology/concepts/tartib_al_mushaf.yml -->
-
-| field | value |
-| --- | --- |
-| `code` | `tartib_al_mushaf` |
-| `kind` | `property` |
-| Origin | `quranic` |
-| Tier | `core` |
-| Status | `draft` |
-| Vocalized | تَرْتِيب المُصْحَف |
-| Other spellings | `surah_order`, `uthmani_order`, `tartib_al_suwar` |
-| English gloss | `Mushaf order` |
-
-**Definition:** The order of the surahs as settled in the Uthmani mushaf, from al-Fatihah to al-Nas; it is the order the surahs are numbered by.
-
-**Purpose:** Used as the default order of surahs in display and navigation; a surah's number in it is its number in the key, and it is named where the revelation order stands opposite it.
-
-- The mushaf order is not the revelation order: a surah has one number in the mushaf, and its rank in revelation may differ by source.
-
-**Related:** [`revelation_order`](#revelation_order), [`surah`](#surah), [`ayah_key`](#ayah_key)
 
 <a id="word_key"></a>
 
@@ -729,7 +656,7 @@ One row per concept, sorted by code. Follow the code to the full entry.
 - A letter is a linguistic unit; a character is a unit of encoding, and one letter may be written with one character or more.
 - A letter is a unit of writing; harf al-mana is a part of speech.
 
-**Related:** [`character`](#character), [`glyph`](#glyph), [`harf_al_mana`](#harf_al_mana), [`ijam`](#ijam), [`makhraj`](#makhraj), [`word`](#word)
+**Related:** [`character`](#character), [`glyph`](#glyph), [`particle`](#particle), [`ijam`](#ijam), [`word`](#word)
 
 **Sources:**
 
@@ -781,7 +708,7 @@ One row per concept, sorted by code. Follow the code to the full entry.
 
 - A word is a unit the reader recognises; a token is a unit a segmentation method produces, so changing the method changes the number of tokens and not the number of words.
 
-**Related:** [`token`](#token), [`morpheme`](#morpheme), [`letter`](#letter), [`word_key`](#word_key), [`ayah`](#ayah), [`gharib_al_quran`](#gharib_al_quran), [`irab`](#irab), [`mutashabihat`](#mutashabihat), [`word_by_word_translation`](#word_by_word_translation), [`word_timing`](#word_timing)
+**Related:** [`token`](#token), [`morpheme`](#morpheme), [`letter`](#letter), [`word_key`](#word_key), [`ayah`](#ayah), [`irab`](#irab), [`mutashabihat`](#mutashabihat), [`word_by_word_translation`](#word_by_word_translation), [`word_meanings`](#word_meanings), [`word_timing`](#word_timing)
 
 ## Quran divisions — `divisions`
 
@@ -1072,6 +999,38 @@ One row per concept, sorted by code. Follow the code to the full entry.
 
 ## Mushaf and layout — `mushaf`
 
+<a id="ayah_fragment"></a>
+
+### Ayah Fragment — مقطع الآية
+
+<!-- source: standards/terminology/concepts/ayah_fragment.yml -->
+
+| field | value |
+| --- | --- |
+| `code` | `ayah_fragment` |
+| `plural` | `ayah_fragments` |
+| `kind` | `unit` |
+| Origin | `standard` |
+| Tier | `core` |
+| Status | `draft` |
+| Vocalized | مَقْطَع الآيَة |
+| Arabic plural | مقاطع الآيات |
+| Other spellings | `ayah_segment`, `ayah_part`, `line_ayah`, `g_ayah` |
+| English gloss | `ayah fragment` |
+
+**Definition:** What appears of one ayah on one line of a page of a given mushaf; an ayah that runs over two lines is two maqtas.
+
+**Purpose:** Used as the unit of display and tagging in the page layout, because an ayah does not keep to a line nor a line to an ayah; alignment and highlighting in a drawn mushaf are built on it.
+
+- A maqta belongs to the layout of one mushaf and is no part of the identity of the ayah.
+- A maqta is not a word: it may be a word, several words, or part of a word where the break falls inside one.
+
+**Related:** [`ayah`](#ayah), [`line`](#line), [`page`](#page), [`layout`](#layout)
+
+**Sources:**
+
+- مصحف حفص — كلمة كلمة — `glossary!g.ayah`
+
 <a id="font"></a>
 
 ### Font — الخط
@@ -1117,7 +1076,7 @@ One row per concept, sorted by code. Follow the code to the full entry.
 
 **Purpose:** Keeps visual data apart from the fixed textual structure of the Quran.
 
-**Related:** [`mushaf_edition`](#mushaf_edition), [`page`](#page), [`line`](#line), [`font`](#font), [`maqta_al_ayah`](#maqta_al_ayah), [`mushaf`](#mushaf)
+**Related:** [`mushaf_edition`](#mushaf_edition), [`page`](#page), [`line`](#line), [`font`](#font), [`ayah_fragment`](#ayah_fragment), [`mushaf`](#mushaf)
 
 <a id="line"></a>
 
@@ -1139,39 +1098,7 @@ One row per concept, sorted by code. Follow the code to the full entry.
 
 **Purpose:** Used to represent where text and shapes sit within the typeset layout.
 
-**Related:** [`page`](#page), [`layout`](#layout), [`maqta_al_ayah`](#maqta_al_ayah), [`font`](#font)
-
-<a id="maqta_al_ayah"></a>
-
-### Maqta al-Ayah — مقطع الآية
-
-<!-- source: standards/terminology/concepts/maqta_al_ayah.yml -->
-
-| field | value |
-| --- | --- |
-| `code` | `maqta_al_ayah` |
-| `plural` | `maqta_al_ayahs` |
-| `kind` | `unit` |
-| Origin | `standard` |
-| Tier | `core` |
-| Status | `draft` |
-| Vocalized | مَقْطَع الآيَة |
-| Arabic plural | مقاطع الآيات |
-| Other spellings | `ayah_segment`, `ayah_part`, `line_ayah`, `g_ayah` |
-| English gloss | `ayah fragment` |
-
-**Definition:** What appears of one ayah on one line of a page of a given mushaf; an ayah that runs over two lines is two maqtas.
-
-**Purpose:** Used as the unit of display and tagging in the page layout, because an ayah does not keep to a line nor a line to an ayah; alignment and highlighting in a drawn mushaf are built on it.
-
-- A maqta belongs to the layout of one mushaf and is no part of the identity of the ayah.
-- A maqta is not a word: it may be a word, several words, or part of a word where the break falls inside one.
-
-**Related:** [`ayah`](#ayah), [`line`](#line), [`page`](#page), [`layout`](#layout)
-
-**Sources:**
-
-- مصحف حفص — كلمة كلمة — `glossary!g.ayah`
+**Related:** [`page`](#page), [`layout`](#layout), [`ayah_fragment`](#ayah_fragment), [`font`](#font)
 
 <a id="page"></a>
 
@@ -1194,7 +1121,7 @@ One row per concept, sorted by code. Follow the code to the full entry.
 
 **Purpose:** Used for rendering, navigation and visual alignment according to the pages of a particular mushaf.
 
-**Related:** [`mushaf_edition`](#mushaf_edition), [`layout`](#layout), [`line`](#line), [`maqta_al_ayah`](#maqta_al_ayah), [`mushaf`](#mushaf)
+**Related:** [`mushaf_edition`](#mushaf_edition), [`layout`](#layout), [`line`](#line), [`ayah_fragment`](#ayah_fragment), [`mushaf`](#mushaf)
 
 <a id="rasm"></a>
 
@@ -1310,10 +1237,10 @@ One row per concept, sorted by code. Follow the code to the full entry.
 
 **Purpose:** Used to mark an ayah's boundary in the written text; it is the sign from which a renderer or an analyser reads where an ayah ends and what its number is.
 
-- The mark is something drawn in the mushaf; the fasilah is the ayah's ending as a matter of the text itself.
+- The mark is something drawn in the mushaf; the ayah ending is the close of the ayah as a matter of the text itself.
 - The number inside the circle follows an ayah numbering system and is not part of the mark.
 
-**Related:** [`ayah`](#ayah), [`fasilah`](#fasilah), [`ayah_numbering_system`](#ayah_numbering_system)
+**Related:** [`ayah`](#ayah), [`ayah_ending`](#ayah_ending), [`ayah_numbering_system`](#ayah_numbering_system)
 
 <a id="dammah"></a>
 
@@ -1591,8 +1518,6 @@ One row per concept, sorted by code. Follow the code to the full entry.
 **Definition:** Marks the major imalah: a fathah pronounced leaning toward kasrah. In the riwayah of Hafs it occurs at one place only (11:41).
 
 **Purpose:** Used as a value of the qiraah marks, so that the reader is alerted to a particular delivery at its place.
-
-**Related:** [`usul`](#usul)
 
 **Sources:**
 
@@ -1890,7 +1815,7 @@ One row per concept, sorted by code. Follow the code to the full entry.
 
 **Purpose:** Used as a mark of the mushaf, so that rendering and analysis know where it sits and what it points to.
 
-**Related:** [`sajdah_mark`](#sajdah_mark), [`mawdi_al_sajdah`](#mawdi_al_sajdah)
+**Related:** [`sajdah_mark`](#sajdah_mark), [`sajdah`](#sajdah)
 
 **Sources:**
 
@@ -1924,11 +1849,11 @@ One row per concept, sorted by code. Follow the code to the full entry.
 
 **Purpose:** Used as a mark of the mushaf, so that rendering and analysis know where it sits and what it points to.
 
-- The sajdah mark is a sign in the mushaf; mawdi al-sajdah is the place in the text; sujud al-tilawah is the act.
+- The sajdah mark is a sign in the mushaf; the sajdah is the place in the text at which one prostrates.
 
 > `alamat_mawdi_al_sajdah` was a separate entry defining the same thing; it was merged into this one.
 
-**Related:** [`mawdi_al_sajdah`](#mawdi_al_sajdah), [`sujud_al_tilawah`](#sujud_al_tilawah), [`sajdah_line`](#sajdah_line)
+**Related:** [`sajdah`](#sajdah), [`sajdah_line`](#sajdah_line)
 
 **Sources:**
 
@@ -2676,7 +2601,7 @@ One row per concept, sorted by code. Follow the code to the full entry.
 
 **Purpose:** Used to represent the sign, its position and its type in an orderly way.
 
-**Related:** [`waqf`](#waqf), [`waqf_mark_type`](#waqf_mark_type), [`mushaf_mark`](#mushaf_mark), [`sabab_al_waqf`](#sabab_al_waqf), [`waqf_al_muanaqah`](#waqf_al_muanaqah), [`waqf_jaiz_mustawi_al_tarafayn`](#waqf_jaiz_mustawi_al_tarafayn), [`waqf_jaiz_waqf_awla`](#waqf_jaiz_waqf_awla), [`waqf_jaiz_wasl_awla`](#waqf_jaiz_wasl_awla), [`waqf_lazim`](#waqf_lazim), [`waqf_mamnu`](#waqf_mamnu)
+**Related:** [`waqf`](#waqf), [`waqf_mark_type`](#waqf_mark_type), [`mushaf_mark`](#mushaf_mark), [`waqf_al_muanaqah`](#waqf_al_muanaqah), [`waqf_jaiz_mustawi_al_tarafayn`](#waqf_jaiz_mustawi_al_tarafayn), [`waqf_jaiz_waqf_awla`](#waqf_jaiz_waqf_awla), [`waqf_jaiz_wasl_awla`](#waqf_jaiz_wasl_awla), [`waqf_lazim`](#waqf_lazim), [`waqf_mamnu`](#waqf_mamnu)
 
 **Sources:**
 
@@ -2725,20 +2650,20 @@ One row per concept, sorted by code. Follow the code to the full entry.
 
 | field | value |
 | --- | --- |
-| `code` | `ayah_numbering_basri` |
+| `code` | `basri` |
 | `kind` | `classification_value` |
 | Parent | [`ayah_numbering_system`](#ayah_numbering_system) |
 | Origin | `quranic` |
 | Tier | `core` |
 | Status | `draft` |
 | Vocalized | العَدّ البَصْرِيّ |
-| Other spellings | `basri_numbering`, `basran_numbering`, `basri` |
+| Other spellings | `basri_numbering`, `basran`, `basran_numbering` |
 
 **Definition:** The Basran numbering system, transmitted from Asim al-Jahdari and the Basran authorities before him.
 
 **Purpose:** Used as a value of the ayah numbering system, so that a mushaf or dataset states which numbering its ayah numbers and boundaries follow, and positions can be mapped between systems.
 
-> The code name here is the name of the school and what distinguishes the value, not a derivation of the Arabic name: deriving from «العَدّ» gives `add`, an English verb, and `makki` is already a value of `revelation_classification`. The reasoning is in the decision record.
+> The code is `basri` alone, because a value's name is unique within its classification, not across the dictionary (§14): a column holds one classification's values, so `makki` here is never confused with `makki` in `revelation_classification`. The entry's id is `ayah_numbering_basri`, the parent's name plus the code, so that two entries sharing a name have different addresses. The code is not derived from «العَدّ» because that gives `add`, an English verb. The reasoning is in the decision record.
 
 **Related:** [`ayah_numbering_system`](#ayah_numbering_system), [`ayah`](#ayah), [`equivalent_ayah`](#equivalent_ayah)
 
@@ -2754,21 +2679,21 @@ One row per concept, sorted by code. Follow the code to the full entry.
 
 | field | value |
 | --- | --- |
-| `code` | `ayah_numbering_dimashqi` |
+| `code` | `dimashqi` |
 | `kind` | `classification_value` |
 | Parent | [`ayah_numbering_system`](#ayah_numbering_system) |
 | Origin | `quranic` |
 | Tier | `core` |
 | Status | `draft` |
 | Vocalized | العَدّ الدِّمَشْقِيّ |
-| Other spellings | `dimashqi_numbering`, `shami`, `shami_numbering`, `damascene_numbering`, `dimashqi` |
+| Other spellings | `dimashqi_numbering`, `shami`, `shami_numbering`, `damascene`, `ayah_numbering_shami` |
 | Display evidence | GitHub phrase search: dimashqi numbering 0 vs shami numbering 0. No form is established, so the display follows the code; `shami` stays an alias. |
 
 **Definition:** The Damascene numbering system, transmitted from Yahya ibn al-Harith al-Dhimari from Ibn Amir; also called the Shami numbering.
 
 **Purpose:** Used as a value of the ayah numbering system, so that a mushaf or dataset states which numbering its ayah numbers and boundaries follow, and positions can be mapped between systems.
 
-> The code name here is the name of the school and what distinguishes the value, not a derivation of the Arabic name: deriving from «العَدّ» gives `add`, an English verb, and `makki` is already a value of `revelation_classification`. The reasoning is in the decision record.
+> The code is `dimashqi` alone, because a value's name is unique within its classification, not across the dictionary (§14): a column holds one classification's values, so `makki` here is never confused with `makki` in `revelation_classification`. The entry's id is `ayah_numbering_dimashqi`, the parent's name plus the code, so that two entries sharing a name have different addresses. The code is not derived from «العَدّ» because that gives `add`, an English verb. The reasoning is in the decision record.
 
 **Related:** [`ayah_numbering_system`](#ayah_numbering_system), [`ayah`](#ayah), [`equivalent_ayah`](#equivalent_ayah)
 
@@ -2784,20 +2709,20 @@ One row per concept, sorted by code. Follow the code to the full entry.
 
 | field | value |
 | --- | --- |
-| `code` | `ayah_numbering_kufi` |
+| `code` | `kufi` |
 | `kind` | `classification_value` |
 | Parent | [`ayah_numbering_system`](#ayah_numbering_system) |
 | Origin | `quranic` |
 | Tier | `core` |
 | Status | `draft` |
 | Vocalized | العَدّ الكُوفِيّ |
-| Other spellings | `kufi_numbering`, `kufan_numbering`, `kufi` |
+| Other spellings | `kufi_numbering`, `kufan`, `kufan_numbering` |
 
 **Definition:** The Kufan numbering system, transmitted from Hamzah al-Zayyat from Ibn Abi Layla from Abu Abd al-Rahman al-Sulami from Ali ibn Abi Talib. It is the numbering most printed mushafs follow today.
 
 **Purpose:** Used as a value of the ayah numbering system, so that a mushaf or dataset states which numbering its ayah numbers and boundaries follow, and positions can be mapped between systems.
 
-> The code name here is the name of the school and what distinguishes the value, not a derivation of the Arabic name: deriving from «العَدّ» gives `add`, an English verb, and `makki` is already a value of `revelation_classification`. The reasoning is in the decision record.
+> The code is `kufi` alone, because a value's name is unique within its classification, not across the dictionary (§14): a column holds one classification's values, so `makki` here is never confused with `makki` in `revelation_classification`. The entry's id is `ayah_numbering_kufi`, the parent's name plus the code, so that two entries sharing a name have different addresses. The code is not derived from «العَدّ» because that gives `add`, an English verb. The reasoning is in the decision record.
 
 **Related:** [`ayah_numbering_system`](#ayah_numbering_system), [`ayah`](#ayah), [`equivalent_ayah`](#equivalent_ayah)
 
@@ -2805,28 +2730,28 @@ One row per concept, sorted by code. Follow the code to the full entry.
 
 - [البيان في عد آي القرآن](https://files.turath.io/books-v3/5542.json) — `1/80`
 
-<a id="ayah_numbering_madani_akhir"></a>
+<a id="ayah_numbering_madani_first"></a>
 
-### Madani Akhir Numbering — العد المدني الأخير
+### First Madani Numbering — العد المدني الأول
 
-<!-- source: standards/terminology/concepts/ayah_numbering_madani_akhir.yml -->
+<!-- source: standards/terminology/concepts/ayah_numbering_madani_first.yml -->
 
 | field | value |
 | --- | --- |
-| `code` | `ayah_numbering_madani_akhir` |
+| `code` | `madani_first` |
 | `kind` | `classification_value` |
 | Parent | [`ayah_numbering_system`](#ayah_numbering_system) |
 | Origin | `quranic` |
 | Tier | `core` |
 | Status | `draft` |
-| Vocalized | العَدّ المَدَنِيّ الأَخِير |
-| Other spellings | `madani_akhir`, `last_madani`, `madani_last` |
+| Vocalized | العَدّ المَدَنِيّ الأَوَّل |
+| Other spellings | `ayah_numbering_madani_awwal`, `madani_awwal`, `first_madani`, `first_madinan`, `madani_first_numbering` |
 
-**Definition:** The later Madinan numbering system, that of Ismail ibn Jafar from Sulayman ibn Jammaz.
+**Definition:** The earlier Madinan numbering system, that of Abu Jafar Yazid ibn al-Qaqa and Shaybah ibn Nassah.
 
 **Purpose:** Used as a value of the ayah numbering system, so that a mushaf or dataset states which numbering its ayah numbers and boundaries follow, and positions can be mapped between systems.
 
-> The code name here is the name of the school and what distinguishes the value, not a derivation of the Arabic name: deriving from «العَدّ» gives `add`, an English verb, and `makki` is already a value of `revelation_classification`. The reasoning is in the decision record.
+> The code is `madani_first` alone, because a value's name is unique within its classification, not across the dictionary (§14): a column holds one classification's values, so `makki` here is never confused with `makki` in `revelation_classification`. The entry's id is `ayah_numbering_madani_first`, the parent's name plus the code, so that two entries sharing a name have different addresses. The code is not derived from «العَدّ» because that gives `add`, an English verb. The reasoning is in the decision record.
 
 **Related:** [`ayah_numbering_system`](#ayah_numbering_system), [`ayah`](#ayah), [`equivalent_ayah`](#equivalent_ayah)
 
@@ -2834,28 +2759,28 @@ One row per concept, sorted by code. Follow the code to the full entry.
 
 - [البيان في عد آي القرآن](https://files.turath.io/books-v3/5542.json) — `1/79`
 
-<a id="ayah_numbering_madani_awwal"></a>
+<a id="ayah_numbering_madani_last"></a>
 
-### Madani Awwal Numbering — العد المدني الأول
+### Last Madani Numbering — العد المدني الأخير
 
-<!-- source: standards/terminology/concepts/ayah_numbering_madani_awwal.yml -->
+<!-- source: standards/terminology/concepts/ayah_numbering_madani_last.yml -->
 
 | field | value |
 | --- | --- |
-| `code` | `ayah_numbering_madani_awwal` |
+| `code` | `madani_last` |
 | `kind` | `classification_value` |
 | Parent | [`ayah_numbering_system`](#ayah_numbering_system) |
 | Origin | `quranic` |
 | Tier | `core` |
 | Status | `draft` |
-| Vocalized | العَدّ المَدَنِيّ الأَوَّل |
-| Other spellings | `madani_awwal`, `first_madani`, `madani_first` |
+| Vocalized | العَدّ المَدَنِيّ الأَخِير |
+| Other spellings | `ayah_numbering_madani_akhir`, `madani_akhir`, `last_madani`, `last_madinan`, `madani_last_numbering` |
 
-**Definition:** The earlier Madinan numbering system, that of Abu Jafar Yazid ibn al-Qaqa and Shaybah ibn Nassah.
+**Definition:** The later Madinan numbering system, that of Ismail ibn Jafar from Sulayman ibn Jammaz.
 
 **Purpose:** Used as a value of the ayah numbering system, so that a mushaf or dataset states which numbering its ayah numbers and boundaries follow, and positions can be mapped between systems.
 
-> The code name here is the name of the school and what distinguishes the value, not a derivation of the Arabic name: deriving from «العَدّ» gives `add`, an English verb, and `makki` is already a value of `revelation_classification`. The reasoning is in the decision record.
+> The code is `madani_last` alone, because a value's name is unique within its classification, not across the dictionary (§14): a column holds one classification's values, so `makki` here is never confused with `makki` in `revelation_classification`. The entry's id is `ayah_numbering_madani_last`, the parent's name plus the code, so that two entries sharing a name have different addresses. The code is not derived from «العَدّ» because that gives `add`, an English verb. The reasoning is in the decision record.
 
 **Related:** [`ayah_numbering_system`](#ayah_numbering_system), [`ayah`](#ayah), [`equivalent_ayah`](#equivalent_ayah)
 
@@ -2871,20 +2796,20 @@ One row per concept, sorted by code. Follow the code to the full entry.
 
 | field | value |
 | --- | --- |
-| `code` | `ayah_numbering_makki` |
+| `code` | `makki` |
 | `kind` | `classification_value` |
 | Parent | [`ayah_numbering_system`](#ayah_numbering_system) |
 | Origin | `quranic` |
 | Tier | `core` |
 | Status | `draft` |
 | Vocalized | العَدّ المَكِّيّ |
-| Other spellings | `makki_numbering`, `meccan_numbering` |
+| Other spellings | `makki_numbering`, `makkan`, `meccan_numbering` |
 
 **Definition:** The Makkan numbering system, transmitted from Ibn Kathir from Mujahid from Ibn Abbas from Ubayy ibn Kab.
 
 **Purpose:** Used as a value of the ayah numbering system, so that a mushaf or dataset states which numbering its ayah numbers and boundaries follow, and positions can be mapped between systems.
 
-> The code name here is the name of the school and what distinguishes the value, not a derivation of the Arabic name: deriving from «العَدّ» gives `add`, an English verb, and `makki` is already a value of `revelation_classification`. The reasoning is in the decision record.
+> The code is `makki` alone, because a value's name is unique within its classification, not across the dictionary (§14): a column holds one classification's values, so `makki` here is never confused with `makki` in `revelation_classification`. The entry's id is `ayah_numbering_makki`, the parent's name plus the code, so that two entries sharing a name have different addresses. The code is not derived from «العَدّ» because that gives `add`, an English verb. The reasoning is in the decision record.
 
 **Related:** [`ayah_numbering_system`](#ayah_numbering_system), [`ayah`](#ayah), [`equivalent_ayah`](#equivalent_ayah)
 
@@ -2903,7 +2828,7 @@ One row per concept, sorted by code. Follow the code to the full entry.
 | `code` | `ayah_numbering_system` |
 | `plural` | `ayah_numbering_systems` |
 | `kind` | `classification` |
-| Values | [`ayah_numbering_basri`](#ayah_numbering_basri), [`ayah_numbering_dimashqi`](#ayah_numbering_dimashqi), [`ayah_numbering_kufi`](#ayah_numbering_kufi), [`ayah_numbering_madani_akhir`](#ayah_numbering_madani_akhir), [`ayah_numbering_madani_awwal`](#ayah_numbering_madani_awwal), [`ayah_numbering_makki`](#ayah_numbering_makki) |
+| Values | [`ayah_numbering_basri`](#ayah_numbering_basri), [`ayah_numbering_dimashqi`](#ayah_numbering_dimashqi), [`ayah_numbering_kufi`](#ayah_numbering_kufi), [`ayah_numbering_madani_first`](#ayah_numbering_madani_first), [`ayah_numbering_madani_last`](#ayah_numbering_madani_last), [`ayah_numbering_makki`](#ayah_numbering_makki) |
 | Origin | `standard` |
 | Tier | `core` |
 | Status | `draft` |
@@ -2915,7 +2840,7 @@ One row per concept, sorted by code. Follow the code to the full entry.
 
 **Purpose:** Used to state which numbering system a mushaf's or a dataset's ayah numbers and boundaries follow.
 
-**Related:** [`ayah`](#ayah), [`equivalent_ayah`](#equivalent_ayah), [`basmalah`](#basmalah), [`ayah_count`](#ayah_count), [`ayah_numbering_kufi`](#ayah_numbering_kufi), [`ayah_numbering_basri`](#ayah_numbering_basri), [`ayah_numbering_dimashqi`](#ayah_numbering_dimashqi), [`ayah_numbering_makki`](#ayah_numbering_makki), [`ayah_numbering_madani_awwal`](#ayah_numbering_madani_awwal), [`ayah_numbering_madani_akhir`](#ayah_numbering_madani_akhir), [`ayah_key`](#ayah_key), [`ayah_mark`](#ayah_mark), [`qiraah`](#qiraah)
+**Related:** [`ayah`](#ayah), [`equivalent_ayah`](#equivalent_ayah), [`basmalah`](#basmalah), [`ayah_count`](#ayah_count), [`ayah_numbering_kufi`](#ayah_numbering_kufi), [`ayah_numbering_basri`](#ayah_numbering_basri), [`ayah_numbering_dimashqi`](#ayah_numbering_dimashqi), [`ayah_numbering_makki`](#ayah_numbering_makki), [`ayah_numbering_madani_first`](#ayah_numbering_madani_first), [`ayah_numbering_madani_last`](#ayah_numbering_madani_last), [`ayah_key`](#ayah_key), [`ayah_mark`](#ayah_mark), [`qiraah`](#qiraah)
 
 **Sources:**
 
@@ -2945,7 +2870,7 @@ One row per concept, sorted by code. Follow the code to the full entry.
 
 - This is a correspondence between two numbering systems, not a similarity of wording or a repetition of text.
 
-**Related:** [`ayah_numbering_system`](#ayah_numbering_system), [`ayah`](#ayah), [`mutashabihat`](#mutashabihat), [`ayah_numbering_basri`](#ayah_numbering_basri), [`ayah_numbering_dimashqi`](#ayah_numbering_dimashqi), [`ayah_numbering_kufi`](#ayah_numbering_kufi), [`ayah_numbering_madani_akhir`](#ayah_numbering_madani_akhir), [`ayah_numbering_madani_awwal`](#ayah_numbering_madani_awwal), [`ayah_numbering_makki`](#ayah_numbering_makki)
+**Related:** [`ayah_numbering_system`](#ayah_numbering_system), [`ayah`](#ayah), [`mutashabihat`](#mutashabihat), [`ayah_numbering_basri`](#ayah_numbering_basri), [`ayah_numbering_dimashqi`](#ayah_numbering_dimashqi), [`ayah_numbering_kufi`](#ayah_numbering_kufi), [`ayah_numbering_madani_first`](#ayah_numbering_madani_first), [`ayah_numbering_madani_last`](#ayah_numbering_madani_last), [`ayah_numbering_makki`](#ayah_numbering_makki)
 
 **Sources:**
 
@@ -2973,7 +2898,7 @@ One row per concept, sorted by code. Follow the code to the full entry.
 
 **Purpose:** Used to attach the narrations and the material about an ayah's occasion of revelation to the ayah itself.
 
-**Related:** [`nuzul`](#nuzul), [`ayah`](#ayah), [`sabab_al_tasmiyah`](#sabab_al_tasmiyah), [`naskh`](#naskh)
+**Related:** [`revelation`](#revelation), [`ayah`](#ayah), [`surah_name_reason`](#surah_name_reason), [`abrogation`](#abrogation)
 
 **Sources:**
 
@@ -3032,7 +2957,7 @@ One row per concept, sorted by code. Follow the code to the full entry.
 
 - Madani describes the time of revelation, after the Hijrah, not the place of revelation.
 
-**Related:** [`makki`](#makki), [`revelation_classification`](#revelation_classification), [`nuzul`](#nuzul), [`disputed`](#disputed)
+**Related:** [`makki`](#makki), [`revelation_classification`](#revelation_classification), [`revelation`](#revelation), [`disputed`](#disputed)
 
 **Sources:**
 
@@ -3064,28 +2989,27 @@ One row per concept, sorted by code. Follow the code to the full entry.
 
 - Makki describes the time of revelation, before the Hijrah, not the place of revelation.
 
-**Related:** [`madani`](#madani), [`revelation_classification`](#revelation_classification), [`nuzul`](#nuzul), [`disputed`](#disputed)
+**Related:** [`madani`](#madani), [`revelation_classification`](#revelation_classification), [`revelation`](#revelation), [`disputed`](#disputed)
 
 **Sources:**
 
 - [مباحث في علوم القرآن](https://files.turath.io/books-v3/11368.json) — `1/60`
 - [الإتقان في علوم القرآن](https://files.turath.io/books-v3/11728.json) — `1/37`
 
-<a id="nuzul"></a>
+<a id="revelation"></a>
 
-### Nuzul — النزول
+### Revelation — النزول
 
-<!-- source: standards/terminology/concepts/nuzul.yml -->
+<!-- source: standards/terminology/concepts/revelation.yml -->
 
 | field | value |
 | --- | --- |
-| `code` | `nuzul` |
+| `code` | `revelation` |
 | `kind` | `concept` |
-| Origin | `quranic` |
+| Origin | `borrowed` |
 | Tier | `core` |
 | Status | `draft` |
 | Vocalized | النُّزُول |
-| English gloss | `Revelation` |
 
 **Definition:** The revelation of the Quran to the Prophet, peace be upon him, in stages over the years of his mission, as events and needs arose.
 
@@ -3119,7 +3043,7 @@ One row per concept, sorted by code. Follow the code to the full entry.
 
 **Purpose:** Used to classify surahs or ayahs by their relation to the Hijrah, without implying that the classification is only geographical.
 
-**Related:** [`makki`](#makki), [`madani`](#madani), [`disputed`](#disputed), [`nuzul`](#nuzul), [`surah`](#surah)
+**Related:** [`makki`](#makki), [`madani`](#madani), [`disputed`](#disputed), [`revelation`](#revelation), [`surah`](#surah)
 
 **Sources:**
 
@@ -3147,7 +3071,7 @@ One row per concept, sorted by code. Follow the code to the full entry.
 
 - Revelation order is not mushaf order: `surah_number` is the mushaf order.
 
-**Related:** [`nuzul`](#nuzul), [`surah`](#surah), [`tartib_al_mushaf`](#tartib_al_mushaf)
+**Related:** [`revelation`](#revelation), [`surah`](#surah)
 
 **Sources:**
 
@@ -3155,35 +3079,6 @@ One row per concept, sorted by code. Follow the code to the full entry.
 - [الإتقان في علوم القرآن](https://files.turath.io/books-v3/11728.json) — `1/93`
 
 ## Qiraat — `qiraat`
-
-<a id="farsh"></a>
-
-### Farsh — الفرش
-
-<!-- source: standards/terminology/concepts/farsh.yml -->
-
-| field | value |
-| --- | --- |
-| `code` | `farsh` |
-| `kind` | `concept` |
-| Origin | `quranic` |
-| Tier | `extended` |
-| Status | `draft` |
-| Vocalized | الفَرْش |
-| Other spellings | `farsh_al_huruf`, `farshiyyah`, `farshiyyat` |
-| English gloss | `word-specific differences` |
-
-**Definition:** The words the readers differ on at particular places in the surahs, where the difference follows no general rule but each place is named on its own, arranged by surah.
-
-**Purpose:** Used to tag the differences between qiraat that are stored word by word at their place, as against the usul, which are stored as a rule and applied wherever their condition holds.
-
-- Farsh and usul are the two divisions of the differences between qiraat; a wajh is what is permitted within one riwayah.
-
-**Related:** [`usul`](#usul), [`qiraah`](#qiraah), [`wajh`](#wajh)
-
-**Sources:**
-
-- [النشر في القراءات العشر](https://files.turath.io/books-v3/22642.json) — `2/206`
 
 <a id="muqri"></a>
 
@@ -3235,7 +3130,7 @@ One row per concept, sorted by code. Follow the code to the full entry.
 
 **Purpose:** Represents the top level of the qiraat model and ties together the riwayahs, the tariqs and the texts bound to them.
 
-**Related:** [`riwayah`](#riwayah), [`rawi`](#rawi), [`tariq`](#tariq), [`muqri`](#muqri), [`ayah_numbering_system`](#ayah_numbering_system), [`farsh`](#farsh), [`qiraah_mark`](#qiraah_mark), [`usul`](#usul)
+**Related:** [`riwayah`](#riwayah), [`rawi`](#rawi), [`tariq`](#tariq), [`muqri`](#muqri), [`ayah_numbering_system`](#ayah_numbering_system), [`qiraah_mark`](#qiraah_mark)
 
 **Sources:**
 
@@ -3334,35 +3229,6 @@ One row per concept, sorted by code. Follow the code to the full entry.
 - [النشر في القراءات العشر](https://files.turath.io/books-v3/22642.json) — `1/115`
 - [النشر في القراءات العشر](https://files.turath.io/books-v3/22642.json) — `1/146`
 
-<a id="usul"></a>
-
-### Usul — الأصول
-
-<!-- source: standards/terminology/concepts/usul.yml -->
-
-| field | value |
-| --- | --- |
-| `code` | `usul` |
-| `kind` | `concept` |
-| Origin | `quranic` |
-| Tier | `extended` |
-| Status | `draft` |
-| Vocalized | الأُصُول |
-| Other spellings | `usool`, `usul_al_qiraah`, `usul_al_qiraat` |
-| English gloss | `general rules` |
-
-**Definition:** The general rules of a reading that apply to everything meeting their condition, such as madd, hamzah, imalah, idgham and the pronoun haa.
-
-**Purpose:** Used to tag the differences between qiraat that are stored as a rule rather than a place, and applied to the text wherever their condition holds.
-
-- Usul are the rules of a reading; farsh is its particular places.
-
-**Related:** [`farsh`](#farsh), [`qiraah`](#qiraah), [`madd`](#madd), [`imalah`](#imalah)
-
-**Sources:**
-
-- [النشر في القراءات العشر](https://files.turath.io/books-v3/22642.json) — `1/30`
-
 <a id="wajh"></a>
 
 ### Wajh — الوجه
@@ -3388,7 +3254,7 @@ One row per concept, sorted by code. Follow the code to the full entry.
 
 - A wajh does not change what the reading is attributed to; a tariq does.
 
-**Related:** [`tariq`](#tariq), [`riwayah`](#riwayah), [`madd_arid_li_al_sukun`](#madd_arid_li_al_sukun), [`lahn`](#lahn), [`farsh`](#farsh)
+**Related:** [`tariq`](#tariq), [`riwayah`](#riwayah), [`madd_arid_li_al_sukun`](#madd_arid_li_al_sukun)
 
 ## Recitation — `recitation`
 
@@ -3417,31 +3283,6 @@ One row per concept, sorted by code. Follow the code to the full entry.
 
 **Related:** [`recitation`](#recitation), [`ayah`](#ayah), [`reciter`](#reciter), [`word_timing`](#word_timing)
 
-<a id="hifz"></a>
-
-### Hifz — الحفظ
-
-<!-- source: standards/terminology/concepts/hifz.yml -->
-
-| field | value |
-| --- | --- |
-| `code` | `hifz` |
-| `kind` | `concept` |
-| Origin | `quranic` |
-| Tier | `extended` |
-| Status | `draft` |
-| Vocalized | الحِفْظ |
-| Other spellings | `hifdh`, `hifz_al_quran` |
-| English gloss | `memorising the Quran`, `memorization`, `memorisation` |
-
-**Definition:** Committing the Quran, in whole or in part, to memory, so that it is recited without looking in the mushaf.
-
-**Purpose:** Used as the field of memorisation and revision tools, which attach their plans and repetitions to the ayah, the page and the mutashabihat.
-
-- Hifz is a state of the reader and not an attribute of the text; the text is not tagged with it, only what is built for it.
-
-**Related:** [`mutashabihat`](#mutashabihat), [`instructional_ayah_repetition`](#instructional_ayah_repetition), [`tilawah`](#tilawah), [`khatmah`](#khatmah)
-
 <a id="istiadhah"></a>
 
 ### Istiadhah — الاستعاذة
@@ -3462,7 +3303,7 @@ One row per concept, sorted by code. Follow the code to the full entry.
 
 **Purpose:** Used to represent the istiadhah, its wordings, and its position relative to the start of a recitation.
 
-**Related:** [`basmalah`](#basmalah), [`recitation`](#recitation), [`takbir`](#takbir)
+**Related:** [`basmalah`](#basmalah), [`recitation`](#recitation)
 
 **Sources:**
 
@@ -3490,7 +3331,7 @@ One row per concept, sorted by code. Follow the code to the full entry.
 
 **Purpose:** Used to track completion plans, to record that a reading was finished, and to tie sessions to the course of one khatmah.
 
-**Related:** [`juz`](#juz), [`manzil`](#manzil), [`recitation`](#recitation), [`hifz`](#hifz), [`takbir`](#takbir)
+**Related:** [`juz`](#juz), [`manzil`](#manzil), [`recitation`](#recitation)
 
 <a id="recitation"></a>
 
@@ -3514,7 +3355,7 @@ One row per concept, sorted by code. Follow the code to the full entry.
 
 - A recitation is the published recording attributed to a reciter, a riwayah and a style; tilawah is the act.
 
-**Related:** [`reciter`](#reciter), [`riwayah`](#riwayah), [`recitation_style`](#recitation_style), [`recitation_pace`](#recitation_pace), [`ayah_timing`](#ayah_timing), [`word_timing`](#word_timing), [`tilawah`](#tilawah), [`istiadhah`](#istiadhah), [`khatmah`](#khatmah), [`spoken_translation`](#spoken_translation), [`tajwid`](#tajwid), [`takbir`](#takbir), [`tartil`](#tartil)
+**Related:** [`reciter`](#reciter), [`riwayah`](#riwayah), [`recitation_style`](#recitation_style), [`recitation_pace`](#recitation_pace), [`ayah_timing`](#ayah_timing), [`word_timing`](#word_timing), [`tilawah`](#tilawah), [`istiadhah`](#istiadhah), [`khatmah`](#khatmah), [`spoken_translation`](#spoken_translation), [`tajwid`](#tajwid), [`tartil`](#tartil)
 
 <a id="reciter"></a>
 
@@ -3540,62 +3381,6 @@ One row per concept, sorted by code. Follow the code to the full entry.
 - A reciter performs the recitation in a recording; they are neither an imam of a qiraah nor a rawi.
 
 **Related:** [`recitation`](#recitation), [`rawi`](#rawi), [`muqri`](#muqri), [`ayah_timing`](#ayah_timing), [`tilawah`](#tilawah)
-
-<a id="sujud_al_tilawah"></a>
-
-### Sujud al-Tilawah — سجود التلاوة
-
-<!-- source: standards/terminology/concepts/sujud_al_tilawah.yml -->
-
-| field | value |
-| --- | --- |
-| `code` | `sujud_al_tilawah` |
-| `kind` | `concept` |
-| Origin | `quranic` |
-| Tier | `core` |
-| Status | `draft` |
-| Vocalized | سُجُود التِّلَاوَة |
-| Other spellings | `sajdah_al-tilawah`, `sajdat_al-tilawah` |
-
-**Definition:** A prostration performed on reciting or hearing one of the places of sujud al-tilawah.
-
-**Purpose:** Used to attach the rulings and manner of the prostration to its place, and to keep the act apart from the mark and the place in data.
-
-- Sujud al-tilawah is an act; the sajdah mark is a sign in the mushaf; mawdi al-sajdah is a place in the text.
-
-**Related:** [`mawdi_al_sajdah`](#mawdi_al_sajdah), [`sajdah_mark`](#sajdah_mark), [`tilawah`](#tilawah)
-
-**Sources:**
-
-- [الإتقان في علوم القرآن](https://files.turath.io/books-v3/11728.json) — `1/381`
-
-<a id="takbir"></a>
-
-### Takbir — التكبير
-
-<!-- source: standards/terminology/concepts/takbir.yml -->
-
-| field | value |
-| --- | --- |
-| `code` | `takbir` |
-| `kind` | `concept` |
-| Origin | `quranic` |
-| Tier | `extended` |
-| Status | `draft` |
-| Vocalized | التَّكْبِير |
-| Other spellings | `takbeer`, `takbir_al_khatm`, `takbir_al_khatmah` |
-
-**Definition:** Saying «الله أكبر» between the surahs from the end of al-Duha to the end of al-Nas, transmitted from the people of Makkah in the riwayah of al-Bazzi from Ibn Kathir, and done at a khatmah in other riwayahs.
-
-**Purpose:** Used to tag the takbir between surahs in a recording, so that it is neither counted against an ayah nor lost when clipping.
-
-- The takbir is no part of the Quran or of the surah, so it has no ayah and no ayah timing.
-
-**Related:** [`khatmah`](#khatmah), [`recitation`](#recitation), [`basmalah`](#basmalah), [`istiadhah`](#istiadhah)
-
-**Sources:**
-
-- [النشر في القراءات العشر](https://files.turath.io/books-v3/22642.json) — `2/405`
 
 <a id="tartil"></a>
 
@@ -3649,7 +3434,7 @@ One row per concept, sorted by code. Follow the code to the full entry.
 - Tilawah is the act; `recitation` is the published recording attributed to a reciter, a riwayah and a style of delivery.
 - Tartil is an attribute of tilawah, not tilawah.
 
-**Related:** [`recitation`](#recitation), [`tartil`](#tartil), [`sujud_al_tilawah`](#sujud_al_tilawah), [`reciter`](#reciter), [`hifz`](#hifz), [`lahn`](#lahn)
+**Related:** [`recitation`](#recitation), [`tartil`](#tartil), [`sajdah`](#sajdah), [`reciter`](#reciter)
 
 **Sources:**
 
@@ -3813,7 +3598,7 @@ One row per concept, sorted by code. Follow the code to the full entry.
 
 **Purpose:** Used to describe a feature of a teaching recording in its own right, rather than leaving it implied inside `muallim`.
 
-**Related:** [`muallim`](#muallim), [`recitation_style`](#recitation_style), [`hifz`](#hifz)
+**Related:** [`muallim`](#muallim), [`recitation_style`](#recitation_style)
 
 <a id="muallim"></a>
 
@@ -3909,38 +3694,6 @@ One row per concept, sorted by code. Follow the code to the full entry.
 
 ## Tajwid — `tajwid`
 
-<a id="alaqat_al_harfayn"></a>
-
-### Alaqat al-Harfayn — علاقة الحرفين
-
-<!-- source: standards/terminology/concepts/alaqat_al_harfayn.yml -->
-
-| field | value |
-| --- | --- |
-| `code` | `alaqat_al_harfayn` |
-| `kind` | `classification` |
-| Values | [`mutabaidan`](#mutabaidan), [`mutajanisan`](#mutajanisan), [`mutamathilan`](#mutamathilan), [`mutaqariban`](#mutaqariban) |
-| Origin | `quranic` |
-| Tier | `extended` |
-| Status | `draft` |
-| Vocalized | عَلَاقَة الحَرْفَيْن |
-| Other spellings | `letter_relations`, `alaqat_al_huruf`, `ilaqat_al_harfayn` |
-| English gloss | `relation of two letters` |
-
-**Definition:** The relation of two adjacent letters to each other in point of articulation and attribute: identical, of one kind, close, or distant; the merging of the first into the second, or its clear sounding, is built on it.
-
-**Purpose:** Used as a classification tagging the place where two letters are merged or sounded apart, so that the cause of the ruling is known and not only the ruling.
-
-- The relation is a cause; idgham and izhar are the ruling that follows from it.
-
-**Related:** [`idgham`](#idgham), [`izhar`](#izhar), [`makhraj`](#makhraj), [`sifat_al_huruf`](#sifat_al_huruf), [`mutamathilan`](#mutamathilan), [`mutajanisan`](#mutajanisan), [`mutaqariban`](#mutaqariban), [`mutabaidan`](#mutabaidan)
-
-**Sources:**
-
-- [معجم مصطلحات التجويد](https://tajweed.quranpedia.net/term/show/58) — `58`
-- [معجم مصطلحات التجويد](https://tajweed.quranpedia.net/term/show/59) — `59`
-- [معجم مصطلحات التجويد](https://tajweed.quranpedia.net/term/show/62) — `62`
-
 <a id="ghunnah"></a>
 
 ### Ghunnah — الغنة
@@ -3964,47 +3717,12 @@ One row per concept, sorted by code. Follow the code to the full entry.
 
 - Ghunnah is an attribute of sound and not a ruling in itself: it accompanies idgham, ikhfa and iqlab and does not stand opposite them.
 
-**Related:** [`idgham`](#idgham), [`ikhfa`](#ikhfa), [`iqlab`](#iqlab), [`noon_sakinah`](#noon_sakinah), [`meem_sakinah`](#meem_sakinah), [`hukm_al_tajwid`](#hukm_al_tajwid), [`lahn_khafi`](#lahn_khafi)
+**Related:** [`idgham`](#idgham), [`ikhfa`](#ikhfa), [`iqlab`](#iqlab), [`noon_sakinah`](#noon_sakinah), [`meem_sakinah`](#meem_sakinah), [`tajwid_ruling`](#tajwid_ruling)
 
 **Sources:**
 
 - [معجم مصطلحات التجويد](https://tajweed.quranpedia.net/term/show/85) — `85`
 - [Rule-driven tajweed engine — rule corpus](https://github.com/quranpedia/tajweed-engine) — `noon-mushaddadah`
-
-<a id="hukm_al_tajwid"></a>
-
-### Hukm al-Tajwid — حكم التجويد
-
-<!-- source: standards/terminology/concepts/hukm_al_tajwid.yml -->
-
-| field | value |
-| --- | --- |
-| `code` | `hukm_al_tajwid` |
-| `plural` | `hukm_al_tajwids` |
-| `kind` | `classification` |
-| Values | [`idgham`](#idgham), [`ikhfa`](#ikhfa), [`iqlab`](#iqlab), [`izhar`](#izhar), [`qalqalah`](#qalqalah) |
-| Origin | `quranic` |
-| Tier | `core` |
-| Status | `draft` |
-| Vocalized | حُكْم التَّجْوِيد |
-| Arabic plural | أَحْكَام التَّجْوِيد |
-| Registry | [`tajwid_rules`](/guidelines/en/03-terminology/registries/#tajwid_rules) |
-| Other spellings | `hukm`, `hukum`, `ahkam_al_tajwid`, `ahkam_al_tajweed`, `tajwid_rule`, `tajweed_rule`, `tajweed_ruling` |
-| English gloss | `tajwid ruling` |
-
-**Definition:** What is due in delivering a letter before the letter that follows it, or at a sukun or a hamzah: izhar, idgham, iqlab, ikhfa, madd, qalqalah, tafkhim or tarqiq, as the rules of tajwid settle it at a given place in the text.
-
-**Purpose:** Used as the parent of the rulings of tajwid and the holder of their registry, so that the places in the text where a ruling falls are attributed to it, and a particular ruling is named by a row of the registry rather than by a free name that differs from one engine to another.
-
-- The ruling is what falls at the place; tajwid is the discipline that settles it.
-- A ruling is not a rule: the rule is the condition, and the ruling is its effect at the place.
-
-**Related:** [`tajwid`](#tajwid), [`izhar`](#izhar), [`idgham`](#idgham), [`iqlab`](#iqlab), [`ikhfa`](#ikhfa), [`qalqalah`](#qalqalah), [`madd`](#madd), [`ghunnah`](#ghunnah), [`tafkhim`](#tafkhim), [`tarqiq`](#tarqiq), [`noon_sakinah`](#noon_sakinah), [`meem_sakinah`](#meem_sakinah)
-
-**Sources:**
-
-- [معجم مصطلحات التجويد](https://tajweed.quranpedia.net/term/show/4) — `4`
-- [Rule-driven tajweed engine — rule corpus](https://github.com/quranpedia/tajweed-engine)
 
 <a id="idgham"></a>
 
@@ -4016,7 +3734,7 @@ One row per concept, sorted by code. Follow the code to the full entry.
 | --- | --- |
 | `code` | `idgham` |
 | `kind` | `classification_value` |
-| Parent | [`hukm_al_tajwid`](#hukm_al_tajwid) |
+| Parent | [`tajwid_ruling`](#tajwid_ruling) |
 | Origin | `quranic` |
 | Tier | `core` |
 | Status | `draft` |
@@ -4030,7 +3748,7 @@ One row per concept, sorted by code. Follow the code to the full entry.
 
 - Idgham is a ruling; mutamathilan, mutajanisan and mutaqariban are the relation between the two letters because of which it falls.
 
-**Related:** [`izhar`](#izhar), [`ikhfa`](#ikhfa), [`iqlab`](#iqlab), [`ghunnah`](#ghunnah), [`alaqat_al_harfayn`](#alaqat_al_harfayn), [`mutamathilan`](#mutamathilan), [`mutajanisan`](#mutajanisan), [`mutaqariban`](#mutaqariban), [`hukm_al_tajwid`](#hukm_al_tajwid), [`meem_sakinah`](#meem_sakinah), [`mutabaidan`](#mutabaidan), [`noon_sakinah`](#noon_sakinah), [`shaddah`](#shaddah)
+**Related:** [`izhar`](#izhar), [`ikhfa`](#ikhfa), [`iqlab`](#iqlab), [`ghunnah`](#ghunnah), [`letter_relation`](#letter_relation), [`mutamathilan`](#mutamathilan), [`mutajanisan`](#mutajanisan), [`meem_sakinah`](#meem_sakinah), [`noon_sakinah`](#noon_sakinah), [`shaddah`](#shaddah), [`tajwid_ruling`](#tajwid_ruling)
 
 **Sources:**
 
@@ -4050,7 +3768,7 @@ One row per concept, sorted by code. Follow the code to the full entry.
 | --- | --- |
 | `code` | `ikhfa` |
 | `kind` | `classification_value` |
-| Parent | [`hukm_al_tajwid`](#hukm_al_tajwid) |
+| Parent | [`tajwid_ruling`](#tajwid_ruling) |
 | Origin | `quranic` |
 | Tier | `core` |
 | Status | `draft` |
@@ -4062,7 +3780,7 @@ One row per concept, sorted by code. Follow the code to the full entry.
 
 **Purpose:** Used as a value of the tajwid ruling, so that a place in the text is tagged with it in analysis, colouring and instruction, and its kinds branch under it in the registry of rulings.
 
-**Related:** [`izhar`](#izhar), [`idgham`](#idgham), [`ghunnah`](#ghunnah), [`noon_sakinah`](#noon_sakinah), [`meem_sakinah`](#meem_sakinah), [`hukm_al_tajwid`](#hukm_al_tajwid)
+**Related:** [`izhar`](#izhar), [`idgham`](#idgham), [`ghunnah`](#ghunnah), [`noon_sakinah`](#noon_sakinah), [`meem_sakinah`](#meem_sakinah), [`tajwid_ruling`](#tajwid_ruling)
 
 **Sources:**
 
@@ -4080,7 +3798,7 @@ One row per concept, sorted by code. Follow the code to the full entry.
 | --- | --- |
 | `code` | `iqlab` |
 | `kind` | `classification_value` |
-| Parent | [`hukm_al_tajwid`](#hukm_al_tajwid) |
+| Parent | [`tajwid_ruling`](#tajwid_ruling) |
 | Origin | `quranic` |
 | Tier | `core` |
 | Status | `draft` |
@@ -4094,7 +3812,7 @@ One row per concept, sorted by code. Follow the code to the full entry.
 
 - Iqlab is a ruling of pronunciation; the small meem is the mark the mushaf draws it with.
 
-**Related:** [`noon_sakinah`](#noon_sakinah), [`tanwin`](#tanwin), [`ghunnah`](#ghunnah), [`small_meem`](#small_meem), [`hukm_al_tajwid`](#hukm_al_tajwid), [`idgham`](#idgham), [`izhar`](#izhar)
+**Related:** [`noon_sakinah`](#noon_sakinah), [`tanwin`](#tanwin), [`ghunnah`](#ghunnah), [`small_meem`](#small_meem), [`idgham`](#idgham), [`izhar`](#izhar), [`tajwid_ruling`](#tajwid_ruling)
 
 **Sources:**
 
@@ -4111,7 +3829,7 @@ One row per concept, sorted by code. Follow the code to the full entry.
 | --- | --- |
 | `code` | `izhar` |
 | `kind` | `classification_value` |
-| Parent | [`hukm_al_tajwid`](#hukm_al_tajwid) |
+| Parent | [`tajwid_ruling`](#tajwid_ruling) |
 | Origin | `quranic` |
 | Tier | `core` |
 | Status | `draft` |
@@ -4125,7 +3843,7 @@ One row per concept, sorted by code. Follow the code to the full entry.
 
 - Izhar is a ruling standing opposite idgham and ikhfa, not the absence of a ruling: a place tagged with it is one where a cause was present and neither idgham nor ikhfa fell.
 
-**Related:** [`idgham`](#idgham), [`ikhfa`](#ikhfa), [`iqlab`](#iqlab), [`noon_sakinah`](#noon_sakinah), [`meem_sakinah`](#meem_sakinah), [`alaqat_al_harfayn`](#alaqat_al_harfayn), [`hukm_al_tajwid`](#hukm_al_tajwid), [`mutabaidan`](#mutabaidan), [`mutajanisan`](#mutajanisan), [`mutamathilan`](#mutamathilan), [`mutaqariban`](#mutaqariban)
+**Related:** [`idgham`](#idgham), [`ikhfa`](#ikhfa), [`iqlab`](#iqlab), [`noon_sakinah`](#noon_sakinah), [`meem_sakinah`](#meem_sakinah), [`letter_relation`](#letter_relation), [`mutajanisan`](#mutajanisan), [`mutamathilan`](#mutamathilan), [`tajwid_ruling`](#tajwid_ruling)
 
 **Sources:**
 
@@ -4134,91 +3852,37 @@ One row per concept, sorted by code. Follow the code to the full entry.
 - [معجم مصطلحات التجويد](https://tajweed.quranpedia.net/term/show/66) — `66`
 - [Rule-driven tajweed engine — rule corpus](https://github.com/quranpedia/tajweed-engine) — `izhar-halqi-noon`
 
-<a id="lahn"></a>
+<a id="letter_relation"></a>
 
-### Lahn — اللحن
+### Letter Relation — علاقة الحرفين
 
-<!-- source: standards/terminology/concepts/lahn.yml -->
+<!-- source: standards/terminology/concepts/letter_relation.yml -->
 
 | field | value |
 | --- | --- |
-| `code` | `lahn` |
+| `code` | `letter_relation` |
 | `kind` | `classification` |
-| Values | [`lahn_jali`](#lahn_jali), [`lahn_khafi`](#lahn_khafi) |
+| Values | [`mutajanisan`](#mutajanisan), [`mutamathilan`](#mutamathilan) |
 | Origin | `quranic` |
 | Tier | `extended` |
 | Status | `draft` |
-| Vocalized | اللَّحْن |
-| Other spellings | `lahn_error`, `tajwid_error` |
-| English gloss | `recitation error` |
+| Vocalized | عَلَاقَة الحَرْفَيْن |
+| Other spellings | `letter_relations`, `alaqat_al_huruf`, `ilaqat_al_harfayn` |
+| English gloss | `relation of two letters` |
 
-**Definition:** Error in reciting the Quran and departure from what is correct, whether plain or subtle.
+**Definition:** The relation of two adjacent letters to each other in point of articulation and attribute: identical, of one kind, close, or distant; the merging of the first into the second, or its clear sounding, is built on it.
 
-**Purpose:** Used as a classification of what recitation-assessment tools report, separating what damages the form or the meaning from what damages the perfection of delivery.
+**Purpose:** Used as a classification tagging the place where two letters are merged or sounded apart, so that the cause of the ruling is known and not only the ruling.
 
-- Lahn is an error in delivery; a wajh is a permitted variation in it.
+- The relation is a cause; idgham and izhar are the ruling that follows from it.
 
-**Related:** [`lahn_jali`](#lahn_jali), [`lahn_khafi`](#lahn_khafi), [`tajwid`](#tajwid), [`tilawah`](#tilawah), [`wajh`](#wajh)
-
-**Sources:**
-
-- [معجم مصطلحات التجويد](https://tajweed.quranpedia.net/term/show/8) — `8`
-
-<a id="lahn_jali"></a>
-
-### Lahn Jali — اللحن الجلي
-
-<!-- source: standards/terminology/concepts/lahn_jali.yml -->
-
-| field | value |
-| --- | --- |
-| `code` | `lahn_jali` |
-| `kind` | `classification_value` |
-| Parent | [`lahn`](#lahn) |
-| Origin | `quranic` |
-| Tier | `extended` |
-| Status | `draft` |
-| Vocalized | اللَّحْن الجَلِيّ |
-| Other spellings | `lahn_jaliy`, `lahn_jalee`, `clear_error` |
-| English gloss | `plain error` |
-
-**Definition:** An error in the wording that damages its form or its meaning, such as one letter put for another or one vowel for another; the learned and the unlearned alike notice it.
-
-**Purpose:** Used as a value of lahn, so that assessment reports single out the error every reciter must correct.
-
-**Related:** [`lahn`](#lahn), [`lahn_khafi`](#lahn_khafi)
+**Related:** [`idgham`](#idgham), [`izhar`](#izhar), [`mutamathilan`](#mutamathilan), [`mutajanisan`](#mutajanisan)
 
 **Sources:**
 
-- [معجم مصطلحات التجويد](https://tajweed.quranpedia.net/term/show/9) — `9`
-
-<a id="lahn_khafi"></a>
-
-### Lahn Khafi — اللحن الخفي
-
-<!-- source: standards/terminology/concepts/lahn_khafi.yml -->
-
-| field | value |
-| --- | --- |
-| `code` | `lahn_khafi` |
-| `kind` | `classification_value` |
-| Parent | [`lahn`](#lahn) |
-| Origin | `quranic` |
-| Tier | `extended` |
-| Status | `draft` |
-| Vocalized | اللَّحْن الخَفِيّ |
-| Other spellings | `lahn_khafiy`, `lahn_khafee` |
-| English gloss | `subtle error` |
-
-**Definition:** An error in the wording that damages the perfection of delivery without touching form or meaning, such as dropping the ghunnah or shortening a madd; only those trained in the discipline notice it.
-
-**Purpose:** Used as a value of lahn, so that assessment reports keep what concerns mastery of tajwid apart from what concerns the correctness of the wording.
-
-**Related:** [`lahn`](#lahn), [`lahn_jali`](#lahn_jali), [`ghunnah`](#ghunnah), [`madd`](#madd)
-
-**Sources:**
-
-- [معجم مصطلحات التجويد](https://tajweed.quranpedia.net/term/show/10) — `10`
+- [معجم مصطلحات التجويد](https://tajweed.quranpedia.net/term/show/58) — `58`
+- [معجم مصطلحات التجويد](https://tajweed.quranpedia.net/term/show/59) — `59`
+- [معجم مصطلحات التجويد](https://tajweed.quranpedia.net/term/show/62) — `62`
 
 <a id="madd"></a>
 
@@ -4246,7 +3910,7 @@ One row per concept, sorted by code. Follow the code to the full entry.
 - The letters of madd are not the letters of lin, though waw and yaa belong to both: a letter of madd is vowelless after the vowel of its own kind, a letter of lin is vowelless after a fathah.
 - Madd is the ruling; the maddah is the mark that points to it in the mushaf.
 
-**Related:** [`maddah`](#maddah), [`madd_tabii`](#madd_tabii), [`madd_muttasil`](#madd_muttasil), [`madd_munfasil`](#madd_munfasil), [`madd_lazim`](#madd_lazim), [`madd_al_badal`](#madd_al_badal), [`madd_al_iwad`](#madd_al_iwad), [`madd_al_silah`](#madd_al_silah), [`madd_al_lin`](#madd_al_lin), [`madd_arid_li_al_sukun`](#madd_arid_li_al_sukun), [`hukm_al_tajwid`](#hukm_al_tajwid), [`lahn_khafi`](#lahn_khafi), [`usul`](#usul)
+**Related:** [`maddah`](#maddah), [`madd_tabii`](#madd_tabii), [`madd_muttasil`](#madd_muttasil), [`madd_munfasil`](#madd_munfasil), [`madd_lazim`](#madd_lazim), [`madd_al_badal`](#madd_al_badal), [`madd_al_iwad`](#madd_al_iwad), [`madd_al_silah`](#madd_al_silah), [`madd_al_lin`](#madd_al_lin), [`madd_arid_li_al_sukun`](#madd_arid_li_al_sukun), [`tajwid_ruling`](#tajwid_ruling)
 
 **Sources:**
 
@@ -4428,7 +4092,7 @@ One row per concept, sorted by code. Follow the code to the full entry.
 
 **Purpose:** Used as a value of madd, so that a place in the text is tagged with it and with its length, and what differs by tariq is read from it in describing a recording or a mushaf.
 
-**Related:** [`madd`](#madd), [`huruf_muqattaah`](#huruf_muqattaah), [`sukun`](#sukun)
+**Related:** [`madd`](#madd), [`sukun`](#sukun)
 
 **Sources:**
 
@@ -4526,36 +4190,6 @@ One row per concept, sorted by code. Follow the code to the full entry.
 - [معجم مصطلحات التجويد](https://tajweed.quranpedia.net/term/show/100) — `100`
 - [Rule-driven tajweed engine — rule corpus](https://github.com/quranpedia/tajweed-engine) — `madd-tabee-kalimi`
 
-<a id="makhraj"></a>
-
-### Makhraj — المخرج
-
-<!-- source: standards/terminology/concepts/makhraj.yml -->
-
-| field | value |
-| --- | --- |
-| `code` | `makhraj` |
-| `plural` | `makhrajs` |
-| `kind` | `concept` |
-| Origin | `quranic` |
-| Tier | `extended` |
-| Status | `draft` |
-| Vocalized | المَخْرَج |
-| Arabic plural | مخارج |
-| Other spellings | `makhraj_al_harf`, `makharij`, `makhaarij` |
-| English gloss | `point of articulation` |
-
-**Definition:** The place a letter issues from and is distinguished by: the oral cavity, the throat, the tongue, the lips or the nasal cavity.
-
-**Purpose:** Used in instruction and in the analysis of pronunciation, and to settle the relation between two adjacent letters that idgham is built on.
-
-**Related:** [`sifat_al_huruf`](#sifat_al_huruf), [`alaqat_al_harfayn`](#alaqat_al_harfayn), [`letter`](#letter)
-
-**Sources:**
-
-- [معجم مصطلحات التجويد](https://tajweed.quranpedia.net/term/show/6) — `6`
-- [معجم مصطلحات التجويد](https://tajweed.quranpedia.net/term/show/40) — `40`
-
 <a id="meem_sakinah"></a>
 
 ### Meem Sakinah — الميم الساكنة
@@ -4580,7 +4214,7 @@ One row per concept, sorted by code. Follow the code to the full entry.
 
 - Meem sakinah is not the meem that noon turns into in iqlab, though the two sound the same.
 
-**Related:** [`noon_sakinah`](#noon_sakinah), [`izhar`](#izhar), [`idgham`](#idgham), [`ikhfa`](#ikhfa), [`ghunnah`](#ghunnah), [`hukm_al_tajwid`](#hukm_al_tajwid)
+**Related:** [`noon_sakinah`](#noon_sakinah), [`izhar`](#izhar), [`idgham`](#idgham), [`ikhfa`](#ikhfa), [`ghunnah`](#ghunnah), [`tajwid_ruling`](#tajwid_ruling)
 
 **Sources:**
 
@@ -4588,29 +4222,6 @@ One row per concept, sorted by code. Follow the code to the full entry.
 - [معجم مصطلحات التجويد](https://tajweed.quranpedia.net/term/show/66) — `66`
 - [معجم مصطلحات التجويد](https://tajweed.quranpedia.net/term/show/68) — `68`
 - [Rule-driven tajweed engine — rule corpus](https://github.com/quranpedia/tajweed-engine) — `izhar-shafawi-meem`
-
-<a id="mutabaidan"></a>
-
-### Mutabaidan — المتباعدان
-
-<!-- source: standards/terminology/concepts/mutabaidan.yml -->
-
-| field | value |
-| --- | --- |
-| `code` | `mutabaidan` |
-| `kind` | `classification_value` |
-| Parent | [`alaqat_al_harfayn`](#alaqat_al_harfayn) |
-| Origin | `quranic` |
-| Tier | `extended` |
-| Status | `draft` |
-| Vocalized | المُتَبَاعِدَان |
-| Other spellings | `mutabaidain`, `mutabaidayn`, `mutaba'idan` |
-
-**Definition:** Two letters distant in point of articulation and differing in attribute; no idgham falls between them.
-
-**Purpose:** Used as a value of the relation of two letters, so that the cause of idgham or izhar at the place is read from it rather than worked out from the two letters every time.
-
-**Related:** [`alaqat_al_harfayn`](#alaqat_al_harfayn), [`idgham`](#idgham), [`izhar`](#izhar)
 
 <a id="mutajanisan"></a>
 
@@ -4622,7 +4233,7 @@ One row per concept, sorted by code. Follow the code to the full entry.
 | --- | --- |
 | `code` | `mutajanisan` |
 | `kind` | `classification_value` |
-| Parent | [`alaqat_al_harfayn`](#alaqat_al_harfayn) |
+| Parent | [`letter_relation`](#letter_relation) |
 | Origin | `quranic` |
 | Tier | `extended` |
 | Status | `draft` |
@@ -4633,7 +4244,7 @@ One row per concept, sorted by code. Follow the code to the full entry.
 
 **Purpose:** Used as a value of the relation of two letters, so that the cause of idgham or izhar at the place is read from it rather than worked out from the two letters every time.
 
-**Related:** [`alaqat_al_harfayn`](#alaqat_al_harfayn), [`idgham`](#idgham), [`izhar`](#izhar)
+**Related:** [`letter_relation`](#letter_relation), [`idgham`](#idgham), [`izhar`](#izhar)
 
 **Sources:**
 
@@ -4650,7 +4261,7 @@ One row per concept, sorted by code. Follow the code to the full entry.
 | --- | --- |
 | `code` | `mutamathilan` |
 | `kind` | `classification_value` |
-| Parent | [`alaqat_al_harfayn`](#alaqat_al_harfayn) |
+| Parent | [`letter_relation`](#letter_relation) |
 | Origin | `quranic` |
 | Tier | `extended` |
 | Status | `draft` |
@@ -4661,39 +4272,12 @@ One row per concept, sorted by code. Follow the code to the full entry.
 
 **Purpose:** Used as a value of the relation of two letters, so that the cause of idgham or izhar at the place is read from it rather than worked out from the two letters every time.
 
-**Related:** [`alaqat_al_harfayn`](#alaqat_al_harfayn), [`idgham`](#idgham), [`izhar`](#izhar)
+**Related:** [`letter_relation`](#letter_relation), [`idgham`](#idgham), [`izhar`](#izhar)
 
 **Sources:**
 
 - [معجم مصطلحات التجويد](https://tajweed.quranpedia.net/term/show/58) — `58`
 - [Rule-driven tajweed engine — rule corpus](https://github.com/quranpedia/tajweed-engine) — `mutamathilain-idgham-kamil`
-
-<a id="mutaqariban"></a>
-
-### Mutaqariban — المتقاربان
-
-<!-- source: standards/terminology/concepts/mutaqariban.yml -->
-
-| field | value |
-| --- | --- |
-| `code` | `mutaqariban` |
-| `kind` | `classification_value` |
-| Parent | [`alaqat_al_harfayn`](#alaqat_al_harfayn) |
-| Origin | `quranic` |
-| Tier | `extended` |
-| Status | `draft` |
-| Vocalized | المُتَقَارِبَان |
-| Other spellings | `mutaqaribain`, `mutaqaribayn`, `mutaqariban_saghir` |
-
-**Definition:** Two letters close in point of articulation, in attribute, or in both, like the lam and the raa in «قل رب».
-
-**Purpose:** Used as a value of the relation of two letters, so that the cause of idgham or izhar at the place is read from it rather than worked out from the two letters every time.
-
-**Related:** [`alaqat_al_harfayn`](#alaqat_al_harfayn), [`idgham`](#idgham), [`izhar`](#izhar)
-
-**Sources:**
-
-- [معجم مصطلحات التجويد](https://tajweed.quranpedia.net/term/show/62) — `62`
 
 <a id="noon_sakinah"></a>
 
@@ -4718,7 +4302,7 @@ One row per concept, sorted by code. Follow the code to the full entry.
 
 **Purpose:** Used as the trigger of the four rulings, izhar, idgham, iqlab and ikhfa, in tajwid engines.
 
-**Related:** [`tajwid`](#tajwid), [`tanwin`](#tanwin), [`izhar`](#izhar), [`idgham`](#idgham), [`iqlab`](#iqlab), [`ikhfa`](#ikhfa), [`meem_sakinah`](#meem_sakinah), [`ghunnah`](#ghunnah), [`hukm_al_tajwid`](#hukm_al_tajwid), [`small_meem`](#small_meem), [`sukun`](#sukun), [`tanwin_al_damm`](#tanwin_al_damm), [`tanwin_al_fath`](#tanwin_al_fath), [`tanwin_al_kasr`](#tanwin_al_kasr)
+**Related:** [`tajwid`](#tajwid), [`tanwin`](#tanwin), [`izhar`](#izhar), [`idgham`](#idgham), [`iqlab`](#iqlab), [`ikhfa`](#ikhfa), [`meem_sakinah`](#meem_sakinah), [`ghunnah`](#ghunnah), [`small_meem`](#small_meem), [`sukun`](#sukun), [`tajwid_ruling`](#tajwid_ruling), [`tanwin_al_damm`](#tanwin_al_damm), [`tanwin_al_fath`](#tanwin_al_fath), [`tanwin_al_kasr`](#tanwin_al_kasr)
 
 **Sources:**
 
@@ -4738,7 +4322,7 @@ One row per concept, sorted by code. Follow the code to the full entry.
 | --- | --- |
 | `code` | `qalqalah` |
 | `kind` | `classification_value` |
-| Parent | [`hukm_al_tajwid`](#hukm_al_tajwid) |
+| Parent | [`tajwid_ruling`](#tajwid_ruling) |
 | Origin | `quranic` |
 | Tier | `core` |
 | Status | `draft` |
@@ -4752,7 +4336,7 @@ One row per concept, sorted by code. Follow the code to the full entry.
 
 - Qalqalah is one of the attributes of the letters that have no opposite; it counts as a ruling when the place where it appears is tagged with it.
 
-**Related:** [`sukun`](#sukun), [`sifat_al_huruf`](#sifat_al_huruf), [`hukm_al_tajwid`](#hukm_al_tajwid)
+**Related:** [`sukun`](#sukun), [`tajwid_ruling`](#tajwid_ruling)
 
 **Sources:**
 
@@ -4788,37 +4372,6 @@ One row per concept, sorted by code. Follow the code to the full entry.
 
 - [معجم مصطلحات التجويد](https://tajweed.quranpedia.net/term/show/126) — `126`
 
-<a id="sifat_al_huruf"></a>
-
-### Sifat al-Huruf — صفات الحروف
-
-<!-- source: standards/terminology/concepts/sifat_al_huruf.yml -->
-
-| field | value |
-| --- | --- |
-| `code` | `sifat_al_huruf` |
-| `kind` | `concept` |
-| Origin | `quranic` |
-| Tier | `extended` |
-| Status | `draft` |
-| Vocalized | صِفَات الحُرُوف |
-| Other spellings | `sifat`, `sifaat`, `sifat_al_hurouf`, `sifaat_al_huroof` |
-| English gloss | `attributes of the letters` |
-
-**Definition:** Manners that attend a letter as it is pronounced and distinguish it from a letter sharing its point of articulation; some have an opposite, such as hams and jahr, shiddah and rakhawah, and some have none, such as safir and qalqalah.
-
-**Purpose:** Used in instruction and in the analysis of pronunciation, and to settle whether two letters are mutajanisan or mutaqariban.
-
-- An attribute is what attends the letter at its point of articulation; tafkhim and tarqiq are an effect that follows from some attributes.
-
-**Related:** [`makhraj`](#makhraj), [`qalqalah`](#qalqalah), [`tafkhim`](#tafkhim), [`tarqiq`](#tarqiq), [`alaqat_al_harfayn`](#alaqat_al_harfayn)
-
-**Sources:**
-
-- [معجم مصطلحات التجويد](https://tajweed.quranpedia.net/term/show/7) — `7`
-- [معجم مصطلحات التجويد](https://tajweed.quranpedia.net/term/show/69) — `69`
-- [معجم مصطلحات التجويد](https://tajweed.quranpedia.net/term/show/70) — `70`
-
 <a id="tafkhim"></a>
 
 ### Tafkhim — التفخيم
@@ -4843,7 +4396,7 @@ One row per concept, sorted by code. Follow the code to the full entry.
 
 - Tafkhim is an attribute of the letter's sound; istila is the attribute of articulation from which tafkhim follows.
 
-**Related:** [`tarqiq`](#tarqiq), [`sifat_al_huruf`](#sifat_al_huruf), [`hukm_al_tajwid`](#hukm_al_tajwid)
+**Related:** [`tarqiq`](#tarqiq), [`tajwid_ruling`](#tajwid_ruling)
 
 **Sources:**
 
@@ -4876,13 +4429,48 @@ One row per concept, sorted by code. Follow the code to the full entry.
 
 - Tajwid is a discipline; mujawwad is a recording style. Neither name stands for the other.
 
-**Related:** [`recitation`](#recitation), [`waqf`](#waqf), [`mujawwad`](#mujawwad), [`noon_sakinah`](#noon_sakinah), [`hukm_al_tajwid`](#hukm_al_tajwid), [`lahn`](#lahn), [`saktah`](#saktah)
+**Related:** [`recitation`](#recitation), [`waqf`](#waqf), [`mujawwad`](#mujawwad), [`noon_sakinah`](#noon_sakinah), [`tajwid_ruling`](#tajwid_ruling), [`saktah`](#saktah)
 
 **Sources:**
 
 - [Rule-driven tajweed engine — rule corpus](https://github.com/quranpedia/tajweed-engine)
 - [معجم مصطلحات التجويد](https://tajweed.quranpedia.net/term/show/4) — `4`
 - [مباحث في علوم القرآن](https://files.turath.io/books-v3/11368.json) — `1/190`
+
+<a id="tajwid_ruling"></a>
+
+### Tajwid Ruling — حكم التجويد
+
+<!-- source: standards/terminology/concepts/tajwid_ruling.yml -->
+
+| field | value |
+| --- | --- |
+| `code` | `tajwid_ruling` |
+| `plural` | `tajwid_rulings` |
+| `kind` | `classification` |
+| Values | [`idgham`](#idgham), [`ikhfa`](#ikhfa), [`iqlab`](#iqlab), [`izhar`](#izhar), [`qalqalah`](#qalqalah) |
+| Origin | `quranic` |
+| Tier | `core` |
+| Status | `draft` |
+| Vocalized | حُكْم التَّجْوِيد |
+| Arabic plural | أَحْكَام التَّجْوِيد |
+| Registry | [`tajwid_rules`](/guidelines/en/03-terminology/registries/#tajwid_rules) |
+| Other spellings | `hukm`, `hukum`, `ahkam_al_tajwid`, `ahkam_al_tajweed`, `tajwid_rule`, `tajweed_rule`, `tajweed_ruling` |
+| English gloss | `tajwid ruling` |
+
+**Definition:** What is due in delivering a letter before the letter that follows it, or at a sukun or a hamzah: izhar, idgham, iqlab, ikhfa, madd, qalqalah, tafkhim or tarqiq, as the rules of tajwid settle it at a given place in the text.
+
+**Purpose:** Used as the parent of the rulings of tajwid and the holder of their registry, so that the places in the text where a ruling falls are attributed to it, and a particular ruling is named by a row of the registry rather than by a free name that differs from one engine to another.
+
+- The ruling is what falls at the place; tajwid is the discipline that settles it.
+- A ruling is not a rule: the rule is the condition, and the ruling is its effect at the place.
+
+**Related:** [`tajwid`](#tajwid), [`izhar`](#izhar), [`idgham`](#idgham), [`iqlab`](#iqlab), [`ikhfa`](#ikhfa), [`qalqalah`](#qalqalah), [`madd`](#madd), [`ghunnah`](#ghunnah), [`tafkhim`](#tafkhim), [`tarqiq`](#tarqiq), [`noon_sakinah`](#noon_sakinah), [`meem_sakinah`](#meem_sakinah)
+
+**Sources:**
+
+- [معجم مصطلحات التجويد](https://tajweed.quranpedia.net/term/show/4) — `4`
+- [Rule-driven tajweed engine — rule corpus](https://github.com/quranpedia/tajweed-engine)
 
 <a id="tarqiq"></a>
 
@@ -4906,7 +4494,7 @@ One row per concept, sorted by code. Follow the code to the full entry.
 
 **Purpose:** Used to tag the places of letters carrying incidental tarqiq in colouring and instruction, as the counterpart of tafkhim.
 
-**Related:** [`tafkhim`](#tafkhim), [`sifat_al_huruf`](#sifat_al_huruf), [`hukm_al_tajwid`](#hukm_al_tajwid)
+**Related:** [`tafkhim`](#tafkhim), [`tajwid_ruling`](#tajwid_ruling)
 
 **Sources:**
 
@@ -4914,36 +4502,6 @@ One row per concept, sorted by code. Follow the code to the full entry.
 - [Rule-driven tajweed engine — rule corpus](https://github.com/quranpedia/tajweed-engine) — `raa-tarqeeq`
 
 ## Waqf — `waqf`
-
-<a id="sabab_al_waqf"></a>
-
-### Sabab al-Waqf — سبب الوقف
-
-<!-- source: standards/terminology/concepts/sabab_al_waqf.yml -->
-
-| field | value |
-| --- | --- |
-| `code` | `sabab_al_waqf` |
-| `kind` | `classification` |
-| Values | [`waqf_idtirari`](#waqf_idtirari), [`waqf_ikhtibari`](#waqf_ikhtibari), [`waqf_ikhtiyari`](#waqf_ikhtiyari), [`waqf_intizari`](#waqf_intizari) |
-| Origin | `quranic` |
-| Tier | `extended` |
-| Status | `draft` |
-| Vocalized | سَبَب الوَقْف |
-| Other spellings | `waqf_cause`, `aqsam_al_waqf`, `waqf_by_cause` |
-| English gloss | `cause of the stop` |
-
-**Definition:** The division of waqf by what moved the reader to it: necessity, testing, waiting, or choice.
-
-**Purpose:** Used as a classification of a stop that occurred in a tilawah or a recording, so that it is known whether it was deliberate or incidental; it is neither the ruling of the place nor its mark.
-
-- The cause of a stop belongs to the stop that occurred; the waqf ruling belongs to the place; the waqf mark is what the mushaf draws.
-
-**Related:** [`waqf`](#waqf), [`waqf_ruling`](#waqf_ruling), [`waqf_mark`](#waqf_mark), [`waqf_idtirari`](#waqf_idtirari), [`waqf_ikhtibari`](#waqf_ikhtibari), [`waqf_intizari`](#waqf_intizari), [`waqf_ikhtiyari`](#waqf_ikhtiyari)
-
-**Sources:**
-
-- [معجم مصطلحات التجويد](https://tajweed.quranpedia.net/term/show/115) — `115`
 
 <a id="waqf"></a>
 
@@ -4965,7 +4523,7 @@ One row per concept, sorted by code. Follow the code to the full entry.
 
 **Purpose:** Represents the general concept of stopping, while `waqf_mark` represents the printed signs that point to it.
 
-**Related:** [`waqf_mark`](#waqf_mark), [`waqf_ruling`](#waqf_ruling), [`waqf_mark_type`](#waqf_mark_type), [`tajwid`](#tajwid), [`saktah`](#saktah), [`madd_al_iwad`](#madd_al_iwad), [`madd_al_lin`](#madd_al_lin), [`madd_arid_li_al_sukun`](#madd_arid_li_al_sukun), [`sabab_al_waqf`](#sabab_al_waqf), [`waqf_al_muanaqah`](#waqf_al_muanaqah), [`waqf_hasan`](#waqf_hasan), [`waqf_idtirari`](#waqf_idtirari), [`waqf_ikhtibari`](#waqf_ikhtibari), [`waqf_ikhtiyari`](#waqf_ikhtiyari), [`waqf_intizari`](#waqf_intizari), [`waqf_jaiz_mustawi_al_tarafayn`](#waqf_jaiz_mustawi_al_tarafayn), [`waqf_jaiz_waqf_awla`](#waqf_jaiz_waqf_awla), [`waqf_jaiz_wasl_awla`](#waqf_jaiz_wasl_awla), [`waqf_kafi`](#waqf_kafi), [`waqf_lazim`](#waqf_lazim), [`waqf_mamnu`](#waqf_mamnu), [`waqf_qabih`](#waqf_qabih), [`waqf_tamm`](#waqf_tamm)
+**Related:** [`waqf_mark`](#waqf_mark), [`waqf_ruling`](#waqf_ruling), [`waqf_mark_type`](#waqf_mark_type), [`tajwid`](#tajwid), [`saktah`](#saktah), [`madd_al_iwad`](#madd_al_iwad), [`madd_al_lin`](#madd_al_lin), [`madd_arid_li_al_sukun`](#madd_arid_li_al_sukun), [`waqf_al_muanaqah`](#waqf_al_muanaqah), [`waqf_hasan`](#waqf_hasan), [`waqf_jaiz_mustawi_al_tarafayn`](#waqf_jaiz_mustawi_al_tarafayn), [`waqf_jaiz_waqf_awla`](#waqf_jaiz_waqf_awla), [`waqf_jaiz_wasl_awla`](#waqf_jaiz_wasl_awla), [`waqf_kafi`](#waqf_kafi), [`waqf_lazim`](#waqf_lazim), [`waqf_mamnu`](#waqf_mamnu), [`waqf_qabih`](#waqf_qabih), [`waqf_tamm`](#waqf_tamm)
 
 **Sources:**
 
@@ -4999,114 +4557,6 @@ One row per concept, sorted by code. Follow the code to the full entry.
 
 - [معجم مصطلحات التجويد](https://tajweed.quranpedia.net/term/show/124) — `124`
 - [النشر في القراءات العشر](https://files.turath.io/books-v3/22642.json) — `1/226`
-
-<a id="waqf_idtirari"></a>
-
-### Waqf Idtirari — الوقف الاضطراري
-
-<!-- source: standards/terminology/concepts/waqf_idtirari.yml -->
-
-| field | value |
-| --- | --- |
-| `code` | `waqf_idtirari` |
-| `kind` | `classification_value` |
-| Parent | [`sabab_al_waqf`](#sabab_al_waqf) |
-| Origin | `quranic` |
-| Tier | `extended` |
-| Status | `draft` |
-| Vocalized | الوَقْف الاِضْطِرَارِيّ |
-| Other spellings | `idtirari`, `waqf_idtirary`, `waqf_idhtirari` |
-
-**Definition:** A stop forced on the reader by something that compels it, such as shortness of breath, a sneeze or forgetting; the reader stops on any word and then begins again where beginning is sound.
-
-**Purpose:** Used as a value of the cause of the stop, tagging a stop that occurred in a tilawah when it is analysed or taught.
-
-**Related:** [`sabab_al_waqf`](#sabab_al_waqf), [`waqf`](#waqf)
-
-**Sources:**
-
-- [معجم مصطلحات التجويد](https://tajweed.quranpedia.net/term/show/117) — `117`
-
-<a id="waqf_ikhtibari"></a>
-
-### Waqf Ikhtibari — الوقف الاختباري
-
-<!-- source: standards/terminology/concepts/waqf_ikhtibari.yml -->
-
-| field | value |
-| --- | --- |
-| `code` | `waqf_ikhtibari` |
-| `kind` | `classification_value` |
-| Parent | [`sabab_al_waqf`](#sabab_al_waqf) |
-| Origin | `quranic` |
-| Tier | `extended` |
-| Status | `draft` |
-| Vocalized | الوَقْف الاِخْتِبَارِيّ |
-| Other spellings | `ikhtibari`, `waqf_ikhtibary` |
-
-**Definition:** A stop made to show what is cut and what is joined, what is written and what is omitted in the rasm, at a question or in teaching.
-
-**Purpose:** Used as a value of the cause of the stop, tagging a stop that occurred in a tilawah when it is analysed or taught.
-
-**Related:** [`sabab_al_waqf`](#sabab_al_waqf), [`waqf`](#waqf)
-
-**Sources:**
-
-- [معجم مصطلحات التجويد](https://tajweed.quranpedia.net/term/show/119) — `119`
-
-<a id="waqf_ikhtiyari"></a>
-
-### Waqf Ikhtiyari — الوقف الاختياري
-
-<!-- source: standards/terminology/concepts/waqf_ikhtiyari.yml -->
-
-| field | value |
-| --- | --- |
-| `code` | `waqf_ikhtiyari` |
-| `kind` | `classification_value` |
-| Parent | [`sabab_al_waqf`](#sabab_al_waqf) |
-| Origin | `quranic` |
-| Tier | `extended` |
-| Status | `draft` |
-| Vocalized | الوَقْف الاِخْتِيَارِيّ |
-| Other spellings | `ikhtiyari`, `waqf_ikhtiyary` |
-
-**Definition:** A stop the reader makes by choice with no cause arising; it is the one the rulings of tamm, kafi, hasan and qabih apply to.
-
-**Purpose:** Used as a value of the cause of the stop, tagging a stop that occurred in a tilawah when it is analysed or taught.
-
-**Related:** [`sabab_al_waqf`](#sabab_al_waqf), [`waqf`](#waqf), [`waqf_ruling`](#waqf_ruling)
-
-**Sources:**
-
-- [معجم مصطلحات التجويد](https://tajweed.quranpedia.net/term/show/120) — `120`
-
-<a id="waqf_intizari"></a>
-
-### Waqf Intizari — الوقف الانتظاري
-
-<!-- source: standards/terminology/concepts/waqf_intizari.yml -->
-
-| field | value |
-| --- | --- |
-| `code` | `waqf_intizari` |
-| `kind` | `classification_value` |
-| Parent | [`sabab_al_waqf`](#sabab_al_waqf) |
-| Origin | `quranic` |
-| Tier | `extended` |
-| Status | `draft` |
-| Vocalized | الوَقْف الاِنْتِظَارِيّ |
-| Other spellings | `intizari`, `waqf_intizary`, `waqf_intidhari` |
-
-**Definition:** A stop made on a word the qiraat differ on, so that the reader covers its wajhs when gathering the readings.
-
-**Purpose:** Used as a value of the cause of the stop, tagging a stop that occurred in a tilawah when it is analysed or taught.
-
-**Related:** [`sabab_al_waqf`](#sabab_al_waqf), [`waqf`](#waqf)
-
-**Sources:**
-
-- [معجم مصطلحات التجويد](https://tajweed.quranpedia.net/term/show/118) — `118`
 
 <a id="waqf_kafi"></a>
 
@@ -5212,7 +4662,7 @@ One row per concept, sorted by code. Follow the code to the full entry.
 
 - The waqf ruling belongs to the place; the waqf mark type is what a drawn mark points to, and a place may have a ruling with no mark on it.
 
-**Related:** [`waqf`](#waqf), [`waqf_mark_type`](#waqf_mark_type), [`waqf_tamm`](#waqf_tamm), [`waqf_kafi`](#waqf_kafi), [`waqf_hasan`](#waqf_hasan), [`waqf_qabih`](#waqf_qabih), [`sabab_al_waqf`](#sabab_al_waqf), [`waqf_ikhtiyari`](#waqf_ikhtiyari)
+**Related:** [`waqf`](#waqf), [`waqf_mark_type`](#waqf_mark_type), [`waqf_tamm`](#waqf_tamm), [`waqf_kafi`](#waqf_kafi), [`waqf_hasan`](#waqf_hasan), [`waqf_qabih`](#waqf_qabih)
 
 **Sources:**
 
@@ -5248,56 +4698,6 @@ One row per concept, sorted by code. Follow the code to the full entry.
 
 ## Linguistics — `linguistics`
 
-<a id="fil"></a>
-
-### Fil — الفعل
-
-<!-- source: standards/terminology/concepts/fil.yml -->
-
-| field | value |
-| --- | --- |
-| `code` | `fil` |
-| `kind` | `classification_value` |
-| Parent | [`part_of_speech`](#part_of_speech) |
-| Origin | `quranic` |
-| Tier | `core` |
-| Status | `draft` |
-| Vocalized | الفِعْل |
-| English gloss | `Verb` |
-
-**Definition:** A verb: a word whose meaning is tied to a time, with past, present and imperative forms.
-
-**Purpose:** Used as a value of part of speech, and the morphological features specific to verbs — tense, voice and pattern — hang off it.
-
-**Related:** [`part_of_speech`](#part_of_speech), [`morphology`](#morphology)
-
-<a id="harf_al_mana"></a>
-
-### Harf al-Mana — حرف المعنى
-
-<!-- source: standards/terminology/concepts/harf_al_mana.yml -->
-
-| field | value |
-| --- | --- |
-| `code` | `harf_al_mana` |
-| `kind` | `classification_value` |
-| Parent | [`part_of_speech`](#part_of_speech) |
-| Origin | `quranic` |
-| Tier | `core` |
-| Status | `draft` |
-| Vocalized | حَرْف المَعْنَى |
-| English gloss | `Particle` |
-
-**Definition:** A particle: a word with no meaning of its own that gives meaning to the words around it, such as prepositions and the particles of conjunction, negation and interrogation.
-
-**Purpose:** Used as a value of part of speech, and the detailed particle tags of Quranic morphology corpora fall under it.
-
-- Harf al-mana is a part of speech; the written letter — `letter` — is a unit of the written text.
-
-> It takes the full name because `harf` alone is the name of the written letter, a unit of writing and not a part of speech; the decision is in the decision record.
-
-**Related:** [`part_of_speech`](#part_of_speech), [`letter`](#letter)
-
 <a id="irab"></a>
 
 ### Irab — الإعراب
@@ -5321,29 +4721,6 @@ One row per concept, sorted by code. Follow the code to the full entry.
 
 **Related:** [`part_of_speech`](#part_of_speech), [`morphology`](#morphology), [`word`](#word)
 
-<a id="ism"></a>
-
-### Ism — الاسم
-
-<!-- source: standards/terminology/concepts/ism.yml -->
-
-| field | value |
-| --- | --- |
-| `code` | `ism` |
-| `kind` | `classification_value` |
-| Parent | [`part_of_speech`](#part_of_speech) |
-| Origin | `quranic` |
-| Tier | `core` |
-| Status | `draft` |
-| Vocalized | الاِسْم |
-| English gloss | `Noun` |
-
-**Definition:** A noun in the Arabic sense: a word whose meaning is not tied to a time. Nouns, adjectives, pronouns, demonstratives and relatives are all ism.
-
-**Purpose:** Used as a value of part of speech, and the detailed tags that Quranic morphology corpora use fall under it.
-
-**Related:** [`part_of_speech`](#part_of_speech)
-
 <a id="lemma"></a>
 
 ### Lemma
@@ -5363,7 +4740,7 @@ One row per concept, sorted by code. Follow the code to the full entry.
 
 **Purpose:** Used to gather the different inflected forms under one dictionary entry.
 
-**Related:** [`root`](#root), [`stem`](#stem), [`morphology`](#morphology), [`wazn`](#wazn)
+**Related:** [`root`](#root), [`stem`](#stem), [`morphology`](#morphology)
 
 <a id="morpheme"></a>
 
@@ -5411,7 +4788,29 @@ One row per concept, sorted by code. Follow the code to the full entry.
 
 **Purpose:** Used to represent the morphological features of words or tokens.
 
-**Related:** [`morpheme`](#morpheme), [`root`](#root), [`lemma`](#lemma), [`stem`](#stem), [`part_of_speech`](#part_of_speech), [`wazn`](#wazn), [`fil`](#fil), [`irab`](#irab)
+**Related:** [`morpheme`](#morpheme), [`root`](#root), [`lemma`](#lemma), [`stem`](#stem), [`part_of_speech`](#part_of_speech), [`irab`](#irab), [`verb`](#verb)
+
+<a id="noun"></a>
+
+### Noun — الاسم
+
+<!-- source: standards/terminology/concepts/noun.yml -->
+
+| field | value |
+| --- | --- |
+| `code` | `noun` |
+| `kind` | `classification_value` |
+| Parent | [`part_of_speech`](#part_of_speech) |
+| Origin | `borrowed` |
+| Tier | `core` |
+| Status | `draft` |
+| Vocalized | الاِسْم |
+
+**Definition:** A noun in the Arabic sense: a word whose meaning is not tied to a time. Nouns, adjectives, pronouns, demonstratives and relatives are all nouns.
+
+**Purpose:** Used as a value of part of speech, and the detailed tags that Quranic morphology corpora use fall under it.
+
+**Related:** [`part_of_speech`](#part_of_speech)
 
 <a id="part_of_speech"></a>
 
@@ -5423,20 +4822,44 @@ One row per concept, sorted by code. Follow the code to the full entry.
 | --- | --- |
 | `code` | `part_of_speech` |
 | `kind` | `classification` |
-| Values | [`fil`](#fil), [`harf_al_mana`](#harf_al_mana), [`ism`](#ism) |
+| Values | [`noun`](#noun), [`particle`](#particle), [`verb`](#verb) |
 | Origin | `borrowed` |
 | Tier | `core` |
 | Status | `draft` |
 | Vocalized | قِسْم الكَلِمَة |
 | Other spellings | `pos` |
 
-**Definition:** The classification of a word or a morpheme by its grammatical class: ism, fil, harf and what branches from them.
+**Definition:** The classification of a word or a morpheme by its grammatical class: noun, verb, particle and what branches from them.
 
 **Purpose:** Used as the basic tag in morphological and syntactic analysis; searching by tag, filtering, and building the syntactic analysis all rest on it.
 
 > The threefold division is the level this standard fixes. The detailed tags used by Quranic morphology corpora — dozens of them — are data falling under these three values, and are not given entries of their own in the dictionary.
 
-**Related:** [`morphology`](#morphology), [`irab`](#irab), [`morpheme`](#morpheme), [`fil`](#fil), [`harf_al_mana`](#harf_al_mana), [`ism`](#ism)
+**Related:** [`morphology`](#morphology), [`irab`](#irab), [`morpheme`](#morpheme), [`noun`](#noun), [`particle`](#particle), [`verb`](#verb)
+
+<a id="particle"></a>
+
+### Particle — حرف المعنى
+
+<!-- source: standards/terminology/concepts/particle.yml -->
+
+| field | value |
+| --- | --- |
+| `code` | `particle` |
+| `kind` | `classification_value` |
+| Parent | [`part_of_speech`](#part_of_speech) |
+| Origin | `borrowed` |
+| Tier | `core` |
+| Status | `draft` |
+| Vocalized | حَرْف المَعْنَى |
+
+**Definition:** A particle: a word with no meaning of its own that gives meaning to the words around it, such as prepositions and the particles of conjunction, negation and interrogation.
+
+**Purpose:** Used as a value of part of speech, and the detailed particle tags of Quranic morphology corpora fall under it.
+
+- A particle is a part of speech; the written letter, `letter`, is a unit of the written text.
+
+**Related:** [`part_of_speech`](#part_of_speech), [`letter`](#letter)
 
 <a id="root"></a>
 
@@ -5458,7 +4881,7 @@ One row per concept, sorted by code. Follow the code to the full entry.
 
 **Purpose:** Used for morphological search, linguistic analysis, and gathering words that share an origin.
 
-**Related:** [`lemma`](#lemma), [`stem`](#stem), [`morphology`](#morphology), [`wazn`](#wazn)
+**Related:** [`lemma`](#lemma), [`stem`](#stem), [`morphology`](#morphology)
 
 <a id="stem"></a>
 
@@ -5482,34 +4905,29 @@ One row per concept, sorted by code. Follow the code to the full entry.
 
 - A root is an abstract derivational origin; a stem is a form that stands in the word once the additions are removed.
 
-**Related:** [`root`](#root), [`lemma`](#lemma), [`morpheme`](#morpheme), [`morphology`](#morphology), [`wazn`](#wazn)
+**Related:** [`root`](#root), [`lemma`](#lemma), [`morpheme`](#morpheme), [`morphology`](#morphology)
 
-<a id="wazn"></a>
+<a id="verb"></a>
 
-### Wazn — الوزن
+### Verb — الفعل
 
-<!-- source: standards/terminology/concepts/wazn.yml -->
+<!-- source: standards/terminology/concepts/verb.yml -->
 
 | field | value |
 | --- | --- |
-| `code` | `wazn` |
-| `plural` | `wazns` |
-| `kind` | `unit` |
-| Origin | `quranic` |
-| Tier | `extended` |
+| `code` | `verb` |
+| `kind` | `classification_value` |
+| Parent | [`part_of_speech`](#part_of_speech) |
+| Origin | `borrowed` |
+| Tier | `core` |
 | Status | `draft` |
-| Vocalized | الوَزْن |
-| Arabic plural | أَوْزَان |
-| Other spellings | `wazan`, `awzan` |
-| English gloss | `morphological pattern`, `pattern` |
+| Vocalized | الفِعْل |
 
-**Definition:** The morphological form of a word represented by the letters of «فعل» with whatever affixes attach to them, showing its structure regardless of its root.
+**Definition:** A verb: a word whose meaning is tied to a time, with past, present and imperative forms.
 
-**Purpose:** Used in morphological analysis and in searching by structure, so that words of one pattern are gathered though their roots differ.
+**Purpose:** Used as a value of part of speech, and the morphological features specific to verbs — tense, voice and pattern — hang off it.
 
-- The wazn is the form of the structure, the root is its material, and the stem is the word stripped of its affixes.
-
-**Related:** [`root`](#root), [`stem`](#stem), [`morphology`](#morphology), [`lemma`](#lemma)
+**Related:** [`part_of_speech`](#part_of_speech), [`morphology`](#morphology)
 
 ## Translation — `translation`
 
@@ -5689,7 +5107,7 @@ One row per concept, sorted by code. Follow the code to the full entry.
 
 **Purpose:** Used to represent tafsir works and content and to tie their passages to ayahs, surahs and sources.
 
-**Related:** [`tafsir_mathur`](#tafsir_mathur), [`tafsir_al_ray`](#tafsir_al_ray), [`mufassir`](#mufassir), [`gharib_al_quran`](#gharib_al_quran), [`ayah`](#ayah), [`maqasid_al_surah`](#maqasid_al_surah), [`tadabbur`](#tadabbur), [`translation`](#translation)
+**Related:** [`tafsir_mathur`](#tafsir_mathur), [`tafsir_al_ray`](#tafsir_al_ray), [`mufassir`](#mufassir), [`word_meanings`](#word_meanings), [`ayah`](#ayah), [`reflection`](#reflection), [`surah_objectives`](#surah_objectives), [`translation`](#translation)
 
 **Sources:**
 
@@ -5745,7 +5163,7 @@ One row per concept, sorted by code. Follow the code to the full entry.
 - Tafsir mathur is transmitted with a chain; authored tafsir is the statement of the book's author.
 - A single report is not a concept in this standard; the concept is the kind of content organised by ayah.
 
-> The better-known title is «التَّفْسِير بِالمَأْثُور», whose derivation fuses the preposition to the noun and gives `tafsir_bialmathur`. The name recorded here is the descriptive form, which is Arabic and in use, and the better-known form resolves through `alternative_spellings`. This is the same reason `naskh` was given an entry rather than «الناسخ والمنسوخ».
+> The better-known title is «التَّفْسِير بِالمَأْثُور», whose derivation fuses the preposition to the noun and gives `tafsir_bialmathur`. The name recorded here is the descriptive form, which is Arabic and in use, and the better-known form resolves through `alternative_spellings`. This is the same reason `abrogation` was given an entry rather than «الناسخ والمنسوخ».
 
 **Related:** [`tafsir`](#tafsir), [`ayah`](#ayah), [`tafsir_al_ray`](#tafsir_al_ray)
 
@@ -5755,121 +5173,35 @@ One row per concept, sorted by code. Follow the code to the full entry.
 
 ## Quranic sciences — `quranic_sciences`
 
-<a id="asma_al_surah"></a>
+<a id="abrogation"></a>
 
-### Asma al-Surah — أسماء السورة
+### Abrogation — النسخ
 
-<!-- source: standards/terminology/concepts/asma_al_surah.yml -->
-
-| field | value |
-| --- | --- |
-| `code` | `asma_al_surah` |
-| `kind` | `content` |
-| Origin | `quranic` |
-| Tier | `core` |
-| Status | `draft` |
-| Vocalized | أَسْمَاء السُّورَة |
-| Other spellings | `asmaa_al_surah` |
-| English gloss | `Surah Names` |
-
-**Definition:** The names a surah is known by. Most surahs carry more than one: some established by narration, others settled by usage.
-
-**Purpose:** Used to hold every name a surah is known by, because mushafs differ over the name they print and search must find a surah by any of them.
-
-- The name of a surah is one thing; the reason it was given that name (sabab al-tasmiyah) is another.
-- The names of a surah are not the names of the Quran itself.
-
-**Related:** [`surah`](#surah), [`sabab_al_tasmiyah`](#sabab_al_tasmiyah)
-
-**Sources:**
-
-- [الإتقان في علوم القرآن](https://files.turath.io/books-v3/11728.json) — `1/178`
-
-<a id="fadail_al_quran"></a>
-
-### Fadail al-Quran — فضائل القرآن
-
-<!-- source: standards/terminology/concepts/fadail_al_quran.yml -->
+<!-- source: standards/terminology/concepts/abrogation.yml -->
 
 | field | value |
 | --- | --- |
-| `code` | `fadail_al_quran` |
-| `kind` | `content` |
-| Origin | `quranic` |
-| Tier | `core` |
-| Status | `draft` |
-| Vocalized | فَضَائِل القُرْآن |
-| Other spellings | `fadail`, `fadail_al_surah` |
-| English gloss | `Merits` |
-
-**Definition:** What has been transmitted about the merit of the Quran, or of one of its surahs or ayahs, and the reward or effect that follows from reciting it.
-
-**Purpose:** Used as content attached to the whole Quran, to a surah or to an ayah. It is kept apart from tafsir because it does not explain meaning, and from hadith because it is organised by place in the text rather than by narrator.
-
-- The merit is attached to a place in the Quran; the hadith it comes from is a source it cites, not its location.
-- Much of what is transmitted about the merits of surahs is weak or fabricated, so it is bound to its source and its grading.
-
-**Related:** [`quran`](#quran), [`surah`](#surah), [`ayah`](#ayah)
-
-**Sources:**
-
-- [الإتقان في علوم القرآن](https://files.turath.io/books-v3/11728.json) — `4/136`
-
-<a id="gharib_al_quran"></a>
-
-### Gharib al-Quran — غريب القرآن
-
-<!-- source: standards/terminology/concepts/gharib_al_quran.yml -->
-
-| field | value |
-| --- | --- |
-| `code` | `gharib_al_quran` |
-| `kind` | `content` |
-| Origin | `quranic` |
-| Tier | `core` |
-| Status | `draft` |
-| Vocalized | غَرِيب القُرْآن |
-| Other spellings | `gharib`, `word_meaning` |
-| English gloss | `Word Meanings` |
-
-**Definition:** The explanation of Quranic words whose meaning is obscure to most readers, whether because they are rare in use or because their sense has shifted.
-
-**Purpose:** Used as content attached to a particular word of an ayah rather than to the whole ayah, which is what sets it apart from tafsir and its explanation of the ayah's overall meaning.
-
-- Gharib al-Quran explains a word; tafsir explains the meaning of an ayah.
-- The meaning is attributed to a particular book, so it may differ between sources.
-
-**Related:** [`word`](#word), [`tafsir`](#tafsir), [`ayah`](#ayah)
-
-**Sources:**
-
-- [الإتقان في علوم القرآن](https://files.turath.io/books-v3/11728.json) — `2/3`
-- [مباحث في علوم القرآن](https://files.turath.io/books-v3/11368.json) — `1/8`
-
-<a id="maqasid_al_surah"></a>
-
-### Maqasid al-Surah — مقاصد السورة
-
-<!-- source: standards/terminology/concepts/maqasid_al_surah.yml -->
-
-| field | value |
-| --- | --- |
-| `code` | `maqasid_al_surah` |
-| `kind` | `content` |
-| Origin | `quranic` |
+| `code` | `abrogation` |
+| `kind` | `concept` |
+| Origin | `borrowed` |
 | Tier | `extended` |
 | Status | `draft` |
-| Vocalized | مَقَاصِد السُّورَة |
-| Other spellings | `maqasid` |
-| English gloss | `Surah Objectives` |
+| Vocalized | النَّسْخ |
+| Other spellings | `nasikh_mansukh`, `nasikh_wa_mansukh`, `nasekh_mansokh` |
 
-**Definition:** The overarching meanings a surah turns on, held together by its subject, and the single aim its ayahs are ordered around.
+**Definition:** The lifting of a legal ruling by a later legal proof. In the Quran it is studied by relating an abrogating ayah to an abrogated one.
 
-**Purpose:** Used as content attached to a whole surah rather than to one of its ayahs, which sets it apart from tafsir, which proceeds ayah by ayah, and from a topic index, which lists what the surah contains.
+**Purpose:** Used to represent the relation between two ayahs, one abrogating and one abrogated: a relation between two places in the text, not a property of a single ayah.
 
-- A maqsad is an aim that gathers the surah; a topic is one of the things it contains.
+- Abrogation bears on the ruling, not on the text: an ayah whose ruling is abrogated stands in the mushaf as it is.
+- The relation is disputed in many places, so it is bound to its source and never presented as agreed upon.
 
-**Related:** [`surah`](#surah), [`tafsir`](#tafsir)
+**Related:** [`ayah`](#ayah), [`asbab_al_nuzul`](#asbab_al_nuzul)
+
+**Sources:**
+
+- [مباحث في علوم القرآن](https://files.turath.io/books-v3/11368.json) — `1/237`
+- [الإتقان في علوم القرآن](https://files.turath.io/books-v3/11728.json) — `3/66`
 
 <a id="mutashabihat"></a>
 
@@ -5895,54 +5227,81 @@ One row per concept, sorted by code. Follow the code to the full entry.
 - The resemblance of wording meant here is not the mutashabih that stands opposite the muhkam in the Quranic sciences.
 - A resemblance is a relation between two places or more, not a property of a single ayah.
 
-**Related:** [`ayah`](#ayah), [`word`](#word), [`hifz`](#hifz), [`equivalent_ayah`](#equivalent_ayah)
+**Related:** [`ayah`](#ayah), [`word`](#word), [`equivalent_ayah`](#equivalent_ayah)
 
 **Sources:**
 
 - [الإتقان في علوم القرآن](https://files.turath.io/books-v3/11728.json) — `3/390`
 
-<a id="naskh"></a>
+<a id="quran_merits"></a>
 
-### Naskh — النسخ
+### Quran Merits — فضائل القرآن
 
-<!-- source: standards/terminology/concepts/naskh.yml -->
+<!-- source: standards/terminology/concepts/quran_merits.yml -->
 
 | field | value |
 | --- | --- |
-| `code` | `naskh` |
-| `kind` | `concept` |
-| Origin | `quranic` |
-| Tier | `extended` |
+| `code` | `quran_merits` |
+| `kind` | `content` |
+| Origin | `borrowed` |
+| Tier | `core` |
 | Status | `draft` |
-| Vocalized | النَّسْخ |
-| Other spellings | `nasikh_mansukh`, `nasikh_wa_mansukh`, `nasekh_mansokh` |
-| English gloss | `Abrogation` |
+| Vocalized | فَضَائِل القُرْآن |
+| Other spellings | `fadail`, `fadail_al_surah` |
 
-**Definition:** The lifting of a legal ruling by a later legal proof. In the Quran it is studied by relating an abrogating ayah to an abrogated one.
+**Definition:** What has been transmitted about the merit of the Quran, or of one of its surahs or ayahs, and the reward or effect that follows from reciting it.
 
-**Purpose:** Used to represent the relation between two ayahs, one abrogating and one abrogated: a relation between two places in the text, not a property of a single ayah.
+**Purpose:** Used as content attached to the whole Quran, to a surah or to an ayah. It is kept apart from tafsir because it does not explain meaning, and from hadith because it is organised by place in the text rather than by narrator.
 
-- Abrogation bears on the ruling, not on the text: an ayah whose ruling is abrogated stands in the mushaf as it is.
-- The relation is disputed in many places, so it is bound to its source and never presented as agreed upon.
+- The merit is attached to a place in the Quran; the hadith it comes from is a source it cites, not its location.
+- Much of what is transmitted about the merits of surahs is weak or fabricated, so it is bound to its source and its grading.
 
-**Related:** [`ayah`](#ayah), [`asbab_al_nuzul`](#asbab_al_nuzul)
+**Related:** [`quran`](#quran), [`surah`](#surah), [`ayah`](#ayah)
 
 **Sources:**
 
-- [مباحث في علوم القرآن](https://files.turath.io/books-v3/11368.json) — `1/237`
-- [الإتقان في علوم القرآن](https://files.turath.io/books-v3/11728.json) — `3/66`
+- [الإتقان في علوم القرآن](https://files.turath.io/books-v3/11728.json) — `4/136`
 
-<a id="sabab_al_tasmiyah"></a>
+<a id="reflection"></a>
 
-### Sabab al-Tasmiyah — سبب التسمية
+### Reflection — التدبر
 
-<!-- source: standards/terminology/concepts/sabab_al_tasmiyah.yml -->
+<!-- source: standards/terminology/concepts/reflection.yml -->
 
 | field | value |
 | --- | --- |
-| `code` | `sabab_al_tasmiyah` |
+| `code` | `reflection` |
+| `plural` | `reflections` |
 | `kind` | `content` |
-| Origin | `quranic` |
+| Origin | `borrowed` |
+| Tier | `core` |
+| Status | `draft` |
+| Vocalized | التَّدَبُّر |
+| Other spellings | `tadabur`, `waqfat_tadabburiyyah` |
+
+**Definition:** Reflecting on the meanings of the Quran and what they call for in action, and what a reader records of a pause at an ayah or a word.
+
+**Purpose:** Used as content attached to an ayah or to a place within it. It is kept apart from tafsir because it does not undertake to state the apparent meaning, and the one who says it is not necessarily a mufassir.
+
+- Tafsir states the meaning of an ayah by a method; reflection is the effect of that meaning on the one reflecting.
+
+**Related:** [`ayah`](#ayah), [`tafsir`](#tafsir)
+
+**Sources:**
+
+- [معجم مصطلحات التجويد](https://tajweed.quranpedia.net/term/show/29) — `29`
+
+<a id="surah_name_reason"></a>
+
+### Surah Name Reason — سبب التسمية
+
+<!-- source: standards/terminology/concepts/surah_name_reason.yml -->
+
+| field | value |
+| --- | --- |
+| `code` | `surah_name_reason` |
+| `kind` | `content` |
+| Origin | `standard` |
 | Tier | `extended` |
 | Status | `draft` |
 | Vocalized | سَبَب التَّسْمِيَة |
@@ -5954,38 +5313,92 @@ One row per concept, sorted by code. Follow the code to the full entry.
 
 - The reason for the name concerns the surah's name; the occasion of revelation concerns the revelation of an ayah.
 
-**Related:** [`surah`](#surah), [`asbab_al_nuzul`](#asbab_al_nuzul), [`asma_al_surah`](#asma_al_surah)
+**Related:** [`surah`](#surah), [`asbab_al_nuzul`](#asbab_al_nuzul), [`surah_names`](#surah_names)
 
 **Sources:**
 
 - [الإتقان في علوم القرآن](https://files.turath.io/books-v3/11728.json) — `1/178`
 
-<a id="tadabbur"></a>
+<a id="surah_names"></a>
 
-### Tadabbur — التدبر
+### Surah Names — أسماء السورة
 
-<!-- source: standards/terminology/concepts/tadabbur.yml -->
+<!-- source: standards/terminology/concepts/surah_names.yml -->
 
 | field | value |
 | --- | --- |
-| `code` | `tadabbur` |
-| `plural` | `tadabburs` |
+| `code` | `surah_names` |
 | `kind` | `content` |
 | Origin | `quranic` |
 | Tier | `core` |
 | Status | `draft` |
-| Vocalized | التَّدَبُّر |
-| Other spellings | `tadabur`, `waqfat_tadabburiyyah` |
-| English gloss | `Reflection` |
+| Vocalized | أَسْمَاء السُّورَة |
+| Other spellings | `asmaa_al_surah` |
+| English gloss | `Surah Names` |
 
-**Definition:** Reflecting on the meanings of the Quran and what they call for in action, and what a reader records of a pause at an ayah or a word.
+**Definition:** The names a surah is known by. Most surahs carry more than one: some established by narration, others settled by usage.
 
-**Purpose:** Used as content attached to an ayah or to a place within it. It is kept apart from tafsir because it does not undertake to state the apparent meaning, and the one who says it is not necessarily a mufassir.
+**Purpose:** Used to hold every name a surah is known by, because mushafs differ over the name they print and search must find a surah by any of them.
 
-- Tafsir states the meaning of an ayah by a method; tadabbur is the effect of that meaning on the one reflecting.
+- The name of a surah is one thing; the reason it was given that name (sabab al-tasmiyah) is another.
+- The names of a surah are not the names of the Quran itself.
 
-**Related:** [`ayah`](#ayah), [`tafsir`](#tafsir)
+**Related:** [`surah`](#surah), [`surah_name_reason`](#surah_name_reason)
 
 **Sources:**
 
-- [معجم مصطلحات التجويد](https://tajweed.quranpedia.net/term/show/29) — `29`
+- [الإتقان في علوم القرآن](https://files.turath.io/books-v3/11728.json) — `1/178`
+
+<a id="surah_objectives"></a>
+
+### Surah Objectives — مقاصد السورة
+
+<!-- source: standards/terminology/concepts/surah_objectives.yml -->
+
+| field | value |
+| --- | --- |
+| `code` | `surah_objectives` |
+| `kind` | `content` |
+| Origin | `borrowed` |
+| Tier | `extended` |
+| Status | `draft` |
+| Vocalized | مَقَاصِد السُّورَة |
+| Other spellings | `maqasid` |
+
+**Definition:** The overarching meanings a surah turns on, held together by its subject, and the single aim its ayahs are ordered around.
+
+**Purpose:** Used as content attached to a whole surah rather than to one of its ayahs, which sets it apart from tafsir, which proceeds ayah by ayah, and from a topic index, which lists what the surah contains.
+
+- A maqsad is an aim that gathers the surah; a topic is one of the things it contains.
+
+**Related:** [`surah`](#surah), [`tafsir`](#tafsir)
+
+<a id="word_meanings"></a>
+
+### Word Meanings — غريب القرآن
+
+<!-- source: standards/terminology/concepts/word_meanings.yml -->
+
+| field | value |
+| --- | --- |
+| `code` | `word_meanings` |
+| `kind` | `content` |
+| Origin | `borrowed` |
+| Tier | `core` |
+| Status | `draft` |
+| Vocalized | غَرِيب القُرْآن |
+| Other spellings | `gharib`, `word_meaning` |
+
+**Definition:** The explanation of Quranic words whose meaning is obscure to most readers, whether because they are rare in use or because their sense has shifted.
+
+**Purpose:** Used as content attached to a particular word of an ayah rather than to the whole ayah, which is what sets it apart from tafsir and its explanation of the ayah's overall meaning.
+
+- Gharib al-Quran explains a word; tafsir explains the meaning of an ayah.
+- The meaning is attributed to a particular book, so it may differ between sources.
+
+**Related:** [`word`](#word), [`tafsir`](#tafsir), [`ayah`](#ayah)
+
+**Sources:**
+
+- [الإتقان في علوم القرآن](https://files.turath.io/books-v3/11728.json) — `2/3`
+- [مباحث في علوم القرآن](https://files.turath.io/books-v3/11368.json) — `1/8`

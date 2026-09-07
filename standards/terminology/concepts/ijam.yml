@@ -11,10 +11,10 @@ parent: mushaf_mark
 origin: quranic
 tier: core
 status: draft
-definition: النقط الذي يميز الحرف عما يشاركه في صورة الرسم.
+definition: الإعجام هو النقط الذي يميز الحرف عن الحروف التي تشاركه في صورة الرسم.
 definition_en: >
   The dotting that distinguishes a letter from the letters that share its written shape.
-purpose: تستخدم أبًا لصور النقط، فما يميزها هو عددها وموضعها لا وظيفتها.
+purpose: نستخدمه أبًا لصور النقط، وما يميز هذه الصور هو عدد النقط وموضعها وليس وظيفتها.
 purpose_en: >
   Used as the parent of the dot shapes, which are told apart by their number and
   position rather than by their function.

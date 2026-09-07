@@ -7,26 +7,26 @@ names:
     singular: القلقلة
 kind: classification_value
 category: tajwid
-parent: hukm_al_tajwid
+parent: tajwid_ruling
 origin: quranic
 tier: core
 status: draft
 definition: >-
-  اضطراب في صوت الحرف الساكن عند النطق به حتى تُسمع له نبرة قوية، في حروف «قطب جد»، ويقوى
-  بحسب موضع الحرف من الكلمة والوقف عليه.
+  القلقلة هي اضطراب في صوت الحرف الساكن عند النطق به حتى تسمع له نبرة قوية. وتقع في
+  حروف «قطب جد»، وتقوى بحسب موضع الحرف من الكلمة والوقف عليه.
 definition_en: >-
   A disturbance in the sound of a vowelless letter as it is pronounced, so that a strong beat
   is heard, in the letters of «قطب جد»; it grows stronger by the letter's place in the word
   and by stopping on it.
 purpose: >-
-  يستخدم قيمةً من قيم حكم التجويد، فيوسم به موضع النص في التحليل والتلوين والتعليم، وتتفرع
-  تحته أنواعه في سجل الأحكام.
+  نستخدم القلقلة قيمة من قيم حكم التجويد. نوسم بها موضع النص في التحليل والتلوين
+  والتعليم، وتندرج تحتها أنواعها في سجل الأحكام.
 purpose_en: >-
   Used as a value of the tajwid ruling, so that a place in the text is tagged with it in analysis,
   colouring and instruction, and its kinds branch under it in the registry of rulings.
 boundaries:
-- >-
-  القلقلة صفة من صفات الحروف التي لا ضد لها، وتُعد حكمًا حين يُوسم بها الموضع الذي تظهر فيه.
+  - القلقلة صفة من صفات الحروف التي لا ضد لها، وتعد حكمًا حين نوسم بها الموضع الذي تظهر
+    فيه.
 boundaries_en:
 - >-
   Qalqalah is one of the attributes of the letters that have no opposite; it counts as a ruling
@@ -40,8 +40,7 @@ english_glosses:
 - echoing
 related:
 - sukun
-- sifat_al_huruf
-- hukm_al_tajwid
+- tajwid_ruling
 sources:
 - id: quranpedia_tajweed
   ref: '78'

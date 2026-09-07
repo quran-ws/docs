@@ -114,7 +114,7 @@ composes:  ا (U+0627) + ٓ (U+0653)       →   آ (U+0622)   in ٱلضَّآل
   numbering system, and Surah al-Tawbah has none.
 - Test counts against the edition and numbering system you actually ship, not
   against remembered constants. 6,236 is the total of the Kufi numbering system
-  (`ayah_numbering_kufi`), not a universal fact. Reference:
+  (`kufi`), not a universal fact. Reference:
   `standards/terminology/registries/ayah_numbering.tsv`, one row per system with
   its total.
 

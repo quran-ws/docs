@@ -15,11 +15,12 @@ origin: quranic
 tier: core
 status: draft
 symbol: نُقْطَة وَاحِدَة
-definition: نقطة واحدة فوق الحرف أو تحته تميزه عما يشاركه في الرسم، كالباء والنون والجيم والخاء
-  والذال
+definition: النقطة نقطة واحدة فوق الحرف أو تحته تميزه عن الحرف الذي يشاركه في الرسم، مثل الباء
+  والنون والجيم والخاء والذال.
 definition_en: 'One dot, above or below, distinguishing a letter from the others that share
   its skeleton (ijam): baa, noon, jeem, khaa, dhaal.'
-purpose: تستخدم قيمةً من قيم النقط، ليتميز بها الحرف عما يشاركه في الرسم في التحليل والبحث.
+purpose: نستخدمها قيمة من قيم النقط، فنميز بها الحرف عن الحرف الذي يشاركه في الرسم في التحليل
+  والبحث.
 purpose_en: Used as a value of ijam, so that a letter is told apart from those sharing its
   skeleton in analysis and in search.
 alternative_spellings:

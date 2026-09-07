@@ -11,12 +11,12 @@ parent: recitation_pace
 origin: quranic
 tier: core
 status: draft
-definition: الإسراع في القراءة مع المحافظة على الحروف والحركات وأحكام الأداء دون إخلال.
+definition: الحدر هو الإسراع في القراءة مع المحافظة على الحروف والحركات وأحكام الأداء دون إخلال.
 definition_en: >
   Reciting quickly while keeping the letters, the vowels and the rules of delivery
   intact.
 purpose: >
-  تستخدم قيمة من قيم مراتب القراءة، فيوسم بها التسجيل أو جلسة التعليم وتصفى بها.
+  نستخدمه قيمة من قيم مراتب القراءة، فنوسم به التسجيل أو جلسة التعليم ونصفي به.
 purpose_en: >
   Used as a value of recitation pace, so that a recording or a teaching session is
   tagged by its pace and filtered by it.

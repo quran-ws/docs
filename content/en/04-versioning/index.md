@@ -42,7 +42,7 @@ The unit of versioning is the dataset, not the repository or the app.
   "dataset": "text",
   "mushaf_edition": "madinah_hafs_1441",
   "riwayah": "hafs_an_asim",
-  "ayah_numbering_system": "ayah_numbering_kufi",
+  "ayah_numbering_system": "kufi",
   "version": "2.0.0",
   "source_hash": "sha256:…",
   "derived_from": null,
@@ -108,7 +108,7 @@ append-only file per dataset.
 {
   "id": "2026-0001",
   "location": { "surah_number": 2, "ayah_number": 255, "word_position": 12,
-                "ayah_numbering_system": "ayah_numbering_kufi" },
+                "ayah_numbering_system": "kufi" },
   "offset": { "unit": "codepoint", "start": 38, "end": 39 },
   "before": "U+0651 U+064E",
   "after":  "U+064E U+0651",

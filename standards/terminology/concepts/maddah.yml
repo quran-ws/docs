@@ -16,9 +16,9 @@ origin: quranic
 tier: core
 status: draft
 symbol: خَطّ المَدّ
-definition: الدلالة على لزوم مد الحرف مدًّا زائدًا على المد الطبيعي
+definition: المدة علامة تدل على لزوم مد الحرف مدًّا زائدًا على المد الطبيعي.
 definition_en: Marks that the letter is lengthened beyond the natural madd.
-purpose: تستخدم قيمةً من علامات الرسم، ليعرف بها ما خالف فيه الرسم اللفظ في الكلمة.
+purpose: نستخدمها قيمة من علامات الرسم، فنعرف بها المواضع التي يخالف فيها الرسم اللفظ في الكلمة.
 purpose_en: Used as a value of the orthographic marks, so that software can tell where the
   rasm departs from the pronunciation.
 alternative_spellings:

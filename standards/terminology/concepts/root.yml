@@ -11,11 +11,11 @@ origin: borrowed
 tier: core
 status: draft
 plural: roots
-definition: الأصل الصرفي الذي ترد إليه الكلمة لبيان اشتقاقها وصلتها بالكلمات الأخرى.
+definition: الجذر هو الأصل الصرفي الذي ترد إليه الكلمة لبيان اشتقاقها وصلتها بالكلمات الأخرى.
 definition_en: >
   The morphological origin a word is referred back to, showing its derivation and its
   relation to other words.
-purpose: يستخدم للبحث الصرفي والتحليل اللغوي وتجميع الكلمات ذات الأصل المشترك.
+purpose: نستخدم الجذر في البحث الصرفي والتحليل اللغوي وتجميع الكلمات ذات الأصل المشترك.
 purpose_en: >
   Used for morphological search, linguistic analysis, and gathering words that share an
   origin.

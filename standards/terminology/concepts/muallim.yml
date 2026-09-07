@@ -11,11 +11,11 @@ parent: recitation_style
 origin: quranic
 tier: core
 status: draft
-definition: نمط تلاوة معد للتعليم وقد يتضمن تكرار الآيات أو إتاحة وقت للمتعلم للترديد.
+definition: المعلم نمط تلاوة معد للتعليم، وقد يتضمن تكرار الآيات أو إتاحة وقت للمتعلم للترديد.
 definition_en: >
   A recitation style meant for teaching, which may repeat ayahs or leave the learner
   time to repeat after the reciter.
-purpose: يستخدم لتصنيف التسجيل بحسب نمطه.
+purpose: نستخدمه لتصنيف التسجيل بحسب نمطه.
 purpose_en: Used to classify a recording by its style.
 related:
   - recitation_style

@@ -1,7 +1,7 @@
-concept: asma_al_surah
+concept: surah_names
 names:
-  code: asma_al_surah
-  display: Asma al-Surah
+  code: surah_names
+  display: Surah Names
   arabic:
     vocalized: أَسْمَاء السُّورَة
     singular: أسماء السورة
@@ -11,19 +11,19 @@ origin: quranic
 tier: core
 status: draft
 definition: >
-  ما سميت به السورة من أسماء، وأكثر السور لها أكثر من اسم، منها ما ثبت بالأثر
-  ومنها ما جرى به الاصطلاح.
+  أسماء السورة هي ما سميت به السورة من أسماء. وأكثر السور لها أكثر من اسم، منها ما ثبت
+  بالأثر ومنها ما جرى به الاصطلاح.
 definition_en: >
   The names a surah is known by. Most surahs carry more than one: some established by
   narration, others settled by usage.
 purpose: >
-  يستخدم لحفظ كل ما تعرف به السورة من أسماء، لأن المصاحف تختلف في الاسم المثبت، والبحث
-  يحتاج أن يجد السورة بأي أسمائها.
+  نستخدم أسماء السورة لحفظ كل ما تعرف به السورة من أسماء، لأن المصاحف تختلف في الاسم
+  المثبت، ولأن البحث يحتاج أن يجد السورة بأي اسم من أسمائها.
 purpose_en: >
   Used to hold every name a surah is known by, because mushafs differ over the name they
   print and search must find a surah by any of them.
 boundaries:
-  - اسم السورة شيء، وسبب تسميتها به شيء آخر.
+  - اسم السورة غير سبب تسميتها به.
   - أسماء السورة غير أسماء القرآن نفسه.
 boundaries_en:
   - >-
@@ -37,7 +37,7 @@ english_glosses:
   - Surah Names
 related:
   - surah
-  - sabab_al_tasmiyah
+  - surah_name_reason
 sources:
   - id: itqan
     ref: "1/178"

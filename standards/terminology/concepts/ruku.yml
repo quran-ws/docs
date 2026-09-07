@@ -11,10 +11,10 @@ origin: quranic
 tier: core
 status: draft
 plural: rukus
-definition: قسم اصطلاحي من القرآن يستخدم لتنظيم القراءة ويظهر في بعض المصاحف.
+definition: الركوع هو قسم اصطلاحي من القرآن يستخدم لتنظيم القراءة ويظهر في بعض المصاحف.
 definition_en: >
   A conventional section of the Quran used to organise reading, printed in some mushafs.
-purpose: يستخدم في التطبيقات والمصاحف التي تعتمد تقسيم الركوع.
+purpose: نستخدم الركوع في التطبيقات والمصاحف التي تعتمد تقسيم الركوع.
 purpose_en: >
   Used in the applications and mushafs that follow the ruku division.
 alternative_spellings:

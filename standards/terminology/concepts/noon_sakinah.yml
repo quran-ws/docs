@@ -15,12 +15,13 @@ origin: quranic
 tier: core
 status: draft
 definition: >
-  نون خالية من الحركة، تثبت لفظًا وخطًا ووصلًا ووقفًا.
+  النون الساكنة هي نون خالية من الحركة، تثبت في اللفظ والخط وفي حالي الوصل والوقف.
 definition_en: >
   A noon carrying no vowel, fixed in pronunciation and in writing, in continuing and in
   stopping.
 purpose: >
-  تستخدم موضعًا تتفرع عليه أحكام الإظهار والإدغام والإقلاب والإخفاء في محركات التجويد.
+  نستخدم النون الساكنة موضعًا تبنى عليه أحكام الإظهار والإدغام والإقلاب والإخفاء في
+  محركات التجويد.
 purpose_en: >
   Used as the trigger of the four rulings, izhar, idgham, iqlab and ikhfa, in tajwid
   engines.

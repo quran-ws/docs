@@ -11,20 +11,21 @@ origin: quranic
 tier: core
 status: draft
 definition: >-
-  قراءة القرآن بلفظه أداءً بالصوت على ما تلقاه القارئ، في صلاة كانت أو درس أو تسجيل.
+  التلاوة هي قراءة القرآن بلفظه أداء بالصوت على ما تلقاه القارئ، سواء كانت في صلاة أو
+  درس أو تسجيل.
 definition_en: >-
   Reading the Quran in its wording, delivered aloud as the reader received it, whether in
   prayer, in a lesson or in a recording.
 purpose: >-
-  يستخدم للدلالة على فعل القراءة نفسه حيث يُقصد، كأحكام التلاوة وآدابها وسجدتها وتعلمها؛ ويبقى
-  التسجيل المنشور لها `recitation`.
+  نستخدم التلاوة للدلالة على فعل القراءة نفسه حيث يقصد، مثل أحكام التلاوة وآدابها
+  وسجدتها وتعلمها. ويبقى التسجيل المنشور لها `recitation`.
 purpose_en: >-
   Used for the act of reading itself where that is what is meant, as in the rulings of tilawah,
   its etiquette, its prostration and its teaching; the published recording of it stays `recitation`.
 boundaries:
-- >-
-  التلاوة الفعل، و`recitation` التسجيل المنشور المنسوب إلى قارئ ورواية ونمط أداء.
-- الترتيل صفة في التلاوة، لا التلاوة.
+  - التلاوة هي الفعل، و`recitation` هو التسجيل المنشور المنسوب إلى قارئ ورواية ونمط
+    أداء.
+  - الترتيل صفة في التلاوة وليس التلاوة نفسها.
 boundaries_en:
 - >-
   Tilawah is the act; `recitation` is the published recording attributed to a reciter, a riwayah
@@ -37,9 +38,8 @@ alternative_spellings:
 related:
 - recitation
 - tartil
-- sujud_al_tilawah
+- sajdah
 - reciter
-- hifz
 sources:
 - id: quranpedia_tajweed
   ref: '16'

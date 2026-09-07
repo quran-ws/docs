@@ -156,6 +156,19 @@ looks; `sakinah` and `lazim` are terms. The ordinary words are listed in
 
 ---
 
+## A concept no project needs does not enter the dictionary
+
+*2026-09-06 · settled*
+
+**Decision:** a concept enters the dictionary only when a real project needs it, and the entry names that need in `purpose`. For tajwid the witness is the [tajweed engine](https://github.com/quranpedia/tajweed-engine/): what it names in its topics and categories enters, such as `letter_relation` with its two values `mutamathilan` and `mutajanisan`; what it does not name, such as points of articulation, letter attributes, kinds of error and causes of stopping, does not.
+
+**Why:** §1 asks for the programmatic purpose before the name, and §30 does not adopt a concept until the need for it is clear. Need is shown by a project using the concept, not by a textbook mentioning it.
+
+**The alternative rejected:** entering the whole science as drafts. An entry nobody uses is an entry nobody reviews, and it sits in the dictionary at the size of a used one.
+an entry nobody reviews, and it sits in the dictionary at the size of a used one.
+
+---
+
 ## Word order in a compound follows English
 
 *Undated · settled*
@@ -382,8 +395,8 @@ clash cannot arrive unnoticed.
 ```text
 juz              → juzs
 hizb             → hizbs
-mawdi_al_sajdah  → mawdi_al_sajdahs    not mawadi_al_sajdah
-harf_muqatta     → harf_muqattas
+sajdah           → sajdahs             not mawadi_al_sajdah
+muqatta_letter   → muqatta_letters
 ```
 
 **Why:** the plural is a collection name for code, not an English word for a
@@ -540,7 +553,7 @@ decides, and usage went the other way.
 
 *Undated · settled*
 
-**Decision:** `naskh`, `gharib_al_quran`, `mutashabihat` and `mawdi_al_sajdah`
+**Decision:** `abrogation`, `word_meanings`, `mutashabihat` and `sajdah`
 are entries. `book`, `author`, `category`, `tag`, `language`, `attachment`,
 `radio`, `fatwa` and `topic` are not.
 
@@ -551,7 +564,7 @@ ordinary software furniture that needs no Quranic standard, or scholarship that
 is not about the Quran.
 
 **The line:** a concept is in scope when it cannot be defined without referring
-to the Quran or the mushaf. `mawdi_al_sajdah` cannot; `radio` can, and a stream
+to the Quran or the mushaf. `sajdah` cannot; `radio` can, and a stream
 of Quran audio is a stream. `fatwa` sits outside for the same reason a hadith
 does — real, Islamic, and not a concept of the Quranic text.
 
@@ -565,30 +578,46 @@ dictionary locally.
 
 ---
 
-## Ayah numbering values keep their parent's name
+## Ayah numbering: the code is the school's name, the entry id carries the parent's
 
-*Undated · settled*
+*Undated · settled · revised 2026-09-07*
 
-**Decision:** `ayah_numbering_kufi`, `ayah_numbering_madani_awwal` — not `kufi`
-and `madani_awwal`.
+**Decision:** the values of `ayah_numbering_system` are `kufi`, `basri`,
+`dimashqi`, `makki`, `madani_first`, `madani_last`. Their entries have the ids
+`ayah_numbering_kufi` and so on. The registry `ayah_numbering.tsv` is keyed by
+the codes.
 
-**Why:** two reasons, and either alone is enough.
+**Why the code is short:** a value's name is unique within its classification,
+not across the dictionary. A column holds the values of one classification and
+never two, so `makki` the numbering and `makki` the revelation class are never
+candidates for the same slot — the same reason a registry is its own namespace
+(§13) and `hamzah` the reciter lives beside `hamzah` the mark. Prefixing the
+value with its parent's name says nothing the column does not already say.
+Every dataset that actually exists — quranpedia's qiraat-ayah-map, quran-text —
+stores `kufi` and `madani-first`, and they were right.
 
-The derivation of the Arabic name does not survive. العَدّ الكُوفِيّ gives
-`add_kufi`, and `add` is an English verb — the same fault that made us write
-`noon` rather than `nun`.
+**Why the id is long:** two entries cannot share a file, an anchor or a target
+for `related`, and `makki` is the revelation value's id. So the id of a value
+that shares its name is the parent's name plus the code, and the six numbering
+entries all take that shape rather than five short and one long. The alias
+index maps a shared name to both concepts and `<parent>:<name>` to each, so a
+caller who knows the column resolves without ambiguity, and `build_aliases.py`
+still refuses any other shared name.
 
-And the short name is taken. `makki` is already a value of
-`revelation_classification`, so العَدّ المَكِّيّ cannot be `makki` without two
-concepts claiming one name, which `build_aliases.py` refuses.
+**Why not derived:** العَدّ الكُوفِيّ gives `add_kufi`, and `add` is an English
+verb — the same fault that made us write `noon` rather than `nun`. The code is
+the name of the school.
 
-**This is §14, not an exception to it:** a value's name is its parent's name
-plus what distinguishes it, and the parent's name is dropped only when it
-distinguishes nothing. Here it distinguishes a great deal. `waqf_jaiz_wasl_awla`
-has the same shape.
+**Why `madani_first`, not `madani_awwal`:** §4 — inside a compound the technical
+word is transliterated and the ordinary word is translated. `madani` is the
+technical word; *first* and *last* are ordinary. `madani_awwal` and
+`madani_akhir` stay as recorded spellings.
 
-**A second gain:** `kufi` alone would collide in a reader's head with the Kufic
-script, which is a real term in mushaf work.
+**Earlier revisions:** the first form was `ayah_numbering_kufi` as both id and
+code, to keep one flat namespace; the second kept that id and moved the short
+code into the registry alone, with a `concept` column pointing back. Both were
+the same fact written twice. This revision makes the value's own name the
+short one and leaves the flat namespace to the concepts that need it.
 
 ---
 
@@ -616,15 +645,16 @@ that registry produced everything except this one.
 
 ---
 
-## `naskh`, not `nasikh_mansukh`
+## Abrogation is one entry, `abrogation`
 
 *Undated · settled*
 
-**Decision:** one entry, `naskh`.
+**Decision:** one entry for abrogation, `abrogation`, and none for the abrogating
+or the abrogated text.
 
-**Why:** the familiar title is النَّاسِخ وَالمَنْسُوخ, and it derives to
-`nasikh_walmansukh` — a conjunction welded into an identifier. The science is
+**Why:** the familiar title is النَّاسِخ وَالمَنْسُوخ, but the science is
 النَّسْخ, and الناسخ والمنسوخ are the two sides of one relation, not two concepts.
+Abrogation has a plain English name, so §3 gives it that name.
 
 **Nothing is lost:** `nasikh_mansukh`, `nasikh_wa_mansukh` and `nasekh_mansokh`
 all resolve through `aliases.json`.
@@ -650,16 +680,17 @@ and not the word count. `segment`, the name the Quranic corpora use, resolves to
 
 ---
 
-## `harf_al_mana` for the particle, because `harf` is the letter
+## The parts of speech take their English names
 
-*Undated · settled*
+*2026-09-06 · settled*
 
-**Decision:** the three parts of speech are `ism`, `fil` and `harf_al_mana`.
+**Decision:** the three parts of speech are `noun`, `verb` and `particle`.
 
-**Why:** حَرْف names two different things, and the dictionary had already given
-the name to one of them — `harf` resolves to `letter`, a unit of written text.
-The part of speech is حرف المعنى, as against حرف المبنى, and the tradition
-already draws that line, so we did not have to invent one.
+**Why:** a part of speech is a general concept of grammar with a plain English
+name that every morphology corpus uses, and its parent `part_of_speech` is
+already English. §3 gives a general concept its English name. Transliterating
+the Arabic would also have lengthened the particle's name, because `harf` alone
+is taken by the written letter (`letter`); `particle` has no such problem.
 
 **Why only 3:** the Quranic corpora tag with dozens of labels — `N`, `PN`,
 `V`, `CONJ`, `NEG`. Those are data that sit under these three, not entries.
@@ -731,8 +762,8 @@ reasoning before the word registry was used for it.
 *2026-09-06 · settled*
 
 **Decision:** the rules — izhar, idgham, iqlab, ikhfa, the kinds of madd and
-the rest — are rows in `registries/tajwid_rules.tsv`; `tajwid` names the
-registry. The concepts a rule rests on (`noon_sakinah`, `tanwin`, `maddah`)
+the rest — are rows in `registries/tajwid_rules.tsv`; `tajwid_ruling` names
+the registry. The concepts a rule rests on (`noon_sakinah`, `tanwin`, `maddah`)
 stay entries.
 
 **Why:** the standard had 5 entries in `tajwid` and a rules file
@@ -928,3 +959,32 @@ with no reliable way to attach each to its parent, and an unverifiable table
 looks exactly like a verified one. `registries/tariq.tsv` now exists with
 `verified` set honestly per row, and `check_registries.py` reports what remains
 unverified on every run.
+
+---
+
+## `sajdah` is one concept: the place and the prostration made at it
+
+*2026-09-07 · settled*
+
+**Decision:** one entry, `sajdah`, plural `sajdahs`, with the registry
+`sajdah.tsv` as its members. `sajdah_place` and `sujud_al_tilawah` are merged
+into it and stay as recorded spellings. `sajdah_mark` stays separate: it is the
+sign, and §18 still applies to it.
+
+**Why:** an earlier draft kept three entries — the mark, the place in the text
+and the act — on the argument that collapsing them attaches a page number to
+an act of worship. The place and the act turned out to be one thing in every
+use software has for them. A dataset lists "the fifteen sajdahs", counts them,
+locates them and attaches the rulings of prostration to them; nothing stores a
+prostration that is not at a place, and nothing stores a place that is not
+prostrated at. Two entries for one thing is the fault §18 guards against in the
+other direction. The same reasoning leaves `ruku` one entry.
+
+**The name:** السَّجْدَة derives to `sajdah`, which is what the sources and the
+readers call it. `sujud_al_tilawah`, the act as the fiqh books title it, and
+`mawdi_al_sajdah`, the place as al-Itqan lists it, resolve to the entry.
+
+**Alternative rejected:** keeping `sujud_al_tilawah` for the rulings. The
+rulings are attached to the sajdah; a second entry would hold no field the
+first does not.
+

@@ -1,36 +1,35 @@
-concept: nuzul
+concept: revelation
 names:
-  code: nuzul
-  display: Nuzul
+  code: revelation
+  display: Revelation
   arabic:
     vocalized: النُّزُول
     singular: النزول
 kind: concept
 category: revelation
-origin: quranic
+origin: borrowed
 tier: core
 status: draft
 definition: >
-  إنزال القرآن على النبي صلى الله عليه وسلم منجمًا في مدة الرسالة، على حسب
+  النزول هو إنزال القرآن على النبي صلى الله عليه وسلم مفرقًا على مدة الرسالة بحسب
   الوقائع والحاجة.
 definition_en: >
   The revelation of the Quran to the Prophet, peace be upon him, in stages over the
   years of his mission, as events and needs arose.
 purpose: >
-  يستخدم أصلًا تتفرع عنه ترتيب النزول وتصنيفه وأسبابه، فهذه الثلاثة كلها صفات
-  لواقعة النزول، ولا تعرف إلا به.
+  نستخدم النزول أصلًا يتفرع عنه ترتيب النزول وتصنيفه وأسبابه، لأن هذه الثلاثة كلها
+  صفات لواقعة النزول ولا تفهم إلا بالرجوع إليه.
 purpose_en: >
   Used as the root that the order of revelation, its classification and its occasions
   branch from: all three are properties of the event of revelation and are known only
   through it.
 boundaries:
-  - النزول واقعة، وترتيب النزول وتصنيفه وسببه صفات لها لا مرادفات لها.
+  - النزول واقعة، أما ترتيب النزول وتصنيفه وسببه فهي صفات لهذه الواقعة وليست مرادفات
+    لها.
 boundaries_en:
   - >-
     Revelation is an event; its order, its classification and its occasion are
     properties of it, not synonyms for it.
-english_glosses:
-  - Revelation
 related:
   - revelation_order
   - revelation_classification

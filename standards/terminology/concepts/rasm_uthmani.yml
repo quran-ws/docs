@@ -13,11 +13,11 @@ parent: rasm
 origin: quranic
 tier: core
 status: draft
-definition: طريقة كتابة كلمات المصاحف العثمانية وما يتعلق بها من حذف وزيادة وبدل وفصل ووصل.
+definition: الرسم العثماني هو طريقة كتابة كلمات المصاحف العثمانية وما يتعلق بها من حذف وزيادة وبدل وفصل ووصل.
 definition_en: >
   The way the words of the Uthmani mushafs are written, with the omission, addition,
   substitution, separation and joining that go with it.
-purpose: تستخدم لتحديد أن النص يتبع قواعد الرسم العثماني بدل نظم إملائية أخرى.
+purpose: نستخدم الرسم العثماني لتحديد أن النص يتبع قواعد الرسم العثماني وليس نظامًا إملائيًا آخر.
 purpose_en: >
   Used to state that a text follows the rules of the Uthmani rasm rather than another
   orthography.

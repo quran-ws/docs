@@ -8,21 +8,20 @@ origin: standard
 tier: core
 status: draft
 plural: word_timings
-definition: مدى زمني في تسجيل تلاوة، محدد ببداية ونهاية، يقابل كلمة بعينها من آية.
+definition: توقيت الكلمة هو مدى زمني في تسجيل تلاوة، محدد ببداية ونهاية، يقابل كلمة بعينها من آية.
 definition_en: >-
   A span of time in a recitation recording, given by a start and an end, corresponding to
   one word of an ayah.
 purpose: >-
-  يستخدم لإبراز الكلمة المتلوة أثناء الاستماع، ولمحاذاة النص بالصوت على مستوى أدق من الآية،
-  ولتقطيع التسجيل عند كلمة.
+  نستخدم توقيت الكلمة لإبراز الكلمة المتلوة في أثناء الاستماع، ولمحاذاة النص مع الصوت
+  على مستوى أدق من الآية، ولتقطيع التسجيل عند كلمة.
 purpose_en: >-
   Used to highlight the word being recited while listening, to align text with audio at a
   level finer than the ayah, and to cut a recording at a word.
 boundaries:
-- توقيت الكلمة يقع داخل توقيت آيتها ولا يتجاوزه.
-- >-
-  تسمي واجهات الصوت هذا المفهوم `segment`، والاسم في هذا المعيار `word_timing`، لأن `segment`
-  في مدونات التحليل اللغوي اسم للوحدة الصرفية.
+  - توقيت الكلمة يقع داخل توقيت آيتها ولا يتجاوزه.
+  - تسمي واجهات الصوت هذا المفهوم `segment`، أما الاسم في هذا المعيار فهو `word_timing`،
+    لأن `segment` في مدونات التحليل اللغوي اسم للوحدة الصرفية.
 boundaries_en:
 - >-
   A word timing falls inside the timing of its ayah and does not cross it.

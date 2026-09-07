@@ -7,17 +7,17 @@ names:
     singular: المتجانسان
 kind: classification_value
 category: tajwid
-parent: alaqat_al_harfayn
+parent: letter_relation
 origin: quranic
 tier: extended
 status: draft
-definition: حرفان اتحدا مخرجًا واختلفا صفة، كالدال والتاء في «قد تبين».
+definition: المتجانسان حرفان اتحدا في المخرج واختلفا في الصفة، مثل الدال والتاء في «قد تبين».
 definition_en: >-
   Two letters of one point of articulation differing in attribute, like the dal and the taa
   in «قد تبين».
 purpose: >-
-  يستخدم قيمةً من قيم علاقة الحرفين، فيُقرأ منه سبب الإدغام أو الإظهار في الموضع بدل استنباطه
-  من الحرفين في كل مرة.
+  نستخدمه قيمة من قيم علاقة الحرفين، فنقرأ منه سبب الإدغام أو الإظهار في الموضع بدلًا من
+  استنباطه من الحرفين في كل مرة.
 purpose_en: >-
   Used as a value of the relation of two letters, so that the cause of idgham or izhar at
   the place is read from it rather than worked out from the two letters every time.
@@ -26,7 +26,7 @@ alternative_spellings:
 - mutajanisayn
 - mutajanisan_saghir
 related:
-- alaqat_al_harfayn
+- letter_relation
 - idgham
 - izhar
 sources:

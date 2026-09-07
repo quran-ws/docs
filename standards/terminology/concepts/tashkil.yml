@@ -11,20 +11,20 @@ origin: quranic
 tier: core
 status: draft
 definition: >-
-  طبقة علامات الضبط الملحقة بحروف النص، من الحركات والتنوين والشدة والسكون وما يتبعها، منظورًا
-  إليها جملةً.
+  التشكيل هو طبقة علامات الضبط الملحقة بحروف النص، من الحركات والتنوين والشدة والسكون
+  وما يتبعها، منظورًا إليها جملة واحدة.
 definition_en: >-
   The layer of dabt marks attached to the letters of the text, the harakat, tanwin, shaddah,
   sukun and what goes with them, taken as a whole.
 purpose: >-
-  يستخدم حين يُتعامل مع طبقة الضبط كلها، كإثباتها في العرض أو تجريد النص منها للبحث، لا مع
-  علامة بعينها.
+  نستخدم التشكيل حين نتعامل مع طبقة الضبط كلها وليس مع علامة بعينها، مثل إثباتها في
+  العرض أو تجريد النص منها للبحث.
 purpose_en: >-
   Used when the whole layer of dabt is handled at once, kept in display or stripped from the
   text for search, rather than one mark.
 boundaries:
-- التشكيل الطبقة، والحركة العلامة الواحدة.
-- الضبط العلم وقواعده، والتشكيل ما نتج عنه على الحروف.
+  - التشكيل هو الطبقة كلها، والحركة هي العلامة الواحدة.
+  - الضبط هو العلم وقواعده، والتشكيل هو ما ينتج عنه على الحروف.
 boundaries_en:
 - Tashkil is the layer; a harakah is one mark.
 - >-

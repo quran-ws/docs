@@ -12,13 +12,13 @@ origin: quranic
 tier: core
 status: draft
 definition: >-
-  مد ناشئ عن صلة هاء الضمير بواو أو ياء إذا وقعت بين متحركين؛ صغرى إن لم يقع بعدها همز، وكبرى
-  إن وقع.
+  مد الصلة مد ينشأ عن صلة هاء الضمير بواو أو ياء إذا وقعت بين متحركين. ويكون صغرى إذا لم يقع
+  بعدها همز، وكبرى إذا وقع.
 definition_en: >-
   A madd arising from joining the pronoun haa to a waw or a yaa when it falls between two
   vowelled letters; sughra when no hamzah follows, kubra when one does.
 purpose: >-
-  يستخدم قيمةً من قيم المد، فيوسم به موضع النص مع مقداره، ويُقرأ منه ما يختلف به الطريق في
+  نستخدمه قيمة من قيم المد، فنوسم به موضع النص مع مقداره، ونقرأ منه ما يختلف باختلاف الطريق في
   وصف التسجيل والمصحف.
 purpose_en: >-
   Used as a value of madd, so that a place in the text is tagged with it and with its length,

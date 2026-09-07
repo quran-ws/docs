@@ -1,6 +1,6 @@
 """Generate registries/tajwid_rules.tsv from the tajweed-engine rule corpus.
 
-The dictionary defines what a `hukm_al_tajwid` is, and what `izhar`, `idgham`,
+The dictionary defines what a `tajwid_ruling` is, and what `izhar`, `idgham`,
 `madd` and the rest are. The 58 hukums of the engine are the members of that
 set: each one is a name, a place in the taxonomy (topic, category, school) and
 an attestation, which is what a registry holds and an entry does not (section 13).
@@ -117,7 +117,7 @@ HEAD_NOTE = """\
 # labels in the generator, and run it again.
 #
 # WHY THIS IS A REGISTRY
-# `hukm_al_tajwid` is the concept and has its dictionary entry, as do the
+# `tajwid_ruling` is the concept and has its dictionary entry, as do the
 # families a ruling belongs to: izhar, idgham, iqlab, ikhfa, the kinds of madd,
 # qalqalah, tafkhim and tarqiq. A hukum is a member of that set: what is true of
 # it is its name, its place in the corpus (topic, category, school) and the

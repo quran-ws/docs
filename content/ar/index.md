@@ -60,7 +60,7 @@ hero:
     <span class="qw-index-num">§03</span>
     <div class="qw-index-body">
       <a href="/guidelines/ar/03-terminology/">المصطلحات</a>
-      <p>اسم <span class="ltr">Canonical</span> واحد لكل مفهوم، وتهجئة برمجية مشتقة لا مختارة.</p>
+      <p>اسم <span class="ltr">Canonical</span> واحد لكل مفهوم، وتهجئة برمجية تُشتق بدالة ولا تُختار.</p>
       <span class="qw-index-links">
         <a href="/guidelines/ar/03-terminology/standard/">standard</a>
         <a href="/guidelines/ar/03-terminology/decisions/">decisions</a>
@@ -76,7 +76,7 @@ hero:
     <span class="qw-index-num">§04</span>
     <div class="qw-index-body">
       <a href="/guidelines/ar/04-versioning/">الإصدارات والتصحيحات</a>
-      <p>الإصدار الدلالي للبيانات لا للكود فقط، وسجل التصحيحات، وكيف نُعلم المستخدمين بتغيّر النص.</p>
+      <p>الإصدار الدلالي للبيانات أيضًا وليس للكود وحده، وسجل التصحيحات، وكيف نُعلم المستخدمين بتغيّر النص.</p>
     </div>
     <span class="qw-index-state status-draft">مسودة</span>
   </div>
@@ -102,5 +102,5 @@ hero:
 </div>
 
 :::caution[هذه الأدلة مسودة]
-لا شيء هنا معتمد بعد، ولا يبنى على أي صفحة قبل أن توسم `adopted`. وهي آراء واجتهادات، لا فتاوى ولا معايير رسمية.
+لا شيء هنا معتمد بعد، ولا يُبنى على أي صفحة قبل أن توسم `adopted`. وهذه الأدلة آراء واجتهادات، وليست فتاوى ولا معايير رسمية.
 :::

@@ -12,21 +12,22 @@ origin: quranic
 tier: core
 status: draft
 definition: >-
-  كتابة ألفاظ القرآن على قواعد الإملاء المعاصرة، بإثبات ما يُحذف في الرسم العثماني وحذف ما
-  يُزاد فيه، لتُقرأ على صورتها المألوفة.
+  الرسم الإملائي هو كتابة ألفاظ القرآن على قواعد الإملاء المعاصرة، بإثبات ما يحذف في
+  الرسم العثماني وحذف ما يزاد فيه، حتى تقرأ الكلمة على صورتها المألوفة.
 definition_en: >-
   Writing the words of the Quran by the rules of modern orthography, writing what the Uthmani
   rasm omits and omitting what it adds, so that they read in their familiar form.
 purpose: >-
-  يستخدم لتحديد أن نصًّا يتبع الإملاء المعاصر، وهو النص الذي تُبنى عليه صيغة البحث والاقتباس
-  والعرض خارج المصحف، مقابل النص العثماني الذي يُعرض به المصحف.
+  نستخدم الرسم الإملائي لتحديد أن النص يتبع الإملاء المعاصر. وهذا هو النص الذي تبنى
+  عليه صيغة البحث والاقتباس والعرض خارج المصحف، مقابل النص العثماني الذي يعرض به
+  المصحف.
 purpose_en: >-
   Used to state that a text follows modern orthography, which is the text that search, quotation
   and display outside the mushaf are built on, as against the Uthmani text the mushaf is displayed
   in.
 boundaries:
-- 'الرسم الإملائي كتابة لا قراءة: اللفظ واحد، والذي يختلف صورة الكلمة.'
-- النص الإملائي غير نص البحث المجرد من الضبط، وإن اشتُق الثاني من الأول.
+  - الرسم الإملائي يخص الكتابة وليس القراءة، فاللفظ واحد والذي يختلف هو صورة الكلمة.
+  - النص الإملائي غير نص البحث المجرد من الضبط، حتى لو اشتق الثاني من الأول.
 boundaries_en:
 - >-
   The imlai rasm is a writing and not a reading: the wording is one, and what differs is the
@@ -50,9 +51,10 @@ related:
 - rasm
 - rasm_uthmani
 note: >-
-  اشتقاق الاسم بالأداة يعطي `orthographic_rasm`، لأن جدول الكلمات العامة يترجم «إملائي» إلى
-  `orthographic` من أجل «العلامة الإملائية»؛ والاسم المثبت `rasm_imlai`، وهو الذي تستعمله
-  قواعد البيانات والواجهات، والقرار مسجل في سجل القرارات.
+  اشتقاق الاسم بالأداة يعطي `orthographic_rasm`، لأن جدول الكلمات العامة يترجم
+  «إملائي» إلى `orthographic` من أجل «العلامة الإملائية». والاسم المثبت هو
+  `rasm_imlai` لأنه الاسم الذي تستعمله قواعد البيانات والواجهات، والقرار مسجل في سجل
+  القرارات.
 note_en: >-
   Deriving the name with the tool gives `orthographic_rasm`, because the general-words table
   translates «إملائي» to `orthographic` for the sake of «العلامة الإملائية»; the recorded

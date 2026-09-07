@@ -12,10 +12,10 @@ origin: standard
 tier: core
 status: draft
 plural: spoken_translations
-definition: نقل معاني القرآن إلى لغة أخرى في مادة صوتية أو منطوقة.
+definition: الترجمة المنطوقة هي نقل معاني القرآن إلى لغة أخرى في مادة صوتية أو منطوقة.
 definition_en: >
   Rendering the meanings of the Quran into another language in audio or spoken material.
-purpose: يستخدم لتمييز المحتوى الصوتي لترجمة المعاني عن الترجمة النصية وعن التلاوة القرآنية.
+purpose: نستخدم الترجمة المنطوقة لتمييز المحتوى الصوتي لترجمة المعاني عن الترجمة النصية وعن التلاوة القرآنية.
 purpose_en: >
   Used to distinguish audio renderings of the meanings from written translation and from
   Quranic recitation.

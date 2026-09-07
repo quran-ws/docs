@@ -11,20 +11,20 @@
 
 كتبناها لأنفسنا أولًا حتى تبقى قراراتنا متسقة عبر مشاريع [Quran.ws](https://quran.ws)، ولا نعيد النقاش نفسه في كل مستودع جديد. ونشرناها لأن أكثر ما فيها لا يخصنا وحدنا، فكل فريق يبني تطبيقًا قرآنيًا يسأل الأسئلة نفسها: هل نكتب `ayah` أم `verse`؟ ومتى يجوز تعديل نص مصحف منشور؟ وكيف نُعلم المستخدمين بتصحيح في النص؟
 
-> هذه الأدلة **آراء واجتهادات**، لا فتاوى ولا معايير رسمية. ما يتعلق منها بالنص القرآني نفسه مبني على مراجعة أهل الاختصاص، وما يتعلق بالهندسة اختيار من بين بدائل صحيحة.
+> هذه الأدلة **آراء واجتهادات**، وليست فتاوى ولا معايير رسمية. ما يتعلق منها بالنص القرآني نفسه مبني على مراجعة أهل الاختصاص، وما يتعلق بالهندسة اختيار من بين بدائل صحيحة.
 
 ## ما في المستودع
 
 | المحور | الحال | المضمون |
 | --- | --- | --- |
 | [المدخل](content/ar/01-intro/index.md) | `draft` | أسلوب الكتابة، وما يجب أن تحتويه صفحة في هذه الأدلة. |
-| [أدبيات التعامل مع النص القرآني](content/ar/02-quranic-text/index.md) | `draft` | النص أصل منقول لا يُحرر: التخزين والترميز والتقسيم والعرض، والاختبارات التي تحرسها. |
-| [معيار المصطلحات](content/ar/03-terminology/standard.md) و[القاموس](content/ar/03-terminology/dictionary.md) | `draft` | اسم واحد لكل مفهوم، وتهجئة تُشتق بدالة لا تُختار. المصدر المقروء آليًا في [`standards/terminology/`](standards/terminology/)، والحجج في [سجل القرارات](content/ar/03-terminology/decisions.md)، و[مهارة وكيل](skills/quranic-terminology/) تفحص بها كودًا قائمًا. |
-| [الإصدارات والتصحيحات](content/ar/04-versioning/index.md) | `draft` | إصدار البيانات لا الكود وحده، وسجل التصحيحات، وكيف نُعلم المستخدمين بتغيّر النص. |
+| [أدبيات التعامل مع النص القرآني](content/ar/02-quranic-text/index.md) | `draft` | النص أصل منقول ولا يُحرر: التخزين والترميز والتقسيم والعرض، والاختبارات التي تحرسها. |
+| [معيار المصطلحات](content/ar/03-terminology/standard.md) و[القاموس](content/ar/03-terminology/dictionary.md) | `draft` | اسم واحد لكل مفهوم، وتهجئة تُشتق بدالة ولا تُختار. المصدر المقروء آليًا في [`standards/terminology/`](standards/terminology/)، وأسباب القرارات في [سجل القرارات](content/ar/03-terminology/decisions.md)، و[مهارة وكيل](skills/quranic-terminology/) تفحص بها كودًا قائمًا. |
+| [الإصدارات والتصحيحات](content/ar/04-versioning/index.md) | `draft` | إصدار البيانات وليس الكود وحده، وسجل التصحيحات، وكيف نُعلم المستخدمين بتغيّر النص. |
 | [المصدر المفتوح و`version control`](content/ar/05-open-source/index.md) | `draft` | الرخص، وبنية المستودعات، وقواعد الـ`commits` والـ`PRs` والمراجعة. |
 | [الهندسة](content/ar/06-engineering/index.md) | `draft` | تصميم الـ`APIs`، ونمذجة البيانات، وعرض المصحف والخطوط، والصوت. |
 
-لا شيء معتمد بعد. لا يُبنى على صفحة قبل أن تُوسم `adopted`.
+لا شيء معتمد بعد، ولا يُبنى على صفحة قبل أن تُوسم `adopted`.
 
 ## البدء
 
@@ -70,7 +70,7 @@ cd site && npm install && npm run build
 - `standards/terminology/` — المصدر المقروء آليًا: `schema.json`، و`concepts/` (ملف لكل مفهوم)، و`registries/` (المجموعات المغلقة: السور، والقراءات، وأنظمة عدّ الآي، ومواضع السجدة)، و`aliases.json`.
 - `tools/` — ما يشتق الأسماء ويفحصها ويولّد الصفحات. [`tools/README.md`](tools/README.md) يشرح كل أداة.
 - `skills/quranic-terminology/` — مهارة الوكيل، مولّدة كاملة في كل بناء.
-- `surveys/` — فحص مستودعات حقيقية على المعيار. ما فيها نتائج لا قواعد.
+- `surveys/` — فحص مستودعات حقيقية على المعيار. وما فيها نتائج وليس قواعد.
 - `examples/` — نماذج مفحوصة بالأسماء المعتمدة: مخطط قاعدة بيانات، و`API`، وبيانات، وترحيل، واختبارات.
 - `site/` — موقع Astro Starlight الذي يعرض `content/`.
 - [`STRUCTURE.md`](STRUCTURE.md) — الشجرة كاملة وقواعد التنظيم.
@@ -154,7 +154,7 @@ The build needs Python 3 and the packages in `requirements.txt`; the site needs 
 ## Map of the repository
 
 - `content/{ar,en}/` — the guideline pages, file for file in both languages.
-- `standards/terminology/` — the machine-readable source: `schema.json`, `concepts/` (one file per concept), `registries/` (the closed sets: surahs, qiraat, ayah numbering systems, sajdah places), and `aliases.json`.
+- `standards/terminology/` — the machine-readable source: `schema.json`, `concepts/` (one file per concept), `registries/` (the closed sets: surahs, qiraat, ayah numbering systems, sajdahs), and `aliases.json`.
 - `tools/` — what derives the names, checks them and generates the pages. [`tools/README.md`](tools/README.md) describes each tool.
 - `skills/quranic-terminology/` — the agent skill, generated in full on every build.
 - `surveys/` — real codebases measured against the standard. Findings, not rules.

@@ -36,3 +36,9 @@
 تقسيم	division	word
 إملائي	orthographic	with_head
 إملائية	orthographic	with_head
+موضع	place	head
+حرف	letter	head
+أسماء	names	head
+حكم	ruling	head
+علاقة	relation	head
+حرفين	letter	word

@@ -11,12 +11,12 @@ origin: standard
 tier: core
 status: draft
 definition: >
-  تصنيف للتسجيلات والتلاوات بحسب طريقة أدائها: مرتل أو مجود أو معلم، مستقل عن القراءة
-  والرواية.
+  نمط الأداء هو تصنيف للتسجيلات والتلاوات بحسب طريقة أدائها، وهي مرتل أو مجود أو معلم،
+  وهو مستقل عن القراءة والرواية.
 definition_en: >
   A classification of recordings and recitations by how they are delivered, murattal,
   mujawwad or muallim, independent of the qiraah and the riwayah.
-purpose: يستخدم لتصنيف التسجيلات الصوتية بحسب طريقة الأداء أو الغرض منها.
+purpose: نستخدم نمط الأداء لتصنيف التسجيلات الصوتية بحسب طريقة الأداء أو الغرض منها.
 purpose_en: >
   Used to classify audio recordings by their manner of delivery or by their purpose.
 related:

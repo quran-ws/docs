@@ -15,12 +15,13 @@ origin: quranic
 tier: core
 status: draft
 definition: >-
-  المد الذي لا تقوم ذات حرف المد إلا به، ولا يتوقف على سبب من همز أو سكون، ومقداره حركتان.
+  المد الطبيعي هو المد الذي لا تقوم ذات حرف المد إلا به، ولا يتوقف على سبب من همز أو سكون،
+  ومقداره حركتان.
 definition_en: >-
   The madd without which the letter of madd itself does not stand, depending on no cause of
   hamzah or sukun; its length is 2 counts.
 purpose: >-
-  يستخدم قيمةً من قيم المد، فيوسم به موضع النص مع مقداره، ويُقرأ منه ما يختلف به الطريق في
+  نستخدمه قيمة من قيم المد، فنوسم به موضع النص مع مقداره، ونقرأ منه ما يختلف باختلاف الطريق في
   وصف التسجيل والمصحف.
 purpose_en: >-
   Used as a value of madd, so that a place in the text is tagged with it and with its length,

@@ -7,20 +7,20 @@ names:
     singular: الإخفاء
 kind: classification_value
 category: tajwid
-parent: hukm_al_tajwid
+parent: tajwid_ruling
 origin: quranic
 tier: core
 status: draft
 definition: >-
-  النطق بالحرف الساكن على صفة بين الإظهار والإدغام، عاريًا عن التشديد مع بقاء الغنة؛ حقيقيًّا
-  في النون الساكنة والتنوين عند حروفه الخمسة عشر، وشفويًّا في الميم الساكنة عند الباء.
+  الإخفاء هو النطق بالحرف الساكن على صفة بين الإظهار والإدغام، دون تشديد ومع بقاء الغنة. ويكون
+  حقيقيًّا في النون الساكنة والتنوين عند حروفه الخمسة عشر، وشفويًّا في الميم الساكنة عند الباء.
 definition_en: >-
   Pronouncing a vowelless letter in a manner between izhar and idgham, without doubling and
   with the ghunnah kept: haqiqi in noon sakinah and tanwin before its 15 letters, and shafawi
   in meem sakinah before a baa.
 purpose: >-
-  يستخدم قيمةً من قيم حكم التجويد، فيوسم به موضع النص في التحليل والتلوين والتعليم، وتتفرع
-  تحته أنواعه في سجل الأحكام.
+  نستخدمه قيمة من قيم حكم التجويد، فنوسم به موضع النص في التحليل والتلوين والتعليم، وتتفرع تحته
+  أنواعه في سجل الأحكام.
 purpose_en: >-
   Used as a value of the tajwid ruling, so that a place in the text is tagged with it in analysis,
   colouring and instruction, and its kinds branch under it in the registry of rulings.

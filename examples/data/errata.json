@@ -7,7 +7,7 @@
         "surah_number": 1,
         "ayah_number": 1,
         "word_position": 1,
-        "ayah_numbering_system": "ayah_numbering_kufi"
+        "ayah_numbering_system": "kufi"
       },
       "offset": {
         "unit": "codepoint",

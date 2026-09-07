@@ -12,24 +12,24 @@ origin: quranic
 tier: core
 status: draft
 definition: >-
-  إطالة الصوت بحرف من حروف المد الثلاثة: الألف الساكنة بعد فتح، والواو الساكنة بعد ضم، والياء
-  الساكنة بعد كسر؛ أصليًّا كان المد لا يقوم الحرف إلا به، أو فرعيًّا بسبب همز أو سكون.
+  المد إطالة الصوت بحرف من حروف المد الثلاثة، وهي الألف الساكنة بعد فتح والواو الساكنة بعد ضم
+  والياء الساكنة بعد كسر. ويكون المد أصليًّا لا يقوم الحرف إلا به، أو فرعيًّا بسبب همز أو سكون.
 definition_en: >-
   Prolonging the sound on one of the three letters of madd: a vowelless alif after a fathah,
   a vowelless waw after a dammah, a vowelless yaa after a kasrah; whether the madd is original,
   without which the letter does not stand, or secondary, caused by a hamzah or a sukun.
 purpose: >-
-  يستخدم تصنيفًا تتفرع عليه أنواع المد، فيوسم به موضع النص مع نوعه ومقداره؛ ولأن مقادير المدود
-  مما يختلف به الطريق، فهي مما يُبين في وصف التسجيل والمصحف.
+  نستخدمه تصنيفًا تتفرع عليه أنواع المد، فنوسم به موضع النص مع نوعه ومقداره. ولأن مقادير المدود
+  تختلف باختلاف الطريق، فإنها تُبين في وصف التسجيل والمصحف.
 purpose_en: >-
   Used as a classification that the kinds of madd branch from, so that a place in the text
   is tagged with its kind and its length; and because the lengths of the madds are among what
   differs by tariq, they are part of describing a recording or a mushaf.
 boundaries:
 - >-
-  حروف المد غير حروف اللين وإن اجتمعتا في الواو والياء: حرف المد ساكن بعد حركة تجانسه، وحرف
+  حروف المد غير حروف اللين وإن اشتركتا في الواو والياء، فحرف المد ساكن بعد حركة تجانسه، وحرف
   اللين ساكن بعد فتح.
-- المد الحكم، والمدة العلامة التي تدل عليه في المصحف.
+- المد هو الحكم، والمدة هي العلامة التي تدل عليه في المصحف.
 boundaries_en:
 - >-
   The letters of madd are not the letters of lin, though waw and yaa belong to both: a letter
@@ -57,7 +57,7 @@ related:
 - madd_al_silah
 - madd_al_lin
 - madd_arid_li_al_sukun
-- hukm_al_tajwid
+- tajwid_ruling
 sources:
 - id: quranpedia_tajweed
   ref: '90'

@@ -11,22 +11,21 @@ origin: quranic
 tier: core
 status: draft
 definition: >
-  ما فسر به القرآن من القرآن نفسه، أو من السنة، أو من قول الصحابة والتابعين،
-  منقولًا بإسناده.
+  التفسير المأثور هو ما فسر به القرآن من القرآن نفسه أو من السنة أو من قول الصحابة
+  والتابعين، منقولًا بإسناده.
 definition_en: >
   Tafsir transmitted with a chain of narration: explanation of the Quran drawn from the
   Quran itself, from the Sunnah, or from the sayings of the Companions and Successors.
 purpose: >
-  يستخدم محتوى يربط بالآية ويحمل معه ناقله ودرجة النقل، فلا يعامل معاملة نص
-  التفسير المؤلف الذي ينسب إلى كتاب واحد.
+  نستخدم التفسير المأثور محتوى يربط بالآية ويحمل معه ناقله ودرجة النقل. ولذلك لا يعامل
+  معاملة نص التفسير المؤلف الذي ينسب إلى كتاب واحد.
 purpose_en: >
   Used as content attached to an ayah and carrying its transmitter and the standing of
   the transmission with it, so it is not treated as authored tafsir text attributed to a
   single book.
 boundaries:
   - التفسير المأثور منقول بإسناد، والتفسير المؤلف قول صاحب الكتاب.
-  - الأثر الواحد ليس مفهومًا في هذا المعيار؛ المفهوم هو نوع المحتوى المرتب على
-    الآية.
+  - الأثر الواحد ليس مفهومًا في هذا المعيار، والمفهوم هو نوع المحتوى المرتب على الآية.
 boundaries_en:
   - >-
     Tafsir mathur is transmitted with a chain; authored tafsir is the statement of the
@@ -41,15 +40,15 @@ alternative_spellings:
 english_glosses:
   - Transmitted Tafsir
 note: >
-  العنوان الأشهر «التَّفْسِير بِالمَأْثُور»، واشتقاقه يلحم حرف الجر بالاسم
-  فيعطي `tafsir_bialmathur`. والاسم المثبت هو الصورة الوصفية، وهي عربية مستعملة،
-  والصورة الأشهر محالة في `alternative_spellings`. وهي العلة التي أفرد لها
-  `naskh` دون «الناسخ والمنسوخ».
+  العنوان الأشهر هو «التَّفْسِير بِالمَأْثُور»، واشتقاقه يلصق حرف الجر بالاسم فيعطي
+  `tafsir_bialmathur`. لذلك الاسم المثبت هو الصورة الوصفية، وهي عربية مستعملة، والصورة
+  الأشهر مسجلة في `alternative_spellings`. وللسبب نفسه أفرد `abrogation` بدل «الناسخ
+  والمنسوخ».
 note_en: >
   The better-known title is «التَّفْسِير بِالمَأْثُور», whose derivation fuses the
   preposition to the noun and gives `tafsir_bialmathur`. The name recorded here is the
   descriptive form, which is Arabic and in use, and the better-known form resolves
-  through `alternative_spellings`. This is the same reason `naskh` was given an entry
+  through `alternative_spellings`. This is the same reason `abrogation` was given an entry
   rather than «الناسخ والمنسوخ».
 related:
   - tafsir

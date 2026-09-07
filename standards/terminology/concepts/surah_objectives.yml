@@ -1,37 +1,35 @@
-concept: maqasid_al_surah
+concept: surah_objectives
 names:
-  code: maqasid_al_surah
-  display: Maqasid al-Surah
+  code: surah_objectives
+  display: Surah Objectives
   arabic:
     vocalized: مَقَاصِد السُّورَة
     singular: مقاصد السورة
 kind: content
 category: quranic_sciences
-origin: quranic
+origin: borrowed
 tier: extended
 status: draft
 definition: >
-  المعاني الكلية التي تدور عليها السورة ويجمع بينها موضوعها، وما تنتظم به آياتها
-  من غرض واحد.
+  مقاصد السورة هي المعاني الكلية التي تدور عليها السورة ويجمع بينها موضوعها، وهي الغرض الواحد
+  الذي تنتظم به آياتها.
 definition_en: >
   The overarching meanings a surah turns on, held together by its subject, and the
   single aim its ayahs are ordered around.
 purpose: >
-  يستخدم محتوى يربط بالسورة كلها لا بآية منها، فيتميز عن التفسير الذي يمضي على
-  الآيات، وعن الموضوعات التي تعدد ما ورد فيها.
+  نستخدمها محتوى يُربط بالسورة كلها وليس بآية منها. وبذلك تتميز عن التفسير الذي يسير على الآيات
+  آية آية، وعن الموضوعات التي تعدد ما ورد في السورة.
 purpose_en: >
   Used as content attached to a whole surah rather than to one of its ayahs, which sets
   it apart from tafsir, which proceeds ayah by ayah, and from a topic index, which lists
   what the surah contains.
 boundaries:
-  - المقصد غرض جامع للسورة، والموضوع واحد مما ورد فيها.
+  - المقصد غرض جامع للسورة، والموضوع واحد من الموضوعات التي وردت فيها.
 boundaries_en:
   - >-
     A maqsad is an aim that gathers the surah; a topic is one of the things it contains.
 alternative_spellings:
   - maqasid
-english_glosses:
-  - Surah Objectives
 related:
   - surah
   - tafsir

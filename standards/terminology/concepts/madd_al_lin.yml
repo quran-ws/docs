@@ -12,13 +12,13 @@ origin: quranic
 tier: core
 status: draft
 definition: >-
-  مد الواو أو الياء الساكنة المفتوح ما قبلها عند الوقف على الكلمة بسكون عارض، كما في «خوف»
-  و«بيت».
+  مد اللين هو مد الواو أو الياء الساكنة المفتوح ما قبلها عند الوقف على الكلمة بسكون عارض، مثل
+  «خوف» و«بيت».
 definition_en: >-
   Lengthening a vowelless waw or yaa preceded by a fathah when stopping on the word with an
   incidental sukun, as in «خوف» and «بيت».
 purpose: >-
-  يستخدم قيمةً من قيم المد، فيوسم به موضع النص مع مقداره، ويُقرأ منه ما يختلف به الطريق في
+  نستخدمه قيمة من قيم المد، فنوسم به موضع النص مع مقداره، ونقرأ منه ما يختلف باختلاف الطريق في
   وصف التسجيل والمصحف.
 purpose_en: >-
   Used as a value of madd, so that a place in the text is tagged with it and with its length,

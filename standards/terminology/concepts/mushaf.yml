@@ -12,16 +12,17 @@ tier: core
 status: draft
 plural: mushafs
 definition: >
-  الصحف التي جمع فيها القرآن مكتوبًا ومرتبًا على ترتيبه المعروف.
+  المصحف هو الصحف التي جُمع فيها القرآن مكتوبًا ومرتبًا على ترتيبه المعروف.
 definition_en: >
   The Quran as a written, bound book, in its established order.
-purpose: يستخدم عندما تكون خصائص التمثيل المكتوب للقرآن مهمة، مثل الرسم والتخطيط والصفحات
-  والأسطر والعلامات.
+purpose: نستخدمه عندما تكون خصائص التمثيل المكتوب للقرآن مهمة، مثل الرسم والتخطيط والصفحات والأسطر
+  والعلامات.
 purpose_en: >
   Used when the properties of the written representation matter: rasm, layout, pages,
   lines and marks.
 boundaries:
-  - المصحف وعاء مكتوب للقرآن وليس القرآن نفسه؛ فتختلف المصاحف في الرسم والصفحات والعلامات والقرآن واحد.
+  - المصحف وعاء مكتوب للقرآن وليس القرآن نفسه، فالمصاحف تختلف في الرسم والصفحات والعلامات والقرآن
+    واحد.
 boundaries_en:
   - >-
     A mushaf is a written vessel for the Quran, not the Quran itself: mushafs differ in

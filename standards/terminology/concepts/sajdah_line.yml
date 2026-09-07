@@ -15,9 +15,9 @@ origin: quranic
 tier: core
 status: draft
 symbol: خَطّ أُفُقِيّ
-definition: الدلالة على الكلمة الموجبة للسجدة
+definition: خط السجدة خط فوق الكلمة يدل على أنها الكلمة الموجبة للسجدة.
 definition_en: Marks the word that makes prostration due.
-purpose: تستخدم علامةً من علامات المصحف، ليعرف بها موضعها ودلالتها في العرض والتحليل.
+purpose: نستخدمها علامة من علامات المصحف، فنعرف بها موضعها ودلالتها في العرض والتحليل.
 purpose_en: Used as a mark of the mushaf, so that rendering and analysis know where it sits
   and what it points to.
 alternative_spellings:
@@ -25,7 +25,7 @@ alternative_spellings:
 - sajdah-line
 related:
 - sajdah_mark
-- mawdi_al_sajdah
+- sajdah
 unicode: []
 mark_family: mustaqill
 sources:

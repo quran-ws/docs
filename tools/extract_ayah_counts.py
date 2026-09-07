@@ -30,15 +30,15 @@ CACHE = os.path.join(ROOT, "tools/turath_cache/5542.json")
 OUT = os.path.join(ROOT, "standards/terminology/registries/ayah_counts.tsv")
 BOOK_URL = "https://files.turath.io/books-v3/5542.json"
 
-SCHOOLS = ["madani_awwal", "madani_akhir", "makki", "kufi", "basri", "dimashqi"]
+SCHOOLS = ["madani_first", "madani_last", "makki", "kufi", "basri", "dimashqi"]
 
 # The residual each column is allowed against al-Dani's stated total: one ayah
 # in four schools, from the two sections (al-Saffat, al-Takwir) where he counts
 # for Abu Jafar apart — see the registry header. Anything else is a regression.
-TOLERATED = {"madani_awwal": 1, "madani_akhir": 1, "makki": 1, "dimashqi": 1}
+TOLERATED = {"madani_first": 1, "madani_last": 1, "makki": 1, "dimashqi": 1}
 
 # The totals al-Dani states for each school, with the page each is stated on.
-ATTESTED = {"madani_awwal": (6217, "1/79"), "madani_akhir": (6214, "1/79"),
+ATTESTED = {"madani_first": (6217, "1/79"), "madani_last": (6214, "1/79"),
             "makki": (6219, "1/79"), "kufi": (6236, "1/80"),
             "basri": (6204, "1/80"), "dimashqi": (6226, "1/82")}
 
@@ -62,9 +62,9 @@ HUND = {'مئه':100,'مائه':100,'مئتا':200,'مئتان':200,'مائتا'
  'ثمانمائه':800,'تسعمئه':900,'تسعمائه':900}
 
 LABELS = [
- (r'المدني[_\s]الاول', ["madani_awwal"]), (r'المدني[_\s]الاخير', ["madani_akhir"]),
- (r'المدنيين', ["madani_awwal","madani_akhir"]), (r'المدنيان', ["madani_awwal","madani_akhir"]),
- (r'مدنيان', ["madani_awwal","madani_akhir"]), (r'مدنيين', ["madani_awwal","madani_akhir"]),
+ (r'المدني[_\s]الاول', ["madani_first"]), (r'المدني[_\s]الاخير', ["madani_last"]),
+ (r'المدنيين', ["madani_first","madani_last"]), (r'المدنيان', ["madani_first","madani_last"]),
+ (r'مدنيان', ["madani_first","madani_last"]), (r'مدنيين', ["madani_first","madani_last"]),
  (r'الكوفي', ["kufi"]), (r'كوفي', ["kufi"]),
  (r'البصري', ["basri"]), (r'بصري', ["basri"]),
  (r'الشامي', ["dimashqi"]), (r'شامي', ["dimashqi"]),
@@ -254,7 +254,7 @@ HEADER = '''# Per-surah ayah counts in the six schools of numbering.
 #
 # `ref` cites al-Bayan by volume/page for the school totals this reconciles to.
 #
-# surah\tmadani_awwal\tmadani_akhir\tmakki\tkufi\tbasri\tdimashqi\tref'''
+# surah\tmadani_first\tmadani_last\tmakki\tkufi\tbasri\tdimashqi\tref'''
 
 
 def main():

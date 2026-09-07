@@ -13,14 +13,14 @@ origin: quranic
 tier: core
 status: draft
 definition: >
-  ما نزل من القرآن قبل الهجرة، ولو نزل خارج مكة.
+  المكي ما نزل من القرآن قبل الهجرة، ولو نزل خارج مكة.
 definition_en: >
   The part of the Quran revealed before the Hijrah, even where it was revealed outside
   Makkah.
-purpose: يستخدم قيمةً من قيم تصنيف النزول، فتوسم به السورة أو الآية.
+purpose: نستخدمه قيمة من قيم تصنيف النزول، فنوسم به السورة أو الآية.
 purpose_en: Used as a value of revelation classification, tagging a surah or an ayah with it.
 boundaries:
-  - مكي وصف لزمن النزول قبل الهجرة، لا لمكان النزول.
+  - مكي وصف لزمن النزول قبل الهجرة، وليس لمكان النزول.
 boundaries_en:
   - Makki describes the time of revelation, before the Hijrah, not the place of revelation.
 alternative_spellings:
@@ -31,7 +31,7 @@ english_glosses:
 related:
   - madani
   - revelation_classification
-  - nuzul
+  - revelation
 sources:
   - id: qattan_mabahith
     ref: "1/60"

@@ -11,11 +11,12 @@ parent: recitation_pace
 origin: quranic
 tier: core
 status: draft
-definition: القراءة بسرعة متوسطة بين التحقيق والحدر مع المحافظة على الأحكام.
+definition: التدوير هو القراءة بسرعة متوسطة بين التحقيق والحدر مع المحافظة على الأحكام.
 definition_en: >
   Reciting at a middle speed between tahqiq and hadr, while keeping the rules.
 purpose: >
-  تستخدم قيمة من قيم مراتب القراءة، فيوسم بها التسجيل أو جلسة التعليم وتصفى بها.
+  نستخدم التدوير قيمة من قيم مراتب القراءة، نوسم بها التسجيل أو جلسة التعليم ونصفي
+  بها.
 purpose_en: >
   Used as a value of recitation pace, so that a recording or a teaching session is
   tagged by its pace and filtered by it.

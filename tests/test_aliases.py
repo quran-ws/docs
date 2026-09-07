@@ -6,8 +6,13 @@ import build_registry_aliases
 def test_concept_aliases():
     index, clashes = build_aliases.build()
     assert not clashes
-    for concept in set(index.values()):
-        assert index[concept] == concept
+    for value in index.values():
+        for concept in (value if isinstance(value, list) else [value]):
+            assert concept in index[concept] if isinstance(index[concept], list) else index[concept] == concept
+    # a name shared by the values of two classifications (section 14)
+    assert sorted(index["makki"]) == ["ayah_numbering_makki", "makki"]
+    assert index["ayah_numbering_system:makki"] == "ayah_numbering_makki"
+    assert index["revelation_classification:makki"] == "makki"
     assert index["waqf-lazim"] == index["waqf_lazim"] == "waqf_lazim"
     assert "waqf_jaiz" not in index          # a deprecated name does not resolve
 

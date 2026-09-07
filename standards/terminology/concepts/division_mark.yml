@@ -16,9 +16,9 @@ origin: quranic
 tier: core
 status: draft
 symbol: نَجْمَة
-definition: الدلالة على بداية الأجزاء والأحزاب وأنصافها وأرباعها
+definition: علامة التقسيم علامة تدل على بداية الأجزاء والأحزاب وأنصافها وأرباعها.
 definition_en: Marks the start of a juz, a hizb, or a half or quarter of one.
-purpose: تستخدم علامةً من علامات المصحف، ليعرف بها موضعها ودلالتها في العرض والتحليل.
+purpose: نستخدمها علامة من علامات المصحف، فنعرف بها موضعها ودلالتها في العرض والتحليل.
 purpose_en: Used as a mark of the mushaf, so that rendering and analysis know where it sits
   and what it points to.
 boundaries:
@@ -37,7 +37,7 @@ related:
 - hizb
 - rubu_al_hizb
 - juz
-note: كان `alamat_al_tahzib` مدخلًا مستقلًا يعرف الشيء نفسه، فدمج في هذا المدخل.
+note: كان `alamat_al_tahzib` مدخلًا مستقلًا يعرف الشيء نفسه، ثم دُمج في هذا المدخل.
 note_en: '`alamat_al_tahzib` was a separate entry defining the same thing; it was merged into
   this one.'
 unicode:

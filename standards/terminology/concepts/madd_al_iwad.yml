@@ -11,12 +11,12 @@ parent: madd
 origin: quranic
 tier: core
 status: draft
-definition: مد الألف عوضًا عن تنوين الفتح عند الوقف على الكلمة، ومقداره حركتان.
+definition: مد العوض هو مد الألف عوضًا عن تنوين الفتح عند الوقف على الكلمة، ومقداره حركتان.
 definition_en: >-
   Lengthening an alif in place of tanwin al-fath when stopping on the word; its length is
   2 counts.
 purpose: >-
-  يستخدم قيمةً من قيم المد، فيوسم به موضع النص مع مقداره، ويُقرأ منه ما يختلف به الطريق في
+  نستخدمه قيمة من قيم المد، فنوسم به موضع النص مع مقداره، ونقرأ منه ما يختلف باختلاف الطريق في
   وصف التسجيل والمصحف.
 purpose_en: >-
   Used as a value of madd, so that a place in the text is tagged with it and with its length,

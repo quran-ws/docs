@@ -15,10 +15,12 @@ origin: quranic
 tier: core
 status: draft
 symbol: ثَلَاث نُقَط
-definition: ثلاث نقاط فوق الحرف تميزه عما يشاركه في الرسم، كالثاء والشين
+definition: الثلاث نقط ثلاث نقاط فوق الحرف تميزه عن الحرف الذي يشاركه في الرسم، مثل الثاء
+  والشين.
 definition_en: 'Three dots above the letter, distinguishing it from the others that share
   its skeleton (ijam): thaa, sheen.'
-purpose: تستخدم قيمةً من قيم النقط، ليتميز بها الحرف عما يشاركه في الرسم في التحليل والبحث.
+purpose: نستخدمها قيمة من قيم النقط، فنميز بها الحرف عن الحرف الذي يشاركه في الرسم في التحليل
+  والبحث.
 purpose_en: Used as a value of ijam, so that a letter is told apart from those sharing its
   skeleton in analysis and in search.
 alternative_spellings:

@@ -10,15 +10,15 @@ One concept, one canonical name. The name is **derived** from the vocalised
 Arabic by a documented function, never chosen by taste, and every attested
 spelling of it resolves to the same entry.
 
-This skill carries the standard, its dictionary of 200 concepts and
-846 spellings, the registries of the closed sets, and scripts that
+This skill carries the standard, its dictionary of 180 concepts and
+755 spellings, the registries of the closed sets, and scripts that
 answer a naming question without guessing.
 
-> Status: 0 entries adopted, 200 still draft. A draft entry is a
+> Status: 0 entries adopted, 180 still draft. A draft entry is a
 > proposal, not a ruling. Say so once, at the top of any report that relies on
 > the dictionary — not on every finding.
 >
-> Snapshot `8decd2776f109cc4` of `quran-ws/guidelines`. The dictionary keeps moving, so before an
+> Snapshot `499bc74667765196` of `quran-ws/guidelines`. The dictionary keeps moving, so before an
 > audit that someone will act on, check the snapshot is still current:
 >
 > ```bash
@@ -56,7 +56,10 @@ python3 scripts/lookup.py --registry surahs --member fatihah
 
 Any spelling resolves — an alias, a gloss, a plural, a deprecated name, or the
 Arabic with or without its vowel marks — and each answer says which of those it
-matched. When nothing resolves, the nearest entries are listed: read them
+matched. A member of a closed set resolves too: `qaloun` answers with the
+registry row for the rawi `qalun`, and says it is a member, not a concept. A
+name shared by the values of two classifications (`makki`: revelation, and
+numbering) answers with both, and `<parent>:<name>` picks one. When nothing resolves, the nearest entries are listed: read them
 before concluding the term is new. `--json` works in every mode.
 
 `lookup.py` reads `data/terminology.json`, which holds every entry with its
@@ -130,9 +133,10 @@ internal code. camelCase and PascalCase are split, so `getVerseById` and
 | `deprecated` | error | a name the standard retired, which names another concept |
 | `spelling` | error | a recorded spelling that is not the canonical one (`aya`, `sura`, `koran`, `waqf-lazim`) |
 | `arabic_plural` | error | an Arabic plural used as a name (`ayat`) |
+| `member` | error | a member of a closed set — a rawi, a numbering system, a tajwid rule — in a spelling that is not its registry code (`qaloun`, `douri`, `madani-first`) |
 | `display_in_code` | warning | the display form used as an identifier (`tajweed` in code) |
 | `gloss` | warning | an English gloss standing in for a Quranic term (`verse`, `chapter`) |
-| `generic` | warning | an ordinary word that is also a recorded spelling (`segment`); a finding only if it is about that concept |
+| `generic` | warning | an ordinary word that is also a recorded spelling of a concept (`segment`, `pos`) or of a surah or tariq (`elephant`, `tawhid`); a finding only if it is about that concept |
 
 Prose (`.md`, `.txt`) is checked for wrong spellings and deprecated names
 only: it may carry the display form or the code spelling, and may quote a gloss. The report
@@ -156,7 +160,10 @@ Tell the audit what the project already knows, so the next run is clean and
 else; `ignore_words` retires words that mean something else here;
 `allow_gloss_in` permits glosses on a published API or in UI strings;
 `compatibility` lists the surfaces whose findings are reported once as known
-and do not fail the build. A single line is excused with a comment containing
+and do not fail the build; `external_names` holds the names the project quotes
+rather than chooses — a vendor's file and column names, Unicode character
+names, an upstream repository — which are locators, not names, and are read
+past. A single line is excused with a comment containing
 `terminology: ignore`. Each entry in that file is a decision: say why in the
 commit.
 
@@ -220,11 +227,11 @@ value the code presents as settled.
 | path | what it holds |
 | --- | --- |
 | `references/standard.md` | the full terminology standard, numbered sections, table of contents first |
-| `references/dictionary.md` | the 200 entries as prose, with a lookup table; `lookup.py` is faster |
+| `references/dictionary.md` | the 180 entries as prose, with a lookup table; `lookup.py` is faster |
 | `references/decisions.md` | the contested decisions, with the evidence behind each |
-| `references/registries.md` | the closed sets as prose: every surah, qiraah, numbering system and sajdah place, with sources |
+| `references/registries.md` | the closed sets as prose: every surah, qiraah, numbering system and sajdah, with sources |
 | `data/terminology.json` | every entry, every spelling, every registry member |
-| `data/registries/*.tsv` | the closed sets: the surahs, the qiraat, the numbering systems, the sajdah places |
+| `data/registries/*.tsv` | the closed sets: the surahs, the qiraat, the numbering systems, the sajdahs |
 | `data/schema.json` | the schema an entry must satisfy |
 | `assets/terminology.example.json` | the project configuration for the audit, every key explained |
 | `assets/proposal-template.yml`, `assets/proposal-issue.md` | the draft entry and the checklist a proposal answers |

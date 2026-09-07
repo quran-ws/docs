@@ -61,7 +61,7 @@ COUNTER_EXAMPLES = {
     # decisions.md argues against these forms by name
     "abu_amrw", "add_kufi", "dots_three", "embracing_waqf",
     "waqf_type", "recitation_type", "item_type", "data_type", "al_waqf_lazim_mark",
-    "mawadi_al_sajdah", "sajdat_at_tilawah", "orthographic_rasm", "qalqalat_sughra",
+    "mawadi_al_sajdah", "sajdat_at_tilawah", "sajdah_al_tilawah", "orthographic_rasm", "qalqalat_sughra",
     "mustawi_al_tarafayn", "nasikh_walmansukh", "paired_waqf", "ras_al_ayah_mark",
     "waqf_jaiz_mustawi_tarafayn", "waqf_muanaqah",
 }
@@ -92,6 +92,8 @@ SCHEMA_WORDS = {
     "qattan_mabahith", "quranpedia_tajweed", "jamharah_dictionary",
     "tajweed_engine", "hafs_svg_registry",
     "search_key", "utf8mb4_bin", "part_of", "mark_family",
+    # the audit's configuration keys, and a supplier's column quoted in section 26
+    "external_names", "ignore_words", "allow_gloss_in", "aya_text_emlaey",
     "test_translit", "build_aliases", "generate_dabt", "generate_dictionary",
     "check_conformance", "tool_defects",
     "unicode_props", "measure_display", "check_examples", "check_example_files",
@@ -235,7 +237,7 @@ def main():
         for name in sorted(set(re.findall(r"\b([a-z][a-z0-9]*(?:_[a-z0-9]+)+)\b", text))):
             if name in SCHEMA_WORDS or name in COUNTER_EXAMPLES or name in registries:
                 continue
-            # section 11 — a collection is the code plus s, so `harf_muqattas` is a name
+            # section 11 — a collection is the code plus s, so `muqatta_letters` is a name
             plural_of = name[:-1] if name.endswith("s") else None
             if plural_of in aliases or plural_of in members:
                 continue

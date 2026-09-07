@@ -15,10 +15,12 @@ origin: quranic
 tier: core
 status: draft
 symbol: نُقْطَتَان
-definition: نقطتان فوق الحرف أو تحته تميزانه عما يشاركه في الرسم، كالتاء والياء والقاف
+definition: النقطتان نقطتان فوق الحرف أو تحته تميزانه عن الحرف الذي يشاركه في الرسم، مثل التاء
+  والياء والقاف.
 definition_en: 'Two dots, above or below, distinguishing a letter from the others that share
   its skeleton (ijam): taa, yaa, qaaf.'
-purpose: تستخدم قيمةً من قيم النقط، ليتميز بها الحرف عما يشاركه في الرسم في التحليل والبحث.
+purpose: نستخدمها قيمة من قيم النقط، فنميز بها الحرف عن الحرف الذي يشاركه في الرسم في التحليل
+  والبحث.
 purpose_en: Used as a value of ijam, so that a letter is told apart from those sharing its
   skeleton in analysis and in search.
 alternative_spellings:

@@ -10,11 +10,11 @@ category: linguistics
 origin: borrowed
 tier: core
 status: draft
-definition: تحليل بنية الكلمة وصيغتها وما تحمله من خصائص صرفية.
+definition: الصرف تحليل بنية الكلمة وصيغتها وما تحمله من خصائص صرفية.
 definition_en: >
   The analysis of a word's structure and form and the morphological properties it
   carries.
-purpose: يستخدم لتمثيل السمات الصرفية للكلمات أو `tokens`.
+purpose: نستخدمه لتمثيل السمات الصرفية للكلمات أو `tokens`.
 purpose_en: >
   Used to represent the morphological features of words or tokens.
 related:
@@ -23,5 +23,4 @@ related:
   - lemma
   - stem
   - part_of_speech
-  - wazn
 sources: []

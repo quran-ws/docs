@@ -14,28 +14,28 @@ tier: core
 status: draft
 plural: ayahs
 definition: >
-  وحدة من النص القرآني تقع ضمن سورة ولها حدود محددة، وقد يختلف رقمها أو بعض
-  حدودها باختلاف نظام عد الآي.
+  الآية وحدة من النص القرآني تقع داخل سورة ولها حدود محددة. وقد يختلف رقمها أو بعض حدودها
+  باختلاف نظام عد الآي.
 definition_en: >
   A unit of the Quranic text falling within a surah and having determined boundaries.
   Its number, and some of its boundaries, may differ from one ayah numbering system to
   another.
 purpose: >
-  تستخدم كوحدة أساسية للإشارة إلى النص القرآني وربط الترجمات والتفاسير
-  والتلاوات والتحليلات والبيانات الأخرى بموضع محدد من القرآن.
+  نستخدمها وحدة أساسية للإشارة إلى النص القرآني، ولربط الترجمات والتفاسير والتلاوات والتحليلات
+  والبيانات الأخرى بموضع محدد من القرآن.
 purpose_en: >
   Used as the basic unit for referring to the Quranic text, and for attaching
   translations, tafsir, recitations, analyses and other data to a specific place in the
   Quran.
 boundaries:
-  - موقعها في صفحة أو سطر يخص المصحف أو تخطيطه، لا هوية الآية نفسها.
-  - الفاصلة نهاية الآية، وليست الآية.
+  - موقع الآية في صفحة أو سطر يخص المصحف أو تخطيطه، وليس جزءًا من هوية الآية نفسها.
+  - الفاصلة هي نهاية الآية وليست الآية نفسها.
 boundaries_en:
   - >-
     Its position on a page or a line belongs to the mushaf and its layout, not to the
     identity of the ayah.
   - >-
-    The fasilah is the ayah's ending, not the ayah.
+    The ayah ending is the close of the ayah, not the ayah.
 alternative_spellings:
   - aya
   - ayat
@@ -45,7 +45,7 @@ english_glosses:
 related:
   - surah
   - ayah_numbering_system
-  - fasilah
+  - ayah_ending
   - ayah_mark
   - ayah_key
   - word

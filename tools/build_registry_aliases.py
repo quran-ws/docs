@@ -23,8 +23,8 @@ OUT = os.path.join(ROOT, "standards/terminology/registry_aliases.json")
 # Which column names the kind of each row. A registry with no such column is
 # one kind throughout, named after the file.
 KIND_COLUMN = {"qiraat": "kind"}
-SINGULAR = {"surahs": "surah", "sajdah": "mawdi_al_sajdah",
-            "ayah_numbering": "ayah_numbering_system", "tajwid_rules": "hukm_al_tajwid"}
+SINGULAR = {"surahs": "surah", "sajdah": "sajdah",
+            "ayah_numbering": "ayah_numbering_system", "tajwid_rules": "tajwid_ruling"}
 
 # A surah is written with its article in most English text, and the article is
 # assimilated to a sun letter as often as not: al-Nisa, an-Nisa, an_nisa. Those

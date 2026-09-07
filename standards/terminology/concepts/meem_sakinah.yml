@@ -13,11 +13,12 @@ category: tajwid
 origin: quranic
 tier: core
 status: draft
-definition: ميم خالية من الحركة، ثابتة لفظًا وخطًّا، تقع في وسط الكلمة أو آخرها.
+definition: الميم الساكنة ميم خالية من الحركة، ثابتة في اللفظ والخط، وتقع في وسط الكلمة أو آخرها.
 definition_en: >-
   A meem carrying no vowel, fixed in pronunciation and in writing, falling in the middle of
   a word or at its end.
-purpose: تستخدم موضعًا تتفرع عليه الأحكام الشفوية الثلاثة، الإدغام والإخفاء والإظهار، في محركات التجويد.
+purpose: نستخدمها موضعًا تتفرع عليه الأحكام الشفوية الثلاثة في محركات التجويد، وهي الإدغام والإخفاء
+  والإظهار.
 purpose_en: Used as the trigger of the three labial rulings, idgham, ikhfa and izhar, in tajwid engines.
 boundaries:
 - الميم الساكنة غير الميم المقلوبة عن النون في الإقلاب وإن اتحد صوتهما.

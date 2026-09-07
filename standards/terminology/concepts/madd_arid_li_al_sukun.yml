@@ -15,12 +15,12 @@ origin: quranic
 tier: core
 status: draft
 definition: >-
-  مد سببه سكون عارض في الوقف بعد حرف المد، ويجوز فيه القصر والتوسط والطول.
+  المد العارض للسكون مد سببه سكون عارض في الوقف بعد حرف المد، ويجوز فيه القصر والتوسط والطول.
 definition_en: >-
   A madd caused by an incidental sukun in stopping after the letter of madd; shortening, middle
   length and full length are all permitted in it.
 purpose: >-
-  يستخدم قيمةً من قيم المد، فيوسم به موضع النص مع مقداره، ويُقرأ منه ما يختلف به الطريق في
+  نستخدمه قيمة من قيم المد، فنوسم به موضع النص مع مقداره، ونقرأ منه ما يختلف باختلاف الطريق في
   وصف التسجيل والمصحف.
 purpose_en: >-
   Used as a value of madd, so that a place in the text is tagged with it and with its length,
@@ -40,8 +40,8 @@ related:
 - waqf
 - wajh
 note: >-
-  الاشتقاق يعطي `madd_arid_li_al_sukun` بفصل لام الجر عن أداة التعريف، على ما يقرره القسم
-  8، والصورة الملحومة `lilsukun` محالة في `alternative_spellings`.
+  الاشتقاق يعطي `madd_arid_li_al_sukun` بفصل لام الجر عن أداة التعريف، كما يقرره القسم 8.
+  والصورة الملحومة `lilsukun` تُحال في `alternative_spellings`.
 note_en: >-
   The derivation gives `madd_arid_li_al_sukun`, separating the preposition from the article
   as section 8 requires; the fused form `lilsukun` resolves through `alternative_spellings`.

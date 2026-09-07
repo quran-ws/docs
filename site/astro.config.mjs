@@ -22,17 +22,17 @@ function sidebarOrder(block) {
 
 /**
  * The page's `status` (see src/content.config.ts), shown as a sidebar badge so
- * a reader sees what binds and what is still a draft before opening the page.
+ * a reader sees what binds before opening the page. A draft carries no badge:
+ * before release every page is a draft, and a label on every entry says nothing.
  * A page with no status is a draft, as the schema's default says.
  */
 const BADGES = {
-  draft: { text: 'draft', variant: 'caution' },
   proposed: { text: 'proposed', variant: 'tip' },
   adopted: { text: 'adopted', variant: 'success' },
 };
 function statusBadge(block) {
   const status = block.match(/^status:\s*(\w+)/m)?.[1] ?? 'draft';
-  return BADGES[status] ?? BADGES.draft;
+  return BADGES[status];
 }
 
 /**
@@ -69,7 +69,7 @@ function sectionItems(dir) {
         existsSync(`${contentDir}en/${dir}/${stem}.md`) ||
         existsSync(`${contentDir}en/${dir}/${stem}.mdx`)
     )
-    .map(({ stem, badge }) => ({ slug: stem === 'index' ? dir : `${dir}/${stem}`, badge }));
+    .map(({ stem, badge }) => ({ slug: stem === 'index' ? dir : `${dir}/${stem}`, ...(badge && { badge }) }));
 }
 
 export default defineConfig({

@@ -16,9 +16,9 @@ origin: quranic
 tier: core
 status: draft
 symbol: ي صَغِيرَة
-definition: الدلالة على صلة هاء الضمير المكسورة بياء لفظية في حال الوصل
+definition: الياء الصغيرة علامة تدل على صلة هاء الضمير المكسورة بياء لفظية في حال الوصل.
 definition_en: Marks the silah of the pronoun haa with kasrah, pronounced as a yaa in continuation.
-purpose: تستخدم قيمةً من علامات الرسم، ليعرف بها ما خالف فيه الرسم اللفظ في الكلمة.
+purpose: نستخدمها قيمة من علامات الرسم، فنعرف بها المواضع التي يخالف فيها الرسم اللفظ في الكلمة.
 purpose_en: Used as a value of the orthographic marks, so that software can tell where the
   rasm departs from the pronunciation.
 alternative_spellings:

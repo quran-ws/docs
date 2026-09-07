@@ -12,19 +12,18 @@ tier: core
 status: draft
 plural: morphemes
 definition: >
-  أصغر وحدة في الكلمة تحمل معنى أو وظيفة صرفية، كالسابقة واللاحقة والجذع.
+  الوحدة الصرفية أصغر وحدة في الكلمة تحمل معنى أو وظيفة صرفية، مثل السابقة واللاحقة والجذع.
 definition_en: >
   The smallest unit within a word carrying a meaning or a morphological function, such
   as a prefix, a suffix or a stem.
 purpose: >
-  تستخدم لتمثيل تقسيم الكلمة القرآنية إلى أجزائها الصرفية، وهو المستوى الذي
-  تنسب إليه السمات الصرفية والوسوم في مدونات التحليل.
+  نستخدمها لتمثيل تقسيم الكلمة القرآنية إلى أجزائها الصرفية، وهو المستوى الذي تُنسب إليه السمات
+  الصرفية والوسوم في مدونات التحليل.
 purpose_en: >
   Used to represent the division of a Quranic word into its morphological parts, which
   is the level that morphological features and tags are attached to in analysis corpora.
 boundaries:
-  - الوحدة الصرفية جزء من الكلمة، و`token` وحدة تقسيم قد تساوي الكلمة أو تزيد
-    عليها.
+  - الوحدة الصرفية جزء من الكلمة، أما `token` فوحدة تقسيم قد تساوي الكلمة أو تزيد عليها.
 boundaries_en:
   - >-
     A morpheme is a part of a word; a token is a unit of segmentation that may equal a
@@ -37,9 +36,9 @@ related:
   - stem
   - morphology
 note: >
-  الاسم `segment` يعني في مدونات الصرف القرآني الوحدة الصرفية، ويعني في واجهات الصوت
-  توقيت الكلمة؛ فلا يُحَلّ الاسم وحده إلى شيء، و`word_segment` يُحَلّ إلى هذا المدخل،
-  والمعنى الصوتي في `word_timing`.
+  الاسم `segment` يعني في مدونات الصرف القرآني الوحدة الصرفية، ويعني في واجهات الصوت توقيت
+  الكلمة. لذلك لا يُحل الاسم وحده إلى شيء، ويُحل `word_segment` إلى هذا المدخل، ويُحل المعنى
+  الصوتي إلى `word_timing`.
 note_en: >
   In Quranic morphology corpora `segment` means the morpheme; in audio APIs it means a
   word timing. The bare name resolves to nothing, `word_segment` resolves here, and the

@@ -9,20 +9,21 @@ tier: core
 status: draft
 plural: word_keys
 definition: >-
-  معرف نصي للكلمة يضيف إلى مفتاح الآية موضع الكلمة فيها، على صورة `2:255:5`، وموضع الكلمة
-  يُعد من أول الآية بحسب منهج تقسيم معلن.
+  مفتاح الكلمة هو معرف نصي للكلمة يضيف إلى مفتاح الآية موضع الكلمة فيها، على صورة
+  `2:255:5`. ويعد موضع الكلمة من أول الآية بحسب منهج تقسيم معلن.
 definition_en: >-
   A textual identifier of a word that adds the word's position within the ayah to the ayah
   key, in the form `2:255:5`; the position is counted from the start of the ayah by a declared
   segmentation method.
 purpose: >-
-  يستخدم مفتاحًا للبيانات المرتبطة بالكلمة: التوقيت والترجمة كلمة بكلمة والتحليل الصرفي والصور.
+  نستخدم مفتاح الكلمة مفتاحًا للبيانات المرتبطة بالكلمة، مثل التوقيت والترجمة كلمة
+  بكلمة والتحليل الصرفي والصور.
 purpose_en: >-
   Used as the key for data attached to the word: timing, word-by-word translation, morphological
   analysis and images.
 boundaries:
-- >-
-  الموضع في المفتاح موضع الكلمة لا `token`؛ فتغيير منهج التقسيم الذي يعد الكلمات يغير المفتاح.
+  - الموضع في المفتاح هو موضع الكلمة وليس `token`، لذلك تغيير منهج التقسيم الذي يعد
+    الكلمات يغير المفتاح.
 boundaries_en:
 - >-
   The position in the key is the word's, not the token's; changing the segmentation method

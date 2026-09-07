@@ -17,9 +17,9 @@ origin: quranic
 tier: core
 status: draft
 symbol: م صَغِيرَة
-definition: الدلالة على قلب النون الساكنة أو التنوين ميمًا عند الباء
+definition: الميم الصغيرة علامة تدل على قلب النون الساكنة أو التنوين ميمًا عند الباء.
 definition_en: 'Marks iqlab: a vowelless noon or tanwin pronounced as meem before baa.'
-purpose: تستخدم علامةً من علامات المصحف، ليعرف بها موضعها ودلالتها في العرض والتحليل.
+purpose: نستخدمها علامة من علامات المصحف، فنعرف بها موضعها ودلالتها في العرض والتحليل.
 purpose_en: Used as a mark of the mushaf, so that rendering and analysis know where it sits
   and what it points to.
 alternative_spellings:

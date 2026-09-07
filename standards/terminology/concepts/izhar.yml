@@ -7,27 +7,27 @@ names:
     singular: الإظهار
 kind: classification_value
 category: tajwid
-parent: hukm_al_tajwid
+parent: tajwid_ruling
 origin: quranic
 tier: core
 status: draft
 definition: >-
-  إخراج الحرف الساكن من مخرجه من غير غنة زائدة فيه، كإظهار النون الساكنة والتنوين عند حروف
-  الحلق، وإظهار الميم الساكنة عند غير الباء والميم.
+  الإظهار إخراج الحرف الساكن من مخرجه من غير غنة زائدة فيه، مثل إظهار النون الساكنة والتنوين عند
+  حروف الحلق، وإظهار الميم الساكنة عند غير الباء والميم.
 definition_en: >-
   Sounding a vowelless letter from its point of articulation with no added ghunnah, as noon
   sakinah and tanwin are sounded before the throat letters, and meem sakinah before any letter
   other than baa and meem.
 purpose: >-
-  يستخدم قيمةً من قيم حكم التجويد، فيوسم به موضع النص في التحليل والتلوين والتعليم، وتتفرع
-  تحته أنواعه في سجل الأحكام.
+  نستخدمه قيمة من قيم حكم التجويد، فنوسم به موضع النص في التحليل والتلوين والتعليم، وتتفرع تحته
+  أنواعه في سجل الأحكام.
 purpose_en: >-
   Used as a value of the tajwid ruling, so that a place in the text is tagged with it in analysis,
   colouring and instruction, and its kinds branch under it in the registry of rulings.
 boundaries:
 - >-
-  الإظهار حكم يقابل الإدغام والإخفاء، وليس غياب الحكم: الموضع الموسوم به موضع تحقق فيه سبب
-  ثم لم يقع فيه إدغام ولا إخفاء.
+  الإظهار حكم يقابل الإدغام والإخفاء، وليس غياب الحكم. فالموضع الموسوم به موضع تحقق فيه سبب
+  الحكم ثم لم يقع فيه إدغام ولا إخفاء.
 boundaries_en:
 - >-
   Izhar is a ruling standing opposite idgham and ikhfa, not the absence of a ruling: a place

@@ -7,25 +7,25 @@ names:
     singular: الإدغام
 kind: classification_value
 category: tajwid
-parent: hukm_al_tajwid
+parent: tajwid_ruling
 origin: quranic
 tier: core
 status: draft
 definition: >-
-  إدخال حرف ساكن في حرف متحرك بعده بحيث يصيران حرفًا واحدًا مشددًا، كاملًا كان الإدغام أو
-  ناقصًا، بغنة أو بغير غنة.
+  الإدغام إدخال حرف ساكن في حرف متحرك بعده بحيث يصيران حرفًا واحدًا مشددًا. ويكون الإدغام كاملًا
+  أو ناقصًا، وبغنة أو بغير غنة.
 definition_en: >-
   Merging a vowelless letter into a vowelled letter after it so that the two become one doubled
   letter, whether the merging is complete or partial, with ghunnah or without it.
 purpose: >-
-  يستخدم قيمةً من قيم حكم التجويد، فيوسم به موضع النص في التحليل والتلوين والتعليم، وتتفرع
-  تحته أنواعه في سجل الأحكام.
+  نستخدمه قيمة من قيم حكم التجويد، فنوسم به موضع النص في التحليل والتلوين والتعليم، وتتفرع تحته
+  أنواعه في سجل الأحكام.
 purpose_en: >-
   Used as a value of the tajwid ruling, so that a place in the text is tagged with it in analysis,
   colouring and instruction, and its kinds branch under it in the registry of rulings.
 boundaries:
 - >-
-  الإدغام حكم، والتماثل والتجانس والتقارب علاقة بين الحرفين يقع الإدغام بسببها.
+  الإدغام حكم، أما التماثل والتجانس والتقارب فعلاقة بين الحرفين يقع الإدغام بسببها.
 boundaries_en:
 - >-
   Idgham is a ruling; mutamathilan, mutajanisan and mutaqariban are the relation between the
@@ -45,10 +45,9 @@ related:
 - ikhfa
 - iqlab
 - ghunnah
-- alaqat_al_harfayn
+- letter_relation
 - mutamathilan
 - mutajanisan
-- mutaqariban
 sources:
 - id: quranpedia_tajweed
   ref: '57'

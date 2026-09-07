@@ -41,7 +41,7 @@ def test_findings(tree):
     assert any(f["identifier"] == "tajweed_rules" for f in out["findings"])
     assert ("gloss", "verse_count") in seen
     assert ("spelling", "nun_saghirah") in seen
-    # `files` is not fil + s, and camelCase resolves to the canonical name
+    # `files` is no entry plus s, and camelCase resolves to the canonical name
     assert not any(f["identifier"] == "files" for f in out["findings"])
     assert not any(f["identifier"] == "waqfLazim" for f in out["findings"])
     # prose may carry a gloss and the display name
@@ -60,3 +60,52 @@ def test_clean_tree(tmp_path):
     result = run(str(tmp_path), "--strict")
     assert result.returncode == 0
     assert "ok —" in result.stdout
+
+
+def test_registry_members(tmp_path):
+    (tmp_path / "m.py").write_text(
+        "riwayahs = ['hafs', 'qaloun', 'douri', 'sousi', 'shuba']\n"
+        "system = 'madani-first'\nold = 'madani_awwal'\npos = 3\nsimple = 'x'\nelephant = 1\n", encoding="utf-8")
+    out = json.loads(run(str(tmp_path), "--json").stdout)
+    by = {f["found"]: f for f in out["findings"]}
+    # a KFGQPC spelling of a rawi is an error naming the registry code
+    for found, code in (("qaloun", "qalun"), ("douri", "duri"), ("sousi", "susi"), ("shuba", "shubah")):
+        assert by[found]["rule"] == "member" and by[found]["canonical"] == code, found
+        assert "Rawi" in by[found]["display"]
+    # a member's own code is never a finding
+    assert "hafs" not in by
+    # a value's code is unique within its classification: `madani-first` is
+    # the code, so it is clean; the old spelling points at the code, not the id
+    assert "madani_first" not in by
+    assert by["madani_awwal"]["rule"] == "spelling" and by["madani_awwal"]["canonical"] == "madani_first"
+    # `pos` is a position far more often than a part of speech; `simple` is a
+    # plain word; a surah named by an ordinary word is a hint, not a ruling
+    assert by["pos"]["rule"] == "generic" and by["pos"]["severity"] == "warning"
+    assert by["simple"]["rule"] == "generic"
+    assert by["elephant"]["rule"] == "generic" and by["elephant"]["canonical"] == "fil"
+
+
+def test_external_names_are_read_past(tmp_path):
+    """A name the project quotes rather than chooses is not a finding."""
+    (tmp_path / "load.py").write_text(
+        'PACKAGE = "UthmanicHafs-v-3.0.zip"\n'
+        'SIGN = "ARABIC START OF RUB EL HIZB"\n'
+        'surah = row["sura_no"]\n'
+        'sura = 1\n', encoding="utf-8")
+    (tmp_path / ".terminology.json").write_text(json.dumps({
+        "external_names": ["Uthmanic[A-Za-z0-9.\\-]*", "ARABIC [A-Z ]+", "sura_no"],
+    }), encoding="utf-8")
+    out = json.loads(run(str(tmp_path), "--json").stdout)
+    # the vendor's package, the Unicode name and the vendor's column are quoted;
+    # the project's own `sura` is still a finding
+    assert sorted({f["found"] for f in out["findings"]}) == ["sura"]
+    assert out["summary"]["external_names"] == 3
+
+
+def test_external_names_must_be_a_regular_expression(tmp_path):
+    (tmp_path / "a.py").write_text("ayah = 1\n", encoding="utf-8")
+    (tmp_path / ".terminology.json").write_text(
+        json.dumps({"external_names": ["("]}), encoding="utf-8")
+    result = run(str(tmp_path))
+    assert result.returncode == 2
+    assert "not a regular expression" in result.stderr

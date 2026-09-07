@@ -11,11 +11,11 @@ origin: borrowed
 tier: core
 status: draft
 plural: layouts
-definition: تنظيم النص والعناصر بصريًا إلى صفحات وأسطر ومواضع ضمن مصحف أو عرض معين.
+definition: التخطيط تنظيم النص والعناصر بصريًا في صفحات وأسطر ومواضع داخل مصحف أو عرض معين.
 definition_en: >
   The visual arrangement of the text and its elements into pages, lines and positions
   within a given mushaf or view.
-purpose: يفصل البيانات البصرية عن بنية القرآن النصية الثابتة.
+purpose: نستخدمه لفصل البيانات البصرية عن بنية القرآن النصية الثابتة.
 purpose_en: >
   Keeps visual data apart from the fixed textual structure of the Quran.
 related:

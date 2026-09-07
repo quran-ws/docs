@@ -12,17 +12,17 @@ origin: quranic
 tier: core
 status: draft
 definition: >
-  نمط أداء متزن دون تطريب، على مرتبة الترتيل، وهو الوصف الذي تنشر به التسجيلات المؤداة
+  المرتل نمط أداء متزن دون تطريب، على مرتبة الترتيل، وهو الوصف الذي تُنشر به التسجيلات المؤداة
   على هذا النحو.
 definition_en: >
   A recitation style that is measured and unadorned, at a reading pace; the label given
   to recordings delivered that way.
 purpose: >
-  يستخدم لتصنيف التسجيل بحسب نمطه.
+  نستخدمه لتصنيف التسجيل بحسب نمطه.
 purpose_en: >
   Used to classify a recording by its style.
 boundaries:
-  - المرتل نمط تسجيل، والترتيل صفة الأداء نفسه؛ فلا يستعمل أحد الاسمين مكان الآخر.
+  - المرتل نمط تسجيل، والترتيل صفة الأداء نفسه، لذلك لا يستعمل أحد الاسمين مكان الآخر.
 boundaries_en:
   - >-
     Murattal is a recording style; tartil is a quality of the delivery itself. Neither

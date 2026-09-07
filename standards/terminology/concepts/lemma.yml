@@ -8,10 +8,10 @@ origin: borrowed
 tier: core
 status: draft
 plural: lemmas
-definition: الصيغة المعجمية الأساسية التي ترد إليها صورة الكلمة المصرفة.
+definition: الصيغة المعجمية هي الصيغة الأساسية التي تُرد إليها صورة الكلمة المصرفة.
 definition_en: >
   The base dictionary form that an inflected word form is referred back to.
-purpose: تستخدم لتجميع الصور التصريفية المختلفة تحت مدخل معجمي واحد.
+purpose: نستخدمها لتجميع الصور التصريفية المختلفة تحت مدخل معجمي واحد.
 purpose_en: >
   Used to gather the different inflected forms under one dictionary entry.
 related:

@@ -11,12 +11,12 @@ parent: surah_group
 origin: quranic
 tier: extended
 status: draft
-definition: السور التي تقارب آياتها المئة أو تزيد عليها أو تنقص عنها قليلًا.
+definition: المئون هي السور التي تقارب آياتها المئة أو تزيد عليها أو تنقص عنها قليلًا.
 definition_en: >
   The surahs whose ayahs come to about 100, a little more or a little less.
 purpose: >
-  تستخدم قيمة من قيم تصنيف السور، فتربط بها خطط القراءة وما يعالج المجموعة وحدة واحدة من
-  كتب التفسير.
+  نستخدمها قيمة من قيم تصنيف السور، فنربط بها خطط القراءة وكتب التفسير التي تعالج المجموعة وحدة
+  واحدة.
 purpose_en: >
   Used as a value of surah group, so that reading plans and the tafsir works that treat
   the group as a unit can refer to it.
@@ -26,8 +26,8 @@ related:
   - surah_group
   - surah
 note: >
-  لا يعين المعيار أعضاء المجموعة سورة سورة: فالمصادر تختلف في السابعة من الطوال وفي أول
-  المفصل، ولا سجل بعد يحصر أعضاء كل مجموعة بمصدره.
+  لا يعين المعيار أعضاء المجموعة سورة سورة، لأن المصادر تختلف في السابعة من الطوال وفي أول
+  المفصل، ولا يوجد بعد سجل يحصر أعضاء كل مجموعة مع مصدره.
 note_en: >
   The standard does not list the group's members surah by surah: the sources differ over
   the seventh of the tiwal and the start of the mufassal, and no registry yet enumerates

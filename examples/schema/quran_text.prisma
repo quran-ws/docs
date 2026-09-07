@@ -16,7 +16,7 @@ model MushafEdition {
   name                  String
   publisher             String
   riwayah               String   // registry member: hafs_an_asim
-  ayah_numbering_system String   // registry member: ayah_numbering_kufi
+  ayah_numbering_system String   // registry member: kufi
   version               String
   text_hash             String
   retrieved             DateTime

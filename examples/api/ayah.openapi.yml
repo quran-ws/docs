@@ -26,17 +26,17 @@ paths:
         - name: ayah_numbering_system
           in: query
           required: false
-          description: Member of the ayah_numbering registry. Default `ayah_numbering_kufi`.
+          description: Member of the ayah_numbering registry, by its registry code. Default `kufi`.
           schema:
             type: string
-            default: ayah_numbering_kufi
+            default: kufi
             enum:
-              - ayah_numbering_madani_awwal
-              - ayah_numbering_madani_akhir
-              - ayah_numbering_makki
-              - ayah_numbering_kufi
-              - ayah_numbering_basri
-              - ayah_numbering_dimashqi
+              - madani_first
+              - madani_last
+              - makki
+              - kufi
+              - basri
+              - dimashqi
         - name: riwayah
           in: query
           required: false
@@ -68,7 +68,7 @@ components:
         ayah_key: { type: string, example: "112:1", description: The textual key, surah and ayah number, read in the light of the numbering system. }
         mushaf_edition: { type: string, example: tanzil_uthmani }
         riwayah: { type: string, example: hafs_an_asim }
-        ayah_numbering_system: { type: string, example: ayah_numbering_kufi }
+        ayah_numbering_system: { type: string, example: kufi }
         surah_number: { type: integer, example: 112 }
         ayah_number: { type: integer, example: 1 }
         text:

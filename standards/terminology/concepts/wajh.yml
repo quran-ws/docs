@@ -13,14 +13,14 @@ tier: extended
 status: draft
 plural: wajhs
 definition: >-
-  كيفية من كيفيات الأداء يجوز الأخذ بأي منها في الرواية الواحدة أو الطريق الواحد، كأوجه المد
-  العارض للسكون.
+  الوجه هو كيفية من كيفيات الأداء يجوز الأخذ بأي منها في الرواية الواحدة أو الطريق
+  الواحد، مثل أوجه المد العارض للسكون.
 definition_en: >-
   One of several manners of delivery, any of which may be taken within one riwayah or one
   tariq, such as the wajhs of madd arid li al-sukun.
 purpose: >-
-  يستخدم حين يحتاج التسجيل أو التعليم إلى تعيين الوجه المأخوذ به من أوجه جائزة، من غير أن
-  يُنسب الاختلاف إلى رواية أو طريق.
+  نستخدم الوجه حين يحتاج التسجيل أو التعليم إلى تعيين الوجه المأخوذ به من أوجه جائزة،
+  من غير أن ينسب الاختلاف إلى رواية أو طريق.
 purpose_en: >-
   Used when a recording or a lesson needs to state which of the permitted wajhs was taken,
   without attributing the difference to a riwayah or a tariq.
@@ -40,5 +40,4 @@ related:
 - tariq
 - riwayah
 - madd_arid_li_al_sukun
-- lahn
 sources: []

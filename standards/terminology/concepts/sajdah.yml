@@ -1,0 +1,59 @@
+concept: sajdah
+names:
+  code: sajdah
+  display: Sajdah
+  arabic:
+    vocalized: السَّجْدَة
+    singular: السجدة
+kind: concept
+category: structure
+registry: sajdah
+origin: quranic
+tier: core
+status: draft
+plural: sajdahs
+definition: >
+  السجدة موضع من مواضع سجود التلاوة في القرآن، ينتهي بآية بعينها، يسجد عنده القارئ والسامع.
+  والسجدات معدودة، خمس عشرة على المشهور، والعلماء يختلفون في عد بعضها.
+definition_en: >
+  A place in the Quran at which the reader and the listener prostrate, ending at a
+  particular ayah. The sajdahs are countable, fifteen by the common count, and some of
+  them are disputed.
+purpose: >
+  نستخدم السجدة لعد مواضعها وربط كل موضع بسورته وآيته وصفحته، ولربط أحكام السجود وآدابه به،
+  ولتمييز الموضع عن العلامة التي ترسم عنده.
+purpose_en: >
+  Used to count the sajdahs, to tie each one to its surah, ayah and page, to attach the
+  rulings and manner of the prostration to it, and to keep it apart from the mark drawn at
+  it.
+boundaries:
+  - السجدة موضع من النص والسجود عنده شيء واحد، أما علامة السجدة فرسم في المصحف يدل عليه.
+boundaries_en:
+  - >-
+    The sajdah is the place in the text and the prostration at it, one thing; the sajdah
+    mark is the sign drawn in the mushaf for it.
+english_glosses:
+  - Prostration
+  - Prostration of Recitation
+related:
+  - sajdah_mark
+  - sajdah_line
+  - ayah
+  - tilawah
+alternative_spellings:
+  - sajda
+  - sajdah_place
+  - mawdi_al_sajdah
+  - sujud_al_tilawah
+  - sajdat_al_tilawah
+note: >
+  دُمج من `sajdah_place` و`sujud_al_tilawah`. كان القاموس يفصل الموضع عن الفعل، ولا يخزن
+  برنامج فعلًا بمعزل عن موضعه، والاسم الشائع «السجدات الخمس عشرة» يسمي الاثنين معًا. والسبب
+  في سجل القرارات.
+note_en: >
+  Merged from `sajdah_place` and `sujud_al_tilawah`. The dictionary used to keep the place
+  apart from the act; no software stores an act apart from its place, and the common name,
+  "the fifteen sajdahs", names both at once. The reasoning is in the decision record.
+sources:
+  - id: itqan
+    ref: "1/381"

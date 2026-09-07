@@ -17,10 +17,11 @@ origin: quranic
 tier: core
 status: draft
 symbol: س
-definition: السين فوق الصاد تدل على القراءة بالسين، والسين تحتها تدل على القراءة بالصاد
+definition: سين القراءة سين صغيرة فوق الصاد تدل على القراءة بالسين، وتحتها تدل على القراءة
+  بالصاد.
 definition_en: A small seen above a saad marks reading it as seen; below it, reading it as
   saad.
-purpose: تستخدم قيمةً من علامات القراءة، لينبه بها القارئ إلى أداء خاص في موضعه.
+purpose: نستخدمها قيمة من علامات القراءة، فننبه بها القارئ إلى أداء خاص في موضعها.
 purpose_en: Used as a value of the qiraah marks, so that the reader is alerted to a particular
   delivery at its place.
 alternative_spellings:

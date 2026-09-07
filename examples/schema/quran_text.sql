@@ -18,7 +18,7 @@ CREATE TABLE mushaf_editions (
   name                   VARCHAR(255) NOT NULL,
   publisher              VARCHAR(255) NOT NULL,
   riwayah                VARCHAR(64)  NOT NULL,             -- registry member: hafs_an_asim
-  ayah_numbering_system  VARCHAR(64)  NOT NULL,             -- registry member: ayah_numbering_kufi
+  ayah_numbering_system  VARCHAR(64)  NOT NULL,             -- registry member: kufi
   version                VARCHAR(64)  NOT NULL,
   text_hash              CHAR(64)     NOT NULL,             -- sha256 of the published file
   retrieved              DATE         NOT NULL

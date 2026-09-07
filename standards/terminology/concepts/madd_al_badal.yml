@@ -12,14 +12,14 @@ origin: quranic
 tier: core
 status: draft
 definition: >-
-  مد سببه همزة قبل حرف المد، أُبدل فيه حرف المد من همزة ساكنة، كما في «آمن» و«أوتوا» و«إيمان»؛
-  ومقداره حركتان عند حفص، ويُزاد عند ورش.
+  مد البدل مد سببه همزة قبل حرف المد، وأُبدل فيه حرف المد من همزة ساكنة، مثل «آمن» و«أوتوا»
+  و«إيمان». ومقداره حركتان عند حفص، ويزيد عند ورش.
 definition_en: >-
   A madd caused by a hamzah before the letter of madd, where the letter of madd was substituted
   for a vowelless hamzah, as in «آمن», «أوتوا» and «إيمان»; its length is 2 counts for Hafs,
   more for Warsh.
 purpose: >-
-  يستخدم قيمةً من قيم المد، فيوسم به موضع النص مع مقداره، ويُقرأ منه ما يختلف به الطريق في
+  نستخدمه قيمة من قيم المد، فنوسم به موضع النص مع مقداره، ونقرأ منه ما يختلف باختلاف الطريق في
   وصف التسجيل والمصحف.
 purpose_en: >-
   Used as a value of madd, so that a place in the text is tagged with it and with its length,

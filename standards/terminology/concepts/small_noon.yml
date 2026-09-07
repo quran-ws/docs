@@ -17,10 +17,11 @@ origin: quranic
 tier: core
 status: draft
 symbol: ن صَغِيرَة
-definition: الدلالة على نون محذوفة من الرسم واجبة النطق، في موضع واحد (21:88) وحده
+definition: النون الصغيرة علامة تدل على نون محذوفة من الرسم واجبة النطق، وترد في موضع واحد
+  (21:88).
 definition_en: Restores a noon omitted from the skeleton but obligatory in pronunciation,
   at one place only (21:88).
-purpose: تستخدم قيمةً من علامات الرسم، ليعرف بها ما خالف فيه الرسم اللفظ في الكلمة.
+purpose: نستخدمها قيمة من علامات الرسم، فنعرف بها المواضع التي يخالف فيها الرسم اللفظ في الكلمة.
 purpose_en: Used as a value of the orthographic marks, so that software can tell where the
   rasm departs from the pronunciation.
 alternative_spellings:

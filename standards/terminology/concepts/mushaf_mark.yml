@@ -10,13 +10,13 @@ category: dabt
 origin: standard
 tier: core
 status: draft
-definition: رمز أو علامة غير داخلة في الحروف الأصلية للكلمة، تستخدم في المصحف لأغراض القراءة
+definition: علامة المصحف رمز أو علامة غير داخلة في الحروف الأصلية للكلمة، وتستخدم في المصحف لأغراض القراءة
   أو التنظيم أو الإرشاد.
 definition_en: >
   A sign or mark that is not one of a word's original letters, used in the mushaf for
   reading, organisation or guidance.
 purpose: >
-  يوفر أبًا موحدًا للعلامات المختلفة بدل معاملتها كأنواع غير مرتبطة.
+  نستخدمها أبًا موحدًا للعلامات المختلفة بدلًا من معاملتها أنواعًا غير مرتبطة.
 purpose_en: >
   Gives the different marks one parent, instead of treating them as unrelated kinds.
 related:

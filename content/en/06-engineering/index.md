@@ -144,14 +144,14 @@ that changes the text is explicit.
   against, never a nearest guess.
 
 ```text
-GET /surahs/2/ayahs/255?riwayah=hafs_an_asim&ayah_numbering_system=ayah_numbering_kufi
+GET /surahs/2/ayahs/255?riwayah=hafs_an_asim&ayah_numbering_system=kufi
 
 {
   "ayah_key": "2:255",
   "surah_number": 2,
   "ayah_number": 255,
   "riwayah": "hafs_an_asim",
-  "ayah_numbering_system": "ayah_numbering_kufi",
+  "ayah_numbering_system": "kufi",
   "mushaf_edition": "…",
   "version": "1.2.0",
   "source_hash": "sha256:…",
@@ -244,7 +244,7 @@ and a
 # riwayah:                hafs_an_asim
 # audio_sha256:           …
 # text_version:           1.2.0
-# ayah_numbering_system:  ayah_numbering_kufi
+# ayah_numbering_system:  kufi
 ayah_key   start_ms   end_ms
 1:1        0          5320
 1:2        5320       9870
@@ -294,7 +294,7 @@ never invalidated by time alone.
 
 ```text
 cache key:  ayah:{version}:{mushaf_edition}:{ayah_numbering_system}:{ayah_key}
-            ayah:1.2.0:…:ayah_numbering_kufi:2:255
+            ayah:1.2.0:…:kufi:2:255
 
 CDN path:   /text/1.2.0/{mushaf_edition}/2/255.json
 ```

@@ -44,6 +44,8 @@ HOW = {
     "plural": " (the code plural)",
     "arabic_plural": " (an Arabic plural — a collection is named with the code plural)",
     "deprecated": " (a deprecated name)",
+    "member": "",
+    "shared": "",
 }
 # The columns a registry member is looked up by. A registry without any of them
 # is matched on every column.
@@ -88,7 +90,17 @@ def build_index(data):
             folded.setdefault(fold(key), (concept, how))
 
     for form, concept in data["aliases"].items():
-        put(form, concept, "alias")
+        # A form shared by the values of two classifications (section 14)
+        # resolves to both; `<parent>:<form>` resolves to one.
+        put(form, "|".join(concept) if isinstance(concept, list) else concept,
+            "shared" if isinstance(concept, list) else "alias")
+    # A member of a closed set: a rawi, a surah, a numbering system. It is not
+    # a concept, so it resolves to its registry row, after every concept has
+    # had its chance at the form (`hamzah` is the mark before it is the imam).
+    for kind, forms in sorted(data.get("registry_members", {}).items()):
+        for form, code in forms.items():
+            put(form, f"{kind}:{code}", "member")
+            put(code, f"{kind}:{code}", "member")
     for concept, e in data["concepts"].items():
         if e.get("plural"):
             put(e["plural"], concept, "plural")
@@ -177,6 +189,28 @@ def show(data, code, how, term):
         print(f"  related     {', '.join(e['related'])}")
     if e.get("status") != "adopted":
         print(f"  status      `{e['status']}`: a proposal, not a ruling — say so when you rely on it")
+
+
+def show_member(data, member, term, as_json, registries):
+    """A registry member: which closed set it belongs to, and its row."""
+    kind, code = member.split(":", 1)
+    parent = data["concepts"].get(kind) or {}
+    name = parent.get("registry") or kind
+    header, rows = read_registry(os.path.join(registries, f"{name}.tsv")) \
+        if os.path.exists(os.path.join(registries, f"{name}.tsv")) else ([], [])
+    col = header.index("code") if "code" in header else 0
+    row = next((r for r in rows if col < len(r) and r[col] == code), None)
+    record = dict(zip(header, row)) if row and header else {}
+    if as_json:
+        return {"concept": None, "member": code, "kind": kind, "registry": name, "row": record}
+    print(f"{term} → `{code}`, a member of registry `{name}` (kind {kind}; not a concept — "
+          f"its parent entry is `{kind}`)")
+    for k, v in record.items():
+        if v and k != "code":
+            print(f"  {k:24}{v}")
+    if parent.get("status") and parent["status"] != "adopted":
+        print(f"  status                  the parent entry is `{parent['status']}`: a proposal, not a ruling")
+    return record
 
 
 def rows_of(data, codes, extra):
@@ -303,11 +337,31 @@ def main(argv=None):
         return 2
 
     index = build_index(data)
+    registries = os.path.join(os.path.dirname(os.path.abspath(args.data)), "registries")
     out, missing = {}, []
     for i, term in enumerate(args.terms):
         code, how = resolve(index, term)
         if not code:
             missing.append(term)
+            continue
+        if how == "member":
+            if not args.json and i:
+                print()
+            out[term] = show_member(data, code, term, args.json, registries)
+            continue
+        if how == "shared":
+            codes = code.split("|")
+            if args.json:
+                out[term] = {"concept": None, "shared": codes,
+                             "note": "a value of two classifications: resolve it as "
+                                     "<parent>:<name> from the column it sits in"}
+                continue
+            if i:
+                print()
+            print(f"{term} → a value of {len(codes)} classifications; the column says which:")
+            for c in codes:
+                e = data["concepts"][c]
+                print(f"  {e['parent']}:{e['code']}  → `{c}`  {e.get('display')}")
             continue
         if args.json:
             out[term] = {"concept": code, "resolved_as": how, **data["concepts"][code]}

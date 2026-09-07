@@ -11,12 +11,13 @@ parent: recitation_pace
 origin: quranic
 tier: core
 status: draft
-definition: القراءة ببطء وتؤدة مع استيفاء الحروف وأحكامها، وتستخدم كثيرًا في مقام التعليم.
+definition: التحقيق هو القراءة ببطء وتؤدة مع استيفاء الحروف وأحكامها، ويستخدم كثيرًا في مقام التعليم.
 definition_en: >
   Reciting slowly and deliberately, giving the letters and their rules their full due;
   much used in teaching.
 purpose: >
-  تستخدم قيمة من قيم مراتب القراءة، فيوسم بها التسجيل أو جلسة التعليم وتصفى بها.
+  نستخدم التحقيق قيمة من قيم مراتب القراءة، نوسم بها التسجيل أو جلسة التعليم ونصفي
+  بها.
 purpose_en: >
   Used as a value of recitation pace, so that a recording or a teaching session is
   tagged by its pace and filtered by it.

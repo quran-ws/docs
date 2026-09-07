@@ -13,11 +13,11 @@ origin: quranic
 tier: core
 status: draft
 plural: riwayahs
-definition: ما ينسب إلى راو عن إمام القراءة؛ مثل رواية حفص عن عاصم.
+definition: الرواية هي ما ينسب إلى راو عن إمام القراءة، مثل رواية حفص عن عاصم.
 definition_en: >
   What is attributed to a transmitter from an imam of a qiraah, such as the riwayah of
   Hafs from Asim.
-purpose: تستخدم لتحديد الرواية التي يتبعها نص أو مصحف أو تسجيل أو `dataset`.
+purpose: نستخدم الرواية لتحديد الرواية التي يتبعها نص أو مصحف أو تسجيل أو `dataset`.
 purpose_en: >
   Used to state which riwayah a text, a mushaf, a recording or a dataset follows.
 alternative_spellings:

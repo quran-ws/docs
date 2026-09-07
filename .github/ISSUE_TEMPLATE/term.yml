@@ -162,8 +162,8 @@ body:
     attributes:
       label: الجمع في الكود — Plural in code
       description: |
-        مثل `ayahs`. الاسم البرمجي و`s` بعده دائمًا، ولو كان مركبًا: `mawdi_al_sajdahs`.
-        e.g. `ayahs`. Always the code plus `s`, a construct included: `mawdi_al_sajdahs`.
+        مثل `ayahs`. الاسم البرمجي و`s` بعده دائمًا، ولو كان مركبًا: `ayah_keys`.
+        e.g. `ayahs`. Always the code plus `s`, a construct included: `ayah_keys`.
   - type: textarea
     id: alternatives
     attributes:

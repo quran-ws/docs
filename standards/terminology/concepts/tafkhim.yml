@@ -14,21 +14,20 @@ origin: quranic
 tier: core
 status: draft
 definition: >-
-  سِمَن يدخل على صوت الحرف فيمتلئ الفم بصداه؛ لازم في حروف الاستعلاء، وعارض في الراء ولام
-  لفظ الجلالة والألف تبعًا لما قبلها.
+  التفخيم هو سمن يدخل على صوت الحرف فيمتلئ الفم بصداه. وهو لازم في حروف الاستعلاء،
+  وعارض في الراء ولام لفظ الجلالة والألف تبعًا لما قبلها.
 definition_en: >-
   A fullness entering the sound of a letter so that the mouth fills with its echo; inherent
   in the letters of istila, and incidental in the raa, the lam of the name of Allah and the
   alif, following what precedes them.
 purpose: >-
-  يستخدم لوسم مواضع الحروف المفخمة تفخيمًا عارضًا في التلوين والتعليم، وإليه تُنسب مراتب التفخيم
-  في سجل الأحكام.
+  نستخدم التفخيم لوسم مواضع الحروف المفخمة تفخيمًا عارضًا في التلوين والتعليم، وإليه
+  تنسب مراتب التفخيم في سجل الأحكام.
 purpose_en: >-
   Used to tag the places of letters carrying incidental tafkhim in colouring and instruction,
   and the ranks of tafkhim in the registry of rulings are attributed to it.
 boundaries:
-- >-
-  التفخيم صفة في صوت الحرف، والاستعلاء صفة المخرج التي يلزم منها التفخيم.
+  - التفخيم صفة في صوت الحرف، أما الاستعلاء فهو صفة المخرج التي ينتج عنها التفخيم.
 boundaries_en:
 - >-
   Tafkhim is an attribute of the letter's sound; istila is the attribute of articulation from
@@ -42,8 +41,7 @@ english_glosses:
 - velarisation
 related:
 - tarqiq
-- sifat_al_huruf
-- hukm_al_tajwid
+- tajwid_ruling
 sources:
 - id: quranpedia_tajweed
   ref: '87'

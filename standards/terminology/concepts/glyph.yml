@@ -8,16 +8,16 @@ origin: borrowed
 tier: core
 status: draft
 plural: glyphs
-definition: الشكل البصري الذي ينتجه الخط لتمثيل حرف أو محرف أو مجموعة منها.
+definition: الشكل المرسوم هو الشكل البصري الذي ينتجه الخط لتمثيل حرف أو محرف أو مجموعة منها.
 definition_en: >
   The visual shape a font produces to represent a letter, a character, or a group of
   them.
 purpose: >
-  يستخدم في الخطوط والرسم والعرض ومواضع الأشكال البصرية.
+  نستخدمه في الخطوط والرسم والعرض ومواضع الأشكال البصرية.
 purpose_en: >
   Used for fonts, rasm, rendering and the placement of visual shapes.
 boundaries:
-  - الشكل المرسوم ينتجه الخط، وليس الحرف ولا المحرف؛ فالمحرف الواحد قد يرسم بأشكال شتى.
+  - الشكل المرسوم ينتجه الخط، وليس هو الحرف ولا المحرف، فالمحرف الواحد قد يُرسم بأشكال مختلفة.
 boundaries_en:
   - >-
     A glyph is produced by the font; it is neither the letter nor the character, and one

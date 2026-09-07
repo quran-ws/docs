@@ -17,19 +17,19 @@ origin: quranic
 tier: core
 status: draft
 definition: >
-  علم أداء حروف القرآن من مخارجها وإعطائها حقوقها ومستحقاتها من الصفات
+  التجويد هو علم أداء حروف القرآن من مخارجها وإعطائها حقوقها ومستحقاتها من الصفات
   والأحكام.
 definition_en: >
   The discipline of delivering the letters of the Quran from their points of
   articulation and giving them their due properties and rulings.
 purpose: >
-  يمثل العلم الذي تنتمي إليه قواعد التجويد وأحكامه وتلوينات العرض في التطبيقات، فتنسب
-  إليه القاعدة في المحرك أو القاموس.
+  نستخدم التجويد لتمثيل العلم الذي تنتمي إليه قواعد التجويد وأحكامه وتلوينات العرض في
+  التطبيقات، وتنسب إليه القاعدة في المحرك أو القاموس.
 purpose_en: >
   Used as the discipline that tajwid rules, rulings and colour annotations belong to, so
   that a rule in an engine or a dictionary is attributed to it.
 boundaries:
-  - التجويد علم، والمجود نمط تسجيل؛ فلا يستعمل أحد الاسمين مكان الآخر.
+  - التجويد علم، والمجود نمط تسجيل، ولا يستعمل أحد الاسمين مكان الآخر.
 boundaries_en:
   - >-
     Tajwid is a discipline; mujawwad is a recording style. Neither name stands for the
@@ -42,7 +42,7 @@ related:
   - waqf
   - mujawwad
   - noon_sakinah
-  - hukm_al_tajwid
+  - tajwid_ruling
 sources:
   - id: tajweed_engine
     url: https://github.com/quranpedia/tajweed-engine

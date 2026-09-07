@@ -24,7 +24,7 @@
 #
 # `ref` cites al-Bayan by volume/page for the school totals this reconciles to.
 #
-# surah	madani_awwal	madani_akhir	makki	kufi	basri	dimashqi	ref
+# surah	madani_first	madani_last	makki	kufi	basri	dimashqi	ref
 1	7	7	7	7	7	7	bayan_dani 1/79
 2	285	285	285	286	287	285	bayan_dani 1/79
 3	200	200	200	200	200	200	bayan_dani 1/79

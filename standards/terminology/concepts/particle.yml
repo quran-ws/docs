@@ -1,0 +1,30 @@
+concept: particle
+names:
+  code: particle
+  display: Particle
+  arabic:
+    vocalized: حَرْف المَعْنَى
+    singular: حرف المعنى
+kind: classification_value
+category: linguistics
+parent: part_of_speech
+origin: borrowed
+tier: core
+status: draft
+definition: >
+  حرف المعنى هو ما دل على معنى في غيره، مثل حروف الجر والعطف والنفي والاستفهام.
+definition_en: >
+  A particle: a word with no meaning of its own that gives meaning to the words around
+  it, such as prepositions and the particles of conjunction, negation and interrogation.
+purpose: نستخدمه قيمة من قيم قسم الكلمة، وتندرج تحته وسوم الحروف التفصيلية في مدونات الصرف القرآني.
+purpose_en: Used as a value of part of speech, and the detailed particle tags of Quranic morphology corpora fall under it.
+boundaries:
+  - حرف المعنى قسم من أقسام الكلمة، وحرف المبنى (`letter`) وحدة من النص المكتوب.
+boundaries_en:
+  - >-
+    A particle is a part of speech; the written letter, `letter`, is a unit of the
+    written text.
+related:
+  - part_of_speech
+  - letter
+sources: []

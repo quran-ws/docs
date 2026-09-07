@@ -64,12 +64,21 @@ RULES = {
     "deprecated": ("error", "A deprecated name: it names a different concept (section 20)."),
     "spelling": ("error", "Not the canonical code spelling (sections 4-8)."),
     "arabic_plural": ("error", "An Arabic plural used as a name (section 11)."),
+    "member": ("error", "A member of a closed set written in a spelling that is not its "
+                        "registry code (sections 12-13)."),
     "display_in_code": ("warning", "The display name, used as an identifier (section 9)."),
     "gloss": ("warning", "An English gloss standing in for a Quranic term (sections 3, 19)."),
     "generic": ("warning", "An ordinary English word that is also a recorded spelling of a "
                            "concept; a finding only if the identifier is about that concept."),
 }
-RULE_ORDER = ("deprecated", "spelling", "arabic_plural", "display_in_code", "gloss", "generic")
+RULE_ORDER = ("deprecated", "spelling", "arabic_plural", "member", "display_in_code", "gloss",
+              "generic")
+# Registries whose members are proper names — a rawi, a numbering system, a
+# rule — so a recorded spelling of one is unambiguous wherever it is written.
+# A surah or a tariq is often named by an ordinary word (`elephant`, `sad`),
+# so a single-word spelling there is only a hint, like GENERIC_WORDS.
+PROPER_NAME_KINDS = {"qiraah", "rawi", "riwayah", "ayah_numbering_system", "tajwid_ruling"}
+ASCII_FORM = re.compile(r"^[a-z][a-z0-9_]*$")
 
 # Ordinary English words that some entry records as a spelling. Alone they say
 # nothing about the Quran — `segment` is an audio segment far more often than a
@@ -80,6 +89,7 @@ GENERIC_WORDS = {
     "place", "count", "number", "line", "page", "word", "letter", "root", "text",
     "character", "glyph", "translation", "position", "index", "order", "part", "unit",
     "quarter", "half", "eighth", "chain", "path", "way", "style", "pace", "school",
+    "pos", "simple",
 }
 
 # Where a file sits says what a rename costs. A database column or a wire
@@ -97,7 +107,53 @@ LAYERS = (
 
 def load(path=DATA):
     with open(path, encoding="utf-8") as fh:
-        return json.load(fh)
+        data = json.load(fh)
+    data["_member_display"] = member_displays(data, os.path.join(os.path.dirname(path), "registries"))
+    return data
+
+
+def member_displays(data, registries):
+    """`kind:code` → the member's display name, read from the registry beside the data."""
+    out = {}
+    if not os.path.isdir(registries):
+        return out
+    for kind in data.get("registry_members", {}):
+        name = (data["concepts"].get(kind) or {}).get("registry")
+        path = os.path.join(registries, f"{name}.tsv") if name else None
+        if not path or not os.path.exists(path):
+            continue
+        header, rows = [], []
+        with open(path, encoding="utf-8") as fh:
+            for line in fh:
+                if line.startswith("#"):
+                    fields = [c.strip() for c in line.lstrip("#").split("\t")]
+                    if len(fields) > 1:
+                        header = fields
+                elif line.strip():
+                    rows.append([c.strip() for c in line.split("\t")])
+        col = {c: i for i, c in enumerate(header)}
+        if "code" not in col:
+            continue
+        for row in rows:
+            code = row[col["code"]] if col["code"] < len(row) else ""
+            display = row[col["display"]] if "display" in col and col["display"] < len(row) else code
+            out[f"{kind}:{code}"] = display or code
+    return out
+
+
+def name_of(data, concept):
+    """(canonical, display) for a concept, for a `kind:code` registry member, or
+    for `a|b`, a form shared by the values of two classifications."""
+    if "|" in concept:
+        pairs = [name_of(data, c) for c in concept.split("|")]
+        codes = sorted({c for c, _ in pairs})
+        return " or ".join(codes), " or ".join(d for _, d in pairs)
+    if ":" in concept:
+        kind, code = concept.split(":", 1)
+        display = data.get("_member_display", {}).get(concept, code)
+        return code, f"{display}, a {data['concepts'].get(kind, {}).get('display') or kind}"
+    e = data["concepts"][concept]
+    return e["code"], e.get("display")
 
 
 def suffix_of(name):
@@ -161,14 +217,46 @@ def build_index(data, ignore_words):
             put(plural, "arabic_plural", concept)
         for gloss in e.get("english_glosses") or []:
             put(gloss, "gloss", concept)
+    # A member's code is canonical wherever it is written, and it comes before
+    # the concept spellings because a registry is its own namespace (section 13):
+    # `kufi` is the stored value of the numbering system, not a short spelling
+    # of the entry `ayah_numbering_kufi`.
+    for kind, forms in data.get("registry_members", {}).items():
+        for code in set(forms.values()):
+            index.setdefault(code, ("canonical", f"{kind}:{code}", code))
     for form, concept in data["aliases"].items():
+        if isinstance(concept, list):
+            # A form shared by the values of two classifications (section 14).
+            # It is canonical when it is the code of each; otherwise the finding
+            # names both, and the column decides.
+            codes = {data["concepts"][c]["code"] for c in concept}
+            key = form.lower().replace("-", "_").replace(" ", "_")
+            rule = "canonical" if codes == {key} else "spelling"
+            index.setdefault(key, (rule, "|".join(concept), key))
+            continue
         put(form, "spelling", concept)
+    # The members of the closed sets, keyed `kind:code` so a member and a
+    # concept never share a slot. A concept's spelling wins a form they share
+    # (`hamzah` is the mark before it is the imam); a form that is itself a
+    # member's code anywhere is never a finding (`hafs` names the rawi and is
+    # also a recorded short form of the riwayah).
+    codes = {code for kind in data.get("registry_members", {}).values() for code in kind.values()}
+    for kind, forms in sorted(data.get("registry_members", {}).items()):
+        for form, code in forms.items():
+            key = form.lower().replace("-", "_").replace(" ", "_")
+            if key == code or key in codes or len(key) < 3 or not ASCII_FORM.match(key):
+                continue
+            rule = "member" if ("_" in key or kind in PROPER_NAME_KINDS) else "generic"
+            index.setdefault(key, (rule, f"{kind}:{code}", key))
     # The canonical name itself, so that a tree writing it both ways is seen.
     for concept, e in data["concepts"].items():
+        have = index.get(e["code"])
+        if have and have[0] == "canonical" and "|" in have[1]:
+            continue
         index[e["code"]] = ("canonical", concept, e["code"])
     # A collection is named by adding `s` (section 11), so `suras` is `sura`
     # made plural: the same finding, counted under the singular. Only `s` is
-    # added — `es` would make `files` a plural of `fil`.
+    # added — `es` would make `boxes` a plural of `box`.
     for form, hit in list(index.items()):
         index.setdefault(form + "s", hit)
     # A single ordinary word is a hint, not a ruling.
@@ -183,7 +271,8 @@ def build_index(data, ignore_words):
 
 # --- configuration ---------------------------------------------------------
 
-CONFIG_KEYS = {"exclude", "ignore_words", "allow_gloss_in", "compatibility", "paths"}
+CONFIG_KEYS = {"exclude", "ignore_words", "allow_gloss_in", "compatibility", "paths",
+               "external_names"}
 
 
 def find_config(paths, explicit):
@@ -206,7 +295,8 @@ def find_config(paths, explicit):
 def load_config(path):
     if not path:
         return {"root": os.getcwd(), "exclude": [], "ignore_words": [],
-                "allow_gloss_in": [], "compatibility": [], "paths": [], "file": None}
+                "allow_gloss_in": [], "compatibility": [], "paths": [],
+                "external_names": [], "external": None, "file": None}
     with open(path, encoding="utf-8") as fh:
         raw = json.load(fh)
     unknown = sorted(k for k in raw if k not in CONFIG_KEYS and not k.startswith(("_", "$")))
@@ -215,7 +305,18 @@ def load_config(path):
     cfg = {key: list(raw.get(key) or []) for key in CONFIG_KEYS}
     cfg["root"] = os.path.dirname(os.path.abspath(path))
     cfg["file"] = path
+    cfg["external"] = compile_external(cfg["external_names"], path)
     return cfg
+
+
+def compile_external(patterns, path):
+    """One pattern for the names the project quotes rather than chooses."""
+    if not patterns:
+        return None
+    try:
+        return re.compile("|".join(f"(?:{p})" for p in patterns))
+    except re.error as exc:
+        raise ValueError(f"{path}: external_names is not a regular expression: {exc}") from exc
 
 
 def matches(rel, patterns):
@@ -269,7 +370,8 @@ def layer_of(rel, suffix, cfg):
 
 
 def scan(paths, index, data, cfg):
-    findings, used, counted = {}, {}, {"files": 0, "ignored_lines": 0, "allowed_glosses": 0}
+    findings, used, counted = {}, {}, {"files": 0, "ignored_lines": 0, "allowed_glosses": 0,
+                                       "external_names": 0}
     for path in files(paths, cfg):
         try:
             if os.path.getsize(path) > MAX_BYTES:
@@ -287,6 +389,9 @@ def scan(paths, index, data, cfg):
             if IGNORE_LINE.search(line):
                 counted["ignored_lines"] += 1
                 continue
+            if cfg["external"]:
+                line, hidden = cfg["external"].subn(lambda m: " " * len(m.group(0)), line)
+                counted["external_names"] += hidden
             for match in IDENTIFIER.finditer(line):
                 identifier = match.group(0)
                 for form, (rule, concept, base) in lookup(parts_of(identifier), index):
@@ -305,7 +410,7 @@ def scan(paths, index, data, cfg):
                     if key in findings:
                         findings[key]["count"] += 1
                         continue
-                    entry = data["concepts"][concept]
+                    canonical, display = name_of(data, concept)
                     findings[key] = {
                         "rule": rule,
                         "severity": RULES[rule][0],
@@ -314,8 +419,8 @@ def scan(paths, index, data, cfg):
                         "identifier": identifier,
                         "found": form,
                         "concept": concept,
-                        "canonical": entry["code"],
-                        "display": entry.get("display"),
+                        "canonical": canonical,
+                        "display": display,
                         "layer": layer,
                         "known": layer == "compatibility surface" and bool(cfg["compatibility"]),
                         "count": 1,
@@ -327,7 +432,7 @@ def canonical_uses(data, used):
     """Concepts written more than one way in this tree (section 26)."""
     out = []
     for concept, forms in sorted(used.items()):
-        code = data["concepts"][concept]["code"]
+        code = name_of(data, concept)[0]
         spellings = sorted(forms)
         if len(spellings) > 1:
             out.append({"concept": concept, "canonical": code,
@@ -350,6 +455,7 @@ def summarise(findings, mixed, counted, data, cfg):
         "known": len(findings) - len(live),
         "ignored_lines": counted["ignored_lines"],
         "allowed_glosses": counted["allowed_glosses"],
+        "external_names": counted["external_names"],
         "concepts_mixed": len(mixed),
         "layers": by_layer,
         "config": cfg["file"],
@@ -427,7 +533,9 @@ def report(findings, mixed, summary, by, limit):
     print(f"\n{summary['errors']} errors, {summary['warnings']} warnings, "
           f"{summary['findings']} findings" + (f" — {layers}" if layers else "")
           + (f"; {summary['known']} known" if summary["known"] else "")
-          + (f"; {summary['ignored_lines']} lines ignored" if summary["ignored_lines"] else ""))
+          + (f"; {summary['ignored_lines']} lines ignored" if summary["ignored_lines"] else "")
+          + (f"; {summary['external_names']} external names quoted"
+             if summary.get("external_names") else ""))
 
 
 def main(argv=None):

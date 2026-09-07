@@ -1,7 +1,7 @@
-concept: maqta_al_ayah
+concept: ayah_fragment
 names:
-  code: maqta_al_ayah
-  display: Maqta al-Ayah
+  code: ayah_fragment
+  display: Ayah Fragment
   arabic:
     vocalized: مَقْطَع الآيَة
     singular: مقطع الآية
@@ -11,15 +11,16 @@ category: mushaf
 origin: standard
 tier: core
 status: draft
-plural: maqta_al_ayahs
+plural: ayah_fragments
 definition: >-
-  ما ظهر من آية واحدة في سطر واحد من صفحة مصحف بعينه؛ فالآية التي تمتد على سطرين مقطعان.
+  مقطع الآية هو ما يظهر من آية واحدة في سطر واحد من صفحة مصحف بعينه. والآية التي تمتد على سطرين
+  تتكون من مقطعين.
 definition_en: >-
   What appears of one ayah on one line of a page of a given mushaf; an ayah that runs over
   two lines is two maqtas.
 purpose: >-
-  يستخدم وحدةً للعرض والوسم في تخطيط الصفحة، لأن الآية لا تلزم السطر ولا السطر الآية؛ وعليه
-  تُبنى المحاذاة والإبراز في مصحف مرسوم.
+  نستخدمه وحدة للعرض والوسم في تخطيط الصفحة، لأن الآية قد لا تنتهي مع نهاية السطر والسطر قد لا
+  ينتهي مع نهاية الآية. وعليه نبني المحاذاة والإبراز في المصحف المرسوم.
 purpose_en: >-
   Used as the unit of display and tagging in the page layout, because an ayah does not keep
   to a line nor a line to an ayah; alignment and highlighting in a drawn mushaf are built
@@ -27,7 +28,7 @@ purpose_en: >-
 boundaries:
 - المقطع صفة في تخطيط مصحف بعينه، وليس جزءًا من هوية الآية.
 - >-
-  المقطع غير الكلمة: قد يكون كلمة أو كلمات، أو جزء كلمة حيث يُقطع داخلها.
+  المقطع ليس الكلمة، فقد يكون كلمة أو كلمات أو جزءًا من كلمة إذا وقع القطع داخلها.
 boundaries_en:
 - >-
   A maqta belongs to the layout of one mushaf and is no part of the identity of the ayah.

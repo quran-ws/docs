@@ -1,29 +1,27 @@
-concept: fil
+concept: verb
 names:
-  code: fil
-  display: Fil
+  code: verb
+  display: Verb
   arabic:
     vocalized: الفِعْل
     singular: الفعل
 kind: classification_value
 category: linguistics
 parent: part_of_speech
-origin: quranic
+origin: borrowed
 tier: core
 status: draft
 definition: >
-  ما دل على معنى في نفسه مقترن بزمان، ويتصرف بالماضي والمضارع والأمر.
+  الفعل هو ما دل على معنى في نفسه مقترن بزمان، ويتصرف إلى الماضي والمضارع والأمر.
 definition_en: >
   A verb: a word whose meaning is tied to a time, with past, present and imperative
   forms.
 purpose: >
-  يستخدم قيمةً من قيم قسم الكلمة، وعليه تعلق السمات الصرفية الخاصة بالفعل من
-  الزمن والبناء للمعلوم أو المجهول والوزن.
+  نستخدمه قيمة من قيم قسم الكلمة، ونعلق عليه السمات الصرفية الخاصة بالفعل، مثل الزمن والبناء
+  للمعلوم أو المجهول والوزن.
 purpose_en: >
   Used as a value of part of speech, and the morphological features specific to verbs —
   tense, voice and pattern — hang off it.
-english_glosses:
-  - Verb
 related:
   - part_of_speech
   - morphology

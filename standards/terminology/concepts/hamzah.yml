@@ -16,9 +16,9 @@ origin: quranic
 tier: core
 status: draft
 symbol: ء
-definition: الدلالة على همزة القطع المحققة
+definition: الهمزة علامة تدل على همزة القطع المحققة.
 definition_en: Marks a fully realised hamzah (hamzat al-qat).
-purpose: تستخدم قيمةً من علامات الرسم، ليعرف بها ما خالف فيه الرسم اللفظ في الكلمة.
+purpose: نستخدمها قيمة من علامات الرسم، فنعرف بها المواضع التي يخالف فيها الرسم اللفظ في الكلمة.
 purpose_en: Used as a value of the orthographic marks, so that software can tell where the
   rasm departs from the pronunciation.
 alternative_spellings:

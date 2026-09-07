@@ -11,20 +11,20 @@ origin: quranic
 tier: core
 status: draft
 definition: >
-  المواضع التي يتشابه فيها لفظ الآيات أو أجزاؤها في القرآن، تشابهًا تامًّا أو مع
+  المتشابهات هي المواضع التي يتشابه فيها لفظ الآيات أو أجزائها في القرآن، تشابهًا تامًّا أو مع
   اختلاف يسير في كلمة أو ترتيب.
 definition_en: >
   The places in the Quran where the wording of ayahs, or of parts of them, resembles one
   another, whether exactly or with a slight difference in a word or in order.
 purpose: >
-  تستخدم أساسًا لأدوات الحفظ والمراجعة والبحث، إذ يحتاج الحافظ إلى معرفة
-  المواضع التي يلتبس بعضها ببعض وموضع الفرق بينها.
+  نستخدمها أساسًا لأدوات الحفظ والمراجعة والبحث، لأن الحافظ يحتاج إلى معرفة المواضع التي يلتبس
+  بعضها ببعض وموضع الفرق بينها.
 purpose_en: >
   Used above all for memorisation, revision and search tools, since a memoriser needs to
   know which places are confused with one another and where they differ.
 boundaries:
   - التشابه اللفظي المقصود هنا غير المتشابه المقابل للمحكم في علوم القرآن.
-  - التشابه علاقة بين موضعين أو أكثر، لا صفة في آية واحدة.
+  - التشابه علاقة بين موضعين أو أكثر، وليس صفة في آية واحدة.
 boundaries_en:
   - >-
     The resemblance of wording meant here is not the mutashabih that stands opposite the
@@ -41,7 +41,6 @@ english_glosses:
 related:
   - ayah
   - word
-  - hifz
 sources:
   - id: itqan
     ref: "3/390"

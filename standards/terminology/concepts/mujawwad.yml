@@ -12,17 +12,17 @@ origin: quranic
 tier: core
 status: draft
 definition: >
-  نمط أداء بطيء يمد فيه الصوت وتستوفى أحكام التجويد بتطريب، وهو الوصف الذي تنشر به
+  المجود نمط أداء بطيء يُمد فيه الصوت وتُستوفى أحكام التجويد بتطريب، وهو الوصف الذي تُنشر به
   التسجيلات المؤداة على هذا النحو.
 definition_en: >
   A recitation style that is slow and melodic, with the tajwid rules drawn out; the
   label given to recordings delivered that way.
 purpose: >
-  يستخدم لتصنيف التسجيل بحسب نمطه.
+  نستخدمه لتصنيف التسجيل بحسب نمطه.
 purpose_en: >
   Used to classify a recording by its style.
 boundaries:
-  - المجود نمط تسجيل، والتجويد علم يؤدى به كل نمط؛ فلا يستعمل أحد الاسمين مكان الآخر.
+  - المجود نمط تسجيل، والتجويد علم يؤدى به كل نمط، لذلك لا يستعمل أحد الاسمين مكان الآخر.
 boundaries_en:
   - >-
     Mujawwad is a recording style; tajwid is the discipline every style is delivered by.

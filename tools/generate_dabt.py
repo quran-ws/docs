@@ -61,10 +61,10 @@ DISPLAY = {
 # alternative spelling, and the note says what it was.
 MERGED = {
     "sajdah-sign": (["alamat_mawdi_al_sajdah"],
-                    "كان `alamat_mawdi_al_sajdah` مدخلًا مستقلًا يعرف الشيء نفسه، فدمج في هذا المدخل.",
+                    "كان `alamat_mawdi_al_sajdah` مدخلًا مستقلًا يعرف الشيء نفسه، ثم دُمج في هذا المدخل.",
                     "`alamat_mawdi_al_sajdah` was a separate entry defining the same thing; it was merged into this one."),
     "hizb": (["alamat_al_tahzib"],
-             "كان `alamat_al_tahzib` مدخلًا مستقلًا يعرف الشيء نفسه، فدمج في هذا المدخل.",
+             "كان `alamat_al_tahzib` مدخلًا مستقلًا يعرف الشيء نفسه، ثم دُمج في هذا المدخل.",
              "`alamat_al_tahzib` was a separate entry defining the same thing; it was merged into this one."),
 }
 
@@ -78,16 +78,16 @@ NOTE = {
 
 # Section 17: where a mark is confused with what it marks, both entries say so.
 BOUNDARIES = {
-    "sajdah-sign": (["علامة السجدة رسم في المصحف، وموضع السجدة مكان من النص، وسجود التلاوة الفعل."],
-                    ["The sajdah mark is a sign in the mushaf; mawdi al-sajdah is the place in the text; sujud al-tilawah is the act."]),
+    "sajdah-sign": (["علامة السجدة رسم في المصحف، والسجدة موضع من النص يسجد عنده."],
+                    ["The sajdah mark is a sign in the mushaf; the sajdah is the place in the text at which one prostrates."]),
     "saktah": (["علامة السكتة رسم في المصحف، والسكتة الوقفة نفسها."],
                ["The saktah mark is a sign in the mushaf; the saktah is the pause itself."]),
     "hizb": (["علامة التقسيم رسم في المصحف، والجزء والحزب وأرباعه أقسام من النص تدل عليها."],
              ["The division mark is a sign in the mushaf; the juz, the hizb and its quarters are divisions of the text it points to."]),
 }
 RELATED = {
-    "sajdah-sign": ["mawdi_al_sajdah", "sujud_al_tilawah", "sajdah_line"],
-    "sajdah-line": ["sajdah_mark", "mawdi_al_sajdah"],
+    "sajdah-sign": ["sajdah", "sajdah_line"],
+    "sajdah-line": ["sajdah_mark", "sajdah"],
     "saktah": ["saktah", "qiraah_mark"],
     "hizb": ["hizb", "rubu_al_hizb", "juz"],
     "meem-iqlab": ["noon_sakinah", "iqlab"],
@@ -192,37 +192,37 @@ FAMILY = {"حركة": "harakah", "تنوين": "tanwin", "نقط": "ijam", "إم
 # both languages, exactly as section 27's own waqf_lazim example words it.
 PURPOSE = {
     "harakah": (
-        "تستخدم قيمةً من قيم الحركة، ليقرأ منها نطق الحرف في التحليل والعرض والتعليم "
-        "بدل قراءة صورة الشكل.",
+        "نستخدمها قيمة من قيم الحركة، فنقرأ منها نطق الحرف في التحليل والعرض والتعليم "
+        "بدلًا من قراءة صورة الشكل.",
         "Used as a value of harakah, so that a letter's pronunciation is read from it in "
         "analysis, rendering and teaching rather than from the shape of the mark."),
     "tanwin": (
-        "تستخدم قيمةً من قيم التنوين، ليقرأ منها نطق آخر الاسم وحكمه بدل قراءة صورة الشكل.",
+        "نستخدمها قيمة من قيم التنوين، فنقرأ منها نطق آخر الاسم وحكمه بدلًا من قراءة صورة الشكل.",
         "Used as a value of tanwin, so that the pronunciation of the noun's ending and its "
         "ruling are read from it rather than from the shape of the mark."),
     "ijam": (
-        "تستخدم قيمةً من قيم النقط، ليتميز بها الحرف عما يشاركه في الرسم في التحليل والبحث.",
+        "نستخدمها قيمة من قيم النقط، فنميز بها الحرف عن الحرف الذي يشاركه في الرسم في التحليل والبحث.",
         "Used as a value of ijam, so that a letter is told apart from those sharing its "
         "skeleton in analysis and in search."),
     "imlaiyyah": (
-        "تستخدم قيمةً من علامات الرسم، ليعرف بها ما خالف فيه الرسم اللفظ في الكلمة.",
+        "نستخدمها قيمة من علامات الرسم، فنعرف بها المواضع التي يخالف فيها الرسم اللفظ في الكلمة.",
         "Used as a value of the orthographic marks, so that software can tell where the rasm "
         "departs from the pronunciation."),
     "waqf": (
-        "تستخدم قيمةً من قيم نوع علامة الوقف، ليتفرع عليها العرض والتلقين والتنبيه في "
-        "التطبيقات بدل قراءة صورة الرمز.",
+        "نستخدمها قيمة من قيم نوع علامة الوقف، فنبني عليها العرض والتلقين والتنبيه في "
+        "التطبيقات بدلًا من قراءة صورة الرمز.",
         "Used as a value of the waqf mark type, so that rendering, teaching and warnings in "
         "applications branch on it rather than on the shape of the sign."),
     "alamat_qiraah": (
-        "تستخدم قيمةً من علامات القراءة، لينبه بها القارئ إلى أداء خاص في موضعه.",
+        "نستخدمها قيمة من علامات القراءة، فننبه بها القارئ إلى أداء خاص في موضعها.",
         "Used as a value of the qiraah marks, so that the reader is alerted to a particular "
         "delivery at its place."),
     "dabt": (
-        "تستخدم علامةً من علامات المصحف، ليعرف بها موضعها ودلالتها في العرض والتحليل.",
+        "نستخدمها علامة من علامات المصحف، فنعرف بها موضعها ودلالتها في العرض والتحليل.",
         "Used as a mark of the mushaf, so that rendering and analysis know where it sits and "
         "what it points to."),
     "mustaqill": (
-        "تستخدم علامةً من علامات المصحف، ليعرف بها موضعها ودلالتها في العرض والتحليل.",
+        "نستخدمها علامة من علامات المصحف، فنعرف بها موضعها ودلالتها في العرض والتحليل.",
         "Used as a mark of the mushaf, so that rendering and analysis know where it sits and "
         "what it points to."),
 }

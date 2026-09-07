@@ -1,32 +1,31 @@
-concept: fadail_al_quran
+concept: quran_merits
 names:
-  code: fadail_al_quran
-  display: Fadail al-Quran
+  code: quran_merits
+  display: Quran Merits
   arabic:
     vocalized: فَضَائِل القُرْآن
     singular: فضائل القرآن
 kind: content
 category: quranic_sciences
-origin: quranic
+origin: borrowed
 tier: core
 status: draft
 definition: >
-  ما ورد في فضل القرآن أو فضل سورة منه أو آية، وما يترتب على قراءتها من أجر أو
+  فضائل القرآن هي ما ورد في فضل القرآن أو فضل سورة منه أو آية، وما يترتب على قراءتها من أجر أو
   أثر.
 definition_en: >
   What has been transmitted about the merit of the Quran, or of one of its surahs or
   ayahs, and the reward or effect that follows from reciting it.
 purpose: >
-  يستخدم محتوى يربط بالقرآن كله أو بسورة أو آية، ويفرد عن التفسير لأنه لا يفسر
-  المعنى، وعن الحديث لأنه مرتب على الموضع لا على الراوي.
+  نستخدمها محتوى يُربط بالقرآن كله أو بسورة أو آية. ونفصلها عن التفسير لأنها لا تفسر المعنى، وعن
+  الحديث لأنها مرتبة على الموضع من القرآن وليس على الراوي.
 purpose_en: >
   Used as content attached to the whole Quran, to a surah or to an ayah. It is kept
   apart from tafsir because it does not explain meaning, and from hadith because it is
   organised by place in the text rather than by narrator.
 boundaries:
-  - الفضل مرتب على الموضع من القرآن، والحديث الذي ورد فيه أصل ينقل عنه لا يمثل
-    مكانه.
-  - كثير مما يروى في فضائل السور ضعيف أو موضوع، فيقيد بمصدره ودرجته.
+  - الفضل مرتب على الموضع من القرآن، والحديث الذي ورد فيه مصدر يُنقل عنه وليس موضعًا له.
+  - كثير مما يُروى في فضائل السور ضعيف أو موضوع، لذلك يُقيد كل فضل بمصدره ودرجته.
 boundaries_en:
   - >-
     The merit is attached to a place in the Quran; the hadith it comes from is a source
@@ -37,8 +36,6 @@ boundaries_en:
 alternative_spellings:
   - fadail
   - fadail_al_surah
-english_glosses:
-  - Merits
 related:
   - quran
   - surah

@@ -12,19 +12,19 @@ tier: core
 status: draft
 plural: equivalent_ayahs
 definition: >
-  الآية في نظام عد تقابل آيةً في نظام آخر، سواء اتفق رقماهما أو اختلفا لاختلاف
-  مواضع الفصل بين الآي.
+  الآية المقابلة هي الآية في نظام عد تقابل آية في نظام عد آخر، سواء اتفق رقماهما أو اختلفا
+  لاختلاف مواضع الفصل بين الآي.
 definition_en: >
   The ayah in one numbering system that corresponds to an ayah in another. Their numbers
   may differ, because the systems divide the text at different points.
 purpose: >
-  تستخدم للربط بين أرقام الآيات عبر أنظمة العد، فلا تقارن البيانات المبنية على
-  نظام ببيانات مبنية على غيره بالرقم وحده.
+  نستخدمها للربط بين أرقام الآيات عبر أنظمة العد، حتى لا تقارَن البيانات المبنية على نظام
+  ببيانات مبنية على نظام آخر بالرقم وحده.
 purpose_en: >
   Used to map ayah numbers across numbering systems, so that data built on one system is
   never compared with data built on another by number alone.
 boundaries:
-  - المقابلة بين نظامي عد، وليست تشابهًا في اللفظ ولا تكرارًا للنص.
+  - المقابلة علاقة بين نظامي عد، وليست تشابهًا في اللفظ ولا تكرارًا للنص.
 boundaries_en:
   - >-
     This is a correspondence between two numbering systems, not a similarity of wording

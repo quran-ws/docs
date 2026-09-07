@@ -15,16 +15,16 @@ origin: quranic
 tier: core
 status: draft
 symbol: مِحْرَاب
-definition: الدلالة على موضع السجود
+definition: علامة السجدة علامة تدل على موضع السجود.
 definition_en: Marks the point at which the reader prostrates.
-purpose: تستخدم علامةً من علامات المصحف، ليعرف بها موضعها ودلالتها في العرض والتحليل.
+purpose: نستخدمها علامة من علامات المصحف، فنعرف بها موضعها ودلالتها في العرض والتحليل.
 purpose_en: Used as a mark of the mushaf, so that rendering and analysis know where it sits
   and what it points to.
 boundaries:
-- علامة السجدة رسم في المصحف، وموضع السجدة مكان من النص، وسجود التلاوة الفعل.
+- علامة السجدة رسم في المصحف، والسجدة موضع من النص يسجد عنده.
 boundaries_en:
-- The sajdah mark is a sign in the mushaf; mawdi al-sajdah is the place in the text; sujud
-  al-tilawah is the act.
+- The sajdah mark is a sign in the mushaf; the sajdah is the place in the text at which one
+  prostrates.
 alternative_spellings:
 - sajda_mark
 - sajda_sign
@@ -33,10 +33,9 @@ alternative_spellings:
 deprecated:
 - alamat_mawdi_al_sajdah
 related:
-- mawdi_al_sajdah
-- sujud_al_tilawah
+- sajdah
 - sajdah_line
-note: كان `alamat_mawdi_al_sajdah` مدخلًا مستقلًا يعرف الشيء نفسه، فدمج في هذا المدخل.
+note: كان `alamat_mawdi_al_sajdah` مدخلًا مستقلًا يعرف الشيء نفسه، ثم دُمج في هذا المدخل.
 note_en: '`alamat_mawdi_al_sajdah` was a separate entry defining the same thing; it was merged
   into this one.'
 unicode: []

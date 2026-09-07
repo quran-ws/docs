@@ -13,11 +13,11 @@ origin: quranic
 tier: core
 status: draft
 plural: tariqs
-definition: وجه النقل المأخوذ عن الراوي بواسطة من دونه في سلسلة نقل القراءة.
+definition: الطريق هو وجه النقل المأخوذ عن الراوي بواسطة من دونه في سلسلة نقل القراءة.
 definition_en: >
   A path of transmission taken from a rawi through those below him in the chain of
   transmission of a qiraah.
-purpose: يستخدم عندما تحتاج البيانات إلى مستوى أدق من الرواية لتمييز طرق الأداء والنقل.
+purpose: نستخدم الطريق عندما تحتاج البيانات إلى مستوى أدق من الرواية لتمييز طرق الأداء والنقل.
 purpose_en: >
   Used when data needs a finer level than the riwayah to tell paths of delivery and
   transmission apart.
@@ -33,8 +33,9 @@ sources:
   - id: nashr
     ref: "1/146"
 note: >
-  الطرق الأربعة التي تخزنها التطبيقات — الشاطبية وطيبة النشر والدرة والتيسير — في
-  `registries/tariq.tsv`، وحصر طرق النشر كلها، وهي نحو 980 طريقًا، لا يزال مفتوحًا.
+  الطرق الأربعة التي تخزنها التطبيقات، وهي الشاطبية وطيبة النشر والدرة والتيسير، مسجلة
+  في `registries/tariq.tsv`. أما حصر طرق النشر كلها، وعددها نحو 980 طريقًا، فلا يزال
+  مفتوحًا.
 note_en: >
   The four named routes applications store — shatibiyyah, tayyibat_al_nashr, durrah,
   taysir — are in `registries/tariq.tsv`; the full enumeration, some 980 turuq of

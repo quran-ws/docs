@@ -11,12 +11,12 @@ origin: quranic
 tier: core
 status: draft
 plural: basmalahs
-definition: صيغة «بسم الله الرحمن الرحيم» التي تفتتح بها السور عدا سورة التوبة، ولها أحكام
+definition: البسملة هي صيغة «بسم الله الرحمن الرحيم» التي تفتتح بها السور عدا سورة التوبة. ولها أحكام
   واختلافات مرتبطة بعد الآي.
 definition_en: >
   The formula «بسم الله الرحمن الرحيم» with which the surahs open, except surah
   al-Tawbah. It carries rulings and differences bound up with ayah counting.
-purpose: تستخدم لتمييز البسملة وتمثيل موضعها وعلاقتها بالسورة ونظام عد الآي.
+purpose: نستخدمها لتمييز البسملة وتمثيل موضعها وعلاقتها بالسورة ونظام عد الآي.
 purpose_en: >
   Used to identify the basmalah and to represent its position and its relation to the
   surah and to the ayah numbering system.

@@ -1,40 +1,38 @@
-concept: tadabbur
+concept: reflection
 names:
-  code: tadabbur
-  display: Tadabbur
+  code: reflection
+  display: Reflection
   arabic:
     vocalized: التَّدَبُّر
     singular: التدبر
 kind: content
 category: quranic_sciences
-origin: quranic
+origin: borrowed
 tier: core
 status: draft
-plural: tadabburs
+plural: reflections
 definition: >
-  التأمل في معاني القرآن وما يقتضيه من عمل، وما يقيده القارئ من وقفة عند آية
+  التدبر هو التأمل في معاني القرآن وما يقتضيه من عمل، وما يقيده القارئ من وقفة عند آية
   أو لفظة.
 definition_en: >
   Reflecting on the meanings of the Quran and what they call for in action, and what a
   reader records of a pause at an ayah or a word.
 purpose: >
-  يستخدم محتوى يربط بآية أو بموضع منها، ويفرد عن التفسير لأنه لا يلتزم بيان
-  المعنى الظاهر، وقائله ليس بالضرورة مفسرًا.
+  نستخدم التدبر محتوى يربط بآية أو بموضع منها. ونفصله عن التفسير لأنه لا يلتزم بيان
+  المعنى الظاهر، ولأن قائله ليس بالضرورة مفسرًا.
 purpose_en: >
   Used as content attached to an ayah or to a place within it. It is kept apart from
   tafsir because it does not undertake to state the apparent meaning, and the one who
   says it is not necessarily a mufassir.
 boundaries:
-  - التفسير بيان لمعنى الآية على منهج، والتدبر أثر المعنى في المتدبر.
+  - التفسير بيان لمعنى الآية على منهج، أما التدبر فهو أثر المعنى في المتدبر.
 boundaries_en:
   - >-
-    Tafsir states the meaning of an ayah by a method; tadabbur is the effect of that
+    Tafsir states the meaning of an ayah by a method; reflection is the effect of that
     meaning on the one reflecting.
 alternative_spellings:
   - tadabur
   - waqfat_tadabburiyyah
-english_glosses:
-  - Reflection
 related:
   - ayah
   - tafsir

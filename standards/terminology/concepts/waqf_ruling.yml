@@ -10,14 +10,15 @@ category: waqf
 origin: standard
 tier: core
 status: draft
-definition: تصنيف الموضع نفسه من جهة تمام المعنى عنده، لا من جهة العلامة المرسومة عليه.
+definition: حكم الوقف هو تصنيف الموضع نفسه من جهة تمام المعنى عنده، وليس من جهة العلامة المرسومة عليه.
 definition_en: >
   A classification of the place itself by whether the meaning is complete there, not of
   the mark drawn at it.
-purpose: يستخدم في التعليم والتحليل النحوي والدلالي للوقف.
+purpose: نستخدم حكم الوقف في التعليم والتحليل النحوي والدلالي للوقف.
 purpose_en: Used in teaching and in the syntactic and semantic analysis of stopping.
 boundaries:
-  - حكم الوقف صفة الموضع، ونوع علامة الوقف ما ترشد إليه العلامة المرسومة؛ وقد يكون للموضع حكم ولا علامة عليه.
+  - حكم الوقف صفة الموضع، ونوع علامة الوقف هو ما ترشد إليه العلامة المرسومة. وقد يكون
+    للموضع حكم ولا علامة عليه.
 boundaries_en:
   - The waqf ruling belongs to the place; the waqf mark type is what a drawn mark points to, and a place may have a ruling with no mark on it.
 related:

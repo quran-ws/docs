@@ -10,11 +10,12 @@ tier: core
 status: draft
 plural: word_by_word_translations
 definition: >-
-  ترجمة تعطي كل كلمة من كلمات الآية معناها في لغة أخرى على حدة، بترتيب كلمات الأصل.
+  الترجمة كلمة بكلمة هي ترجمة تعطي كل كلمة من كلمات الآية معناها في لغة أخرى على حدة،
+  بترتيب كلمات الأصل.
 definition_en: >-
   A translation giving each word of the ayah its meaning in another language on its own, in
   the order of the original words.
-purpose: تستخدم في العرض التعليمي والتعلم، وتُربط بالكلمة بمفتاحها لا بالآية.
+purpose: نستخدم الترجمة كلمة بكلمة في العرض التعليمي والتعلم، ونربطها بالكلمة بمفتاحها وليس بالآية.
 purpose_en: >-
   Used in instructional display and in learning, and attached to the word by its key rather
   than to the ayah.

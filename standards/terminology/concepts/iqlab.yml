@@ -7,21 +7,21 @@ names:
     singular: الإقلاب
 kind: classification_value
 category: tajwid
-parent: hukm_al_tajwid
+parent: tajwid_ruling
 origin: quranic
 tier: core
 status: draft
-definition: قلب النون الساكنة أو التنوين ميمًا مخفاة بغنة عند الباء.
+definition: الإقلاب قلب النون الساكنة أو التنوين ميمًا مخفاة بغنة عند الباء.
 definition_en: >-
   Turning noon sakinah or tanwin into a meem, concealed with ghunnah, before a baa.
 purpose: >-
-  يستخدم قيمةً من قيم حكم التجويد، فيوسم به موضع النص في التحليل والتلوين والتعليم، وتتفرع
-  تحته أنواعه في سجل الأحكام.
+  نستخدمه قيمة من قيم حكم التجويد، فنوسم به موضع النص في التحليل والتلوين والتعليم، وتتفرع تحته
+  أنواعه في سجل الأحكام.
 purpose_en: >-
   Used as a value of the tajwid ruling, so that a place in the text is tagged with it in analysis,
   colouring and instruction, and its kinds branch under it in the registry of rulings.
 boundaries:
-- الإقلاب حكم في النطق، والميم الصغيرة العلامة التي يرسم بها في المصحف.
+- الإقلاب حكم في النطق، والميم الصغيرة هي العلامة التي يُرسم بها في المصحف.
 boundaries_en:
 - >-
   Iqlab is a ruling of pronunciation; the small meem is the mark the mushaf draws it with.

@@ -16,10 +16,11 @@ origin: quranic
 tier: core
 status: draft
 symbol: دَائِرَة صَغِيرَة
-definition: الدلالة على زيادة الحرف رسمًا؛ فلا ينطق وصلًا ولا وقفًا
+definition: الصفر المستدير علامة تدل على زيادة الحرف في الرسم، ولذلك لا ينطق في الوصل ولا
+  في الوقف.
 definition_en: Marks a letter present in the skeleton but never pronounced — neither in continuation
   nor when stopping.
-purpose: تستخدم علامةً من علامات المصحف، ليعرف بها موضعها ودلالتها في العرض والتحليل.
+purpose: نستخدمها علامة من علامات المصحف، فنعرف بها موضعها ودلالتها في العرض والتحليل.
 purpose_en: Used as a mark of the mushaf, so that rendering and analysis know where it sits
   and what it points to.
 alternative_spellings:

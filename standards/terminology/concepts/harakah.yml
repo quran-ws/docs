@@ -12,11 +12,11 @@ origin: quranic
 tier: core
 status: draft
 definition: >
-  علامة تضبط حركة الحرف أو سكونه أو تشديده: الفتحة والضمة والكسرة والسكون والشدة.
+  الحركة علامة تضبط حركة الحرف أو سكونه أو تشديده، وهي الفتحة والضمة والكسرة والسكون والشدة.
 definition_en: >
   A mark fixing a letter's vowel, its absence or its doubling: fathah, dammah, kasrah,
   sukun and shaddah.
-purpose: تستخدم أبًا لعلامات الضبط التي تحدد نطق الحرف نفسه.
+purpose: نستخدمها أبًا لعلامات الضبط التي تحدد نطق الحرف نفسه.
 purpose_en: >
   Used as the parent of the dabt marks that determine how the letter itself is
   pronounced.

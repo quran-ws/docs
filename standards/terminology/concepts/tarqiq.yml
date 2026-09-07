@@ -14,14 +14,15 @@ origin: quranic
 tier: core
 status: draft
 definition: >-
-  نحول يدخل على صوت الحرف فلا يمتلئ الفم بصداه؛ لازم في حروف الاستفال، وعارض في الراء ولام
-  لفظ الجلالة.
+  الترقيق هو نحول يدخل على صوت الحرف فلا يمتلئ الفم بصداه. وهو لازم في حروف الاستفال،
+  وعارض في الراء ولام لفظ الجلالة.
 definition_en: >-
   A thinness entering the sound of a letter so that the mouth does not fill with its echo;
   inherent in the letters of istifal, and incidental in the raa and the lam of the name of
   Allah.
 purpose: >-
-  يستخدم لوسم مواضع الحروف المرققة ترقيقًا عارضًا في التلوين والتعليم، مقابلًا للتفخيم.
+  نستخدم الترقيق لوسم مواضع الحروف المرققة ترقيقًا عارضًا في التلوين والتعليم، وهو
+  مقابل التفخيم.
 purpose_en: >-
   Used to tag the places of letters carrying incidental tarqiq in colouring and instruction,
   as the counterpart of tafkhim.
@@ -32,8 +33,7 @@ english_glosses:
 - light pronunciation
 related:
 - tafkhim
-- sifat_al_huruf
-- hukm_al_tajwid
+- tajwid_ruling
 sources:
 - id: quranpedia_tajweed
   ref: '88'

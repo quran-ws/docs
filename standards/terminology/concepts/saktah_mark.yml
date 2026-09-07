@@ -16,9 +16,9 @@ origin: quranic
 tier: core
 status: draft
 symbol: س
-definition: 'الدلالة على السكت: وقفة يسيرة من غير تنفس ثم الوصل بما بعده'
+definition: علامة السكتة علامة تدل على السكت، وهو وقفة يسيرة من غير تنفس ثم الوصل بما بعده.
 definition_en: 'Marks a saktah: a brief pause without taking a breath, then continuing.'
-purpose: تستخدم قيمةً من علامات القراءة، لينبه بها القارئ إلى أداء خاص في موضعه.
+purpose: نستخدمها قيمة من علامات القراءة، فننبه بها القارئ إلى أداء خاص في موضعها.
 purpose_en: Used as a value of the qiraah marks, so that the reader is alerted to a particular
   delivery at its place.
 boundaries:

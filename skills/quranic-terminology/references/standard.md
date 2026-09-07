@@ -118,7 +118,11 @@ Other names, spellings and translations are recorded, but they do not compete
 with the canonical name.
 
 A name belongs to one concept. `tools/build_aliases.py` fails the build when two
-entries claim one name, in any of their spellings.
+entries claim one name, in any of their spellings. The one place a name is shared
+is between the values of two classifications, because a column holds the values
+of one classification and never two: `makki` is a value of
+`revelation_classification` and of `ayah_numbering_system`, and the two entries
+have different ids (§14).
 
 The rule:
 
@@ -784,7 +788,7 @@ Plurals in code follow a simple English convention: the whole code name plus
 ayahs
 juzs
 hizbs
-mawdi_al_sajdahs
+sajdahs
 ```
 
 Arabic plurals are not used as collection names:
@@ -939,28 +943,33 @@ and:
 
 ```text
 ayah_numbering_system
-├── ayah_numbering_madani_awwal
-├── ayah_numbering_madani_akhir
-├── ayah_numbering_makki
-├── ayah_numbering_basri
-├── ayah_numbering_dimashqi
-└── ayah_numbering_kufi
+├── madani_first
+├── madani_last
+├── makki
+├── basri
+├── dimashqi
+└── kufi
 ```
+
+These six are entries, because each one can be defined, and their ids are
+`ayah_numbering_kufi`, `ayah_numbering_makki` and so on, because `makki` alone
+is already the id of the revelation value; §14 says why the code and the id
+differ. What software stores is the code.
 
 and the classifications of tajwid — the rulings, the kinds of madd, and the
 relation between two letters — each with its values:
 
 ```text
-hukm_al_tajwid          madd
+tajwid_ruling           madd
 ├── izhar               ├── madd_tabii
 ├── idgham              ├── madd_muttasil
 ├── iqlab               ├── madd_munfasil
 ├── ikhfa               ├── madd_lazim
 └── qalqalah            ├── madd_arid_li_al_sukun
                         ├── madd_al_lin
-alaqat_al_harfayn       ├── madd_al_badal
-sabab_al_waqf           ├── madd_al_silah
-lahn                    └── madd_al_iwad
+letter_relation         ├── madd_al_badal
+├── mutamathilan        ├── madd_al_silah
+└── mutajanisan         └── madd_al_iwad
 ```
 
 and two classifications of waqf, one for the mark and one for the place:
@@ -996,9 +1005,9 @@ tab-separated file per set in `standards/terminology/registries/`:
 qiraah, rawi, riwayah   → registries/qiraat.tsv        the 10 qiraat, 19 rawis, 20 riwayahs
 tariq                   → registries/tariq.tsv         the 4 routes applications store
 surah                   → registries/surahs.tsv        the 114 surahs
-mawdi_al_sajdah         → registries/sajdah.tsv        the 15 places
+sajdah                  → registries/sajdah.tsv        the 15 sajdahs
 ayah_numbering_system   → registries/ayah_numbering.tsv, ayah_counts.tsv
-hukm_al_tajwid          → registries/tajwid_rules.tsv  the rulings of tajwid
+tajwid_ruling           → registries/tajwid_rules.tsv  the rulings of tajwid
 ```
 
 The concept keeps its entry and names its registry:
@@ -1028,7 +1037,7 @@ The registries are rendered on their own page,
 The rulings of tajwid as an engine applies them — every case of izhar, idgham,
 iqlab, ikhfa and madd, with its trigger and its source — are rows in
 `registries/tajwid_rules.tsv`, generated from `data/tajweed_engine_rules.json`,
-and `hukm_al_tajwid` names the registry. The rulings as concepts — `izhar`,
+and `tajwid_ruling` names the registry. The rulings as concepts — `izhar`,
 `idgham`, the kinds of `madd` — are values of their classifications and keep
 their entries, as do the concepts a ruling rests on: `noon_sakinah`, `tanwin`,
 `maddah`. A rule and its **occurrence** in the text are two things: the rule is
@@ -1145,9 +1154,20 @@ connectives (§8):
 
 The parent's name is not repeated when it distinguishes nothing, so the values
 of `revelation_classification` stay `makki` and `madani` rather than
-`revelation_classification_makki`. It is kept when it does distinguish:
-`ayah_numbering_kufi`, because `kufi` alone names a script, and `makki` is
-already taken. The reason is in the decision record.
+`revelation_classification_makki`. A value's name is unique within
+its classification, not across the dictionary, because a column holds the
+values of one classification and never two. So the values of
+`ayah_numbering_system` are `kufi`, `basri`, `dimashqi`, `makki`,
+`madani_first`, `madani_last`, and `makki` is also a value of
+`revelation_classification`: nothing can reach for both at once, so nothing has
+to choose. Where two values share a name, the entry's *id* — its file, its
+anchor, what `related` and `parent` point at — is the parent's name plus the
+code, `ayah_numbering_makki`, and for regularity the six numbering entries all
+carry it. The code is what software stores.
+
+These six are the one family whose code is not derived from the Arabic: العَدّ
+gives `add`, an English verb, so the code is the name of the school. The reason
+is in the decision record.
 
 `tools/check_conformance.py` checks that every classification has values and
 that every `parent` and `part_of` names an entry.
@@ -1248,7 +1268,7 @@ glyph             ≠ character
 rawi              ≠ reciter
 tajwid            ≠ mujawwad
 tartil            ≠ murattal
-sujud_al_tilawah  ≠ sajdah_mark
+sajdah            ≠ sajdah_mark
 waqf_mark_type    ≠ waqf_ruling
 ```
 
@@ -1269,16 +1289,19 @@ A mark drawn in the mushaf is a separate concept from what it indicates:
 saktah_mark        the mark that is drawn      mark
 saktah             the pause itself            concept
 
-sajdah_mark        the mark of a sajdah place  mark
-mawdi_al_sajdah    the place itself            concept
-sujud_al_tilawah   the prostration itself      concept
+sajdah_mark        the mark of a sajdah        mark
+sajdah             the place, and the          concept
+                   prostration made at it
 
 ayah_mark          the mark that is drawn      mark
-fasilah            the ayah's ending           concept
+ayah_ending        the ayah's ending           concept
 ```
 
-The sajdah is 3 concepts, not one: a mark, a place in the text, and an act.
-Collapsing them attaches a page number to an act of worship.
+The sajdah is 2 concepts, not one: the sign drawn in the mushaf, and the place
+at which one prostrates. The place and the prostration are one concept, because
+no software stores the act apart from its place, and "the fifteen sajdahs"
+names both at once; the decision record says why an earlier draft kept them
+apart.
 
 ### A mark's identity is not its character
 
@@ -1527,8 +1550,8 @@ word_key     2:255:3       ayah_key:word_position
 ```
 
 A key is only meaningful under a stated `ayah_numbering_system`; a dataset that
-uses keys says which system they follow, and defaults to `ayah_numbering_kufi`
-when it says nothing. A global index of the ayahs (1 to 6236) is a `position`,
+uses keys says which system they follow, and defaults to `kufi` when it says
+nothing. A global index of the ayahs (1 to 6236) is a `position`,
 not a key, and it too is relative to a numbering system.
 
 ### Audio is keyed by the recitation and the text
@@ -1642,9 +1665,9 @@ Classifications carry domain-specific names, and each is an entry:
 ```text
 waqf_mark_type
 waqf_ruling
-hukm_al_tajwid
+tajwid_ruling
 madd
-sabab_al_waqf
+letter_relation
 recitation_style
 recitation_pace
 revelation_classification
@@ -1700,7 +1723,7 @@ waqf                  waqf and its rulings
 linguistics           root, lemma, morphology and irab
 translation           translation
 tafsir                tafsir
-quranic_sciences      naskh, gharib al-Quran and mutashabihat
+quranic_sciences      abrogation, word meanings and mutashabihat
 ```
 
 A domain is not added before there are concepts that belong to it, because an
@@ -1757,6 +1780,31 @@ for one concept.
 A user interface can translate or display the name differently, while the
 canonical internal vocabulary stays fixed.
 
+### A name you did not choose is quoted, not adopted
+
+A project refers to names it does not own: a supplier's package and file names,
+the column headings of a file it reads, the official name of a Unicode
+character, the address of another repository. These are locators. They point at
+something outside the project, and changing a letter of one breaks the
+reference, so they are written exactly as their owner writes them, however far
+from this standard that is.
+
+```text
+UthmanicHafs-v-3.0.zip          the publisher's package: quoted
+row["aya_text_emlaey"]          the publisher's column: quoted
+"ARABIC START OF RUB EL HIZB"   the Unicode name of ۞: quoted
+quranpedia/qiraat-ayah-map      another repository: quoted
+```
+
+What the project decides for itself is what it calls the thing once it has read
+it: the field, the variable, the published key. A quoted name never becomes the
+name of a concept, and a name of your own never keeps a supplier's spelling
+because it came in with the data.
+
+An audit is told which names are quoted, so that it reads past them instead of
+asking for a rename that would break the reference: `external_names` in
+`.terminology.json`.
+
 ### Casing per layer
 
 The code name is `snake_case`, and each layer applies its own casing to that one
@@ -1764,7 +1812,7 @@ name, never to a different name:
 
 ```text
 snake_case    database tables and columns, JSON keys, enum literals, file names
-                ayah_numbering_kufi, waqf_lazim
+                ayah_numbering_system, waqf_lazim
 PascalCase    classes and types            AyahNumberingSystem, WaqfMarkType
 camelCase     only where the language demands it for members   ayahNumber
 kebab-case    URL paths and slugs only     /waqf-marks/waqf-lazim
@@ -1908,11 +1956,12 @@ origin: quranic
 tier: core
 status: draft
 symbol: م
-definition: الوقف لازم، لأن وصل ما بعده بما قبله يوهم خلاف المعنى المراد
+definition: الوقف اللازم علامة تدل على أن الوقف لازم، لأن وصل ما بعده بما قبله يوهم خلاف المعنى
+  المراد.
 definition_en: 'A compulsory stop: continuing across it would suggest a meaning other than
   the one intended.'
-purpose: تستخدم قيمةً من قيم نوع علامة الوقف، ليتفرع عليها العرض والتلقين والتنبيه في التطبيقات
-  بدل قراءة صورة الرمز.
+purpose: نستخدمها قيمة من قيم نوع علامة الوقف، فنبني عليها العرض والتلقين والتنبيه في التطبيقات
+  بدلًا من قراءة صورة الرمز.
 purpose_en: Used as a value of the waqf mark type, so that rendering, teaching and warnings
   in applications branch on it rather than on the shape of the sign.
 alternative_spellings:
@@ -2030,9 +2079,9 @@ Everything else an application stores is real, and is not ours:
 
 ```text
 in scope:
-mawdi_al_sajdah   a place in the Quranic text
+sajdah            a place in the Quranic text at which one prostrates
 ayah_timing       a span of audio matched to an ayah
-gharib_al_quran   the meaning of a Quranic word
+word_meanings     the meaning of a Quranic word
 mutashabihat      wordings repeated within the Quran
 
 out of scope:

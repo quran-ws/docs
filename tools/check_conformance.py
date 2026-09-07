@@ -39,12 +39,12 @@ DRAWN_CLASSIFICATION = "waqf_mark_type"
 # is argued in content/*/03-terminology/decisions.md; the reason is repeated
 # here so a reader of the check knows it was a decision and not a slip.
 DOCUMENTED = {
-    "ayah_numbering_madani_awwal": "section 14 — the value takes its parent's name; `add` is an English verb",
-    "ayah_numbering_madani_akhir": "section 14 — the value takes its parent's name; `add` is an English verb",
-    "ayah_numbering_makki": "section 14 — `makki` is taken by revelation_classification",
-    "ayah_numbering_basri": "section 14 — the value takes its parent's name; `add` is an English verb",
-    "ayah_numbering_dimashqi": "section 14 — the value takes its parent's name; `add` is an English verb",
-    "ayah_numbering_kufi": "section 14 — the value takes its parent's name; `add` is an English verb",
+    "ayah_numbering_madani_first": "section 14 — a value's code is unique within its parent; `add` is an English verb",
+    "ayah_numbering_madani_last": "section 14 — a value's code is unique within its parent; `add` is an English verb",
+    "ayah_numbering_makki": "section 14 — a value's code is unique within its parent; `add` is an English verb",
+    "ayah_numbering_basri": "section 14 — a value's code is unique within its parent; `add` is an English verb",
+    "ayah_numbering_dimashqi": "section 14 — a value's code is unique within its parent; `add` is an English verb",
+    "ayah_numbering_kufi": "section 14 — a value's code is unique within its parent; `add` is an English verb",
 }
 
 def load():

@@ -177,7 +177,7 @@ git tag:        hafs-uthmani-v3.0.0
 dataset.json:   { "version": "3.0.0",
                   "mushaf_edition": "...",
                   "riwayah": "hafs_an_asim",
-                  "ayah_numbering_system": "ayah_numbering_kufi",
+                  "ayah_numbering_system": "kufi",
                   "source_hash": "sha256:…",
                   "license": "..." }
 ```

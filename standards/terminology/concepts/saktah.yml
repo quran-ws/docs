@@ -11,16 +11,16 @@ origin: quranic
 tier: core
 status: draft
 plural: saktahs
-definition: قطع الصوت زمنًا يسيرًا من غير تنفس ثم متابعة القراءة.
+definition: السكتة هي قطع الصوت زمنًا يسيرًا من غير تنفس ثم متابعة القراءة.
 definition_en: >
   Cutting off the voice for a short moment without breathing, then continuing the
   recitation.
-purpose: يستخدم لتمثيل مواضع السكت وخصائصها في النص أو التلاوة.
+purpose: نستخدم السكتة لتمثيل مواضع السكت وخصائصها في النص أو التلاوة.
 purpose_en: >
   Used to represent where a saktah falls and what its properties are in the text or in a
   recitation.
 boundaries:
-  - السكتة الوقفة نفسها، وعلامة السكتة رسم في المصحف يدل عليها.
+  - السكتة هي الوقفة نفسها، وعلامة السكتة رسم في المصحف يدل عليها.
 boundaries_en:
   - The saktah is the pause itself; the saktah mark is the sign drawn in the mushaf for it.
 alternative_spellings:

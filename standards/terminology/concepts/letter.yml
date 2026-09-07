@@ -11,16 +11,15 @@ origin: borrowed
 tier: core
 status: draft
 plural: letters
-definition: حرف هجائي بوصفه وحدة لغوية من وحدات الكتابة.
+definition: الحرف هو الحرف الهجائي بوصفه وحدة لغوية من وحدات الكتابة.
 definition_en: >
   A letter of the alphabet as a linguistic unit of writing.
-purpose: يستخدم للبيانات التي تتعامل مع الحروف اللغوية، دون الخلط بينها وبين التمثيلات الرقمية
-  أو البصرية.
+purpose: نستخدمه للبيانات التي تتعامل مع الحروف اللغوية، دون خلط بينها وبين التمثيلات الرقمية أو البصرية.
 purpose_en: >
   Used for data that deals with linguistic letters, without confusing them with their
   digital or visual representations.
 boundaries:
-  - الحرف وحدة لغوية، والمحرف وحدة ترميز؛ فالحرف الواحد قد يكتب بمحرف أو أكثر.
+  - الحرف وحدة لغوية والمحرف وحدة ترميز، فالحرف الواحد قد يُكتب بمحرف أو أكثر.
   - الحرف وحدة من الكتابة، وحرف المعنى قسم من أقسام الكلمة.
 boundaries_en:
   - >-
@@ -33,7 +32,7 @@ alternative_spellings:
 related:
   - character
   - glyph
-  - harf_al_mana
+  - particle
 sources:
   - id: quranpedia_tajweed
     ref: "5"
