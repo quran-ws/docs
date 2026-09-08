@@ -94,7 +94,7 @@ hero:
     <span class="qw-index-num">§06</span>
     <div class="qw-index-body">
       <a href="/guidelines/ar/06-engineering/">الهندسة</a>
-      <p>تصميم الـ<code class="ltr">APIs</code>، ونمذجة البيانات، وعرض المصحف والخطوط، والصوت والتلاوات.</p>
+      <p>تصميم واجهات <code class="ltr">API</code>، ونمذجة البيانات، وعرض المصحف والخطوط، والصوت والتلاوات.</p>
     </div>
     <span class="qw-index-state status-draft">مسودة</span>
   </div>

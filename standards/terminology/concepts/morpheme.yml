@@ -37,8 +37,8 @@ related:
   - morphology
 note: >
   الاسم `segment` يعني في مدونات الصرف القرآني الوحدة الصرفية، ويعني في واجهات الصوت توقيت
-  الكلمة. لذلك لا يُحل الاسم وحده إلى شيء، ويُحل `word_segment` إلى هذا المدخل، ويُحل المعنى
-  الصوتي إلى `word_timing`.
+  الكلمة. لذلك لا يكفي الاسم وحده لتعيين المفهوم، ويُقصد بـ`word_segment` هذا المدخل،
+  ويُقصد بالمعنى الصوتي `word_timing`.
 note_en: >
   In Quranic morphology corpora `segment` means the morpheme; in audio APIs it means a
   word timing. The bare name resolves to nothing, `word_segment` resolves here, and the

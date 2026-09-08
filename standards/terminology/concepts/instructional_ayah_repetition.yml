@@ -14,7 +14,7 @@ definition: تكرار الآيات هو إعادة آية أو جزء منها 
 definition_en: >
   Repeating an ayah, or part of one, once or several times in a teaching pattern that
   helps the learner take it in and memorise it.
-purpose: نستخدمه لوصف ميزة مستقلة في التسجيل التعليمي بدلًا من جعلها جزءًا ضمنيًا من `muallim`.
+purpose: نستخدمه لوصف ميزة مستقلة في التسجيل التعليمي ولا نجعله جزءًا ضمنيًا من `muallim`.
 purpose_en: >
   Used to describe a feature of a teaching recording in its own right, rather than
   leaving it implied inside `muallim`.

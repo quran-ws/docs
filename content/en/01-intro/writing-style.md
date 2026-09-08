@@ -187,7 +187,8 @@ sentence, and the exception for proper names and licence names (§8); and a tabl
 of errors common in Arabic technical prose — حيث إن not حيث أن، أثر في not أثر
 على، دون not بدون (§10). See
 [أسلوب الكتابة العربية](/guidelines/ar/01-intro/writing-style/), sections 1, 7, 8
-and 10. Its section 11 points back here, to the rules that apply to English only.
+and 10, plus section 11 on writing Arabic that does not read as translated
+English. Its section 12 points back here, to the rules that apply to English only.
 
 Reference: [دليل التحرير والصياغة العربية](https://github.com/kamalyaser31/arabic-guide),
 drawn from the Saudi Aramco Arabic style guide.

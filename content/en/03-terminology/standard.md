@@ -1761,7 +1761,7 @@ name, never to a different name:
 snake_case    database tables and columns, JSON keys, enum literals, file names
                 ayah_numbering_system, waqf_lazim
 PascalCase    classes and types            AyahNumberingSystem, WaqfMarkType
-camelCase     only where the language demands it for members   ayahNumber
+camelCase     only where the language demands it for fields and methods   ayahNumber
 kebab-case    URL paths and slugs only     /waqf-marks/waqf-lazim
 ```
 
