@@ -27,7 +27,7 @@ guidelines/
 │   │   ├── 03-terminology/            # standard.md, decisions.md, and the generated
 │   │   │                              #   dictionary.md and registries.md
 │   │   ├── 04-versioning/             # versioning and corrections
-│   │   ├── 05-open-source/            # licences, repositories, review
+│   │   ├── 05-repositories/           # repositories, review, releases, and the licensing policy
 │   │   └── 06-engineering/            # APIs, data, rendering, audio
 │   └── en/                            # English mirror, file for file; the source for engineering pages
 │

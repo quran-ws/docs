@@ -78,7 +78,7 @@ The version number moves according to what changed in the data, in the form
   bump if any byte of text differs.
 - Code that reads the data follows ordinary semantic versioning and has its own
   number. The two are not tied: see
-  [Open source and version control](/guidelines/en/05-open-source/).
+  [Repositories and releases](/guidelines/en/05-repositories/).
 
 ## 3. Identifiers never change meaning
 
@@ -173,7 +173,7 @@ errata are.
 - Nothing else is promised: not file layout, not field order, not the wording of a
   description. A project that depends on those is depending on a `PATCH`.
 - Depend on a tagged release, never on the head of a branch. Which pins we support
-  is stated in [Open source and version control](/guidelines/en/05-open-source/).
+  is stated in [Repositories and releases](/guidelines/en/05-repositories/).
 
 ## 7. Deprecation and support window
 

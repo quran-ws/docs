@@ -1,6 +1,6 @@
 ---
-title: Open source and version control
-description: Licences and what each covers, repository layout, commits, review, releases, and what a project may rely on when it depends on us.
+title: Repositories and releases
+description: Repository layout, commits, review, releases, and what a project may rely on when it depends on us.
 status: draft
 sidebar:
   order: 1
@@ -25,34 +25,9 @@ rules for versioning a dataset are in
 
 ## 1. Licences, and what each covers
 
-Every file in the repository falls under exactly one licence, and the
-repository says which.
-
-- Prose written by hand — the pages under `content/` that are not generated —
-  is licensed [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
-- Code, schemas and machine-readable data — `tools/`, `standards/`, `site/`,
-  `examples/` — are licensed MIT.
-- The Quranic text carries no claim of ownership and is covered by neither
-  licence. A repository that ships the text says so in its `LICENSE`.
-- A generated file inherits the licence of its source. A dictionary page
-  generated from `standards/` is data (MIT); a skill generated from `content/`
-  and `standards/` carries both, and its `LICENSE` says which files are which.
-- Third-party data — an edition from a publisher, an audio set, a translation —
-  keeps its own licence. Record it in the dataset manifest, next to the
-  edition, riwayah and ayah numbering system the manifest already names.
-- The repository-level `LICENSE` lists every top-level directory and the
-  licence it falls under, so no directory is covered by silence:
-
-```text
-content/     CC BY 4.0, except generated pages (the dictionary, the registries): MIT
-tools/       MIT
-standards/   MIT
-site/        MIT
-examples/    MIT
-skills/      generated; each file under the licence of its source
-surveys/     CC BY 4.0
-The Quranic text itself: no claim of ownership.
-```
+The licences everything we publish falls under, the attribution we ask for
+and the attribution we waive, are in
+[Waqf and Open Licensing](/guidelines/en/05-repositories/licensing/).
 
 ## 2. Repository layout
 

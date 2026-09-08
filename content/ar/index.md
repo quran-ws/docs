@@ -84,7 +84,7 @@ hero:
   <div class="qw-index-row">
     <span class="qw-index-num">§05</span>
     <div class="qw-index-body">
-      <a href="/guidelines/ar/05-open-source/">المصدر المفتوح و<span class="ltr">Version control</span></a>
+      <a href="/guidelines/ar/05-repositories/">المستودع والإصدارات</a>
       <p>الرخص، وبنية المستودعات، وقواعد الـ<span class="ltr">commits</span> والـ<span class="ltr">PRs</span> والمراجعة.</p>
     </div>
     <span class="qw-index-state status-draft">مسودة</span>
