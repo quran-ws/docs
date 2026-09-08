@@ -18,7 +18,7 @@ answer a naming question without guessing.
 > proposal, not a ruling. Say so once, at the top of any report that relies on
 > the dictionary — not on every finding.
 >
-> Snapshot `499bc74667765196` of `quran-ws/guidelines`. The dictionary keeps moving, so before an
+> Snapshot `0a52b88639650b46` of `quran-ws/guidelines`. The dictionary keeps moving, so before an
 > audit that someone will act on, check the snapshot is still current:
 >
 > ```bash

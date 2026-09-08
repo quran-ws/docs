@@ -6,14 +6,14 @@ sidebar:
   order: 1
 ---
 
-A Quran project publishes three kinds of thing: prose that explains, code and
-data that a machine reads, and the Quranic text itself. Each is owned
-differently, changed differently and reviewed differently, and the repository
-has to make the difference visible to someone who is not us.
-
 **The governing rule:** everything we publish can be rebuilt by someone who is
 not us, from what is in the repository, under a licence that says what they may
 do with it.
+
+A Quran project publishes 3 kinds of thing: prose that explains, code and data
+that a machine reads, and the Quranic text itself. Each is owned differently,
+changed differently and reviewed differently, and the repository makes that
+difference visible to someone who is not us.
 
 This page is a draft. It generalises what this repository already does — its
 `LICENSE`, its `CONTRIBUTING.md`, its build and its commit history — into rules
@@ -23,10 +23,11 @@ itself are in [Handling Quranic text](/guidelines/en/02-quranic-text/), and the
 rules for versioning a dataset are in
 [Versioning and corrections](/guidelines/en/04-versioning/).
 
-## 1. Licences, and what each covers
+## 1. Licensing
 
-The licences everything we publish falls under, the attribution we ask for
-and the attribution we waive, are in
+Everything we publish is licensed: MIT for code, CC BY 4.0 for data and content.
+The licences in full, the attribution we ask for and the attribution we waive,
+are in
 [Waqf and Open Licensing](/guidelines/en/05-repositories/licensing/).
 
 ## 2. Repository layout

@@ -8,7 +8,7 @@ canonical name, derive a name from vocalized Arabic, draft an entry for a new
 concept, and report every identifier in a tree that the standard would write
 differently. Everything here is generated from
 <https://github.com/quran-ws/guidelines> by `tools/generate_skill.py`; snapshot
-`499bc74667765196`. Edit the source there, not this directory.
+`0a52b88639650b46`. Edit the source there, not this directory.
 
 To install it in Claude Code as a plugin, run
 `/plugin marketplace add quran-ws/guidelines` and then

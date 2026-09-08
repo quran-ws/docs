@@ -10,7 +10,7 @@
 2. **انتظر الاتفاق.** القاعدة تؤثر في مشاريع كثيرة، وتغييرها بعد اعتمادها أصعب من مناقشتها قبله.
 3. **أرسل `PR`** بعد الاتفاق، وأجب فيه عن قائمة المراجعة.
 
-القوالب ثلاثة: [`term.yml`](.github/ISSUE_TEMPLATE/term.yml) لاقتراح مصطلح، و[`proposal.yml`](.github/ISSUE_TEMPLATE/proposal.yml) لاقتراح قاعدة، و[`edit.yml`](.github/ISSUE_TEMPLATE/edit.yml) لتصحيح فقرة بعينها، ويُفتح من كل فقرة في الموقع.
+وفي المستودع 3 قوالب: [`term.yml`](.github/ISSUE_TEMPLATE/term.yml) لاقتراح مصطلح، و[`proposal.yml`](.github/ISSUE_TEMPLATE/proposal.yml) لاقتراح قاعدة، و[`edit.yml`](.github/ISSUE_TEMPLATE/edit.yml) لتصحيح فقرة بعينها، ويُفتح من كل فقرة في الموقع.
 
 وقبل اقتراح مصطلح ابحث أولًا، فأكثر المصطلحات «الجديدة» تهجئة لمدخل موجود:
 

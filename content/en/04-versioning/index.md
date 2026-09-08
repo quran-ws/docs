@@ -6,15 +6,15 @@ sidebar:
   order: 0
 ---
 
+**The governing rule:** a dataset that carries Quranic text is released, never
+edited. Every copy in the world can say which release it is, and every change
+between two releases is listed character by character.
+
 [Handling Quranic text](/guidelines/en/02-quranic-text/) says that the text is
 immutable source data and that a correction is never silent. This page says what
 that means once the data leaves your machine: how a release is named, when its
 version number moves, where a correction is written down, and what someone who
 builds on your release may take for granted.
-
-**The governing rule:** a dataset that carries Quranic text is released, never
-edited. Every copy in the world can say which release it is, and every change
-between two releases is listed character by character.
 
 This page is a draft. The manifest and the erratum record below are proposals for
 discussion; their field names follow the
@@ -66,8 +66,8 @@ The version number moves according to what changed in the data, in the form
 `MAJOR.MINOR.PATCH`.
 
 - `MAJOR` moves when any transmitted text character, ayah boundary or identifier
-  changes. Fixing a typo in the Quran is always `MAJOR`, because every hash
-  downstream breaks.
+  changes. Correcting what looks like a spelling error in the text is always
+  `MAJOR`, because every hash built on the text breaks.
 - `MINOR` moves when a derived layer or metadata is added without changing
   transmitted text or identifiers: a new tajwid annotation, a new translation, a
   new field in the manifest.

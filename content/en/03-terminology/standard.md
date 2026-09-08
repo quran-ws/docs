@@ -45,8 +45,6 @@ The underlying idea comes from **convention over configuration**:
 referring to the Quran or the mushaf. Everything else an application stores is
 real, and is not named here (§30).
 
----
-
 ## 1. Concept before name
 
 Settle the concept first, then choose its name.
@@ -68,8 +66,6 @@ It is:
 > What concept are we modelling?
 
 The name follows from the answer.
-
----
 
 ## 2. One canonical name per concept
 
@@ -99,8 +95,6 @@ have different ids (§14).
 The rule:
 
 > **One concept, one canonical name.**
-
----
 
 ## 3. When to keep the Arabic term
 
@@ -196,8 +190,6 @@ The rule:
 > **Quran-specific concepts retain Quranic names; general concepts use natural
 > technical English.**
 
----
-
 ## 4. Canonical Code Spelling
 
 Once we decide to use a term of Arabic origin, the standard fixes one spelling
@@ -281,8 +273,6 @@ counterpart share one spelling:
   dropped: `هُدًى` → `huda`.
 - **The definite article** is `al`, never assimilated to a sun letter (§8).
 
----
-
 ## 5. Ta marbutah
 
 A singular Arabic term ending in ta marbutah ends in `h`:
@@ -325,8 +315,6 @@ stays `h`:
 The rule is mechanical: a ta marbutah gives `t` on the head of a construct and
 `h` everywhere else — at the end of a term, and before an adjective.
 `tools/test_translit.py` checks it.
-
----
 
 ## 6. Long vowels
 
@@ -427,11 +415,9 @@ display  Tajweed    measured from use; what a reader sees
 `tajweed` is also recorded in `alternative_spellings`, so search and lookup find
 it.
 
-> **Open:** `ت` and `ط` both give `taa`, and `ح` and `ه` both give `haa`, because
-> §4 merges emphatic and plain letters. Neither is used as a name in any entry
-> today. The question is recorded as open in the decision record.
-
----
+> **Open:** two letters share one name once emphatic and plain are merged, and
+> no entry uses either name today. The question is in the
+> [decision record](/guidelines/en/03-terminology/decisions/).
 
 ## 7. Hamzah and ayn
 
@@ -509,8 +495,6 @@ same file so that the function reads them in one place:
 - **A surah named by the letters it opens with is written by letter name.** The
   letter rules read `طه` as a consonant cluster and give `th`; the name is
   `taha`. Likewise `yasin`, `saad` and `qaaf`.
-
----
 
 ## 8. Compound names and `al-`
 
@@ -600,8 +584,6 @@ dropped:
 
 The connectives are listed in `standards/terminology/data/connectives.tsv`. The
 Arabic name keeps its connectives; only the code drops them (§14).
-
----
 
 ## 9. Code name and display name
 
@@ -694,8 +676,6 @@ in search, and to resolve different inputs to the same concept.
 - An empty `mushaf_introduction` is a fact about the source, not a gap in the
   entry.
 
----
-
 ## 10. The shape of names in code
 
 Use clear, complete names:
@@ -735,7 +715,8 @@ waqf_ruling        not waqf_type: the ruling on the place itself
 recitation_style   not recitation_type
 ```
 
----
+`audit_terminology.py --strict` reports the abbreviations and the vague names in
+a codebase; the choice of a classification's own name is a rule for the writer.
 
 ## 11. Singular and plural
 
@@ -779,8 +760,6 @@ information.
 entity, a unit, a piece of content — and omitted where nothing is ever a list of
 it. `tools/check_conformance.py` checks that a recorded plural is the code name
 plus `s`.
-
----
 
 ## 12. Every entry has a kind
 
@@ -865,7 +844,7 @@ waqf_mark_type
 └── waqf_al_muanaqah
 ```
 
-These six are `classification_value`, and they are drawn, so they carry `symbol`,
+These 6 are `classification_value`, and they are drawn, so they carry `symbol`,
 `unicode` and `mark_family` like a mark. No other value does, and
 `tools/check_conformance.py` refuses those fields on any other non-mark.
 
@@ -875,8 +854,6 @@ These six are `classification_value`, and they are drawn, so they carry `symbol`
 `parent` in two places by design: `imlaiyyah` is the registry's word for
 `orthographic_mark`, and `alamat_qiraah` for `qiraah_mark`. `parent` is the
 standard's taxonomy; `mark_family` is the source's.
-
----
 
 ## 13. Types and values get their own entries
 
@@ -923,7 +900,7 @@ ayah_numbering_system
 └── kufi
 ```
 
-These six are entries, because each one can be defined, and their ids are
+These 6 are entries, because each one can be defined, and their ids are
 `ayah_numbering_kufi`, `ayah_numbering_makki` and so on, because `makki` alone
 is already the id of the revelation value; §14 says why the code and the id
 differ. What software stores is the code.
@@ -1071,8 +1048,6 @@ The bare name always belongs to the concept. Anything filling a known column
 asks inside that namespace. `aliases.json` holds the concepts;
 `registry_aliases.json` holds the members.
 
----
-
 ## 14. Parent and child
 
 When a concept sits inside a taxonomy, its relation to the parent is stated.
@@ -1126,25 +1101,24 @@ connectives (§8):
 
 The parent's name is not repeated when it distinguishes nothing, so the values
 of `revelation_classification` stay `makki` and `madani` rather than
-`revelation_classification_makki`. A value's name is unique within
-its classification, not across the dictionary, because a column holds the
-values of one classification and never two. So the values of
+`revelation_classification_makki`. A value's name is unique within its
+classification, not across the dictionary. The values of
 `ayah_numbering_system` are `kufi`, `basri`, `dimashqi`, `makki`,
-`madani_first`, `madani_last`, and `makki` is also a value of
-`revelation_classification`: nothing can reach for both at once, so nothing has
-to choose. Where two values share a name, the entry's *id* — its file, its
-anchor, what `related` and `parent` point at — is the parent's name plus the
-code, `ayah_numbering_makki`, and for regularity the six numbering entries all
-carry it. The code is what software stores.
+`madani_first` and `madani_last`, and `makki` is also a value of
+`revelation_classification`. No column holds the values of two classifications,
+so the two never collide.
 
-These six are the one family whose code is not derived from the Arabic: العَدّ
+Where two values do share a name, the entry's *id* becomes the parent's name
+plus the code: `ayah_numbering_makki`. The id is the entry's file, its anchor
+and what `related` and `parent` point at, and all 6 numbering entries carry
+that form for regularity. The code is what software stores.
+
+These 6 are the one family whose code is not derived from the Arabic: العَدّ
 gives `add`, an English verb, so the code is the name of the school. The reason
 is in the decision record.
 
 `tools/check_conformance.py` checks that every classification has values and
 that every `parent` and `part_of` names an entry.
-
----
 
 ## 15. Definition
 
@@ -1182,8 +1156,6 @@ ayah: A Quranic verse.
 
 These are rules for the writer; no tool can check them.
 
----
-
 ## 16. Purpose
 
 Every entry also has a `purpose`.
@@ -1216,14 +1188,12 @@ definition → What is it?
 purpose    → Why do we model it?
 ```
 
-`purpose` does not restate `definition`.
-
-Details of software use do not go inside `definition`.
+`purpose` does not restate `definition`, and details of software use do not go
+inside `definition`. No tool checks this; the counter-example is a `purpose` that
+reads "an ayah is a unit of the Quranic text", which is the definition rewritten.
 
 If a concept has no clear purpose in software, that is a reason to review
 whether it belongs in the core dictionary.
-
----
 
 ## 17. The boundaries of a concept
 
@@ -1244,14 +1214,16 @@ sajdah            ≠ sajdah_mark
 waqf_mark_type    ≠ waqf_ruling
 ```
 
-The aim is not only to document a difference in language, but to stop one name
-standing for two different concepts in data and in code.
-
----
+The aim is to stop one name standing for two different concepts in data and in
+code, rather than to document a difference in language. No tool checks this; the
+counter-example is a `boundaries` entry reading "differs from `word` in meaning",
+which never says which of the two the column actually stores.
 
 ## 18. Similar concepts stay separate
 
-Two concepts are not merged because their translations look alike.
+Two concepts are not merged because their translations look alike. No tool checks
+this; the counter-example is a schema with one `word` table holding both words
+and tokens, which the `boundaries` of both entries exist to prevent.
 
 ### A mark and what it marks
 
@@ -1271,7 +1243,7 @@ ayah_ending        the ayah's ending           concept
 
 The sajdah is 2 concepts, not one: the sign drawn in the mushaf, and the place
 at which one prostrates. The place and the prostration are one concept, because
-no software stores the act apart from its place, and "the fifteen sajdahs"
+no software stores the act apart from its place, and "the 15 sajdahs"
 names both at once; the decision record says why an earlier draft kept them
 apart.
 
@@ -1284,21 +1256,24 @@ Unicode.
 together with its position:
 
 ```text
-U+06DC   ARABIC SMALL HIGH SEEN   →  saktah_mark  or  seen_al_qiraah
-U+06EC   ROUNDED HIGH STOP        →  ishmam       or  tashil
+ۜ  U+06DC   ARABIC SMALL HIGH SEEN   →  saktah_mark  or  seen_al_qiraah
+۬  U+06EC   ROUNDED HIGH STOP        →  ishmam       or  tashil
 ```
 
 **One mark has more than one character**:
 
 ```text
-sukun          U+0652   and U+06E1
-tanwin_al_fath U+064B   and U+08F0
-maddah         U+0653   and U+06E4
+sukun          ْ U+0652   and  ۡ U+06E1
+tanwin_al_fath ً U+064B   and  ࣰ U+08F0
+maddah         ٓ U+0653   and  ۤ U+06E4
 ```
 
 So a codepoint is a property of a mark rather than a key to it.
 
 ### Text
+
+A word, what tokenisation produces and what morphological analysis produces are
+different things, and each has its own entry:
 
 ```text
 word
@@ -1310,6 +1285,9 @@ root
 
 ### Digital representation
 
+A letter in the language, a character in Unicode and a shape a font draws are
+5 concepts, not one:
+
 ```text
 letter
 character
@@ -1320,12 +1298,18 @@ glyph
 
 ### Quran and mushaf
 
+The Quran is the revealed speech; the mushaf is the book it is written in.
+Neither stands in for the other:
+
 ```text
 quran
 mushaf
 ```
 
 ### Content and presentation
+
+What the text carries is not what it looks like on a page, so content concepts
+and presentation concepts stay apart:
 
 ```text
 content:
@@ -1343,6 +1327,9 @@ glyph
 
 ### Text and analysis
 
+A word in the text is not what analysis derives from it; analysis is a derived
+layer with concepts of its own:
+
 ```text
 text:
 word
@@ -1353,8 +1340,6 @@ lemma
 morphology
 irab
 ```
-
----
 
 ## 19. Name, spelling and translation are not one thing
 
@@ -1406,8 +1391,6 @@ There is no catch-all field mixing these relations together, and none is added.
 `tools/check_conformance.py` checks that a gloss is not also recorded as an
 alternative spelling.
 
----
-
 ## 20. Deprecated does not mean incorrect
 
 We distinguish:
@@ -1454,15 +1437,14 @@ note: >
 An entry that is withdrawn altogether is marked `status: deprecated` and kept,
 so that its code never comes back with a different meaning.
 
----
-
 ## 21. Identifiers, numbers and order
 
 Each suffix has one fixed meaning.
 
 ### `id`
 
-An internal identifier:
+`id` is the internal identifier of a database row. It joins tables to each
+other, and it is never shown to a reader or used in an external reference:
 
 ```text
 surah_id
@@ -1473,7 +1455,8 @@ mushaf_id
 
 ### `number`
 
-An established number within the domain:
+`number` is the established number of a thing within its own domain. It is the
+number a reader would recognise and cite:
 
 ```text
 surah_number
@@ -1483,7 +1466,8 @@ page_number
 
 ### `position`
 
-The position of an element within a parent or a sequence:
+`position` is where an element sits inside its parent or its sequence. It counts
+places, so it changes whenever the sequence changes:
 
 ```text
 word_position
@@ -1493,7 +1477,8 @@ line_position
 
 ### `order`
 
-A separate meaningful ordering:
+`order` is an ordering that meaning decides. We use it where the intended order
+differs from where the element happens to sit:
 
 ```text
 revelation_order
@@ -1523,7 +1508,7 @@ word_key     2:255:3       ayah_key:word_position
 
 A key is only meaningful under a stated `ayah_numbering_system`; a dataset that
 uses keys says which system they follow, and defaults to `kufi` when it says
-nothing. A global index of the ayahs (1 to 6236) is a `position`,
+nothing. A global index of the ayahs (1 to 6,236) is a `position`,
 not a key, and it too is relative to a numbering system.
 
 ### Audio is keyed by the recitation and the text
@@ -1539,8 +1524,6 @@ word_timing      one word's span in one recording      recitation_id, word_key, 
 A recording is identified by its `recitation_id`, and a recitation is one
 reciter, in one riwayah, in one style; those three are fields of the
 recitation, not parts of the audio's name.
-
----
 
 ## 22. Relationships
 
@@ -1575,8 +1558,6 @@ words
 ```
 
 is enough.
-
----
 
 ## 23. Operations and verbs
 
@@ -1628,8 +1609,6 @@ The verbs are a convention of this standard, not entries in the dictionary, so
 no tool checks them. The operation names keep their own spelling in code
 (`normalize`); prose writes the ordinary word (normalise).
 
----
-
 ## 24. Classifications and booleans
 
 Classifications carry domain-specific names, and each is an entry:
@@ -1666,8 +1645,6 @@ classification is more precise.
 
 Like §21 to §23, this is a convention outside the machine-readable source.
 
----
-
 ## 25. Organising the domains
 
 The dictionary is organised by clear domains rather than as one flat list.
@@ -1700,8 +1677,6 @@ quranic_sciences      abrogation, word meanings and mutashabihat
 
 A domain is not added before there are concepts that belong to it, because an
 empty domain suggests coverage that does not exist.
-
----
 
 ## 26. Consistency across the layers of a system
 
@@ -1752,7 +1727,7 @@ for one concept.
 A user interface can translate or display the name differently, while the
 canonical internal vocabulary stays fixed.
 
-### A name you did not choose is quoted, not adopted
+### Quote a name the project does not own, exactly as its owner writes it
 
 A project refers to names it does not own: a supplier's package and file names,
 the column headings of a file it reads, the official name of a Unicode
@@ -1792,8 +1767,6 @@ kebab-case    URL paths and slugs only     /waqf-marks/waqf-lazim
 
 A kebab form is a rendering of the code name for a URL, not a spelling; it is
 not recorded in `alternative_spellings`.
-
----
 
 ## 27. The shape of a dictionary entry
 
@@ -1959,8 +1932,6 @@ sources:
   ref: 1/152
 ```
 
----
-
 ## 28. Sources for definitions
 
 Scholarly and technical terms rest on suitable sources.
@@ -2000,8 +1971,6 @@ a registry row's `ref` — names a source that exists in that file.
 
 An entry with no source establishing its definition is not marked `adopted`.
 
----
-
 ## 29. The dictionary is machine-readable
 
 The primary source of the dictionary is machine-readable: one YAML file per
@@ -2037,8 +2006,6 @@ A change that renames or withdraws a code is recorded on the entry (§20) and in
 the decision record, dated. That is the changelog: the decision record, read in
 order. A withdrawn code still resolves through the entry's `deprecated` field,
 not through `aliases.json`, which indexes spellings only.
-
----
 
 ## 30. The rule for accepting a new term
 
@@ -2107,8 +2074,6 @@ Before an entry goes into the dictionary, answer:
 
 If we cannot state the concept clearly, or say why software models it, it is not
 adopted until the need becomes clear.
-
----
 
 ## 31. The underlying principles
 

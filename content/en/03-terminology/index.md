@@ -6,6 +6,8 @@ sidebar:
   order: 0
 ---
 
+This section decides how a Quranic concept is named in code: the standard sets the rule, the decision record says why, and the dictionary and registries are generated from the machine-readable source.
+
 - [Terminology standard](/guidelines/en/03-terminology/standard/) — how a concept is named: one canonical name, spellings derived by a documented function rather than chosen, and the fields each name lives in.
 - [Decision record](/guidelines/en/03-terminology/decisions/) — the contested decisions, each dated, with its reason and the measurement behind it.
 - [Terminology dictionary](/guidelines/en/03-terminology/dictionary/) — the concepts with their definitions and names, generated from `standards/terminology/concepts/`. Each entry is written in both languages, and each page is generated from its own side of it.

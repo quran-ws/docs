@@ -6,6 +6,11 @@ sidebar:
   order: 0
 ---
 
+**The governing rule:** model the mushaf, not the screen. Every table, API and
+file names the concept it holds by its
+[dictionary](/guidelines/en/03-terminology/dictionary/) name, carries the identity
+of the text it was built from, and can be rebuilt from that text.
+
 This page is a draft. It takes the rules of
 [Handling Quranic text](/guidelines/en/02-quranic-text/) and the
 [terminology standard](/guidelines/en/03-terminology/standard/) and applies them
@@ -13,11 +18,6 @@ to the parts of a system that hold the mushaf: tables, identifiers, APIs, files,
 fonts, audio and caches. Where a choice is one defensible option among several,
 the page says so. The rules that are not optional are the ones the test table at
 the end checks.
-
-**The governing rule:** model the mushaf, not the screen. Every table, API and
-file names the concept it holds by its
-[dictionary](/guidelines/en/03-terminology/dictionary/) name, carries the identity
-of the text it was built from, and can be rebuilt from that text.
 
 The cases cited below come from a
 [survey of a production Quran codebase](https://github.com/quran-ws/guidelines/blob/main/surveys/quranpedia-net.md),
@@ -47,12 +47,11 @@ values is a registry.
 - The [`basmalah`](/guidelines/en/03-terminology/dictionary/#basmalah) is its own
   field, because whether it counts as an ayah is a property of the numbering
   system (text page, section 5).
-- A mushaf, a recording and a dataset are bound to a riwayah, never to a person.
-  The surveyed codebase pointed `mushafs.rawi_id` and `recitations.rawi_id` at a
-  table of people whose rows held riwayah names, so a query meaning "every
-  recording in Warsh" meant "every recording by the man Warsh", and the two stop
-  agreeing as soon as a second riwayah of the same rawi is loaded. The column is
-  `riwayah_id`; `rawi_id` belongs on the riwayah row.
+- A mushaf, a recording and a dataset are bound to a riwayah, never to a person:
+  the column is `riwayah_id`, and `rawi_id` belongs on the riwayah row. The
+  surveyed codebase pointed `mushafs.rawi_id` at a table of people whose rows
+  held riwayah names, so a query meaning "every recording in Warsh" meant "every
+  recording by the man Warsh".
 - A classification column stores member codes —
   [`makki`](/guidelines/en/03-terminology/dictionary/#makki),
   [`madani`](/guidelines/en/03-terminology/dictionary/#madani),
@@ -172,7 +171,7 @@ in or out.
 - One encoding end to end: `UTF-8` in the file, the column, the API and the page
   (text page, section 2).
 - Text columns use a binary collation. In MySQL that is `utf8mb4_bin`; the
-  choice of collation is one among several, the requirement is that
+  choice of collation is one among several; what is required is that
   `'مُحَمَّد' = 'محمد'` returns `0`.
 - No normalisation anywhere between the file and the reader: not in the driver,
   not in the ORM, not in a serialiser's "clean output" option.
@@ -224,12 +223,11 @@ and a
 
 - A reciter is not a rawi. The performer of a recording is bound to the riwayah
   they recite in, not entered as its transmitter.
-- The surveyed codebase named a table `recitation_types` and filled it with
-  murattal, mujawwad and muallim. That is the recitation style, and the word
-  `type` is the vague name the standard rules out (standard §24). The same
-  application classified recordings "by surah" and "by ayah" as a
-  `recitation_classification`; that is how the audio was cut, which is a
-  property of the files, not of the recitation.
+- The style of performance is stored as `recitation_style`, and how the audio was
+  cut is a property of the files rather than of the recitation. The surveyed
+  codebase had a `recitation_types` table holding murattal, mujawwad and muallim
+  — `type` is the vague name the standard rules out (standard §24) — and filed
+  "by surah" and "by ayah" under `recitation_classification`.
 - [`ayah_timing`](/guidelines/en/03-terminology/dictionary/#ayah_timing) and
   `word_timing` are derived layers. Each timing file names the hash of the audio
   it was aligned against, the text release and the numbering system, so a file

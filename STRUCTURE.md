@@ -2,7 +2,7 @@
 
 # بنية المستودع
 
-المحتوى مكتوب بـ`Markdown` عادي داخل `content/` ليبقى مقروءًا على GitHub مباشرة، ويُبنى بموقع Astro Starlight في `site/` يربط `content/ar` و`content/en` لغتين. و`standards/` هو المصدر المقروء آليًا، و`tools/` يشتق منه ويفحصه ويولّد الصفحات والمهارة.
+المحتوى مكتوب بـMarkdown عادي داخل `content/` ليبقى مقروءًا على GitHub مباشرة، ويُبنى بموقع Astro Starlight في `site/` يربط `content/ar` و`content/en` لغتين. و`standards/` هو المصدر المقروء آليًا، و`tools/` يشتق منه ويفحصه ويولّد الصفحات والمهارة.
 
 </div>
 

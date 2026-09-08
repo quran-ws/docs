@@ -21,7 +21,7 @@
 | [أدبيات التعامل مع النص القرآني](content/ar/02-quranic-text/index.md) | `draft` | النص أصل منقول ولا يُحرر: التخزين والترميز والتقسيم والعرض، والاختبارات التي تحرسها. |
 | [معيار المصطلحات](content/ar/03-terminology/standard.md) و[القاموس](content/ar/03-terminology/dictionary.md) | `draft` | اسم واحد لكل مفهوم، وتهجئة تُشتق بدالة ولا تُختار. المصدر المقروء آليًا في [`standards/terminology/`](standards/terminology/)، وأسباب القرارات في [سجل القرارات](content/ar/03-terminology/decisions.md)، و[مهارة وكيل](skills/quranic-terminology/) تفحص بها كودًا قائمًا. |
 | [الإصدارات والتصحيحات](content/ar/04-versioning/index.md) | `draft` | إصدار البيانات وليس الكود وحده، وسجل التصحيحات، وكيف نُعلم المستخدمين بتغيّر النص. |
-| [الوقف والترخيص المفتوح](content/ar/05-repositories/licensing.md) | `adopted` | الرخص التي ننشر بها كل شيء: MIT للكود، وCC BY 4.0 للبيانات والمحتوى، وإسقاط النسبة عند الاستخدام داخل المنتجات، ولزومها عند إعادة النشر. |
+| [الوقف والترخيص المفتوح](content/ar/05-repositories/licensing.md) | `draft` | الرخص التي ننشر بها كل شيء: MIT للكود، ورخصة CC BY 4.0 للبيانات والمحتوى، وإسقاط النسبة عند الاستخدام داخل المنتجات، ولزومها عند إعادة النشر. |
 | [المستودع والإصدارات](content/ar/05-repositories/index.md) | `draft` | بنية المستودعات، وقواعد الـ`commits` والـ`PRs` والمراجعة، والإصدارات. |
 | [الهندسة](content/ar/06-engineering/index.md) | `draft` | تصميم الـ`APIs`، ونمذجة البيانات، وعرض المصحف والخطوط، والصوت. |
 
@@ -78,7 +78,7 @@ cd site && npm install && npm run build
 
 ## المساهمة
 
-افتح `Issue` قبل إرسال `PR`، لأن الأدلة تتغير بالنقاش. القوالب ثلاثة:
+افتح `Issue` قبل إرسال `PR`، لأن الأدلة تتغير بالنقاش. وفي المستودع 3 قوالب:
 
 - [اقتراح مصطلح](.github/ISSUE_TEMPLATE/term.yml) — مفهوم جديد في القاموس، أو تعديل اسمه أو تعريفه.
 - [اقتراح قاعدة](.github/ISSUE_TEMPLATE/proposal.yml) — قاعدة جديدة في الأدلة، أو تعديل قاعدة قائمة.
@@ -115,7 +115,7 @@ We wrote them for ourselves first, so our decisions stay consistent across [Qura
 | [Handling Quranic text](content/en/02-quranic-text/index.md) | `draft` | The text is transmitted source data, never edited: storage, encoding, tokenisation, display, and the tests that guard them. |
 | [Terminology standard](content/en/03-terminology/standard.md) and [dictionary](content/en/03-terminology/dictionary.md) | `draft` | One name per concept, and a spelling derived by a function rather than chosen. The machine-readable source is in [`standards/terminology/`](standards/terminology/), the arguments are in the [decision record](content/en/03-terminology/decisions.md), and an [agent skill](skills/quranic-terminology/) audits a codebase against it. |
 | [Versioning and corrections](content/en/04-versioning/index.md) | `draft` | Versioning data, not only code; errata logs; how users are told the text changed. |
-| [Waqf and Open Licensing](content/en/05-repositories/licensing.md) | `adopted` | The licences everything is published under: MIT for code, CC BY 4.0 for data and content, attribution waived for use inside a product and required on republication. |
+| [Waqf and Open Licensing](content/en/05-repositories/licensing.md) | `draft` | The licences everything is published under: MIT for code, CC BY 4.0 for data and content, attribution waived for use inside a product and required on republication. |
 | [Repositories and releases](content/en/05-repositories/index.md) | `draft` | Repository layout, the rules for commits, PRs and review, and releases. |
 | [Engineering](content/en/06-engineering/index.md) | `draft` | API design, data modelling, mushaf rendering and fonts, and audio. |
 
@@ -174,6 +174,6 @@ Open an issue before sending a PR, because the guidelines change through discuss
 
 Before proposing a term, search first: `python3 skills/quranic-terminology/scripts/lookup.py --search <word>`. Most "new" terms are spellings of an entry that exists. If it is genuinely new, `scripts/propose.py NAME "vocalized arabic"` drafts the proposal with its fields filled in. Details are in [CONTRIBUTING.md](CONTRIBUTING.md).
 
-## License
+## Licence
 
 Prose is [CC BY 4.0](LICENSE); code, schemas and machine-readable data are MIT. The Quranic text itself is covered by neither and carries no claim of ownership.
