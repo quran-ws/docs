@@ -188,7 +188,7 @@ of errors common in Arabic technical prose — حيث إن not حيث أن، أ�
 على، دون not بدون (§10). See
 [أسلوب الكتابة العربية](/guidelines/ar/01-intro/writing-style/), sections 1, 7, 8
 and 10, plus section 11 on writing Arabic that does not read as translated
-English. Its section 12 points back here, to the rules that apply to English only.
+English and section 12 on the shape of an Arabic heading. Its section 13 points back here, to the rules that apply to English only.
 
 Reference: [دليل التحرير والصياغة العربية](https://github.com/kamalyaser31/arabic-guide),
 drawn from the Saudi Aramco Arabic style guide.
@@ -202,7 +202,7 @@ drawn from the Saudi Aramco Arabic style guide.
 - [ ] States the standard, not how it was reached.
 - [ ] No "must be able to" — say what is required or what is possible.
 - [ ] Field names and values in English code font, not translated.
-- [ ] Checked the rules specific to the other language (§9).
+- [ ] The rules specific to the other language are checked (§9).
 - [ ] British spelling; concepts by their code spelling, lowercase, in prose.
 - [ ] Counts as digits, thousands separated in prose; "numbering system", "dabt",
       "alif", letter names as said.
