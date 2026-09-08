@@ -84,7 +84,7 @@ hero:
   <div class="qw-index-row">
     <span class="qw-index-num">§05</span>
     <div class="qw-index-body">
-      <a href="/guidelines/en/05-open-source/">Open source and version control</a>
+      <a href="/guidelines/en/05-repositories/">Repositories and releases</a>
       <p>Licensing, repository layout, and the rules for commits, PRs and review.</p>
     </div>
     <span class="qw-index-state status-draft">draft</span>

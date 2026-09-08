@@ -2,7 +2,7 @@
 
 # بنية المستودع
 
-المحتوى مكتوب بـ`Markdown` عادي داخل `content/` ليبقى مقروءًا على GitHub مباشرة، ويُبنى بموقع Astro Starlight في `site/` يربط `content/ar` و`content/en` لغتين. و`standards/` هو المصدر المقروء آليًا، و`tools/` يشتق منه ويفحصه ويولّد الصفحات والمهارة.
+المحتوى مكتوب بـMarkdown عادي داخل `content/` ليبقى مقروءًا على GitHub مباشرة، ويُبنى بموقع Astro Starlight في `site/` يجعل من `content/ar` و`content/en` لغتيه. و`standards/` هو المصدر المقروء آليًا، و`tools/` يشتق منه ويفحصه ويولّد الصفحات والمهارة.
 
 </div>
 
@@ -27,7 +27,7 @@ guidelines/
 │   │   ├── 03-terminology/            # standard.md, decisions.md, and the generated
 │   │   │                              #   dictionary.md and registries.md
 │   │   ├── 04-versioning/             # versioning and corrections
-│   │   ├── 05-open-source/            # licences, repositories, review
+│   │   ├── 05-repositories/           # repositories, review, releases, and the licensing policy
 │   │   └── 06-engineering/            # APIs, data, rendering, audio
 │   └── en/                            # English mirror, file for file; the source for engineering pages
 │
@@ -90,12 +90,12 @@ guidelines/
 
 ## قواعد التنظيم
 
-- **أرقام المجلدات** (`01-`، `02-`) تثبّت ترتيب القراءة على GitHub وفي شريط الموقع. الأرقام للترتيب فقط، ولا يُشار إلى قسم برقم مجلده في النثر.
+- **أرقام المجلدات** (`01-`، `02-`) تثبّت ترتيب القراءة على GitHub وفي شريط الموقع. الأرقام للترتيب فقط، ولا يُشار إلى قسم برقم مجلده في الشرح.
 - **`ar` و`en` متقابلان ملفًا بملف.** الصفحة الموجودة في لغة واحدة نقص معروف، وليست بنية مختلفة. العربية أصل لصفحات النص القرآني والمصطلحات، والإنجليزية أصل لصفحات الهندسة.
 - **كل صفحة تذكر حالها في الـ`frontmatter`**: `draft` أو `proposed` أو `adopted`. ولا يلزم مشاريعنا إلا ما وُسم `adopted`.
 - **المفهوم يُعرف في مدخل، والفرد يُذكر في صف من سجل.** `concepts/` لما يحتاج إلى تعريف، و`registries/` للمجموعات المغلقة التي لا يحمل أفرادها إلا أسماءهم ومواضعهم في المجموعة: 10 قراءات، و114 سورة. ومدخل المفهوم يسمي سجله، و`tools/check_registries.py` يفحص الصفوف.
 - **`skills/` مولّد ولا يُعدَّل.** `tools/generate_skill.py` يكتبه كاملًا في كل بناء من `standards/` و`content/en`، فلا تذكر المهارة قاعدة لا يذكرها المعيار.
-- **`standards/` هو المصدر، و`content/` يشرحه.** جداول المصطلحات في النثر تُولَّد من `standards/terminology/concepts/*.yml`، ولا تُكتب باليد في موضعين.
+- **`standards/` هو المصدر، و`content/` يشرحه.** جداول المصطلحات في الصفحات تُولَّد من `standards/terminology/concepts/*.yml`، ولا تُكتب باليد في موضعين.
 - **`surveys/` نتائج، و`examples/` نماذج مفحوصة.** الفحص لا يغيّر المعيار، وإنما يصير حالة يستند إليها اقتراح. والنماذج يفحصها البناء، فما فيها يطابق ما يقوله المعيار اليوم.
 
 </div>

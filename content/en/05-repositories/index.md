@@ -1,19 +1,19 @@
 ---
-title: Open source and version control
-description: Licences and what each covers, repository layout, commits, review, releases, and what a project may rely on when it depends on us.
+title: Repositories and releases
+description: Repository layout, commits, review, releases, and what a project may rely on when it depends on us.
 status: draft
 sidebar:
   order: 1
 ---
 
-A Quran project publishes three kinds of thing: prose that explains, code and
-data that a machine reads, and the Quranic text itself. Each is owned
-differently, changed differently and reviewed differently, and the repository
-has to make the difference visible to someone who is not us.
-
 **The governing rule:** everything we publish can be rebuilt by someone who is
 not us, from what is in the repository, under a licence that says what they may
 do with it.
+
+A Quran project publishes 3 kinds of thing: prose that explains, code and data
+that a machine reads, and the Quranic text itself. Each is owned differently,
+changed differently and reviewed differently, and the repository makes that
+difference visible to someone who is not us.
 
 This page is a draft. It generalises what this repository already does — its
 `LICENSE`, its `CONTRIBUTING.md`, its build and its commit history — into rules
@@ -23,36 +23,12 @@ itself are in [Handling Quranic text](/guidelines/en/02-quranic-text/), and the
 rules for versioning a dataset are in
 [Versioning and corrections](/guidelines/en/04-versioning/).
 
-## 1. Licences, and what each covers
+## 1. Licensing
 
-Every file in the repository falls under exactly one licence, and the
-repository says which.
-
-- Prose written by hand — the pages under `content/` that are not generated —
-  is licensed [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
-- Code, schemas and machine-readable data — `tools/`, `standards/`, `site/`,
-  `examples/` — are licensed MIT.
-- The Quranic text carries no claim of ownership and is covered by neither
-  licence. A repository that ships the text says so in its `LICENSE`.
-- A generated file inherits the licence of its source. A dictionary page
-  generated from `standards/` is data (MIT); a skill generated from `content/`
-  and `standards/` carries both, and its `LICENSE` says which files are which.
-- Third-party data — an edition from a publisher, an audio set, a translation —
-  keeps its own licence. Record it in the dataset manifest, next to the
-  edition, riwayah and ayah numbering system the manifest already names.
-- The repository-level `LICENSE` lists every top-level directory and the
-  licence it falls under, so no directory is covered by silence:
-
-```text
-content/     CC BY 4.0, except generated pages (the dictionary, the registries): MIT
-tools/       MIT
-standards/   MIT
-site/        MIT
-examples/    MIT
-skills/      generated; each file under the licence of its source
-surveys/     CC BY 4.0
-The Quranic text itself: no claim of ownership.
-```
+Everything we publish is licensed: MIT for code, CC BY 4.0 for data and content.
+The licences in full, the attribution we ask for and the attribution we waive,
+are in
+[Waqf and Open Licensing](/guidelines/en/05-repositories/licensing/).
 
 ## 2. Repository layout
 

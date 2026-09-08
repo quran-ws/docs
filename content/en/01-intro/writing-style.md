@@ -13,7 +13,7 @@ the text). Write plainly for them, and keep the content exact.
 This page is about the sentence. What a page must contain and how it is
 arranged is in [Writing a guide](/guidelines/en/01-intro/writing-guides/).
 
-## 1. Plain words, ordinary sentences
+## 1. Use plain words and ordinary sentences
 
 Keep the language plain:
 
@@ -30,9 +30,11 @@ No:   A duplicated table silently falls into desuetude.
 - Prefer the familiar word when two are equally correct.
 - Use the direct verb: "the file is generated", not "generation of the file takes place".
 - Write a count or a measurement as digits: 10 qiraat, 60 hizbs, 114 surahs; not
-  ten, sixty, a hundred and fourteen. A small number that is not counting things
-  — "the three may differ", "one name cannot serve all four" — stays a word.
-  Ranges use an en dash: 4–8.
+  ten, sixty, a hundred and fourteen.
+- A small number that is not counting things — "the three may differ", "one name
+  cannot serve all four" — stays a word.
+- Separate thousands with a comma in prose — 6,236 ayahs — and leave a figure
+  inside a code block exactly as the tool printed it. Ranges use an en dash: 4–8.
 - Use British spelling: modelling, judgement, normalise. A code identifier keeps
   its own spelling: `normalize`, `tokenization`.
 - Define a scholarly or Quranic-sciences term the first time, or link it to the dictionary.
@@ -46,11 +48,11 @@ Don't pack several abstract ideas into one sentence. Name the idea, list its
 parts, then state the conclusion.
 
 ```text
-Avoid:  Naming has four requirements that conflict: a stable identifier, a
+Avoid:  Naming has 4 requirements that conflict: a stable identifier, a
         familiar label, a faithful rendering of the sound, and a search
         target; no single name serves them, so each is given its own field.
 
-Use:    Naming needs four different things: a stable identifier in code, a
+Use:    Naming needs 4 different things: a stable identifier in code, a
         clear label for the reader, an accurate way to write the
         pronunciation, and a value suited to search. One name cannot serve
         all of these, so we give each one its own field.
@@ -82,6 +84,10 @@ A decision that was genuinely contested is recorded in the
 its evidence, because a rule with no written reason gets reopened every year.
 The difference is that the record states the decision and why; it does not
 narrate how we went back and forth.
+
+A real case taken from a published survey is different: give it a sentence or
+two after the rule, because it shows where the mistake actually happens. It is
+sourced evidence for the rule, not the story of how the rule was reached.
 
 ## 4. Define a field in full sentences
 
@@ -123,9 +129,10 @@ than "One page, one purpose".
 
 ## 6. State a requirement or a capability, never both at once
 
-This is the commonest fault in standards writing. "must be able to" mixes
-describing what something can do with requiring that it do it, and the reader
-can't tell which was meant:
+Say what is required with the verb that requires it, and say what is possible
+with "can". This is the commonest fault in standards writing: "must be able to"
+mixes describing what something can do with requiring that it do it, and the
+reader can't tell which was meant:
 
 ```text
 Avoid:        The system must be able to display the ayah.
@@ -172,13 +179,16 @@ with every entry. The prose around them is written in the page's language.
 
 ## 9. Arabic-specific rules
 
-The Arabic page carries rules that have no English equivalent: joining list
-items with و rather than commas, not attaching several coordinated nouns to one
-possessive, and a table of errors common in Arabic technical prose (حيث إن not
-حيث أن، أثر في not أثر على، دون not بدون). Note also that Arabic **letter
-names** are written as they are said — `noon_sakinah`, not `nun_sakinah` —
-which the terminology standard covers in §6. See
-[أسلوب الكتابة العربية](/guidelines/ar/01-intro/writing-style/), sections 7, 8 and 10.
+The Arabic page carries rules that have no English equivalent: Western digits
+and a tanwin written before its alif (§1); joining list items with و rather than
+commas, and not attaching several coordinated nouns to one possessive (§7); one
+settled Arabic word per concept, a Latin word set in code marks inside an Arabic
+sentence, and the exception for proper names and licence names (§8); and a table
+of errors common in Arabic technical prose — حيث إن not حيث أن، أثر في not أثر
+على، دون not بدون (§10). See
+[أسلوب الكتابة العربية](/guidelines/ar/01-intro/writing-style/), sections 1, 7, 8
+and 10, plus section 11 on writing Arabic that does not read as translated
+English and section 12 on the shape of an Arabic heading. Its section 13 points back here, to the rules that apply to English only.
 
 Reference: [دليل التحرير والصياغة العربية](https://github.com/kamalyaser31/arabic-guide),
 drawn from the Saudi Aramco Arabic style guide.
@@ -192,5 +202,7 @@ drawn from the Saudi Aramco Arabic style guide.
 - [ ] States the standard, not how it was reached.
 - [ ] No "must be able to" — say what is required or what is possible.
 - [ ] Field names and values in English code font, not translated.
+- [ ] The rules specific to the other language are checked (§9).
 - [ ] British spelling; concepts by their code spelling, lowercase, in prose.
-- [ ] Counts as digits; "numbering system", "dabt", "alif", letter names as said.
+- [ ] Counts as digits, thousands separated in prose; "numbering system", "dabt",
+      "alif", letter names as said.

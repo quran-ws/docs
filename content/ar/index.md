@@ -60,7 +60,7 @@ hero:
     <span class="qw-index-num">§03</span>
     <div class="qw-index-body">
       <a href="/guidelines/ar/03-terminology/">المصطلحات</a>
-      <p>اسم <span class="ltr">Canonical</span> واحد لكل مفهوم، وتهجئة برمجية تُشتق بدالة ولا تُختار.</p>
+      <p>اسم معتمد واحد لكل مفهوم، وتهجئة برمجية تُشتق بدالة ولا تُختار.</p>
       <span class="qw-index-links">
         <a href="/guidelines/ar/03-terminology/standard/">standard</a>
         <a href="/guidelines/ar/03-terminology/decisions/">decisions</a>
@@ -84,8 +84,8 @@ hero:
   <div class="qw-index-row">
     <span class="qw-index-num">§05</span>
     <div class="qw-index-body">
-      <a href="/guidelines/ar/05-open-source/">المصدر المفتوح و<span class="ltr">Version control</span></a>
-      <p>الرخص، وبنية المستودعات، وقواعد الـ<span class="ltr">commits</span> والـ<span class="ltr">PRs</span> والمراجعة.</p>
+      <a href="/guidelines/ar/05-repositories/">المستودع والإصدارات</a>
+      <p>الرخص، وبنية المستودعات، وقواعد الـ<code class="ltr">commits</code> والـ<code class="ltr">PRs</code> والمراجعة.</p>
     </div>
     <span class="qw-index-state status-draft">مسودة</span>
   </div>
@@ -94,7 +94,7 @@ hero:
     <span class="qw-index-num">§06</span>
     <div class="qw-index-body">
       <a href="/guidelines/ar/06-engineering/">الهندسة</a>
-      <p>تصميم الـ<span class="ltr">APIs</span>، ونمذجة البيانات، وعرض المصحف والخطوط، والصوت والتلاوات.</p>
+      <p>تصميم واجهات <code class="ltr">API</code>، ونمذجة البيانات، وعرض المصحف والخطوط، والصوت والتلاوات.</p>
     </div>
     <span class="qw-index-state status-draft">مسودة</span>
   </div>

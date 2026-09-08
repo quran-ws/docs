@@ -9,7 +9,12 @@ no written reason gets reopened every year.
 Only decisions where there was a real disagreement, or a reasonable alternative,
 are recorded here. Each carries a date and a status: **settled**, **open**, or
 **superseded** by a later decision. Decisions made before the record was dated
-are marked *undated*. Read in order, the dated entries are the changelog of the
+are marked *undated*. Every entry uses the same headings: **Decision**, then
+**Why**, then **Evidence**, **The boundary**, **Consequence** and **Alternative
+rejected** where they apply, and **Open** for a question left standing inside a
+settled decision. A question that was never settled is its own entry, under
+**Question** and **Status**. The italic line carries the status, what the
+decision supersedes, and the date of any later review. Read in order, the dated entries are the changelog of the
 dictionary's names.
 
 **Measurements.** "GitHub phrase search" is a quoted phrase query against GitHub
@@ -27,7 +32,7 @@ re-run. Where a count below has a cache key, the key is given.
 **Decision:** `noon`, `meem`, `seen` — not `nun`, `mim`, `sin`.
 
 **Why:** `nun` and `sin` are English words with a meaning far from the one
-intended. The measurement also shows letter names tend toward the doubled form
+intended. The measurement also shows letter names tend towards the doubled form
 (cache keys `nun sakinah | noon sakinah`, `mim sakinah | meem sakinah`):
 
 ```text
@@ -75,7 +80,7 @@ for most terms.
 **Why:** one steady rule is worth more than an exception that opens a door for
 every word.
 
-**Nothing is lost:** `display: Tajweed` is measured from use, and `tajweed` is
+**Consequence:** `display: Tajweed` is measured from use, and `tajweed` is
 recorded in `alternative_spellings`.
 
 ---
@@ -110,7 +115,7 @@ nothing is added.
 juz number  1384  ×  juzu number  1
 ```
 
-**The bar:** a row in `established_spellings.tsv` is accepted only with a
+**The boundary:** a row in `established_spellings.tsv` is accepted only with a
 measurement showing the derived form is unused. Usage merely leaning one way is
 not enough, or `tajweed` would qualify.
 
@@ -147,7 +152,7 @@ one table, and a second one buys nothing but a second place to look.
 **Why:** `saghirah` adds nothing to `small`. §3 gives a general concept an
 English name; a compound is no exception.
 
-**The evidence:** the source registry itself cites them in English —
+**Evidence:** the source registry itself cites them in English —
 `standard!dot`, `standard!two-dots`, `standard!three-dots`.
 
 **The boundary:** a technical word stays transliterated however ordinary it
@@ -164,8 +169,7 @@ looks; `sakinah` and `lazim` are terms. The ordinary words are listed in
 
 **Why:** §1 asks for the programmatic purpose before the name, and §30 does not adopt a concept until the need for it is clear. Need is shown by a project using the concept, not by a textbook mentioning it.
 
-**The alternative rejected:** entering the whole science as drafts. An entry nobody uses is an entry nobody reviews, and it sits in the dictionary at the size of a used one.
-an entry nobody reviews, and it sits in the dictionary at the size of a used one.
+**Alternative rejected:** entering the whole science as drafts. An entry nobody uses is an entry nobody reviews, and it sits in the dictionary at the size of a used one.
 
 ---
 
@@ -176,7 +180,10 @@ an entry nobody reviews, and it sits in the dictionary at the size of a used one
 **Decision:** a translated construct head moves to the end, a translated
 adjective moves in front.
 
-**The evidence:** with the rule applied, the derivation produced the names that
+**Why:** English word order is what a reader of the identifier expects — the
+adjective before its noun, the possessive after it.
+
+**Evidence:** with the rule applied, the derivation produced the names that
 had already been written by hand:
 
 ```text
@@ -203,13 +210,15 @@ take part:
 عَلَامَة الوَقْف اللَّازِم            → waqf_lazim_mark
 ```
 
-**Why:** the earlier wording of §8 judged the whole term by its first word, so a
-construct nested after an adjective lost its `al`. Judging each pair is what
-Arabic grammar does, and `translit.py` now does it; the `TOOL_DEFECTS` list that
-held the mismatch in `check_conformance.py` is gone.
+**Why:** judging each pair is what Arabic grammar does — a construct nested
+after an adjective keeps its article. Judging the whole term by its first word
+dropped that `al`.
+
+**Consequence:** `translit.py` implements the rule, and `check_conformance.py`
+no longer carries a list of mismatches between the tool and the entries.
 
 **Alternative rejected:** keeping the first-word rule and listing the
-exceptions. Every three-word name with a nested construct would be an exception.
+exceptions. Every 3-word name with a nested construct would be an exception.
 
 ---
 
@@ -255,13 +264,13 @@ nothing. `أَوْلَى` is not a connective; it is what distinguishes the valu
 
 *Undated · settled*
 
-**Decision:** `division_mark`.
+**Decision:** the division mark ۞ (`U+06DE`) is `division_mark`.
 
 **Why:** the mark shows the start of a juz, a hizb, and their halves and
-quarters, so `hizb_mark` names one of four. The Unicode name
+quarters, so `hizb_mark` names one of 4. The Unicode name
 `ARABIC START OF RUB EL HIZB` has the same fault.
 
-**A rule came out of this:** `arabic.vocalized` is not edited to reach a
+**Consequence:** `arabic.vocalized` is not edited to reach a
 preferred code name. The source's name is kept in `dabt`, and changing the
 concept's name is accepted only on Arabic grounds.
 
@@ -278,8 +287,8 @@ are parents; `mushaf_mark` stays the parent of what has no family.
 grouping. The entry held two taxonomies that disagreed, and one parent over
 every mark in the registry says nothing.
 
-**`mark_family` stays.** It is the source registry's grouping, and it is kept as
-what the source says; `parent` is the standard's taxonomy. The two differ in name
+**Consequence:** `mark_family` stays. It is the source registry's grouping, kept
+because it reports what the source says, while `parent` is the standard's taxonomy. The two differ in name
 where the registry's word differs from ours (`imlaiyyah`, `alamat_qiraah`).
 
 ---
@@ -316,7 +325,7 @@ grammar, so a model needs both.
 
 ---
 
-## `parent` is *is-a*; containment is `part_of`
+## The difference between `parent` and `part_of`
 
 *2026-09-06 · settled*
 
@@ -355,8 +364,8 @@ that adopted it is not stranded (§20).
 character:
 
 ```text
-U+06DC   ARABIC SMALL HIGH SEEN   →  saktah_mark  or  seen_al_qiraah
-sukun    U+0652  and U+06E1
+ۜ  U+06DC   ARABIC SMALL HIGH SEEN   →  saktah_mark  or  seen_al_qiraah
+sukun    ْ U+0652  and  ۡ U+06E1
 ```
 
 ---
@@ -439,7 +448,7 @@ the article can be found and removed by a program; 14 forms cannot.
 
 ---
 
-## `origin` has three values and `tier` has two
+## The values of `origin` and `tier`
 
 *Undated · settled*
 
@@ -485,7 +494,7 @@ what §29 forbids.
 
 *Undated · settled*
 
-**Decision:** the mark at U+06DB is `waqf_al_muanaqah` — وَقْف المُعَانَقَة.
+**Decision:** the muanaqah mark ۛ (`U+06DB`) is `waqf_al_muanaqah` — وَقْف المُعَانَقَة.
 
 **Why:** `dabt_marks.tsv` names the mark وَقْف المُعَانَقَة and records
 تَعَانُق الوَقْف only as what the mushaf introduction calls it. The registry's
@@ -493,23 +502,20 @@ name is the concept's name, and it puts the value beside its siblings —
 `waqf_lazim`, `waqf_mamnu` and the 3 `waqf_jaiz_*` values — instead of leaving
 it the one that did not lead with `waqf`.
 
-**No Arabic was edited to reach the name.** The name taken is the one the
-registry already gives.
+**The boundary:** the name taken is the one the registry already gives, not one
+edited to reach a form we prefer. The `al` stays, because the first word is
+indefinite, so the term is a construct and its article is part of the name —
+the `rubu_al_hizb` rule.
 
-**The `al` stays.** The first word is indefinite, so the term is a construct
-and its article is part of the name — the `rubu_al_hizb` rule.
-
-**Alternative rejected:** `waqf_muanaqah`, which drops the `al` by treating the
-term as two words that each lose their own article. That patches the derivation
-to reach a preferred string.
-
-**A purpose name was rejected:** `paired_waqf` and `embracing_waqf` were
-considered. §3 keeps a scholarly term, and `muanaqah` is a term of waqf exactly
+**Alternatives rejected:** `waqf_muanaqah`, which drops the `al` by treating the
+term as two words that each lose their own article — that patches the derivation
+to reach a preferred string. And `paired_waqf` and `embracing_waqf`: §3 keeps a
+scholarly term, and `muanaqah` is a term of waqf exactly
 as `lazim` is — neither is in `general_words.tsv`. `division_mark` is not a
 precedent for them: it went to English because the Arabic name was wrong about
 the concept, and this one is not.
 
-**Nothing is stranded:** `taanuq_al_waqf`, `muanaqah`, `muraqabah` and
+**Consequence:** `taanuq_al_waqf`, `muanaqah`, `muraqabah` and
 `waqf_al_muraqabah` all resolve through `aliases.json`.
 
 ---
@@ -536,14 +542,14 @@ tanwin damm   492  ×  tanwin al-rafa    0
 تنوين الكسر   161  ×  تنوين الجر       21
 ```
 
-**The registry agrees with the measurement:** its own file ids are `تنوين فتح`,
+**Evidence:** its own file ids are `تنوين فتح`,
 `تنوين كسر`, `تنوين ضم`. The case names it writes in the dabt column stay in
 `dabt` — `تَنْوِين الخَفْض — الكَسْرَتَان`.
 
 **Alternative rejected:** naming the triad by case (nasb, jarr, rafa). Usage
 decides, and usage went the other way.
 
-**Nothing is stranded:** `tanwin_al_nasb`, `tanwin_al_jarr`, `tanwin_al_khafd`,
+**Consequence:** `tanwin_al_nasb`, `tanwin_al_jarr`, `tanwin_al_khafd`,
 `tanwin_al_rafa`, `fathatan`, `kasratan`, `dammatan`, and the registry's
 `tanwin_fath`, `tanwin_kasr`, `tanwin_damm` all resolve.
 
@@ -563,7 +569,7 @@ that the dictionary is 87% short. It is not: most of what was missing is either
 ordinary software furniture that needs no Quranic standard, or scholarship that
 is not about the Quran.
 
-**The line:** a concept is in scope when it cannot be defined without referring
+**The boundary:** a concept is in scope when it cannot be defined without referring
 to the Quran or the mushaf. `sajdah` cannot; `radio` can, and a stream
 of Quran audio is a stream. `fatwa` sits outside for the same reason a hadith
 does — real, Islamic, and not a concept of the Quranic text.
@@ -587,33 +593,35 @@ dictionary locally.
 `ayah_numbering_kufi` and so on. The registry `ayah_numbering.tsv` is keyed by
 the codes.
 
-**Why the code is short:** a value's name is unique within its classification,
+**Why:** the code is short, the id is long, and neither is derived from the Arabic.
+
+**The short code:** a value's name is unique within its classification,
 not across the dictionary. A column holds the values of one classification and
 never two, so `makki` the numbering and `makki` the revelation class are never
 candidates for the same slot — the same reason a registry is its own namespace
-(§13) and `hamzah` the reciter lives beside `hamzah` the mark. Prefixing the
+(§13) and let `hamzah` the reciter and `hamzah` the mark keep one name. Prefixing the
 value with its parent's name says nothing the column does not already say.
 Every dataset that actually exists — quranpedia's qiraat-ayah-map, quran-text —
 stores `kufi` and `madani-first`, and they were right.
 
-**Why the id is long:** two entries cannot share a file, an anchor or a target
+**The long id:** two entries cannot share a file, an anchor or a target
 for `related`, and `makki` is the revelation value's id. So the id of a value
-that shares its name is the parent's name plus the code, and the six numbering
-entries all take that shape rather than five short and one long. The alias
+that shares its name is the parent's name plus the code, and the 6 numbering
+entries all take that shape rather than 5 short and one long. The alias
 index maps a shared name to both concepts and `<parent>:<name>` to each, so a
 caller who knows the column resolves without ambiguity, and `build_aliases.py`
 still refuses any other shared name.
 
-**Why not derived:** العَدّ الكُوفِيّ gives `add_kufi`, and `add` is an English
+**Not derived:** العَدّ الكُوفِيّ gives `add_kufi`, and `add` is an English
 verb — the same fault that made us write `noon` rather than `nun`. The code is
 the name of the school.
 
-**Why `madani_first`, not `madani_awwal`:** §4 — inside a compound the technical
+**The boundary:** §4 — inside a compound the technical
 word is transliterated and the ordinary word is translated. `madani` is the
 technical word; *first* and *last* are ordinary. `madani_awwal` and
 `madani_akhir` stay as recorded spellings.
 
-**Earlier revisions:** the first form was `ayah_numbering_kufi` as both id and
+**Consequence:** the first form was `ayah_numbering_kufi` as both id and
 code, to keep one flat namespace; the second kept that id and moved the short
 code into the registry alone, with a `concept` column pointing back. Both were
 the same fact written twice. This revision makes the value's own name the
@@ -633,13 +641,13 @@ ordinary word carrying no term, and it describes where the mark sits rather than
 what it marks. Every other mark in the dictionary is named after what it marks —
 `waqf_mark`, `sajdah_mark`, `division_mark`.
 
-**Why this is not editing the Arabic to reach a preferred code name:** the rule
+**The boundary:** the rule
 is that `arabic.vocalized` changes only on Arabic grounds. عَلَامَة الآيَة is the
 mark of the ayah's boundary; رَأْس describes the position, and the source's own
 name is kept in `dabt`, exactly as `sajdah_mark` keeps
 `عَلَامَة مَوْضِع السَّجْدَة`.
 
-**Why it was missing:** it is the most common mark in the mushaf and it is not
+**Consequence:** it is the most common mark in the mushaf and it is not
 in `dabt_marks.tsv`, so the generation that produced the mushaf's marks from
 that registry produced everything except this one.
 
@@ -656,7 +664,7 @@ or the abrogated text.
 النَّسْخ, and الناسخ والمنسوخ are the two sides of one relation, not two concepts.
 Abrogation has a plain English name, so §3 gives it that name.
 
-**Nothing is lost:** `nasikh_mansukh`, `nasikh_wa_mansukh` and `nasekh_mansokh`
+**Consequence:** `nasikh_mansukh`, `nasikh_wa_mansukh` and `nasekh_mansokh`
 all resolve through `aliases.json`.
 
 ---
@@ -673,7 +681,7 @@ lists `font` under presentation. None of the 4 had an entry, so the standard
 was naming a distinction it declined to define, and `morphology.purpose` already
 used the word `token` in its own text.
 
-**The boundary that mattered:** a token is what a splitting method produces, and
+**The boundary:** a token is what a splitting method produces, and
 a word is what a reader recognises. Changing the method changes the token count
 and not the word count. `segment`, the name the Quranic corpora use, resolves to
 `morpheme`.
@@ -684,7 +692,7 @@ and not the word count. `segment`, the name the Quranic corpora use, resolves to
 
 *2026-09-06 · settled*
 
-**Decision:** the three parts of speech are `noun`, `verb` and `particle`.
+**Decision:** the 3 parts of speech are `noun`, `verb` and `particle`.
 
 **Why:** a part of speech is a general concept of grammar with a plain English
 name that every morphology corpus uses, and its parent `part_of_speech` is
@@ -692,12 +700,12 @@ already English. §3 gives a general concept its English name. Transliterating
 the Arabic would also have lengthened the particle's name, because `harf` alone
 is taken by the written letter (`letter`); `particle` has no such problem.
 
-**Why only 3:** the Quranic corpora tag with dozens of labels — `N`, `PN`,
-`V`, `CONJ`, `NEG`. Those are data that sit under these three, not entries.
+**The boundary:** the Quranic corpora tag with dozens of labels — `N`, `PN`,
+`V`, `CONJ`, `NEG`. Those are data that sit under these 3, not entries.
 Naming 40 tags would put the standard in the business of maintaining a
 tagset.
 
-**What it fixed:** `part_of_speech` had been added as a classification with no
+**Consequence:** `part_of_speech` had been added as a classification with no
 values, which is the fault §13 names, and the same fault that had left
 `ayah_numbering_system` empty. The check now refuses it.
 
@@ -719,7 +727,7 @@ the first time the check was run, on entries that had passed validation for
 months: a plural taken from the English gloss, two `related` links pointing at
 concepts that do not exist, and a gloss doubling as an alternative spelling.
 
-**One list.** `DOCUMENTED` holds departures this record argues for, such as the
+**The boundary:** `DOCUMENTED` holds departures this record argues for, such as the
 ayah numbering values. A mismatch caused by the function is a defect to fix in
 the function, not a list to keep; the one such list the check once had is gone
 (see "The article is judged one pair at a time").
@@ -745,14 +753,14 @@ the name, and it would have buried the 20 entries that do define something under
 individuals and concepts in one list and makes "is this a concept?" a judgement
 call at every new name.
 
-**The test:** if a member needs a definition, a purpose and boundaries, it is a
+**The boundary:** if a member needs a definition, a purpose and boundaries, it is a
 concept. If everything true of it is its name, its place in the set and where it
 is attested, it is a member.
 
-**Precedent:** the 28 letter names went to `data/letter_names.tsv` on this
+**Evidence:** the 28 letter names went to `data/letter_names.tsv` on this
 reasoning before the word registry was used for it.
 
-**A registry is not a weaker record.** Every row is checked by
+**Consequence:** Every row is checked by
 `tools/check_registries.py`, cites a source, and is indexed.
 
 ---
@@ -791,7 +799,7 @@ when the word is translated: only beside a head word such as عَلَامَة. B
 رَسْم it is transliterated, so the derivation gives `rasm_imlai` and the entry
 is not an exception.
 
-**Nothing is stranded:** `imlaei`, `imlai`, `simple` and `text_simple` resolve.
+**Consequence:** `imlaei`, `imlai`, `simple` and `text_simple` resolve.
 
 ---
 
@@ -840,23 +848,21 @@ and working from the vocalised Arabic keeps that meaning attached to the
 identifier. A name has no such meaning, so deriving it only produces a spelling
 nobody writes.
 
-**Where the derivation fails on names:** `أَبُو عَمْرو` derives to `abu_amrw`,
-because the waw of عمرو is orthographic and silent; `ابْن` cannot be derived at
-all, because its initial alif is hamzat al-wasl and carries no vowel to read.
+**Evidence:** `أَبُو عَمْرو` derives to `abu_amrw`, because the waw of عمرو is
+orthographic and silent; `ابْن` cannot be derived at all, because its initial
+alif is hamzat al-wasl and carries no vowel to read. "Commonly written" means
+the scholarly English form with its diacritics dropped, and the registry carries
+both; where that form disagrees with a rule the standard already states, the
+rule wins — `shubah`, not `shuba`, because §5 governs a ta marbutah.
 
-**Alternative rejected:** forcing names through `established_spellings.tsv`.
-The derivation was never meant for names, and patching it for them is worse than
+**Alternatives rejected:** forcing names through `established_spellings.tsv` —
+the derivation was never meant for names, and patching it for them is worse than
 exempting them.
 
 **The boundary:** people, and nothing else. A surah name is a word, so it is
 derived, and `check_registries.py` re-derives all 114 on every run.
 
-**Evidence, not preference.** "Commonly written" is the scholarly English form
-with its diacritics dropped, and the registry carries both. Where that form
-disagrees with a rule the standard already states, the rule wins — `shubah`, not
-`shuba`, because §5 governs a ta marbutah.
-
-**Alternative rejected:** GitHub phrase counts. They decide between `tajwid` and
+**Alternatives rejected as well:** GitHub phrase counts. They decide between `tajwid` and
 `tajweed` because both are terms; on names they return noise (`susi` matched
 5,185,536 unrelated tokens, and `qumbul` beat `qunbul`). The counts are not in
 the cache and are not evidence.
@@ -881,11 +887,11 @@ was qualified when `makki` was already taken. That precedent holds for a value
 whose name is built from its parent's. It does not extend to bending a person's
 name, or a surah's, to dodge a collision that no caller can experience.
 
-**Keyed by kind, not by domain:** a column does not hold "something from the
+**The boundary:** a column does not hold "something from the
 qiraat domain", it holds a riwayah, and the caller always knows which.
 
-**The collisions are reported, not silently allowed.**
-`check_registries.py` prints all three every run, so the exception stays a known
+**Consequence:**
+`check_registries.py` prints all 3 every run, so the exception stays a known
 fact rather than an accident.
 
 ---
@@ -898,18 +904,18 @@ fact rather than an accident.
 6 numbering systems, generated by `tools/extract_ayah_counts.py` from al-Dani's
 al-Bayan. It is never edited by hand.
 
-**Why not a table from elsewhere:** the 6 systems disagree about 114 numbers,
+**Why:** the 6 systems disagree about 114 numbers,
 and a table with no source cannot be argued with. Al-Bayan states each surah's
 count once and then gives only the part that differs — "285 in the two Madinans,
 the Makkan and the Damascene, and six in the Kufan, and seven in the Basran" —
 so the numbers exist in the book in a form a tool can read.
 
-**Why it can be trusted:** it reconciles in two ways. All 114 Kufi counts match
+**Evidence:** the table reconciles with its source in two ways. All 114 Kufi counts match
 the printed mushaf surah by surah, which tests the reading of every section
-rather than the arithmetic; and Kufi sums to 6236 and Basri to 6204, the totals
+rather than the arithmetic; and Kufi sums to 6,236 and Basri to 6,204, the totals
 al-Dani himself states.
 
-**What the reconciliation fixed**, each now a rule in the extractor:
+**Consequence:** the reconciliation fixed the following, each now a rule in the extractor:
 
 - `آيتان` is the numeral two fused with its noun, and is counted.
 - `وآية` conjoined is the numeral one — "fifty and an ayah" is 51 — while a bare
@@ -924,7 +930,7 @@ al-Dani himself states.
 Totals alone would have hidden most of these; the surah-by-surah check found
 them.
 
-**The residual is disclosed, not smoothed.** Four columns come to one more than
+**The boundary:** 4 columns come to one more than
 the total al-Dani states. Two places in the book give a count for the reading of
 Abu Jafar specifically, and whether "the count of Abu Jafar" is the Madani Awwal
 system or an authority beside it is a question about the source. A tool should
@@ -944,7 +950,7 @@ the ayah number is not.
 fact contain the claim. That is worse than an honest blank, because it cannot be
 distinguished from a real one later.
 
-**What that produced here:** al-Itqan names all 14 sajdah surahs and gives the
+**Consequence:** al-Itqan names all 14 sajdah surahs and gives the
 count as 14, which was checked against the book. 15 places in 14 surahs is not a
 contradiction — al-Hajj carries two. Every ayah number is checked against the
 verified Kufi count for its surah, so a reference outside its own surah cannot
@@ -952,8 +958,9 @@ pass, and two of them land on the last ayah of the surah, which the counts
 confirm. What no source in this repository does is enumerate the 15 numbers,
 and the file says so.
 
-**The same rule refused a tariq registry for a time.** The counts could be
-proved because they reconcile to a total; the tariqs have no such total. A scan of
+**Evidence:** the same rule kept the tariq registry out for a time. The ayah
+counts could be proved because they reconcile to a total; the tariqs have no
+such total. A scan of
 al-Nashr's isnad section returns 224 distinct names at every depth of the tree
 with no reliable way to attach each to its parent, and an unverifiable table
 looks exactly like a verified one. `registries/tariq.tsv` now exists with
@@ -971,20 +978,19 @@ unverified on every run.
 into it and stay as recorded spellings. `sajdah_mark` stays separate: it is the
 sign, and §18 still applies to it.
 
-**Why:** an earlier draft kept three entries — the mark, the place in the text
-and the act — on the argument that collapsing them attaches a page number to
-an act of worship. The place and the act turned out to be one thing in every
-use software has for them. A dataset lists "the fifteen sajdahs", counts them,
+**Why:** the place and the act are one thing in every use software has for
+them. A dataset lists "the 15 sajdahs", counts them,
 locates them and attaches the rulings of prostration to them; nothing stores a
 prostration that is not at a place, and nothing stores a place that is not
 prostrated at. Two entries for one thing is the fault §18 guards against in the
 other direction. The same reasoning leaves `ruku` one entry.
 
-**The name:** السَّجْدَة derives to `sajdah`, which is what the sources and the
+**Alternatives rejected:** 3 entries — the mark, the place and the act — on
+the argument that collapsing them attaches a page number to an act of worship.
+And keeping `sujud_al_tilawah` for the rulings: rulings attach to the sajdah,
+and the second entry would carry no field the first does not.
+
+**The boundary:** السَّجْدَة derives to `sajdah`, which is what the sources and the
 readers call it. `sujud_al_tilawah`, the act as the fiqh books title it, and
 `mawdi_al_sajdah`, the place as al-Itqan lists it, resolve to the entry.
-
-**Alternative rejected:** keeping `sujud_al_tilawah` for the rulings. The
-rulings are attached to the sajdah; a second entry would hold no field the
-first does not.
 

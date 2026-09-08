@@ -11,9 +11,9 @@ identity, verify it, and build everything else — search, analysis, display —
 derived layers around it rather than as edits to it.
 
 The reason is not technical. The Quran is the word of God, and He undertook its
-preservation: ﴿إِنَّا نَحْنُ نَزَّلْنَا ٱلذِّكْرَ وَإِنَّا لَهُۥ لَحَٰفِظُونَ﴾ [al-Hijr: 9].
+preservation: ﴿إِنَّا نَحْنُ نَزَّلْنَا ٱلذِّكْرَ وَإِنَّا لَهُۥ لَحَٰفِظُونَ﴾ (15:9).
 Honouring what He made sacred is itself an act of piety: ﴿وَمَن يُعَظِّمْ شَعَٰٓئِرَ
-ٱللَّهِ فَإِنَّهَا مِن تَقْوَى ٱلْقُلُوبِ﴾ [al-Hajj: 32]. A reader who opens your app is
+ٱللَّهِ فَإِنَّهَا مِن تَقْوَى ٱلْقُلُوبِ﴾ (22:32). A reader who opens your app is
 reading the mushaf, so anything wrong on the screen is charged to the mushaf, not
 to your code.
 
@@ -39,7 +39,8 @@ of a published Uthmani text; see [Source of the figures](#source-of-the-figures)
 
 - Use one declared Unicode encoding end to end: source file, database, API,
   frontend.
-- Visually identical is not digitally identical. Compare codepoints, not shapes.
+- Don't assume that two strings that look alike are the same digitally; compare
+  codepoints rather than shapes.
 - Never swap one Quranic character for another that looks like it.
 - Don't run generic cleanup on the text — `trim`, stripping "weird characters",
   collapsing whitespace — until you have proven it safe on this specific text.
@@ -48,7 +49,7 @@ of a published Uthmani text; see [Source of the figures](#source-of-the-figures)
 
 ```text
 reorders:  ل + ّ (U+0651) + َ (U+064E)   →   ل + َ (U+064E) + ّ (U+0651)
-composes:  ا (U+0627) + ٓ (U+0653)       →   آ (U+0622)   in ٱلضَّآلِّينَ
+composes:  ا (U+0627) + ٓ (U+0653)       →   آ (U+0622)   in ٱلضَّآلِّينَ (1:7)
 ```
 
 - `NFKC` is worse: it substitutes a character with whatever Unicode treats as
@@ -62,8 +63,8 @@ composes:  ا (U+0627) + ٓ (U+0653)       →   آ (U+0622)   in ٱلضَّآل
 - Never strip vowels or other marks from the source. Generate a separate copy when
   search or analysis needs one.
 - A string's length is not the number of visible letters. The audited text is
-  **1,360,018 bytes**, **721,236 codepoints**, and fewer visible letters than
-  either.
+  **1,360,018 bytes** and **721,236 codepoints**, and it has fewer visible
+  letters than either figure.
 - Build an allowlist of the characters your text actually uses and fail the build on
   anything outside it. That entire text is built from 70 distinct characters — and
   ayah `1:1` still begins with a `U+FEFF` picked up during export, invisible on
@@ -111,7 +112,7 @@ composes:  ا (U+0627) + ٓ (U+0653)       →   آ (U+0622)   in ٱلضَّآل
 - Numbering systems are not interchangeable, and ayah boundaries do not line up
   across them.
 - The basmalah is its own field: whether it counts as an ayah depends on the
-  numbering system, and Surah al-Tawbah has none.
+  numbering system, and surah al-Tawbah has none.
 - Test counts against the edition and numbering system you actually ship, not
   against remembered constants. 6,236 is the total of the Kufi numbering system
   (`kufi`), not a universal fact. Reference:

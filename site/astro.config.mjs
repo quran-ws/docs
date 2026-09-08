@@ -112,7 +112,7 @@ export default defineConfig({
         { label: 'النص القرآني', translations: { en: 'Quranic text' }, items: sectionItems('02-quranic-text') },
         { label: 'المصطلحات', translations: { en: 'Terminology' }, items: sectionItems('03-terminology') },
         { label: 'الإصدارات', translations: { en: 'Versioning' }, items: sectionItems('04-versioning') },
-        { label: 'المصدر المفتوح', translations: { en: 'Open source' }, items: sectionItems('05-open-source') },
+        { label: 'المصدر المفتوح', translations: { en: 'Open source' }, items: sectionItems('05-repositories') },
         { label: 'الهندسة', translations: { en: 'Engineering' }, items: sectionItems('06-engineering') },
       ],
       head: [

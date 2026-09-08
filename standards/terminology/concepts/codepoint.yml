@@ -12,7 +12,7 @@ definition: نقطة الترميز قيمة رقمية معرفة في معيا
 definition_en: >
   A numeric value defined by an encoding standard such as Unicode.
 purpose: >
-  نستخدمها حيث يهم الترميز الدقيق للمحرف أو العلامة، مثل قواعد التطبيع ومقابلات الخطوط وقائمة
+  نستخدمها حين يلزم الترميز الدقيق للمحرف أو العلامة، مثل قواعد التطبيع ومقابلات الخطوط وقائمة
   النقاط المسموح بها.
 purpose_en: >
   Used where the exact encoding of a character or mark matters: normalisation rules,

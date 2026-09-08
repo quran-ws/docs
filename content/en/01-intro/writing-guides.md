@@ -73,8 +73,9 @@ copy is right.
 
 ## 5. Give every rule a check
 
-This is the most important rule here. If you write a rule, write the thing that
-catches its violation:
+Write, alongside every rule, the thing that catches its violation. This is the
+most important rule here, because a rule nobody can test is a rule nobody can be
+held to:
 
 | Rule | What checks it |
 | --- | --- |
