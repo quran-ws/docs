@@ -7,11 +7,11 @@ the registries of the closed sets, and scripts that resolve any spelling to its
 canonical name, derive a name from vocalized Arabic, draft an entry for a new
 concept, and report every identifier in a tree that the standard would write
 differently. Everything here is generated from
-<https://github.com/quran-ws/guidelines> by `tools/generate_skill.py`; snapshot
-`08b74f94cde7284d`. Edit the source there, not this directory.
+<https://github.com/quran-ws/docs> by `tools/generate_skill.py`; snapshot
+`d3b7177e09d6f537`. Edit the source there, not this directory.
 
 To install it in Claude Code as a plugin, run
-`/plugin marketplace add quran-ws/guidelines` and then
+`/plugin marketplace add quran-ws/docs` and then
 `/plugin install quranic-terminology@quran-ws`; `/plugin update` keeps it
 current. To install a copy instead, put this directory at
 `~/.claude/skills/quranic-terminology/` (every project) or at

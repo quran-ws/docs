@@ -6233,11 +6233,11 @@
    "طَيِّبَة_النَّشْر": "tayyibat_al_nashr"
   }
  },
- "source": "https://github.com/quran-ws/guidelines",
+ "source": "https://github.com/quran-ws/docs",
  "standard": "Quranic Software Terminology Standard",
  "version": {
   "commit": null,
-  "repo": "quran-ws/guidelines",
-  "snapshot": "08b74f94cde7284d"
+  "repo": "quran-ws/docs",
+  "snapshot": "d3b7177e09d6f537"
  }
 }

@@ -18,7 +18,7 @@ answer a naming question without guessing.
 > proposal, not a ruling. Say so once, at the top of any report that relies on
 > the dictionary — not on every finding.
 >
-> Snapshot `08b74f94cde7284d` of `quran-ws/guidelines`. The dictionary keeps moving, so before an
+> Snapshot `d3b7177e09d6f537` of `quran-ws/docs`. The dictionary keeps moving, so before an
 > audit that someone will act on, check the snapshot is still current:
 >
 > ```bash
@@ -31,7 +31,7 @@ answer a naming question without guessing.
 ## Install
 
 - **As a plugin** (updates with the repository): in Claude Code run
-  `/plugin marketplace add quran-ws/guidelines`, then
+  `/plugin marketplace add quran-ws/docs`, then
   `/plugin install quranic-terminology@quran-ws`. Refresh later with
   `/plugin update quranic-terminology`.
 - **As a plain skill** (a copy): put this directory at `~/.claude/skills/quranic-terminology/`
@@ -211,7 +211,7 @@ A useful report, in order:
    definition says what the thing is without implementation detail or
    circularity; a purpose says why software models it, never restating the
    definition.
-5. Send it upstream to <https://github.com/quran-ws/guidelines>. A proposal is
+5. Send it upstream to <https://github.com/quran-ws/docs>. A proposal is
    `draft`; nothing is `adopted` without a source.
 
 ## Adab

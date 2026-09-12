@@ -14,7 +14,6 @@ Every name in the dictionary is derived or measured, with two named exceptions
 - Nothing else for the build. `measure_display.py` alone needs the GitHub CLI
   (`gh`, authenticated), and rebuilding `registries/ayah_counts.tsv` without
   `--check` fetches al-Bayan once from turath.io into `tools/turath_cache/`.
-- The site needs Node (version in `site/.nvmrc`): `cd site && npm ci && npm run build`.
 
 ## The build
 
@@ -44,6 +43,8 @@ source that was changed without regenerating.
 | `check_registries.py` | Every member of every closed set holds up: derived codes derive, references resolve, every row cites a source |
 | `generate_dictionary.py` | Renders the dictionary pages, Arabic and English, from the concept files |
 | `generate_registries.py` | Renders the registry pages, Arabic and English, from the registries |
+| `generate_glossary.py` | Writes `content/glossary.json`, the short glossary quran.ws renders, from the concept entries named in its `TERMS` list; `--check` reports staleness |
+| `generate_pages.py` | Renders the guideline pages from `content/pages/*.yml`: English always, Arabic once fully translated; `--check` and `--stamp` track the translation |
 | `check_examples.py` | Every name in the prose resolves, every counter-example still doesn't, every section reference exists, every YAML example is a true excerpt |
 | `check_example_files.py` | The files under `examples/` still say what the prose that cites them says |
 | `generate_skill.py` | Builds `skills/quranic-terminology/`: the standard, the dictionary and the scripts an agent audits a codebase with |
@@ -56,7 +57,7 @@ Tools the build does not run:
 | `unicode_props.py` | Unicode properties for a mark, read from the Unicode database |
 | `measure_display.py` | Measures which English spelling is dominant, so `display` is evidence, not taste |
 | `extract_ayah_counts.py` | Without `--check`: rereads al-Bayan and rewrites `registries/ayah_counts.tsv` |
-| `audit_text.py` | Audits a Quranic text file against the invariants of the text page (02) |
+| `audit_text.py` | Audits a Quranic text file against the invariants of the text page |
 | `registry.py` | The one reader for the tab-separated registries and data tables; imported, not run |
 
 ## The skill

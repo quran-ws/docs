@@ -38,6 +38,8 @@ STEPS = [
     (["check_registries.py"], "every member of every closed set holds up"),
     (["generate_dictionary.py"], "the dictionary pages, Arabic and English"),
     (["generate_registries.py"], "the registry pages"),
+    (["generate_pages.py"], "the guideline pages, from their rule files"),
+    (["generate_glossary.py"], "the site glossary, from the dictionary"),
     (["check_examples.py"], "no stale name or section number in the prose"),
     (["check_example_files.py"], "the example files still say what the prose says"),
     (["generate_skill.py"], "the agent skill, with the dictionary it resolves against"),

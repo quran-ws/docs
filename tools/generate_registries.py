@@ -47,7 +47,7 @@ TITLES_AR = {
 
 AR = {
     "code": "ar",
-    "out": "content/ar/03-terminology/registries.md",
+    "out": "content/ar/reference/registries.md",
     "front": """---
 title: السجلات
 description: أفراد المجموعات المغلقة التي يشير إليها القاموس؛ السور والقراءات وأنظمة عد الآي ومواضع السجدة.
@@ -61,14 +61,14 @@ tableOfContents:
 """ + BANNER_AR + """
 
 السجل يعدد أفراد مفهوم له مجموعة مغلقة من الأفراد؛ والمفهوم نفسه له مدخل في
-[القاموس](/guidelines/ar/03-terminology/dictionary/)، والسجل يحمل ما لا يحمله المدخل: القائمة.
+[القاموس](/guidelines/ar/reference/dictionary/)، والسجل يحمل ما لا يحمله المدخل: القائمة.
 """,
     "concept": "المفهوم", "file": "الملف", "rows": "الصفوف",
 }
 
 EN = {
     "code": "en",
-    "out": "content/en/03-terminology/registries.md",
+    "out": "content/en/reference/registries.md",
     "front": """---
 title: Registries
 description: The members of the closed sets the dictionary points at; surahs, qiraat, ayah numbering systems, places of prostration.
@@ -83,7 +83,7 @@ tableOfContents:
 
 A registry enumerates the members of a concept that has a closed set of them.
 The concept itself has an entry in the
-[dictionary](/guidelines/en/03-terminology/dictionary/); the registry carries
+[dictionary](/guidelines/en/reference/dictionary/); the registry carries
 what the entry does not: the list.
 """,
     "concept": "Concept", "file": "File", "rows": "Rows",
@@ -137,9 +137,9 @@ def render_registry(name, title, header, rows, concepts, loc):
              f"<!-- source: standards/terminology/registries/{name}.tsv -->", ""]
     meta = []
     if concepts.get(name):
-        links = "، ".join(f"[`{c}`](/guidelines/{loc['code']}/03-terminology/dictionary/#{c})"
+        links = "، ".join(f"[`{c}`](/guidelines/{loc['code']}/reference/dictionary/#{c})"
                           for c in concepts[name]) if loc["code"] == "ar" else \
-                ", ".join(f"[`{c}`](/guidelines/{loc['code']}/03-terminology/dictionary/#{c})"
+                ", ".join(f"[`{c}`](/guidelines/{loc['code']}/reference/dictionary/#{c})"
                           for c in concepts[name])
         meta.append(f"{loc['concept']}: {links}")
     meta.append(f"{loc['file']}: `standards/terminology/registries/{name}.tsv`")

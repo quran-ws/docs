@@ -1,11 +1,6 @@
 .maestro/
 node_modules/
-dist/
-.astro/
 .DS_Store
-site/node_modules/
-site/dist/
-site/.astro/
 tools/turath_cache/
 __pycache__/
 *.pyc

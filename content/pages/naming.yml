@@ -1,0 +1,349 @@
+title: Naming
+title_ar: "التسمية"
+description: One concept, one name, derived from the Arabic. The rules a developer applies when naming a table, a field, a route or a package that holds a Quranic concept.
+description_ar: "لكل مفهوم اسم واحد مشتق من العربية، وهذه قواعد تسمية الجداول والحقول والمسارات والحزم التي تتضمن مفاهيم قرآنية."
+status: proposed
+order: 1
+intro: |
+  **The governing rule:** every Quranic concept has one canonical name, and that
+  name is the same in the model, the table, the foreign key and the API. The name
+  is looked up in the [dictionary](/guidelines/en/reference/dictionary/), never
+  invented at the keyboard.
+
+  This page is what a developer needs. The full
+  [terminology standard](/guidelines/en/reference/standard/) says how a name is
+  derived from its vocalised Arabic and how a dictionary entry is written; you
+  need it only when adding a concept to the dictionary.
+intro_ar: |
+  **القاعدة الأساسية:** لكل مفهوم قرآني اسم معتمد واحد نستخدمه في النموذج والجدول
+  والمفتاح الأجنبي وواجهة `API`، ونبحث عنه في [القاموس](/guidelines/ar/reference/dictionary/)
+  بدل ابتكار اسم في أثناء كتابة الكود.
+
+  تجمع هذه الصفحة ما يحتاجه المطور، أما [معيار المصطلحات](/guidelines/ar/reference/standard/)
+  الكامل فيشرح طريقة اشتقاق الاسم من صيغته العربية بالحركات وطريقة كتابة مدخل
+  في القاموس، ولا تحتاج إليه إلا عند إضافة مفهوم إلى القاموس.
+sections:
+  - title: One name per concept
+    title_ar: "استخدم اسمًا واحدًا لكل مفهوم"
+    lead: Settle the concept, then look up its name.
+    lead_ar: "حدد المفهوم ثم ابحث عن اسمه."
+    rules:
+      - id: concept-before-name
+        rule: Decide what the concept is and what it excludes before you name it.
+        rule_ar: "حدد المفهوم وما لا يشمله قبل أن تسميه."
+        example: |
+          ```text
+          Not:  How do we translate this word?
+          But:  What are we modelling, and how does it differ from its neighbours?
+          ```
+        checked_by: The dictionary's `definition` and `boundaries` fields, which every entry must carry (`tools/validate.py`).
+        checked_by_ar: "حقلا `definition` و`boundaries` المطلوبان في كل مدخل في القاموس، ويفحصهما `tools/validate.py`."
+        example_ar: |
+          ```text
+          بدل أن نسأل:  كيف نترجم هذه الكلمة؟
+          نسأل:         ما المفهوم الذي نمثله، وكيف يختلف عن المفاهيم القريبة منه؟
+          ```
+      - id: one-canonical-name
+        rule: Every concept has one canonical `code` name, and a name belongs to one concept.
+        rule_ar: "لكل مفهوم اسم `code` معتمد واحد، ولا يشترك مفهومان في اسم واحد."
+        example: |
+          ```text
+          surah   ayah   word   mushaf   tajwid
+          ```
+        example_ar: |
+          ```text
+          surah   ayah   word   mushaf   tajwid
+          ```
+        note: One name means one spelling across sibling repositories as well; a bundle that writes `hafs-kfgqpc` in its manifest and `hafs-kfqc` in its pages, or a catalogue that spells `qalon`, `douri` and `sousi` where the text dataset spells `qalun`, `duri` and `susi`, needs a mapping table in every consumer.
+        note_ar: "يلزم توحيد تهجئة الاسم بين المستودعات المرتبطة أيضًا؛ فإذا كتبت حزمة `hafs-kfgqpc` في ملف `manifest` و`hafs-kfqc` في صفحاتها، أو كتب فهرس `qalon` و`douri` و`sousi` بينما يستخدم `dataset` النصي `qalun` و`duri` و`susi`، احتاج كل مشروع يستخدم هذه البيانات إلى جدول يربط التهجئات ببعضها."
+        checked_by: "`tools/build_aliases.py` fails the build when two entries claim one name, in any of their spellings."
+        checked_by_ar: "يوقف `tools/build_aliases.py` البناء إذا اشترك مدخلان في اسم واحد بأي تهجئة مسجلة لهما."
+      - id: resolve-before-inventing
+        rule: Resolve a name in the dictionary before you write it, because most "new" names are a spelling of an entry that exists.
+        rule_ar: "ابحث عن الاسم في القاموس قبل أن تكتبه، لأن أكثر الأسماء «الجديدة» تهجئات لمداخل موجودة."
+        example: |
+          ```bash
+          python3 skills/quranic-terminology/scripts/lookup.py aya verse "Waqf Lazim" مصحف
+          python3 skills/quranic-terminology/scripts/lookup.py --search waqf
+          ```
+        checked_by: "`audit_terminology.py --strict` reports a spelling that is not the canonical one, with the entry it resolves to."
+        checked_by_ar: "يبلغ `audit_terminology.py --strict` عن التهجئة غير المعتمدة ويذكر المدخل الذي تنتمي إليه."
+      - id: propose-missing-concepts
+        rule: A concept the dictionary lacks is proposed there before the code that needs it is merged, not after.
+        rule_ar: "اقترح إضافة المفهوم غير الموجود في القاموس قبل دمج الكود الذي يحتاج إليه."
+        note: A project may keep concepts of its own, in a concepts directory beside the standard's, when the concept cannot be defined by the Quran or the mushaf (standard, section 30).
+        note_ar: "يمكن للمشروع الاحتفاظ بمفاهيمه الخاصة في مجلد مفاهيم بجانب مجلد المعيار، إذا كان تعريفها لا يستند إلى القرآن أو المصحف (المعيار، القسم 30)."
+        checked_by: The term issue form, and the audit's `--strict` mode, which flags a Quranic name the dictionary does not know.
+        checked_by_ar: "نموذج اقتراح المصطلح ووضع `--strict` في أداة الفحص، الذي يكشف الأسماء القرآنية غير الموجودة في القاموس."
+
+  - title: Arabic or English
+    title_ar: "العربية أو الإنجليزية"
+    lead: A Quranic or scholarly concept keeps its Arabic name; a general concept takes its English one.
+    lead_ar: "يحتفظ المفهوم القرآني أو المتخصص في العلوم الشرعية باسمه العربي، ونستخدم الاسم الإنجليزي للمفهوم العام."
+    rules:
+      - id: keep-the-arabic-term
+        rule: Keep the Arabic term when it carries a Quranic or scholarly concept, and use plain English for a general concept.
+        rule_ar: "احتفظ بالمصطلح العربي إذا دل على مفهوم قرآني أو متخصص في العلوم الشرعية، واستخدم الإنجليزية البسيطة للمفهوم العام."
+        example: |
+          ```text
+          Arabic:   surah  ayah  mushaf  juz  hizb  qiraah  riwayah  tajwid  tafsir
+          English:  word  letter  page  line  root  translation  glyph
+
+          surah → ayah → word       not  chapter → verse → word
+                                    not  surah → ayah → kalimah
+          ```
+        checked_by: "`audit_terminology.py` reports an English gloss (`verse`, `chapter`) standing in for a Quranic name, and points to the entry."
+        checked_by_ar: "يبلغ `audit_terminology.py` عن المقابل الإنجليزي مثل `verse` أو `chapter` حين يحل محل الاسم القرآني، ويشير إلى المدخل."
+        example_ar: |
+          ```text
+          العربية:      surah  ayah  mushaf  juz  hizb  qiraah  riwayah  tajwid  tafsir
+          الإنجليزية:   word  letter  page  line  root  translation  glyph
+
+          surah → ayah → word       وليس  chapter → verse → word
+                                   وليس  surah → ayah → kalimah
+          ```
+      - id: compound-names
+        rule: In a compound name the technical word is transliterated and the ordinary word is translated, in English word order.
+        rule_ar: "في الاسم المركب، انقل الكلمة الاصطلاحية بحروف لاتينية وترجم الكلمة العامة، وفق ترتيب الكلمات في الإنجليزية."
+        example: |
+          ```text
+          المِيم الصَّغِيرَة      → small_meem        not meem_saghirah
+          عَلَامَة الوَقْف        → waqf_mark
+          نَوْع عَلَامَة الوَقْف   → waqf_mark_type
+          النُّون السَّاكِنَة     → noon_sakinah      sakinah is a term of tajwid, so it stays
+          ```
+        checked_by: "`tools/check_conformance.py`, which derives every compound from its vocalised Arabic and the list of ordinary words in `general_words.tsv`."
+        checked_by_ar: "يشتق `tools/check_conformance.py` كل اسم مركب من أصله العربي بالحركات ومن قائمة الكلمات العامة في `general_words.tsv`."
+        example_ar: |
+          ```text
+          المِيم الصَّغِيرَة      → small_meem        وليس meem_saghirah
+          عَلَامَة الوَقْف        → waqf_mark
+          نَوْع عَلَامَة الوَقْف   → waqf_mark_type
+          النُّون السَّاكِنَة     → noon_sakinah      تبقى «ساكنة» لأنها مصطلح تجويدي
+          ```
+      - id: derived-spelling
+        rule: The code spelling of an Arabic term is derived from its vocalised Arabic by one function, never chosen by taste.
+        rule_ar: "اشتق التهجئة البرمجية للمصطلح من صيغته العربية بالحركات باستخدام دالة واحدة، ولا تخترها حسب ذوقك."
+        example: |
+          ```bash
+          python3 tools/translit.py "رُبْع الحِزْب"     # rub_al_hizb
+          ```
+        note: The derivation rules are sections 4 to 8 of the standard. You do not need them to use a name, only to add one.
+        note_ar: "قواعد الاشتقاق في الأقسام 4–8 من المعيار، وتحتاج إليها فقط عند إضافة اسم، أما استخدام اسم موجود فلا يتطلب معرفتها."
+        checked_by: "`tools/test_translit.py` holds the golden cases, and `tools/check_conformance.py` checks that every entry's `code` is its own derivation."
+        checked_by_ar: "يحتوي `tools/test_translit.py` على الحالات المرجعية، ويتحقق `tools/check_conformance.py` من أن `code` في كل مدخل يطابق الاسم المشتق من صيغته العربية."
+
+  - title: Code name and display name
+    title_ar: "الاسم البرمجي واسم العرض"
+    lead: The identifier and the label are two fields, and they may differ.
+    lead_ar: "المعرف واسم العرض حقلان منفصلان، وقد يختلفان."
+    rules:
+      - id: code-vs-display
+        rule: "`code` is the identifier in code, APIs and databases; `display` is what a reader sees; the two may differ, and that is intended."
+        rule_ar: "يحتوي `code` على المعرف المستخدم في الكود وواجهات `API` وقواعد البيانات، ويحتوي `display` على الاسم المعروض للقارئ، وقد يختلف الاسمان وهذا مقصود."
+        example: |
+          ```text
+          code:     tajwid          qiraah
+          display:  Tajweed         Qiraah
+          ```
+        checked_by: "`tools/measure_display.py` measures the dominant English spelling, and the result is recorded in the entry's `display_evidence` before it is adopted."
+        checked_by_ar: "يحدد `tools/measure_display.py` التهجئة الإنجليزية الأكثر شيوعًا بالقياس، وتُسجل النتيجة في حقل `display_evidence` في المدخل قبل اعتمادها."
+      - id: prose-uses-code-spelling
+        rule: In prose, write a concept the way its `code` is spelt, lowercase, and keep `display` for interfaces.
+        rule_ar: "اكتب المفهوم في الشرح بتهجئة `code` وبحروف صغيرة، واترك `display` للواجهات."
+        example: |
+          ```text
+          Yes:  The mushaf carries tajwid colouring on every ayah.
+          No:   The Mushaf carries Tajweed colouring on every Ayah.
+          ```
+        note: The rule is for the prose of a repository, its `README`, its guides and these pages. A user interface, a documentation site included, is a display surface and may write the `display` form under rule 5.4; it takes that form from the entry, never from a second list of its own.
+        note_ar: "تخص القاعدة النصوص التوضيحية في المستودع وملف `README` وأدلته وهذه الصفحات. أما واجهة المستخدم، بما فيها موقع التوثيق، فهي موضع لعرض الأسماء ويجوز أن تستخدم صيغة `display` وفق القاعدة 5.4، على أن تأخذها من المدخل دون الاحتفاظ بقائمة أخرى خاصة بها."
+        checked_by: "`tools/check_examples.py`, which resolves every name written in the pages of this repository."
+        checked_by_ar: "يربط `tools/check_examples.py` كل اسم مكتوب في صفحات المستودع بمدخله."
+        example_ar: |
+          ```text
+          نعم:  The mushaf carries tajwid colouring on every ayah.
+          لا:   The Mushaf carries Tajweed colouring on every Ayah.
+          ```
+      - id: spellings-glosses-deprecated
+        rule: An alternative spelling, an English gloss and a deprecated name are three fields, and none of them competes with the canonical name.
+        rule_ar: "للتهجئة البديلة والمقابل الإنجليزي والاسم المهجور 3 حقول منفصلة، ولا يحل أي منها محل الاسم المعتمد."
+        example: |
+          ```text
+          ayah:   alternative_spellings: aya, ayat     english_glosses: Verse
+          ```
+        checked_by: "`tools/check_conformance.py` refuses a gloss that is also recorded as a spelling; `lookup.py` says which kind of name an input matched."
+        checked_by_ar: "يرفض `tools/check_conformance.py` تسجيل المقابل الإنجليزي أيضًا بوصفه تهجئة بديلة، ويبين `lookup.py` نوع الاسم الذي طابق القيمة المدخلة."
+      - id: deprecated-still-resolves
+        rule: A deprecated name is not wrong, it is superseded; it keeps resolving to its entry so old code can be audited.
+        rule_ar: "الاسم المهجور اسم حل غيره محله وليس اسمًا خاطئًا، ويبقى مرتبطًا بمدخله حتى يمكن فحص الكود القديم."
+        checked_by: "`lookup.py` resolves a deprecated name and says so; `audit_terminology.py` reports it with the name that replaced it."
+        checked_by_ar: "يربط `lookup.py` الاسم المهجور بمدخله ويبين أنه مهجور، ويبلغ عنه `audit_terminology.py` مع الاسم الذي حل محله."
+
+  - title: The shape of a name
+    title_ar: "شكل الاسم"
+    lead: Complete, unabbreviated, and precise.
+    lead_ar: "الاسم كامل ودقيق ودون اختصار."
+    rules:
+      - id: no-abbreviations
+        rule: Use the complete name, never an abbreviation, and never a vague word where a precise name exists.
+        rule_ar: "استخدم الاسم كاملًا دون اختصار، ولا تستخدم كلمة مبهمة حين يوجد اسم دقيق."
+        example: |
+          ```text
+          Yes:  surah  ayah  word  translation
+          No:   srh  ay  wrd  trans  data  info  item  value
+          ```
+        checked_by: "`audit_terminology.py --strict` reports abbreviations and vague names."
+        checked_by_ar: "يبلغ `audit_terminology.py --strict` عن الاختصارات والأسماء المبهمة."
+        example_ar: |
+          ```text
+          نعم:  surah  ayah  word  translation
+          لا:   srh  ay  wrd  trans  data  info  item  value
+          ```
+      - id: plural-is-code-plus-s
+        rule: The plural in code is the whole code name plus `s`, and an Arabic plural is never a collection name.
+        rule_ar: "أضف `s` إلى الاسم البرمجي كاملًا لصياغة الجمع، ولا تستخدم الجمع العربي اسمًا للمجموعة."
+        example: |
+          ```text
+          Yes:  ayahs  surahs  juzs  hizbs  riwayahs
+          No:   ayat  suwar  ajza  ahzab
+          ```
+        checked_by: "`tools/check_conformance.py` checks every recorded plural; the audit reports an Arabic plural used as a collection."
+        checked_by_ar: "يفحص `tools/check_conformance.py` كل جمع مسجل، ويبلغ الفحص عن الجمع العربي المستخدم اسمًا للمجموعة."
+        example_ar: |
+          ```text
+          نعم:  ayahs  surahs  juzs  hizbs  riwayahs
+          لا:   ayat  suwar  ajza  ahzab
+          ```
+      - id: suffixes-have-one-meaning
+        rule: "`id` is the internal key, `number` the number a reader cites, `position` the place in a sequence, and `order` an ordering that meaning decides."
+        rule_ar: "يحتوي `id` على المفتاح الداخلي، و`number` على الرقم الذي يستخدمه القارئ للإشارة إلى العنصر، و`position` على موضعه في تسلسل، و`order` على ترتيبه بحسب المعنى."
+        example: |
+          ```text
+          ayah_id   surah_number   word_position   revelation_order
+          ```
+        note: A survey found `word_index`, `word_number` and `segment_number` in one table, and whether `word_index` was 0-based could not be recovered from the names.
+        note_ar: "وجد المسح `word_index` و`word_number` و`segment_number` في جدول واحد، ولم يتبين من الأسماء هل يبدأ `word_index` من 0."
+        checked_by: The audit, which reports `index` and `idx` as suffixes; the choice between the four is a rule for the writer (standard, section 21).
+        checked_by_ar: "يكشف الفحص استخدام اللاحقتين `index` و`idx`، أما اختيار اللاحقة المناسبة من اللواحق الـ4 فيلتزم فيه الكاتب بقاعدة المعيار (القسم 21)."
+      - id: classification-names
+        rule: Name a classification by what it classifies, and never by `type`.
+        rule_ar: "سمِّ التصنيف باسم ما يصنفه، ولا تسمه `type`."
+        example: |
+          ```text
+          waqf_ruling        not waqf_type
+          recitation_style   not recitation_type
+          waqf_mark_type     the one exception: the kind of a drawn mark
+          ```
+        checked_by: The audit reports `type` as a suffix on a Quranic concept (standard, section 24).
+        checked_by_ar: "يبلغ الفحص عن اللاحقة `type` على مفهوم قرآني (المعيار، القسم 24)."
+        example_ar: |
+          ```text
+          waqf_ruling        وليس waqf_type
+          recitation_style   وليس recitation_type
+          waqf_mark_type     الاستثناء الوحيد: نوع العلامة المرسومة
+          ```
+      - id: values-are-member-codes
+        rule: A classification column stores member codes from the registry, never a display string in either language.
+        rule_ar: "خزّن في عمود التصنيف قيم `code` لأعضاء السجل، ولا تخزن أسماء العرض بأي من اللغتين."
+        example: |
+          ```text
+          Yes:  revelation_classification = "makki" | "madani" | "disputed"
+          No:   enum('meccan', 'medinan')     surah_type: "مدنية"
+          ```
+        checked_by: A schema check that every classification column's distinct values are a subset of its [registry](/guidelines/en/reference/registries/).
+        checked_by_ar: "فحص للمخطط يتأكد من أن كل قيمة في عمود التصنيف موجودة في [سجله](/guidelines/ar/reference/registries/)."
+        example_ar: |
+          ```text
+          نعم:  revelation_classification = "makki" | "madani" | "disputed"
+          لا:   enum('meccan', 'medinan')     surah_type: "مدنية"
+          ```
+  - title: The same name in every layer
+    title_ar: "وحّد الاسم في جميع الطبقات"
+    lead: Model, table, foreign key, route and package share one vocabulary.
+    lead_ar: "نستخدم الأسماء نفسها في النموذج والجدول والمفتاح الأجنبي والمسار والحزمة."
+    rules:
+      - id: four-layers
+        rule: The model, the table, the foreign key and the API path are the same name in four shapes.
+        rule_ar: "استخدم الاسم نفسه للنموذج والجدول والمفتاح الأجنبي ومسار `API`، مع اختلاف صيغته في المواضع الـ4."
+        example: |
+          ```text
+          Model:        Ayah            Riwayah
+          Table:        ayahs           riwayahs
+          Foreign key:  ayah_id         riwayah_id
+          API:          /ayahs          /riwayahs
+          ```
+        note: A survey found one concept named three ways, a truncated spelling in the model, that spelling plus `s` on the table, and the Arabic plural in the route.
+        note_ar: "وجد المسح مفهومًا واحدًا له 3 صيغ للاسم: تهجئة مختصرة في النموذج، والتهجئة نفسها مع `s` في اسم الجدول، والجمع العربي في المسار."
+        checked_by: "`audit_terminology.py --strict` over the whole tree, on every pull request."
+        checked_by_ar: "تشغيل `audit_terminology.py --strict` على جميع ملفات المستودع مع كل طلب دمج."
+        example_ar: |
+          ```text
+          النموذج:         Ayah            Riwayah
+          الجدول:          ayahs           riwayahs
+          المفتاح الأجنبي:  ayah_id         riwayah_id
+          API:             /ayahs          /riwayahs
+          ```
+      - id: repository-and-package-names
+        rule: A repository or package is named by the dictionary's `code` name in kebab-case, and everything inside it in snake_case.
+        rule_ar: "سمِّ المستودع أو الحزمة باسم `code` من القاموس بصيغة `kebab-case`، واستخدم صيغة `snake_case` لكل الأسماء داخله."
+        example: |
+          ```text
+          repository:  qiraat-ayah-map   mushaf-layout   ayah-timing
+          inside:      ayah_numbering_system   mushaf_edition
+          ```
+        checked_by: The audit, run with the repository name included.
+        checked_by_ar: "تشغيل الفحص مع تضمين اسم المستودع."
+        example_ar: |
+          ```text
+          المستودع:  qiraat-ayah-map   mushaf-layout   ayah-timing
+          داخله:     ayah_numbering_system   mushaf_edition
+          ```
+      - id: quote-external-names-exactly
+        rule: A name the project does not own, such as a vendor's column, a font family or a Unicode character name, is quoted exactly as its owner writes it.
+        rule_ar: "انقل الأسماء التي يحددها طرف آخر كما يكتبها صاحبها تمامًا، مثل اسم عمود لدى المورد أو اسم عائلة خط أو اسم محرف في Unicode."
+        checked_by: The `external_names` list in `.terminology.json`, which the audit reads past.
+        checked_by_ar: "قائمة `external_names` في `.terminology.json`، ويستثني الفحص الأسماء المدرجة فيها."
+      - id: ui-may-translate
+        rule: A user interface may translate or display a name differently; the four layers do not.
+        rule_ar: "يجوز لواجهة المستخدم أن تترجم الاسم أو تعرضه بصورة مختلفة، أما الطبقات الـ4 فتلتزم بالاسم نفسه."
+        checked_by: The `allow_gloss_in` list in `.terminology.json`, which admits a gloss in interface strings and nowhere else.
+        checked_by_ar: "قائمة `allow_gloss_in` في `.terminology.json` التي تسمح بالمقابل الإنجليزي في نصوص الواجهة وحدها."
+
+  - title: Running the audit
+    title_ar: "تشغيل الفحص"
+    lead: The audit reports; it never renames.
+    lead_ar: "الفحص يبلغ عن المخالفات، ولا يعيد تسمية شيء."
+    rules:
+      - id: audit-in-ci
+        rule: Every repository that holds Quranic concepts runs the terminology audit in CI and blocks a merge on an error.
+        rule_ar: "يشغّل كل مستودع يتضمن مفاهيم قرآنية فحص المصطلحات في `CI` ويمنع الدمج عند وجود خطأ."
+        example: |
+          ```bash
+          python3 skills/quranic-terminology/scripts/audit_terminology.py src --strict
+          ```
+        checked_by: The CI workflow of the repository, and the exit code of the audit.
+        checked_by_ar: "سير عمل `CI` في المستودع ورمز الخروج من الفحص."
+      - id: terminology-config
+        rule: "A project tells the audit what it already knows in `.terminology.json`, and excuses a single line with a comment carrying the words `terminology: ignore`."
+        rule_ar: "سجّل معلومات المشروع التي يحتاجها الفحص في `.terminology.json`، واستخدم تعليقًا يتضمن `terminology: ignore` لاستثناء سطر واحد."
+        example: |
+          ```text
+          paths            what to audit when no path is given
+          exclude          trees that share a word with the Quran but are about something else
+          ignore_words     words that mean something else in this project
+          allow_gloss_in   published API and interface strings
+          external_names   names quoted from a vendor, a font or Unicode
+          compatibility    columns and wire formats whose rename is a migration, reported once
+          ```
+        checked_by: "`skills/quranic-terminology/assets/terminology.example.json` documents every key, and the audit rejects an unknown one."
+        checked_by_ar: "يوثق `skills/quranic-terminology/assets/terminology.example.json` كل مفتاح، ويرفض الفحص أي مفتاح غير معروف."
+        example_ar: |
+          ```text
+          paths            ما يفحصه عند عدم تحديد مسار
+          exclude          مجلدات تشترك مع القرآن في كلمة لكنها تتناول موضوعًا آخر
+          ignore_words     كلمات لها معنى آخر في هذا المشروع
+          allow_gloss_in   API المنشورة ونصوص الواجهة
+          external_names   أسماء منقولة من مورد أو خط أو Unicode
+          compatibility    أعمدة وصيغ تبادل تحتاج إعادة تسميتها إلى ترحيل، ويبلغ عنها مرة واحدة
+          ```

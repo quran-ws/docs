@@ -1,6 +1,6 @@
 -- The core tables for storing Quranic text, in canonical names.
 --
--- Rules this schema carries (see content/en/02-quranic-text/):
+-- Rules this schema carries (see content/en/quranic-text.md):
 --   * The text is transmitted source data. Nothing here edits it; every derived
 --     form (search_key) lives in its own column and names the hash it came from.
 --   * Every text-bearing row knows its mushaf edition, its riwayah and its ayah

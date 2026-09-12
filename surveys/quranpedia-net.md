@@ -3,7 +3,7 @@
 Status: draft
 Surveyed: 2026-09-06
 Subject: `~/Documents/Github/quranpedia.net` (Laravel, MySQL, 267 migrations, 65 Eloquent models, 83 tables — 77 of them domain tables)
-Measured against: `standards/terminology/` (117 concepts at the time; 146 after §1a) and `content/en/03-terminology/standard.md`
+Measured against: `standards/terminology/` (117 concepts at the time; 146 after §1a) and `content/en/reference/standard.md`
 See also: `OPEN.md` for what this survey raised that is still undecided; a section overtaken by a later decision says so at its head
 
 ---
@@ -83,7 +83,7 @@ keep: most of the gap was never the standard's to fill.
 The inclusion rule is now written into the standard itself, at the head of §30:
 **a concept belongs here when it cannot be defined without referring to the
 Quran or the mushaf.** Seven decisions came out of the work and are written up in
-`content/{ar,en}/03-terminology/decisions.md`: the scope rule, why the numbering
+`content/{ar,en}/reference/decisions.md`: the scope rule, why the numbering
 values keep their parent's name, why `ayah_mark` takes the shorter Arabic name,
 why `naskh` is one entry rather than two, why `token` and `font` had to be
 defined, why the particle is `harf_al_mana`, and why the rules are now checked
@@ -393,7 +393,7 @@ Note the spelling trap: the app's own rule slugs are `madda_obligatory`, `madda_
 
 ## 4. What this implies for the dictionary's shape
 
-> **Superseded.** This section argued for five new domains. The decision went the other way: the standard names the concepts of the Quranic text and its sciences and stops there, so `library`, `content`, `audio` and `people` are a project's own to name. See *The standard names the Quran's own sciences, and stops there* in `content/{ar,en}/03-terminology/decisions.md`. The paragraphs are kept as written, as the case the decision answered.
+> **Superseded.** This section argued for five new domains. The decision went the other way: the standard names the concepts of the Quranic text and its sciences and stops there, so `library`, `content`, `audio` and `people` are a project's own to name. See *The standard names the Quran's own sciences, and stops there* in `content/{ar,en}/reference/decisions.md`. The paragraphs are kept as written, as the case the decision answered.
 
 The 10-of-77 number is not a quality judgement on either side. It says the dictionary today is a dictionary of *the Quranic text and its mushaf*, and quranpedia is mostly an application about *scholarship attached to that text*. Two things follow.
 

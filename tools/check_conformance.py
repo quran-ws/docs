@@ -36,7 +36,7 @@ DRAWN_FIELDS = ("symbol", "unicode", "mark_family")
 DRAWN_CLASSIFICATION = "waqf_mark_type"
 
 # Codes that deliberately are not the derivation of their Arabic name. Each one
-# is argued in content/*/03-terminology/decisions.md; the reason is repeated
+# is argued in content/*/reference/decisions.md; the reason is repeated
 # here so a reader of the check knows it was a decision and not a slip.
 DOCUMENTED = {
     "ayah_numbering_madani_first": "section 14 — a value's code is unique within its parent; `add` is an English verb",
