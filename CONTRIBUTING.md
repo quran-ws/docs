@@ -2,6 +2,8 @@
 
 # المساهمة
 
+النسخة القصيرة، ولكل مستودعات Quran.ws، في صفحة [كيف تساهم](https://quran.ws/docs/contribute/). وهذا الملف لمن يعدّل هذا المستودع.
+
 افتح `Issue` قبل إرسال `PR`، لأن الأدلة تتغير بالنقاش.
 
 ## كيف يُقترح تغيير
@@ -93,6 +95,8 @@ python3 tools/build.py
 ---
 
 # Contributing
+
+The short version, for every Quran.ws repository, is [How to contribute](https://quran.ws/docs/contribute/). This file is for changing this repository.
 
 Open an issue before sending a PR, because the guidelines change through discussion.
 
