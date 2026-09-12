@@ -1,6 +1,6 @@
 """Recompute the figures the text page cites, from any Uthmani text file.
 
-The page content/{ar,en}/02-quranic-text/ quotes counts from an audit of a
+The page content/{ar,en}/quranic-text.md quotes counts from an audit of a
 published text: how many ayahs NFC changes, bytes and codepoints, the
 character allowlist, how many ayahs carry edition marks, the BOM, the
 whitespace-token count. Numbers remembered in prose go stale; this recomputes

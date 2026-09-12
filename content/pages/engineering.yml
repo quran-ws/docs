@@ -1,0 +1,352 @@
+title: Engineering
+title_ar: "الهندسة"
+description: Data modelling, identifiers, APIs, storage, rendering, audio, search and caching for Quranic software, with the test behind each rule.
+description_ar: "نمذجة البيانات والمعرفات وواجهات `API` والتخزين والعرض والصوت والبحث والتخزين المؤقت في البرمجيات القرآنية، مع الاختبار الذي يتحقق من كل قاعدة."
+status: proposed
+order: 4
+intro: |
+  **The governing rule:** model the mushaf, not the screen. Every table, API
+  and file names the concept it holds by its
+  [dictionary](/guidelines/en/reference/dictionary/) name, carries the identity
+  of the text it was built from, and can be rebuilt from that text.
+
+  This page applies the [text](/guidelines/en/quranic-text/) and
+  [naming](/guidelines/en/naming/) rules to the parts of a system that hold the
+  mushaf. Where a choice is one defensible option among several, the rule says
+  so. The cases cited come from a
+  [survey of a production Quran codebase](https://github.com/quran-ws/docs/blob/main/surveys/quranpedia-net.md);
+  they are typical, which is why they became rules.
+intro_ar: |
+  **القاعدة الأساسية:** ابنِ نموذج البيانات على المصحف بدل الشاشة، واستخدم في
+  كل جدول وواجهة `API` وملف اسم المفهوم الذي يحتويه كما يرد في
+  [القاموس](/guidelines/ar/reference/dictionary/)، وسجّل هوية النص الذي بُني منه
+  حتى يمكن إعادة بنائه من ذلك النص.
+
+  تطبق هذه الصفحة قواعد [النص](/guidelines/ar/quranic-text/)
+  و[التسمية](/guidelines/ar/naming/) على أجزاء النظام التي تحتوي على المصحف، وتوضح
+  متى تكون القاعدة خيارًا مقبولًا ضمن عدة خيارات. والحالات المذكورة مأخوذة من
+  [دراسة مسحية لكود مشروع قرآني مستخدم فعليًا](https://github.com/quran-ws/docs/blob/main/surveys/quranpedia-net.md)،
+  واستندت إليها القواعد لأنها حالات شائعة.
+sections:
+  - title: Data modelling
+    title_ar: "نمذجة البيانات"
+    lead: Every concept in the model is a dictionary entry, and every closed set of values is a registry.
+    lead_ar: "نسجل مفاهيم النموذج في القاموس، ونخصص سجلًا لكل مجموعة محددة القيم."
+    rules:
+      - id: core-chain
+        rule: The core chain is `mushaf_edition` → `surah` → `ayah` → `word` → `token`, each its own table; a token is the product of a declared segmentation and never replaces the word.
+        rule_ar: "خصص جدولًا مستقلًا لكل عنصر في السلسلة الأساسية `mushaf_edition` → `surah` → `ayah` → `word` → `token`، على أن ينتج `token` عن طريقة تقسيم معلنة وألا يحل محل الكلمة."
+        example: |
+          ```sql
+          CREATE TABLE mushaf_editions (
+            id                        INTEGER PRIMARY KEY,
+            code                      VARCHAR(64) NOT NULL UNIQUE,
+            riwayah_id                INTEGER NOT NULL REFERENCES riwayahs(id),
+            ayah_numbering_system_id  INTEGER NOT NULL REFERENCES ayah_numbering_systems(id),
+            version                   VARCHAR(32) NOT NULL,   -- the data release
+            source_hash               CHAR(64) NOT NULL       -- sha256 of the source file
+          );
+
+          CREATE TABLE ayahs (
+            id                        INTEGER PRIMARY KEY,
+            mushaf_edition_id         INTEGER NOT NULL REFERENCES mushaf_editions(id),
+            surah_number              SMALLINT NOT NULL,
+            ayah_number               SMALLINT NOT NULL,
+            text                      TEXT NOT NULL COLLATE utf8mb4_bin,
+            has_basmalah              BOOLEAN NOT NULL,
+            UNIQUE (mushaf_edition_id, surah_number, ayah_number)
+          );
+          ```
+
+          Column types are one defensible choice; the names and the foreign keys are not. `examples/schema/` holds the full model.
+        checked_by: Every column name resolves to a canonical `code` (`tools/check_example_files.py` on `examples/`).
+        checked_by_ar: "كل اسم عمود يقابل اسم `code` معتمدًا، ويفحص ذلك `tools/check_example_files.py` على `examples/`."
+        example_ar: |
+          ```sql
+          CREATE TABLE mushaf_editions (
+            id                        INTEGER PRIMARY KEY,
+            code                      VARCHAR(64) NOT NULL UNIQUE,
+            riwayah_id                INTEGER NOT NULL REFERENCES riwayahs(id),
+            ayah_numbering_system_id  INTEGER NOT NULL REFERENCES ayah_numbering_systems(id),
+            version                   VARCHAR(32) NOT NULL,   -- إصدار البيانات
+            source_hash               CHAR(64) NOT NULL       -- بصمة ملف المصدر بصيغة sha256
+          );
+
+          CREATE TABLE ayahs (
+            id                        INTEGER PRIMARY KEY,
+            mushaf_edition_id         INTEGER NOT NULL REFERENCES mushaf_editions(id),
+            surah_number              SMALLINT NOT NULL,
+            ayah_number               SMALLINT NOT NULL,
+            text                      TEXT NOT NULL COLLATE utf8mb4_bin,
+            has_basmalah              BOOLEAN NOT NULL,
+            UNIQUE (mushaf_edition_id, surah_number, ayah_number)
+          );
+          ```
+
+          أنواع الأعمدة خيار من عدة خيارات صحيحة، أما الأسماء والمفاتيح الأجنبية فثابتة، وفي `examples/schema/` النموذج الكامل.
+      - id: entities-not-columns
+        rule: "`riwayah`, `ayah_numbering_system`, `page` and `line` are entities with their own tables, not columns on `ayah`, because an ayah's number depends on the numbering system and its page on the edition."
+        rule_ar: "خصص جداول مستقلة للكيانات `riwayah` و`ayah_numbering_system` و`page` و`line` بدل وضعها أعمدة في `ayah`، لأن رقم الآية يعتمد على نظام عد الآي وصفحتها تعتمد على الطبعة."
+        checked_by: A schema check that `ayah` carries no page, line or numbering column of its own.
+        checked_by_ar: "فحص للمخطط يتأكد من خلو `ayah` من أعمدة مستقلة للصفحة والسطر والترقيم."
+      - id: riwayah-not-rawi
+        rule: A mushaf, a recording and a dataset are bound to a riwayah, never to a person; the column is `riwayah_id`, and `rawi_id` belongs on the riwayah row.
+        rule_ar: "اربط المصحف والتسجيل و`dataset` بالرواية وليس بشخص، فالعمود هو `riwayah_id` ويوضع `rawi_id` في صف الرواية."
+        note: The surveyed codebase pointed `mushafs.rawi_id` at a table of people, so "every recording in Warsh" meant "every recording by the man Warsh".
+        note_ar: "كان `mushafs.rawi_id` في الكود المفحوص يشير إلى جدول أشخاص، فأصبح طلب «كل التسجيلات برواية ورش» يعني طلب «كل التسجيلات التي يؤديها ورش نفسه»."
+        checked_by: A schema check that no mushaf, recording or dataset table has a `rawi_id`.
+        checked_by_ar: "فحص للمخطط يتأكد من أن جداول المصحف والتسجيل و`dataset` لا تحمل `rawi_id`."
+      - id: numbers-are-numbers
+        rule: A number is stored as a number, never as a string.
+        rule_ar: "خزّن القيم العددية بنوع عددي بدل السلاسل النصية."
+        note: 'The surveyed export carried `surah_number: "2"` and `words_count: "6140"`.'
+        note_ar: "تضمن ملف التصدير المفحوص `surah_number: \"2\"` و`words_count: \"6140\"`."
+        checked_by: A schema check that no numeric fact sits in a string column.
+        checked_by_ar: "فحص للمخطط يتأكد من أن القيم العددية لا تُخزن في أعمدة نصية."
+      - id: closed-sets-from-registries
+        rule: A closed set, such as the numbering systems, the qiraat, the surahs or the sajdah places, is loaded from the [registries](/guidelines/en/reference/registries/), never written by hand as an enum in a migration.
+        rule_ar: "حمّل المجموعات المحددة القيم، مثل أنظمة عد الآي والقراءات والسور ومواضع السجدة، من [السجلات](/guidelines/ar/reference/registries/)، ولا تكتبها يدويًا بصيغة `enum` في ملف ترحيل."
+        checked_by: Each classification column's distinct values are a subset of its registry.
+        checked_by_ar: "التحقق من أن كل قيمة في عمود التصنيف موجودة في سجله."
+
+  - title: Identifiers and addressing
+    title_ar: "المعرفات والعنونة"
+    lead: A location is the triple of surah number, ayah number and numbering system; the number alone locates nothing.
+    lead_ar: "الموضع هو رقم السورة ورقم الآية ونظام عد الآي معًا، والرقم وحده لا يحدد موضعًا."
+    rules:
+      - id: ayah-key
+        rule: The short form `ayah_key` (`2:255`) is a serialisation of the triple and is only meaningful beside a declared numbering system; never store or exchange it without one.
+        rule_ar: "استخدم الصيغة المختصرة `ayah_key` مثل `2:255` لتمثيل الموضع نصيًا، مع ذكر نظام عد الآي الذي يكمل عناصره الـ3، ولا تخزنها أو تتبادلها دونه."
+        checked_by: Every table and endpoint that carries an `ayah_key` also carries `ayah_numbering_system`, directly or through the edition.
+        checked_by_ar: "وجود `ayah_numbering_system` مع `ayah_key` في جميع الجداول ونقاط `API`، مباشرةً أو عبر الطبعة."
+      - id: word-key
+        rule: A word is addressed by `word_key` (`2:255:3`), the ayah key plus `word_position` under a declared tokenisation, so the tokenisation is versioned with the dataset.
+        rule_ar: "حدد موضع الكلمة بحقل `word_key` مثل `2:255:3`، الذي يجمع مفتاح الآية و`word_position` وفق تقسيم معلن تُرقّم إصداراته مع `dataset`."
+        checked_by: The token count of each release, held as a golden value.
+        checked_by_ar: "عدد وحدات التقسيم المحفوظ بوصفه قيمة مرجعية لكل إصدار."
+      - id: id-is-opaque
+        rule: "`id` is internal, stable and opaque: never the text, never a hash of the text, and never reused after deletion."
+        rule_ar: "استخدم في `id` معرفًا داخليًا ثابتًا لا يحمل معنى، ولا تستخدم النص أو بصمته معرفًا أو تعيد استخدام المعرف بعد حذفه."
+        checked_by: A schema check that primary keys are integers or opaque strings.
+        checked_by_ar: "فحص للمخطط يتأكد من أن المفاتيح الأساسية أعداد صحيحة أو سلاسل لا تحمل معنى."
+
+  - title: API design
+    title_ar: "تصميم واجهات `API`"
+    lead: Resource paths use the canonical name and the code plural, and every parameter that changes the text is explicit.
+    lead_ar: "مسارات الموارد تستخدم الاسم المعتمد والجمع البرمجي، وكل معامل يغير النص يُذكر صراحةً."
+    rules:
+      - id: canonical-paths
+        rule: "Paths are `/surahs/{surah_number}/ayahs/{ayah_number}`, never `/chapters/{n}/verses/{m}`."
+        rule_ar: "استخدم المسارات `/surahs/{surah_number}/ayahs/{ayah_number}`، ولا تستخدم `/chapters/{n}/verses/{m}`."
+        checked_by: An OpenAPI lint asserting that every path segment resolves in the dictionary (`examples/api/`).
+        checked_by_ar: "فحص `lint` لمواصفات OpenAPI يتأكد من أن كل جزء من المسار يقابل مدخلًا في القاموس (`examples/api/`)."
+      - id: explicit-riwayah-and-numbering
+        rule: "`riwayah` and `ayah_numbering_system` are parameters with a documented default, and the response repeats the value that was applied."
+        rule_ar: "حدد قيمًا افتراضية موثقة للمعاملين `riwayah` و`ayah_numbering_system`، وأعد في الاستجابة القيمة المستخدمة لكل منهما."
+        example: |
+          ```text
+          GET /surahs/2/ayahs/255?riwayah=hafs_an_asim&ayah_numbering_system=kufi
+
+          {
+            "ayah_key": "2:255",
+            "surah_number": 2,
+            "ayah_number": 255,
+            "riwayah": "hafs_an_asim",
+            "ayah_numbering_system": "kufi",
+            "mushaf_edition": "…",
+            "version": "1.2.0",
+            "source_hash": "sha256:…",
+            "text": "…",
+            "search_key": "…"
+          }
+          ```
+        note: A silent default to Hafs and Kufi is wrong for every reader outside it, and no reader can see that it was applied.
+        note_ar: "استخدام حفص والعد الكوفي افتراضيًا دون إعلان يعطي نتيجة خاطئة لكل قارئ يستخدم غيرهما، ولا يوضح لأي قارئ أن هاتين القيمتين استُخدمتا."
+        checked_by: A contract test that every text response carries both fields.
+        checked_by_ar: "اختبار لعقد `API` يتأكد من أن كل استجابة نصية تحمل الحقلين."
+      - id: text-with-its-identity
+        rule: The `text` field is returned exactly as stored, beside `source_hash` and the dataset `version`, and a derived form such as `search_key` is a separate field.
+        rule_ar: "أعد حقل `text` كما خُزن تمامًا ومعه `source_hash` و`version` الخاص بـ`dataset`، وضع الصورة المشتقة مثل `search_key` في حقل مستقل."
+        checked_by: An OpenAPI lint that every schema carrying `text` also carries `source_hash` and `version`.
+        checked_by_ar: "فحص `lint` على OpenAPI يتأكد من أن كل مخطط يحمل `text` يحمل معه `source_hash` و`version`."
+      - id: pagination-on-ayah-boundary
+        rule: Pagination never cuts an ayah; a page of results ends on an ayah boundary.
+        rule_ar: "قسّم النتائج إلى صفحات تنتهي كل منها عند نهاية آية، دون تقسيم الآية بين صفحتين."
+        checked_by: A contract test on the last item of every page.
+        checked_by_ar: "اختبار لعقد `API` على آخر عنصر في كل صفحة."
+      - id: unknown-location-is-404
+        rule: An unknown location is a `404` that names the numbering system it was checked against, never a nearest guess.
+        rule_ar: "أعد استجابة `404` للموضع غير الموجود، واذكر فيها نظام عد الآي المستخدم للتحقق، دون تخمين أقرب موضع."
+        checked_by: A contract test with an ayah number valid in one system and not another.
+        checked_by_ar: "اختبار لعقد `API` برقم آية صحيح في نظام وغير صحيح في آخر."
+
+  - title: Storage and encoding
+    title_ar: "التخزين والترميز"
+    lead: The database compares Quranic text byte for byte and changes nothing on the way in or out.
+    lead_ar: "قاعدة البيانات تقارن النص القرآني بايتًا بايتًا، ولا تغير فيه شيئًا عند الإدخال أو الاسترجاع."
+    rules:
+      - id: binary-collation
+        rule: Text columns use a binary collation, so that `'مُحَمَّد' = 'محمد'` is false.
+        rule_ar: "استخدم `collation` ثنائيًا لأعمدة النص، حتى تكون نتيجة المقارنة `'مُحَمَّد' = 'محمد'` غير صحيحة."
+        example: |
+          In MySQL that is `utf8mb4_bin`; `SELECT 'مُحَمَّد' = 'محمد';` must return `0`.
+        checked_by: The collation query, run as a test against the shipped database.
+        checked_by_ar: "تشغيل استعلام `collation` بوصفه اختبارًا على قاعدة البيانات التي تنشرها."
+        example_ar: "في MySQL نستخدم `utf8mb4_bin`، ويجب أن يعيد `SELECT 'مُحَمَّد' = 'محمد';` القيمة `0`."
+      - id: no-normalisation-in-the-stack
+        rule: No normalisation anywhere between the file and the reader, not in the driver, the ORM, or a serialiser's "clean output" option.
+        rule_ar: "أبقِ النص دون تطبيع طوال انتقاله من الملف إلى القارئ، سواء في برنامج التشغيل أو `ORM` أو خيار «تنظيف المخرجات» في أداة تسلسل البيانات."
+        checked_by: A lint rule banning `normalize` in the text path.
+        checked_by_ar: "قاعدة `lint` تمنع `normalize` في مسار النص."
+      - id: allowlist-at-ingestion
+        rule: The character allowlist is enforced at ingestion, and a character outside it fails the import.
+        rule_ar: "تحقق عند إدخال البيانات من التزام النص بقائمة المحارف المسموح بها، وارفض الاستيراد إذا وجدت محرفًا خارجها."
+        checked_by: An import test with one foreign character.
+        checked_by_ar: "اختبار استيراد بمحرف واحد خارج القائمة."
+      - id: no-fulltext-on-text
+        rule: A full-text index on `text` with a collation that folds marks is a search on the wrong field; search goes through `search_key`.
+        rule_ar: "استخدم `search_key` للبحث، فإضافة فهرس للبحث النصي الكامل إلى `text` باستخدام `collation` يتجاهل الحركات تجعل البحث يجري في الحقل الخطأ."
+        checked_by: A schema check that no full-text index sits on a text column.
+        checked_by_ar: "فحص للمخطط يتأكد من عدم وجود فهرس للبحث النصي الكامل على عمود النص."
+
+  - title: Rendering and fonts
+    title_ar: "العرض والخطوط"
+    lead: The rasm, the dabt and the font are three layers, and only the first two are the text.
+    lead_ar: "نفصل بين 3 طبقات: الرسم والضبط والخط، ويتكون النص من الرسم والضبط فقط."
+    rules:
+      - id: layout-is-a-dataset
+        rule: A page-and-line layout is a dataset keyed to a `mushaf_edition`; it says which words fall on which line of which page and never carries text.
+        rule_ar: "خزّن تخطيط الصفحات والأسطر في `dataset` مرتبط بـ`mushaf_edition` يحدد صفحة كل كلمة وسطرها دون تخزين النص."
+        example: |
+          ```text
+          layout row:  mushaf_edition = "…"   page_number = 3   line_number = 7
+                       word_key = "2:6:1" … "2:7:4"
+          ```
+        checked_by: A snapshot test per page, rebuilt from the layout dataset and the text.
+        checked_by_ar: "اختبار لقطة لكل صفحة بعد إعادة بنائها من النص و`dataset` التخطيط."
+        example_ar: |
+          ```text
+          صف التخطيط:  mushaf_edition = "…"   page_number = 3   line_number = 7
+                       word_key = "2:6:1" … "2:7:4"
+          ```
+      - id: glyph-coded-text-is-derived
+        rule: A glyph-coded text, an ayah rewritten as the codepoints of one particular font, is a derived layer that names its font, its font version and the source hash.
+        rule_ar: "تعامل مع النص المرمّز بالخط، أي الآية المكتوبة بقيم `codepoint` الخاصة بخط معين، بوصفه طبقة مشتقة تسجل اسم الخط وإصداره وبصمة المصدر."
+        checked_by: The derived-layer hash check.
+        checked_by_ar: "فحص بصمة الطبقة المشتقة."
+      - id: no-fallback-fonts
+        rule: Fallback fonts are forbidden for Quranic text; a missing glyph fails the build and is never drawn by another font, because a substituted shape can read as a different mark.
+        rule_ar: "أوقف البناء إذا افتقد الخط شكلًا مطلوبًا في النص القرآني، ولا تستخدم خطًا بديلًا لرسمه، لأن الشكل البديل قد يُقرأ على أنه علامة أخرى."
+        checked_by: The `cmap` coverage test per font release, and a check that the text stack has one font.
+        checked_by_ar: "اختبار تغطية `cmap` لكل إصدار من الخط، وفحص يتأكد من أن مسار عرض النص يستخدم خطًا واحدًا."
+
+  - title: Audio and recitation
+    title_ar: "الصوت والتلاوة"
+    lead: A recording is a recitation by a reciter in a riwayah, with a style and a pace.
+    lead_ar: "التسجيل تلاوة يؤديها قارئ برواية معينة، ولها نمط أداء ومرتبة قراءة."
+    rules:
+      - id: reciter-is-not-rawi
+        rule: A reciter is not a rawi; the performer of a recording is bound to the riwayah they recite in, not entered as its transmitter.
+        rule_ar: "اربط القارئ الذي يؤدي التسجيل بالرواية التي يقرأ بها، ولا تسجله بوصفه راويها، فالقارئ يختلف عن الراوي."
+        checked_by: The `rawi_id` schema check above.
+        checked_by_ar: "فحص `rawi_id` على المخطط المذكور أعلاه."
+      - id: recitation-style
+        rule: The style of performance is `recitation_style`, and how the audio was cut is a property of the files rather than of the recitation.
+        rule_ar: "سجّل نمط الأداء في `recitation_style` وطريقة تقطيع الصوت ضمن خصائص الملفات، فهي ليست من خصائص التلاوة."
+        note: The surveyed codebase filed murattal, mujawwad and muallim under a `type` column and "by surah" and "by ayah" under a classification.
+        note_ar: "وضع الكود المفحوص «مرتل» و«مجود» و«معلم» في عمود `type`، و«حسب السور» و«حسب الآيات» في تصنيف."
+        checked_by: The terminology audit, which reports `type` on a Quranic concept.
+        checked_by_ar: "فحص المصطلحات الذي يبلغ عن `type` على مفهوم قرآني."
+      - id: timing-files-name-sources
+        rule: "`ayah_timing` and `word_timing` are derived layers, and each file names the hash of the audio it was aligned against, the text release and the numbering system."
+        rule_ar: "يمثل `ayah_timing` و`word_timing` طبقتين مشتقتين، ويسجل كل ملف بصمة التسجيل الصوتي الذي ضُبطت التوقيتات وفقه وإصدار النص ونظام عد الآي."
+        example: |
+          ```text
+          # ayah_timing v1
+          # riwayah:                hafs_an_asim
+          # audio_sha256:           …
+          # text_version:           1.2.0
+          # ayah_numbering_system:  kufi
+          ayah_key   start_ms   end_ms
+          1:1        0          5320
+          1:2        5320       9870
+          ```
+        checked_by: A build step that verifies the audio hash and the text release in every header against the current data.
+        checked_by_ar: "خطوة في البناء تتحقق من مطابقة بصمة الصوت وإصدار النص في ترويسة كل ملف للبيانات الحالية."
+      - id: app-concepts-are-not-named-here
+        rule: Streams, radios and playlists are application concepts; the application names them and the standard does not.
+        rule_ar: "يسمي التطبيق مفاهيم البث والإذاعات وقوائم التشغيل، لأنها تخصه ولا يحدد المعيار أسماءها."
+        checked_by: The scope rule of the standard, section 30.
+        checked_by_ar: "قاعدة نطاق المعيار في القسم 30."
+      - id: no-autoplay
+        rule: A recitation never plays without the reader's action; autoplay is off by default, and a notification or an advertisement never carries it.
+        rule_ar: "اجعل تشغيل التلاوة بطلب من القارئ فقط، مع تعطيل التشغيل التلقائي افتراضيًا وإبقاء الإشعارات والإعلانات خالية من التلاوة."
+        checked_by: A review rule for the interface.
+        checked_by_ar: "قاعدة لمراجعة الواجهة."
+
+  - title: Search
+    title_ar: "البحث"
+    lead: The search key is derived from the text by a versioned, deterministic function, and the reader never sees it.
+    lead_ar: "يُشتق مفتاح البحث من النص بدالة حتمية لها رقم إصدار، ولا يراه القارئ أبدًا."
+    rules:
+      - id: search-key-derivation
+        rule: The fold is the one the dataset ships, applied to the query and to the index alike, and a project never writes its own; where a dataset ships none, the project declares a function, versions it with the dataset, and strips only the dabt, the tatweel and the letter forms search should not distinguish.
+        rule_ar: "استخدم دالة تبسيط النص المرفقة مع `dataset` للاستعلام والفهرس معًا دون كتابة دالة خاصة بالمشروع، وإن لم يُرفق `dataset` دالة فعرّف واحدة وأعلن عنها ورقّم إصداراتها معه، واقتصر فيها على حذف علامات الضبط والتطويل وتوحيد صور الحروف التي ينبغي ألا يميز البحث بينها."
+        note: Quran Text, Quran SVG Elements and Quran Engine each ship a fold, and the three differ; an index built with one is searched with the same one, and a query folded with another finds nothing.
+        note_ar: "يرفق كل من Quran Text وQuran SVG Elements وQuran Engine دالة لتبسيط النص، وتختلف الدوال الثلاث؛ وللبحث في فهرس نستخدم الدالة التي بُني بها، فالاستعلام الذي تُطبّق عليه دالة أخرى لا يجد نتائج."
+        example: |
+          ```text
+          search_key(text), one dataset's declared fold:
+            1. remove dabt marks and the tatweel (U+0640)
+            2. أ إ آ ٱ → ا     ؤ → و     ئ → ي
+            3. ى → ي           ة → ه
+            4. collapse whitespace
+          ```
+        example_ar: |
+          ```text
+          search_key(text)، دالة التبسيط التي يعلنها dataset معيّن:
+            1. احذف علامات الضبط والتطويل (U+0640)
+            2. أ إ آ ٱ → ا     ؤ → و     ئ → ي
+            3. ى → ي           ة → ه
+            4. اختصر المحارف البيضاء المتتابعة إلى مسافة واحدة
+          ```
+        checked_by: Golden input-to-key cases, in the pattern of `tools/test_translit.py`, and a test that the query and the index use the same fold version.
+        checked_by_ar: "حالات مرجعية لتحويل المدخلات إلى مفاتيح على غرار `tools/test_translit.py`، واختبار يتأكد من أن الاستعلام والفهرس يستخدمان الإصدار نفسه من دالة التبسيط."
+      - id: search-function-is-versioned
+        rule: The function has a version, a change to it is a change to the dataset, and the index is rebuilt.
+        rule_ar: "خصص رقم إصدار للدالة، وعُدّ أي تغيير فيها تغييرًا في `dataset` يستلزم إعادة بناء الفهرس."
+        checked_by: A test that the index version equals the function version.
+        checked_by_ar: "اختبار يتأكد من أن إصدار الفهرس يساوي إصدار الدالة."
+      - id: results-link-to-text
+        rule: A result links to a location and to the stored `text`, never to the key.
+        rule_ar: "اربط النتيجة بالموضع وبالنص المخزن `text`، ولا تربطها بمفتاح البحث."
+        checked_by: A contract test on the search response.
+        checked_by_ar: "اختبار لعقد `API` على استجابة البحث."
+
+  - title: Caching
+    title_ar: "التخزين المؤقت"
+    lead: A cache key names everything that changes the text, and a cache of Quranic text is never invalidated by time alone.
+    lead_ar: "يتضمن مفتاح التخزين المؤقت كل ما يغير النص، ولا تنتهي صلاحية النص القرآني المخزن مؤقتًا بمرور الوقت وحده."
+    rules:
+      - id: cache-key-names-everything
+        rule: The key includes the dataset version, the source hash, the edition, the riwayah and the numbering system, even when two of them default to the same value today.
+        rule_ar: "ضمّن مفتاح التخزين المؤقت إصدار `dataset` وبصمة المصدر والطبعة والرواية ونظام عد الآي، حتى لو كانت القيمة الافتراضية لاثنين منها واحدة حاليًا."
+        note: The source hash is what invalidates the cache when a dataset is corrected before its version moves.
+        note_ar: "تبطل بصمة المصدر صلاحية النسخة المخزنة مؤقتًا عند تصحيح `dataset` قبل تغيير رقم إصداره."
+        example: |
+          ```text
+          cache key:  ayah:{version}:{source_hash:12}:{mushaf_edition}:{ayah_numbering_system}:{ayah_key}
+          CDN path:   /text/1.2.0/{mushaf_edition}/2/255.json
+          ```
+        example_ar: |
+          ```text
+          مفتاح التخزين المؤقت:  ayah:{version}:{source_hash:12}:{mushaf_edition}:{ayah_numbering_system}:{ayah_key}
+          مسار CDN:              /text/1.2.0/{mushaf_edition}/2/255.json
+          ```
+        checked_by: A test of the cache key format.
+        checked_by_ar: "اختبار لصيغة مفتاح التخزين المؤقت."
+      - id: major-invalidates-caches
+        rule: A `MAJOR` data release invalidates every cache of text built on the previous release, and CDN objects that hold text are immutable with the version in the path, not in a query string.
+        rule_ar: "أبطل صلاحية كل نص مخزن مؤقتًا من الإصدار السابق عند نشر إصدار بيانات `MAJOR`، وأبقِ ملفات النص في `CDN` ثابتة مع تضمين رقم الإصدار في المسار بدل سلسلة الاستعلام."
+        checked_by: A test that bumping the release changes every text URL.
+        checked_by_ar: "اختبار يتأكد من أن رفع رقم الإصدار يغير جميع روابط النص."

@@ -6,11 +6,11 @@
 
 ## كيف يُقترح تغيير
 
-1. **افتح `Issue`** يشرح **الحالة الواقعية** التي دفعت إليه: أي مشروع، وأي موضع، وما الذي التبس أو تعذر. القاعدة التي لا حالة وراءها لا تُعتمد.
+1. **افتح `Issue`** لتعديل قاعدة أو مصطلح، يشرح **الحالة الواقعية** التي دفعت إليه: أي مشروع، وأي موضع، وما الذي التبس أو تعذر. القاعدة التي لا حالة وراءها لا تُعتمد.
 2. **انتظر الاتفاق.** القاعدة تؤثر في مشاريع كثيرة، وتغييرها بعد اعتمادها أصعب من مناقشتها قبله.
 3. **أرسل `PR`** بعد الاتفاق، وأجب فيه عن قائمة المراجعة.
 
-وفي المستودع 3 قوالب: [`term.yml`](.github/ISSUE_TEMPLATE/term.yml) لاقتراح مصطلح، و[`proposal.yml`](.github/ISSUE_TEMPLATE/proposal.yml) لاقتراح قاعدة، و[`edit.yml`](.github/ISSUE_TEMPLATE/edit.yml) لتصحيح فقرة بعينها، ويُفتح من كل فقرة في الموقع.
+وفي المستودع 3 قوالب: [`term.yml`](.github/ISSUE_TEMPLATE/term.yml) لاقتراح مصطلح، و[`proposal.yml`](.github/ISSUE_TEMPLATE/proposal.yml) لاقتراح قاعدة، و[`edit.yml`](.github/ISSUE_TEMPLATE/edit.yml) لتصحيح فقرة بعينها.
 
 وقبل اقتراح مصطلح ابحث أولًا، فأكثر المصطلحات «الجديدة» تهجئة لمدخل موجود:
 
@@ -29,14 +29,13 @@ python3 skills/quranic-terminology/scripts/propose.py waqf_lazim "الوَقْف
 
 ## المتطلبات
 
-البناء يحتاج إلى Python 3 والحزم في `requirements.txt`، والموقع يحتاج إلى Node:
+البناء يحتاج إلى Python 3 والحزم في `requirements.txt`:
 
 </div>
 <div dir="ltr">
 
 ```bash
 pip install -r requirements.txt
-cd site && npm install
 ```
 
 </div>
@@ -54,7 +53,9 @@ cd site && npm install
 | مداخل علامات الضبط | `standards/terminology/data/dabt_marks.tsv` | `python3 tools/generate_dabt.py` |
 | كتلة `unicode` في أي مدخل | لا شيء، تُقرأ من قاعدة يونيكود | `python3 tools/generate_dabt.py` |
 | تهجئة `code` | `names.arabic.vocalized` | `python3 tools/translit.py`، والبناء يشتقها |
-| `content/ar/03-terminology/dictionary.md` و`content/en/…/dictionary.md` | المدخل نفسه، بحقوله العربية والإنجليزية | `python3 tools/generate_dictionary.py` |
+| `content/ar/reference/dictionary.md` و`content/en/…/dictionary.md` | المدخل نفسه، بحقوله العربية والإنجليزية | `python3 tools/generate_dictionary.py` |
+| `content/{ar,en}/naming.md` وسائر صفحات الأدلة | ملف القواعد `content/pages/<page>.yml` | `python3 tools/generate_pages.py` |
+| `content/glossary.json` (قائمة المصطلحات التي يعرضها الموقع) | مدخل المفهوم في `standards/terminology/concepts/` | `python3 tools/generate_glossary.py` |
 | `skills/quranic-terminology/` كله، ومنه `data/terminology.json` | المصدر الذي بُني منه | `python3 tools/generate_skill.py` |
 
 ## قبل الإرسال
@@ -81,7 +82,11 @@ python3 tools/build.py
 
 ## العربية والإنجليزية
 
-`content/ar` و`content/en` متقابلان ملفًا بملف، والصفحة الموجودة في لغة واحدة تُعَدّ نقصًا معروفًا يُستكمل لاحقًا. العربية أصل لصفحات النص والمصطلحات، والإنجليزية أصل لصفحات الهندسة.
+صفحة الدليل تُكتب مرة واحدة في `content/pages/<page>.yml`: كل قاعدة بالإنجليزية وإلى جانبها حقلها العربي (`rule_ar` و`note_ar` و`checked_by_ar`، وكذلك العنوان والمقدمة وعناوين الأقسام). وتُعدَّل اللغتان في الملف نفسه، ولا تُعدَّل الصفحة المولّدة.
+
+وبعد كتابة العربية أو مراجعتها شغّل `python3 tools/generate_pages.py --stamp <page>`، فيسجل هاش الإنجليزية التي تُرجمت عنها. وإن تغيرت الإنجليزية بعد ذلك فشل `tests/test_pages.py` وسمّى القاعدة التي تأخرت عربيتها. و`--check` يعرض ما لم يُترجم وما تقادم.
+
+والصفحة النثرية (المدخل، والرخصة، والمعيار، وسجل القرارات) ملف في كل لغة، والموجود في لغة واحدة نقص معروف.
 
 </div>
 
@@ -93,11 +98,11 @@ Open an issue before sending a PR, because the guidelines change through discuss
 
 ## How a change is proposed
 
-1. **Open an issue** describing the **real case** that prompted the change: which project, which place, what was ambiguous or impossible. A rule with no case behind it is not adopted.
+1. **Open an issue** for a change to a rule or a term, describing the **real case** that prompted the change: which project, which place, what was ambiguous or impossible. A rule with no case behind it is not adopted.
 2. **Wait for agreement.** Rules have long reach; changing one after adoption costs more than discussing it before.
 3. **Send a PR** once there is agreement, answering the checklist.
 
-There are 3 forms: [`term.yml`](.github/ISSUE_TEMPLATE/term.yml) to propose a term, [`proposal.yml`](.github/ISSUE_TEMPLATE/proposal.yml) to propose a guideline, and [`edit.yml`](.github/ISSUE_TEMPLATE/edit.yml) to correct one paragraph; every paragraph on the site links to it.
+There are 3 forms: [`term.yml`](.github/ISSUE_TEMPLATE/term.yml) to propose a term, [`proposal.yml`](.github/ISSUE_TEMPLATE/proposal.yml) to propose a guideline, and [`edit.yml`](.github/ISSUE_TEMPLATE/edit.yml) to correct one paragraph.
 
 Before proposing a term, search first. Most "new" terms are spellings of an entry that exists:
 
@@ -110,11 +115,10 @@ If the concept is genuinely new, `propose.py` drafts the proposal with the entry
 
 ## Prerequisites
 
-The build needs Python 3 and the packages in `requirements.txt`; the site needs Node:
+The build needs Python 3 and the packages in `requirements.txt`:
 
 ```bash
 pip install -r requirements.txt
-cd site && npm install
 ```
 
 ## What is never edited by hand
@@ -129,7 +133,9 @@ These files are generated, and an edit to them is lost on the next build:
 | The mark entries | `standards/terminology/data/dabt_marks.tsv` | `python3 tools/generate_dabt.py` |
 | The `unicode` block of any entry | nothing; it is read from the Unicode database | `python3 tools/generate_dabt.py` |
 | The `code` spelling | `names.arabic.vocalized` | `python3 tools/translit.py`; the build derives it |
-| `content/ar/03-terminology/dictionary.md` and `content/en/…/dictionary.md` | the entry itself, Arabic and English fields | `python3 tools/generate_dictionary.py` |
+| `content/ar/reference/dictionary.md` and `content/en/…/dictionary.md` | the entry itself, Arabic and English fields | `python3 tools/generate_dictionary.py` |
+| `content/{ar,en}/naming.md` and the other guideline pages | the rule file `content/pages/<page>.yml` | `python3 tools/generate_pages.py` |
+| `content/glossary.json` (the glossary the site renders) | the concept entry in `standards/terminology/concepts/` | `python3 tools/generate_glossary.py` |
 | All of `skills/quranic-terminology/`, including `data/terminology.json` | the source it was built from | `python3 tools/generate_skill.py` |
 
 ## Before sending
@@ -150,4 +156,8 @@ Every page carries `status` in its frontmatter:
 
 ## Arabic and English
 
-`content/ar` and `content/en` mirror each other file for file. A page that exists in one language only is a known gap to be filled later. Arabic is the source for the text and terminology pages; English is the source for the engineering pages.
+A guideline page is written once, in `content/pages/<page>.yml`: every rule in English with its Arabic field beside it (`rule_ar`, `note_ar`, `checked_by_ar`, and likewise the title, the intro and the section titles). Both languages are edited in that file, never in the rendered page.
+
+After writing or revising Arabic, run `python3 tools/generate_pages.py --stamp <page>`; it records the hash of the English each field was translated from. If the English changes afterwards, `tests/test_pages.py` fails and names the rule whose Arabic is behind. `--check` lists what is untranslated or stale.
+
+A prose page (start here, licensing, the standard, the decision record) is one file per language, and one that exists in one language only is a known gap.

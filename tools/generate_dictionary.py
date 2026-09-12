@@ -64,7 +64,7 @@ BANNER_EN = """> Generated from `standards/terminology/concepts/*.yml` — edit 
 
 AR = {
     "code": "ar",
-    "out": "content/ar/03-terminology/dictionary.md",
+    "out": "content/ar/reference/dictionary.md",
     "label": 1,
     "definition": "definition", "purpose": "purpose",
     "boundaries": "boundaries", "note": "note",
@@ -103,7 +103,7 @@ tableOfContents:
 
 EN = {
     "code": "en",
-    "out": "content/en/03-terminology/dictionary.md",
+    "out": "content/en/reference/dictionary.md",
     "label": 2,
     "definition": "definition_en", "purpose": "purpose_en",
     "boundaries": "boundaries_en", "note": "note_en",
@@ -207,7 +207,7 @@ class Index:
 
 
 def registry_link(name, loc):
-    return f"[`{name}`](/guidelines/{loc['code']}/03-terminology/registries/#{name})"
+    return f"[`{name}`](/guidelines/{loc['code']}/reference/registries/#{name})"
 
 
 def render_source(cite, sources, loc):

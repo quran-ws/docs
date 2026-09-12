@@ -7,7 +7,7 @@
 # than machine-translating it: a maintainer will write it. An entry with a TODO
 # in it is a draft, which is what a proposal is.
 #
-# Send it as a pull request or an issue at https://github.com/quran-ws/guidelines
+# Send it as a pull request or an issue at https://github.com/quran-ws/docs
 # under standards/terminology/concepts/{{CODE}}.yml.
 
 concept: {{CODE}}                # required — identical to names.code

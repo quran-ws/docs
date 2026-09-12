@@ -6,7 +6,7 @@
   },
   "metadata": {
     "description": "Guidelines for Quranic software: the Terminology Standard and its dictionary, packaged as an agent skill.",
-    "homepage": "https://github.com/quran-ws/guidelines"
+    "homepage": "https://github.com/quran-ws/docs"
   },
   "plugins": [
     {

@@ -5,16 +5,11 @@
 
 ## الحالة التي دفعت إليه — The case behind it
 
-<!-- الأدلة تتغير بحالة واقعية واجهناها، لا بتفضيل عام. اذكر المشروع والموضع، أو رقم الـ`Issue` الذي نوقش فيه.
-     The guidelines change through a real case, not a preference. Name the project and the place, or the issue where it was discussed. -->
+<!-- تعديل قاعدة أو مصطلح يذكر المشروع والموضع، أو رقم الـ`Issue` الذي نوقش فيه. وتصحيح فقرة لا يحتاج إلى `Issue`.
+     A change to a rule or a term names the project and the place, or the issue where it was discussed. A one-paragraph fix needs no issue. -->
 
 ## قبل المراجعة — Before review
 
-- [ ] نوقش في `Issue` قبل هذا الـ`PR`. — Discussed in an issue before this PR.
-- [ ] `python3 tools/build.py` يمر، والملفات المولّدة مضمنة في الـ`PR`: `dictionary.md` بلغتيه، و`aliases.json`، و`registry_aliases.json`، و`skills/quranic-terminology/`. — `python3 tools/build.py` passes, and the generated files are in the PR.
-- [ ] إن أضاف مدخلًا: أُجيب عن أسئلة قسم «قاعدة قبول أي مصطلح جديد» في المعيار، وله مصدر في `sources.yml`. — If it adds an entry: the questions of "The rule for accepting a new term" are answered, and it cites a source from `sources.yml`.
-- [ ] إن غيّر اسمًا: الاسم القديم مسجل في `alternative_spellings` أو `deprecated`. — If it renames: the old name is recorded in `alternative_spellings` or `deprecated`.
-- [ ] إن مس قواعد التهجئة: الحالات المتغيرة في `tools/test_translit.py` مذكورة. — If it touches the spelling rules: the golden cases that changed are listed.
-- [ ] إن أضاف قاعدة: كُتب معها ما يتحقق منها. — If it adds a rule: what checks it is written with it.
-- [ ] `status` صحيح، ولا يُوسم `adopted` ما ليس له مصدر. — `status` is right, and nothing is `adopted` without a source.
-- [ ] النسخة العربية والإنجليزية لم تتباعدا، أو التباعد مذكور صراحة. — The Arabic and English versions still match, or the gap is stated.
+- [ ] `python3 tools/build.py` و`python3 -m pytest -q` يمران، والملفات المولّدة مضمنة. — `python3 tools/build.py` and `python3 -m pytest -q` pass, and the generated files are in the PR.
+- [ ] إن مس قاعدة: عُدّلت في `content/pages/`، والعربية معها أو مذكور أنها تنتظر. — If it touches a rule: it was edited in `content/pages/`, with its Arabic, or the gap is stated.
+- [ ] إن أضاف مدخلًا أو غيّر اسمًا: له مصدر في `sources.yml`، والاسم القديم في `alternative_spellings` أو `deprecated`. — If it adds an entry or renames: it cites a source from `sources.yml`, and the old name is kept in `alternative_spellings` or `deprecated`.

@@ -1,0 +1,26 @@
+name: "تعارض بين صفحتين — Two pages disagree"
+description: "صفحتان تقولان شيئين مختلفين عن الأمر نفسه — Two pages, here or on quran.ws, state different things about the same matter."
+title: "[contradiction] "
+labels: ["contradiction"]
+body:
+  - type: input
+    id: first
+    attributes:
+      label: "الصفحة الأولى — First page"
+      description: "الرابط والفقرة — URL and the sentence"
+    validations:
+      required: true
+  - type: input
+    id: second
+    attributes:
+      label: "الصفحة الثانية — Second page"
+      description: "الرابط والفقرة — URL and the sentence"
+    validations:
+      required: true
+  - type: textarea
+    id: which
+    attributes:
+      label: "أيهما الصواب، ولماذا — Which is right, and how do you know"
+      description: "مصدر أو ملف أو أمر يُظهر الصواب — A source, a file or a command that shows it"
+    validations:
+      required: false

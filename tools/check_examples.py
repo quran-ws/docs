@@ -28,20 +28,22 @@ ALIASES = os.path.join(ROOT, "standards/terminology/aliases.json")
 REGISTRY_ALIASES = os.path.join(ROOT, "standards/terminology/registry_aliases.json")
 SCHEMA = os.path.join(ROOT, "standards/terminology/schema.json")
 CONCEPTS = os.path.join(ROOT, "standards/terminology/concepts")
-STANDARD = {"en": "content/en/03-terminology/standard.md",
-            "ar": "content/ar/03-terminology/standard.md"}
+STANDARD = {"en": "content/en/reference/standard.md",
+            "ar": "content/ar/reference/standard.md"}
+GUIDES = ["naming", "quranic-text", "versioning", "engineering", "repositories"]
 PAGES = [STANDARD["ar"], STANDARD["en"],
-         "content/ar/03-terminology/decisions.md",
-         "content/en/03-terminology/decisions.md",
-         "content/ar/02-quranic-text/index.md",
-         "content/en/02-quranic-text/index.md",
-         "content/ar/01-intro/writing-style.md",
-         "content/ar/01-intro/writing-guides.md",
-         "content/en/01-intro/writing-style.md",
-         "content/en/01-intro/writing-guides.md",
+         "content/ar/reference/decisions.md",
+         "content/en/reference/decisions.md",
+         "content/en/index.md", "content/ar/index.md",
+         *[f"content/{lang}/{g}.md" for lang in ("en", "ar") for g in GUIDES],
+         *[f"content/pages/{g}.yml" for g in GUIDES],
+         "docs/agent/ar/writing-style.md",
+         "docs/agent/ar/writing-guides.md",
+         "docs/agent/en/writing-style.md",
+         "docs/agent/en/writing-guides.md",
          "tools/README.md", "README.md", "CONTRIBUTING.md", "STRUCTURE.md"]
 # Where a "section N" may be written, and the forms it takes.
-REFERENCE_TREES = ["content", "tools", "standards", "skills", "README.md",
+REFERENCE_TREES = ["content", "docs", "tools", "standards", "skills", "README.md",
                    "CONTRIBUTING.md", "STRUCTURE.md"]
 REFERENCE_SUFFIXES = {".md", ".py", ".yml", ".yaml", ".json", ".tsv", ".txt"}
 SECTION_REF = re.compile(r"(?:\bsections?\s+|القسم\s+|القسمين\s+|§\s?)(\d+)(?:\s*(?:to|–|-|و|,|and)\s*(\d+))?")
@@ -67,6 +69,8 @@ COUNTER_EXAMPLES = {
 }
 # Vocabulary of the standard itself: field names, kinds, categories, source ids.
 SCHEMA_WORDS = {
+    # version and evidence field names named on the versioning and repositories pages
+    "format_version", "schema_version", "generate_glossary", "generate_adab", "primary_cited", "primary_cited_and_reviewed", "secondary_only",
     # data files referred to by name in the prose
     "established_spellings", "letter_names", "dabt_marks", "general_words",
     "display_evidence", "alternative_spellings", "english_glosses", "by_shape",
@@ -106,8 +110,19 @@ SCHEMA_WORDS = {
     "check_registries", "build_registry_aliases", "registry_aliases",
     "extract_ayah_counts", "ayah_counts", "turath_cache",
     "generate_skill", "skill_template", "audit_terminology", "update_check",
+    "generate_pages", "test_pages", "translations_json",
     # registry file names, and the sources their rows cite
     "qiraat_ayah_map", "ghayat_al_nihayah", "bayan_dani", "nasser_transmission",
+    # the fields of a rule file (content/pages/*.yml)
+    "checked_by", "title_ar", "description_ar", "intro_ar", "lead_ar", "rule_ar",
+    "example_ar", "note_ar", "checked_by_ar",
+    # the proposed manifest and erratum fields of the versioning page
+    "source_hash", "derived_from", "fixed_in", "confirmed_by", "confirmed_on",
+    "source_error", "transmission_error", "display_error", "madinah_hafs_1441",
+    # columns and headers the engineering page shows
+    "has_basmalah", "line_number", "audio_sha256", "text_version",
+    # names a survey found and the pages quote as what not to do
+    "surah_type", "words_count", "word_index", "word_number", "segment_number",
 }
 
 
@@ -240,6 +255,9 @@ def main():
             # section 11 — a collection is the code plus s, so `muqatta_letters` is a name
             plural_of = name[:-1] if name.endswith("s") else None
             if plural_of in aliases or plural_of in members:
+                continue
+            # section 21 — `<concept>_id` is the foreign key to a concept's row
+            if name.endswith("_id") and name[:-3] in aliases:
                 continue
             if name not in aliases and name not in members:
                 problems.append(f"  {rel}: {name!r} resolves to no concept or member")

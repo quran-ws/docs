@@ -1,0 +1,239 @@
+title: Repositories and licensing
+title_ar: "المستودعات والترخيص"
+description: Repository layout, commits, review, releases, what a project may rely on when it depends on us, and the licences everything is published under.
+description_ar: "بنية المستودع وتغييرات `commit` والمراجعة والإصدارات، وما يمكن للمشاريع التي تعتمد علينا توقعه، والرخص التي ننشر كل ذلك بموجبها."
+status: proposed
+order: 5
+intro: |
+  **The governing rule:** everything we publish can be rebuilt by someone who is
+  not us, from what is in the repository, under a licence that says what they
+  may do with it.
+
+  A Quran project publishes 3 kinds of thing: prose that explains, code and
+  data that a machine reads, and the Quranic text itself. Each is owned,
+  changed and reviewed differently, and the repository makes that difference
+  visible. The rules for the text itself are on the
+  [text page](/guidelines/en/quranic-text/), and the rules for versioning a
+  dataset on the [versioning page](/guidelines/en/versioning/).
+intro_ar: |
+  **القاعدة الأساسية:** يستطيع أي شخص من خارج الفريق إعادة بناء كل ما ننشره
+  من محتويات المستودع، بموجب رخصة توضح ما يُسمح له بفعله به.
+
+  ينشر المشروع القرآني 3 أنواع من المواد: صفحات للشرح، وكود وبيانات مقروءة
+  آليًا، والنص القرآني نفسه. ولكل نوع صاحبه وطريقته في التغيير والمراجعة،
+  ويوضح المستودع هذه الفروق. وتجد قواعد النص نفسه في
+  [صفحة النص](/guidelines/ar/quranic-text/)، وقواعد ترقيم إصدارات `dataset` في
+  [صفحة الإصدارات](/guidelines/ar/versioning/).
+sections:
+  - title: Licensing
+    title_ar: "الترخيص"
+    lead: Everything we publish is licensed, and the Quranic text is covered by no licence and no claim of ownership.
+    lead_ar: "ننشر كل موادنا برخصة، أما النص القرآني فلا تشمله رخصة ولا ندّعي ملكيته."
+    rules:
+      - id: default-licences
+        rule: Code is MIT and data and content are CC BY 4.0, with attribution waived for use inside a product and required for republication.
+        rule_ar: "الكود مرخص برخصة MIT والبيانات والمحتوى برخصة CC BY 4.0، ولا نطلب نسبة المصدر عند الاستخدام داخل منتج ونطلبها عند إعادة النشر."
+        note: The licences in full, the attribution we ask for and the attribution we waive, are in [Waqf and open licensing](/guidelines/en/licensing/).
+        note_ar: "تجد نصوص الرخص كاملة والحالات التي نطلب فيها نسبة المصدر أو نعفي منها في [الوقف والترخيص المفتوح](/guidelines/ar/licensing/)."
+        checked_by: The manifest schema requires `license`, and a check that each top-level directory appears in `LICENSE`.
+        checked_by_ar: "اشتراط حقل `license` في مخطط `manifest`، والتحقق من ذكر كل مجلد رئيسي في `LICENSE`."
+
+  - title: Repository layout
+    title_ar: "بنية المستودع"
+    lead: One repository holds one product or one dataset.
+    lead_ar: "خصص المستودع لمنتج واحد أو `dataset` واحد."
+    rules:
+      - id: one-repository-one-thing
+        rule: A dataset that several products share is its own repository, with its own releases.
+        rule_ar: "يوضع كل `dataset` تشترك فيه عدة منتجات في مستودع مستقل له إصداراته الخاصة."
+        checked_by: A review rule; there is no tool for it.
+        checked_by_ar: "مراجعة الالتزام بالقاعدة يدويًا، فلا توجد أداة لفحصها."
+      - id: source-and-generated
+        rule: The machine-readable source is the source of truth, the prose explains it, and anything generated is written by the build and never by hand.
+        rule_ar: "اعتمد المصدر المقروء آليًا مرجعًا والصفحات شرحًا له، واترك كتابة المخرجات المولّدة لعملية البناء دون تعديلها يدويًا."
+        example: |
+          ```yaml
+          - run: python3 tools/build.py
+          - run: git diff --exit-code   # a dirty tree means someone edited generated output
+          ```
+        checked_by: CI regenerates everything and fails when the tree is dirty afterwards.
+        checked_by_ar: "يعيد `CI` توليد جميع المخرجات ويفشل إذا وجد بعدها تغييرات في ملفات المستودع."
+        example_ar: |
+          ```yaml
+          - run: python3 tools/build.py
+          - run: git diff --exit-code   # وجود تغييرات يعني أن أحدًا عدّل مخرجات مولّدة
+          ```
+      - id: commit-generated-output-when-needed
+        rule: Commit generated output only when a consumer needs it without running the build, such as a page read on GitHub or a skill an agent installs; then the build is the only thing that writes it.
+        rule_ar: "أدرج المخرجات المولّدة في `commit` فقط عندما يحتاج المستخدم إلى الحصول عليها دون تشغيل البناء، مثل صفحة يقرؤها على GitHub أو مهارة يثبتها وكيل، مع إبقاء كتابتها حصرًا على عملية البناء."
+        checked_by: The same CI diff.
+        checked_by_ar: "مقارنة التغييرات نفسها في `CI`."
+      - id: readme-order
+        rule: "`README` states, in this order: what the repository is for, how to run or install it, the licence, and the status of what it contains."
+        rule_ar: "اذكر في `README` غرض المستودع ثم طريقة تشغيله أو تثبيته ثم الرخصة ثم حالة محتوياته، بهذا الترتيب."
+        checked_by: A review rule.
+        checked_by_ar: "قاعدة للمراجعة."
+
+  - title: Commits
+    title_ar: "تغييرات `commit`"
+    lead: One commit makes one change, and its subject says what changed in a plain sentence.
+    lead_ar: "يُحدث كل `commit` تغييرًا واحدًا، ويذكر عنوانه ما تغير بجملة عادية."
+    rules:
+      - id: subject-is-a-sentence
+        rule: The subject is a sentence a reader can act on, not a label, and the body gives the case behind the change.
+        rule_ar: "اكتب عنوان `commit` جملة واضحة تحدد التغيير المطلوب بدل عنوان عام، واشرح في المتن الحالة التي دعت إليه."
+        example: |
+          ```text
+          Yes:  Give every entry its English side, and generate the English dictionary
+          Yes:  Drop the case ending before deriving a name
+          No:   Update dictionary
+          No:   fix(terminology): misc
+          ```
+        checked_by: A review rule.
+        checked_by_ar: "قاعدة للمراجعة."
+        example_ar: |
+          ```text
+          نعم:  أضف النص الإنجليزي لكل مدخل وولّد القاموس الإنجليزي
+          نعم:  احذف حركة الإعراب قبل اشتقاق الاسم
+          لا:   تحديث القاموس
+          لا:   fix(terminology): متفرقات
+          ```
+      - id: text-commits-are-isolated
+        rule: A change to Quranic text data is its own commit and never shares one with code, prose or generated output, because its reviewer reads it character by character.
+        rule_ar: "خصص لتغيير بيانات النص القرآني `commit` مستقلًا عن تغييرات الكود وصفحات الشرح والمخرجات المولّدة، لأن مراجع النص يقرأ التغيير محرفًا محرفًا."
+        checked_by: A hook that fails a commit touching a text data file together with any other kind of file.
+        checked_by_ar: "أداة `hook` ترفض أي `commit` يجمع تغيير ملف بيانات النص القرآني وتغيير أي نوع آخر من الملفات."
+      - id: history-is-not-rewritten
+        rule: Published history is never rewritten; a mistake on `main` is fixed by a new commit that names the one it corrects.
+        rule_ar: "أبقِ سجل التغييرات المنشور كما هو، وأصلح أي خطأ في `main` بإضافة `commit` جديد يذكر `commit` الذي يصححه."
+        checked_by: Branch protection on `main` and on every tag.
+        checked_by_ar: "حماية الفرع `main` وكل وسم."
+      - id: signed-off
+        rule: A commit author is a person or a named bot, and every commit is signed off under the Developer Certificate of Origin (`git commit -s`).
+        rule_ar: "حدد مؤلف كل `commit`، سواء كان شخصًا أو روبوتًا معلوم الاسم، وأرفق بكل `commit` إقرارًا وفق Developer Certificate of Origin باستخدام `git commit -s`."
+        note: We use the DCO rather than a contributor licence agreement, because it asks the contributor to affirm that they may contribute under the repository's licence and nothing else.
+        note_ar: "نستخدم DCO بدلًا من اتفاقية ترخيص المساهم، لأنه يكتفي بإقرار المساهم بأن له حق المساهمة بموجب رخصة المستودع."
+        checked_by: A DCO bot that checks the `Signed-off-by` trailer on every commit.
+        checked_by_ar: "روبوت DCO يفحص سطر `Signed-off-by` في كل `commit`."
+
+  - title: Pull requests and review
+    title_ar: "طلبات الدمج والمراجعة"
+    lead: A pull request answers the template, and a reviewer approves a rule, not the prose around it.
+    lead_ar: "يستوفي طلب الدمج أسئلة القالب، ويعتمد المراجع القاعدة نفسها دون الاكتفاء بصياغة الشرح."
+    rules:
+      - id: issue-before-rule-change
+        rule: A change to a rule or a term follows an issue where it was agreed; a typo or a one-paragraph edit needs no issue.
+        rule_ar: "اتفق على تغيير القاعدة أو المصطلح في مسألة قبل تنفيذه، أما تصحيح خطأ مطبعي أو تعديل فقرة واحدة فلا يحتاج إلى مسألة."
+        checked_by: The pull request template, which asks for the issue.
+        checked_by_ar: "قالب طلب الدمج الذي يطلب رابط المسألة."
+      - id: second-reviewer-for-text
+        rule: Anything that touches Quranic text needs a second reviewer, who reads the diff as codepoints and compares the whole changed ayah with the published source.
+        rule_ar: "اعرض كل تغيير يمس النص القرآني على مراجع ثانٍ يقرأ الفرق بقيم `codepoint` ويقارن الآية المعدلة كاملة بالمصدر المنشور."
+        example: |
+          ```text
+          standards/            @quran-ws/terminology
+          data/text/            @quran-ws/text-review
+          ```
+
+          `CODEOWNERS` names the second reviewer for the paths that carry the standard and the text, so the request is automatic. The group names are placeholders.
+        checked_by: "`CODEOWNERS` covers every text data directory, and a bot refuses to merge without the second approval."
+        checked_by_ar: "يشمل `CODEOWNERS` جميع مجلدات بيانات النص، ويرفض روبوت الدمج أي طلب دون الموافقة الثانية."
+        example_ar: |
+          ```text
+          standards/            @quran-ws/terminology
+          data/text/            @quran-ws/text-review
+          ```
+
+          يحدد `CODEOWNERS` المراجع الثاني للمسارات التي تحتوي على المعيار والنص، فتُطلب مراجعته تلقائيًا، وأسماء المجموعات هنا مؤقتة للتوضيح.
+      - id: generated-output-not-reviewed-by-eye
+        rule: Generated output is not reviewed by eye; the reviewer checks that the source changed and that CI regenerated it.
+        rule_ar: "تحقق عند مراجعة المخرجات المولّدة من تعديل المصدر وإعادة `CI` توليدها، بدل مراجعة المخرجات نفسها بالنظر."
+        checked_by: The CI diff.
+        checked_by_ar: "مقارنة التغييرات في `CI`."
+
+  - title: Releases and tags
+    title_ar: "الإصدارات والوسوم"
+    lead: A release is a tag, and a tag is immutable.
+    lead_ar: "لكل إصدار وسم ثابت لا يتغير."
+    rules:
+      - id: tag-is-immutable
+        rule: Once published, a tag is never moved, deleted or rebuilt, and an old release stays downloadable, marked superseded.
+        rule_ar: "أبقِ الوسم المنشور دون نقله أو حذفه أو إعادة بنائه، وأبقِ الإصدار القديم متاحًا للتنزيل مع الإشارة إلى أن غيره حل محله."
+        checked_by: A hook that rejects a force-push to a tag or a tag deletion.
+        checked_by_ar: "أداة `hook` ترفض الدفع القسري إلى وسم أو حذفه."
+      - id: data-versioned-by-data-rules
+        rule: A dataset that carries Quranic text is versioned by the [data rules](/guidelines/en/versioning/), and code by ordinary semantic versioning.
+        rule_ar: "رقّم إصدارات كل `dataset` يحتوي على نص قرآني وفق [قواعد إصدارات البيانات](/guidelines/ar/versioning/)، وإصدارات الكود وفق الترقيم الدلالي المعتاد."
+        example: |
+          ```text
+          git tag:        hafs-uthmani-v3.0.0
+          dataset.json:   { "version": "3.0.0", "riwayah": "hafs_an_asim", … }
+          ```
+        checked_by: The release script compares the tag with `version` in the manifest and stops on a mismatch.
+        checked_by_ar: "يقارن سكربت الإصدار الوسم بحقل `version` في `manifest` ويتوقف عند الاختلاف."
+      - id: artefacts-name-their-build
+        rule: Every published artefact, a dataset, a skill or a package, carries its version and the commit it was built from, so a consumer can ask whether it is behind.
+        rule_ar: "أرفق بكل ما تنشره، سواء كان `dataset` أو مهارة أو حزمة، رقم إصداره و`commit` الذي بُني منه، حتى يعرف مستخدمه إن كان هناك إصدار أحدث."
+        example: |
+          The skill's `update_check.py` is the pattern; every artefact gets the same.
+        checked_by: A test that each published artefact carries `version` and the commit.
+        checked_by_ar: "اختبار يتأكد من وجود `version` و`commit` المستخدم في البناء مع كل ما يُنشر."
+        example_ar: "اتبع نموذج `update_check.py` في المهارة وأضف أداة مماثلة إلى كل ما تنشره."
+  - title: Depending on us
+    title_ar: "الاعتماد علينا"
+    lead: A downstream project pins a tagged release, never `main`.
+    lead_ar: "يحدد المشروع الذي يعتمد علينا إصدارًا موسومًا للاستخدام بدل `main`."
+    rules:
+      - id: what-is-promised
+        rule: "Within a `MAJOR` we promise the text bytes, the identifiers, the ayah boundaries and the source hash of every released dataset, and the `code` names of every `adopted` entry; we do not promise prose wording, `display` names, or anything `draft` or `proposed`."
+        rule_ar: "نضمن ثبات بايتات النص والمعرفات وحدود الآيات وبصمة المصدر لكل `dataset` منشور وأسماء `code` لكل مدخل حالته `adopted` ما دامت قيمة `MAJOR` ثابتة، ولا نضمن ثبات صياغة الشرح أو أسماء `display` أو أي شيء حالته `draft` أو `proposed`."
+        checked_by: The `status` field on every page and entry.
+        checked_by_ar: "حقل `status` في كل صفحة ومدخل."
+      - id: record-the-pin
+        rule: A project that depends on us records the pinned version in its own manifest, beside the dataset identity, so its own consumers can trace the chain.
+        rule_ar: "سجّل الإصدار الذي يعتمد عليه مشروعك في ملف `manifest` الخاص به بجانب هوية `dataset`، حتى يتمكن مستخدمو مشروعك من تتبع تسلسل الاعتماد."
+        checked_by: The manifest schema of the dependant.
+        checked_by_ar: "مخطط `manifest` في المشروع الذي يعتمد علينا."
+      - id: readme-lists-pins
+        rule: The `README` lists the supported pins, which releases are current, which are superseded, and for how long a superseded release stays available.
+        rule_ar: "اذكر في `README` الإصدارات المدعومة التي يمكن تثبيت الاعتماد عليها، وحدد الحالي منها وما حل غيره محله ومدة بقاء الإصدارات السابقة متاحة."
+        checked_by: A review rule.
+        checked_by_ar: "قاعدة للمراجعة."
+
+  - title: Contributing from outside
+    title_ar: "المساهمة من خارج الفريق"
+    lead: A contribution is accepted by the same rules as our own work.
+    lead_ar: "نطبق على المساهمات الخارجية قواعد القبول نفسها التي نطبقها على عملنا."
+    rules:
+      - id: claims-have-sources
+        rule: A scholarly claim, such as a definition, a count or an attribution to a qiraah or a numbering system, cites a source listed in `sources.yml`, and a claim with no source stays `draft`.
+        rule_ar: "وثّق كل معلومة علمية، مثل تعريف أو عدد أو نسبة إلى قراءة أو نظام عد الآي، بمصدر مدرج في `sources.yml`، وأبقِ ما لا مصدر له في حالة `draft`."
+        checked_by: "`tools/validate.py` refuses `adopted` on an entry with no source."
+        checked_by_ar: "يرفض `tools/validate.py` الحالة `adopted` لأي مدخل لا مصدر له."
+      - id: text-contributions-name-their-edition
+        rule: A contribution that adds or changes Quranic text names the published edition it was taken from and goes through the second review.
+        rule_ar: "تذكر المساهمة التي تضيف نصًا قرآنيًا أو تغيره الطبعة المنشورة التي أُخذ منها، وتمر بالمراجعة الثانية."
+        checked_by: The `CODEOWNERS` rule above.
+        checked_by_ar: "قاعدة `CODEOWNERS` المذكورة أعلاه."
+      - id: code-of-conduct
+        rule: The repository states its code of conduct in `CODE_OF_CONDUCT.md`, and whoever maintains it answers an issue with a decision or a question, never silence.
+        rule_ar: "انشر ميثاق السلوك في `CODE_OF_CONDUCT.md`، وعلى المسؤول عن المستودع الرد على المسائل بقرار أو سؤال دون تركها بلا رد."
+        checked_by: A review rule.
+        checked_by_ar: "قاعدة للمراجعة."
+      - id: evidence-tiers
+        rule: A scholarly claim carries the tier of its best evidence and the state of its documentation, and both are shown as recorded, never averaged into a score.
+        rule_ar: "سجّل مع كل قول علمي مرتبة أقوى أدلته وحالة توثيقه، واعرضهما كما سُجّلتا دون حساب متوسط يجمعهما في درجة واحدة."
+        example: |
+          ```text
+          tier:   primary | commentary | secondary | modern-reference | api-check
+          state:  uncited | secondary_only | primary_cited | primary_cited_and_reviewed | disputed | unresolved
+          ```
+        example_ar: |
+          ```text
+          tier:   primary | commentary | secondary | modern-reference | api-check
+          state:  uncited | secondary_only | primary_cited | primary_cited_and_reviewed | disputed | unresolved
+          ```
+        note: An `api-check` alone never settles a claim, and a disputed position is never inferred from a total.
+        note_ar: "لا يكفي `api-check` وحده لحسم قول، ولا يُستنتج موقف في مسألة خلافية من مجموع درجات."
+        checked_by: A schema check that every claim carries both fields with a value from the list.
+        checked_by_ar: "فحص للمخطط يتأكد من أن كل قول يحمل الحقلين بقيم من القائمة."

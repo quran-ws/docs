@@ -1,0 +1,332 @@
+title: Quranic text
+title_ar: "النص القرآني"
+description: The text is transmitted source data, never edited. The rules for storing, encoding, tokenising, displaying and testing it.
+description_ar: "نحفظ النص القرآني كما نُقل من مصدره دون تعديل، وهذه قواعد تخزينه وترميزه وتقسيمه وعرضه واختباره."
+status: proposed
+order: 2
+intro: |
+  **The governing rule:** Quranic text is immutable source data. Store it,
+  record its identity, verify it, and build everything else as derived layers
+  around it, never as edits to it.
+
+  The reason is not technical. The Quran is the word of God, and He undertook
+  its preservation: ﴿إِنَّا نَحۡنُ نَزَّلۡنَا ٱلذِّكۡرَ وَإِنَّا لَهُۥ لَحَٰفِظُونَ﴾
+  (15:9). A reader who opens your app is reading the mushaf, so anything wrong
+  on the screen is charged to the mushaf, not to your code.
+
+  The figures on this page come from one audit of a published Uthmani text in
+  the riwayah of Hafs from Asim with Kufi numbering. `tools/audit_text.py`
+  recomputes every one of them from any text file. `examples/` holds a schema,
+  an API, data records and tests that carry these rules in canonical names.
+intro_ar: |
+  **القاعدة الأساسية:** نحفظ النص القرآني كما هو دون تعديل، ونوثق هويته ونتحقق
+  منه، ونبني كل ما يعتمد عليه في طبقات مشتقة دون تغيير الأصل.
+
+  والسبب ليس تقنيًا، فالقرآن كلام الله، وقد تكفل سبحانه بحفظه فقال:
+  ﴿إِنَّا نَحۡنُ نَزَّلۡنَا ٱلذِّكۡرَ وَإِنَّا لَهُۥ لَحَٰفِظُونَ﴾ (15:9).
+  والقارئ الذي يفتح تطبيقك يقرأ المصحف، فإذا وجد خللًا على الشاشة نسبه إلى
+  المصحف وليس إلى الكود.
+
+  الأرقام الواردة هنا مأخوذة من فحص واحد لنص عثماني منشور برواية حفص عن عاصم
+  وفق العد الكوفي، ويعيد `tools/audit_text.py` حساب كل رقم منها من أي ملف نصي.
+  وفي `examples/` مخطط قاعدة بيانات وواجهة `API` وسجلات بيانات واختبارات
+  تلتزم بهذه القواعد وتستخدم الأسماء المعتمدة.
+sections:
+  - title: The source
+    title_ar: "المصدر"
+    lead: The text is transmitted, not authored. You are not its editor.
+    lead_ar: "النص أصل منقول، ولست مؤلفه ولا محرره."
+    rules:
+      - id: identify-before-import
+        rule: "Identify a text before you import it: edition, riwayah, ayah numbering system, version, and a hash of the file."
+        rule_ar: "وثّق هوية النص قبل استيراده بذكر الطبعة والرواية ونظام عد الآي والإصدار وبصمة الملف."
+        example: |
+          `examples/data/mushaf_edition.json` is that record.
+        checked_by: A schema check that every text-bearing table carries a foreign key to the edition it was built from (`examples/schema/`).
+        checked_by_ar: "فحص للمخطط يتأكد من أن كل جدول يحتوي على نص يتضمن مفتاحًا أجنبيًا يشير إلى الطبعة التي أُخذ منها (`examples/schema/`)."
+        example_ar: "يمثل `examples/data/mushaf_edition.json` هذا السجل."
+      - id: never-edit-in-place
+        rule: Never edit the source in place; any processing produces a new copy or a new layer, and the source stays reproducible from the published original.
+        rule_ar: "أبقِ الأصل دون تعديل، واجعل كل معالجة تنتج نسخة أو طبقة جديدة مع إمكان إعادة إنشاء الأصل من المصدر المنشور."
+        checked_by: An expected checksum per approved release, and a build that fails when it moves.
+        checked_by_ar: "بصمة متوقعة لكل إصدار معتمد، ويتوقف البناء إذا اختلفت البصمة المحسوبة عنها."
+      - id: derive-or-transmit
+        rule: Anything derivable is re-derived, and anything transmitted from the mushaf is stored as transmitted, with where it came from.
+        rule_ar: "أعد اشتقاق كل ما يمكن اشتقاقه، واحفظ ما نُقل من المصحف كما نُقل مع ذكر مصدره."
+        checked_by: Every derived layer records the hash of the text it was built from, and a build step compares it with the current source.
+        checked_by_ar: "تسجل كل طبقة مشتقة بصمة النص الذي بُنيت عليه، وتقارن إحدى خطوات البناء هذه البصمة ببصمة المصدر الحالي."
+      - id: never-type-the-text
+        rule: Never type Quranic text by hand, in code, prose, tests or documentation; quote it by reference, or copy it from a released dataset and name the release.
+        rule_ar: "أدرج النص القرآني بالإحالة إلى موضعه، أو انسخه من إصدار منشور من `dataset` مع ذكر الإصدار، دون كتابته يدويًا في الكود أو الشرح أو الاختبارات أو التوثيق."
+        note: Placeholder Arabic reads as Quran to whoever sees it, and a typed ayah carries no identity to verify against.
+        note_ar: "يظن القارئ أن النص العربي المؤقت الذي تضعه مكان القرآن نص قرآني، والآية المكتوبة يدويًا لا تحمل هوية تتيح التحقق منها."
+        checked_by: The lint of rule 7.5, run over source files and documentation as well; and review.
+        checked_by_ar: "فحص `lint` المذكور في القاعدة 7.5، مع تشغيله على ملفات المصدر والتوثيق أيضًا، والمراجعة."
+
+  - title: Encoding and characters
+    title_ar: "الترميز والمحارف"
+    lead: Compare codepoints, never shapes, and never let a library "clean" the text.
+    lead_ar: "اعتمد في المقارنة على قيم `codepoint` بدل الأشكال، ولا تسمح لأي مكتبة «بتنظيف» النص."
+    rules:
+      - id: one-encoding
+        rule: Use one declared Unicode encoding end to end, in the source file, the database, the API and the frontend.
+        rule_ar: "احفظ النص بترميز Unicode واحد معلن، من ملف المصدر إلى قاعدة البيانات وواجهة `API` والواجهة الأمامية."
+        checked_by: A round-trip test that reading, storing and retrieving returns the same codepoints at every stage.
+        checked_by_ar: "اختبار يتأكد من أن القراءة والتخزين والاسترجاع تعيد قيم `codepoint` نفسها في كل مرحلة."
+      - id: no-normalisation
+        rule: Never run `normalize` on the source, to `NFC`, `NFD`, `NFKC` or `NFKD`.
+        rule_ar: "لا تشغّل `normalize` على الأصل بأي من الصيغ `NFC` أو `NFD` أو `NFKC` أو `NFKD`."
+        example: |
+          Running `NFC` over a full mushaf changed **5,771 ayahs out of 6,236**, in two ways:
+
+          ```text
+          reorders:  ل + ّ (U+0651) + َ (U+064E)   →   ل + َ (U+064E) + ّ (U+0651)
+          composes:  ا (U+0627) + ٓ (U+0653)       →   آ (U+0622)   in ٱلضَّآلِّينَ (1:7)
+          ```
+
+          `NFKC` is worse, because it replaces a character with what Unicode treats as equivalent and the original is gone:
+
+          ```text
+          ﷲ  (U+FDF2)  →  الله
+          ﷺ  (U+FDFA)  →  صلى الله عليه وسلم
+          ```
+        checked_by: A lint rule that bans `normalize` in the text path, from file to reader.
+        checked_by_ar: "قاعدة `lint` تمنع `normalize` في مسار النص من الملف إلى القارئ."
+        example_ar: |
+          غيّر تشغيل `NFC` على مصحف كامل **5,771 آية من 6,236**، بطريقتين:
+
+          ```text
+          يعيد الترتيب:  ل + ّ (U+0651) + َ (U+064E)   →   ل + َ (U+064E) + ّ (U+0651)
+          ويدمج:         ا (U+0627) + ٓ (U+0653)       →   آ (U+0622)   في ٱلضَّآلِّينَ (1:7)
+          ```
+
+          وأثر `NFKC` أشد، لأنه يستبدل المحرف بما تعده Unicode مكافئًا له، فيضيع الأصل:
+
+          ```text
+          ﷲ  (U+FDF2)  →  الله
+          ﷺ  (U+FDFA)  →  صلى الله عليه وسلم
+          ```
+      - id: no-generic-cleanup
+        rule: Don't trim, strip "weird characters", collapse whitespace, swap look-alike characters or remove marks from the source; generate a separate copy when search needs one.
+        rule_ar: "أبقِ الأصل دون حذف المسافات من طرفيه أو إزالة «المحارف الغريبة» أو دمج المسافات أو استبدال المحارف بأخرى تشبهها أو حذف العلامات، وأنشئ نسخة منفصلة إذا احتاج البحث إليها."
+        checked_by: The checksum test, and a test that the text field holds no digits, Latin letters or HTML.
+        checked_by_ar: "اختبار البصمة، واختبار يتأكد من أن حقل النص لا يحمل أرقامًا أو حروفًا لاتينية أو `HTML`."
+      - id: character-allowlist
+        rule: Build an allowlist of the characters your text uses and fail the build on anything outside it.
+        rule_ar: "أنشئ قائمة بالمحارف المسموح بها من محارف النص، وأوقف البناء عند ظهور أي محرف خارجها."
+        example: |
+          The audited text is built from 70 distinct characters, and ayah `1:1` still began with a `U+FEFF` picked up during export, invisible on screen.
+
+          ```bash
+          python3 tools/audit_text.py <file> --format tanzil    # computes the allowlist and every figure on this page
+          ```
+        checked_by: The allowlist, enforced at ingestion; a character outside it fails the import.
+        checked_by_ar: "التحقق عند إدخال البيانات من التزام النص بقائمة المحارف المسموح بها، ورفض الاستيراد عند وجود محرف خارجها."
+        example_ar: |
+          يتكون النص المفحوص من 70 محرفًا مختلفًا، ومع ذلك بدأت الآية `1:1` بمحرف `U+FEFF` أُضيف عند التصدير ولا يظهر على الشاشة.
+
+          ```bash
+          python3 tools/audit_text.py <file> --format tanzil    # يحسب قائمة المحارف المسموح بها وكل رقم في هذه الصفحة
+          ```
+      - id: length-is-not-letters
+        rule: A string's length is not the number of visible letters, so never size, cut or count by it.
+        rule_ar: "طول السلسلة لا يساوي عدد الحروف المرئية، فلا تعتمد عليه لتحديد الحجم أو القص أو العد."
+        example: |
+          The audited text is **1,360,018 bytes** and **721,236 codepoints**, and has fewer visible letters than either.
+        checked_by: A truncation test that cuts an ayah at every length and asserts no letter is split from its marks.
+        checked_by_ar: "اختبار يقص آية عند كل طول ويتأكد من أنه لا يفصل حرفًا عن حركاته."
+        example_ar: "في النص المفحوص **1,360,018 بايت** و**721,236 قيمة `codepoint`**، وعدد الحروف المرئية أقل من كل منهما."
+  - title: Rasm, marks and fonts
+    title_ar: "الرسم والضبط والخطوط"
+    lead: The skeleton, the marks and the font are three layers, and only the first two are the text.
+    lead_ar: "نفصل بين 3 طبقات: هيكل الحروف وعلامات الضبط والخط، ويتكون النص من الطبقتين الأوليين فقط."
+    rules:
+      - id: three-layers
+        rule: Keep the consonantal skeleton (rasm), the marks that vowel it (dabt) and the font that draws it apart; what you see is not the text.
+        rule_ar: "افصل الرسم، وهو هيكل الحروف، عن الضبط، وهو علامات الحركات، وعن الخط الذي يرسمهما، فالصورة المعروضة تختلف عن النص المخزن."
+        checked_by: A schema in which a font, a layout and a glyph-coded text are separate datasets keyed to the edition.
+        checked_by_ar: "مخطط يخزن الخط والتخطيط والنص المرمّز بالخط في `datasets` منفصلة مرتبطة بالطبعة."
+      - id: glyph-is-not-character
+        rule: A glyph is not a character, and neither the font nor the shaping engine is a source of truth.
+        rule_ar: "الشكل الذي يرسمه الخط ليس محرفًا، ولا يُعد الخط أو محرك تشكيل النص مرجعًا معتمدًا."
+        checked_by: The codepoint round-trip test.
+        checked_by_ar: "اختبار القراءة والتخزين والاسترجاع الذي يقارن قيم `codepoint`."
+      - id: font-coverage
+        rule: Check your character set against the font's `cmap` before adopting it, because a character with no glyph disappears or renders as a box and the reader won't notice.
+        rule_ar: "تحقق من وجود محارف النص في جدول `cmap` للخط قبل اعتماده، لأن المحرف الذي لا يقابله شكل في الخط يختفي أو يظهر مربعًا دون أن ينتبه القارئ."
+        checked_by: A `cmap` coverage test per font release, and a snapshot of an ayah with a shaddah, a vowel and a small waqf mark.
+        checked_by_ar: "اختبار تغطية `cmap` لكل إصدار من الخط، ولقطة لآية فيها شدة وحركة وعلامة وقف صغيرة."
+      - id: edition-marks-are-not-text
+        rule: "Edition marks are not part of an ayah: end of ayah ۝ (`U+06DD`), rubu al-hizb ۞ (`U+06DE`), sajdah ۩ (`U+06E9`)."
+        rule_ar: "علامات الطبعة ليست من نص الآية، ومنها رأس الآية ۝ (`U+06DD`) وربع الحزب ۞ (`U+06DE`) والسجدة ۩ (`U+06E9`)."
+        example: |
+          In the audited text **199 ayahs** start with ۞ and **15** contain ۩ inside the text field. Anyone building on that field counts them as words and searches them.
+        checked_by: A test that the text field holds no edition mark.
+        checked_by_ar: "اختبار يتأكد من خلو حقل النص من علامات الطبعة."
+        example_ar: "في النص المفحوص **199 آية** تبدأ بـ۞ و**15** تحتوي على ۩ داخل حقل النص، فيحسب من يستخدم هذا الحقل العلامات ضمن الكلمات ويشملها البحث."
+      - id: no-markup-in-source
+        rule: Never inject display markup or HTML into the source.
+        rule_ar: "أبقِ الأصل خاليًا من وسوم العرض و`HTML`."
+        checked_by: The text-only test on the text field.
+        checked_by_ar: "اختبار يتأكد من أن حقل النص لا يحمل إلا نصًا."
+
+  - title: Locations, tokens and offsets
+    title_ar: "المواضع ووحدات التقسيم والإزاحات"
+    lead: The text is never the key.
+    lead_ar: "النص نفسه لا يكون مفتاحًا أبدًا."
+    rules:
+      - id: stable-identifiers
+        rule: Give surahs, ayahs and words stable identifiers; the text itself is never the key.
+        rule_ar: "خصص معرفات ثابتة للسور والآيات والكلمات، ولا تستخدم النص نفسه مفتاحًا."
+        checked_by: A schema check that every text-bearing row has an identifier that is not derived from the text.
+        checked_by_ar: "فحص للمخطط يتأكد من أن لكل صف يحتوي على نص معرفًا غير مشتق من النص."
+      - id: location-is-a-triple
+        rule: An ayah number alone is not a location; bind it to its surah and its numbering system.
+        rule_ar: "اربط رقم الآية بالسورة وبنظام عد الآي، لأن رقم الآية وحده لا يحدد موضعًا."
+        checked_by: A schema check that every text-bearing row and endpoint carries the surah, the ayah number and the numbering system (`examples/schema/`).
+        checked_by_ar: "فحص للمخطط يتأكد من ذكر السورة ورقم الآية ونظام عد الآي في كل صف يحتوي على نص وفي كل نقطة `API` تعيده (`examples/schema/`)."
+      - id: explicit-tokenisation
+        rule: Define your tokenisation explicitly, because a programmatic word does not always match a word in the mushaf.
+        rule_ar: "عرّف طريقة التقسيم صراحةً، لأن الكلمة البرمجية لا تطابق الكلمة في المصحف دائمًا."
+        example: |
+          ```text
+          يَٰٓأَيُّهَا   (2:21)   one whitespace token, two words linguistically
+          مَالِ هَٰذَا  (25:7)   two whitespace tokens, one word linguistically
+          ```
+
+          Splitting the audited text on whitespace yields **82,456** tokens, which is not the word count of the mushaf, and 199 of them are rubu al-hizb marks.
+        checked_by: The tokenisation is versioned with the dataset, and a golden test holds the token count of each release.
+        checked_by_ar: "ترقيم إصدارات التقسيم مع `dataset`، واختبار مرجعي يحفظ عدد وحدات التقسيم في كل إصدار."
+        example_ar: |
+          ```text
+          يَٰٓأَيُّهَا   (2:21)   وحدة واحدة عند التقسيم بالمسافات، وكلمتان في اللغة
+          مَالِ هَٰذَا  (25:7)   وحدتان عند التقسيم بالمسافات، وكلمة واحدة في اللغة
+          ```
+
+          ينتج عن تقسيم النص المفحوص بالمسافات **82,456** وحدة، وهذا لا يساوي عدد كلمات المصحف، ومن هذه الوحدات 199 علامة ربع حزب.
+      - id: offsets-name-their-text
+        rule: "Every offset carries three things: which text it was computed on, in which encoding, and in which unit."
+        rule_ar: "اذكر مع كل إزاحة النص الذي حُسبت عليه والترميز الذي حُسبت به ووحدة القياس."
+        checked_by: A schema check on every stored offset; a missing field fails the build.
+        checked_by_ar: "فحص للمخطط يتحقق من بيانات كل إزاحة مخزنة ويوقف البناء عند غياب أي حقل."
+
+  - title: Riwayahs, editions and numbering systems
+    title_ar: "الروايات والطبعات وأنظمة العد"
+    lead: However alike two texts look, they are not interchangeable.
+    lead_ar: "لا يحل نص محل آخر مهما تشابها في الشكل."
+    rules:
+      - id: never-mix-editions
+        rule: Never mix data from different riwayahs or editions, however identical the text looks.
+        rule_ar: "لا تخلط بيانات روايات أو طبعات مختلفة، ولو بدا النص متطابقًا."
+        checked_by: A foreign key to the edition on every text table; a query across editions is a deliberate join, never a default.
+        checked_by_ar: "مفتاح أجنبي يشير إلى الطبعة في كل جدول للنص، مع اشتراط ربط صريح بين الطبعات عند الاستعلام عنها معًا بدل الربط الافتراضي."
+      - id: numbering-systems-differ
+        rule: Numbering systems are not interchangeable, and ayah boundaries do not line up across them.
+        rule_ar: "لا تحل أنظمة عد الآي بعضها محل بعض، ولا تتطابق حدود الآيات بينها."
+        example: |
+          6,236 is the total of the Kufi system (`kufi`), not a universal fact. `standards/terminology/registries/ayah_numbering.tsv` has one row per system with its total.
+        checked_by: Surah and ayah counts tested against the edition and numbering system you ship, never against remembered constants.
+        checked_by_ar: "اختبار أعداد السور والآيات وفق الطبعة ونظام عد الآي اللذين تنشرهما، دون الاعتماد على أعداد ثابتة من الذاكرة."
+        example_ar: "عدد الآيات في العد الكوفي (`kufi`) هو 6,236، ويختلف العدد باختلاف نظام العد، ويخصص `standards/terminology/registries/ayah_numbering.tsv` صفًا لكل نظام مع مجموع آياته."
+      - id: basmalah-is-a-field
+        rule: The basmalah is its own field, because whether it counts as an ayah depends on the numbering system, and surah al-Tawbah has none.
+        rule_ar: "خصص حقلًا مستقلًا للبسملة، لأن احتسابها آية يعتمد على نظام عد الآي، ولأن سورة التوبة لا تبدأ بالبسملة."
+        checked_by: A schema check that the basmalah is not inside the first ayah's text field.
+        checked_by_ar: "فحص للمخطط يتأكد من أن البسملة ليست داخل حقل نص الآية الأولى."
+
+  - title: Derived layers
+    title_ar: "الطبقات المشتقة"
+    lead: Everything built on the text names the text it was built on.
+    lead_ar: "كل ما يعتمد على النص يسجل النص الذي بُني عليه."
+    rules:
+      - id: layers-record-source-hash
+        rule: Every derived layer, from tajwid and segmentation to translation, tafsir and search indexes, stores the hash of the text it was derived from.
+        rule_ar: "تخزن كل طبقة مشتقة بصمة النص الذي اشتُقت منه، من التجويد والتقسيم إلى الترجمة والتفسير وفهارس البحث."
+        checked_by: A build step that compares each layer's recorded hash with the current source.
+        checked_by_ar: "خطوة في البناء تقارن البصمة المسجلة في كل طبقة ببصمة المصدر الحالي."
+      - id: annotations-not-edits
+        rule: Tajwid, waqf, sajdah and colouring are annotations anchored to positions in the text, not edits to it, unless they were part of the source edition.
+        rule_ar: "سجّل التجويد والوقف والسجدة والتلوين بوصفها تعليقات مرتبطة بمواضع في النص دون تعديله، إلا إذا كانت جزءًا من الطبعة التي أُخذ منها النص."
+        checked_by: The checksum test on the text field, which an annotation must not move.
+        checked_by_ar: "اختبار يتأكد من أن إضافة التعليقات لا تغير بصمة حقل النص."
+      - id: search-key-is-derived
+        rule: The search field is derived, by a deterministic function that strips vowels and tatweel and unifies letter forms; never show it to the reader and never store it in place of the text.
+        rule_ar: "اشتق حقل البحث بدالة حتمية تحذف الحركات والتطويل وتوحد صور الحروف، ولا تعرضه للقارئ أو تخزنه مكان النص."
+        checked_by: Golden cases for the derivation, and a test that the index was built by the current function version.
+        checked_by_ar: "حالات مرجعية للاشتقاق، واختبار يتأكد من أن الفهرس بُني بالإصدار الحالي من الدالة."
+      - id: no-untested-regex
+        rule: Don't put an untested regular expression anywhere near this text.
+        rule_ar: "لا تستخدم تعبيرًا نمطيًا غير مختبر في أي معالجة لهذا النص."
+        checked_by: The checksum and round-trip tests, run after every transformation.
+        checked_by_ar: "اختبارا البصمة والقراءة والتخزين والاسترجاع بعد كل تحويل."
+
+  - title: Display
+    title_ar: "العرض"
+    lead: Change the layout, never the text.
+    lead_ar: "غيّر التخطيط وأبقِ النص كما هو."
+    rules:
+      - id: never-trim-to-fit
+        rule: Never trim the text to fit the layout, and never let an ellipsis stand in Quranic text.
+        rule_ar: "لا تقص النص ليناسب التخطيط، ولا تضع علامة الحذف داخل النص القرآني."
+        checked_by: A snapshot test that a rendered ayah equals the stored text.
+        checked_by_ar: "اختبار لقطة يتأكد من أن الآية المعروضة تطابق النص المخزن."
+      - id: fragments-read-as-fragments
+        rule: A fragment is presented as a fragment, with its reference and a link, and never reads as the complete ayah.
+        rule_ar: "بيّن أن المقتطف جزء من الآية وأرفق مرجعه ورابطه، حتى لا يفهم القارئ أنه الآية كاملة."
+        example: |
+          Stopping at the end of (107:4) without (107:5) reverses the meaning. A word boundary is not a legitimate stopping place.
+        checked_by: A snapshot test that a cut string carries its reference and a marker, and never equals the full ayah.
+        checked_by_ar: "اختبار لقطة يتأكد من أن النص المقتطع يتضمن مرجعه وعلامة تدل على اقتطاعه، ولا يطابق الآية كاملة."
+        example_ar: "الوقف على آخر (107:4) دون وصلها بـ(107:5) يقلب المعنى، فحد الكلمة ليس بالضرورة موضع وقف جائزًا."
+      - id: cut-on-grapheme-clusters
+        rule: When you must cut the string itself, for a notification or an `og:description`, cut on grapheme cluster boundaries with `Intl.Segmenter`, never with `slice`.
+        rule_ar: "إذا اضطررت إلى قص السلسلة نفسها لإشعار أو `og:description`، فاقطع عند حدود `grapheme clusters` باستخدام `Intl.Segmenter`، ولا تستخدم `slice`."
+        example: |
+          `examples/tests/truncation.js` cuts an ayah at every length and asserts no letter is separated from its marks.
+        checked_by: The truncation test.
+        checked_by_ar: "اختبار القص."
+        example_ar: "يقص `examples/tests/truncation.js` آية عند كل طول ويتأكد من أنه لا يفصل حرفًا عن حركاته."
+      - id: no-partial-render
+        rule: Never render an ayah that hasn't finished loading; show a loading state or an error.
+        rule_ar: "لا تعرض آية لم يكتمل تحميلها، واعرض مكانها مؤشر تحميل أو رسالة خطأ."
+        checked_by: A component test with a delayed and a failed fetch.
+        checked_by_ar: "اختبار للمكوّن عند تأخر جلب البيانات وعند فشله."
+      - id: text-only-where-it-belongs
+        rule: Keep the text out of placeholders, fixtures, error logs, filenames and URLs; a reference like `114:1` is enough.
+        rule_ar: "لا تضع النص في `placeholder` أو بيانات الاختبار أو سجلات الأخطاء أو أسماء الملفات أو الروابط، ويكفي في هذه المواضع مرجع مثل `114:1`."
+        checked_by: A lint over fixtures, logs, filenames and URLs for Quranic characters.
+        checked_by_ar: "فحص `lint` يبحث عن المحارف القرآنية في بيانات الاختبار والسجلات وأسماء الملفات والروابط."
+
+  - title: Errors and corrections
+    title_ar: "الأخطاء والتصحيحات"
+    lead: Fail loudly, fix nothing by hand, and write every correction down.
+    lead_ar: "أوقف العملية برسالة خطأ واضحة، وتجنب الإصلاح اليدوي، ووثّق كل تصحيح."
+    rules:
+      - id: never-fix-by-hand
+        rule: Never silently fix the source by hand; raise the suspected error with the publisher and document the correction.
+        rule_ar: "أبلغ الناشر بالخطأ المحتمل ووثّق التصحيح، ولا تصحح الأصل يدويًا دون إعلان."
+        example: |
+          `examples/data/errata.json` shows one erratum in the shape the [versioning page](/guidelines/en/versioning/) defines.
+        checked_by: The errata log, and a review rule that a text diff with no erratum is rejected.
+        checked_by_ar: "سجل التصحيحات وقاعدة مراجعة ترفض أي تغيير في النص ليس له مدخل في السجل."
+        example_ar: "يعرض `examples/data/errata.json` تصحيحًا بالشكل الذي تحدده [صفحة الإصدارات](/guidelines/ar/versioning/)."
+      - id: three-kinds-of-error
+        rule: Distinguish a source error, a transmission error and a display error, because each is fixed in a different place.
+        rule_ar: "فرّق بين خطأ المصدر وخطأ النقل وخطأ العرض، لأن لكل واحد منها موضع إصلاح مختلفًا."
+        checked_by: The `kind` field of every erratum, which takes one of the three values.
+        checked_by_ar: "حقل `kind` في كل مدخل في سجل التصحيحات، ويأخذ إحدى القيم الـ3."
+      - id: review-by-codepoint
+        rule: Make text changes reviewable character by character, and treat any migration that touches a text column as a high-risk change.
+        rule_ar: "اعرض تغييرات النص بطريقة تتيح مراجعتها محرفًا محرفًا، وتعامل مع أي ترحيل يغير عمود النص بوصفه تغييرًا عالي الخطورة."
+        checked_by: CI flags a migration on a text column and requires a codepoint diff and a second reviewer.
+        checked_by_ar: "ينبّه `CI` إلى أي ترحيل يغير عمود نص، ويشترط عرض الفرق على مستوى `codepoint` ومراجعًا ثانيًا."
+      - id: fail-loudly
+        rule: When the text is not what you expected, fail loudly; never auto-repair and never guess at missing text or metadata.
+        rule_ar: "إذا لم يطابق النص ما تتوقعه، فأوقف العملية برسالة خطأ واضحة، ولا تصلحه تلقائيًا أو تخمّن النص أو البيانات الوصفية المفقودة."
+        checked_by: An import fed corrupt input fails and changes nothing.
+        checked_by_ar: "اختبار استيراد ببيانات تالفة يتأكد من فشل العملية دون تغيير أي شيء."
+      - id: no-silent-update
+        rule: A mushaf data update is never silent; a new version is a new dataset with a known origin and a known diff, announced to the reader.
+        rule_ar: "أعلن للقارئ كل تحديث لبيانات المصحف، فكل إصدار جديد هو `dataset` جديد موثق المصدر والتغييرات."
+        checked_by: The release tests on the [versioning page](/guidelines/en/versioning/).
+        checked_by_ar: "اختبارات الإصدار في [صفحة الإصدارات](/guidelines/ar/versioning/)."

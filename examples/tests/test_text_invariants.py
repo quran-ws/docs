@@ -5,7 +5,7 @@ Runs under pytest or on its own:
     python3 examples/tests/test_text_invariants.py
 
 Each test names the row of the table it comes from
-(content/en/02-quranic-text/, section "Tests"). A failing test blocks a
+(content/en/quranic-text.md, the "checked by" line of every rule). A failing test blocks a
 release; it never fixes the text.
 """
 import hashlib, json, os, re, sys, unicodedata

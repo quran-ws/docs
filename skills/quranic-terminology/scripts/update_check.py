@@ -45,7 +45,7 @@ def stamp(path=DATA):
         "snapshot": version.get("snapshot"),
         "commit": version.get("commit"),
         "date": version.get("date"),
-        "repo": version.get("repo") or "quran-ws/guidelines",
+        "repo": version.get("repo") or "quran-ws/docs",
         "entries": len(data.get("concepts") or {}),
         "spellings": len(data.get("aliases") or {}),
     }

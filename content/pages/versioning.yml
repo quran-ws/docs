@@ -1,0 +1,265 @@
+title: Versioning and corrections
+title_ar: "الإصدارات والتصحيحات"
+description: A dataset that carries Quranic text is released, never edited. How a release is named, when its version moves, where a correction is written down, and what downstream may rely on.
+description_ar: "ننشر كل `dataset` يحتوي على نص قرآني في إصدارات دون تعديله مباشرة، وهذه قواعد تسمية الإصدارات وترقيمها وتوثيق التصحيحات وما يمكن للمشاريع التي تستخدمها الاعتماد عليه."
+status: proposed
+order: 3
+intro: |
+  **The governing rule:** a dataset that carries Quranic text is released, never
+  edited. Every copy in the world can say which release it is, and every change
+  between two releases is listed character by character.
+
+  The [text page](/guidelines/en/quranic-text/) says that the text is immutable
+  and that a correction is never silent. This page says what that means once the
+  data leaves your machine. The manifest and the erratum record below are
+  proposals; their field names follow the
+  [dictionary](/guidelines/en/reference/dictionary/) where it has a name.
+intro_ar: |
+  **القاعدة الأساسية:** ننشر كل `dataset` يحتوي على نص قرآني في إصدارات دون
+  تعديله مباشرة، وتحمل كل نسخة منه رقم إصدارها أينما استُخدمت، ونوثّق كل تغيير
+  بين إصدارين محرفًا محرفًا.
+
+  توضح [صفحة النص](/guidelines/ar/quranic-text/) أن النص ثابت لا يُعدل، وأن كل
+  تصحيح يُعلن عنه، وتشرح هذه الصفحة كيف نلتزم بذلك بعد نشر البيانات خارج جهازك.
+  وصيغتا `manifest` وسجل التصحيح أدناه مقترحتان، وتتبع أسماء حقولهما
+  [القاموس](/guidelines/ar/reference/dictionary/) متى وُجد فيه اسم للحقل.
+sections:
+  - title: What is versioned
+    title_ar: "ما الذي نرقّم إصداراته"
+    lead: The unit of versioning is the dataset, not the repository or the app.
+    lead_ar: "نرقّم إصدارات `dataset` بصورة مستقلة عن المستودع أو التطبيق."
+    rules:
+      - id: dataset-is-the-unit
+        rule: A dataset is one thing built from the text, such as a text edition, a numbering table, a segmentation, a timing file or a translation, and each has its own version.
+        rule_ar: "يحتوي كل `dataset` على نوع واحد من البيانات المبنية على النص، مثل نص طبعة أو جدول عد الآي أو تقسيم أو ملف توقيت أو ترجمة، وله رقم إصدار مستقل."
+        checked_by: One manifest per data file, validated by the release script.
+        checked_by_ar: "ملف `manifest` واحد لكل ملف بيانات، يتحقق منه سكربت الإصدار."
+      - id: manifest-beside-every-file
+        rule: "The identity travels with the data: publish a `dataset.json` manifest beside every data file, carrying the edition, the riwayah, the numbering system, the version and the source hash."
+        rule_ar: "انشر بجانب كل ملف بيانات ملف `dataset.json` يعرّفها بذكر الطبعة والرواية ونظام عد الآي والإصدار وبصمة المصدر، حتى تبقى معلومات هويتها مرافقة لها."
+        example: |
+          ```json
+          {
+            "dataset": "text",
+            "mushaf_edition": "madinah_hafs_1441",
+            "riwayah": "hafs_an_asim",
+            "ayah_numbering_system": "kufi",
+            "version": "2.0.0",
+            "source_hash": "sha256:…",
+            "derived_from": null,
+            "license": "…",
+            "errata": "errata.json",
+            "released": "2026-09-06"
+          }
+          ```
+        note: The values of `mushaf_edition` and `riwayah` come from the registries under `standards/terminology/registries/`, never typed by hand.
+        note_ar: "تأتي قيمتا `mushaf_edition` و`riwayah` من السجلات في `standards/terminology/registries/`، ولا تُكتبان باليد."
+        checked_by: Schema validation of the manifest in the release script, with every field required.
+        checked_by_ar: "تحقق سكربت الإصدار من مطابقة `manifest` للمخطط، مع اشتراط وجود جميع الحقول."
+      - id: tag-equals-manifest
+        rule: The version in the manifest and the repository tag are the same string.
+        rule_ar: "اكتب رقم الإصدار في `manifest` ووسم المستودع بالنص نفسه تمامًا."
+        checked_by: The release script compares the tag with `version` in the manifest and stops on a mismatch.
+        checked_by_ar: "يقارن سكربت الإصدار الوسم بحقل `version` في `manifest` ويتوقف عند الاختلاف."
+
+  - title: Semantic versioning for data
+    title_ar: "الترقيم الدلالي للبيانات"
+    lead: The number is decided by the diff, not by how small the fix felt.
+    lead_ar: "حدد رقم الإصدار بحسب التغييرات الفعلية، مهما بدا التصحيح بسيطًا."
+    rules:
+      - id: major-on-text-change
+        rule: "`MAJOR` moves when any transmitted character, ayah boundary or identifier changes, including a correction of what looks like a spelling error."
+        rule_ar: "ارفع `MAJOR` عند تغيير أي محرف منقول أو حد من حدود الآيات أو معرف، حتى عند تصحيح ما يبدو خطأ إملائيًا."
+        note: Every hash built on the text breaks, so a one-character correction is a `MAJOR`.
+        note_ar: "يغير تصحيح محرف واحد كل البصمات المحسوبة من النص، ولذلك يتطلب رفع `MAJOR`."
+        checked_by: The release script diffs the previous tag's text and refuses a `MINOR` or `PATCH` bump if any byte of text differs.
+        checked_by_ar: "يقارن سكربت الإصدار النص بنص الوسم السابق، ويرفض رفع `MINOR` أو `PATCH` إذا اختلف أي بايت من النص."
+      - id: minor-on-added-layer
+        rule: "`MINOR` moves when a derived layer or metadata is added without changing transmitted text or identifiers."
+        rule_ar: "ارفع `MINOR` عند إضافة طبقة مشتقة أو بيانات وصفية دون تغيير النص المنقول أو المعرفات."
+        checked_by: The same diff, which allows the bump when the text is unchanged.
+        checked_by_ar: "المقارنة نفسها، وتسمح برفع الرقم إذا بقي النص كما هو."
+      - id: patch-on-metadata
+        rule: "`PATCH` moves when only non-text metadata changes: a description, a licence file, the layout of files on disk."
+        rule_ar: "ارفع `PATCH` عندما تقتصر التغييرات على بيانات وصفية لا تمس النص، مثل الوصف أو ملف الرخصة أو ترتيب الملفات على القرص."
+        checked_by: The same diff.
+        checked_by_ar: "المقارنة نفسها."
+      - id: code-has-its-own-version
+        rule: Code that reads the data follows ordinary semantic versioning and has its own number; the two are not tied.
+        rule_ar: "يتبع الكود الذي يقرأ البيانات الترقيم الدلالي المعتاد وله رقم إصدار خاص به، ولا يرتبط رقم الكود برقم البيانات."
+        checked_by: The [repositories page](/guidelines/en/repositories/), which versions code and data separately.
+        checked_by_ar: "[صفحة المستودعات](/guidelines/ar/repositories/) التي تفصل ترقيم الكود عن ترقيم البيانات."
+
+  - title: Identifiers never change meaning
+    title_ar: "ثبات معنى المعرفات"
+    lead: A release may add identifiers; it never reuses or renumbers one.
+    lead_ar: "يمكن إضافة معرفات في إصدار جديد، مع إبقاء المعرفات السابقة دون إعادة استخدامها أو ترقيمها."
+    rules:
+      - id: identifiers-grow-only
+        rule: The set of identifiers in release N is a subset of the set in release N+1; a release that fails this is `MAJOR` at least, and the missing identifiers are listed in the errata.
+        rule_ar: "يحتفظ الإصدار `N+1` بجميع معرفات الإصدار `N`، وإذا غاب أي منها فالتغيير يتطلب رفع `MAJOR` على الأقل وذكر المعرفات المفقودة في سجل التصحيحات."
+        checked_by: A set comparison of identifiers across the two tags in the release script.
+        checked_by_ar: "مقارنة مجموعتي المعرفات بين الوسمين في سكربت الإصدار."
+      - id: numbering-system-is-a-column
+        rule: Adding a numbering system is a new table or column keyed by `ayah_numbering_system`, never a rewrite of existing numbers.
+        rule_ar: "أضف نظام عد الآي في جدول أو عمود جديد مفتاحه `ayah_numbering_system`، مع إبقاء الأرقام الموجودة كما هي."
+        checked_by: The identifier set comparison.
+        checked_by_ar: "مقارنة مجموعتي المعرفات."
+      - id: wrong-identifier-superseded
+        rule: An identifier that turns out to be wrong is not corrected in place; the old one stays, marked superseded, and the new one is added.
+        rule_ar: "إذا تبين خطأ معرف، فأضف معرفًا جديدًا وأبقِ القديم مع الإشارة إلى أن غيره حل محله، دون تعديله مباشرة."
+        checked_by: The identifier set comparison.
+        checked_by_ar: "مقارنة مجموعتي المعرفات."
+
+  - title: The errata log
+    title_ar: "سجل التصحيحات"
+    lead: Every correction is written down before it is merged, in one append-only file per dataset.
+    lead_ar: "وثّق كل تصحيح قبل دمجه في ملف واحد لكل `dataset`، وأضف إليه مداخل جديدة دون تعديل المداخل السابقة."
+    rules:
+      - id: errata-file
+        rule: The file is `errata.json`, or `ERRATA.md` for a dataset published as prose, and entries are added, never edited or removed.
+        rule_ar: "استخدم `errata.json` لسجل التصحيحات، أو `ERRATA.md` إذا كان `dataset` منشورًا في صورة نص مقروء، وأضف مداخل جديدة دون تعديل المداخل السابقة أو حذفها."
+        example: |
+          ```json
+          {
+            "id": "2026-0001",
+            "location": { "surah_number": 2, "ayah_number": 255, "word_position": 12,
+                          "ayah_numbering_system": "kufi" },
+            "offset": { "unit": "codepoint", "start": 38, "end": 39 },
+            "before": "U+0651 U+064E",
+            "after":  "U+064E U+0651",
+            "kind": "transmission_error",
+            "confirmed_by": "…",
+            "confirmed_on": "2026-08-30",
+            "fixed_in": "2.0.0"
+          }
+          ```
+        checked_by: A one-to-one match between the text diff of a release and the errata that name it in `fixed_in`.
+        checked_by_ar: "التحقق من وجود مدخل تصحيح واحد لكل تغيير في نص الإصدار، ومن أن كل مدخل يذكر رقم ذلك الإصدار في `fixed_in` يقابل تغييرًا واحدًا."
+      - id: erratum-is-verifiable
+        rule: "`before` and `after` are codepoint sequences, never rendered strings, so the entry can be verified without a font."
+        rule_ar: "خزّن في `before` و`after` تسلسل قيم `codepoint` بدل النص كما يظهر على الشاشة، حتى يمكن التحقق من المدخل دون الاعتماد على خط."
+        checked_by: A lookup that finds the `before` sequence at `location` and `offset` in the previous release.
+        checked_by_ar: "التحقق من وجود تسلسل `before` في الموضع المحدد بحقلَي `location` و`offset` في الإصدار السابق."
+      - id: erratum-kind
+        rule: "`kind` is one of `source_error`, `transmission_error` or `display_error`; a display error is fixed in the renderer, produces no text diff, and is logged so nobody \"fixes\" the text to match the screen."
+        rule_ar: "اختر لـ`kind` إحدى القيم `source_error` أو `transmission_error` أو `display_error`، وأصلح خطأ العرض في محرك العرض دون تغيير النص، وسجله حتى لا يعدّل أحد النص ليطابق ما يظهر على الشاشة."
+        checked_by: Schema validation of the erratum.
+        checked_by_ar: "التحقق من مطابقة مدخل التصحيح للمخطط."
+      - id: confirmed-by-an-authority
+        rule: "`confirmed_by` names the authority that confirmed the correction, the publisher of the edition or a reviewer named in the repository; an erratum without one is not merged."
+        rule_ar: "اذكر في `confirmed_by` من أكد صحة التصحيح، سواء كان ناشر الطبعة أو مراجعًا محددًا في المستودع، ولا تدمج مدخلًا يخلو من هذا التأكيد."
+        checked_by: Schema validation, and the second reviewer of every text change.
+        checked_by_ar: "التحقق من المطابقة للمخطط ومراجعة ثانية لكل تغيير في النص."
+      - id: erratum-before-fix
+        rule: The erratum is filed before the fix is merged, in the same pull request or an earlier one; a text diff with no erratum is rejected in review.
+        rule_ar: "سجّل التصحيح قبل دمج الإصلاح في طلب الدمج نفسه أو في طلب سابق، وارفض عند المراجعة أي تغيير في النص لا يقابله مدخل في سجل التصحيحات."
+        checked_by: The diff-to-errata match, run on every pull request that touches text.
+        checked_by_ar: "مطابقة تغييرات النص بمداخل سجل التصحيحات مع كل طلب دمج يغير النص."
+
+  - title: Announcing a change
+    title_ar: "الإعلان عن التغيير"
+    lead: A text update is never silent.
+    lead_ar: "أعلن كل تحديث للنص."
+    rules:
+      - id: announce-major
+        rule: "A `MAJOR` release is announced before or with its publication, in two parts: a changelog entry a person reads, and a machine-readable list of the errata it carries."
+        rule_ar: "أعلن إصدار `MAJOR` قبل نشره أو عند نشره، مع وصف في سجل التغييرات يقرؤه المستخدم وقائمة مقروءة آليًا بالتصحيحات التي يتضمنها."
+        example: |
+          ```text
+          2.0.0 — 2026-09-06 — MAJOR — text: 1 correction (2026-0001, 2:255); ids unchanged.
+          ```
+        checked_by: The release script refuses a `MAJOR` tag without a changelog entry and an errata list.
+        checked_by_ar: "يرفض سكربت الإصدار وسم `MAJOR` دون مدخل في سجل التغييرات وقائمة تصحيحات."
+        example_ar: |
+          ```text
+          2.0.0 — 2026-09-06 — MAJOR — النص: 1 تصحيح (2026-0001، 2:255)؛ المعرفات دون تغيير.
+          ```
+      - id: reader-sees-a-notice
+        rule: An app that ships the text shows the reader a visible notice when it moves to a new `MAJOR`, naming the locations and never quoting the old text.
+        rule_ar: "يعرض التطبيق الذي يتضمن النص إشعارًا واضحًا للقارئ عند الانتقال إلى إصدار `MAJOR` جديد، ويذكر فيه المواضع المتغيرة دون اقتباس النص القديم."
+        checked_by: A test of the update path, with and without a notice record.
+        checked_by_ar: "اختبار مسار التحديث مع سجل إشعار ودونه."
+      - id: no-silent-auto-update
+        rule: The app's update path refuses a dataset whose `MAJOR` differs from the installed one unless a notice record exists for the move.
+        rule_ar: "يرفض التطبيق عند التحديث أي `dataset` تختلف قيمة `MAJOR` فيه عن الإصدار المثبّت، ما لم يوجد سجل إشعار بهذا الانتقال."
+        checked_by: The same update-path test.
+        checked_by_ar: "اختبار مسار التحديث نفسه."
+      - id: minor-needs-changelog-only
+        rule: A `MINOR` or `PATCH` release needs the changelog entry only.
+        rule_ar: "يحتاج إصدار `MINOR` أو `PATCH` إلى مدخل في سجل التغييرات فقط."
+        checked_by: The release script.
+        checked_by_ar: "سكربت الإصدار."
+
+  - title: What downstream may rely on
+    title_ar: "ما يمكن للمشاريع التي تستخدم بياناتنا الاعتماد عليه"
+    lead: Within one `MAJOR`, the text bytes, the identifiers, the ayah boundaries and the source hash are stable, and nothing else is promised.
+    lead_ar: "ما دامت قيمة `MAJOR` ثابتة، نضمن ثبات بايتات النص والمعرفات وحدود الآيات وبصمة المصدر فقط."
+    rules:
+      - id: layers-name-their-release
+        rule: A derived layer names the exact release it was built from in `derived_from`, and the build fails if it names a release that does not exist.
+        rule_ar: "تذكر الطبقة المشتقة الإصدار الذي بُنيت منه تحديدًا في `derived_from`، ويفشل البناء إذا ذكرت إصدارًا غير موجود."
+        checked_by: A lookup in the release index at build time.
+        checked_by_ar: "البحث في فهرس الإصدارات عند البناء."
+      - id: layers-rebuilt-on-major
+        rule: A derived layer built on release N is not valid against release N+1 until it is rebuilt, or its manifest says it was checked against the errata and found unaffected.
+        rule_ar: "لا تصلح الطبقة المشتقة المبنية على الإصدار `N` للاستخدام مع الإصدار `N+1` إلا بعد إعادة بنائها، أو تسجيل التحقق من عدم تأثرها بالتصحيحات في ملف `manifest` الخاص بها."
+        checked_by: The `derived_from` check against the current release.
+        checked_by_ar: "فحص `derived_from` وفق الإصدار الحالي."
+      - id: pin-a-tag
+        rule: Depend on a tagged release, never on the head of a branch.
+        rule_ar: "اعتمد على إصدار موسوم، ولا تعتمد على آخر نسخة من فرع."
+        checked_by: The pinned version recorded in the dependant's own manifest.
+        checked_by_ar: "رقم الإصدار المحدد للاعتماد عليه في `manifest` الخاص بالمشروع الذي يستخدم البيانات."
+
+  - title: Superseded releases
+    title_ar: "الإصدارات التي حل غيرها محلها"
+    lead: A release is never deleted; it is marked superseded.
+    lead_ar: "أبقِ الإصدار متاحًا، وأشر إلى أن إصدارًا آخر حل محله بدل حذفه."
+    rules:
+      - id: release-index
+        rule: The release index lists every version ever published, with its source hash, its date, and the version that superseded it if any.
+        rule_ar: "أدرج في فهرس الإصدارات جميع الإصدارات المنشورة مع بصمة مصدر كل منها وتاريخه والإصدار الذي حل محله إن وجد."
+        checked_by: A diff between the tags of the repository and the index.
+        checked_by_ar: "مقارنة وسوم المستودع بفهرس الإصدارات."
+      - id: superseded-stays-downloadable
+        rule: A superseded release stays downloadable, so a derived layer built on it can still be verified against it, and the index says how long it receives errata notices.
+        rule_ar: "أبقِ الإصدار الذي حل غيره محله متاحًا للتنزيل، حتى يمكن التحقق من الطبقات المبنية عليه بمقارنتها به، واذكر في الفهرس المدة التي يستمر فيها إرسال إشعارات تصحيحاته."
+        checked_by: A hook that rejects a tag deletion or a force-push to a tag.
+        checked_by_ar: "أداة `hook` ترفض حذف وسم أو دفع تغيير قسري إليه."
+      - id: never-withdraw
+        rule: A release found to carry a text error is not withdrawn; the erratum is filed and the corrected release supersedes it.
+        rule_ar: "إذا وجدت خطأ في نص إصدار، فسجّل التصحيح وانشر إصدارًا مصححًا يحل محله دون سحب الإصدار القديم."
+        note: Withdrawing it would break every hash that points at it and hide what was changed.
+        note_ar: "سحبه يمنع التحقق من كل بصمة تشير إليه ويخفي ما تغير."
+        checked_by: The same hook.
+        checked_by_ar: "أداة `hook` نفسها."
+
+  - title: Until there is a tag
+    title_ar: "قبل نشر إصدار موسوم"
+    lead: The rules above describe a released dataset; most of ours have no tag yet, and a reader needs to know what holds in the meantime.
+    lead_ar: "تخص القواعد السابقة `dataset` له إصدار منشور، لكن معظم ما لدينا لم يُوسم بعد، ويحتاج القارئ إلى معرفة القواعد التي تنطبق عليه إلى ذلك الحين."
+    rules:
+      - id: commit-is-the-version
+        rule: Until a dataset has a tag, the commit is its version; a consumer pins the commit, records it, and reads every file at that ref.
+        rule_ar: "اعتمد `commit` إصدارًا لـ`dataset` إلى أن يُوسم، وثبّت الاعتماد على `commit` محدد وسجّله واقرأ كل الملفات من ذلك المرجع."
+        note: A script that resolves the head of a branch at build time is not pinned to anything.
+        note_ar: "السكربت الذي يختار آخر `commit` في الفرع وقت البناء لا يعتمد على نسخة ثابتة."
+        checked_by: The consumer's manifest names a commit, and a build step reads the data at that commit and nowhere else.
+        checked_by_ar: "يحدد ملف `manifest` في المشروع الذي يستخدم البيانات قيمة `commit`، وتقرأ خطوة في البناء البيانات من ذلك `commit` وحده."
+      - id: three-pinnable-things
+        rule: Three things can be pinned and they answer different questions; the commit pins the tree, the digest of a release asset pins the archive, and the content digest inside the data pins the text an annotation was computed against.
+        rule_ar: "حدّد ما تثبّت الاعتماد عليه من 3 أشياء مختلفة: شجرة الملفات بقيمة `commit`، والملف المضغوط ببصمة ملف الإصدار، والنص الذي حُسب تعليق بناءً عليه ببصمة المحتوى المسجلة داخل البيانات."
+        checked_by: Review of what a manifest records.
+        checked_by_ar: "مراجعة ما يُسجّل في ملف `manifest`."
+      - id: version-numbers-are-not-one-thing
+        rule: A `format_version` describes the shape of a file, a `schema_version` its schema, a tag a release and a content digest the text; a stable `format_version` is no evidence that the data has not changed.
+        rule_ar: "ميّز بين `format_version` الذي يصف صيغة الملف و`schema_version` الذي يصف مخططه والوسم الذي يحدد الإصدار وبصمة المحتوى التي تحدد النص، ولا تعتمد على ثبات `format_version` دليلًا على أن البيانات لم تتغير."
+        checked_by: The consumer verifies a digest, never a version number alone.
+        checked_by_ar: "يتحقق المشروع الذي يستخدم البيانات من بصمة، ولا يكتفي برقم إصدار."
+      - id: pin-promises-bytes-only
+        rule: A pin promises the bytes and nothing else; a released bundle may not be reproducible from its commits, a correction may land before a number moves, and a digest does not travel with a re-export, so the consumer keeps the source digest and the source reference in its own records.
+        rule_ar: "احتفظ ببصمة المصدر ومرجعه في سجلات المشروع الذي يستخدم البيانات، فتثبيت الاعتماد يضمن البايتات وحدها، وقد تتعذر إعادة بناء الحزمة المنشورة من قيم `commit` الخاصة بها أو يُضاف تصحيح قبل تغيير رقم الإصدار، ولا ترافق البصمة البيانات عند إعادة تصديرها."
+        checked_by: Review of what a consumer stores beside its copy of the data.
+        checked_by_ar: "مراجعة ما يحفظه المشروع بجانب نسخته من البيانات."
+
