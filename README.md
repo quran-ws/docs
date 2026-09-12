@@ -46,6 +46,7 @@ Everything about using it lives on the site. This repository is the source.
 | **Waqf and open licensing** | [quran.ws/docs/guidelines/licensing/](https://quran.ws/docs/guidelines/licensing/) |
 | **Registries, the standard, the decisions** | [quran.ws/docs/guidelines/reference/registries/](https://quran.ws/docs/guidelines/reference/registries/) |
 | **بالعربية** | [quran.ws/docs/guidelines/ar/naming/](https://quran.ws/docs/guidelines/ar/naming/) |
+| **How to contribute** | [quran.ws/docs/contribute/](https://quran.ws/docs/contribute/) |
 | **Licensing in full** | [quran.ws/docs/reference/licensing](https://quran.ws/docs/reference/licensing) |
 
 ## What is in here
