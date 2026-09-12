@@ -2,13 +2,13 @@
 
 # بنية المستودع
 
-المحتوى مكتوب بـMarkdown عادي داخل `content/` ليبقى مقروءًا على GitHub مباشرة، ويعرضه موقع [quran.ws](https://quran.ws/docs/guidelines/) الذي يقرأ الصفحات من هذا المستودع عند إصدار مثبت. و`standards/` هو المصدر المقروء آليًا، و`tools/` يشتق منه ويفحصه ويولّد الصفحات والمهارة.
+المحتوى مكتوب بـMarkdown عادي داخل `content/` ليبقى مقروءًا على GitHub مباشرة، ويعرضه موقع [quran.ws](https://quran.ws/docs/) الذي يقرأ الصفحات من هذا المستودع عند إصدار مثبت. و`standards/` هو المصدر المقروء آليًا، و`tools/` يشتق منه ويفحصه ويولّد الصفحات والمهارة.
 
 </div>
 
 # Repository layout
 
-Content is authored as plain Markdown under `content/`, so it stays readable on GitHub, and is published by the [quran.ws](https://quran.ws/docs/guidelines/) site, which syncs the pages from this repository at a pinned ref. `standards/` is the machine-readable source; `tools/` derives from it, checks it, and generates the pages and the skill.
+Content is authored as plain Markdown under `content/`, so it stays readable on GitHub, and is published by the [quran.ws](https://quran.ws/docs/) site, which syncs the pages from this repository at a pinned ref. `standards/` is the machine-readable source; `tools/` derives from it, checks it, and generates the pages and the skill.
 
 ```text
 guidelines/
@@ -18,7 +18,7 @@ guidelines/
 ├── CLAUDE.md                          # points the writing tooling at docs/agent — يحيل أدوات الكتابة إلى docs/agent
 ├── LICENSE                            # CC BY 4.0 for prose, MIT for code and data — الرخصتان
 ├── requirements.txt                   # Python packages the build needs
-├── Makefile                           # install / build / test / site / clean
+├── Makefile                           # install / build / test / clean
 │
 ├── content/                           # the guideline pages — الصفحات
 │   ├── pages/                         # the source: one rule file per guideline page, both languages
@@ -82,6 +82,7 @@ guidelines/
 │   └── tests/                         # test_text_invariants.py, truncation.js
 │
 └── .github/
+    ├── banner.svg                     # the README banner, the same shape as every Quran.ws repository
     ├── ISSUE_TEMPLATE/                # term.yml, proposal.yml, edit.yml, contradiction.yml
     ├── PULL_REQUEST_TEMPLATE.md
     └── workflows/                     # build.yml (the build and tests)
