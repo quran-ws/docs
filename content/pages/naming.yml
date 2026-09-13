@@ -19,9 +19,9 @@ intro_ar: |
   والمفتاح الأجنبي وواجهة `API`، ونبحث عنه في [القاموس](/guidelines/ar/reference/dictionary/)
   بدل ابتكار اسم في أثناء كتابة الكود.
 
-  تجمع هذه الصفحة ما يحتاجه المطور، أما [معيار المصطلحات](/guidelines/ar/reference/standard/)
-  الكامل فيشرح طريقة اشتقاق الاسم من صيغته العربية بالحركات وطريقة كتابة مدخل
-  في القاموس، ولا تحتاج إليه إلا عند إضافة مفهوم إلى القاموس.
+  تجمع هذه الصفحة ما يحتاجه المطور، ويعرض [معيار تسمية المفردات القرآنية](/guidelines/ar/reference/standard/)
+  قواعد اختيار الأسماء وتهجئتها وتركيبها والتمييز بينها، مرتبة حسب الموضوع.
+  لكل قاعدة رقم واسم ووصف وأمثلة.
 sections:
   - title: One name per concept
     title_ar: "استخدم اسمًا واحدًا لكل مفهوم"
@@ -72,7 +72,7 @@ sections:
         rule: A concept the dictionary lacks is proposed there before the code that needs it is merged, not after.
         rule_ar: "اقترح إضافة المفهوم غير الموجود في القاموس قبل دمج الكود الذي يحتاج إليه."
         note: A project may keep concepts of its own, in a concepts directory beside the standard's, when the concept cannot be defined by the Quran or the mushaf (standard, section 30).
-        note_ar: "يمكن للمشروع الاحتفاظ بمفاهيمه الخاصة في مجلد مفاهيم بجانب مجلد المعيار، إذا كان تعريفها لا يستند إلى القرآن أو المصحف (المعيار، القسم 30)."
+        note_ar: "يمكن للمشروع الاحتفاظ بمفاهيمه الخاصة في مجلد مفاهيم بجانب مجلد المعيار، إذا كان تعريفها لا يستند إلى القرآن أو المصحف ([النسخة السابقة، القسم 30](https://github.com/quran-ws/docs/blob/79e3c6bb2b52dd1df81b3e64debfebf9dd5f8ea5/content/ar/reference/standard.md#L1700))."
         checked_by: The term issue form, and the audit's `--strict` mode, which flags a Quranic name the dictionary does not know.
         checked_by_ar: "نموذج اقتراح المصطلح ووضع `--strict` في أداة الفحص، الذي يكشف الأسماء القرآنية غير الموجودة في القاموس."
 
@@ -129,7 +129,7 @@ sections:
           python3 tools/translit.py "رُبْع الحِزْب"     # rub_al_hizb
           ```
         note: The derivation rules are sections 4 to 8 of the standard. You do not need them to use a name, only to add one.
-        note_ar: "قواعد الاشتقاق في الأقسام 4–8 من المعيار، وتحتاج إليها فقط عند إضافة اسم، أما استخدام اسم موجود فلا يتطلب معرفتها."
+        note_ar: "قواعد الاشتقاق في [القواعد 009–036](/guidelines/ar/reference/standard/#rule-009)، وتحتاج إليها فقط عند إضافة اسم، أما استخدام اسم موجود فلا يتطلب معرفتها."
         checked_by: "`tools/test_translit.py` holds the golden cases, and `tools/check_conformance.py` checks that every entry's `code` is its own derivation."
         checked_by_ar: "يحتوي `tools/test_translit.py` على الحالات المرجعية، ويتحقق `tools/check_conformance.py` من أن `code` في كل مدخل يطابق الاسم المشتق من صيغته العربية."
 
@@ -225,7 +225,7 @@ sections:
         note: A survey found `word_index`, `word_number` and `segment_number` in one table, and whether `word_index` was 0-based could not be recovered from the names.
         note_ar: "وجد المسح `word_index` و`word_number` و`segment_number` في جدول واحد، ولم يتبين من الأسماء هل يبدأ `word_index` من 0."
         checked_by: The audit, which reports `index` and `idx` as suffixes; the choice between the four is a rule for the writer (standard, section 21).
-        checked_by_ar: "يكشف الفحص استخدام اللاحقتين `index` و`idx`، أما اختيار اللاحقة المناسبة من اللواحق الـ4 فيلتزم فيه الكاتب بقاعدة المعيار (القسم 21)."
+        checked_by_ar: "يكشف الفحص استخدام اللاحقتين `index` و`idx`، أما اختيار اللاحقة المناسبة من اللواحق الـ4 فيلتزم فيه الكاتب بقاعدة المعيار ([القواعد 067–071](/guidelines/ar/reference/standard/#rule-067))."
       - id: classification-names
         rule: Name a classification by what it classifies, and never by `type`.
         rule_ar: "سمِّ التصنيف باسم ما يصنفه، ولا تسمه `type`."
@@ -236,7 +236,7 @@ sections:
           waqf_mark_type     the one exception: the kind of a drawn mark
           ```
         checked_by: The audit reports `type` as a suffix on a Quranic concept (standard, section 24).
-        checked_by_ar: "يبلغ الفحص عن اللاحقة `type` على مفهوم قرآني (المعيار، القسم 24)."
+        checked_by_ar: "يبلغ الفحص عن اللاحقة `type` على مفهوم قرآني ([القاعدة 050](/guidelines/ar/reference/standard/#rule-050))."
         example_ar: |
           ```text
           waqf_ruling        وليس waqf_type

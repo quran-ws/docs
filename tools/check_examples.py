@@ -12,7 +12,8 @@ Three more things go stale the same way and are checked here too:
   * a reference to "section N" of the standard, once the sections are numbered
     in their headings, must name a section that exists, in every file under
     content/, tools/, standards/ and skills/;
-  * the English and Arabic standard must carry the same numbered H2 sequence;
+  * legacy editions share numbered sections; the structured Arabic edition
+    instead validates its source, generated output and stable rule links;
   * a YAML example in the standard that shows an entry (`concept: …`) must parse,
     each field it shows must satisfy schema.json, and where the entry exists the
     example must show what the file says.
@@ -21,6 +22,7 @@ Three more things go stale the same way and are checked here too:
 """
 import glob, json, os, re, sys
 import yaml
+import generate_standard
 from jsonschema import Draft202012Validator
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -110,7 +112,7 @@ SCHEMA_WORDS = {
     "check_registries", "build_registry_aliases", "registry_aliases",
     "extract_ayah_counts", "ayah_counts", "turath_cache",
     "generate_skill", "skill_template", "audit_terminology", "update_check",
-    "generate_pages", "test_pages", "translations_json",
+    "generate_pages", "generate_standard", "test_pages", "translations_json",
     # registry file names, and the sources their rows cite
     "qiraat_ayah_map", "ghayat_al_nihayah", "bayan_dani", "nasser_transmission",
     # the fields of a rule file (content/pages/*.yml)
@@ -127,10 +129,11 @@ SCHEMA_WORDS = {
 
 
 def section_counts():
-    """How many sections each standard has, and the numbers its H2s carry.
+    """Validate each edition using its own structure.
 
-    Before the headings are numbered the count is the H2 count; once they are,
-    the sequence itself is checked to be 1..N in both languages.
+    Legacy section references still target the previous 31-section edition.
+    A generated standard is checked against its structured source instead of
+    being required to mirror the old edition's numbered headings.
     """
     counts, sequences, problems = {}, {}, []
     for lang, rel in STANDARD.items():
@@ -138,6 +141,10 @@ def section_counts():
         if not os.path.exists(path):
             continue
         text = open(path, encoding="utf-8").read()
+        front = yaml.safe_load(text.split("---", 2)[1]) if text.startswith("---\n") else {}
+        if front.get("generated") == generate_standard.SOURCE_REL:
+            problems += generate_standard.check()
+            continue
         numbers = [int(n) for n in NUMBERED_H2.findall(text)]
         sequences[lang] = numbers
         counts[lang] = len(numbers) if numbers else len(H2.findall(text))
@@ -173,6 +180,21 @@ def check_section_references(limit):
                     if n and int(n) > limit:
                         problems.append(f"  {os.path.relpath(path, ROOT)}:{number}: "
                                         f"refers to section {n}; the standard has {limit}")
+    return problems
+
+
+def check_rule_references():
+    """New rule links and historical section references use separate IDs."""
+    rules = generate_standard.load()["rules"]
+    ids = {rule["id"] for rule in rules}
+    problems = []
+    for path in reference_files():
+        text = open(path, encoding="utf-8", errors="ignore").read()
+        for number, line in enumerate(text.splitlines(), 1):
+            for rid in generate_standard.RULE_LINK.findall(line):
+                if rid not in ids:
+                    problems.append(f"  {os.path.relpath(path, ROOT)}:{number}: "
+                                    f"refers to unknown rule {rid}")
     return problems
 
 
@@ -268,6 +290,7 @@ def main():
 
     limit, heading_problems = section_counts()
     problems += heading_problems
+    problems += check_rule_references()
     if limit:
         problems += check_section_references(limit)
     problems += check_yaml_examples()

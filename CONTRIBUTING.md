@@ -56,6 +56,7 @@ pip install -r requirements.txt
 | كتلة `unicode` في أي مدخل | لا شيء، تُقرأ من قاعدة يونيكود | `python3 tools/generate_dabt.py` |
 | تهجئة `code` | `names.arabic.vocalized` | `python3 tools/translit.py`، والبناء يشتقها |
 | `content/ar/reference/dictionary.md` و`content/en/…/dictionary.md` | المدخل نفسه، بحقوله العربية والإنجليزية | `python3 tools/generate_dictionary.py` |
+| `content/ar/reference/standard.md` | `content/standards/terminology.ar.yml` | `python3 tools/generate_standard.py` |
 | `content/{ar,en}/naming.md` وسائر صفحات الأدلة | ملف القواعد `content/pages/<page>.yml` | `python3 tools/generate_pages.py` |
 | `content/glossary.json` (قائمة المصطلحات التي يعرضها الموقع) | مدخل المفهوم في `standards/terminology/concepts/` | `python3 tools/generate_glossary.py` |
 | `skills/quranic-terminology/` كله، ومنه `data/terminology.json` | المصدر الذي بُني منه | `python3 tools/generate_skill.py` |
@@ -88,7 +89,9 @@ python3 tools/build.py
 
 وبعد كتابة العربية أو مراجعتها شغّل `python3 tools/generate_pages.py --stamp <page>`، فيسجل هاش الإنجليزية التي تُرجمت عنها. وإن تغيرت الإنجليزية بعد ذلك فشل `tests/test_pages.py` وسمّى القاعدة التي تأخرت عربيتها. و`--check` يعرض ما لم يُترجم وما تقادم.
 
-والصفحة النثرية (المدخل، والرخصة، والمعيار، وسجل القرارات) ملف في كل لغة، والموجود في لغة واحدة نقص معروف.
+المعيار العربي مصدره `content/standards/terminology.ar.yml`. لكل قاعدة `id` نصي من 3 أرقام، و`category` و`name` و`description` وقائمة `examples`. تبقى الأرقام ثابتة عند إعادة الترتيب. يجمع الوصف الحكم وسياق تطبيقه، وتُكتب الأمثلة ككتل Markdown مستقلة: جدول للمقارنة، أو كتلة شفرة للصيغة الحرفية، أو فقرة للتوضيح. تُستخدم صيغة YAML متعددة الأسطر `|` لكل كتلة. يفحص `python3 tools/generate_standard.py --check` المصدر ومطابقة الصفحة المولدة دون تعديل الملفات.
+
+النسخة الإنجليزية من المعيار ما زالت تمثل النسخة السابقة؛ تُراجع ترجمتها بعد اعتماد المسودة العربية. الصفحات النثرية الأخرى (المدخل، والرخصة، وسجل القرارات) ملف في كل لغة.
 
 </div>
 
@@ -138,6 +141,7 @@ These files are generated, and an edit to them is lost on the next build:
 | The `unicode` block of any entry | nothing; it is read from the Unicode database | `python3 tools/generate_dabt.py` |
 | The `code` spelling | `names.arabic.vocalized` | `python3 tools/translit.py`; the build derives it |
 | `content/ar/reference/dictionary.md` and `content/en/…/dictionary.md` | the entry itself, Arabic and English fields | `python3 tools/generate_dictionary.py` |
+| `content/ar/reference/standard.md` | `content/standards/terminology.ar.yml` | `python3 tools/generate_standard.py` |
 | `content/{ar,en}/naming.md` and the other guideline pages | the rule file `content/pages/<page>.yml` | `python3 tools/generate_pages.py` |
 | `content/glossary.json` (the glossary the site renders) | the concept entry in `standards/terminology/concepts/` | `python3 tools/generate_glossary.py` |
 | All of `skills/quranic-terminology/`, including `data/terminology.json` | the source it was built from | `python3 tools/generate_skill.py` |
@@ -164,4 +168,6 @@ A guideline page is written once, in `content/pages/<page>.yml`: every rule in E
 
 After writing or revising Arabic, run `python3 tools/generate_pages.py --stamp <page>`; it records the hash of the English each field was translated from. If the English changes afterwards, `tests/test_pages.py` fails and names the rule whose Arabic is behind. `--check` lists what is untranslated or stale.
 
-A prose page (start here, licensing, the standard, the decision record) is one file per language, and one that exists in one language only is a known gap.
+The Arabic standard is authored in `content/standards/terminology.ar.yml`. Each rule has a quoted three-digit `id`, `category`, `name`, `description`, and an `examples` list. IDs stay stable after reordering. Descriptions include the requirement and its scope; each example is a standalone Markdown block: a table for comparisons, a fenced code block for literal syntax, or a paragraph for explanation. Use a YAML literal block (`|`) for each example. Run `python3 tools/generate_standard.py --check` to validate the source and detect stale output without writing.
+
+The English standard still represents the previous edition; its rewrite follows review of the Arabic draft. Other prose pages (start here, licensing, the decision record) remain one file per language.

@@ -39,6 +39,7 @@ STEPS = [
     (["generate_dictionary.py"], "the dictionary pages, Arabic and English"),
     (["generate_registries.py"], "the registry pages"),
     (["generate_pages.py"], "the guideline pages, from their rule files"),
+    (["generate_standard.py"], "the Arabic naming standard, from its structured rules"),
     (["generate_glossary.py"], "the site glossary, from the dictionary"),
     (["check_examples.py"], "no stale name or section number in the prose"),
     (["check_example_files.py"], "the example files still say what the prose says"),
