@@ -12,7 +12,8 @@ Three more things go stale the same way and are checked here too:
   * a reference to "section N" of the standard, once the sections are numbered
     in their headings, must name a section that exists, in every file under
     content/, tools/, standards/ and skills/;
-  * the English and Arabic standard must carry the same numbered H2 sequence;
+  * the Arabic draft has unique rule IDs and working rule links; the English
+    edition retains the numbered sections used by historical references;
   * a YAML example in the standard that shows an entry (`concept: …`) must parse,
     each field it shows must satisfy schema.json, and where the entry exists the
     example must show what the file says.
@@ -127,26 +128,20 @@ SCHEMA_WORDS = {
 
 
 def section_counts():
-    """How many sections each standard has, and the numbers its H2s carry.
-
-    Before the headings are numbered the count is the H2 count; once they are,
-    the sequence itself is checked to be 1..N in both languages.
-    """
-    counts, sequences, problems = {}, {}, []
+    """Historical section references use the previous edition, retained in English."""
+    counts, problems = {}, []
     for lang, rel in STANDARD.items():
+        if lang == "ar":  # The Arabic draft now uses rule IDs, checked below.
+            continue
         path = os.path.join(ROOT, rel)
         if not os.path.exists(path):
             continue
         text = open(path, encoding="utf-8").read()
         numbers = [int(n) for n in NUMBERED_H2.findall(text)]
-        sequences[lang] = numbers
         counts[lang] = len(numbers) if numbers else len(H2.findall(text))
         if numbers and numbers != list(range(1, len(numbers) + 1)):
             problems.append(f"  {rel}: numbered headings run {numbers[:3]}…{numbers[-3:]}, "
                             f"not 1..{len(numbers)}")
-    if len(sequences) == 2 and sequences["en"] != sequences["ar"]:
-        problems.append(f"  the English standard numbers {len(sequences['en'])} sections "
-                        f"and the Arabic {len(sequences['ar'])}; they mirror each other")
     return min(counts.values()) if counts else None, problems
 
 
@@ -173,6 +168,25 @@ def check_section_references(limit):
                     if n and int(n) > limit:
                         problems.append(f"  {os.path.relpath(path, ROOT)}:{number}: "
                                         f"refers to section {n}; the standard has {limit}")
+    return problems
+
+
+def check_rule_references():
+    """New rule links and historical section references use separate IDs."""
+    text = open(os.path.join(ROOT, STANDARD["ar"]), encoding="utf-8").read()
+    anchors = re.findall(r'<a id="rule-([0-9]{3})"></a>', text)
+    headings = re.findall(r"^### ([0-9]{3})\. ", text, re.M)
+    ids = set(anchors)
+    problems = []
+    if not anchors or anchors != headings or len(ids) != len(anchors):
+        problems.append("  Arabic standard: rule headings need matching, unique three-digit anchors")
+    for path in reference_files():
+        text = open(path, encoding="utf-8", errors="ignore").read()
+        for number, line in enumerate(text.splitlines(), 1):
+            for rid in re.findall(r"#rule-([0-9]+)", line):
+                if rid not in ids:
+                    problems.append(f"  {os.path.relpath(path, ROOT)}:{number}: "
+                                    f"refers to unknown rule {rid}")
     return problems
 
 
@@ -268,6 +282,7 @@ def main():
 
     limit, heading_problems = section_counts()
     problems += heading_problems
+    problems += check_rule_references()
     if limit:
         problems += check_section_references(limit)
     problems += check_yaml_examples()
