@@ -12,8 +12,8 @@ Three more things go stale the same way and are checked here too:
   * a reference to "section N" of the standard, once the sections are numbered
     in their headings, must name a section that exists, in every file under
     content/, tools/, standards/ and skills/;
-  * legacy editions share numbered sections; the structured Arabic edition
-    instead validates its source, generated output and stable rule links;
+  * the Arabic draft has unique rule IDs and working rule links; the English
+    edition retains the numbered sections used by historical references;
   * a YAML example in the standard that shows an entry (`concept: …`) must parse,
     each field it shows must satisfy schema.json, and where the entry exists the
     example must show what the file says.
@@ -22,7 +22,6 @@ Three more things go stale the same way and are checked here too:
 """
 import glob, json, os, re, sys
 import yaml
-import generate_standard
 from jsonschema import Draft202012Validator
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -112,7 +111,7 @@ SCHEMA_WORDS = {
     "check_registries", "build_registry_aliases", "registry_aliases",
     "extract_ayah_counts", "ayah_counts", "turath_cache",
     "generate_skill", "skill_template", "audit_terminology", "update_check",
-    "generate_pages", "generate_standard", "test_pages", "translations_json",
+    "generate_pages", "test_pages", "translations_json",
     # registry file names, and the sources their rows cite
     "qiraat_ayah_map", "ghayat_al_nihayah", "bayan_dani", "nasser_transmission",
     # the fields of a rule file (content/pages/*.yml)
@@ -129,31 +128,20 @@ SCHEMA_WORDS = {
 
 
 def section_counts():
-    """Validate each edition using its own structure.
-
-    Legacy section references still target the previous 31-section edition.
-    A generated standard is checked against its structured source instead of
-    being required to mirror the old edition's numbered headings.
-    """
-    counts, sequences, problems = {}, {}, []
+    """Historical section references use the previous edition, retained in English."""
+    counts, problems = {}, []
     for lang, rel in STANDARD.items():
+        if lang == "ar":  # The Arabic draft now uses rule IDs, checked below.
+            continue
         path = os.path.join(ROOT, rel)
         if not os.path.exists(path):
             continue
         text = open(path, encoding="utf-8").read()
-        front = yaml.safe_load(text.split("---", 2)[1]) if text.startswith("---\n") else {}
-        if front.get("generated") == generate_standard.SOURCE_REL:
-            problems += generate_standard.check()
-            continue
         numbers = [int(n) for n in NUMBERED_H2.findall(text)]
-        sequences[lang] = numbers
         counts[lang] = len(numbers) if numbers else len(H2.findall(text))
         if numbers and numbers != list(range(1, len(numbers) + 1)):
             problems.append(f"  {rel}: numbered headings run {numbers[:3]}…{numbers[-3:]}, "
                             f"not 1..{len(numbers)}")
-    if len(sequences) == 2 and sequences["en"] != sequences["ar"]:
-        problems.append(f"  the English standard numbers {len(sequences['en'])} sections "
-                        f"and the Arabic {len(sequences['ar'])}; they mirror each other")
     return min(counts.values()) if counts else None, problems
 
 
@@ -185,13 +173,17 @@ def check_section_references(limit):
 
 def check_rule_references():
     """New rule links and historical section references use separate IDs."""
-    rules = generate_standard.load()["rules"]
-    ids = {rule["id"] for rule in rules}
+    text = open(os.path.join(ROOT, STANDARD["ar"]), encoding="utf-8").read()
+    anchors = re.findall(r'<a id="rule-([0-9]{3})"></a>', text)
+    headings = re.findall(r"^### ([0-9]{3})\. ", text, re.M)
+    ids = set(anchors)
     problems = []
+    if not anchors or anchors != headings or len(ids) != len(anchors):
+        problems.append("  Arabic standard: rule headings need matching, unique three-digit anchors")
     for path in reference_files():
         text = open(path, encoding="utf-8", errors="ignore").read()
         for number, line in enumerate(text.splitlines(), 1):
-            for rid in generate_standard.RULE_LINK.findall(line):
+            for rid in re.findall(r"#rule-([0-9]+)", line):
                 if rid not in ids:
                     problems.append(f"  {os.path.relpath(path, ROOT)}:{number}: "
                                     f"refers to unknown rule {rid}")

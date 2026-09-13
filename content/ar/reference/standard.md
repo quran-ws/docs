@@ -2,7 +2,6 @@
 title: معيار تسمية المفردات القرآنية
 description: قواعد أسماء المفاهيم القرآنية وتهجئتها وتركيبها والتمييز بينها.
 status: draft
-generated: content/standards/terminology.ar.yml
 sidebar:
   order: 1
 ---

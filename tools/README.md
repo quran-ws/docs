@@ -45,7 +45,6 @@ source that was changed without regenerating.
 | `generate_registries.py` | Renders the registry pages, Arabic and English, from the registries |
 | `generate_glossary.py` | Writes `content/glossary.json`, the short glossary quran.ws renders, from the concept entries named in its `TERMS` list; `--check` reports staleness |
 | `generate_pages.py` | Renders the guideline pages from `content/pages/*.yml`: English always, Arabic once fully translated; `--check` and `--stamp` track the translation |
-| `generate_standard.py` | Renders the Arabic standard from `content/standards/terminology.ar.yml`; `--check` validates rules, links and generated output without writing |
 | `check_examples.py` | Every name in the prose resolves, every counter-example still doesn't, every section reference exists, every YAML example is a true excerpt |
 | `check_example_files.py` | The files under `examples/` still say what the prose that cites them says |
 | `generate_skill.py` | Builds `skills/quranic-terminology/`: the standard, the dictionary and the scripts an agent audits a codebase with |
