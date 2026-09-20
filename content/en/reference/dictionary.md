@@ -130,6 +130,25 @@ Sources establish a concept's meaning and definition; the standard chooses its c
 
 Entries start as `draft`, become `proposed` after discussion and `adopted` after approval. Adoption requires a source for the definition and display-name evidence in `names.display_evidence`. Drafts may carry a display name before its evidence is complete.
 
+<a id="usage-evidence"></a>
+
+### Document usage evidence
+
+Compare spellings of the same concept within a declared source set relevant to Quranic software or English scholarly writing in its domain. Original repositories, project documentation and interfaces, and relevant scholarly publications are suitable sources; general search totals alone do not establish usage in this domain.
+
+Record the following in display evidence or the exception's decision record:
+
+1. Candidate spellings, the meaning being compared, selected sources, reasons for selecting them and the measurement date.
+2. Exact queries, search restrictions and counting unit: project, document or file. Use a contextual phrase when a word has other common meanings.
+3. Results and evidence links, including how forks, mirrors and irrelevant matches were excluded. Do not mix file counts with project or document counts.
+4. Measurement limitations, the chosen form and reasoning, and the evidence reviewer's name and review date.
+
+For display names, choose the most common form in the source set after checking relevance. If evidence is tied or insufficient, retain a provisional choice in a `draft`; do not claim it is sufficiently measured for adoption.
+
+For a code-spelling exception, one form being more common is insufficient. The decision must explicitly establish the derived form's rarity within the set, explain why this term needs an exception, and assess compatibility. The proposer and reviewers must assess and record that decision before adding the exception. There is no universal numeric threshold: counts support the decision rather than granting automatic approval.
+
+Historical counts in `display_measurements.json` remain preliminary evidence as collected, not complete records under this policy. Do not assume an unrecorded date, filtering process or review. Complete missing evidence before adopting an entry or adding a new exception; this page does not remeasure or rename existing entries.
+
 ### Keep both languages aligned
 
 An entry has Arabic and English text. `definition_en`, `purpose_en`, `boundaries_en` and `note_en` translate the Arabic fields without adding or removing conditions. Translate boundaries line by line.

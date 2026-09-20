@@ -383,15 +383,13 @@ transliteration belongs in `names.transliteration`.
 
 ## `taa` and `haa` name two letters each
 
-*Undated · open*
+*2026-09-21 · proposed in this PR; replaces the open question*
 
-**Question:** `ت` and `ط` both give `taa`, and `ح` and `ه` both give `haa`,
-because the derivation merges emphatic and plain letters. Neither name is used
-by any entry.
+**Decision:** retain the recorded spellings and distinguish a letter's Arabic character or codepoint from its written name. `taa` and `haa` are not unique letter identifiers. Retain identity alongside the name when distinguishing ت from ط or ح from ه.
 
-**Status:** open. It is decided when an entry needs one of them.
-`build_aliases.py` fails if two concepts ever claim one of these names, so the
-clash cannot arrive unnoticed.
+**Why:** simplified spelling does not preserve every phonetic distinction. Inventing an unsupported name would change the convention to solve an identity problem that can be represented explicitly. Dictionary concept identifiers must still remain unambiguous.
+
+**Consequence:** [rule 023](standard.md#rule-023) shows all four cases without renaming entries or inventing spellings.
 
 ---
 
@@ -994,3 +992,16 @@ and the second entry would carry no field the first does not.
 readers call it. `sujud_al_tilawah`, the act as the fiqh books title it, and
 `mawdi_al_sajdah`, the place as al-Itqan lists it, resolve to the entry.
 
+
+
+## Clarifications from the naming-standard review
+
+*2026-09-21 · proposed in this PR*
+
+**Decision:** rules 002 and 003 retain Arabic according to the concept's specialisation in the Quran or its sciences, not the absence of an English translation. Rule 007 explicitly applies 004 and keeps its number for references. The `mawdi` example in 016 demonstrates transliteration alone; the final general name is `place`.
+
+**Evidence and review:** the [usage-evidence policy](dictionary.md#usage-evidence) defines sources, counting, queries and review for rules 027 and 038. Passing software checks does not establish complete historical evidence or adoption.
+
+**Resolution:** rule 044 permits separator-only and case-only lookup forms in `alternative_spellings` without treating them as independent linguistic spellings or canonical names. `waqf-lazim` therefore remains a valid lookup form for `waqf_lazim`; it need not be removed from the data.
+
+**Example boundary:** the shortening in 041 is illustrative and not attributed to a source. The spelling-rule precedence in 056 and the word-reference limits in 069, 071 and 072 remain as clarified in the bilingual draft.

@@ -50,7 +50,7 @@ After defining a concept, choose one code name for it according to this standard
 
 ### 002. Transliterating specialised terms
 
-Retain the Arabic name of a specialised Quranic or scholarly concept and write it in Latin letters when a general translation would lose its precision or identity.
+Retain an Arabic term when it denotes a concept specific to the Quran or its sciences, and write it in Latin letters using the spelling rules. Decide from the concept’s meaning and domain, regardless of whether an English equivalent exists.
 
 **Examples**
 
@@ -64,7 +64,7 @@ Retain the Arabic name of a specialised Quranic or scholarly concept and write i
 
 ### 003. Translating general concepts
 
-Use the natural English name for a general concept that has a clear technical name.
+Use the established technical English name for a general concept, even in a Quranic application. Having an Arabic word does not make it a specialised Quranic term; if the English equivalent is unclear, review the concept’s definition before choosing its name.
 
 **Examples**
 
@@ -120,7 +120,7 @@ A translated general head noun goes at the end of the English construction. Reve
 
 ### 007. Technical meaning within a compound
 
-A word's technical meaning within the compound determines its spelling: translate «إملائية» with «علامة», but transliterate it with «رسم».
+This rule applies [rule 004](#rule-004); it is not an exception. A word’s technical meaning within the compound determines its spelling: translate «إملائية» with «علامة», but transliterate it with «رسم». Its separate number is retained to make this example easy to reference.
 
 **Examples**
 
@@ -286,6 +286,8 @@ Write waw with sukun following a fathah as `aw`, and yaa with sukun following a 
 | أَوْلَى | `awla` |
 | طَرَفَيْن | `tarafayn` |
 
+The `mawdi` example demonstrates only the transliteration of «مَوْضِع»; it does not choose the concept’s final name. When the word means a general location, the general-word table records `place`, following [rule 003](#rule-003).
+
 <a id="rule-017"></a>
 
 ### 017. Doubled consonants
@@ -396,7 +398,16 @@ Use the spellings recorded in the [letter-name table](https://github.com/quran-w
 | المِيم الصَّغِيرَة | `small_meem` |
 | سِين القِرَاءَة | `seen_al_qiraah` |
 
-Letter names are exceptions to shortened long vowels in [rule 021](#rule-021): write `noon` and `meem`, not `nun` and `mim`. The exception applies to the letter name even within a compound; it does not extend to terms such as `tajwid`. See the [decision record](../decisions/) for the reasoning and the shared spellings of some letter names.
+Letter names are exceptions to shortened long vowels in [rule 021](#rule-021): write `noon` and `meem`, not `nun` and `mim`. The exception applies to the letter name even within a compound; it does not extend to terms such as `tajwid`. See the [decision record](../decisions/) for the reasoning and how letters with shared name spellings are distinguished.
+
+Two letter names may share a spelling: `taa` for taa and emphatic taa, and `haa` for haa and the pharyngeal haa. These are written names, not unique letter identifiers. When distinguishing them, retain the Arabic letter or its codepoint alongside the name; do not infer the letter from `taa` or `haa` alone. This does not permit two concepts to share one dictionary identifier.
+
+| Letter | Codepoint | Written name |
+| --- | --- | --- |
+| ت | `U+062A` | `taa` |
+| ط | `U+0637` | `taa` |
+| ح | `U+062D` | `haa` |
+| ه | `U+0647` | `haa` |
 
 <a id="rule-024"></a>
 
@@ -451,7 +462,7 @@ Repeating the vowel avoids shortening the ending to forms such as `rub` and `jam
 
 ### 027. Established-spelling exceptions
 
-When a term has a documented exception in the established-spellings table, use that recorded spelling instead of the derived result. Add a usage-based exception only with measurements showing that the derived result is very rarely used.
+When a term has a documented exception in the established-spellings table, use that recorded spelling instead of the derived result. Add a usage-based exception only through an explicit review decision supported by documented measurements showing the derived result is rare within a defined source set, following the [usage-evidence policy](../dictionary/#usage-evidence). No automatic percentage grants an exception; the decision must explain why the derived form is unsuitable for this term.
 
 **Examples**
 
@@ -459,7 +470,7 @@ When a term has a documented exception in the established-spellings table, use t
 | --- | --- | --- |
 | الجزء | `juz` | `juzu` |
 
-A spelling being more common is not sufficient for an exception; otherwise `tajweed` would replace `tajwid`. The exception concerns a derived form almost absent from usage. Exceptions and measurements are recorded in the [established-spellings table](https://github.com/quran-ws/docs/blob/79e3c6bb2b52dd1df81b3e64debfebf9dd5f8ea5/standards/terminology/data/established_spellings.tsv), with explanations in the [decision record](../decisions/).
+A spelling being more common is not sufficient for an exception; otherwise `tajweed` would replace `tajwid`. The exception needs a term-specific justification within the declared measurement scope. Exceptions and measurements are recorded in the [established-spellings table](https://github.com/quran-ws/docs/blob/79e3c6bb2b52dd1df81b3e64debfebf9dd5f8ea5/standards/terminology/data/established_spellings.tsv), with explanations in the [decision record](../decisions/).
 
 <a id="rule-028"></a>
 
@@ -612,6 +623,8 @@ Choose the most common English spelling for display and document the evidence in
 | Code name | `tajwid` |
 | Display name | `Tajweed` |
 
+Document sources, comparison method and results under the [usage-evidence policy](../dictionary/#usage-evidence). “Most common” means most common within the declared relevant sources, not proven dominance across every possible use.
+
 <a id="rule-039"></a>
 
 ### 039. The vocalised Arabic name
@@ -654,6 +667,8 @@ Change the vocalised Arabic name only for a linguistic reason that clarifies the
 
 Do not shorten a waqf value's Arabic name merely to shorten its code name. In this example, the shortened name omits that continuing is preferable.
 
+The shortened form is an illustrative counter-example showing the lost meaning, not a name attributed to a source.
+
 <a id="rule-042"></a>
 
 ### 042. Definite articles in Arabic names
@@ -686,14 +701,14 @@ Preserve the official Unicode character name as given; do not use it as the code
 
 ### 044. Alternative spellings
 
-Treat different written forms of the same name as alternative spellings for search. Changes to letter case or separators are not alternative spellings.
+Distinguish alternative spellings from lookup forms differing only in case or separators. Both may be recorded in `alternative_spellings` so that references resolve, but a separator change does not create a distinct linguistic spelling or a new canonical name.
 
 **Examples**
 
 | Canonical form | Other form | Relationship |
 | --- | --- | --- |
 | `hamzah` | `hamza` | Alternative spelling |
-| `waqf_lazim` | `waqf-lazim` | Separator change; not an alternative spelling |
+| `waqf_lazim` | `waqf-lazim` | Separator-only lookup form; may be recorded for resolution |
 
 ## Relationships between names
 
@@ -1152,7 +1167,7 @@ Keep canonical vocabulary in models, databases and APIs, adapting letter case to
 | `camelCase` | Fields and functions where required by the language | `ayahNumber` |
 | `kebab-case` | URL paths | `/waqf-marks/waqf-lazim` |
 
-Changing letter case or separators does not create a new alternative spelling in the dictionary.
+Changing case or separators does not create an independent linguistic spelling; the form may be recorded for lookup under [rule 044](#rule-044).
 
 ### Names owned by an external source
 
