@@ -12,8 +12,8 @@ Three more things go stale the same way and are checked here too:
   * a reference to "section N" of the standard, once the sections are numbered
     in their headings, must name a section that exists, in every file under
     content/, tools/, standards/ and skills/;
-  * the Arabic draft has unique rule IDs and working rule links; the English
-    edition retains the numbered sections used by historical references;
+  * both standards have matching, unique rule IDs and working rule links;
+    historical section numbers refer to the pinned previous edition;
   * a YAML example in the standard that shows an entry (`concept: …`) must parse,
     each field it shows must satisfy schema.json, and where the entry exists the
     example must show what the file says.
@@ -128,21 +128,11 @@ SCHEMA_WORDS = {
 
 
 def section_counts():
-    """Historical section references use the previous edition, retained in English."""
-    counts, problems = {}, []
-    for lang, rel in STANDARD.items():
-        if lang == "ar":  # The Arabic draft now uses rule IDs, checked below.
-            continue
-        path = os.path.join(ROOT, rel)
-        if not os.path.exists(path):
-            continue
-        text = open(path, encoding="utf-8").read()
-        numbers = [int(n) for n in NUMBERED_H2.findall(text)]
-        counts[lang] = len(numbers) if numbers else len(H2.findall(text))
-        if numbers and numbers != list(range(1, len(numbers) + 1)):
-            problems.append(f"  {rel}: numbered headings run {numbers[:3]}…{numbers[-3:]}, "
-                            f"not 1..{len(numbers)}")
-    return min(counts.values()) if counts else None, problems
+    """The previous edition at 79e3c6bb2b52dd1df81b3e64debfebf9dd5f8ea5
+    has 31 numbered sections. Historical citations in decisions and tool
+    documentation retain that numbering; current standards use rule IDs.
+    """
+    return 31, []
 
 
 def reference_files():
@@ -173,13 +163,18 @@ def check_section_references(limit):
 
 def check_rule_references():
     """New rule links and historical section references use separate IDs."""
-    text = open(os.path.join(ROOT, STANDARD["ar"]), encoding="utf-8").read()
-    anchors = re.findall(r'<a id="rule-([0-9]{3})"></a>', text)
-    headings = re.findall(r"^### ([0-9]{3})\. ", text, re.M)
-    ids = set(anchors)
     problems = []
-    if not anchors or anchors != headings or len(ids) != len(anchors):
-        problems.append("  Arabic standard: rule headings need matching, unique three-digit anchors")
+    editions = {}
+    for lang, path in STANDARD.items():
+        text = open(os.path.join(ROOT, path), encoding="utf-8").read()
+        anchors = re.findall(r'<a id="rule-([0-9]{3})"></a>', text)
+        headings = re.findall(r"^### ([0-9]{3})\. ", text, re.M)
+        editions[lang] = anchors
+        if not anchors or anchors != headings or len(set(anchors)) != len(anchors):
+            problems.append(f"  {lang} standard: rule headings need matching, unique three-digit anchors")
+    if editions["ar"] != editions["en"]:
+        problems.append("  Arabic and English standards must have the same rule IDs in the same order")
+    ids = set(editions["ar"]) & set(editions["en"])
     for path in reference_files():
         text = open(path, encoding="utf-8", errors="ignore").read()
         for number, line in enumerate(text.splitlines(), 1):

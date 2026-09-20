@@ -38,7 +38,10 @@ SITE_LINK = re.compile(r"\(/guidelines/en/reference/(standard|dictionary|decisio
 
 
 def relink(text):
-    return SITE_LINK.sub(lambda m: f"({m.group(1)}.md{m.group(2) or ''})", text)
+    text = SITE_LINK.sub(lambda m: f"({m.group(1)}.md{m.group(2) or ''})", text)
+    return re.sub(
+        r"\((?:\.\./reference/|\.\./|\.\./\.\./)(standard|dictionary|decisions|registries)/(#[^)]*)?\)",
+        lambda m: f"({m.group(1)}.md{m.group(2) or ''})", text)
 
 FIELDS = ("kind", "category", "origin", "tier", "status", "plural", "parent",
           "registry", "definition_en", "purpose_en", "boundaries_en", "note_en",

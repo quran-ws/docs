@@ -10,6 +10,32 @@ import generate_dabt
 from conftest import ROOT
 
 
+def test_dictionary_introduction_survives_generation(tmp_path):
+    import generate_dictionary as dictionary
+    entries = dictionary.load()
+    index = dictionary.Index(entries)
+    sources = dictionary.load_sources()
+    for locale in (dictionary.AR, dictionary.EN):
+        output = tmp_path / (locale["code"] + ".md")
+        dictionary.render(entries, dict(locale, out=str(output)), index, sources)
+        rendered = output.read_text()
+        assert rendered.count('<a id="reading-entries"></a>') == 1
+        assert rendered.index('id="reading-entries"') < rendered.index('## ' + locale['lookup_h'])
+        assert rendered.count('<a id="contributing"></a>') == 1
+        assert '(#contributing)' in rendered
+        for entry in entries:
+            assert f'<a id="{entry["concept"]}"></a>' in rendered
+
+
+def test_skill_relinks_reader_and_contributor_pages():
+    for source, expected in (
+        ('[Read](../dictionary/#reading-entries)', '[Read](dictionary.md#reading-entries)'),
+        ('[Contribute](../dictionary/#contributing)', '[Contribute](dictionary.md#contributing)'),
+        ('[Read](../reference/dictionary/)', '[Read](dictionary.md)'),
+    ):
+        assert generate_skill.relink(source) == expected
+
+
 def test_skill_json_is_stable():
     entries = generate_skill.load()
     a, b = generate_skill.terminology(entries), generate_skill.terminology(entries)

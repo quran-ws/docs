@@ -8,10 +8,10 @@
 
 The three things the standard asks of a new term are done in order, and each
 one can stop you: the vocalized Arabic is derived into the code spelling
-(sections 4-8), so the name is never chosen; the dictionary is searched for the
+(rules 009–036), so the name is never chosen; the dictionary is searched for the
 concept under every spelling it knows, so a "new" term that already exists is
 caught; and the entry is written in the shape of `data/schema.json`, with the
-acceptance checklist of section 30 beside it. A proposal is a draft: it goes
+dictionary contribution checklist beside it. A proposal is a draft: it goes
 upstream to the guidelines repository, not into this skill's data.
 
 Exit codes: 0 drafted; 1 the Arabic is not vocalized, or the concept already
@@ -107,7 +107,7 @@ def main(argv=None):
     notes = []
     if expected and expected != code:
         notes.append(f"the name you expected, `{expected}`, is not what the Arabic derives to: "
-                     f"the code is `{code}` (sections 4-8), with no exceptions for taste. "
+                     f"the code is `{code}` (rules 009–036), with no exceptions for taste. "
                      f"If `{expected}` is an established spelling, that is a decision for the "
                      f"standard's tables, not for this entry.")
 

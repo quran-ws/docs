@@ -18,7 +18,7 @@ answer a naming question without guessing.
 > proposal, not a ruling. Say so once, at the top of any report that relies on
 > the dictionary — not on every finding.
 >
-> Snapshot `d3b7177e09d6f537` of `quran-ws/docs`. The dictionary keeps moving, so before an
+> Snapshot `3acdca14a3c711ed` of `quran-ws/docs`. The dictionary keeps moving, so before an
 > audit that someone will act on, check the snapshot is still current:
 >
 > ```bash
@@ -101,14 +101,12 @@ Registries (closed sets, one row per member): `ayah_counts`, `ayah_numbering`, `
    `english_glosses`; the names are `ayah` and `surah`.
 10. **Names are snake_case in code**, clear and unabbreviated: no `srh`, `ay`,
     `wrd`, no `data`, `info`, `item`, `value` where a real name exists.
-11. **Deprecated is not incorrect.** A deprecated name names a different concept
-    or an abandoned one; it keeps resolving so old data is not stranded, and it
+11. **Deprecated is not incorrect.** A deprecated name is a former name for the same concept; it keeps resolving so old data is not stranded, and it
     is not written in new code. `waqf_jaiz` is the example: it now resolves to
     `waqf_jaiz_mustawi_al_tarafayn`, the one value it used to mean.
 
-`references/standard.md` is the full standard, numbered section by section
-with a table of contents at the top; the scripts cite those numbers. Read the
-section before ruling on anything these 11 rules do not settle. When a
+`references/standard.md` is the full standard with stable three-digit rule IDs.
+The scripts cite those IDs. Read the rule before ruling on anything these 11 rules do not settle. When a
 finding is contested — `tajwid` against `tajweed`, `ayah` against `verse`, why
 `page` is English and `juz` is not — `references/decisions.md` holds the
 evidence behind the decision; read it before arguing the point.
@@ -190,8 +188,8 @@ A useful report, in order:
 
 1. Search first — `lookup.py --search` over the Arabic and the English. Most
    "new" terms are spellings of an entry that exists.
-2. If it is genuinely new, apply the acceptance rule in §30 of
-   `references/standard.md`: it must be a concept that cannot be defined
+2. If it is genuinely new, follow the contribution section in
+   `references/dictionary.md#contributing`: it must be a concept that cannot be defined
    without the Quran or the mushaf; then state its boundaries, what it
    excludes, why software must model it, and the source that establishes it.
 3. Let the script do the derivation, the collision check and the draft:
@@ -226,7 +224,7 @@ value the code presents as settled.
 
 | path | what it holds |
 | --- | --- |
-| `references/standard.md` | the full terminology standard, numbered sections, table of contents first |
+| `references/standard.md` | the full terminology standard, with stable rule IDs |
 | `references/dictionary.md` | the 180 entries as prose, with a lookup table; `lookup.py` is faster |
 | `references/decisions.md` | the contested decisions, with the evidence behind each |
 | `references/registries.md` | the closed sets as prose: every surah, qiraah, numbering system and sajdah, with sources |

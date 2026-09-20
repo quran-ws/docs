@@ -6,6 +6,8 @@
 
 افتح `Issue` قبل إرسال `PR`، لأن الأدلة تتغير بالنقاش.
 
+تفاصيل كتابة المداخل ومراجعتها في [المساهمة في القاموس](content/ar/reference/dictionary.md#contributing)، ومعاني الحقول في [دليل القاموس](content/ar/reference/dictionary.md#reading-entries).
+
 ## كيف يُقترح تغيير
 
 1. **افتح `Issue`** لتعديل قاعدة أو مصطلح، يشرح **الحالة الواقعية** التي دفعت إليه: أي مشروع، وأي موضع، وما الذي التبس أو تعذر. القاعدة التي لا حالة وراءها لا تُعتمد.
@@ -43,6 +45,8 @@ pip install -r requirements.txt
 </div>
 <div dir="rtl">
 
+مقدمة القاموس مصدرها `content/fragments/ar/dictionary-intro.md` ونظيرتها الإنجليزية؛ يعدلهما الكاتب ثم يولد القاموس.
+
 ## الملفات المولّدة وكيف تُعدَّل
 
 هذه الملفات مولّدة، وأي تعديل فيها يضيع عند إعادة التوليد:
@@ -72,7 +76,7 @@ python3 tools/build.py
 </div>
 <div dir="rtl">
 
-يشغّل `build.py` كل خطوات البناء بترتيبها، 14 خطوة اليوم: اختبار قواعد التهجئة، وتوليد مداخل العلامات وسجل أحكام التجويد، وبناء الفهرسين، ومطابقة أعداد الآي، والتحقق من كل مدخل على المخطط وعلى المعيار، وفحص السجلات، وتوليد القاموس وصفحات السجلات بلغتيه، وفحص الأسماء في الصفحات وملفات النماذج، وتوليد المهارة. القائمة الكاملة في [`tools/README.md`](tools/README.md)، و`make build` يشغّل الأمر نفسه. وأدرج الملفات المولّدة في الـ`PR` نفسه.
+يشغّل `build.py` كل خطوات البناء بترتيبها، بالترتيب: اختبار قواعد التهجئة، وتوليد مداخل العلامات وسجل أحكام التجويد، وبناء الفهرسين، ومطابقة أعداد الآي، والتحقق من كل مدخل على المخطط وعلى المعيار، وفحص السجلات، وتوليد القاموس وصفحات السجلات بلغتيه، وفحص الأسماء في الصفحات وملفات النماذج، وتوليد المهارة. القائمة الكاملة في [`tools/README.md`](tools/README.md)، و`make build` يشغّل الأمر نفسه. وأدرج الملفات المولّدة في الـ`PR` نفسه.
 
 ## حال الصفحة
 
@@ -100,6 +104,8 @@ The short version, for every Quran.ws repository, is [How to contribute](https:/
 
 Open an issue before sending a PR, because the guidelines change through discussion.
 
+For entry writing and review, see [Contributing to the dictionary](content/en/reference/dictionary.md#contributing). Field meanings are in the [dictionary guide](content/en/reference/dictionary.md#reading-entries).
+
 ## How a change is proposed
 
 1. **Open an issue** for a change to a rule or a term, describing the **real case** that prompted the change: which project, which place, what was ambiguous or impossible. A rule with no case behind it is not adopted.
@@ -125,6 +131,8 @@ The build needs Python 3 and the packages in `requirements.txt`:
 pip install -r requirements.txt
 ```
 
+The dictionary introduction is authored in `content/fragments/{ar,en}/dictionary-intro.md`. Edit both versions, then regenerate the dictionary.
+
 ## What is never edited by hand
 
 These files are generated, and an edit to them is lost on the next build:
@@ -148,7 +156,7 @@ These files are generated, and an edit to them is lost on the next build:
 python3 tools/build.py
 ```
 
-`build.py` runs every build step in order, 14 today: the spelling tests, the generated mark entries and the tajwid rules registry, the two indexes, the ayah-count reconciliation, every entry against the schema and against the standard, the registries, the dictionary and registry pages in both languages, the names in the prose and the example files, and the skill. The full list is in [`tools/README.md`](tools/README.md); `make build` runs the same command. Include the generated files in the same PR.
+`build.py` runs every build step in order: the spelling tests, the generated mark entries and the tajwid rules registry, the two indexes, the ayah-count reconciliation, every entry against the schema and against the standard, the registries, the dictionary and registry pages in both languages, the names in the prose and the example files, and the skill. The full list is in [`tools/README.md`](tools/README.md); `make build` runs the same command. Include the generated files in the same PR.
 
 ## Page status
 

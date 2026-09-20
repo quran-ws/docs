@@ -51,7 +51,7 @@ python3 skills/quranic-terminology/scripts/lookup.py --search waqf
 
 **1.4** A concept the dictionary lacks is proposed there before the code that needs it is merged, not after.
 
-A project may keep concepts of its own, in a concepts directory beside the standard's, when the concept cannot be defined by the Quran or the mushaf (standard, section 30).
+A project may keep concepts of its own, in a concepts directory beside the standard's, when the concept cannot be defined by the Quran or the mushaf ([dictionary contribution guide](/guidelines/en/reference/dictionary/#contributing)).
 
 *Checked by:* The term issue form, and the audit's `--strict` mode, which flags a Quranic name the dictionary does not know.
 
@@ -88,7 +88,7 @@ surah → ayah → word       not  chapter → verse → word
 python3 tools/translit.py "رُبْع الحِزْب"     # rub_al_hizb
 ```
 
-The derivation rules are sections 4 to 8 of the standard. You do not need them to use a name, only to add one.
+The derivation rules are [rules 009–036](/guidelines/en/reference/standard/#rule-009). You do not need them to use a name, only to add one.
 
 *Checked by:* `tools/test_translit.py` holds the golden cases, and `tools/check_conformance.py` checks that every entry's `code` is its own derivation.
 
@@ -158,7 +158,7 @@ ayah_id   surah_number   word_position   revelation_order
 
 A survey found `word_index`, `word_number` and `segment_number` in one table, and whether `word_index` was 0-based could not be recovered from the names.
 
-*Checked by:* The audit, which reports `index` and `idx` as suffixes; the choice between the four is a rule for the writer (standard, section 21).
+*Checked by:* The audit, which reports `index` and `idx` as suffixes; the choice between the four is a rule for the writer ([rules 067–071](/guidelines/en/reference/standard/#rule-067)).
 
 **4.4** Name a classification by what it classifies, and never by `type`.
 
@@ -168,7 +168,7 @@ recitation_style   not recitation_type
 waqf_mark_type     the one exception: the kind of a drawn mark
 ```
 
-*Checked by:* The audit reports `type` as a suffix on a Quranic concept (standard, section 24).
+*Checked by:* The audit reports `type` as a suffix on a Quranic concept ([rule 050](/guidelines/en/reference/standard/#rule-050)).
 
 **4.5** A classification column stores member codes from the registry, never a display string in either language.
 
