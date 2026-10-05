@@ -523,6 +523,8 @@ Use the recorded names for the surahs Taha, Yasin, Saad and Qaaf, which are name
 
 When the definite article remains inside a compound, write it consistently as `al`; do not change it before sun letters, the consonants that assimilate its pronunciation.
 
+A display name writes it as `al-`, lowercase and joined by a hyphen, and does not assimilate it either: `Asbab al-Nuzul`, not `Asbab an-Nuzul`.
+
 **Examples**
 
 | Arabic name | Code name | Display name |
@@ -535,12 +537,21 @@ When the definite article remains inside a compound, write it consistently as `a
 
 Omit the definite article at the beginning of a code name.
 
+The display name of a concept omits it too: `Fathah`. The names of people and works keep it, because rule 056 takes their scholarly form and the article is part of that form. As the first word of a display name the article is written `Al-`; anywhere else it stays `al-`. The scholarly `transliteration` keeps a lowercase `al-` in every position.
+
 **Examples**
 
 | Arabic name | Code spelling |
 | --- | --- |
 | الفَتْحَة | `fathah` |
 | السُّكُون | `sukun` |
+
+| Arabic name | Code name | Display name |
+| --- | --- | --- |
+| الفَتْحَة | `fathah` | `Fathah` |
+| البَزِّي | `bazzi` | `Al-Bazzi` |
+| الدُّورِي عَن الكِسَائِي | `duri_an_kisai` | `Al-Duri an al-Kisai` |
+| الشَّاطِبِيَّة | `shatibiyyah` | `Al-Shatibiyyah` |
 
 <a id="rule-032"></a>
 

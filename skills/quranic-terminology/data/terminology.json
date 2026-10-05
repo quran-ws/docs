@@ -5356,12 +5356,12 @@
    "idris-an-khalaf": "idris_an_khalaf_al_ashir",
    "idris_an_khalaf": "idris_an_khalaf_al_ashir",
    "idris_an_khalaf_al_ashir": "idris_an_khalaf_al_ashir",
-   "idrīs_ʿan_khalaf": "idris_an_khalaf_al_ashir",
+   "idrīs_ʿan_khalaf_al_ʿāshir": "idris_an_khalaf_al_ashir",
    "ishaq": "ishaq_an_khalaf_al_ashir",
    "ishaq-an-khalaf": "ishaq_an_khalaf_al_ashir",
    "ishaq_an_khalaf": "ishaq_an_khalaf_al_ashir",
    "ishaq_an_khalaf_al_ashir": "ishaq_an_khalaf_al_ashir",
-   "isḥāq_ʿan_khalaf": "ishaq_an_khalaf_al_ashir",
+   "isḥāq_ʿan_khalaf_al_ʿāshir": "ishaq_an_khalaf_al_ashir",
    "khalaf-an-hamza": "khalaf_an_hamzah",
    "khalaf-an-hamzah": "khalaf_an_hamzah",
    "khalaf_an_hamza": "khalaf_an_hamzah",
@@ -5407,8 +5407,8 @@
    "warsh_an_nafi": "warsh_an_nafi",
    "warsh_ʿan_nāfiʿ": "warsh_an_nafi",
    "أَبُو_الحَارِث_عَن_الكِسَائِي": "abu_al_harith_an_kisai",
-   "إِدْرِيس_عَن_خَلَف": "idris_an_khalaf_al_ashir",
-   "إِسْحَاق_عَن_خَلَف": "ishaq_an_khalaf_al_ashir",
+   "إِدْرِيس_عَن_خَلَف_العَاشِر": "idris_an_khalaf_al_ashir",
+   "إِسْحَاق_عَن_خَلَف_العَاشِر": "ishaq_an_khalaf_al_ashir",
    "ابْن_جَمَّاز_عَن_أَبِي_جَعْفَر": "ibn_jammaz_an_abu_jafar",
    "ابْن_ذَكْوَان_عَن_ابْن_عَامِر": "ibn_dhakwan_an_ibn_amir",
    "ابْن_وَرْدَان_عَن_أَبِي_جَعْفَر": "ibn_wardan_an_abu_jafar",
@@ -6238,6 +6238,6 @@
  "version": {
   "commit": null,
   "repo": "quran-ws/docs",
-  "snapshot": "7fcb0477a93c8bd9"
+  "snapshot": "c44af17a982c2786"
  }
 }

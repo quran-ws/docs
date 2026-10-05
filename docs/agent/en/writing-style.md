@@ -162,6 +162,9 @@ Use:    The mushaf carries tajwid colouring on every ayah.
 - It is "dabt", not "ḍabṭ"; "codepoint"; "alif". Letter names are written as they
   are said: noon, meem, seen, yaa, saad, haa, baa.
 - `al-` is never assimilated to a sun letter: al-Tawbah, not at-Tawbah.
+- In running prose `al-` is lowercase, and capitalised only at the start of a
+  sentence: "the riwayah of al-Duri", "Al-Duri transmits it". A display name
+  is different: it capitalises a leading `Al-` (standard, rule 031).
 
 ## 8. Don't translate field names or their values
 

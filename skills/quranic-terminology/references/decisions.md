@@ -1005,3 +1005,27 @@ readers call it. `sujud_al_tilawah`, the act as the fiqh books title it, and
 **Resolution:** rule 044 permits separator-only and case-only lookup forms in `alternative_spellings` without treating them as independent linguistic spellings or canonical names. `waqf-lazim` therefore remains a valid lookup form for `waqf_lazim`; it need not be removed from the data.
 
 **Example boundary:** the shortening in 041 is illustrative and not attributed to a source. The spelling-rule precedence in 056 and the word-reference limits in 069, 071 and 072 remain as the standard states them.
+
+
+## A display name keeps its article only for people and works
+
+*2026-10-05 · settled*
+
+**Decision:** the display name of a concept drops the leading article, as its code does: `Fathah`. The names of people and works keep it: `Al-Bazzi`, `Al-Shatibiyyah`. The article is `Al-` as the first word of a display name and `al-` anywhere else, always joined by a hyphen and never assimilated.
+
+**Why:** [rule 056](standard.md#rule-056) takes a person's name in its scholarly English form, and that form carries the article: English writing on the qiraat says al-Kisai, not Kisai. A concept name is a term, and a term reads without it. The registries already followed this split, but the standard did not state it.
+
+**The boundary:** surah names are outside this decision; their registry sets their display form. The capital `Al-` is this standard's choice for display names, which stand alone as labels. Running prose follows the scholarly convention: `al-` in lowercase, capitalised only at the start of a sentence. The `transliteration` field keeps the lowercase `al-` everywhere.
+
+**Consequence:** rules [030](standard.md#rule-030) and [031](standard.md#rule-031) state it.
+
+
+## The two riwayahs of Khalaf al-Ashir name him in full
+
+*2026-10-05 · settled*
+
+**Decision:** `ishaq_an_khalaf_al_ashir` and `idris_an_khalaf_al_ashir` display as `Ishaq an Khalaf al-Ashir` and `Idris an Khalaf al-Ashir`, and their Arabic names are إِسْحَاق عَن خَلَف العَاشِر and إِدْرِيس عَن خَلَف العَاشِر.
+
+**Why:** the short forms named the qari `Khalaf`, and Khalaf is also a rawi of Hamzah (`khalaf_an_hamzah`). The registry's own reason for the `<rawi>_an_<qiraah>` form is to keep those two apart. The codes already did; the names now match them, in both languages.
+
+**The boundary:** Arabic books often write إسحاق عن خلف, because the context of a chapter on the tenth qiraah names the qari. A registry name stands alone in a list, without that context. The codes are unchanged, and the short spellings `ishaq_an_khalaf` and `idris_an_khalaf` remain in `alternative_spellings`.
