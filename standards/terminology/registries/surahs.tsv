@@ -16,8 +16,8 @@
 # as they are said, like every other letter name, and the rows that do it are
 # in data/established_spellings.tsv rather than hidden here.
 #
-# `display` follows the dictionary's convention and drops the leading article:
-# `Fatihah`, not `Al-Fatihah`. The article-carrying form every reader also
+# `display` drops the leading article, as concept names do (rule 031):
+# `Fatihah`, not `Al-Fatihah`. People and works keep theirs (`Al-Bazzi`). The article-carrying form every reader also
 # writes is in `alternative_spellings`, so both resolve to the same surah.
 #
 # THE OTHER NAMES ARE NAMES, NOT TRIVIA

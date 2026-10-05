@@ -364,6 +364,7 @@ sidebar:
 والمصطلح بصورته المقررة:                            numbering system    dabt    alif
 والتهجئة بريطانية:                                  modelling   normalise
 وأداة التعريف لا تدغم في الحرف الشمسي:               al-Tawbah   لا at-Tawbah
+وهي صغيرة في النثر ولا تُكبَّر إلا أول الجملة:         the riwayah of al-Duri    Al-Duri transmits it
 ```
 
 وهي في [Writing style](https://github.com/quran-ws/docs/blob/main/docs/agent/en/writing-style.md)، الأقسام 1 و7.
