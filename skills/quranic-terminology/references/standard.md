@@ -537,7 +537,7 @@ A display name writes it as `al-`, lowercase and joined by a hyphen, and does no
 
 Omit the definite article at the beginning of a code name.
 
-The display name of a concept or a surah omits it too: `Fathah`, `Fatihah`. The names of people and works keep it, because rule 056 takes their scholarly form and the article is part of that form. As the first word of a display name the article is written `Al-`; anywhere else it stays `al-`. A surah's form with the article stays in `alternative_spellings` so that it still resolves, and the scholarly `transliteration` keeps a lowercase `al-` in every position.
+The display name of a concept omits it too: `Fathah`. The names of people and works keep it, because rule 056 takes their scholarly form and the article is part of that form. As the first word of a display name the article is written `Al-`; anywhere else it stays `al-`. The scholarly `transliteration` keeps a lowercase `al-` in every position.
 
 **Examples**
 
@@ -548,7 +548,7 @@ The display name of a concept or a surah omits it too: `Fathah`, `Fatihah`. The 
 
 | Arabic name | Code name | Display name |
 | --- | --- | --- |
-| الفَاتِحَة | `fatihah` | `Fatihah` |
+| الفَتْحَة | `fathah` | `Fathah` |
 | البَزِّي | `bazzi` | `Al-Bazzi` |
 | الدُّورِي عَن الكِسَائِي | `duri_an_kisai` | `Al-Duri an al-Kisai` |
 | الشَّاطِبِيَّة | `shatibiyyah` | `Al-Shatibiyyah` |

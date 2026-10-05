@@ -1017,11 +1017,11 @@ readers call it. `sujud_al_tilawah`, the act as the fiqh books title it, and
 
 *2026-10-05 · settled*
 
-**Decision:** the display name of a concept or a surah drops the leading article, as its code does: `Fathah`, `Fatihah`. The names of people and works keep it: `Al-Bazzi`, `Al-Shatibiyyah`. The article is `Al-` as the first word of a display name and `al-` anywhere else, always joined by a hyphen and never assimilated.
+**Decision:** the display name of a concept drops the leading article, as its code does: `Fathah`. The names of people and works keep it: `Al-Bazzi`, `Al-Shatibiyyah`. The article is `Al-` as the first word of a display name and `al-` anywhere else, always joined by a hyphen and never assimilated.
 
-**Why:** [rule 056](../standard/#rule-056) takes a person's name in its scholarly English form, and that form carries the article: English writing on the qiraat says al-Kisai, not Kisai. A concept or a surah name is a term, and a term reads without it. The registries already followed this split, but the standard did not state it, and the surahs registry described the term convention as the whole dictionary's.
+**Why:** [rule 056](../standard/#rule-056) takes a person's name in its scholarly English form, and that form carries the article: English writing on the qiraat says al-Kisai, not Kisai. A concept name is a term, and a term reads without it. The registries already followed this split, but the standard did not state it.
 
-**The boundary:** the capital `Al-` is this standard's choice for display names, which stand alone as labels. Running prose follows the scholarly convention: `al-` in lowercase, capitalised only at the start of a sentence. The `transliteration` field keeps the lowercase `al-` everywhere.
+**The boundary:** surah names are outside this decision; their registry sets their display form. The capital `Al-` is this standard's choice for display names, which stand alone as labels. Running prose follows the scholarly convention: `al-` in lowercase, capitalised only at the start of a sentence. The `transliteration` field keeps the lowercase `al-` everywhere.
 
 **Consequence:** rules [030](../standard/#rule-030) and [031](../standard/#rule-031) state it.
 
