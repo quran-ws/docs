@@ -43,4 +43,4 @@
 # Retain the Arabic letter or codepoint when identity matters:
 # ت U+062A and ط U+0637 share taa; ح U+062D and ه U+0647 share haa.
 # This does not allow two dictionary concepts to claim one identifier.
-# No spelling changes are introduced; see the 2026-09-21 decision record.
+# No spelling changes are introduced; see the 2026-10-05 decision record.

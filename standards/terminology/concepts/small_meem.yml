@@ -37,13 +37,13 @@ unicode:
   category: Mn
   combining_class: 230
   block: Arabic
-  unidata: 13.0.0
+  unidata: 15.0.0
 - cp: U+06ED
   name: ARABIC SMALL LOW MEEM
   category: Mn
   combining_class: 220
   block: Arabic
-  unidata: 13.0.0
+  unidata: 15.0.0
 mark_family: dabt
 sources:
 - id: hafs_svg_registry

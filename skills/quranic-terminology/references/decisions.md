@@ -383,7 +383,7 @@ transliteration belongs in `names.transliteration`.
 
 ## `taa` and `haa` name two letters each
 
-*2026-09-21 · proposed in this PR; replaces the open question*
+*2026-10-05 · settled · supersedes the open question*
 
 **Decision:** retain the recorded spellings and distinguish a letter's Arabic character or codepoint from its written name. `taa` and `haa` are not unique letter identifiers. Retain identity alongside the name when distinguishing ت from ط or ح from ه.
 
@@ -996,7 +996,7 @@ readers call it. `sujud_al_tilawah`, the act as the fiqh books title it, and
 
 ## Clarifications from the naming-standard review
 
-*2026-09-21 · proposed in this PR*
+*2026-10-05 · settled*
 
 **Decision:** rules 002 and 003 retain Arabic according to the concept's specialisation in the Quran or its sciences, not the absence of an English translation. Rule 007 explicitly applies 004 and keeps its number for references. The `mawdi` example in 016 demonstrates transliteration alone; the final general name is `place`.
 
@@ -1004,4 +1004,4 @@ readers call it. `sujud_al_tilawah`, the act as the fiqh books title it, and
 
 **Resolution:** rule 044 permits separator-only and case-only lookup forms in `alternative_spellings` without treating them as independent linguistic spellings or canonical names. `waqf-lazim` therefore remains a valid lookup form for `waqf_lazim`; it need not be removed from the data.
 
-**Example boundary:** the shortening in 041 is illustrative and not attributed to a source. The spelling-rule precedence in 056 and the word-reference limits in 069, 071 and 072 remain as clarified in the bilingual draft.
+**Example boundary:** the shortening in 041 is illustrative and not attributed to a source. The spelling-rule precedence in 056 and the word-reference limits in 069, 071 and 072 remain as the standard states them.
