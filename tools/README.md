@@ -108,3 +108,32 @@ dropped — `waqf_jaiz_wasl_awla`).
 Naming needs four different things: a stable identifier in code, a clear label
 for the reader, an accurate way to write the pronunciation, and a value suited
 to search. One string cannot do all four, so each has its own field.
+
+
+## Dictionary pages and contribution guidance
+
+Entry-reading documentation lives in `content/fragments/{ar,en}/dictionary-intro.md`.
+`generate_dictionary.py` includes it before the lookup table in each generated
+page. Edit these fragments, never the generated dictionary pages. The preview
+watches the fragments and regenerates the pages on save.
+
+Dictionary contributor instructions live in the same fragments and appear in
+the dictionary’s contribution section; repository setup remains in `CONTRIBUTING.md`. The Arabic and English naming standards share the same 73 rule anchors,
+examples and developer-facing guidance. Historical numbered-section citations
+refer to the previous edition pinned in the decision record.
+The dictionary reader and contribution sections are supplied in both languages.
+
+The source of truth is the concept YAML, JSON schema and tab-separated registries.
+Dictionary pages, registry pages, glossary, alias indexes and the terminology
+skill are generated from these sources. Do not maintain independent copies of
+entry data in documentation. Source mark data and Unicode metadata are generated
+by the steps above; drawn classification values have the same mark metadata
+as marks, while other classification values do not.
+
+The dictionary has no independent version number: use the generated skill's
+SHA-256 input snapshot and the published commit label to pin a revision.
+Record renames and withdrawals, with dates and reasons, in the surviving entry
+and the decision record. Deprecated names stay in the `deprecated` field;
+`aliases.json` indexes spellings, and `registry_aliases.json` indexes members
+within kind namespaces. Downstream projects can check their pinned snapshot
+with `scripts/update_check.py` in the generated skill.

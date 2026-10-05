@@ -34,7 +34,7 @@ unicode:
   category: Lo
   combining_class: 0
   block: Arabic
-  unidata: 13.0.0
+  unidata: 15.0.0
 mark_family: imlaiyyah
 sources:
 - id: hafs_svg_registry

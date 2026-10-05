@@ -61,13 +61,13 @@ IDENTIFIER = re.compile(r"[A-Za-z][A-Za-z0-9_.\-]*")
 CAMEL = re.compile(r"(?<=[a-z0-9])(?=[A-Z])|(?<=[A-Z])(?=[A-Z][a-z])")
 
 RULES = {
-    "deprecated": ("error", "A deprecated name: it names a different concept (section 20)."),
-    "spelling": ("error", "Not the canonical code spelling (sections 4-8)."),
-    "arabic_plural": ("error", "An Arabic plural used as a name (section 11)."),
+    "deprecated": ("error", "A former name for the same concept, no longer recommended (rules 046–047)."),
+    "spelling": ("error", "Not the canonical code spelling (rules 009–036)."),
+    "arabic_plural": ("error", "An Arabic plural used as a name (rules 048–049)."),
     "member": ("error", "A member of a closed set written in a spelling that is not its "
-                        "registry code (sections 12-13)."),
-    "display_in_code": ("warning", "The display name, used as an identifier (section 9)."),
-    "gloss": ("warning", "An English gloss standing in for a Quranic term (sections 3, 19)."),
+                        "registry code (dictionary registry guidance; rules 056–058)."),
+    "display_in_code": ("warning", "The display name, used as an identifier (rules 037–038)."),
+    "gloss": ("warning", "An English gloss standing in for a Quranic term (rules 002–003 and 045)."),
     "generic": ("warning", "An ordinary English word that is also a recorded spelling of a "
                            "concept; a finding only if the identifier is about that concept."),
 }
@@ -254,7 +254,7 @@ def build_index(data, ignore_words):
         if have and have[0] == "canonical" and "|" in have[1]:
             continue
         index[e["code"]] = ("canonical", concept, e["code"])
-    # A collection is named by adding `s` (section 11), so `suras` is `sura`
+    # A collection is named by adding `s` (rules 048–049), so `suras` is `sura`
     # made plural: the same finding, counted under the singular. Only `s` is
     # added — `es` would make `boxes` a plural of `box`.
     for form, hit in list(index.items()):

@@ -113,3 +113,11 @@ guidelines/
 - **`skills/` is generated, never edited.** `tools/generate_skill.py` writes it whole on every build, from `standards/` and `content/en`, so the skill an agent runs cannot state a rule the standard does not.
 - **`standards/` is the source of truth; `content/` explains it.** The terminology tables in prose are generated from `standards/terminology/concepts/*.yml`, never hand-maintained in two places.
 - **`surveys/` holds findings; `examples/` holds checked samples.** A survey never changes the standard by itself; it becomes the case behind a proposal. The examples are checked by the build, so what they show is what the standard says today.
+
+
+## Reader and contributor documentation
+
+- `content/{ar,en}/reference/dictionary.md` is generated with its reader guide from `content/fragments/{ar,en}/dictionary-intro.md`.
+- The dictionary’s contribution section explains entry authoring, evidence, bilingual review and deprecation, authored in the same introduction fragments.
+- `CONTRIBUTING.md` provides repository setup; `tools/README.md` covers generation and maintenance.
+- The Arabic standard keeps developer-facing naming guidance and links to these pages. Existing rule anchors are preserved.

@@ -39,13 +39,13 @@ unicode:
   category: Mn
   combining_class: 28
   block: Arabic
-  unidata: 13.0.0
+  unidata: 15.0.0
 - cp: U+08F1
   name: ARABIC OPEN DAMMATAN
   category: Mn
   combining_class: 28
   block: Arabic Extended-A
-  unidata: 13.0.0
+  unidata: 15.0.0
 mark_family: tanwin
 sources:
 - id: hafs_svg_registry

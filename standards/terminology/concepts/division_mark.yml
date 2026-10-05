@@ -46,7 +46,7 @@ unicode:
   category: So
   combining_class: 0
   block: Arabic
-  unidata: 13.0.0
+  unidata: 15.0.0
 mark_family: mustaqill
 sources:
 - id: hafs_svg_registry

@@ -12,10 +12,10 @@
 # letter	vocalized name	code	note
 ا	أَلِف	alif	same in both systems
 ب	بَاء	baa
-ت	تَاء	taa	collides with ط — see note below
+ت	تَاء	taa	shares spelling with ط; identity is the letter/codepoint
 ث	ثَاء	thaa
 ج	جِيم	jeem
-ح	حَاء	haa	collides with ه — see note below
+ح	حَاء	haa	shares spelling with ه; identity is the letter/codepoint
 خ	خَاء	khaa
 د	دَال	daal
 ذ	ذَال	dhaal
@@ -25,7 +25,7 @@
 ش	شِين	sheen
 ص	صَاد	saad
 ض	ضَاد	daad
-ط	طَاء	taa	collides with ت
+ط	طَاء	taa	shares spelling with ت; identity is the letter/codepoint
 ظ	ظَاء	dhaa
 ع	عَيْن	ayn
 غ	غَيْن	ghayn
@@ -35,12 +35,12 @@
 ل	لَام	laam
 م	مِيم	meem
 ن	نُون	noon	nun is an English word
-ه	هَاء	haa	collides with ح
+ه	هَاء	haa	shares spelling with ح; identity is the letter/codepoint
 و	وَاو	waw	same in both systems
 ي	يَاء	yaa
 #
-# UNRESOLVED: ت and ط both give taa, ح and ه both give haa, because section 4
-# collapses emphatic and plain consonants on purpose. Neither pair is used as a
-# name in any current entry, so the collision is recorded rather than patched.
-# Decide it when a term needs one of them, and note that build_aliases.py will
-# fail loudly if two concepts ever claim one of these names.
+# These are written names, not unique letter identifiers (rule 023).
+# Retain the Arabic letter or codepoint when identity matters:
+# ت U+062A and ط U+0637 share taa; ح U+062D and ه U+0647 share haa.
+# This does not allow two dictionary concepts to claim one identifier.
+# No spelling changes are introduced; see the 2026-10-05 decision record.

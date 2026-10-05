@@ -1,55 +1,26 @@
 ---
-title: Terminology standard
-description: One canonical name per concept, and a code spelling that is derived rather than chosen.
+title: Quranic vocabulary naming standard
+description: Rules for naming Quranic concepts, spelling and composing their names, and distinguishing them.
 status: draft
 sidebar:
   order: 1
 ---
 
-A standard for naming and defining the concepts used in Quranic software, so that
-the names are clear, precise, stable and predictable, and can be used consistently in:
+This standard sets the naming rules for concepts used in Quranic software. First define the concept, its meaning and its boundaries; then choose its name and derive its spelling using these rules. Record the resulting names in the [terminology dictionary](../dictionary/).
 
-- code
-- APIs
-- databases
-- datasets
-- packages
-- documentation
+The standard names concepts that cannot be defined without reference to the Quran or mushaf. Users, subscriptions, files and other general application concepts remain outside its dictionary. The software naming guidance here applies when using its vocabulary.
 
-The underlying idea comes from **convention over configuration**:
+The provisions of this standard are conformance requirements unless identified as recommendations or permitted options. “Must” indicates a requirement, “should” a recommendation, and “may” permission. Definitions explain meanings; examples illustrate the requirements.
 
-> Once a developer knows the rules, they can predict the name of a concept, a
-> relationship or a field, and how it is used, without going back to the
-> documentation each time.
+The underlying idea follows `convention over configuration`:
 
-**At a glance**
+> Once developers know the standard's rules, they can predict concept, relationship and field names and how to use them without consulting the documentation every time.
 
-1. Settle the concept before its name (§1).
-2. One concept, one canonical name; two concepts never share one (§2).
-3. A Quranic or scholarly concept keeps its Arabic name; a general concept takes
-   its English one, inside a compound name too (§3).
-4. The code spelling of an Arabic term is derived from its vocalised name by one
-   function, `tools/translit.py`, not chosen (§4–§8).
-5. `code` is for identifiers, `display` for readers, `arabic.vocalized` for the
-   Arabic reader; the three may differ (§9).
-6. Every entry has one `kind` and one `category`; values and types are entries of
-   their own, members of a closed set are rows in a registry (§12–§13).
-7. `definition` says what a concept is, `purpose` says why software models it,
-   `boundaries` say what it excludes (§15–§17).
-8. Names, spellings, glosses and deprecated names are separate fields (§19–§20).
-9. The same vocabulary runs through code, APIs, databases and documentation (§26).
-10. The dictionary is machine-readable, and the rules it states are checked by
-    tools (§29).
+## Define the concept before naming it
 
-**Scope.** A concept belongs in this standard when it cannot be defined without
-referring to the Quran or the mushaf. Everything else an application stores is
-real, and is not named here (§30).
+Define the concept first, then choose its name.
 
-## 1. Concept before name
-
-Settle the concept first, then choose its name.
-
-Before adopting a term, decide:
+Before adopting a term, establish:
 
 - What does it represent?
 - What are its boundaries?
@@ -57,1406 +28,1036 @@ Before adopting a term, decide:
 - Does it differ from a neighbouring concept?
 - Why does software need to model it?
 
-The starting question is not:
+Then choose the most suitable name using the following rules.
 
-> How do we translate this word?
+## One canonical name per concept
 
-It is:
+<a id="rule-001"></a>
 
-> What concept are we modelling?
+### 001. One code name per concept
 
-The name follows from the answer.
+After defining a concept, choose one code name for it according to this standard and record it in the dictionary. Use the same vocabulary wherever the standard applies, as far as possible.
 
-## 2. One canonical name per concept
+**Examples**
 
-Every concept has one canonical name: the name used by default in code across
-the projects that follow the standard.
+| Concept | Canonical name | Names that do not replace it |
+| --- | --- | --- |
+| السورة | `surah` | `chapter`, `quran_section` |
 
-For example:
+## Translation and compound names
 
-```text
-surah
-ayah
-word
-mushaf
-tajwid
-```
+<a id="rule-002"></a>
 
-Other names, spellings and translations are recorded, but they do not compete
-with the canonical name.
+### 002. Transliterating specialised terms
 
-A name belongs to one concept. `tools/build_aliases.py` fails the build when two
-entries claim one name, in any of their spellings. The one place a name is shared
-is between the values of two classifications, because a column holds the values
-of one classification and never two: `makki` is a value of
-`revelation_classification` and of `ayah_numbering_system`, and the two entries
-have different ids (§14).
+Retain an Arabic term when it denotes a concept specific to the Quran or its sciences, and write it in Latin letters using the spelling rules. Decide from the concept’s meaning and domain, regardless of whether an English equivalent exists.
 
-The rule:
+**Examples**
 
-> **One concept, one canonical name.**
+| Arabic name | Code spelling |
+| --- | --- |
+| سورة | `surah` |
+| آية | `ayah` |
+| تجويد | `tajwid` |
 
-## 3. When to keep the Arabic term
+<a id="rule-003"></a>
 
-Keep the Arabic term when it carries a Quranic or scholarly concept, and
-replacing it with an ordinary English word would lose precision or the identity
-of the concept.
+### 003. Translating general concepts
 
-For example:
+Use the established technical English name for a general concept, even in a Quranic application. Having an Arabic word does not make it a specialised Quranic term; if the English equivalent is unclear, review the concept’s definition before choosing its name.
 
-```text
-surah
-ayah
-mushaf
-juz
-hizb
-qiraah
-riwayah
-tajwid
-tafsir
-```
+**Examples**
 
-For general concepts that already have clear English technical names, use
-natural English:
+| Arabic name | Code spelling |
+| --- | --- |
+| كلمة | `word` |
+| صفحة | `page` |
+| حرف | `letter` |
 
-```text
-word
-letter
-page
-line
-root
-translation
-glyph
-```
+<a id="rule-004"></a>
 
-So we prefer:
+### 004. Forming compound names
 
-```text
-surah → ayah → word
-```
+In a compound name, transliterate the complete term originating in the Quran or its sciences, and translate the general words added to it into English. Whether a word is translated or transliterated depends on its meaning within the term.
 
-over:
+**Examples**
 
-```text
-chapter → verse → word
-```
+| Arabic name | Canonical form |
+| --- | --- |
+| الرَّسْم الإِمْلَائِيّ | `rasm_imlai` |
+| النُّون السَّاكِنَة | `noon_sakinah` |
+| الوَقْف اللَّازِم | `waqf_lazim` |
+| المِيم الصَّغِيرَة | `small_meem` |
 
-and over:
+The form for «المِيم الصَّغِيرَة» is `small_meem`, not `meem_saghirah`.
 
-```text
-surah → ayah → kalimah
-```
+<a id="rule-005"></a>
 
-A concept having an Arabic name does not make transliterating it the better
-choice.
+### 005. Order of translated adjectives
 
-### The same rule inside a compound name
+An adjective translated into English precedes the noun it describes.
 
-A compound name can join a technical word to an ordinary one. The technical word
-is transliterated and the ordinary one is translated:
+**Examples**
 
-```text
-المِيم الصَّغِيرَة    → small_meem        not meem_saghirah
-الصِّفْر المُسْتَدِير → rounded_zero      not sifr_mustadir
-الثَّلَاث نُقَط      → three_dots        not thalath_nuqat
-الأَلِف المَحْذُوفَة  → omitted_alif      not alif_mahdhufah
-```
-
-`saghirah` adds nothing to `small`, and helps a reader of neither language.
-
-A translated adjective moves in front of its noun, because that is English word
-order. A translated head noun moves to the end, and a chain of heads reverses:
-
-```text
-عَلَامَة الوَقْف        → waqf_mark
-نَوْع عَلَامَة الوَقْف   → waqf_mark_type
-```
-
-A technical word stays transliterated, however ordinary it looks:
-
-```text
-النُّون السَّاكِنَة  → noon_sakinah    `sakinah` is a term of tajwid
-الوَقْف اللَّازِم    → waqf_lazim      `lazim` is a term of waqf
-```
-
-The ordinary words are listed in `standards/terminology/data/general_words.tsv`,
-each with its role: `word` stays where it stands, `head` moves to the end, and
-`with_head` is translated only beside a head word and transliterated otherwise
-(`العَلَامَة الإِمْلَائِيَّة → orthographic_mark`, but
-`الرَّسْم الإِمْلَائِيّ → rasm_imlai`).
-
-The rule:
-
-> **Quran-specific concepts retain Quranic names; general concepts use natural
-> technical English.**
-
-## 4. Canonical Code Spelling
-
-Once we decide to use a term of Arabic origin, the standard fixes one spelling
-for it in code:
-
-**Canonical Code Spelling**
-
-The goal is not a precise transliteration system such as ALA-LC or DIN 31635.
-It is a simple, stable spelling that a developer can predict.
-
-### General rules
-
-- ASCII-friendly.
-- No precise transliteration marks: `ā`, `ī`, `ū`, `ʿ`, `ʾ`.
-- No `'` standing for hamzah or ayn.
-- One adopted spelling per term.
-- Other common spellings are recorded in `alternative_spellings`.
-
-### How the spelling is derived
-
-§4–§8 are mechanical rules, so a program can apply them. The Canonical
-Code Spelling is derived from the vocalised Arabic name by one function, rather
-than being left to each project's judgement.
-
-```bash
-python3 tools/translit.py "سُورَة" "رُبْع الحِزْب"
-سُورَة        surah          Surah
-رُبْع الحِزْب   rubu_al_hizb   Rubu al-Hizb
-```
-
-- The input is **vocalised**. Short vowels cannot be recovered from bare Arabic,
-  and guessing them is the judgement call this is meant to remove. An unmarked
-  hamzat al-wasl is refused rather than guessed: `اِسْتِعَاذَة` gives `istiadhah`,
-  while `استعاذة` is rejected. Hamzat al-wasl is written as an alif with its
-  vowel (`اِ`), never as `ٱ`.
-- The function is **not reversible**, by design. Emphatic letters and their
-  plain counterparts give the same Latin letter — `ص` and `س` are both `s`. The
-  aim is a stable identifier, not an accurate pronunciation.
-- `tools/check_conformance.py` re-derives the code of every `origin: quranic`
-  entry from its `arabic.vocalized` on every build, and `tools/test_translit.py`
-  holds the golden cases. When a spelling rule changes, those two show which
-  names change with it.
+| Arabic name | Code spelling |
+| --- | --- |
+| الأَلِف المَحْذُوفَة | `omitted_alif` |
 
-For example:
-
-```text
-qiraah
-ruku
-irab
-istiadhah
-```
+<a id="rule-006"></a>
 
-rather than:
-
-```text
-qira'ah
-rukūʿ
-i'rab
-istiʿādhah
-```
-
-### The letter table
-
-The consonants are written as follows. An emphatic letter and its plain
-counterpart share one spelling:
-
-```text
-ب b    ت t    ث th   ج j    ح h    خ kh   د d    ذ dh   ر r    ز z
-س s    ش sh   ص s    ض d    ط t    ظ z    غ gh   ف f    ق q    ك k
-ل l    م m    ن n    ه h    و w    ي y    ة h (t in a construct, §5)
-```
-
-- **Hamzah and ayn** carry no letter of their own (§7).
-- **Short vowels**: fathah `a`, kasrah `i`, dammah `u`.
-- **Long vowels**: `ا`/`ى` → `a`, `ي` → `i`, `و` → `u`, never doubled (§6). A dagger
-  alif and a maddah are long `a`.
-- **Diphthongs**: `وْ` after fathah is `aw`, `يْ` after fathah is `ay`: `mawdi`,
-  `awla`, `tarafayn`.
-- **Shaddah** doubles the consonant: `makki`, `muqatta`, `shaddah`.
-- **Tanwin** gives the short vowel alone; a case ending on the last letter is
-  dropped: `هُدًى` → `huda`.
-- **The definite article** is `al`, never assimilated to a sun letter (§8).
-
-## 5. Ta marbutah
-
-A singular Arabic term ending in ta marbutah ends in `h`:
-
-```text
-سُورَة   → surah
-آيَة    → ayah
-رِوَايَة  → riwayah
-قِرَاءَة  → qiraah
-بَسْمَلَة  → basmalah
-```
-
-So:
-
-```text
-surah     not sura
-ayah      not aya
-riwayah   not riwaya
-```
-
-The other forms are recorded as alternative spellings.
-
-### Ta marbutah in a construct
-
-A ta marbutah is pronounced as a `t` when the word is bound to the one after it,
-so it is written `t`:
-
-```text
-هَمْزَة الوَصْل    → hamzat_al_wasl     not hamzah_al_wasl
-سَجْدَة التِّلَاوَة  → sajdat_al_tilawah  not sajdah_al_tilawah
-```
-
-A noun followed by its own adjective is not bound to it, so its ta marbutah
-stays `h`:
-
-```text
-القَلْقَلَة الصُّغْرَى  → qalqalah_sughra    not qalqalat_sughra
-```
-
-The rule is mechanical: a ta marbutah gives `t` on the head of a construct and
-`h` everywhere else — at the end of a term, and before an adjective.
-`tools/test_translit.py` checks it.
-
-## 6. Long vowels
-
-The Canonical Code Spelling does not double English letters to show the length
-of an Arabic long vowel.
-
-In general:
-
-```text
-ا / ى → a
-ي     → i
-و     → u
-```
+### 006. Order of translated head nouns
 
-and not:
-
-```text
-aa
-ee
-oo
-```
+A translated general head noun goes at the end of the English construction. Reverse the order of successive translated head nouns.
 
-So:
-
-```text
-tajwid
-tafsir
-tariq
-nuzul
-tahqiq
-tadwir
-```
+**Examples**
 
-and not:
+| Arabic name | Code spelling |
+| --- | --- |
+| عَلَامَة الوَقْف | `waqf_mark` |
+| نَوْع عَلَامَة الوَقْف | `waqf_mark_type` |
 
-```text
-tajweed
-tafseer
-tareeq
-nuzool
-tahqeeq
-tadweer
-```
-
-These forms are not necessarily wrong in general use, but they are not the
-canonical spelling in this standard.
+<a id="rule-007"></a>
 
-### The nisba ya
+### 007. Technical meaning within a compound
 
-A doubled ya at the end of a nisba gives a single `i`:
+This rule applies [rule 004](#rule-004); it is not an exception. A word’s technical meaning within the compound determines its spelling: translate «إملائية» with «علامة», but transliterate it with «رسم». Its separate number is retained to make this example easy to reference.
 
-```text
-مَكِّيّ     → makki      not makkiyy
-مَدَنِيّ    → madani     not madaniyy
-عُثْمَانِيّ  → uthmani    not uthmaniyy
-```
-
-### Letter names are written as they are said
+**Examples**
 
-The name of a letter is written as it is pronounced, because a letter name is
-its sound:
+| Arabic name | Canonical form |
+| --- | --- |
+| العَلَامَة الإِمْلَائِيَّة | `orthographic_mark` |
+| الرَّسْم الإِمْلَائِيّ | `rasm_imlai` |
 
-```text
-نُون   → noon      not nun
-مِيم   → meem      not mim
-سِين   → seen      not sin
-جِيم   → jeem      not jim
-يَاء   → yaa       not ya
-```
-
-**This applies to letter names only.** Every other term is derived by §4–§8:
-
-```text
-small_noon         a letter name, written as said
-seen_al_qiraah     a letter name
-tajwid             not a letter name, so derived (not tajweed)
-haqiqi             not a letter name, so derived (not haqeeqi)
-makki              not a letter name, so derived (not makkee)
-```
-
-The 28 letter names are in `standards/terminology/data/letter_names.tsv`, and
-the function reads them from there. A letter name carries no meaning beyond its
-sound; the reason and the measurement behind the rule are in the
-[decision record](/guidelines/en/reference/decisions/).
+## Canonical code spelling
 
-### `tajwid` is written by the rule
+After choosing an Arabic term, determine how to write it in code. This form is its `Canonical Code Spelling`. Derive it from vocalised Arabic using the following rules so that developers arrive at the same spelling rather than each project choosing its own.
 
-`code` holds `tajwid`, the derived form, although `tajweed` is the commoner
-spelling. The reason is in the decision record.
+The aim is a simple, stable and predictable spelling rather than a precise scholarly rendering of pronunciation. Use `ASCII` without scholarly transliteration marks. Two Arabic letters may share one Latin equivalent, such as س and ص, both written `s`. Keep the original Arabic separately because the code spelling alone cannot reconstruct it.
 
-The dominant spelling is not lost, because each concept has two name fields:
+The project's shared tools can check spellings. The [contribution instructions](../dictionary/#contributing) explain how to check names before proposing a change.
 
-```text
-code     tajwid     derived by the rule; what is written in code
-display  Tajweed    measured from use; what a reader sees
-```
+## Spelling: name format
 
-`tajweed` is also recorded in `alternative_spellings`, so search and lookup find
-it.
+<a id="rule-008"></a>
 
-> **Open:** two letters share one name once emphatic and plain are merged, and
-> no entry uses either name today. The question is in the
-> [decision record](/guidelines/en/reference/decisions/).
+### 008. Code-name format
 
-## 7. Hamzah and ayn
+Write the canonical code name in lowercase Latin letters, separating words in a compound with underscores: `snake_case`.
 
-Hamzah and ayn are not represented by any special mark inside code names.
+**Examples**
 
-We use:
+| Arabic name | Code spelling |
+| --- | --- |
+| نظام عد الآي | `ayah_numbering_system` |
+| الوقف اللازم | `waqf_lazim` |
 
-```text
-qiraah
-irab
-istiadhah
-ruku
-```
+## Spelling: consonants and vowels
 
-and not:
+<a id="rule-009"></a>
 
-```text
-qira'ah
-i'rab
-isti'adhah
-ruku'
-```
+### 009. Characters in code spelling
 
-A more precise transliteration belongs in `names.transliteration`, and can be
-used in display or in scholarly content where it is needed.
+Write code names using `ASCII`, without scholarly transliteration marks or an apostrophe representing hamzah or ayn.
 
-### Hamzah and ayn at the end of a word
+**Examples**
 
-Deleting them at the end of a word cuts the word short: `ربع` becomes `rub` and
-`جمع` becomes `jam`, which are unrelated English words.
+| Canonical code spelling | Form not used in code |
+| --- | --- |
+| `qiraah` | `qirāʾah` |
+| `irab` | `i'rab` |
 
-So when a hamzah or ayn falls at the end of a word and the letter before it has
-no vowel of its own, the preceding vowel is repeated:
-
-```text
-رُبْع    → rubu
-جَمْع    → jama
-قَطْع    → qata
-الرَّفْع → rafa
-```
-
-When a long vowel comes before it, the word already ends in a vowel and nothing
-is added:
+<a id="rule-010"></a>
 
-```text
-الرُّكُوع  → ruku
-المَمْنُوع → mamnu
-المُقَطَّع → muqatta
-مَوْضِع    → mawdi
-```
+### 010. Source of the derived spelling
 
-A hamzah or ayn inside a word is dropped as described above, and its own vowel
-remains: `muallim`, `qiraah`. Each of these cases has a case in
-`tools/test_translit.py`.
+Derive the spelling of an Arabic term from its vocalised name according to this standard.
 
-### Established names
+**Examples**
 
-A few names have settled on one form across Quranic software, so a derived form
-would be correct but never used. `juz` is one: the letter rules give `juzu`, and
-use gives `juz` by a wide margin.
+| Arabic name | Code spelling |
+| --- | --- |
+| سُورَة | `surah` |
 
-These are recorded in `standards/terminology/data/established_spellings.tsv`,
-each with the measurement behind it. A row is accepted only with a measurement
-showing that the derived form is effectively unused; a term whose usage merely
-leans one way does not qualify, or `tajweed` would qualify. The measurements
-are in the [decision record](/guidelines/en/reference/decisions/).
+<a id="rule-011"></a>
 
-### Names written by a rule, not by a measurement
+### 011. Vocalising the Arabic name
 
-Two further cases are fixed by a rule rather than a count, and are kept in the
-same file so that the function reads them in one place:
+Use vocalised Arabic when deriving a spelling. Write hamzat al-wasl as an alif carrying its vowel, and do not assume an unrecorded vowel.
 
-- **A name may not open with `al`.** `آل عِمْرَان` derives to `al_imran`, and `al`
-  is what §8 reserves for the definite article, so the name is `aal_imran`.
-- **A surah named by the letters it opens with is written by letter name.** The
-  letter rules read `طه` as a consonant cluster and give `th`; the name is
-  `taha`. Likewise `yasin`, `saad` and `qaaf`.
+**Examples**
 
-## 8. Compound names and `al-`
+| Vocalised Arabic name | Derived form |
+| --- | --- |
+| اِسْتِعَاذَة | `istiadhah` |
 
-For a compound Arabic term we use one steady form:
+Unvocalised «استعاذة» is insufficient to determine the spelling. Write اِ rather than ٱ.
 
-```text
-Rubu al-Hizb
-Asbab al-Nuzul
-Sujud al-Tilawah
-```
+<a id="rule-012"></a>
 
-`al-` is not assimilated to a sun letter for the canonical spelling.
+### 012. Reconstructing the Arabic name
 
-In identifiers:
+Do not rely on the code name to reconstruct the original Arabic letters.
 
-```text
-rubu_al_hizb
-asbab_al_nuzul
-sujud_al_tilawah
-```
+**Examples**
 
-### When `al` is dropped
+| Arabic letter | Latin equivalent |
+| --- | --- |
+| ص | `s` |
+| س | `s` |
 
-`al` is part of the name in a construct only. It is dropped in two cases.
+Store the original Arabic separately; `s` alone does not identify which of the two letters occurred in the name.
 
-**A leading definite article** is not part of the code name:
+<a id="rule-013"></a>
 
-```text
-الفَتْحَة   → fathah      not al_fathah
-السُّكُون   → sukun       not al_sukun
-```
+### 013. Consonant correspondences
 
-**The article on an adjective** is not part of it either. When the noun is
-definite and the word after it is definite, the two are one name rather than a
-construct:
+Transliterate consonants using the correspondences in the example.
 
-```text
-الوَقْف اللَّازِم     → waqf_lazim      not waqf_al_lazim
-النُّون السَّاكِنَة    → noon_sakinah    not noon_al_sakinah
-الرَّسْم العُثْمَانِيّ   → rasm_uthmani    not rasm_al_uthmani
-```
+**Examples**
 
-Telling the two apart is mechanical, and it is done **one pair at a time**: each
-word is judged against the word immediately before it, wherever the term
-opened. If the word before it carries `ال`, it is an adjective and its article is
-dropped. If the word before it is indefinite, it is a construct and its `al`
-stays:
-
-```text
-رُبْع الحِزْب                        → rubu_al_hizb
-                                       (first word indefinite: a construct)
-الوَقْف اللَّازِم                     → waqf_lazim
-                                       (first word definite: an adjective)
-الوَقْف الجَائِز مُسْتَوِي الطَّرَفَيْن  → waqf_jaiz_mustawi_al_tarafayn
-                                       (الجائز is an adjective of الوقف;
-                                        الطرفين is the construct of مستوي)
-```
+| Arabic letter | Latin equivalent |
+| --- | --- |
+| ب | `b` |
+| ت | `t` |
+| ث | `th` |
+| ج | `j` |
+| ح | `h` |
+| خ | `kh` |
+| د | `d` |
+| ذ | `dh` |
+| ر | `r` |
+| ز | `z` |
+| س | `s` |
+| ش | `sh` |
+| ص | `s` |
+| ض | `d` |
+| ط | `t` |
+| ظ | `z` |
+| غ | `gh` |
+| ف | `f` |
+| ق | `q` |
+| ك | `k` |
+| ل | `l` |
+| م | `m` |
+| ن | `n` |
+| ه | `h` |
+| و | `w` |
+| ي | `y` |
+| ة | `h` |
 
-A translated head word (§3) does not take part in the judgement. The rest of the
-name is judged as if it opened the term, and English puts no article on a
-qualifier:
+<a id="rule-014"></a>
 
-```text
-عَلَامَة الوَقْف اللَّازِم  → waqf_lazim_mark    not al_waqf_lazim_mark
-```
+### 014. Short vowels
 
-### A preposition is a part of its own
+Represent short vowels as `a` for fathah, `i` for kasrah and `u` for dammah.
 
-A one-letter preposition written onto the next word — `بِ`, `لِ` — is its own
-part, and the noun it governs keeps its article, because the noun opens a phrase
-of its own and is never an adjective:
+**Examples**
 
-```text
-تَفْسِير بِالرَّأْي         → tafsir_bi_al_ray
-المَدّ العَارِض لِلسُّكُون  → madd_arid_li_al_sukun
-```
+| Vowel | Latin equivalent |
+| --- | --- |
+| Fathah (َ) | `a` |
+| Kasrah (ِ) | `i` |
+| Dammah (ُ) | `u` |
 
-### A connective is dropped
+<a id="rule-015"></a>
 
-A word that only relates one part of a name to another — `مَعَ`, `كَوْن`,
-`بِحَيْثُ`, `جَوَازًا` — says what the order of the parts already says, so it is
-dropped:
+### 015. Forms of long alif
 
-```text
-الوَقْف الجَائِز مَعَ كَوْنِ الوَصْل أَوْلَى  → waqf_jaiz_wasl_awla
-```
+Treat alif maqsura, dagger alif and maddah as long alif.
 
-The connectives are listed in `standards/terminology/data/connectives.tsv`. The
-Arabic name keeps its connectives; only the code drops them (§14).
+**Examples**
 
-## 9. Code name and display name
+| Arabic form | Latin equivalent |
+| --- | --- |
+| ا / ى / dagger alif / maddah | `a` |
 
-The code name does not have to be the precise transliteration.
+<a id="rule-016"></a>
 
-It can be:
+### 016. Diphthongs
 
-```text
-code:             qiraah
-display:          Qiraah
-transliteration:  qirāʾah
-arabic:           قراءة
-```
+Write waw with sukun following a fathah as `aw`, and yaa with sukun following a fathah as `ay`.
 
-The Canonical Code Spelling stays stable, while the display form can vary by
-language, audience and context.
+**Examples**
 
-### Name fields
+| Arabic name | Code spelling |
+| --- | --- |
+| مَوْضِع | `mawdi` |
+| أَوْلَى | `awla` |
+| طَرَفَيْن | `tarafayn` |
 
-We use several fields to hold the different names of a concept:
+The `mawdi` example demonstrates only the transliteration of «مَوْضِع»; it does not choose the concept’s final name. When the word means a general location, the general-word table records `place`, following [rule 003](#rule-003).
 
-```yaml
-names:
-  code:            hamzah
-  display:         Hamzah
-  arabic:
-    vocalized:     الهَمْزَة
-  dabt:            الهَمْزَة — رَأْس العَيْن
-  by_shape:        رَأْس عَيْن
-  mushaf_introduction: null
-  unicode:         ARABIC LETTER HAMZA
-alternative_spellings:
-  - hamza
-```
+<a id="rule-017"></a>
 
-#### The fields
+### 017. Doubled consonants
 
-**`code`** is the stable identifier used in code, APIs and databases. It is
-generated by the rules in §4–§8, and is not changed later merely
-because another name is more common.
+Double the consonant carrying a shaddah. The nisbah ending is covered in [rule 022](#rule-022).
 
-**`display`** is the name shown to a reader in documentation and interfaces. We
-take the most common English spelling and record where that came from in
-**`display_evidence`**. The evidence is required before an entry is marked
-`adopted`; a `draft` entry may carry a `display` with no evidence yet.
+**Examples**
 
-**`transliteration`** is the precise Latin transliteration, in ALA-LC or DIN
-31635. It is optional, and written only where it is needed.
+| Arabic name | Code spelling |
+| --- | --- |
+| شَدَّة | `shaddah` |
+| مُقَطَّع | `muqatta` |
 
-**`arabic.vocalized`** is the Arabic name written with its vowel marks. `code`
-is derived from it, and cannot be derived without it. It is also what the Arabic
-reader sees: the Arabic dictionary shows `arabic.vocalized` where the English one
-shows `display`. **`arabic.singular`** and **`arabic.plural`** hold the bare
-forms as linguistic information.
+<a id="rule-018"></a>
 
-`arabic.vocalized` is the name we give the concept, and it can differ from the
-name a source gives it. The source's name is kept in `dabt` or in
-`mushaf_introduction`, so nothing is lost.
+### 018. Tanwin and case endings
 
-`arabic.vocalized` is changed only on Arabic grounds — that the new name fits the
-boundaries of the concept better — never to reach a preferred code name.
-`division_mark` is the example, and it is argued in the decision record.
+Keep only the short vowel of tanwin, and drop the grammatical case vowel at the end of a word.
 
-A single noun carries its article (`السُّورَة`, `التَّجْوِيد`); a value that is an
-adjective stays bare (`مَكِّيّ`, `مُرَتَّل`); a compound keeps the articles its
-grammar gives it.
+**Examples**
 
-**`dabt`** is the name of the mark in the science of dabt, copied as its source
-gives it.
+| Arabic name | Code spelling |
+| --- | --- |
+| هُدًى | `huda` |
 
-**`by_shape`** describes the mark as it is drawn in the mushaf, copied as its
-source gives it.
+## Spelling: ta marbutah
 
-**`mushaf_introduction`** is the name the mushaf's own introduction gives the
-mark. We write `null` when the introduction names no mark, which is a fact about
-the source.
+<a id="rule-019"></a>
 
-**`unicode`** is the character's name in Unicode. We read it from the Unicode
-database, and do not use it as an identifier in code.
+### 019. Ta marbutah outside idafah
 
-**`alternative_spellings`** holds the known alternative spellings. We use them
-in search, and to resolve different inputs to the same concept.
+Write ta marbutah as `h` at the end of a name or before an adjective when the word is not the first member of an idafah construction.
 
-#### Fixed rules
+**Examples**
 
-- `code` and `display` may differ, and that is intended.
-- A Unicode name is not used as an identifier in code: it describes the shape of
-  a character rather than its function, and one character can serve two
-  different marks.
-- An empty `mushaf_introduction` is a fact about the source, not a gap in the
-  entry.
+| Arabic name | Code spelling |
+| --- | --- |
+| سُورَة | `surah` |
+| القَلْقَلَة الصُّغْرَى | `qalqalah_sughra` |
 
-## 10. The shape of names in code
+A following word alone does not turn ta marbutah into `t`: «الصغرى» is an adjective, so write `qalqalah_sughra`, not `qalqalat_sughra`.
 
-Use clear, complete names:
+<a id="rule-020"></a>
 
-```text
-surah
-ayah
-word
-translation
-```
+### 020. Ta marbutah in idafah
 
-Avoid unfamiliar abbreviations:
+Write ta marbutah as `t` when its word is the first member of an idafah construction, a noun construction expressing a relationship such as possession.
 
-```text
-srh
-ay
-wrd
-trans
-```
+**Examples**
 
-Avoid vague words when a more precise name exists:
+| Arabic name | Code spelling |
+| --- | --- |
+| هَمْزَة الوَصْل | `hamzat_al_wasl` |
+| سَجْدَة التِّلَاوَة | `sajdat_al_tilawah` |
 
-```text
-data
-info
-item
-object
-value
-```
+Ta marbutah is pronounced as a taa in idafah, so write `hamzat_al_wasl`, not `hamzah_al_wasl`.
 
-Name a classification by what it classifies, and use `_type` only for the
-classification of a mark's kind, where the mark is the thing being classified:
+## Spelling: long vowels and letter names
 
-```text
-waqf_mark_type     what a drawn waqf mark points to
-waqf_ruling        not waqf_type: the ruling on the place itself
-recitation_style   not recitation_type
-```
+<a id="rule-021"></a>
 
-`audit_terminology.py --strict` reports the abbreviations and the vague names in
-a codebase; the choice of a classification's own name is a rule for the writer.
+### 021. Long vowels
 
-## 11. Singular and plural
+Write long vowels with a single Latin letter: `a`, `i` or `u`. Letter names have canonical spellings in [rule 023](#rule-023).
 
-Use:
+**Examples**
 
-- the singular for one thing
-- the plural for a collection
+| Arabic name | Code spelling |
+| --- | --- |
+| تَجْوِيد | `tajwid` |
+| تَفْسِير | `tafsir` |
+| نُزُول | `nuzul` |
 
-For example:
+Do not double letters to represent vowel length: write `tajwid` and `nuzul`, not `tajweed` and `nuzool`. Other forms may be used for display or search, as explained in [rule 024](#rule-024).
 
-```text
-ayah    → ayahs
-surah   → surahs
-mushaf  → mushafs
-riwayah → riwayahs
-```
+<a id="rule-022"></a>
 
-Plurals in code follow a simple English convention: the whole code name plus
-`s`, whether the name is one word or a construct:
+### 022. The nisbah ending
+
+Write the doubled yaa of a final nisbah ending, an Arabic adjective ending indicating affiliation, as a single `i`.
+
+**Examples**
+
+| Arabic name | Code spelling |
+| --- | --- |
+| مَكِّيّ | `makki` |
+| مَدَنِيّ | `madani` |
+| عُثْمَانِيّ | `uthmani` |
+
+This applies specifically to the final nisbah yaa: write `makki`, not `makkiyy` or `makkee`. The doubled kaf remains `kk` under [rule 017](#rule-017).
+
+<a id="rule-023"></a>
+
+### 023. Letter-name spellings
+
+Use the spellings recorded in the [letter-name table](https://github.com/quran-ws/docs/blob/79e3c6bb2b52dd1df81b3e64debfebf9dd5f8ea5/standards/terminology/data/letter_names.tsv#L13-L40), whether the letter name occurs alone or in a compound.
+
+**Examples**
+
+| Arabic name | Code spelling |
+| --- | --- |
+| نُون | `noon` |
+| مِيم | `meem` |
+| سِين | `seen` |
+| جِيم | `jeem` |
+| يَاء | `yaa` |
+| صَاد | `saad` |
+| المِيم الصَّغِيرَة | `small_meem` |
+| سِين القِرَاءَة | `seen_al_qiraah` |
+
+Letter names are exceptions to shortened long vowels in [rule 021](#rule-021): write `noon` and `meem`, not `nun` and `mim`. The exception applies to the letter name even within a compound; it does not extend to terms such as `tajwid`. See the [decision record](../decisions/) for the reasoning and how letters with shared name spellings are distinguished.
+
+Two letter names may share a spelling: `taa` for taa and emphatic taa, and `haa` for haa and the pharyngeal haa. These are written names, not unique letter identifiers. When distinguishing them, retain the Arabic letter or its codepoint alongside the name; do not infer the letter from `taa` or `haa` alone. This does not permit two concepts to share one dictionary identifier.
+
+| Letter | Codepoint | Written name |
+| --- | --- | --- |
+| ت | `U+062A` | `taa` |
+| ط | `U+0637` | `taa` |
+| ح | `U+062D` | `haa` |
+| ه | `U+0647` | `haa` |
+
+<a id="rule-024"></a>
+
+### 024. Common spelling and the derived form
+
+When a common spelling differs from the derived form, use the common spelling for display and search, while keeping the derived form as the code name.
+
+**Examples**
+
+| Name form | Spelling |
+| --- | --- |
+| Code name | `tajwid` |
+| Display name | `Tajweed` |
+| Alternative spelling for search | `tajweed` |
+
+In the dictionary, `code` holds the derived form `tajwid`, `display` holds `Tajweed`, and `alternative_spellings` records `tajweed` for search. This keeps code spelling predictable while accommodating common usage. The [decision record](../decisions/) explains the distinction.
+
+## Spelling: hamzah, ayn and exceptions
+
+<a id="rule-025"></a>
+
+### 025. Hamzah and ayn
+
+Omit letters or special marks representing hamzah and ayn, retaining their vowels within a word.
+
+**Examples**
+
+| Arabic name | Code spelling |
+| --- | --- |
+| قِرَاءَة | `qiraah` |
+| مُعَلِّم | `muallim` |
+
+Omit the mark representing the consonant, not its vowel: write `qiraah`, not `qira'ah`, and retain the fathah in `muallim`. When precise scholarly transliteration is needed, store it in `names.transliteration` for display or scholarly content without changing the code name.
+
+<a id="rule-026"></a>
+
+### 026. Final hamzah and ayn after a consonant with sukun
+
+Repeat the preceding vowel when a word ends in hamzah or ayn preceded by a consonant with sukun.
+
+**Examples**
+
+| Arabic name | Code spelling |
+| --- | --- |
+| رُبْع | `rubu` |
+| جَمْع | `jama` |
+| قَطْع | `qata` |
+
+Repeating the vowel avoids shortening the ending to forms such as `rub` and `jam`, which are English words with other meanings. If hamzah or ayn follows a long vowel, add nothing: write `رُكُوع` → `ruku` and `مَمْنُوع` → `mamnu`, because the spelling already ends in a vowel.
+
+<a id="rule-027"></a>
+
+### 027. Established-spelling exceptions
+
+When a term has a documented exception in the established-spellings table, use that recorded spelling instead of the derived result. Add a usage-based exception only through an explicit review decision supported by documented measurements showing the derived result is rare within a defined source set, following the [usage-evidence policy](../dictionary/#usage-evidence). No automatic percentage grants an exception; the decision must explain why the derived form is unsuitable for this term.
+
+**Examples**
+
+| Arabic name | Canonical established spelling | Derived result replaced |
+| --- | --- | --- |
+| الجزء | `juz` | `juzu` |
+
+A spelling being more common is not sufficient for an exception; otherwise `tajweed` would replace `tajwid`. The exception needs a term-specific justification within the declared measurement scope. Exceptions and measurements are recorded in the [established-spellings table](https://github.com/quran-ws/docs/blob/79e3c6bb2b52dd1df81b3e64debfebf9dd5f8ea5/standards/terminology/data/established_spellings.tsv), with explanations in the [decision record](../decisions/).
+
+<a id="rule-028"></a>
+
+### 028. The name of surah Aal Imran
+
+Write the surah name Aal Imran as `aal_imran` to distinguish «آل» from the definite article `al`.
+
+**Examples**
+
+| Arabic name | Code spelling |
+| --- | --- |
+| آل عِمْرَان | `aal_imran` |
+
+<a id="rule-029"></a>
+
+### 029. Surahs named after their opening letters
+
+Use the recorded names for the surahs Taha, Yasin, Saad and Qaaf, which are named after their opening letters.
+
+**Examples**
+
+| Arabic name | Code spelling |
+| --- | --- |
+| طه | `taha` |
+| يس | `yasin` |
+| ص | `saad` |
+| ق | `qaaf` |
+
+## Spelling: articles and connecting words
+
+<a id="rule-030"></a>
+
+### 030. The definite article and sun letters
+
+When the definite article remains inside a compound, write it consistently as `al`; do not change it before sun letters, the consonants that assimilate its pronunciation.
+
+**Examples**
+
+| Arabic name | Code name | Display name |
+| --- | --- | --- |
+| أسباب النزول | `asbab_al_nuzul` | `Asbab al-Nuzul` |
+
+<a id="rule-031"></a>
+
+### 031. The definite article at the beginning
+
+Omit the definite article at the beginning of a code name.
+
+**Examples**
+
+| Arabic name | Code spelling |
+| --- | --- |
+| الفَتْحَة | `fathah` |
+| السُّكُون | `sukun` |
+
+<a id="rule-032"></a>
+
+### 032. The definite article on an adjective
+
+Omit the definite article from an adjective following a definite noun.
+
+**Examples**
+
+| Arabic name | Code spelling |
+| --- | --- |
+| الرَّسْم العُثْمَانِيّ | `rasm_uthmani` |
+| الوَقْف اللَّازِم | `waqf_lazim` |
+
+<a id="rule-033"></a>
+
+### 033. The definite article in idafah
+
+Retain `al` on the second member of an idafah construction, determining the idafah or adjective relationship between each adjacent pair of words.
+
+**Examples**
+
+| Arabic name | Code spelling |
+| --- | --- |
+| رُبْع الحِزْب | `rubu_al_hizb` |
+| الوَقْف الجَائِز مُسْتَوِي الطَّرَفَيْن | `waqf_jaiz_mustawi_al_tarafayn` |
+
+<a id="rule-034"></a>
+
+### 034. The definite article after translating a head noun
+
+Exclude a translated head noun when deciding whether to retain the definite article in the rest of the name.
+
+**Examples**
+
+| Arabic name | Canonical form | Form that violates the rule |
+| --- | --- | --- |
+| عَلَامَة الوَقْف اللَّازِم | `waqf_lazim_mark` | `al_waqf_lazim_mark` |
+
+<a id="rule-035"></a>
+
+### 035. Attached prepositions
+
+When بِ or لِ is attached to a word inside a term, represent the preposition as a separate part of the code name and retain the definite article on the noun following it.
+
+**Examples**
+
+| Arabic name | Code spelling |
+| --- | --- |
+| تَفْسِير بِالرَّأْي | `tafsir_bi_al_ray` |
+| المَدّ العَارِض لِلسُّكُون | `madd_arid_li_al_sukun` |
+
+<a id="rule-036"></a>
+
+### 036. Connecting words
+
+Omit مَعَ, كَوْن, بِحَيْثُ and جَوَازًا from the code name when they only connect its parts, while keeping the Arabic name complete.
+
+**Examples**
+
+| Arabic name | Code spelling |
+| --- | --- |
+| الوَقْف الجَائِز مَعَ كَوْنِ الوَصْل أَوْلَى | `waqf_jaiz_wasl_awla` |
+
+## Forms of a name
+
+One concept may have different name forms because each serves a different use: a stable code name, a user-facing name, vocalised Arabic, and names preserved from sources. Different forms do not imply different concepts.
+
+The [dictionary reader guide](../dictionary/#reading-entries) explains naming fields and entry structure. The [dictionary contribution section](../dictionary/#contributing) explains how to propose a term or change its definition.
+
+<a id="rule-037"></a>
+
+### 037. Code-name stability
+
+Use the canonical code name unchanged; do not change it merely because a more common spelling appears.
+
+**Examples**
+
+| Use | Name |
+| --- | --- |
+| Stable code name | `tajwid` |
+| Common display spelling | `Tajweed` |
+
+`tajwid` remains the code name even when `Tajweed` is common in display.
+
+<a id="rule-038"></a>
+
+### 038. Choosing the display name
+
+Choose the most common English spelling for display and document the evidence in `names.display_evidence` before marking the entry `adopted`. A `draft` may have a display name before its evidence is complete. The display name is what readers see in interfaces and documentation, and it may differ from the code name.
+
+**Examples**
+
+| Name form | Spelling |
+| --- | --- |
+| Code name | `tajwid` |
+| Display name | `Tajweed` |
+
+Document sources, comparison method and results under the [usage-evidence policy](../dictionary/#usage-evidence). “Most common” means most common within the declared relevant sources, not proven dominance across every possible use.
+
+<a id="rule-039"></a>
+
+### 039. The vocalised Arabic name
+
+Retain the vocalised Arabic name of a Quranic or scholarly Arabic term for derivation and Arabic display.
+
+**Examples**
+
+| Arabic name | Code name |
+| --- | --- |
+| الهَمْزَة | `hamzah` |
+
+<a id="rule-040"></a>
+
+### 040. Source names and the standard's name
+
+Distinguish the standard's name from a source's name or shape description. Preserve the source's wording and attribute it. This applies when a mark's name or classification differs between the standard and the science of mushaf marks, a mushaf introduction or another source.
+
+**Examples**
+
+| Name type | Example |
+| --- | --- |
+| Name from the science of mushaf marks | المِيم — عَلَامَة الوَقْف اللَّازِم |
+| Shape description from the source | رَأْس عَيْن |
+| Source classification | `imlaiyyah` |
+| Standard name | `orthographic_mark` |
+
+<a id="rule-041"></a>
+
+### 041. Changing the Arabic name
+
+Change the vocalised Arabic name only for a linguistic reason that clarifies the concept, never to obtain a preferred code name.
+
+**Examples**
+
+| Case | Arabic name |
+| --- | --- |
+| Full name in the example | الوَقْف الجَائِز مَعَ كَوْنِ الوَصْل أَوْلَى |
+| Proposed shortening solely to shorten the code name | الوَقْف الجَائِز |
+
+Do not shorten a waqf value's Arabic name merely to shorten its code name. In this example, the shortened name omits that continuing is preferable.
+
+The shortened form is an illustrative counter-example showing the lost meaning, not a name attributed to a source.
+
+<a id="rule-042"></a>
+
+### 042. Definite articles in Arabic names
+
+Write singular Arabic nouns with the definite article, and classification values expressed as adjectives without it.
+
+**Examples**
+
+| Name type | Arabic form |
+| --- | --- |
+| Singular noun with the definite article | السُّورَة |
+| Singular noun with the definite article | التَّجْوِيد |
+| Classification value expressed as an adjective | مَكِّيّ |
+| Classification value expressed as an adjective | مُرَتَّل |
+
+<a id="rule-043"></a>
+
+### 043. Unicode character names
+
+Preserve the official Unicode character name as given; do not use it as the code name of the concept the character represents.
+
+**Examples**
+
+| Name type | Form |
+| --- | --- |
+| Unicode character name | `ARABIC LETTER HAMZA` |
+| Concept's code name | `hamzah` |
+
+<a id="rule-044"></a>
+
+### 044. Alternative spellings
+
+Distinguish alternative spellings from lookup forms differing only in case or separators. Both may be recorded in `alternative_spellings` so that references resolve, but a separator change does not create a distinct linguistic spelling or a new canonical name.
+
+**Examples**
+
+| Canonical form | Other form | Relationship |
+| --- | --- | --- |
+| `hamzah` | `hamza` | Alternative spelling |
+| `waqf_lazim` | `waqf-lazim` | Separator-only lookup form; may be recorded for resolution |
+
+## Relationships between names
+
+<a id="rule-045"></a>
+
+### 045. Relationships between names
+
+Distinguish a canonical name, alternative spelling, English equivalent and deprecated name; these are different relationships between names.
+
+**Examples**
+
+| Name | Relationship to the canonical name |
+| --- | --- |
+| `ayah` | Canonical name |
+| `aya` | Alternative spelling of `ayah` |
+| `Verse` | English equivalent of `ayah` |
+| `alamat_mawdi_al_sajdah` | Deprecated name for `sajdah_mark` |
+
+## Deprecated names
+
+<a id="rule-046"></a>
+
+### 046. Deprecated names
+
+Distinguish a valid name no longer recommended for new projects from an alternative spelling, and identify it as a deprecated name referring to the same concept.
+
+**Examples**
+
+| Deprecated name | Canonical name for the same concept |
+| --- | --- |
+| `alamat_mawdi_al_sajdah` | `sajdah_mark` |
+
+<a id="rule-047"></a>
+
+### 047. References from former names
+
+When a concept is renamed or names for the same concept are merged, preserve the old names and their references to the surviving name, with the date and reason. This also applies when a name is withdrawn from the standard.
+
+**Examples**
+
+| Former name | Name it refers to |
+| --- | --- |
+| `alamat_mawdi_al_sajdah` | `sajdah_mark` |
+
+Record the reason for the merge alongside the reference.
+
+## Singular and plural
+
+<a id="rule-048"></a>
+
+### 048. Singular and plural
+
+Use the singular for one item and the plural for a collection.
+
+**Examples**
+
+| Meaning | Form |
+| --- | --- |
+| One ayah | `ayah` |
+| A collection of ayahs | `ayahs` |
+
+<a id="rule-049"></a>
+
+### 049. Forming the code plural
+
+Form the code plural by adding `s` to the complete code name, including compound names.
+
+**Examples**
 
 ```text
 ayahs
 juzs
 hizbs
-sajdahs
+mushafs
 ```
 
-Arabic plurals are not used as collection names:
+Do not use Arabic plurals such as `ayat` and `suwar` as code collection names; write `ayahs` and `surahs`. Preserve the Arabic plural as linguistic information in the dictionary.
+
+## Classification and value names
+
+<a id="rule-050"></a>
+
+### 050. Classification names and the `_type` suffix
+
+Name a classification after what it classifies, and reserve the `_type` suffix for classifications of mark types.
+
+**Examples**
+
+| Meaning | Canonical name | Name not used for this classification |
+| --- | --- | --- |
+| Waqf mark type | `waqf_mark_type` | — |
+| Waqf ruling | `waqf_ruling` | `waqf_type` |
+| Recitation style | `recitation_style` | `recitation_type` |
+
+<a id="rule-051"></a>
+
+### 051. The mark, its indication and the waqf ruling
+
+Use `waqf_mark` for the drawn mark, `waqf_mark_type` to classify what the marks indicate, and `waqf_ruling` to classify the ruling on stopping at a location.
+
+**Examples**
+
+| Meaning | Example values |
+| --- | --- |
+| A mark's indication | `waqf_lazim` or `waqf_mamnu` |
+| Ruling on stopping at the location | `waqf_tamm` or `waqf_kafi` |
+
+<a id="rule-052"></a>
+
+### 052. Naming and defining classification values
+
+Give each meaningful type or classification value its own code name and definition; defining only the overall classification is insufficient.
+
+**Examples**
+
+| Classification | Example values |
+| --- | --- |
+| `recitation_style` | `murattal`, `mujawwad`, `muallim` |
+| `recitation_pace` | `tahqiq`, `tadwir`, `hadr` |
+| `revelation_classification` | `makki`, `madani`, `disputed` |
+
+<a id="rule-053"></a>
+
+### 053. Distinguishing classification-value names
+
+Add the distinguishing concept name to a classification value's name when needed, retaining the words that distinguish it from other values.
+
+**Examples**
 
 ```text
-ayat
-suwar
-ajza
-ahzab
+waqf_lazim
+waqf_jaiz_wasl_awla
 ```
 
-The Arabic plural is recorded in `names.arabic.plural` as linguistic
-information.
+<a id="rule-054"></a>
 
-`plural` is written on an entry that is stored or listed as a collection — an
-entity, a unit, a piece of content — and omitted where nothing is ever a list of
-it. `tools/check_conformance.py` checks that a recorded plural is the code name
-plus `s`.
+### 054. Uniqueness within a classification
 
-## 12. Every entry has a kind
+A value name may occur in two different classifications when its classification is known. It must be unique within its own classification.
 
-Not every term is the same sort of thing.
+**Examples**
 
-Each entry is given its structural role, from a **closed** list. The list lives
-in `standards/terminology/schema.json` and is checked by `tools/validate.py`:
+| Classification | Value name |
+| --- | --- |
+| Revelation classification | `makki` |
+| Ayah numbering systems | `makki` |
+
+<a id="rule-055"></a>
+
+### 055. Ayah numbering system names
+
+Use the school's name as the code value for an ayah numbering system, rather than deriving the full Arabic name.
+
+**Examples**
 
 ```text
-entity                 has an identity of its own
-concept                represented, but not stored as an entity
-classification         a classification that has values
-classification_value   one value of a classification
-property               a property of an entity
-role                   a role a person fills
-process                an operation applied to the text
-content                content attached to the text
-analysis               an analysis derived from the text
-mark                   a mark drawn in the mushaf
-unit                   a textual, orthographic or typographic unit
+kufi
+basri
+dimashqi
+makki
+madani_first
+madani_last
 ```
 
-`process` is reserved: no entry carries it today, because the operations of §23
-are conventions rather than dictionary entries.
+## Surah and personal names
 
-`kind` describes the **shape** of an entry rather than its domain; the domain is
-carried by `category` alone. So kinds such as `textual_concept`,
-`recitation_concept` or `typographic_unit` do not arise: those are all `concept`
-or `unit`, differing in `category` rather than in `kind`.
+<a id="rule-056"></a>
 
-Each entry has exactly one `kind`.
+### 056. Personal names
 
-For example:
+Write the names of qiraah transmitters, rawis and other people associated with Quranic terminology using the scholarly English form with transliteration marks removed, supported by evidence for that form. If it conflicts with an explicit rule of the standard, the rule takes precedence: write `shubah`, not `shuba`, following the ta marbutah rule.
+
+**Examples**
 
 ```text
-ayah                       → entity
-tajwid                     → concept
-translation                → content
-reciter                    → role
-revelation_order           → property
-revelation_classification  → classification
-makki                      → classification_value
-waqf_mark                  → mark
-glyph                      → unit
-irab                       → analysis
+hafs
+warsh
+qalun
+ibn_dhakwan
 ```
 
-Do not treat all of these as one flat list of "terms".
+<a id="rule-057"></a>
 
-### Every mark belongs to a family
+### 057. Deriving surah names
 
-The marks of dabt are not one list. Each mark belongs to a family, and that
-family is its `parent`. The tree, as the entries have it:
+Derive surah names from their Arabic names using the general spelling rules.
+
+**Examples**
 
 ```text
-mushaf_mark
-├── harakah            fathah, dammah, kasrah, sukun, shaddah
-├── tanwin             tanwin_al_fath, tanwin_al_kasr, tanwin_al_damm
-├── ijam               dot, two_dots, three_dots
-├── orthographic_mark  hamzah, hamzat_al_wasl, maddah, omitted_alif,
-│                      small_noon, small_waw, small_yaa
-├── qiraah_mark        saktah_mark, seen_al_qiraah, ishmam, tashil, imalah
-└── (no family)        waqf_mark, ayah_mark, sajdah_mark, sajdah_line,
-                       division_mark, small_meem, rounded_zero,
-                       rectangular_zero
+fatihah
+baqarah
+nisa
 ```
 
-`mushaf_mark` is not made the parent of every mark: one parent over every mark
-in the registry says nothing. It stays the parent of the marks that have no
-family.
-
-The **waqf marks** are not in this tree. `waqf_mark` is the mark; what a given
-mark points to is a value of the classification `waqf_mark_type`:
-
-```text
-waqf_mark_type
-├── waqf_lazim
-├── waqf_mamnu
-├── waqf_jaiz_mustawi_al_tarafayn
-├── waqf_jaiz_wasl_awla
-├── waqf_jaiz_waqf_awla
-└── waqf_al_muanaqah
-```
-
-These 6 are `classification_value`, and they are drawn, so they carry `symbol`,
-`unicode` and `mark_family` like a mark. No other value does, and
-`tools/check_conformance.py` refuses those fields on any other non-mark.
-
-**`mark_family`** is the grouping of the source registry, `dabt_marks.tsv`:
-`harakah`, `tanwin`, `ijam`, `imlaiyyah`, `dabt`, `waqf`, `alamat_qiraah`,
-`mustaqill`. It is kept because it is what the source says, and it differs from
-`parent` in two places by design: `imlaiyyah` is the registry's word for
-`orthographic_mark`, and `alamat_qiraah` for `qiraah_mark`. `parent` is the
-standard's taxonomy; `mark_family` is the source's.
-
-## 13. Types and values get their own entries
-
-When a concept has types or values that matter, defining the parent is not
-enough.
-
-The types and values get entries of their own in the dictionary, with their
-real codes:
-
-```text
-revelation_classification
-├── makki
-├── madani
-└── disputed
-```
-
-and:
-
-```text
-recitation_style
-├── murattal
-├── mujawwad
-└── muallim
-```
-
-and:
-
-```text
-recitation_pace
-├── tahqiq
-├── tadwir
-└── hadr
-```
-
-and:
-
-```text
-ayah_numbering_system
-├── madani_first
-├── madani_last
-├── makki
-├── basri
-├── dimashqi
-└── kufi
-```
-
-These 6 are entries, because each one can be defined, and their ids are
-`ayah_numbering_kufi`, `ayah_numbering_makki` and so on, because `makki` alone
-is already the id of the revelation value; §14 says why the code and the id
-differ. What software stores is the code.
-
-and the classifications of tajwid — the rulings, the kinds of madd, and the
-relation between two letters — each with its values:
-
-```text
-tajwid_ruling           madd
-├── izhar               ├── madd_tabii
-├── idgham              ├── madd_muttasil
-├── iqlab               ├── madd_munfasil
-├── ikhfa               ├── madd_lazim
-└── qalqalah            ├── madd_arid_li_al_sukun
-                        ├── madd_al_lin
-letter_relation         ├── madd_al_badal
-├── mutamathilan        ├── madd_al_silah
-└── mutajanisan         └── madd_al_iwad
-```
-
-and two classifications of waqf, one for the mark and one for the place:
-
-```text
-waqf_mark_type                     waqf_ruling
-├── waqf_lazim                     ├── waqf_tamm
-├── waqf_mamnu                     ├── waqf_kafi
-├── waqf_jaiz_mustawi_al_tarafayn  ├── waqf_hasan
-├── waqf_jaiz_wasl_awla            └── waqf_qabih
-├── waqf_jaiz_waqf_awla
-└── waqf_al_muanaqah
-```
-
-Each of these values gets its own entry, even when it is represented in code as
-an enum value. `tools/check_conformance.py` refuses a classification with no
-values.
-
-### Members of a closed set go to a registry
-
-A type is not the same thing as a member.
-
-`revelation_classification` has 3 values, and each of them is a concept: a
-reader can ask what `makki` means and get an answer that is not a list. But
-`qiraah` does not have values in that sense. It has 10 members, and Asim is not
-a concept — he is a person. Asking what Asim *means* has no answer beyond
-pointing at him.
-
-So a closed set of members does not become entries. It becomes a registry, one
-tab-separated file per set in `standards/terminology/registries/`:
-
-```text
-qiraah, rawi, riwayah   → registries/qiraat.tsv        the 10 qiraat, 19 rawis, 20 riwayahs
-tariq                   → registries/tariq.tsv         the 4 routes applications store
-surah                   → registries/surahs.tsv        the 114 surahs
-sajdah                  → registries/sajdah.tsv        the 15 sajdahs
-ayah_numbering_system   → registries/ayah_numbering.tsv, ayah_counts.tsv
-tajwid_ruling           → registries/tajwid_rules.tsv  the rulings of tajwid
-```
-
-The concept keeps its entry and names its registry:
-
-```yaml
-concept: qiraah
-kind: concept
-registry: qiraat
-```
-
-The test is whether a member has anything to say for itself. If it needs a
-definition, a purpose and boundaries, it is a concept and it gets an entry. If
-everything true of it is its name, its place in the set and where it is
-attested, it is a member and it gets a row.
-
-A registry is not a lesser thing than an entry. Every row is checked by
-`tools/check_registries.py`, cites a source the way an entry does, and is
-indexed so that every spelling of a member resolves. A row's `verified` column
-says what has actually been checked against a source, and `no` is an allowed
-value.
-
-The registries are rendered on their own page,
-[Registries](/guidelines/en/reference/registries/).
-
-### The rules of tajwid are a registry
-
-The rulings of tajwid as an engine applies them — every case of izhar, idgham,
-iqlab, ikhfa and madd, with its trigger and its source — are rows in
-`registries/tajwid_rules.tsv`, generated from `data/tajweed_engine_rules.json`,
-and `tajwid_ruling` names the registry. The rulings as concepts — `izhar`,
-`idgham`, the kinds of `madd` — are values of their classifications and keep
-their entries, as do the concepts a ruling rests on: `noon_sakinah`, `tanwin`,
-`maddah`. A rule and its **occurrence** in the text are two things: the rule is
-a row; an occurrence is a span of the text (§21) tagged with the rule's code.
+<a id="rule-058"></a>
 
-### The letter names are a data table
+### 058. A concept and an individual sharing a name
 
-The 28 letters are members too, but they are not indexed like a registry: their
-names are read by the derivation itself, so they live in
-`standards/terminology/data/letter_names.tsv`, beside the other spelling tables.
-A letter is referred to in code by its name from that table: `noon`, `meem`,
-`saad`.
+A concept and an individual may share a name when the individual's kind is known and no confusion arises; the bare name refers to the concept. This applies when a reciter or surah shares a name with a Quranic concept.
 
-### A person's name is not derived
-
-§4–§8 derive a code name from vocalised Arabic, and every term in the
-dictionary goes through them. A person's name does not:
-
-```text
-hafs        warsh        qalun        ibn_dhakwan
-```
-
-The derivation exists because a term is a word carrying a meaning, and working
-from the Arabic keeps that meaning attached to the identifier. A name carries no
-meaning to keep, so deriving it only produces a spelling nobody writes.
-
-The exception covers people and nothing else. A surah name is a word, so it is
-derived — `fatihah`, `baqarah`, `nisa` — and `tools/check_registries.py`
-re-derives all 114 on every run.
-
-"Commonly written" still has to be evidence rather than preference. The
-registry records the scholarly English form with its diacritics, and the name
-in use is that form with the diacritics dropped. Where the two disagree over
-something the standard already rules on, the standard wins: `shubah`, not
-`shuba`, because §5 governs a ta marbutah.
-
-### A member's name may repeat a concept's
-
-A member may carry the name of a concept, and neither name is changed. Hamzah is
-a reciter, and `hamzah` is also the mark. Al-Tariq is a surah, and a `tariq` is a
-step in a chain of transmission.
+**Examples**
 
-The repetition is harmless because the two live in different domains, in the
-sense of §25: one `hamzah` is `dabt` and the other is `qiraat`. Nothing can
-reach for both at once, so nothing has to choose between them. A name is only
-required to be unique where it could actually be confused.
+| Meaning | Name with its context |
+| --- | --- |
+| Hamzah mark | `hamzah` |
+| Hamzah the qiraah transmitter | `qiraah:hamzah` |
+| A level in the transmission chain | `tariq` |
+| Surah al-Tariq | `surah:tariq` |
 
-Member names are indexed by kind, because that is what a caller knows: a column
-does not hold "something from the qiraat domain", it holds a riwayah.
-
-```text
-hamzah          → the mark
-qiraah:hamzah   → the reciter
-tariq           → the step in the chain
-surah:tariq     → the surah
-```
+## Distinguishing concepts
 
-The bare name always belongs to the concept. Anything filling a known column
-asks inside that namespace. `aliases.json` holds the concepts;
-`registry_aliases.json` holds the members.
+<a id="rule-059"></a>
 
-## 14. Parent and child
+### 059. Distinguishing neighbouring concepts
 
-When a concept sits inside a taxonomy, its relation to the parent is stated.
+Similar names or translations are not a reason to merge different concepts, and one concept's name must not be assigned to another.
 
-For example:
+**Examples**
 
-```yaml
-concept: makki
-kind: classification_value
-parent: revelation_classification
-```
+| Name | Meaning |
+| --- | --- |
+| `word` | A word in the text |
+| `token` | A unit produced by segmentation |
 
-or:
+They may coincide in an example, but that does not make the names synonyms.
 
-```yaml
-concept: murattal
-kind: classification_value
-parent: recitation_style
-```
+<a id="rule-060"></a>
 
-The point is that a developer knows not only what `makki` means, but also:
+### 060. A mark and what it signifies
 
-> makki is a kind of what?
+Give a drawn mushaf mark a name that distinguishes it from the concept it signifies.
 
-### `parent` is *is-a*; `part_of` is containment
+**Examples**
 
-`parent` says what a thing is a kind of. It does not say what a thing is inside.
-A rubu al-hizb is not a kind of hizb; it is a part of one. Containment is its
-own field:
+| Drawn mark | What it signifies |
+| --- | --- |
+| Saktah mark: `saktah_mark` | The pause: `saktah` |
+| Sajdah mark: `sajdah_mark` | The prostration and its location: `sajdah` |
+| Ayah mark: `ayah_mark` | The ayah ending: `ayah_ending` |
 
-```yaml
-concept: rubu_al_hizb
-kind: entity
-part_of: hizb
-```
+<a id="rule-061"></a>
 
-`part_of` is optional, and points at an entity. `parent` is required on every
-`classification_value` and on every mark with a family.
+### 061. Sajdah and its mark
 
-### A value's name is derived from its parent's
+Use `sajdah` for a location of recitation prostration and the prostration there, and `sajdah_mark` for the drawn mark.
 
-The name of a value is the parent's name plus the words that distinguish it.
-The Arabic name is kept whole, connectives and all; the derivation drops the
-connectives (§8):
+**Examples**
 
-```text
-الوَقْف الجَائِز مَعَ كَوْنِ الوَصْل أَوْلَى  → waqf_jaiz_wasl_awla
-الوَقْف الجَائِز مَعَ كَوْنِ الوَقْف أَوْلَى  → waqf_jaiz_waqf_awla
-الوَقْف اللَّازِم                          → waqf_lazim
-```
+| Meaning | Name |
+| --- | --- |
+| The location and prostration there | `sajdah` |
+| Drawn mark | `sajdah_mark` |
 
-The parent's name is not repeated when it distinguishes nothing, so the values
-of `revelation_classification` stay `makki` and `madani` rather than
-`revelation_classification_makki`. A value's name is unique within its
-classification, not across the dictionary. The values of
-`ayah_numbering_system` are `kufi`, `basri`, `dimashqi`, `makki`,
-`madani_first` and `madani_last`, and `makki` is also a value of
-`revelation_classification`. No column holds the values of two classifications,
-so the two never collide.
+<a id="rule-062"></a>
 
-Where two values do share a name, the entry's *id* becomes the parent's name
-plus the code: `ayah_numbering_makki`. The id is the entry's file, its anchor
-and what `related` and `parent` point at, and all 6 numbering entries carry
-that form for regularity. The code is what software stores.
+### 062. Naming a mark in context
 
-These 6 are the one family whose code is not derived from the Arabic: العَدّ
-gives `add`, an English verb, so the code is the name of the school. The reason
-is in the decision record.
+Identify a Quranic mark by its meaning at its location; its codepoint alone does not determine its name.
 
-`tools/check_conformance.py` checks that every classification has values and
-that every `parent` and `part_of` names an entry.
+**Examples**
 
-## 15. Definition
+| Codepoint | Name according to meaning |
+| --- | --- |
+| `U+06DC` | `saktah_mark` or `seen_al_qiraah`, depending on the location |
+| `U+0652` and `U+06E1` | `sukun` |
 
-Every entry has a `definition`.
+<a id="rule-063"></a>
 
-The definition answers:
+### 063. Words and their analysis units
 
-> **What is this concept?**
+Use `word` for a word in the text, `token` for a unit produced by segmentation, and morphological-analysis names for what is derived from the word. Do not use these names interchangeably.
 
-It should:
+**Examples**
 
-- define the concept itself
-- be precise and brief
-- state its boundaries where that is needed
-- avoid defining the name by the name
-- contain no implementation detail
-- rest on a suitable source when the concept is a scholarly or technical one
+| Name | Meaning |
+| --- | --- |
+| `word` | The word recognised by the reader |
+| `token` | A unit produced by a segmentation method |
+| `morpheme` | A unit carrying meaning or a morphological function |
+| `lemma` | Dictionary form |
+| `root` | Root |
+| `morphology` | Morphological analysis |
+| `irab` | Grammatical analysis |
 
-For example:
+<a id="rule-064"></a>
 
-```yaml
-concept: ayah
+### 064. Text units and their representation
 
-definition_en: >
-  A unit of the Quranic text falling within a surah and having determined boundaries.
-  Its number, and some of its boundaries, may differ from one ayah numbering system to
-  another.
-```
+Choose a text-unit name according to what is meant: a linguistic letter, character, codepoint, grapheme or drawn glyph.
 
-and not:
+**Examples**
 
-```text
-ayah: A Quranic verse.
-```
+| Name | Meaning |
+| --- | --- |
+| `letter` | Linguistic letter |
+| `character` | A character, an abstract textual unit |
+| `codepoint` | A numeric value in the encoding system |
+| `grapheme` | A written unit perceived as one by the reader |
+| `glyph` | The shape drawn by the font |
 
-These are rules for the writer; no tool can check them.
+<a id="rule-065"></a>
 
-## 16. Purpose
+### 065. The Quran and the mushaf
 
-Every entry also has a `purpose`.
+Use `quran` for the Quran and `mushaf` for the book in which it is written; do not substitute one name for the other.
 
-The purpose answers:
+**Examples**
 
-> **Why does Quranic software need this concept?**
+| Meaning | Name |
+| --- | --- |
+| The Quran | `quran` |
+| The mushaf | `mushaf` |
 
-It explains:
+<a id="rule-066"></a>
 
-- its role in the software model
-- what we use to represent or link it
-- why a developer needs to tell it apart from its neighbours
+### 066. Content and presentation
 
-For example:
+Use content-unit names for what the text contains, and presentation names for how it appears on the page.
 
-```yaml
-concept: ayah
+**Examples**
 
-purpose_en: >
-  Used as the basic unit for referring to the Quranic text, and for attaching
-  translations, tafsir, recitations, analyses and other data to a specific place in the
-  Quran.
-```
+| Domain | Example names |
+| --- | --- |
+| Content | `surah`, `ayah`, `word` |
+| Presentation | `page`, `line`, `layout`, `font`, `glyph` |
 
-### The difference
+## Numbers, references and timing
 
-```text
-definition → What is it?
-purpose    → Why do we model it?
-```
+<a id="rule-067"></a>
 
-`purpose` does not restate `definition`, and details of software use do not go
-inside `definition`. No tool checks this; the counter-example is a `purpose` that
-reads "an ayah is a unit of the Quranic text", which is the definition rewritten.
+### 067. Internal identifiers
 
-If a concept has no clear purpose in software, that is a reason to review
-whether it belongs in the core dictionary.
+Use `id` for an internal identifier linking records; do not show it to readers or build external references on it. Use `number` for the number readers recognise and cite.
 
-## 17. The boundaries of a concept
+**Examples**
 
-Where there is a real chance of confusion, the entry states what the concept
-excludes, in its `boundaries` field, and names the neighbour in `related`.
+| Name | Meaning |
+| --- | --- |
+| `ayah_id` | Internal identifier |
+| `ayah_number` | Ayah number within the surah |
 
-For example:
+<a id="rule-068"></a>
 
-```text
-mushaf            ≠ quran
-word              ≠ token
-letter            ≠ character
-glyph             ≠ character
-rawi              ≠ reciter
-tajwid            ≠ mujawwad
-tartil            ≠ murattal
-sajdah            ≠ sajdah_mark
-waqf_mark_type    ≠ waqf_ruling
-```
+### 068. Reference numbers
 
-The aim is to stop one name standing for two different concepts in data and in
-code, rather than to document a difference in language. No tool checks this; the
-counter-example is a `boundaries` entry reading "differs from `word` in meaning",
-which never says which of the two the column actually stores.
+Use `number` for an item's recognised number within its domain, displayed to readers and used in citations.
 
-## 18. Similar concepts stay separate
-
-Two concepts are not merged because their translations look alike. No tool checks
-this; the counter-example is a schema with one `word` table holding both words
-and tokens, which the `boundaries` of both entries exist to prevent.
-
-### A mark and what it marks
-
-A mark drawn in the mushaf is a separate concept from what it indicates:
-
-```text
-saktah_mark        the mark that is drawn      mark
-saktah             the pause itself            concept
-
-sajdah_mark        the mark of a sajdah        mark
-sajdah             the place, and the          concept
-                   prostration made at it
-
-ayah_mark          the mark that is drawn      mark
-ayah_ending        the ayah's ending           concept
-```
-
-The sajdah is 2 concepts, not one: the sign drawn in the mushaf, and the place
-at which one prostrates. The place and the prostration are one concept, because
-no software stores the act apart from its place, and "the 15 sajdahs"
-names both at once; the decision record says why an earlier draft kept them
-apart.
-
-### A mark's identity is not its character
-
-A codepoint does not work as the identifier of a mark, for two reasons fixed in
-Unicode.
-
-**One character serves two marks**, and the mark is determined by the character
-together with its position:
-
-```text
-ۜ  U+06DC   ARABIC SMALL HIGH SEEN   →  saktah_mark  or  seen_al_qiraah
-۬  U+06EC   ROUNDED HIGH STOP        →  ishmam       or  tashil
-```
-
-**One mark has more than one character**:
-
-```text
-sukun          ْ U+0652   and  ۡ U+06E1
-tanwin_al_fath ً U+064B   and  ࣰ U+08F0
-maddah         ٓ U+0653   and  ۤ U+06E4
-```
-
-So a codepoint is a property of a mark rather than a key to it.
-
-### Text
-
-A word, what tokenisation produces and what morphological analysis produces are
-different things, and each has its own entry:
-
-```text
-word
-token
-morpheme
-lemma
-root
-```
-
-### Digital representation
-
-A letter in the language, a character in Unicode and a shape a font draws are
-5 concepts, not one:
-
-```text
-letter
-character
-codepoint
-grapheme
-glyph
-```
-
-### Quran and mushaf
-
-The Quran is the revealed speech; the mushaf is the book it is written in.
-Neither stands in for the other:
-
-```text
-quran
-mushaf
-```
-
-### Content and presentation
-
-What the text carries is not what it looks like on a page, so content concepts
-and presentation concepts stay apart:
-
-```text
-content:
-surah
-ayah
-word
-
-presentation:
-page
-line
-layout
-font
-glyph
-```
-
-### Text and analysis
-
-A word in the text is not what analysis derives from it; analysis is a derived
-layer with concepts of its own:
-
-```text
-text:
-word
-
-analysis:
-root
-lemma
-morphology
-irab
-```
-
-## 19. Name, spelling and translation are not one thing
-
-Keep these apart:
-
-```text
-names.code
-alternative_spellings
-english_glosses
-deprecated
-```
-
-For example:
-
-```yaml
-concept: ayah
-
-names:
-  code: ayah
-
-alternative_spellings:
-  - aya
-  - ayat
-  - ayaat
-
-english_glosses:
-  - Verse
-```
-
-`aya` is an alternative spelling of `ayah`.
-
-`Verse` is an English gloss, not an alternative spelling.
-
-Likewise:
-
-```yaml
-concept: tajwid
-
-names:
-  code: tajwid
-
-alternative_spellings:
-  - tajweed
-  - tajwīd
-```
-
-There is no catch-all field mixing these relations together, and none is added.
-
-`tools/check_conformance.py` checks that a gloss is not also recorded as an
-alternative spelling.
-
-## 20. Deprecated does not mean incorrect
-
-We distinguish:
-
-### Alternative
-
-Another correct or common form:
-
-```text
-tajweed → alternative spelling of tajwid
-```
-
-### Deprecated
-
-A name for the concept, but not recommended in new projects. It goes in
-`deprecated`, and still resolves: `aliases.json` indexes spellings only, and a
-deprecated name is resolved through the entry's `deprecated` field.
-
-### Incorrect
-
-A name that points at a different concept, or carries a wrong meaning. It is
-not recorded on the entry it does not belong to; the `boundaries` of the right
-entry name the confusion.
-
-`verse` may be a correct English translation of `ayah`, but it is not the
-canonical name in this standard.
-
-### Renames are recorded, not erased
-
-When a concept's code changes, or two entries are merged, the old code goes into
-`deprecated` on the surviving entry, and `note` says when and why, pointing at
-the decision record. The old name keeps resolving, so a project that adopted it
-is not stranded, and a reader can see that it was once the name:
-
-```yaml
-# in sajdah_mark.yml
-deprecated:
-  - alamat_mawdi_al_sajdah
-note: >
-  Merged from alamat_mawdi_al_sajdah, which defined the same mark. Decision
-  record, "Duplicated concepts are merged".
-```
-
-An entry that is withdrawn altogether is marked `status: deprecated` and kept,
-so that its code never comes back with a different meaning.
-
-## 21. Identifiers, numbers and order
-
-Each suffix has one fixed meaning.
-
-### `id`
-
-`id` is the internal identifier of a database row. It joins tables to each
-other, and it is never shown to a reader or used in an external reference:
-
-```text
-surah_id
-ayah_id
-word_id
-mushaf_id
-```
-
-### `number`
-
-`number` is the established number of a thing within its own domain. It is the
-number a reader would recognise and cite:
+**Examples**
 
 ```text
 surah_number
@@ -1464,10 +1065,13 @@ ayah_number
 page_number
 ```
 
-### `position`
+<a id="rule-069"></a>
 
-`position` is where an element sits inside its parent or its sequence. It counts
-places, so it changes whenever the sequence changes:
+### 069. Position in a sequence
+
+Use `position` for an item's location within a parent or sequence; it is not a stable reference if the sequence changes.
+
+**Examples**
 
 ```text
 word_position
@@ -1475,619 +1079,100 @@ token_position
 line_position
 ```
 
-### `order`
+<a id="rule-070"></a>
 
-`order` is an ordering that meaning decides. We use it where the intended order
-differs from where the element happens to sit:
+### 070. Semantic order
+
+Use `order` for an intended semantic ordering when it differs from position in the sequence.
+
+**Examples**
 
 ```text
 revelation_order
 display_order
 ```
 
-Do not use:
+<a id="rule-071"></a>
+
+### 071. Composite references
+
+Use `key` for a readable composite reference: `ayah_key` combines surah and ayah numbers, and `word_key` combines the ayah key and word position.
+
+**Examples**
 
 ```text
-id
-number
-position
-order
+ayah_key = surah_number:ayah_number
+2:255
+
+word_key = ayah_key:word_position
+2:255:3
 ```
 
-as synonyms.
+<a id="rule-072"></a>
 
-### `key`: the human-readable composite
+### 072. The numbering system of a reference
 
-A `key` is the established composite reference, written for humans and stable
-across systems:
+The meaning of `ayah_key` and `word_key` depends on the ayah numbering system. This standard uses `kufi` as the default when none is stated.
+
+**Examples**
 
 ```text
-ayah_key     2:255         surah_number:ayah_number
-word_key     2:255:3       ayah_key:word_position
+ayah_key: 2:255
 ```
 
-A key is only meaningful under a stated `ayah_numbering_system`; a dataset that
-uses keys says which system they follow, and defaults to `kufi` when it says
-nothing. A global index of the ayahs (1 to 6,236) is a `position`,
-not a key, and it too is relative to a numbering system.
+Interpret references within the declared numbering system, defaulting to `kufi`. The sequential index of ayahs across the whole mushaf is a `position` and also depends on the numbering system. The numbering system alone does not make `word_key` stable when the text or segmentation differs; identify the text and segmentation method when exchanging word references.
 
-### Audio is keyed by the recitation and the text
+<a id="rule-073"></a>
 
-A span of audio is named after the unit of text it matches, and it belongs to a
-recitation:
+### 073. Naming audio timings
 
-```text
-ayah_timing      one ayah's span in one recording      recitation_id, ayah_key, start_ms, end_ms
-word_timing      one word's span in one recording      recitation_id, word_key, start_ms, end_ms
-```
+Within a particular recitation recording, name an audio span after the text unit it corresponds to: `ayah_timing` for an ayah and `word_timing` for a word, without including the reciter, riwayah or style in the name.
 
-A recording is identified by its `recitation_id`, and a recitation is one
-reciter, in one riwayah, in one style; those three are fields of the
-recitation, not parts of the audio's name.
+**Examples**
 
-## 22. Relationships
+| Name | Meaning |
+| --- | --- |
+| `ayah_timing` | An ayah span in one recording |
+| `word_timing` | A word span in one recording |
 
-A relationship is named after the concept it links to.
 
-We prefer:
+## Using names in software
 
-```text
-surah.ayahs
-ayah.surah
-ayah.words
-mushaf.pages
-page.lines
-```
+These guidelines supplement the terminology rules when using names in a model, database or API.
 
-Singular for a to-one relationship, plural for a to-many one.
+### Clear names
 
-Do not use procedural names when the relationship is only a data relationship:
+Use a complete, familiar name such as `surah`, `ayah` or `word`, avoiding abbreviations such as `srh`, `ay` and `wrd`. Choose a name that identifies the data rather than `data` or `item` when its kind is known.
 
-```text
-getAyahList()
-fetchRelatedSurah()
-retrieveWords()
-```
+### Relationship names
 
-when:
+Name a relationship after the linked concept, using singular for a to-one relationship and plural for a to-many relationship: `ayah.surah`, `surah.ayahs` and `ayah.words`. For a data relationship, `ayahs` is sufficient; `getAyahList()` describes an operation that retrieves it.
 
-```text
-ayahs
-surah
-words
-```
+### Operation names
 
-is enough.
+Use the same verb for the same operation: `normalize`, `parse`, `tokenize`, `segment`, `transliterate`, `annotate`, `render`, `validate`, `compare` and `convert`. `tokenizeText()` explains the work more clearly than `processText()`, and `renderAyah()` is more precise than `handleAyah()` when the operation displays an ayah. These are operation names and do not need separate dictionary entries.
 
-## 23. Operations and verbs
+### Boolean names
 
-We standardise the names of recurring operations, as we do the names of
-entities:
+Make a boolean field's name a yes/no question, such as `has_sajdah` or `is_active`. When choosing a value from a classification with several values, use that classification field rather than multiple booleans whose values could conflict.
 
-```text
-normalize
-parse
-tokenize
-segment
-transliterate
-annotate
-render
-validate
-compare
-convert
-```
+### The same vocabulary across system layers
 
-The same verb is used for the same operation.
+Keep canonical vocabulary in models, databases and APIs, adapting letter case to the layer. For example, the `Surah` model corresponds to the `surahs` table and `surah_id` linking field; it does not become `chapter` in another layer. The interface may display an appropriate translation for the reader.
 
-Avoid:
+| Form | Use | Example |
+| --- | --- | --- |
+| `snake_case` | Tables, columns, `JSON` keys, `enum` values and filenames | `ayah_numbering_system` |
+| `PascalCase` | Classes and types | `AyahNumberingSystem` |
+| `camelCase` | Fields and functions where required by the language | `ayahNumber` |
+| `kebab-case` | URL paths | `/waqf-marks/waqf-lazim` |
 
-```text
-process
-handle
-do
-```
+Changing case or separators does not create an independent linguistic spelling; the form may be recorded for lookup under [rule 044](#rule-044).
 
-when a more precise verb exists.
+### Names owned by an external source
 
-For example:
+Preserve external package, file and column names exactly as their owner writes them, because changing them breaks the reference. For example, retain `row["aya_text_emlaey"]` when reading a publisher's file. Fields created inside your project after reading it follow the standard. Declare these external names to the auditor through `external_names` in `.terminology.json`.
 
-```text
-tokenizeText()
-normalizeText()
-renderAyah()
-validateMushaf()
-```
+### Link timings to their recording
 
-is better than:
-
-```text
-processText()
-handleAyah()
-```
-
-The verbs are a convention of this standard, not entries in the dictionary, so
-no tool checks them. The operation names keep their own spelling in code
-(`normalize`); prose writes the ordinary word (normalise).
-
-## 24. Classifications and booleans
-
-Classifications carry domain-specific names, and each is an entry:
-
-```text
-waqf_mark_type
-waqf_ruling
-tajwid_ruling
-madd
-letter_relation
-recitation_style
-recitation_pace
-revelation_classification
-```
-
-rather than:
-
-```text
-quran_type
-item_type
-data_type
-```
-
-A boolean's name shows that it asks a yes/no question:
-
-```text
-has_sajdah
-is_active
-is_included
-```
-
-A multi-valued classification is not modelled as a set of booleans when one
-classification is more precise.
-
-Like §21 to §23, this is a convention outside the machine-readable source.
-
-## 25. Organising the domains
-
-The dictionary is organised by clear domains rather than as one flat list.
-
-These are the adopted domains, and they are also the dictionary's own sections,
-so there are never two different lists. They live in
-`standards/terminology/schema.json` and are checked by `tools/validate.py`:
-
-```text
-core                  the Quran and the mushaf
-structure             surah, ayah and word
-text                  units of text and its digital representation
-divisions             juz, hizb and rubu
-surah_classification  tiwal, miun, mathani and mufassal
-mushaf                edition, layout, page and rasm
-dabt                  dabt: vowels, tanwin and every mark of the mushaf
-ayah_numbering        ayah numbering systems
-revelation            revelation, its order and its classification
-qiraat                qiraat, riwayahs and tariqs
-recitation            recitation and reciters
-recitation_pace       tahqiq, tadwir and hadr
-recitation_style      murattal, mujawwad and muallim
-tajwid                tajwid, its rulings, madd, and the registry of its rules
-waqf                  waqf and its rulings
-linguistics           root, lemma, morphology and irab
-translation           translation
-tafsir                tafsir
-quranic_sciences      abrogation, word meanings and mutashabihat
-```
-
-A domain is not added before there are concepts that belong to it, because an
-empty domain suggests coverage that does not exist.
-
-## 26. Consistency across the layers of a system
-
-The same canonical vocabulary is used across the layers of a system as far as
-possible.
-
-If we adopt:
-
-```text
-surah
-ayah
-word
-```
-
-then the expected result is:
-
-```text
-models:
-Surah
-Ayah
-Word
-
-database:
-surahs
-ayahs
-words
-
-foreign keys:
-surah_id
-ayah_id
-
-API:
-/surahs
-/surahs/{surah_number}/ayahs
-/ayahs/{ayah_key}/words
-```
-
-Avoid using:
-
-```text
-database: surah
-API: chapter
-package: quran_section
-```
-
-for one concept.
-
-A user interface can translate or display the name differently, while the
-canonical internal vocabulary stays fixed.
-
-### Quote a name the project does not own, exactly as its owner writes it
-
-A project refers to names it does not own: a supplier's package and file names,
-the column headings of a file it reads, the official name of a Unicode
-character, the address of another repository. These are locators. They point at
-something outside the project, and changing a letter of one breaks the
-reference, so they are written exactly as their owner writes them, however far
-from this standard that is.
-
-```text
-UthmanicHafs-v-3.0.zip          the publisher's package: quoted
-row["aya_text_emlaey"]          the publisher's column: quoted
-"ARABIC START OF RUB EL HIZB"   the Unicode name of ۞: quoted
-quranpedia/qiraat-ayah-map      another repository: quoted
-```
-
-What the project decides for itself is what it calls the thing once it has read
-it: the field, the variable, the published key. A quoted name never becomes the
-name of a concept, and a name of your own never keeps a supplier's spelling
-because it came in with the data.
-
-An audit is told which names are quoted, so that it reads past them instead of
-asking for a rename that would break the reference: `external_names` in
-`.terminology.json`.
-
-### Casing per layer
-
-The code name is `snake_case`, and each layer applies its own casing to that one
-name, never to a different name:
-
-```text
-snake_case    database tables and columns, JSON keys, enum literals, file names
-                ayah_numbering_system, waqf_lazim
-PascalCase    classes and types            AyahNumberingSystem, WaqfMarkType
-camelCase     only where the language demands it for fields and methods   ayahNumber
-kebab-case    URL paths and slugs only     /waqf-marks/waqf-lazim
-```
-
-A kebab form is a rendering of the code name for a URL, not a spelling; it is
-not recorded in `alternative_spellings`.
-
-## 27. The shape of a dictionary entry
-
-The dictionary produced by this standard uses one structure, with a file per
-concept. The file is named after the concept — `ayah.yml` holds `concept: ayah` —
-and `tools/validate.py` refuses a file whose name and concept disagree.
-
-The minimum:
-
-```yaml
-concept:
-kind:
-category:
-origin:
-tier:
-status:
-
-names:
-  code:
-  display:
-
-definition:
-purpose:
-definition_en:
-purpose_en:
-```
-
-Added where needed:
-
-```yaml
-parent:          # required when kind is classification_value, or a mark with a family
-part_of:         # containment; points at an entity
-registry:        # the registry that enumerates this concept's members
-plural:          # the code plus s
-symbol:          # the character a mark is drawn with
-mark_family:     # the source registry's grouping; marks and drawn values only
-
-names:
-  display_evidence:   # required before adopted
-  transliteration:    # optional; ALA-LC or DIN 31635
-  arabic:
-    vocalized:        # required when origin is quranic
-    singular:
-    plural:
-  dabt:
-  by_shape:
-  mushaf_introduction:
-  unicode:
-
-unicode:         # generated from the Unicode database, never written by hand
-alternative_spellings:
-english_glosses:
-deprecated:
-boundaries:
-boundaries_en:   # the translation of boundaries, line for line
-related:
-sources:
-note:
-note_en:         # the translation of note
-```
-
-**`origin`** says where the concept's name came from. We write `quranic` for a
-Quranic or scholarly term, `borrowed` for a general term whose definition is
-settled elsewhere, and `standard` for a concept this standard defines for
-modelling, with no counterpart in the tradition.
-
-**`tier`** says how much the concept matters in practice. We write `core` for
-what applications actually store, and `extended` for a settled concept that is
-rarely represented or whose boundaries differ.
-
-**`status`** says where the entry stands. It starts as `draft`, becomes
-`proposed` after discussion, then `adopted` once accepted; an entry withdrawn
-after adoption becomes `deprecated` and is kept (§20). An entry with no source
-is not marked `adopted`, and neither is one with no `display_evidence`.
-
-**`arabic`** is required on every `origin: quranic` entry. A borrowed term is
-given its Arabic name when it has a settled one, so that we do not coin new
-Arabic terms by accident.
-
-**`related`** links resolve to entries, and the build makes them symmetrical:
-naming `waqf_mark` from `waqf_lazim` shows `waqf_lazim` from `waqf_mark`.
-
-### The entry in two languages
-
-There is one entry, and its prose is in two languages. Every prose field has an
-English twin: `definition_en`, `purpose_en`, `boundaries_en` and `note_en`. The
-English dictionary page is generated from them, as the Arabic page is generated
-from the Arabic fields, so the two pages cannot say different things.
-
-A twin is **a translation, not a second definition**. What one states, the other
-states: the English adds no condition and drops none. Boundaries translate line
-for line, one English line for each Arabic line, in its place, and
-`tools/check_conformance.py` checks that the two lists are the same length.
-
-Four rules hold in the translation:
-
-- **A term is called by its canonical name**, written as prose writes it — the
-  code spelling as a lowercase common noun: ayah, not verse; mushaf, not codex.
-  The English in `english_glosses` is a search key, not a name to write with.
-- **A code name is written as it is**, inside backticks, never translated.
-- **A repeated formula is translated by a repeated formula**: the 6 ayah
-  numbering entries share one purpose sentence in Arabic, so they share one in
-  English, word for word.
-- **No Arabic is left in an English field**, except an Arabic name the entry is
-  itself talking about, which is written inside «…». `tools/check_conformance.py`
-  checks this.
-
-None of this is offered as an approved translation of a religious text. It states
-a concept in a second language for whoever builds with it.
-
-### Example
-
-The entry `standards/terminology/concepts/waqf_lazim.yml`, as it is. The build
-checks that this block and the file agree:
-
-```yaml
-concept: waqf_lazim
-names:
-  code: waqf_lazim
-  display: Waqf Lazim
-  arabic:
-    vocalized: الوَقْف اللَّازِم
-    singular: الوقف اللازم
-  dabt: المِيم — عَلَامَة الوَقْف اللَّازِم
-  by_shape: مِيم
-  mushaf_introduction: عَلَامَة الوَقْف اللَّازِم
-  unicode: ARABIC SMALL HIGH MEEM INITIAL FORM
-kind: classification_value
-category: dabt
-parent: waqf_mark_type
-origin: quranic
-tier: core
-status: draft
-symbol: م
-definition: الوقف اللازم علامة تدل على أن الوقف لازم، لأن وصل ما بعده بما قبله يوهم خلاف المعنى
-  المراد.
-definition_en: 'A compulsory stop: continuing across it would suggest a meaning other than
-  the one intended.'
-purpose: نستخدمها قيمة من قيم نوع علامة الوقف، فنبني عليها العرض والتلقين والتنبيه في التطبيقات
-  بدلًا من قراءة صورة الرمز.
-purpose_en: Used as a value of the waqf mark type, so that rendering, teaching and warnings
-  in applications branch on it rather than on the shape of the sign.
-alternative_spellings:
-- waqf-lazim
-related:
-- waqf
-- waqf_mark
-unicode:
-- cp: U+06D8
-  name: ARABIC SMALL HIGH MEEM INITIAL FORM
-  category: Mn
-  combining_class: 230
-  block: Arabic
-  unidata: 13.0.0
-mark_family: waqf
-sources:
-- id: hafs_svg_registry
-  ref: standard!waqf-lazim
-- id: quranpedia_tajweed
-  ref: '122'
-  url: https://tajweed.quranpedia.net/term/show/122
-- id: qattan_mabahith
-  ref: 1/152
-```
-
-## 28. Sources for definitions
-
-Scholarly and technical terms rest on suitable sources.
-
-A source documents **the concept and its definition**, and not necessarily the
-choice of name in code.
-
-A source may establish the meaning of `ayah`, while choosing:
-
-```text
-ayah
-```
-
-over:
-
-```text
-verse
-```
-
-is a decision made by this standard.
-
-Keep the two apart:
-
-```text
-domain fact          what the source establishes
-standard convention  what this standard decides
-```
-
-### Adopted sources
-
-The sources are recorded in `standards/terminology/sources.yml`, each with the
-reference form it uses: a page in a book, a term number in a dictionary. They are
-not listed again here, so there is only one place to keep them current.
-
-The build checks that every source cited — by an entry's `sources[].id` or by
-a registry row's `ref` — names a source that exists in that file.
-
-An entry with no source establishing its definition is not marked `adopted`.
-
-## 29. The dictionary is machine-readable
-
-The primary source of the dictionary is machine-readable: one YAML file per
-concept, a JSON schema, and tab-separated registries.
-
-From that same source we generate today:
-
-- the two dictionary pages and the registries page
-- `aliases.json` and `registry_aliases.json`, so that any spelling resolves
-- the agent skill in `skills/quranic-terminology/`
-
-and intend to generate:
-
-- API schemas
-- IDE hints
-- linters
-- deprecated-term warnings
-- migration mappings
-
-Human-readable documents are generated from that source wherever possible, never
-kept as a separate copy.
-
-### Versions of the dictionary
-
-The dictionary has no version number of its own; its version is the generated
-skill's snapshot. Every build stamps `skills/quranic-terminology/` with the
-SHA-256 of its inputs — the entries, the registries, the spelling tables and
-this standard — and a release adds the commit. A project that depends on the
-dictionary records the stamp it built against, and `scripts/update_check.py` in
-the skill says whether the stamp is current.
-
-A change that renames or withdraws a code is recorded on the entry (§20) and in
-the decision record, dated. That is the changelog: the decision record, read in
-order. A withdrawn code still resolves through the entry's `deprecated` field,
-not through `aliases.json`, which indexes spellings only.
-
-## 30. The rule for accepting a new term
-
-### First, whether the concept is ours to name
-
-A concept belongs in this standard when **it cannot be defined without
-referring to the Quran or the mushaf**.
-
-Everything else an application stores is real, and is not ours:
-
-```text
-in scope:
-sajdah            a place in the Quranic text at which one prostrates
-ayah_timing       a span of audio matched to an ayah
-word_meanings     the meaning of a Quranic word
-mutashabihat      wordings repeated within the Quran
-
-out of scope:
-book, author, chapter, category, tag, language, attachment, source
-radio, stream, thumbnail, user, subscription
-fatwa, hadith, athar, topic
-```
-
-A stream of Quran audio is a stream; a fatwa is Islamic scholarship but not a
-concept of the Quranic text; a book is already named by the language. The
-standard says so plainly, because a project still needs names for its books and
-its tags and this standard does not give them. The reason for the boundary, and
-the alternative that was rejected, are in the
-[decision record](/guidelines/en/reference/decisions/).
-
-> **The standard names the concepts of the Quranic text and its sciences. It does
-> not name what an application stores besides them.**
-
-### Extending the dictionary in a project
-
-A project that needs names the standard does not give writes them the same way,
-in a concepts directory of its own, with `origin: standard` and its own
-`category` values, and runs the same tools on them. The skill's audit reads a
-project's directory beside the standard's, so a local concept is checked and
-not flagged. A local concept that turns out to be a concept of the Quranic text
-is proposed here, through an issue, and moves into this dictionary if accepted.
-
-A project does not redefine a concept this dictionary defines, and does not
-reuse a code from it for something else.
-
-### Then, the entry itself
-
-Before an entry goes into the dictionary, answer:
-
-1. What is the concept?
-2. What is its definition?
-3. Why does software need to model it?
-4. What are its boundaries, and what might it be confused with?
-5. What is its `kind`?
-6. Which `category` does it belong to?
-7. Does it have a `parent`, or a `part_of`?
-8. Is it a Quranic concept or a general technical one?
-9. What is the most suitable canonical name?
-10. If it is Arabic in origin, does it follow the Canonical Code Spelling?
-11. Is it ever a collection, and if so what is its plural in code?
-12. What are its alternative spellings?
-13. What are its translations or English glosses?
-14. Are there deprecated names?
-15. Does the name work naturally in code, in an API and in a database?
-16. What source establishes the concept's definition?
-
-If we cannot state the concept clearly, or say why software models it, it is not
-adopted until the need becomes clear.
-
-## 31. The underlying principles
-
-The standard comes down to these:
-
-1. **Concept before name.**
-2. **One concept, one canonical name.**
-3. **Quran-specific concepts retain Quranic names; general concepts use natural technical English.**
-4. **Arabic-derived terms use one simple Canonical Code Spelling, derived and not chosen.**
-5. **`definition` explains what the concept is; `purpose` explains why software models it.**
-6. **Every entry has a defined `kind` and `category`.**
-7. **Important types and values are first-class dictionary entries with their own definitions; members of a closed set are registry rows.**
-8. **Parent–child relationships are explicit, and containment is a separate field.**
-9. **Different concepts remain different even when their names or translations are similar.**
-10. **Canonical names, alternative spellings, translations and deprecated names are kept separate.**
-11. **The same vocabulary is used consistently across code, APIs, databases, datasets and documentation.**
-12. **The dictionary is machine-readable, and its rules are checked by tools.**
+`ayah_timing` carries `recitation_id`, `ayah_key`, `start_ms` and `end_ms`; `word_timing` uses `word_key` instead of the ayah key. `recitation_id` identifies the recording the times belong to. Store the reciter, riwayah and style on the recitation, without adding them to the audio-span name.

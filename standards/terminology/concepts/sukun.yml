@@ -33,13 +33,13 @@ unicode:
   category: Mn
   combining_class: 34
   block: Arabic
-  unidata: 13.0.0
+  unidata: 15.0.0
 - cp: U+06E1
   name: ARABIC SMALL HIGH DOTLESS HEAD OF KHAH
   category: Mn
   combining_class: 230
   block: Arabic
-  unidata: 13.0.0
+  unidata: 15.0.0
 mark_family: harakah
 sources:
 - id: hafs_svg_registry

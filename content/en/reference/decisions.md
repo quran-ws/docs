@@ -132,14 +132,14 @@ not enough, or `tajweed` would qualify.
 *2026-09-06 · settled*
 
 **Decision:** `aal` (آل), `taha`, `yasin`, `saad` and `qaaf` stay in
-`established_spellings.tsv`, and the standard (§7) states the two rules they
+`established_spellings.tsv`, and the standard ([previous edition, section 7](https://github.com/quran-ws/docs/blob/79e3c6bb2b52dd1df81b3e64debfebf9dd5f8ea5/content/en/reference/standard.md#L422)) states the two rules they
 rest on: a name may not open with `al`, and a surah named by its opening
 letters is written by letter name.
 
 **Why:** the file's own bar is a measurement, and these 5 have none. For
 `aal` the cache points the other way (`al imran | aal imran`: 18,368 × 519), so
 the row cannot be defended as usage; it is defended because `al_imran` would
-read as an article plus a name, which §8 forbids. The 4 letter-named surahs
+read as an article plus a name, which [previous edition, section 8](https://github.com/quran-ws/docs/blob/79e3c6bb2b52dd1df81b3e64debfebf9dd5f8ea5/content/en/reference/standard.md#L499) forbids. The 4 letter-named surahs
 cannot be measured at all: the derivation gives `th`, `ys`, `s` and `q`, which
 nobody writes.
 
@@ -155,7 +155,7 @@ one table, and a second one buys nothing but a second place to look.
 **Decision:** `small_meem`, `three_dots`, `rounded_zero` — not `meem_saghirah`,
 `thalath_nuqat`, `sifr_mustadir`.
 
-**Why:** `saghirah` adds nothing to `small`. §3 gives a general concept an
+**Why:** `saghirah` adds nothing to `small`. [previous edition, section 3](https://github.com/quran-ws/docs/blob/79e3c6bb2b52dd1df81b3e64debfebf9dd5f8ea5/content/en/reference/standard.md#L99) gives a general concept an
 English name; a compound is no exception.
 
 **Evidence:** the source registry itself cites them in English —
@@ -173,7 +173,7 @@ looks; `sakinah` and `lazim` are terms. The ordinary words are listed in
 
 **Decision:** a concept enters the dictionary only when a real project needs it, and the entry names that need in `purpose`. For tajwid the witness is the [tajweed engine](https://github.com/quranpedia/tajweed-engine/): what it names in its topics and categories enters, such as `letter_relation` with its two values `mutamathilan` and `mutajanisan`; what it does not name, such as points of articulation, letter attributes, kinds of error and causes of stopping, does not.
 
-**Why:** §1 asks for the programmatic purpose before the name, and §30 does not adopt a concept until the need for it is clear. Need is shown by a project using the concept, not by a textbook mentioning it.
+**Why:** [previous edition, section 1](https://github.com/quran-ws/docs/blob/79e3c6bb2b52dd1df81b3e64debfebf9dd5f8ea5/content/en/reference/standard.md#L48) asks for the programmatic purpose before the name, and [previous edition, section 30](https://github.com/quran-ws/docs/blob/79e3c6bb2b52dd1df81b3e64debfebf9dd5f8ea5/content/en/reference/standard.md#L2010) does not adopt a concept until the need for it is clear. Need is shown by a project using the concept, not by a textbook mentioning it.
 
 **Alternative rejected:** entering the whole science as drafts. An entry nobody uses is an entry nobody reviews, and it sits in the dictionary at the size of a used one.
 
@@ -255,10 +255,10 @@ happens to begin with `ب`.
 `connectives.tsv` and dropped by the derivation. The waqf values keep their full
 Arabic names: `الوَقْف الجَائِز مَعَ كَوْنِ الوَصْل أَوْلَى → waqf_jaiz_wasl_awla`.
 
-**Why:** §14 had stated that connectives are dropped, but nothing implemented
+**Why:** [previous edition, section 14](https://github.com/quran-ws/docs/blob/79e3c6bb2b52dd1df81b3e64debfebf9dd5f8ea5/content/en/reference/standard.md#L1051) had stated that connectives are dropped, but nothing implemented
 it; the entries passed the derivation check only because their `arabic.vocalized`
 had been shortened to the words that survive. That is editing the Arabic to reach
-a code name, which §9 forbids. The rule is now in the function, and the names
+a code name, which [previous edition, section 9](https://github.com/quran-ws/docs/blob/79e3c6bb2b52dd1df81b3e64debfebf9dd5f8ea5/content/en/reference/standard.md#L588) forbids. The rule is now in the function, and the names
 are whole again.
 
 **The boundary:** a connective is a word that relates two parts and names
@@ -307,7 +307,7 @@ where the registry's word differs from ours (`imlaiyyah`, `alamat_qiraah`).
 with `parent: waqf_mark_type`, and they carry `symbol`, `unicode` and
 `mark_family` because they are drawn.
 
-**Why:** `waqf_mark_type` was a classification with no values, and §27's own
+**Why:** `waqf_mark_type` was a classification with no values, and [previous edition, section 27](https://github.com/quran-ws/docs/blob/79e3c6bb2b52dd1df81b3e64debfebf9dd5f8ea5/content/en/reference/standard.md#L1771)'s own
 example gives `waqf_lazim` exactly this shape. The data contradicted the
 standard's own example.
 
@@ -322,7 +322,7 @@ fields, and `check_conformance.py` refuses the fields anywhere else.
 
 **Decision:** `waqf_ruling` (tamm, kafi, hasan, qabih) classifies the place;
 `waqf_mark_type` (lazim, mamnu, the jaiz kinds, muanaqah) classifies what a
-drawn mark points to. Both are entries, and §13 and §17 name them side by side.
+drawn mark points to. Both are entries, and [previous edition, section 13](https://github.com/quran-ws/docs/blob/79e3c6bb2b52dd1df81b3e64debfebf9dd5f8ea5/content/en/reference/standard.md#L858) and [previous edition, section 17](https://github.com/quran-ws/docs/blob/79e3c6bb2b52dd1df81b3e64debfebf9dd5f8ea5/content/en/reference/standard.md#L1198) name them side by side.
 
 **Why:** the two had been treated as one "waqf type" in the standard's examples,
 with English labels that matched neither. A place with no mark still has a
@@ -356,7 +356,7 @@ did `alamat_al_tahzib` and `division_mark`.
 
 **Consequence:** the former name is recorded in `deprecated` on the surviving
 entry with a `note`, and still resolves through `aliases.json`, so a project
-that adopted it is not stranded (§20).
+that adopted it is not stranded ([previous edition, section 20](https://github.com/quran-ws/docs/blob/79e3c6bb2b52dd1df81b3e64debfebf9dd5f8ea5/content/en/reference/standard.md#L1394)).
 
 ---
 
@@ -389,15 +389,13 @@ transliteration belongs in `names.transliteration`.
 
 ## `taa` and `haa` name two letters each
 
-*Undated · open*
+*2026-10-05 · settled · supersedes the open question*
 
-**Question:** `ت` and `ط` both give `taa`, and `ح` and `ه` both give `haa`,
-because the derivation merges emphatic and plain letters. Neither name is used
-by any entry.
+**Decision:** retain the recorded spellings and distinguish a letter's Arabic character or codepoint from its written name. `taa` and `haa` are not unique letter identifiers. Retain identity alongside the name when distinguishing ت from ط or ح from ه.
 
-**Status:** open. It is decided when an entry needs one of them.
-`build_aliases.py` fails if two concepts ever claim one of these names, so the
-clash cannot arrive unnoticed.
+**Why:** simplified spelling does not preserve every phonetic distinction. Inventing an unsupported name would change the convention to solve an identity problem that can be represented explicitly. Dictionary concept identifiers must still remain unambiguous.
+
+**Consequence:** [rule 023](../standard/#rule-023) shows all four cases without renaming entries or inventing spellings.
 
 ---
 
@@ -479,7 +477,7 @@ question cleanly.
 **Decision:** the category `mushaf_marks` is removed; every mark is `dabt`.
 
 **Why:** the domain glossed "the marks of the mushaf" held one entry,
-`mushaf_mark`, while the marks themselves were all in `dabt`. §25 says a domain
+`mushaf_mark`, while the marks themselves were all in `dabt`. [previous edition, section 25](https://github.com/quran-ws/docs/blob/79e3c6bb2b52dd1df81b3e64debfebf9dd5f8ea5/content/en/reference/standard.md#L1648) says a domain
 is not added before there are concepts that belong to it, and this one never had
 them.
 
@@ -492,7 +490,7 @@ them.
 **Decision:** the dictionary page is generated from `concepts/*.yml`.
 
 **Why:** it had been written by hand, duplicating the source of truth, which is
-what §29 forbids.
+what [previous edition, section 29](https://github.com/quran-ws/docs/blob/79e3c6bb2b52dd1df81b3e64debfebf9dd5f8ea5/content/en/reference/standard.md#L1974) forbids.
 
 ---
 
@@ -515,7 +513,7 @@ the `rubu_al_hizb` rule.
 
 **Alternatives rejected:** `waqf_muanaqah`, which drops the `al` by treating the
 term as two words that each lose their own article — that patches the derivation
-to reach a preferred string. And `paired_waqf` and `embracing_waqf`: §3 keeps a
+to reach a preferred string. And `paired_waqf` and `embracing_waqf`: [previous edition, section 3](https://github.com/quran-ws/docs/blob/79e3c6bb2b52dd1df81b3e64debfebf9dd5f8ea5/content/en/reference/standard.md#L99) keeps a
 scholarly term, and `muanaqah` is a term of waqf exactly
 as `lazim` is — neither is in `general_words.tsv`. `division_mark` is not a
 precedent for them: it went to English because the Arabic name was wrong about
@@ -585,7 +583,7 @@ the standard in the business of general web modelling, where it has no
 authority and adds no precision.
 
 **Consequence:** a project still needs names for its books and its tags. The
-standard does not give them, and says so, and §30 says how a project extends the
+standard does not give them, and says so, and [previous edition, section 30](https://github.com/quran-ws/docs/blob/79e3c6bb2b52dd1df81b3e64debfebf9dd5f8ea5/content/en/reference/standard.md#L2010) says how a project extends the
 dictionary locally.
 
 ---
@@ -605,7 +603,7 @@ the codes.
 not across the dictionary. A column holds the values of one classification and
 never two, so `makki` the numbering and `makki` the revelation class are never
 candidates for the same slot — the same reason a registry is its own namespace
-(§13) and let `hamzah` the reciter and `hamzah` the mark keep one name. Prefixing the
+([previous edition, section 13](https://github.com/quran-ws/docs/blob/79e3c6bb2b52dd1df81b3e64debfebf9dd5f8ea5/content/en/reference/standard.md#L858)) and let `hamzah` the reciter and `hamzah` the mark keep one name. Prefixing the
 value with its parent's name says nothing the column does not already say.
 Every dataset that actually exists — quranpedia's qiraat-ayah-map, quran-text —
 stores `kufi` and `madani-first`, and they were right.
@@ -622,7 +620,7 @@ still refuses any other shared name.
 verb — the same fault that made us write `noon` rather than `nun`. The code is
 the name of the school.
 
-**The boundary:** §4 — inside a compound the technical
+**The boundary:** [previous edition, section 4](https://github.com/quran-ws/docs/blob/79e3c6bb2b52dd1df81b3e64debfebf9dd5f8ea5/content/en/reference/standard.md#L193) — inside a compound the technical
 word is transliterated and the ordinary word is translated. `madani` is the
 technical word; *first* and *last* are ordinary. `madani_awwal` and
 `madani_akhir` stay as recorded spellings.
@@ -668,7 +666,7 @@ or the abrogated text.
 
 **Why:** the familiar title is النَّاسِخ وَالمَنْسُوخ, but the science is
 النَّسْخ, and الناسخ والمنسوخ are the two sides of one relation, not two concepts.
-Abrogation has a plain English name, so §3 gives it that name.
+Abrogation has a plain English name, so [previous edition, section 3](https://github.com/quran-ws/docs/blob/79e3c6bb2b52dd1df81b3e64debfebf9dd5f8ea5/content/en/reference/standard.md#L99) gives it that name.
 
 **Consequence:** `nasikh_mansukh`, `nasikh_wa_mansukh` and `nasekh_mansokh`
 all resolve through `aliases.json`.
@@ -682,7 +680,7 @@ all resolve through `aliases.json`.
 **Decision:** entries for `token`, `morpheme`, `stem`, `part_of_speech` and
 `font`.
 
-**Why:** §18 tells the reader to keep `word`, `token` and `morpheme` apart, and
+**Why:** [previous edition, section 18](https://github.com/quran-ws/docs/blob/79e3c6bb2b52dd1df81b3e64debfebf9dd5f8ea5/content/en/reference/standard.md#L1222) tells the reader to keep `word`, `token` and `morpheme` apart, and
 lists `font` under presentation. None of the 4 had an entry, so the standard
 was naming a distinction it declined to define, and `morphology.purpose` already
 used the word `token` in its own text.
@@ -702,7 +700,7 @@ and not the word count. `segment`, the name the Quranic corpora use, resolves to
 
 **Why:** a part of speech is a general concept of grammar with a plain English
 name that every morphology corpus uses, and its parent `part_of_speech` is
-already English. §3 gives a general concept its English name. Transliterating
+already English. [previous edition, section 3](https://github.com/quran-ws/docs/blob/79e3c6bb2b52dd1df81b3e64debfebf9dd5f8ea5/content/en/reference/standard.md#L99) gives a general concept its English name. Transliterating
 the Arabic would also have lengthened the particle's name, because `harf` alone
 is taken by the written letter (`letter`); `particle` has no such problem.
 
@@ -712,7 +710,7 @@ Naming 40 tags would put the standard in the business of maintaining a
 tagset.
 
 **Consequence:** `part_of_speech` had been added as a classification with no
-values, which is the fault §13 names, and the same fault that had left
+values, which is the fault [previous edition, section 13](https://github.com/quran-ws/docs/blob/79e3c6bb2b52dd1df81b3e64debfebf9dd5f8ea5/content/en/reference/standard.md#L858) names, and the same fault that had left
 `ayah_numbering_system` empty. The check now refuses it.
 
 ---
@@ -847,7 +845,7 @@ reconcile is found.
 *Undated · settled*
 
 **Decision:** `hafs`, `warsh`, `qalun`, `ibn_dhakwan` — written as they are
-commonly written, not put through §4–§8.
+commonly written, not put through [previous edition, section 4–8](https://github.com/quran-ws/docs/blob/79e3c6bb2b52dd1df81b3e64debfebf9dd5f8ea5/content/en/reference/standard.md#L193).
 
 **Why:** the derivation is there because a term is a word carrying a meaning,
 and working from the vocalised Arabic keeps that meaning attached to the
@@ -859,7 +857,7 @@ orthographic and silent; `ابْن` cannot be derived at all, because its initia
 alif is hamzat al-wasl and carries no vowel to read. "Commonly written" means
 the scholarly English form with its diacritics dropped, and the registry carries
 both; where that form disagrees with a rule the standard already states, the
-rule wins — `shubah`, not `shuba`, because §5 governs a ta marbutah.
+rule wins — `shubah`, not `shuba`, because [previous edition, section 5](https://github.com/quran-ws/docs/blob/79e3c6bb2b52dd1df81b3e64debfebf9dd5f8ea5/content/en/reference/standard.md#L276) governs a ta marbutah.
 
 **Alternatives rejected:** forcing names through `established_spellings.tsv` —
 the derivation was never meant for names, and patching it for them is worse than
@@ -884,7 +882,7 @@ chain of transmission and also a surah. Both keep the name. Member names are
 indexed by kind in `registry_aliases.json`, and the bare name in `aliases.json`
 goes on resolving to the concept.
 
-**Why:** the two live in different domains in the sense of §25 — one `hamzah` is
+**Why:** the two live in different domains in the sense of [previous edition, section 25](https://github.com/quran-ws/docs/blob/79e3c6bb2b52dd1df81b3e64debfebf9dd5f8ea5/content/en/reference/standard.md#L1648) — one `hamzah` is
 `dabt`, the other `qiraat` — so nothing can reach for both at once. A name only
 has to be unique where it could actually be confused.
 
@@ -982,13 +980,13 @@ unverified on every run.
 **Decision:** one entry, `sajdah`, plural `sajdahs`, with the registry
 `sajdah.tsv` as its members. `sajdah_place` and `sujud_al_tilawah` are merged
 into it and stay as recorded spellings. `sajdah_mark` stays separate: it is the
-sign, and §18 still applies to it.
+sign, and [previous edition, section 18](https://github.com/quran-ws/docs/blob/79e3c6bb2b52dd1df81b3e64debfebf9dd5f8ea5/content/en/reference/standard.md#L1222) still applies to it.
 
 **Why:** the place and the act are one thing in every use software has for
 them. A dataset lists "the 15 sajdahs", counts them,
 locates them and attaches the rulings of prostration to them; nothing stores a
 prostration that is not at a place, and nothing stores a place that is not
-prostrated at. Two entries for one thing is the fault §18 guards against in the
+prostrated at. Two entries for one thing is the fault [previous edition, section 18](https://github.com/quran-ws/docs/blob/79e3c6bb2b52dd1df81b3e64debfebf9dd5f8ea5/content/en/reference/standard.md#L1222) guards against in the
 other direction. The same reasoning leaves `ruku` one entry.
 
 **Alternatives rejected:** 3 entries — the mark, the place and the act — on
@@ -1000,3 +998,16 @@ and the second entry would carry no field the first does not.
 readers call it. `sujud_al_tilawah`, the act as the fiqh books title it, and
 `mawdi_al_sajdah`, the place as al-Itqan lists it, resolve to the entry.
 
+
+
+## Clarifications from the naming-standard review
+
+*2026-10-05 · settled*
+
+**Decision:** rules 002 and 003 retain Arabic according to the concept's specialisation in the Quran or its sciences, not the absence of an English translation. Rule 007 explicitly applies 004 and keeps its number for references. The `mawdi` example in 016 demonstrates transliteration alone; the final general name is `place`.
+
+**Evidence and review:** the [usage-evidence policy](../dictionary/#usage-evidence) defines sources, counting, queries and review for rules 027 and 038. Passing software checks does not establish complete historical evidence or adoption.
+
+**Resolution:** rule 044 permits separator-only and case-only lookup forms in `alternative_spellings` without treating them as independent linguistic spellings or canonical names. `waqf-lazim` therefore remains a valid lookup form for `waqf_lazim`; it need not be removed from the data.
+
+**Example boundary:** the shortening in 041 is illustrative and not attributed to a source. The spelling-rule precedence in 056 and the word-reference limits in 069, 071 and 072 remain as the standard states them.

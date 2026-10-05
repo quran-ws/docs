@@ -37,7 +37,7 @@ unicode:
   category: Mn
   combining_class: 230
   block: Arabic
-  unidata: 13.0.0
+  unidata: 15.0.0
 mark_family: waqf
 sources:
 - id: hafs_svg_registry

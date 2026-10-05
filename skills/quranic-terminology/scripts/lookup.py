@@ -377,7 +377,7 @@ def main(argv=None):
             hint = ("nearest: " + ", ".join(f"`{c}`" for c in near)) if near else \
                 "nothing close. Try --search with a word of the definition."
             print(f"{term}: no concept resolves to it. {hint}\n"
-                  f"  If it is genuinely new, see section 30 of references/standard.md "
+                  f"  If it is genuinely new, see references/dictionary.md#contributing "
                   f"and scripts/propose.py.", file=sys.stderr)
     if args.json:
         print(json.dumps(out, ensure_ascii=False, indent=1))

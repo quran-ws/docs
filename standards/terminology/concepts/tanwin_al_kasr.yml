@@ -40,13 +40,13 @@ unicode:
   category: Mn
   combining_class: 29
   block: Arabic
-  unidata: 13.0.0
+  unidata: 15.0.0
 - cp: U+08F2
   name: ARABIC OPEN KASRATAN
   category: Mn
   combining_class: 29
   block: Arabic Extended-A
-  unidata: 13.0.0
+  unidata: 15.0.0
 mark_family: tanwin
 sources:
 - id: hafs_svg_registry

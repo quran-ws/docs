@@ -1,8 +1,8 @@
 """Render the dictionary pages from the concept files.
 
 Section 29 of the standard: the machine-readable source is the dictionary, and
-the human-readable page is generated from it. Nothing here is hand-written, so
-the page cannot drift from the data.
+the human-readable page is generated from it. Entry data is generated; the reader introduction is authored in
+content/fragments/{ar,en}/dictionary-intro.md.
 
 Both locales come out of the same entries. Arabic reads `definition`, English
 reads `definition_en`, and they are translations of one another, so the two
@@ -57,10 +57,8 @@ CATEGORIES = [
 # reader can copy them into YAML. Their meaning belongs in the standard
 # (sections 12 and 13), not repeated on every entry.
 
-BANNER_AR = """> مولّد من `standards/terminology/concepts/*.yml` — عدّل المدخل لا هذه الصفحة،
-> ثم شغّل `python3 tools/build.py`."""
-BANNER_EN = """> Generated from `standards/terminology/concepts/*.yml` — edit the entry, not
-> this page, then run `python3 tools/build.py`."""
+BANNER_AR = """> يشرح هذا الدليل قراءة القاموس. لتصحيح مدخل أو إضافة مفهوم، اتبع [تعليمات المساهمة](#contributing)."""
+BANNER_EN = """> This guide explains how to read the dictionary. To correct an entry or add a concept, follow the [contribution instructions](#contributing)."""
 
 AR = {
     "code": "ar",
@@ -311,7 +309,7 @@ def render_entry(e, loc, idx, sources):
 
 def render_lookup(entries, labels, loc):
     cols = loc["lookup_cols"]
-    lines = [f"## {loc['lookup_h']}", "", loc["lookup_intro"], "",
+    lines = ['<a id="dictionary-lookup"></a>', "", f"## {loc['lookup_h']}", "", loc["lookup_intro"], "",
              "| " + " | ".join(cols) + " |", "|" + " --- |" * len(cols)]
     for e in sorted(entries, key=lambda x: x["concept"]):
         n = e.get("names", {})
@@ -346,7 +344,10 @@ def render(entries, loc, idx, sources):
         by_cat.setdefault(e["category"], []).append(e)
     labels = [(row[0], row[loc["label"]]) for row in CATEGORIES]
 
-    parts = [loc["front"], render_lookup(entries, labels, loc),
+    intro_path = os.path.join(ROOT, "content", "fragments", loc["code"], "dictionary-intro.md")
+    with open(intro_path, encoding="utf-8") as intro_file:
+        introduction = intro_file.read()
+    parts = [loc["front"], introduction, render_lookup(entries, labels, loc),
              render_by_category(by_cat, labels, loc)]
     total = 0
     for key, label in labels:
